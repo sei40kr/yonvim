@@ -3,7 +3,7 @@
     nixpkgs.url = "nixpkgs/master";
   };
 
-  outputs = { nixpkgs, ... }:
+  outputs = { self, nixpkgs }:
     let
       inherit (nixpkgs) lib;
       inherit (lib) genAttrs;
@@ -14,5 +14,14 @@
       packages = genAttrs systems (system: {
         yonvim = pkgs.${system}.callPackage ./packages/yonvim.nix { };
       });
+
+      devShell = genAttrs systems (system:
+        let
+          inherit (pkgs.${system}) mkShell;
+        in
+        mkShell {
+          buildInputs = [ self.packages.${system}.yonvim ];
+          shellHook = "nvim";
+        });
     };
 }

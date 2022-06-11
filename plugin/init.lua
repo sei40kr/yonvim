@@ -6,7 +6,7 @@ local function prequire(...)
     return nil
 end
 
-prequire("impatient")
+-- prequire("impatient")
 
 vim.cmd([[
 command! PackerSync lua require('yonvim.plugins').sync()
