@@ -11,7 +11,7 @@ packer.startup({
         })
 
         use({
-            "@impatient_nvim@",
+            "lewis6991/impatient.nvim",
             as = "impatient.nvim",
             commit = "3ea9abedb6941995b05fdad654d9cfd51c38a31f",
         })

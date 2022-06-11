@@ -41,7 +41,6 @@ let
 
     patchPhase = ''
       substituteInPlace lua/yonvim/plugins/init.lua \
-        --subst-var-by impatient_nvim  ${vimPlugins.impatient-nvim.rtp} \
         --subst-var-by nvim_treesitter ${nvim-treesitter.rtp} \
         --subst-var-by nvim_ts_rainbow ${vimPlugins.nvim-ts-rainbow.rtp} \
         --subst-var-by packer_nvim     ${vimPlugins.packer-nvim.rtp} \
