@@ -49,11 +49,12 @@ if vim.call("has", "termguicolors") == 1 then
     vim.opt.termguicolors = true
 end
 
-vim.cmd([[
-augroup init
-autocmd!
-autocmd FileType help nnoremap <buffer> q <Cmd>bdelete<CR>
-augroup END
-]])
+vim.api.nvim_create_augroup("init", {})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "help" },
+    callback = function(arg)
+        vim.api.nvim_buf_set_keymap(arg.buf, "n", "q", "<Cmd>bdelete<CR>", {})
+    end,
+})
 
 require("yonvim.keymaps")
