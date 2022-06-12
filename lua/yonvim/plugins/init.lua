@@ -255,7 +255,7 @@ packer.startup({
 
         use({
             "folke/trouble.nvim",
-            commit = "691d490cc4eadc430d226fa7d77aaa84e2e0a125",
+            commit = "da61737d860ddc12f78e638152834487eabf0ee5",
             requires = "nvim-web-devicons",
             config = require("yonvim.plugins.trouble_nvim").config,
             cmd = { "Trouble", "TroubleToggle" },
