@@ -8,15 +8,6 @@ end
 
 -- prequire("impatient")
 
-vim.cmd([[
-command! PackerSync lua require('yon.plugins').sync()
-command! PackerClean lua require('yon.plugins').clean()
-command! PackerCompile lua require('yon.plugins').compile()
-]])
-if not prequire("packer_compiled") then
-    require("yon.plugins").sync()
-end
-
 vim.opt.autoindent = true
 vim.opt.autoread = true
 vim.opt.backspace = { "indent", "eol", "start" }
@@ -56,5 +47,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
         vim.api.nvim_buf_set_keymap(arg.buf, "n", "q", "<Cmd>bdelete<CR>", {})
     end,
 })
+
+require("yon.config"):load()
+require("yon.plugin-loader").load(require("yon.plugins"))
 
 require("yon.keymaps")
