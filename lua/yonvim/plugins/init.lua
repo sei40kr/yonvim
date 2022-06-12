@@ -76,22 +76,22 @@ packer.startup({
         use({
             "hrsh7th/nvim-cmp",
             as = "nvim-cmp",
-            commit = "b5433f901ebffc9e01b82ae13da9a92d49569205",
+            commit = "15c7bf7c0dfb7c75eb526c53f9574633c13dc22d",
             requires = {
                 {
                     "hrsh7th/cmp-cmdline",
-                    commit = "f4beb74e8e036f9532bedbcac0b93c7a55a0f8b0",
+                    commit = "c36ca4bc1dedb12b4ba6546b96c43896fd6e7252",
                     after = "nvim-cmp",
                 },
                 {
                     "hrsh7th/cmp-nvim-lsp",
                     as = "cmp-nvim-lsp",
-                    commit = "ebdfc204afb87f15ce3d3d3f5df0b8181443b5ba",
+                    commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8",
                     after = "nvim-cmp",
                 },
                 {
                     "saadparwaiz1/cmp_luasnip",
-                    commit = "b10829736542e7cc9291e60bab134df1273165c9",
+                    commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36",
                     after = "nvim-cmp",
                 },
                 {
@@ -111,7 +111,7 @@ packer.startup({
                 },
                 {
                     "onsails/lspkind-nvim",
-                    commit = "93e98a0c900327ce7e9be1cbf24aebbe7170e375",
+                    commit = "57e5b5dfbe991151b07d272a06e365a77cc3d0e7",
                     module = "lspkind",
                 },
             },

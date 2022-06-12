@@ -4,7 +4,7 @@ function M.config()
     local cmp = require("cmp")
 
     cmp.setup({
-        mapping = {
+        mapping = cmp.mapping.preset.insert({
             ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item()),
             ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item()),
             ["<CR>"] = function(fallback)
@@ -18,7 +18,7 @@ function M.config()
             ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item()),
             ["<Tab>"] = cmp.config.disable,
             ["<S-Tab>"] = cmp.config.disable,
-        },
+        }),
         snippet = {
             expand = function(args)
                 require("luasnip").lsp_expand(args.body)
