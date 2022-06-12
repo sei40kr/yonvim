@@ -132,7 +132,7 @@ packer.startup({
 
         use({
             "L3MON4D3/LuaSnip",
-            commit = "6b67cb12747225a6412d8263bb97d6d2b8d9366a",
+            commit = "52f4aed58db32a3a03211d31d2b12c0495c45580",
             event = "InsertEnter *",
             module = "luasnip",
         })
