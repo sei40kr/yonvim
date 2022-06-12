@@ -291,7 +291,7 @@ packer.startup({
 
         use({
             "jose-elias-alvarez/null-ls.nvim",
-            commit = "8f7af2ef9d9ff5e331be6725c39ce89a79b36bbc",
+            commit = "dfdd5fab3c53c30f83c78ea351b9a8f65715a5b7",
             requires = { "plenary.nvim" },
             config = require("yonvim.plugins.null-ls").config,
         })
