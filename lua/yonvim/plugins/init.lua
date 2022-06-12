@@ -44,7 +44,7 @@ packer.startup({
         use({
             "kyazdani42/nvim-web-devicons",
             opt = true,
-            commit = "09e62319974d7d7ec7e53b974724f7942470ef78",
+            commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e",
             config = require("yonvim.plugins.nvim-web-devicons").config,
             module = "nvim-web-devicons",
         })
