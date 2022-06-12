@@ -267,7 +267,7 @@ packer.startup({
         use({
             "sindrets/diffview.nvim",
             as = "diffview.nvim",
-            commit = "2d1f45282587d565cc4d84112490bc944c0b491d",
+            commit = "ca297a7e526b42b1ea0e4bd6eebb36f2654125a7",
             requires = {
                 "nvim-web-devicons",
                 "plenary.nvim",
