@@ -60,7 +60,7 @@ packer.startup({
         use({
             "ahmedkhalf/project.nvim",
             opt = true,
-            commit = "cef52b8da07648b750d7f1e8fb93f12cb9482988",
+            commit = "541115e762764bc44d7d3bf501b6e367842d3d4f",
             config = require("yonvim.plugins.project_nvim").config,
             module = "project_nvim",
         })
