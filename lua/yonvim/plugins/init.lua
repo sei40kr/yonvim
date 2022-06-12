@@ -53,7 +53,7 @@ packer.startup({
             "nvim-lua/plenary.nvim",
             as = "plenary.nvim",
             opt = true,
-            commit = "78dde9bc25af3e657eb829058bf179739f7e8e69",
+            commit = "9c3239bc5f99b85be1123107f7290d16a68f8e64",
             module = "plenary",
         })
 
