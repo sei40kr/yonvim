@@ -37,7 +37,7 @@ packer.startup({
 
         use({
             "echasnovski/mini.nvim",
-            tag = "v0.3.0",
+            tag = "v0.4.0",
             config = require("yonvim.plugins.mini").config,
         })
 
