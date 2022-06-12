@@ -247,7 +247,7 @@ packer.startup({
 
         use({
             "akinsho/toggleterm.nvim",
-            commit = "ed812c8eb4d2a297a6a74bd63f3e892179b92776",
+            commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8",
             config = require("yonvim.plugins.toggleterm_nvim").config,
             cmd = "ToggleTerm",
             module = "toggleterm",
