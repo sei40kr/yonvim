@@ -172,7 +172,7 @@ packer.startup({
 
         use({
             "akinsho/bufferline.nvim",
-            tag = "v1.2.0",
+            tag = "v2.2.1",
             config = require("yonvim.plugins.bufferline").config,
         })
 
