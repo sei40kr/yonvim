@@ -1,19 +1,5 @@
 local wk = require("which-key")
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
-
-wk.setup({
-    key_labels = {
-        ["<space>"] = "SPC",
-        ["<cr>"] = "RET",
-        ["<tab>"] = "TAB",
-    },
-    icons = {
-        breadcrumb = "",
-        separator = "",
-    },
-})
 
 vim.api.nvim_set_keymap("n", "<Esc>", "<Cmd>nohls<CR>", {})
 -- Disable Ex mode
@@ -58,5 +44,4 @@ wk.register({
 })
 
 require("yon.keymaps.gs")
-require("yon.keymaps.leader")
 require("yon.keymaps.vimacs")

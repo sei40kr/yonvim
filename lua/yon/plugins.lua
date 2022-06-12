@@ -61,8 +61,12 @@ local M = {
     },
 
     {
-        "@which_key@",
-        module = "which-key",
+        "@which_key_repo@",
+        as = "which-key.nvim",
+        commit = "@which_key_rev@",
+        config = function()
+            require("yon.core.which-key").setup()
+        end,
     },
 
     --

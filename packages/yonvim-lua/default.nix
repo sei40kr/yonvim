@@ -53,7 +53,6 @@ stdenv.mkDerivation {
       --subst-var-by packer     ${vimPlugins.packer-nvim.rtp} \
       --subst-var-by treesitter ${nvim-treesitter.rtp} \
       --subst-var-by ts_rainbow ${vimPlugins.nvim-ts-rainbow.rtp} \
-      --subst-var-by which_key  ${vimPlugins.which-key-nvim.rtp} \
       ${escapeShellArgs substitutionArgs}
   '';
 
@@ -65,7 +64,6 @@ stdenv.mkDerivation {
 
     mkdir -p $out/pack/site/opt
     ln -s ${vimPlugins.packer-nvim.rtp} $out/pack/site/opt/packer.nvim
-    ln -s ${vimPlugins.which-key-nvim.rtp} $out/pack/site/start/which-key.nvim
   '';
 
   meta = {
