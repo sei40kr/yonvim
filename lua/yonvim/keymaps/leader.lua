@@ -141,6 +141,10 @@ wk.register({
             '<Cmd>lua require("telescope.builtin").registers()<CR>',
             "From register",
         },
+        s = {
+            '<Cmd>lua require("telescope").extensions.luasnip.luasnip {}<CR>',
+            "Snippet",
+        },
     },
     o = {
         name = "+open",

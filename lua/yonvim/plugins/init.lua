@@ -134,6 +134,7 @@ packer.startup({
             "L3MON4D3/LuaSnip",
             commit = "6b67cb12747225a6412d8263bb97d6d2b8d9366a",
             event = "InsertEnter *",
+            module = "luasnip",
         })
 
         use({
@@ -208,6 +209,10 @@ packer.startup({
                 {
                     "nvim-telescope/telescope-file-browser.nvim",
                     commit = "c6f5104ff309649ebbaec283bbd1ab54511dd109",
+                },
+                {
+                    "benfowler/telescope-luasnip.nvim",
+                    commit = "b4ebc74bb49fadc28fb7432f448ba8cbcee58904",
                 },
                 {
                     "nvim-telescope/telescope-project.nvim",
