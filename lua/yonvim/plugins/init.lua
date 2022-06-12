@@ -336,7 +336,7 @@ packer.startup({
 
         use({
             "pwntester/octo.nvim",
-            commit = "0beb4de71062435ad934caba5728f7f01ae8b969",
+            commit = "71d4dcfe56d4c45b7f1a1520d65ef5a86d2bc9bd",
             requires = {
                 "nvim-web-devicons",
                 "plenary.nvim",
