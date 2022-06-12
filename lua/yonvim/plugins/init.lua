@@ -202,7 +202,7 @@ packer.startup({
         use({
             "nvim-telescope/telescope.nvim",
             as = "telescope.nvim",
-            tag = "nvim-0.5.1",
+            tag = "nvim-0.6",
             requires = {
                 "nvim-web-devicons",
                 "plenary.nvim",
