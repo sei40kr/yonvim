@@ -3,7 +3,7 @@ vim.cmd("packadd packer.nvim")
 local packer = require("packer")
 
 packer.startup({
-    function()
+    function(use)
         use({
             "@packer_nvim@",
             as = "packer.nvim",
