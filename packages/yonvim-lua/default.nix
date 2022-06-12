@@ -1,39 +1,46 @@
 { lib, stdenv, vimPlugins }:
 
 let
-  inherit (lib) licenses platforms;
-  nvim-treesitter = vimPlugins.nvim-treesitter.withPlugins (ps: with ps; [
-    tree-sitter-bash
-    tree-sitter-c
-    tree-sitter-c-sharp
-    tree-sitter-cpp
-    tree-sitter-css
-    tree-sitter-elisp
-    tree-sitter-go
-    tree-sitter-haskell
-    tree-sitter-html
-    tree-sitter-java
-    tree-sitter-javascript
-    tree-sitter-jsdoc
-    tree-sitter-json
-    tree-sitter-julia
-    tree-sitter-lua
-    tree-sitter-markdown
-    tree-sitter-nix
-    tree-sitter-norg
-    tree-sitter-ocaml
-    tree-sitter-php
-    tree-sitter-python
-    tree-sitter-ruby
-    tree-sitter-rust
-    tree-sitter-scala
-    tree-sitter-swift
-    tree-sitter-typescript
-    tree-sitter-toml
-    tree-sitter-tsx
-    tree-sitter-vim
-    tree-sitter-yaml
-  ]);
+  inherit (lib) escapeShellArgs flatten mapAttrsToList licenses platforms;
+
+  substitutionArgs = flatten (mapAttrsToList
+    (name: { repo, rev }:
+      [ "--subst-var-by" "${name}_repo" repo "--subst-var-by" "${name}_rev" rev ])
+    (builtins.fromJSON (builtins.readFile ./plugins.json)));
+
+  nvim-treesitter = vimPlugins.nvim-treesitter.withPlugins (ps: with ps;
+    [
+      tree-sitter-bash
+      tree-sitter-c
+      tree-sitter-c-sharp
+      tree-sitter-cpp
+      tree-sitter-css
+      tree-sitter-elisp
+      tree-sitter-go
+      tree-sitter-haskell
+      tree-sitter-html
+      tree-sitter-java
+      tree-sitter-javascript
+      tree-sitter-jsdoc
+      tree-sitter-json
+      tree-sitter-julia
+      tree-sitter-lua
+      tree-sitter-markdown
+      tree-sitter-nix
+      tree-sitter-norg
+      tree-sitter-ocaml
+      tree-sitter-php
+      tree-sitter-python
+      tree-sitter-ruby
+      tree-sitter-rust
+      tree-sitter-scala
+      tree-sitter-swift
+      tree-sitter-typescript
+      tree-sitter-toml
+      tree-sitter-tsx
+      tree-sitter-vim
+      tree-sitter-yaml
+    ]);
 in
 stdenv.mkDerivation {
   pname = "yonvim.lua";
@@ -43,10 +50,11 @@ stdenv.mkDerivation {
 
   patchPhase = ''
     substituteInPlace lua/yonvim/plugins/init.lua \
-      --subst-var-by nvim_treesitter ${nvim-treesitter.rtp} \
-      --subst-var-by nvim_ts_rainbow ${vimPlugins.nvim-ts-rainbow.rtp} \
-      --subst-var-by packer_nvim     ${vimPlugins.packer-nvim.rtp} \
-      --subst-var-by which_key_nvim  ${vimPlugins.which-key-nvim.rtp}
+      --subst-var-by packer     ${vimPlugins.packer-nvim.rtp} \
+      --subst-var-by treesitter ${nvim-treesitter.rtp} \
+      --subst-var-by ts_rainbow ${vimPlugins.nvim-ts-rainbow.rtp} \
+      --subst-var-by which_key  ${vimPlugins.which-key-nvim.rtp} \
+      ${escapeShellArgs substitutionArgs}
   '';
 
   dontBuild = true;

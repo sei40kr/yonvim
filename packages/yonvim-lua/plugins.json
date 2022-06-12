@@ -1,0 +1,170 @@
+{
+  "impatient": {
+    "repo": "lewis6991/impatient.nvim",
+    "rev": "3ea9abedb6941995b05fdad654d9cfd51c38a31f"
+  },
+  "tokyonight": {
+    "repo": "folke/tokyonight.nvim",
+    "rev": "8223c970677e4d88c9b6b6d81bda23daf11062bb"
+  },
+  "mini": {
+    "repo": "echasnovski/mini.nvim",
+    "rev": "v0.4.0"
+  },
+  "web_devicons": {
+    "repo": "kyazdani42/nvim-web-devicons",
+    "rev": "8d2c5337f0a2d0a17de8e751876eeb192b32310e"
+  },
+  "plenary": {
+    "repo": "nvim-lua/plenary.nvim",
+    "rev": "9c3239bc5f99b85be1123107f7290d16a68f8e64"
+  },
+  "project": {
+    "repo": "ahmedkhalf/project.nvim",
+    "rev": "541115e762764bc44d7d3bf501b6e367842d3d4f"
+  },
+  "cmp": {
+    "repo": "hrsh7th/nvim-cmp",
+    "rev": "15c7bf7c0dfb7c75eb526c53f9574633c13dc22d"
+  },
+  "cmp_cmdline": {
+    "repo": "hrsh7th/cmp-cmdline",
+    "rev": "c36ca4bc1dedb12b4ba6546b96c43896fd6e7252"
+  },
+  "cmp_nvim_lsp": {
+    "repo": "hrsh7th/cmp-nvim-lsp",
+    "rev": "affe808a5c56b71630f17aa7c38e15c59fd648a8"
+  },
+  "cmp_luasnip": {
+    "repo": "saadparwaiz1/cmp_luasnip",
+    "rev": "a9de941bcbda508d0a45d28ae366bb3f08db2e36"
+  },
+  "cmp_omni": {
+    "repo": "hrsh7th/cmp-omni",
+    "rev": "7a457f0c4f9e0801fee777d955eb841659aa3b84"
+  },
+  "cmp_path": {
+    "repo": "hrsh7th/cmp-path",
+    "rev": "466b6b8270f7ba89abd59f402c73f63c7331ff6e"
+  },
+  "cmp_spell": {
+    "repo": "f3fora/cmp-spell",
+    "rev": "5602f1a0de7831f8dad5b0c6db45328fbd539971"
+  },
+  "lspkind": {
+    "repo": "onsails/lspkind.nvim",
+    "rev": "57e5b5dfbe991151b07d272a06e365a77cc3d0e7"
+  },
+  "hop": {
+    "repo": "phaazon/hop.nvim",
+    "rev": "v1.3.0"
+  },
+  "luasnip": {
+    "repo": "L3MON4D3/LuaSnip",
+    "rev": "52f4aed58db32a3a03211d31d2b12c0495c45580"
+  },
+  "autopairs": {
+    "repo": "windwp/nvim-autopairs",
+    "rev": "84cde3547e9a8b16db0bfe523e98e19b7be5148b"
+  },
+  "visual_multi": {
+    "repo": "mg979/vim-visual-multi",
+    "rev": "v0.5.8"
+  },
+  "bufferline": {
+    "repo": "akinsho/bufferline.nvim",
+    "rev": "v2.2.1"
+  },
+  "gitsigns": {
+    "repo": "lewis6991/gitsigns.nvim",
+    "rev": "v0.4"
+  },
+  "lualine": {
+    "repo": "nvim-lualine/lualine.nvim",
+    "rev": "3362b28f917acc37538b1047f187ff1b5645ecdd"
+  },
+  "nvim_tree": {
+    "repo": "kyazdani42/nvim-tree.lua",
+    "rev": "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243"
+  },
+  "telescope": {
+    "repo": "nvim-telescope/telescope.nvim",
+    "rev": "nvim-0.6"
+  },
+  "telescope_file_browser": {
+    "repo": "nvim-telescope/telescope-file-browser.nvim",
+    "rev": "c6f5104ff309649ebbaec283bbd1ab54511dd109"
+  },
+  "telescope_luasnip": {
+    "repo": "benfowler/telescope-luasnip.nvim",
+    "rev": "b4ebc74bb49fadc28fb7432f448ba8cbcee58904"
+  },
+  "telescope_project": {
+    "repo": "nvim-telescope/telescope-project.nvim",
+    "rev": "d317c3cef6917d650d9a638c627b54d3e1173031"
+  },
+  "telescope_symbols": {
+    "repo": "nvim-telescope/telescope-symbols.nvim",
+    "rev": "f7d7c84873c95c7bd5682783dd66f84170231704"
+  },
+  "todo_comments": {
+    "repo": "folke/todo-comments.nvim",
+    "rev": "98b1ebf198836bdc226c0562b9f906584e6c400e"
+  },
+  "toggleterm": {
+    "repo": "akinsho/toggleterm.nvim",
+    "rev": "aaeed9e02167c5e8f00f25156895a6fd95403af8"
+  },
+  "trouble": {
+    "repo": "folke/trouble.nvim",
+    "rev": "da61737d860ddc12f78e638152834487eabf0ee5"
+  },
+  "diffview": {
+    "repo": "sindrets/diffview.nvim",
+    "rev": "ca297a7e526b42b1ea0e4bd6eebb36f2654125a7"
+  },
+  "neogit": {
+    "repo": "TimUntersberger/neogit",
+    "rev": "0ce803d22e361080ec0daf6bee7aad45e8cf8b07"
+  },
+  "null_ls": {
+    "repo": "jose-elias-alvarez/null-ls.nvim",
+    "rev": "dfdd5fab3c53c30f83c78ea351b9a8f65715a5b7"
+  },
+  "lspconfig": {
+    "repo": "neovim/nvim-lspconfig",
+    "rev": "4eac16e87f24ad26738e632446e29766e87141ae"
+  },
+  "lua_dev": {
+    "repo": "folke/lua-dev.nvim",
+    "rev": "a0ee77789d9948adce64d98700cc90cecaef88d5"
+  },
+  "treesitter_refactor": {
+    "repo": "nvim-treesitter/nvim-treesitter-refactor",
+    "rev": "0dc8069641226904f9757de786a6ab2273eb73ea"
+  },
+  "treesitter_textobjects": {
+    "repo": "nvim-treesitter/nvim-treesitter-textobjects",
+    "rev": "29c5e9effe53f19f250e3a88d1427b35031bc90d"
+  },
+  "ts_autotag": {
+    "repo": "windwp/nvim-ts-autotag",
+    "rev": "57035b5814f343bc6110676c9ae2eacfcd5340c2"
+  },
+  "ts_context_commentstring": {
+    "repo": "JoosepAlviste/nvim-ts-context-commentstring",
+    "rev": "88343753dbe81c227a1c1fd2c8d764afb8d36269"
+  },
+  "octo": {
+    "repo": "pwntester/octo.nvim",
+    "rev": "71d4dcfe56d4c45b7f1a1520d65ef5a86d2bc9bd"
+  },
+  "open_browser_github": {
+    "repo": "tyru/open-browser-github.vim",
+    "rev": "ac7c034e300f36d591ef234dcd5eb5cd5c07c74f"
+  },
+  "open_browser": {
+    "repo": "tyru/open-browser.vim",
+    "rev": "80ec3f2bb0a86ac13c998e2f2c86e16e6d2f20bb"
+  }
+}
