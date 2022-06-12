@@ -185,7 +185,7 @@ packer.startup({
 
         use({
             "nvim-lualine/lualine.nvim",
-            commit = "63f74ac06978cead7cd0cbbb65c80bcda2eede41",
+            commit = "3362b28f917acc37538b1047f187ff1b5645ecdd",
             after = "tokyonight.nvim",
             requires = "tokyonight.nvim",
             config = require("yonvim.plugins.lualine").config,
