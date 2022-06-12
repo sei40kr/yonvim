@@ -193,7 +193,7 @@ packer.startup({
 
         use({
             "kyazdani42/nvim-tree.lua",
-            commit = "25921aa87a3da31d788870ec2d4e94c723923975",
+            commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243",
             requires = "nvim-web-devicons",
             config = require("yonvim.plugins.nvim-tree").config,
             cmd = { "NvimTreeFindFile", "NvimTreeToggle" },
