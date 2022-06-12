@@ -11,9 +11,13 @@
       pkgs = genAttrs systems (system: import nixpkgs { inherit system; });
     in
     {
-      packages = genAttrs systems (system: {
-        yonvim = pkgs.${system}.callPackage ./packages/yonvim.nix { };
-      });
+      packages = genAttrs systems (system:
+        let
+          pkgs' = pkgs.${system};
+          yonvim-lua = pkgs'.callPackage ./packages/yonvim-lua { };
+          yonvim = pkgs'.callPackage ./packages/yonvim { inherit yonvim-lua; };
+        in
+        { inherit yonvim-lua yonvim; });
 
       devShell = genAttrs systems (system:
         let
