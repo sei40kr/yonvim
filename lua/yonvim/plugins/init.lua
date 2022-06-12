@@ -139,7 +139,7 @@ packer.startup({
 
         use({
             "windwp/nvim-autopairs",
-            commit = "38d486a1c47ae2722a78cf569008de0a64f4b153",
+            commit = "84cde3547e9a8b16db0bfe523e98e19b7be5148b",
             config = require("yonvim.plugins.nvim-autopairs").config,
             event = "InsertEnter *",
         })
