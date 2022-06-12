@@ -52,6 +52,10 @@ let
     installPhase = ''
       mkdir -p $out/pack/site/start/yonvim.lua
       cp -r lua plugin $out/pack/site/start/yonvim.lua
+
+      mkdir -p $out/pack/site/opt
+      ln -s ${vimPlugins.packer-nvim.rtp} $out/pack/site/opt/packer.nvim
+      ln -s ${vimPlugins.which-key-nvim.rtp} $out/pack/site/opt/which-key.nvim
     '';
 
     meta = {
