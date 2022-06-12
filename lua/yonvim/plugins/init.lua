@@ -283,7 +283,7 @@ packer.startup({
 
         use({
             "TimUntersberger/neogit",
-            commit = "c8dd268091ffcbcb673de59c5b37ff26a2eb24ed",
+            commit = "0ce803d22e361080ec0daf6bee7aad45e8cf8b07",
             requires = { "diffview.nvim", "plenary.nvim" },
             config = require("yonvim.plugins.neogit").config,
             cmd = "Neogit",
