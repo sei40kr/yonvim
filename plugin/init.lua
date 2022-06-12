@@ -9,12 +9,12 @@ end
 -- prequire("impatient")
 
 vim.cmd([[
-command! PackerSync lua require('yonvim.plugins').sync()
-command! PackerClean lua require('yonvim.plugins').clean()
-command! PackerCompile lua require('yonvim.plugins').compile()
+command! PackerSync lua require('yon.plugins').sync()
+command! PackerClean lua require('yon.plugins').clean()
+command! PackerCompile lua require('yon.plugins').compile()
 ]])
 if not prequire("packer_compiled") then
-    require("yonvim.plugins").sync()
+    require("yon.plugins").sync()
 end
 
 vim.opt.autoindent = true
@@ -57,4 +57,4 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
-require("yonvim.keymaps")
+require("yon.keymaps")

@@ -24,13 +24,13 @@ vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true })
 vim.api.nvim_set_keymap(
     "i",
     "<Tab>",
-    '<Cmd>lua require("yonvim.api.completion").tab_complete()<CR>',
+    '<Cmd>lua require("yon.api.completion").tab_complete()<CR>',
     { noremap = true }
 )
 vim.api.nvim_set_keymap(
     "i",
     "<S-Tab>",
-    '<Cmd>lua require("yonvim.api.completion").s_tab_complete()<CR>',
+    '<Cmd>lua require("yon.api.completion").s_tab_complete()<CR>',
     { noremap = true }
 )
 
@@ -39,7 +39,7 @@ vim.api.nvim_set_keymap("t", "jk", "<C-\\><C-n>", { noremap = true })
 wk.register({
     ["["] = {
         ["<Space>"] = {
-            '<Cmd>lua require("yonvim.api.insert").insert_newline_above()<CR>',
+            '<Cmd>lua require("yon.api.insert").insert_newline_above()<CR>',
             "Insert newline above",
         },
         b = { "<Cmd>BufferLineCyclePrev<CR>", "Previous buffer" },
@@ -48,7 +48,7 @@ wk.register({
     },
     ["]"] = {
         ["<Space>"] = {
-            '<Cmd>lua require("yonvim.api.insert").insert_newline_below()<CR>',
+            '<Cmd>lua require("yon.api.insert").insert_newline_below()<CR>',
             "Insert newline below",
         },
         b = { "<Cmd>BufferLineCycleNext<CR>", "Next buffer" },
@@ -57,6 +57,6 @@ wk.register({
     },
 })
 
-require("yonvim.keymaps.gs")
-require("yonvim.keymaps.leader")
-require("yonvim.keymaps.vimacs")
+require("yon.keymaps.gs")
+require("yon.keymaps.leader")
+require("yon.keymaps.vimacs")

@@ -7,7 +7,7 @@ wk.register({
     },
     [":"] = { '<Cmd>lua require("telescope.builtin").commands()<CR>', ":" },
     ["<Space>"] = {
-        '<Cmd>lua require("yonvim.api.project").find_file_in_project()<CR>',
+        '<Cmd>lua require("yon.api.project").find_file_in_project()<CR>',
         "Find file in project",
     },
     b = {
@@ -22,11 +22,11 @@ wk.register({
         -- TODO Exclude special buffers
         n = { "<Cmd>BufferLineCycleNext<CR>", "Next buffer" },
         N = {
-            '<Cmd>lua require("yonvim.api.buffers").new_empty_buffer()<CR>',
+            '<Cmd>lua require("yon.api.buffers").new_empty_buffer()<CR>',
             "New empty buffer",
         },
         O = {
-            '<Cmd>lua require("yonvim.api.buffers").delete_other_buffers()<CR>',
+            '<Cmd>lua require("yon.api.buffers").delete_other_buffers()<CR>',
             "Kill other buffers",
         },
         p = { "<Cmd>BufferLineCyclePrev<CR>", "Previous buffer" },
@@ -37,7 +37,7 @@ wk.register({
             "Unload buffer",
         },
         Z = {
-            '<Cmd>lua require("yonvim.api.buffers").delete_unloaded_buffers()<CR>',
+            '<Cmd>lua require("yon.api.buffers").delete_unloaded_buffers()<CR>',
             "Kill unloaded buffers",
         },
     },
@@ -51,11 +51,11 @@ wk.register({
     f = {
         name = "+file",
         f = {
-            '<Cmd>lua require("yonvim.api.file").find_file()<CR>',
+            '<Cmd>lua require("yon.api.file").find_file()<CR>',
             "Find file",
         },
         F = {
-            '<Cmd>lua require("yonvim.api.file").find_file_from_here()<CR>',
+            '<Cmd>lua require("yon.api.file").find_file_from_here()<CR>',
             "Find file from here",
         },
         r = {

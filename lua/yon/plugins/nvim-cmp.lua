@@ -46,25 +46,25 @@ function M.config()
     vim.api.nvim_set_keymap(
         "i",
         "<C-x><C-f>",
-        '<Cmd>lua require("yonvim.api.completion").complete_path()<CR>',
+        '<Cmd>lua require("yon.api.completion").complete_path()<CR>',
         { noremap = true }
     )
     vim.api.nvim_set_keymap(
         "i",
         "<C-x><C-k>",
-        '<Cmd>lua require("yonvim.api.completion").complete_buffer()<CR>',
+        '<Cmd>lua require("yon.api.completion").complete_buffer()<CR>',
         { noremap = true }
     )
     vim.api.nvim_set_keymap(
         "i",
         "<C-x><C-o>",
-        '<Cmd>lua require("yonvim.api.completion").complete_omni()<CR>',
+        '<Cmd>lua require("yon.api.completion").complete_omni()<CR>',
         { noremap = true }
     )
     vim.api.nvim_set_keymap(
         "i",
         "<C-x>s",
-        '<Cmd>lua require("yonvim.api.completion").complete_spell()<CR>',
+        '<Cmd>lua require("yon.api.completion").complete_spell()<CR>',
         { noremap = true }
     )
 end

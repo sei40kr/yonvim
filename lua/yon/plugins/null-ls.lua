@@ -21,7 +21,7 @@ function M.config()
                 )
             end
 
-            require("yonvim.keymaps.lsp").setup(client, bufnr)
+            require("yon.keymaps.lsp").setup(client, bufnr)
         end,
     })
 end

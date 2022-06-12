@@ -38,14 +38,14 @@ packer.startup({
         use({
             "@mini_repo@",
             tag = "@mini_rev@",
-            config = require("yonvim.plugins.mini").config,
+            config = require("yon.plugins.mini").config,
         })
 
         use({
             "@web_devicons_repo@",
             opt = true,
             commit = "@web_devicons_rev@",
-            config = require("yonvim.plugins.nvim-web-devicons").config,
+            config = require("yon.plugins.nvim-web-devicons").config,
             module = "nvim-web-devicons",
         })
 
@@ -61,7 +61,7 @@ packer.startup({
             "@project_repo@",
             opt = true,
             commit = "@project_rev@",
-            config = require("yonvim.plugins.project_nvim").config,
+            config = require("yon.plugins.project_nvim").config,
             module = "project_nvim",
         })
 
@@ -115,7 +115,7 @@ packer.startup({
                     module = "lspkind",
                 },
             },
-            config = require("yonvim.plugins.nvim-cmp").config,
+            config = require("yon.plugins.nvim-cmp").config,
         })
 
         --
@@ -140,14 +140,14 @@ packer.startup({
         use({
             "@autopairs_repo@",
             commit = "@autopairs_rev@",
-            config = require("yonvim.plugins.nvim-autopairs").config,
+            config = require("yon.plugins.nvim-autopairs").config,
             event = "InsertEnter *",
         })
 
         use({
             "@visual_multi_repo@",
             tag = "@visual_multi_rev@",
-            setup = require("yonvim.plugins.vim-visual-multi").setup,
+            setup = require("yon.plugins.vim-visual-multi").setup,
             keys = {
                 "<Plug>(VM-Find-Under)",
                 "<Plug>(VM-Add-Cursor-Down)",
@@ -173,14 +173,14 @@ packer.startup({
         use({
             "@bufferline_repo@",
             tag = "@bufferline_rev@",
-            config = require("yonvim.plugins.bufferline").config,
+            config = require("yon.plugins.bufferline").config,
         })
 
         use({
             "@gitsigns_repo@",
             tag = "@gitsigns_rev@",
             requires = "plenary.nvim",
-            config = require("yonvim.plugins.gitsigns").config,
+            config = require("yon.plugins.gitsigns").config,
         })
 
         use({
@@ -188,14 +188,14 @@ packer.startup({
             commit = "@lualine_rev@",
             after = "tokyonight.nvim",
             requires = "tokyonight.nvim",
-            config = require("yonvim.plugins.lualine").config,
+            config = require("yon.plugins.lualine").config,
         })
 
         use({
             "@nvim_tree_repo@",
             commit = "@nvim_tree_rev@",
             requires = "nvim-web-devicons",
-            config = require("yonvim.plugins.nvim-tree").config,
+            config = require("yon.plugins.nvim-tree").config,
             cmd = { "NvimTreeFindFile", "NvimTreeToggle" },
         })
 
@@ -223,7 +223,7 @@ packer.startup({
                     commit = "@telescope_symbols_rev@",
                 },
             },
-            config = require("yonvim.plugins.telescope_nvim").config,
+            config = require("yon.plugins.telescope_nvim").config,
             cmd = "Telescope",
             module = "telescope",
         })
@@ -236,7 +236,7 @@ packer.startup({
                 "telescope.nvim",
                 "trouble.nvim",
             },
-            config = require("yonvim.plugins.todo-comments_nvim").config,
+            config = require("yon.plugins.todo-comments_nvim").config,
             cmd = {
                 "TodoQuickFix",
                 "TodoLocList",
@@ -248,7 +248,7 @@ packer.startup({
         use({
             "@toggleterm_repo@",
             commit = "@toggleterm_rev@",
-            config = require("yonvim.plugins.toggleterm_nvim").config,
+            config = require("yon.plugins.toggleterm_nvim").config,
             cmd = "ToggleTerm",
             module = "toggleterm",
         })
@@ -257,7 +257,7 @@ packer.startup({
             "@trouble_repo@",
             commit = "@trouble_rev@",
             requires = "nvim-web-devicons",
-            config = require("yonvim.plugins.trouble_nvim").config,
+            config = require("yon.plugins.trouble_nvim").config,
             cmd = { "Trouble", "TroubleToggle" },
         })
 
@@ -272,7 +272,7 @@ packer.startup({
                 "nvim-web-devicons",
                 "plenary.nvim",
             },
-            config = require("yonvim.plugins.diffview").config,
+            config = require("yon.plugins.diffview").config,
             cmd = {
                 "DiffviewOpen",
                 "DiffviewToggleFiles",
@@ -285,7 +285,7 @@ packer.startup({
             "@neogit_repo@",
             commit = "@neogit_rev@",
             requires = { "diffview.nvim", "plenary.nvim" },
-            config = require("yonvim.plugins.neogit").config,
+            config = require("yon.plugins.neogit").config,
             cmd = "Neogit",
         })
 
@@ -293,7 +293,7 @@ packer.startup({
             "@null_ls_repo@",
             commit = "@null_ls_rev@",
             requires = { "plenary.nvim" },
-            config = require("yonvim.plugins.null-ls").config,
+            config = require("yon.plugins.null-ls").config,
         })
 
         use({
@@ -307,7 +307,7 @@ packer.startup({
                     commit = "@lua_dev_rev@",
                 },
             },
-            config = require("yonvim.plugins.nvim-lspconfig").config,
+            config = require("yon.plugins.nvim-lspconfig").config,
         })
 
         use({
@@ -331,7 +331,7 @@ packer.startup({
                 },
                 "@ts_rainbow@",
             },
-            config = require("yonvim.plugins.nvim-treesitter").config,
+            config = require("yon.plugins.nvim-treesitter").config,
         })
 
         use({
@@ -342,7 +342,7 @@ packer.startup({
                 "plenary.nvim",
                 "telescope.nvim",
             },
-            config = require("yonvim.plugins.octo").config,
+            config = require("yon.plugins.octo").config,
             cmd = "Octo",
         })
 
