@@ -7,7 +7,7 @@
     let
       inherit (nixpkgs) lib;
       inherit (lib) genAttrs;
-      systems = [ "x86_64-linux" ];
+      systems = [ "x86_64-linux" "x86_64-darwin" ];
       pkgs = genAttrs systems (system: import nixpkgs { inherit system; });
     in
     {
