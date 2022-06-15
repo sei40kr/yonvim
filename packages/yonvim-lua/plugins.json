@@ -137,7 +137,7 @@
   },
   "lspconfig": {
     "repo": "neovim/nvim-lspconfig",
-    "rev": "4eac16e87f24ad26738e632446e29766e87141ae"
+    "rev": "v0.1.3"
   },
   "lua_dev": {
     "repo": "folke/lua-dev.nvim",
