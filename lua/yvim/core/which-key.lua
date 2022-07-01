@@ -24,7 +24,7 @@ function M.setup()
             ":",
         },
         ["<Space>"] = {
-            '<Cmd>lua require("yon.api.project").find_file_in_project()<CR>',
+            '<Cmd>lua require("yvim.api.project").find_file_in_project()<CR>',
             "Find file in project",
         },
         b = {
@@ -45,11 +45,11 @@ function M.setup()
             -- TODO Exclude special buffers
             n = { "<Cmd>BufferLineCycleNext<CR>", "Next buffer" },
             N = {
-                '<Cmd>lua require("yon.api.buffers").new_empty_buffer()<CR>',
+                '<Cmd>lua require("yvim.api.buffers").new_empty_buffer()<CR>',
                 "New empty buffer",
             },
             O = {
-                '<Cmd>lua require("yon.api.buffers").delete_other_buffers()<CR>',
+                '<Cmd>lua require("yvim.api.buffers").delete_other_buffers()<CR>',
                 "Kill other buffers",
             },
             p = { "<Cmd>BufferLineCyclePrev<CR>", "Previous buffer" },
@@ -60,7 +60,7 @@ function M.setup()
                 "Unload buffer",
             },
             Z = {
-                '<Cmd>lua require("yon.api.buffers").delete_unloaded_buffers()<CR>',
+                '<Cmd>lua require("yvim.api.buffers").delete_unloaded_buffers()<CR>',
                 "Kill unloaded buffers",
             },
         },
@@ -74,11 +74,11 @@ function M.setup()
         f = {
             name = "+file",
             f = {
-                '<Cmd>lua require("yon.api.file").find_file()<CR>',
+                '<Cmd>lua require("yvim.api.file").find_file()<CR>',
                 "Find file",
             },
             F = {
-                '<Cmd>lua require("yon.api.file").find_file_from_here()<CR>',
+                '<Cmd>lua require("yvim.api.file").find_file_from_here()<CR>',
                 "Find file from here",
             },
             r = {

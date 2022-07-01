@@ -33,14 +33,14 @@ local M = {
     {
         "@mini_repo@",
         tag = "@mini_rev@",
-        config = require("yon.plugins.mini").config,
+        config = require("yvim.plugins.mini").config,
     },
 
     {
         "@web_devicons_repo@",
         opt = true,
         commit = "@web_devicons_rev@",
-        config = require("yon.plugins.nvim-web-devicons").config,
+        config = require("yvim.plugins.nvim-web-devicons").config,
         module = "nvim-web-devicons",
     },
 
@@ -56,7 +56,7 @@ local M = {
         "@project_repo@",
         opt = true,
         commit = "@project_rev@",
-        config = require("yon.plugins.project_nvim").config,
+        config = require("yvim.plugins.project_nvim").config,
         module = "project_nvim",
     },
 
@@ -65,7 +65,7 @@ local M = {
         as = "which-key.nvim",
         commit = "@which_key_rev@",
         config = function()
-            require("yon.core.which-key").setup()
+            require("yvim.core.which-key").setup()
         end,
     },
 
@@ -114,7 +114,7 @@ local M = {
                 module = "lspkind",
             },
         },
-        config = require("yon.plugins.nvim-cmp").config,
+        config = require("yvim.plugins.nvim-cmp").config,
     },
 
     --
@@ -139,14 +139,14 @@ local M = {
     {
         "@autopairs_repo@",
         commit = "@autopairs_rev@",
-        config = require("yon.plugins.nvim-autopairs").config,
+        config = require("yvim.plugins.nvim-autopairs").config,
         event = "InsertEnter *",
     },
 
     {
         "@visual_multi_repo@",
         tag = "@visual_multi_rev@",
-        setup = require("yon.plugins.vim-visual-multi").setup,
+        setup = require("yvim.plugins.vim-visual-multi").setup,
         keys = {
             "<Plug>(VM-Find-Under)",
             "<Plug>(VM-Add-Cursor-Down)",
@@ -172,14 +172,14 @@ local M = {
     {
         "@bufferline_repo@",
         tag = "@bufferline_rev@",
-        config = require("yon.plugins.bufferline").config,
+        config = require("yvim.plugins.bufferline").config,
     },
 
     {
         "@gitsigns_repo@",
         tag = "@gitsigns_rev@",
         requires = "plenary.nvim",
-        config = require("yon.plugins.gitsigns").config,
+        config = require("yvim.plugins.gitsigns").config,
     },
 
     {
@@ -187,14 +187,14 @@ local M = {
         commit = "@lualine_rev@",
         after = "tokyonight.nvim",
         requires = "tokyonight.nvim",
-        config = require("yon.plugins.lualine").config,
+        config = require("yvim.plugins.lualine").config,
     },
 
     {
         "@nvim_tree_repo@",
         commit = "@nvim_tree_rev@",
         requires = "nvim-web-devicons",
-        config = require("yon.plugins.nvim-tree").config,
+        config = require("yvim.plugins.nvim-tree").config,
         cmd = { "NvimTreeFindFile", "NvimTreeToggle" },
     },
 
@@ -222,7 +222,7 @@ local M = {
                 commit = "@telescope_symbols_rev@",
             },
         },
-        config = require("yon.plugins.telescope_nvim").config,
+        config = require("yvim.plugins.telescope_nvim").config,
         cmd = "Telescope",
         module = "telescope",
     },
@@ -235,7 +235,7 @@ local M = {
             "telescope.nvim",
             "trouble.nvim",
         },
-        config = require("yon.plugins.todo-comments_nvim").config,
+        config = require("yvim.plugins.todo-comments_nvim").config,
         cmd = {
             "TodoQuickFix",
             "TodoLocList",
@@ -247,7 +247,7 @@ local M = {
     {
         "@toggleterm_repo@",
         commit = "@toggleterm_rev@",
-        config = require("yon.plugins.toggleterm_nvim").config,
+        config = require("yvim.plugins.toggleterm_nvim").config,
         cmd = "ToggleTerm",
         module = "toggleterm",
     },
@@ -256,7 +256,7 @@ local M = {
         "@trouble_repo@",
         commit = "@trouble_rev@",
         requires = "nvim-web-devicons",
-        config = require("yon.plugins.trouble_nvim").config,
+        config = require("yvim.plugins.trouble_nvim").config,
         cmd = { "Trouble", "TroubleToggle" },
     },
 
@@ -271,7 +271,7 @@ local M = {
             "nvim-web-devicons",
             "plenary.nvim",
         },
-        config = require("yon.plugins.diffview").config,
+        config = require("yvim.plugins.diffview").config,
         cmd = {
             "DiffviewOpen",
             "DiffviewToggleFiles",
@@ -284,7 +284,7 @@ local M = {
         "@neogit_repo@",
         commit = "@neogit_rev@",
         requires = { "diffview.nvim", "plenary.nvim" },
-        config = require("yon.plugins.neogit").config,
+        config = require("yvim.plugins.neogit").config,
         cmd = "Neogit",
     },
 
@@ -292,7 +292,7 @@ local M = {
         "@null_ls_repo@",
         commit = "@null_ls_rev@",
         requires = { "plenary.nvim" },
-        config = require("yon.plugins.null-ls").config,
+        config = require("yvim.plugins.null-ls").config,
     },
 
     {
@@ -306,7 +306,7 @@ local M = {
                 commit = "@lua_dev_rev@",
             },
         },
-        config = require("yon.plugins.nvim-lspconfig").config,
+        config = require("yvim.plugins.nvim-lspconfig").config,
     },
 
     {
@@ -330,7 +330,7 @@ local M = {
             },
             "@ts_rainbow@",
         },
-        config = require("yon.plugins.nvim-treesitter").config,
+        config = require("yvim.plugins.nvim-treesitter").config,
     },
 
     {
@@ -341,7 +341,7 @@ local M = {
             "plenary.nvim",
             "telescope.nvim",
         },
-        config = require("yon.plugins.octo").config,
+        config = require("yvim.plugins.octo").config,
         cmd = "Octo",
     },
 

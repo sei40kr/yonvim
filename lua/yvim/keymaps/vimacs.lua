@@ -58,7 +58,7 @@ vim.api.nvim_set_keymap("i", "<C-BS>", "<C-w>", { noremap = true })
 vim.api.nvim_set_keymap(
     "i",
     "<C-k>",
-    '<Cmd>lua require("yon.api.vimacs").kill_line()<CR>',
+    '<Cmd>lua require("yvim.api.vimacs").kill_line()<CR>',
     { noremap = true }
 )
 vim.api.nvim_set_keymap("c", "<C-k>", "<C-f>d$<C-c><End>", { noremap = true })
@@ -67,7 +67,7 @@ vim.api.nvim_set_keymap("c", "<C-k>", "<C-f>d$<C-c><End>", { noremap = true })
 vim.api.nvim_set_keymap(
     "i",
     "<M-d>",
-    '<Cmd>lua require("yon.api.vimacs").kill_word()<CR>',
+    '<Cmd>lua require("yvim.api.vimacs").kill_word()<CR>',
     { noremap = true }
 )
 
