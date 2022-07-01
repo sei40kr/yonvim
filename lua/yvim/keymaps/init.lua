@@ -44,4 +44,3 @@ wk.register({
 })
 
 require("yvim.keymaps.gs")
-require("yvim.keymaps.vimacs")

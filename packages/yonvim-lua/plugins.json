@@ -71,6 +71,10 @@
     "repo": "windwp/nvim-autopairs",
     "rev": "84cde3547e9a8b16db0bfe523e98e19b7be5148b"
   },
+  "nvimacs": {
+    "repo": "sei40kr/nvimacs",
+    "rev": "99f063cd25957cabc21e85f9d4d860d5be689a81"
+  },
   "visual_multi": {
     "repo": "mg979/vim-visual-multi",
     "rev": "v0.5.8"

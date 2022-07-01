@@ -144,6 +144,12 @@ local M = {
     },
 
     {
+        "@nvimacs_repo@",
+        commit = "@nvimacs_rev@",
+        event = { "InsertEnter *", "CmdlineEnter *" },
+    },
+
+    {
         "@visual_multi_repo@",
         tag = "@visual_multi_rev@",
         setup = require("yvim.plugins.vim-visual-multi").setup,
