@@ -24,7 +24,9 @@ function M.setup()
             ":",
         },
         ["<Space>"] = {
-            '<Cmd>lua require("yvim.api.project").find_file_in_project()<CR>',
+            function()
+                require("yvim.project").find_file_in_project()
+            end,
             "Find file in project",
         },
         b = {
@@ -198,7 +200,9 @@ function M.setup()
                 "Jump list",
             },
             p = {
-                '<Cmd>lua require("telescope.builtin").live_grep()<CR>',
+                function()
+                    require("yvim.project").search_in_project()
+                end,
                 "Search project",
             },
             r = {
