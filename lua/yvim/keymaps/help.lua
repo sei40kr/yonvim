@@ -6,7 +6,7 @@ function M.setup()
             name = "+help",
             a = {
                 function() require("telescope.builtin").autocommands() end,
-                "autocommands",
+                "autocmds",
             },
             f = {
                 function() require("telescope.builtin").filetypes() end,
@@ -14,7 +14,7 @@ function M.setup()
             },
             h = {
                 function() require("telescope.builtin").help_tags() end,
-                "help tags",
+                "help",
             },
             H = {
                 function() require("telescope.builtin").highlights() end,
@@ -26,7 +26,7 @@ function M.setup()
             },
             m = {
                 function() require("telescope.builtin").man_pages() end,
-                "man pages",
+                "manpages",
             },
             o = {
                 function() require("telescope.builtin").vim_options() end,
