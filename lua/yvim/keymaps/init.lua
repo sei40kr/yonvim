@@ -42,6 +42,7 @@ function M.setup()
             '<Cmd>lua require("telescope.builtin").commands()<CR>',
             ":",
         },
+        ["/"] = { "<Leader>sp", "Search project", noremap = false },
     })
 
     vim.keymap.set("n", "<Esc>", "<Cmd>nohls<CR>", {})
