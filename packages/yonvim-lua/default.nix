@@ -49,7 +49,7 @@ stdenv.mkDerivation {
   src = ../..;
 
   patchPhase = ''
-    substituteInPlace lua/yvim/plugins.lua \
+    substituteInPlace lua/yvim/plugins/init.lua \
       --subst-var-by packer     ${vimPlugins.packer-nvim.rtp} \
       --subst-var-by treesitter ${nvim-treesitter.rtp} \
       --subst-var-by ts_rainbow ${vimPlugins.nvim-ts-rainbow.rtp} \

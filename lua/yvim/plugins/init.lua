@@ -1,4 +1,6 @@
-local M = {
+local M = {}
+
+local plugins = {
     {
         "@packer@",
         as = "packer.nvim",
@@ -40,7 +42,7 @@ local M = {
         "@web_devicons_repo@",
         opt = true,
         commit = "@web_devicons_rev@",
-        config = require("yvim.plugins.nvim-web-devicons").config,
+        config = require("yvim.plugins.web-devicons").config,
         module = "nvim-web-devicons",
     },
 
@@ -56,7 +58,7 @@ local M = {
         "@project_repo@",
         opt = true,
         commit = "@project_rev@",
-        config = require("yvim.plugins.project_nvim").config,
+        config = require("yvim.plugins.project").config,
         module = "project_nvim",
     },
 
@@ -65,7 +67,7 @@ local M = {
         as = "which-key.nvim",
         commit = "@which_key_rev@",
         config = function()
-            require("yvim.core.which-key").setup()
+            require("yvim.plugins.which-key").config()
         end,
     },
 
@@ -114,7 +116,9 @@ local M = {
                 module = "lspkind",
             },
         },
-        config = require("yvim.plugins.nvim-cmp").config,
+        config = function()
+            require("yvim.plugins.cmp").config()
+        end,
     },
 
     --
@@ -124,7 +128,7 @@ local M = {
         "@hop_repo@",
         tag = "@hop_rev@",
         config = function()
-            require("hop").setup()
+            require("yvim.plugins.hop").config()
         end,
         module = "hop",
     },
@@ -139,7 +143,9 @@ local M = {
     {
         "@autopairs_repo@",
         commit = "@autopairs_rev@",
-        config = require("yvim.plugins.nvim-autopairs").config,
+        config = function()
+            require("yvim.plugins.autopairs").config()
+        end,
         event = "InsertEnter *",
     },
 
@@ -152,7 +158,9 @@ local M = {
     {
         "@visual_multi_repo@",
         tag = "@visual_multi_rev@",
-        setup = require("yvim.plugins.vim-visual-multi").setup,
+        setup = function()
+            require("yvim.plugins.vim-visual-multi").config()
+        end,
         keys = {
             "<Plug>(VM-Find-Under)",
             "<Plug>(VM-Add-Cursor-Down)",
@@ -178,14 +186,18 @@ local M = {
     {
         "@bufferline_repo@",
         tag = "@bufferline_rev@",
-        config = require("yvim.plugins.bufferline").config,
+        config = function()
+            require("yvim.plugins.bufferline").config()
+        end,
     },
 
     {
         "@gitsigns_repo@",
         tag = "@gitsigns_rev@",
         requires = "plenary.nvim",
-        config = require("yvim.plugins.gitsigns").config,
+        config = function()
+            require("yvim.plugins.gitsigns").config()
+        end,
     },
 
     {
@@ -193,14 +205,18 @@ local M = {
         commit = "@lualine_rev@",
         after = "tokyonight.nvim",
         requires = "tokyonight.nvim",
-        config = require("yvim.plugins.lualine").config,
+        config = function()
+            require("yvim.plugins.lualine").config()
+        end,
     },
 
     {
         "@nvim_tree_repo@",
         commit = "@nvim_tree_rev@",
         requires = "nvim-web-devicons",
-        config = require("yvim.plugins.nvim-tree").config,
+        config = function()
+            require("yvim.plugins.nvim-tree").config()
+        end,
         cmd = { "NvimTreeFindFile", "NvimTreeToggle" },
     },
 
@@ -228,7 +244,9 @@ local M = {
                 commit = "@telescope_symbols_rev@",
             },
         },
-        config = require("yvim.plugins.telescope_nvim").config,
+        config = function()
+            require("yvim.plugins.telescope").config()
+        end,
         cmd = "Telescope",
         module = "telescope",
     },
@@ -241,7 +259,9 @@ local M = {
             "telescope.nvim",
             "trouble.nvim",
         },
-        config = require("yvim.plugins.todo-comments_nvim").config,
+        config = function()
+            require("yvim.plugins.todo-comments").config()
+        end,
         cmd = {
             "TodoQuickFix",
             "TodoLocList",
@@ -253,7 +273,9 @@ local M = {
     {
         "@toggleterm_repo@",
         commit = "@toggleterm_rev@",
-        config = require("yvim.plugins.toggleterm_nvim").config,
+        config = function()
+            require("yvim.plugins.toggleterm").config()
+        end,
         cmd = "ToggleTerm",
         module = "toggleterm",
     },
@@ -262,7 +284,9 @@ local M = {
         "@trouble_repo@",
         commit = "@trouble_rev@",
         requires = "nvim-web-devicons",
-        config = require("yvim.plugins.trouble_nvim").config,
+        config = function()
+            require("yvim.plugins.trouble").config()
+        end,
         cmd = { "Trouble", "TroubleToggle" },
     },
 
@@ -277,7 +301,9 @@ local M = {
             "nvim-web-devicons",
             "plenary.nvim",
         },
-        config = require("yvim.plugins.diffview").config,
+        config = function()
+            require("yvim.plugins.diffview").config()
+        end,
         cmd = {
             "DiffviewOpen",
             "DiffviewToggleFiles",
@@ -290,7 +316,9 @@ local M = {
         "@neogit_repo@",
         commit = "@neogit_rev@",
         requires = { "diffview.nvim", "plenary.nvim" },
-        config = require("yvim.plugins.neogit").config,
+        config = function()
+            require("yvim.plugins.neogit").config()
+        end,
         cmd = "Neogit",
     },
 
@@ -298,7 +326,9 @@ local M = {
         "@null_ls_repo@",
         commit = "@null_ls_rev@",
         requires = { "plenary.nvim" },
-        config = require("yvim.plugins.null-ls").config,
+        config = function()
+            require("yvim.plugins.null-ls").config()
+        end,
     },
 
     {
@@ -312,7 +342,9 @@ local M = {
                 commit = "@lua_dev_rev@",
             },
         },
-        config = require("yvim.plugins.nvim-lspconfig").config,
+        config = function()
+            require("yvim.plugins.lspconfig").config()
+        end,
     },
 
     {
@@ -336,7 +368,9 @@ local M = {
             },
             "@ts_rainbow@",
         },
-        config = require("yvim.plugins.nvim-treesitter").config,
+        config = function()
+            require("yvim.plugins.treesitter").config()
+        end,
     },
 
     {
@@ -347,7 +381,9 @@ local M = {
             "plenary.nvim",
             "telescope.nvim",
         },
-        config = require("yvim.plugins.octo").config,
+        config = function()
+            require("yvim.plugins.octo").config()
+        end,
         cmd = "Octo",
     },
 
@@ -363,5 +399,15 @@ local M = {
         cmd = { "OpenGithubFile", "OpenGithubProject" },
     },
 }
+
+function M.load()
+    local packer = require("packer")
+    packer.reset()
+    packer.startup(function(use)
+        for _, plugin in ipairs(plugins) do
+            use(plugin)
+        end
+    end)
+end
 
 return M

@@ -49,6 +49,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 require("yvim.config"):load()
-require("yvim.plugin-loader").load(require("yvim.plugins"))
+
+require("yvim.plugins").load()
 
 require("yvim.keymaps")
