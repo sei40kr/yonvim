@@ -36,8 +36,8 @@ function M.setup()
                 end,
                 "Kill other buffers",
             },
-            p = { "<Cmd>BufferLineCyclePrev<CR>", "Previous buffer" },
-            n = { "<Cmd>BufferLineCycleNext<CR>", "Next buffer" },
+            p = { "[b", "Previous buffer", noremap = false },
+            n = { "]b", "Next buffer", noremap = false },
             s = { "<Cmd>w<CR>", "Save buffer" },
             S = { "<Cmd>wa<CR>", "Save all buffers" },
             z = {
@@ -56,8 +56,8 @@ function M.setup()
     })
 
     keymap.set("n", {
-        ["[b"] = { "<Cmd>BufferLineCyclePrev<CR>", "Previous buffer" },
-        ["]b"] = { "<Cmd>BufferLineCycleNext<CR>", "Next buffer" },
+        ["[b"] = { "<Cmd>bp<CR>", "Previous buffer" },
+        ["]b"] = { "<Cmd>bn<CR>", "Next buffer" },
     })
 end
 
