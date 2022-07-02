@@ -7,12 +7,14 @@ function M.config()
         insert_mappings = false,
     })
 
-    vim.cmd([[
-augroup toggleterm
-autocmd!
-autocmd FileType toggleterm nnoremap <buffer> q <Cmd>ToggleTerm<CR>
-augroup END
-]])
+    local group = vim.api.nvim_create_augroup("toggleterm", {})
+    vim.api.nvim_create_autocmd("FileType", {
+        group = group,
+        pattern = "toggleterm",
+        callback = function()
+            vim.keymap.set("n", "q", "<Cmd>ToggleTerm<CR>", { buffer = true })
+        end,
+    })
 end
 
 return M
