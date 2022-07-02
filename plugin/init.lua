@@ -52,4 +52,4 @@ require("yvim.config"):load()
 
 require("yvim.plugins").load()
 
-require("yvim.keymaps")
+require("yvim.keymaps").setup()

@@ -42,31 +42,6 @@ function M.config()
             { { name = "cmdline" } }
         ),
     })
-
-    vim.api.nvim_set_keymap(
-        "i",
-        "<C-x><C-f>",
-        '<Cmd>lua require("yvim.api.completion").complete_path()<CR>',
-        { noremap = true }
-    )
-    vim.api.nvim_set_keymap(
-        "i",
-        "<C-x><C-k>",
-        '<Cmd>lua require("yvim.api.completion").complete_buffer()<CR>',
-        { noremap = true }
-    )
-    vim.api.nvim_set_keymap(
-        "i",
-        "<C-x><C-o>",
-        '<Cmd>lua require("yvim.api.completion").complete_omni()<CR>',
-        { noremap = true }
-    )
-    vim.api.nvim_set_keymap(
-        "i",
-        "<C-x>s",
-        '<Cmd>lua require("yvim.api.completion").complete_spell()<CR>',
-        { noremap = true }
-    )
 end
 
 return M

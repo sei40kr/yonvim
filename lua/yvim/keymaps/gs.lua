@@ -1,54 +1,55 @@
-vim.api.nvim_set_keymap(
-    "n",
-    "gs+",
-    '<Cmd>lua require("hop").hint_lines_skip_whitespace({ direction = require("hop.hint").HintDirection.AFTER_CURSOR })<CR>',
-    { noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "gs-",
-    '<Cmd>lua require("hop").hint_lines_skip_whitespace({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR })<CR>',
-    { noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "gsb",
-    '<Cmd>lua require("hop").hint_words({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR })<CR>',
-    { noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "gse",
-    '<Cmd>lua require("hop").hint_words({ direction = require("hop.hint").HintDirection.AFTER_CURSOR })<CR>',
-    { noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "gsf",
-    '<Cmd>lua require("hop").hint_char1({ direction = require("hop.hint").HintDirection.AFTER_CURSOR })<CR>',
-    { noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "gsF",
-    '<Cmd>lua require("hop").hint_char1({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR })<CR>',
-    { noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "gsj",
-    '<Cmd>lua require("hop").hint_lines({ direction = require("hop.hint").HintDirection.AFTER_CURSOR })<CR>',
-    { noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "gsk",
-    '<Cmd>lua require("hop").hint_lines({ direction = require("hop.hint").HintDirection.BEFORE_CURSOR })<CR>',
-    { noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "gss",
-    '<Cmd>lua require("hop").hint_char2()<CR>',
-    { noremap = true }
-)
+local M = {}
+
+function M.setup()
+    require("yvim.utils.keymap").set("n", {
+        gs = {
+            name = "+jump",
+        },
+    })
+
+    vim.keymap.set("n", "gs+", function()
+        require("hop").hint_lines_skip_whitespace({
+            direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+        })
+    end)
+    vim.keymap.set("n", "gs-", function()
+        require("hop").hint_lines_skip_whitespace({
+            direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+        })
+    end)
+    vim.keymap.set("n", "gsb", function()
+        require("hop").hint_words({
+            direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+        })
+    end)
+    vim.keymap.set("n", "gse", function()
+        require("hop").hint_words({
+            direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+        })
+    end)
+    vim.keymap.set("n", "gsf", function()
+        require("hop").hint_char1({
+            direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+        })
+    end)
+    vim.keymap.set("n", "gsF", function()
+        require("hop").hint_char1({
+            direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+        })
+    end)
+    vim.keymap.set("n", "gsj", function()
+        require("hop").hint_lines({
+            direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+        })
+    end)
+    vim.keymap.set("n", "gsk", function()
+        require("hop").hint_lines({
+            direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+        })
+    end)
+    vim.keymap.set("n", "gss", function()
+        require("hop").hint_char2()
+    end)
+end
+
+return M

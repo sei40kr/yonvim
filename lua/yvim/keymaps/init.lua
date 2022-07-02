@@ -1,46 +1,56 @@
-local wk = require("which-key")
+local M = {}
 
+function M.setup()
+    -- +code
+    require("yvim.keymaps.code").setup()
+    -- +buffer
+    require("yvim.keymaps.buffer").setup()
+    -- +code
+    require("yvim.keymaps.code").setup()
+    -- +file
+    require("yvim.keymaps.file").setup()
+    -- +git
+    require("yvim.keymaps.git").setup()
+    -- +help
+    require("yvim.keymaps.help").setup()
+    -- +insert
+    require("yvim.keymaps.insert").setup()
+    -- +open
+    require("yvim.keymaps.open").setup()
+    -- +project
+    require("yvim.keymaps.project").setup()
+    -- +quit
+    require("yvim.keymaps.quit").setup()
+    -- +search
+    require("yvim.keymaps.search").setup()
+    -- +toggle
+    require("yvim.keymaps.toggle").setup()
+    -- +window
+    require("yvim.keymaps.window").setup()
 
-vim.api.nvim_set_keymap("n", "<Esc>", "<Cmd>nohls<CR>", {})
--- Disable Ex mode
-vim.api.nvim_set_keymap("n", "Q", "<Nop>", { noremap = true })
+    require("yvim.keymaps.completion").setup()
+    require("yvim.keymaps.gs").setup()
 
-vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true })
+    local keymap = require("yvim.utils.keymap")
 
-vim.api.nvim_set_keymap(
-    "i",
-    "<Tab>",
-    '<Cmd>lua require("yvim.api.completion").tab_complete()<CR>',
-    { noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "i",
-    "<S-Tab>",
-    '<Cmd>lua require("yvim.api.completion").s_tab_complete()<CR>',
-    { noremap = true }
-)
-
-vim.api.nvim_set_keymap("t", "jk", "<C-\\><C-n>", { noremap = true })
-
-wk.register({
-    ["["] = {
-        ["<Space>"] = {
-            '<Cmd>lua require("yvim.api.insert").insert_newline_above()<CR>',
-            "Insert newline above",
+    keymap.set_leader("n", {
+        ["'"] = {
+            '<Cmd>lua require("telescope.builtin").resume()<CR>',
+            "Resume last search",
         },
-        b = { "<Cmd>BufferLineCyclePrev<CR>", "Previous buffer" },
-        c = "Previous comment",
-        d = { "<Cmd>Gitsigns prev_hunk<CR>", "Jump to previous hunk" },
-    },
-    ["]"] = {
-        ["<Space>"] = {
-            '<Cmd>lua require("yvim.api.insert").insert_newline_below()<CR>',
-            "Insert newline below",
+        [":"] = {
+            '<Cmd>lua require("telescope.builtin").commands()<CR>',
+            ":",
         },
-        b = { "<Cmd>BufferLineCycleNext<CR>", "Next buffer" },
-        c = "Next comment",
-        d = { "<Cmd>Gitsigns next_hunk<CR>", "Jump to next hunk" },
-    },
-})
+    })
 
-require("yvim.keymaps.gs")
+    vim.keymap.set("n", "<Esc>", "<Cmd>nohls<CR>", {})
+
+    -- Disable Ex mode
+    vim.keymap.set("n", "Q", "<Nop>", { noremap = true })
+
+    vim.keymap.set("i", "jk", "<Esc>", { noremap = true })
+    vim.keymap.set("t", "jk", "<C-\\><C-n>", { noremap = true })
+end
+
+return M
