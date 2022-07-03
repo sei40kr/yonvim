@@ -28,4 +28,13 @@ function M.search_in_project()
     })
 end
 
+function M.toggle_project_sidebar()
+    require("nvim-tree").toggle(false, false, get_project_root())
+end
+
+function M.find_file_in_project_sidebar()
+    local bufnr = vim.api.nvim_get_current_buf()
+    require("nvim-tree").find_file(true, bufnr)
+end
+
 return M

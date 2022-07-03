@@ -217,7 +217,7 @@ local plugins = {
         config = function()
             require("yvim.plugins.nvim-tree").config()
         end,
-        cmd = { "NvimTreeFindFile", "NvimTreeToggle" },
+        module = "nvim-tree",
     },
 
     {
