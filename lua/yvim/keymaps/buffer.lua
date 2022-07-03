@@ -59,6 +59,11 @@ function M.setup()
         ["[b"] = { "<Cmd>bp<CR>", "Previous buffer" },
         ["]b"] = { "<Cmd>bn<CR>", "Next buffer" },
     })
+
+    vim.keymap.set("n", "<M-Left>", "<Cmd>BufferLineCyclePrev<CR>")
+    vim.keymap.set("n", "<M-Right>", "<Cmd>BufferLineCycleNext<CR>")
+    vim.keymap.set("n", "<M-S-Left>", "<Cmd>BufferLineMovePrev<CR>")
+    vim.keymap.set("n", "<M-S-Right>", "<Cmd>BufferLineMoveNext<CR>")
 end
 
 return M
