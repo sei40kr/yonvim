@@ -5,7 +5,7 @@ function M.config()
 
     nvim_tree.setup({
         renderer = {
-            highlight_git = false,
+            highlight_git = true,
             icons = {
                 glyphs = {
                     default = " ",
