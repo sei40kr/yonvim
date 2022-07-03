@@ -26,8 +26,6 @@ local plugins = {
         setup = function()
             vim.g.tokyonight_style = "night"
             vim.g.tokyonight_italic_keywords = false
-            vim.g.tokyonight_transparent = vim.g.GuiLoaded ~= nil
-            vim.g.tokyonight_transparent_sidebar = vim.g.GuiLoaded ~= nil
             vim.g.tokyonight_lualine_bold = true
         end,
     },
