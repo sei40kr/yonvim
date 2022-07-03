@@ -14,6 +14,10 @@ function M.setup()
     })
 
     keymap.set("n", {
+        g = {
+            d = "Jump to definition",
+            D = "Jump to references",
+        },
         ["[c"] = "Previous comment",
         ["]c"] = "Next comment",
     })
