@@ -29,7 +29,6 @@ function M.setup()
     require("yvim.keymaps.window").setup()
 
     require("yvim.keymaps.completion").setup()
-    require("yvim.keymaps.gs").setup()
 
     local keymap = require("yvim.utils.keymap")
 
@@ -43,6 +42,12 @@ function M.setup()
             ":",
         },
         ["/"] = { "<Leader>sp", "Search project", noremap = false },
+        ["j"] = {
+            function()
+                require("hop").hint_char2()
+            end,
+            "Jump to",
+        },
     })
 
     vim.keymap.set("n", "<Esc>", "<Cmd>nohls<CR>", {})
