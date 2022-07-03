@@ -6,13 +6,13 @@ function M.setup()
             name = "+file",
             f = {
                 function()
-                    require("yvim.api.file").find_file()
+                    require("yvim.file").find_file()
                 end,
                 "Find file",
             },
             F = {
                 function()
-                    require("yvim.api.file").find_file_from_here()
+                    require("yvim.file").find_file_from_here()
                 end,
                 "Find file from here",
             },

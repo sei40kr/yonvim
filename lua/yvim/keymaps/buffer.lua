@@ -26,13 +26,13 @@ function M.setup()
             },
             N = {
                 function()
-                    require("yvim.api.buffers").new_empty_buffer()
+                    require("yvim.buffer").new_empty_buffer()
                 end,
                 "New empty buffer",
             },
             O = {
                 function()
-                    require("yvim.api.buffers").delete_other_buffers()
+                    require("yvim.buffer").delete_other_buffers()
                 end,
                 "Kill other buffers",
             },
@@ -48,7 +48,7 @@ function M.setup()
             },
             Z = {
                 function()
-                    require("yvim.api.buffers").delete_unloaded_buffers()
+                    require("yvim.buffer").delete_unloaded_buffers()
                 end,
                 "Kill unloaded buffers",
             },

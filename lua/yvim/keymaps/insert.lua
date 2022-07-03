@@ -29,13 +29,13 @@ function M.setup()
     keymap.set("n", {
         ["[<Space>"] = {
             function()
-                require("yvim.api.insert").insert_newline_above()
+                require("yvim.insert").insert_newline_above()
             end,
             "Insert newline above",
         },
         ["]<Space>"] = {
             function()
-                require("yvim.api.insert").insert_newline_below()
+                require("yvim.insert").insert_newline_below()
             end,
             "Insert newline below",
         },
