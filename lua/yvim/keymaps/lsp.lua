@@ -18,11 +18,11 @@ function M.setup(client, buffer)
             },
             x = {
                 "<Cmd>Trouble document_diagnostics<CR>",
-                "List errors in current buffer",
+                "List errors in buffer",
             },
             X = {
                 "<Cmd>Trouble workspace_diagnostics<CR>",
-                "List errors in current workspace",
+                "List errors in workspace",
             },
         },
     })
@@ -117,13 +117,13 @@ function M.setup(client, buffer)
                 function()
                     require("telescope.builtin").lsp_workspace_symbols()
                 end,
-                "Jump to symbol in current workspace",
+                "Jump to symbol in workspace",
             },
             cJ = {
                 function()
                     require("telescope.builtin").lsp_dynamic_workspace_symbols()
                 end,
-                "Jump to symbol in all workspace",
+                "Jump to symbol in all workspaces",
             },
         })
     end
