@@ -368,6 +368,9 @@ local plugins = {
             },
             "@ts_rainbow@",
         },
+        setup = function()
+            require("yvim.plugins.treesitter").setup()
+        end,
         config = function()
             require("yvim.plugins.treesitter").config()
         end,

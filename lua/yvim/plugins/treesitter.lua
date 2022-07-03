@@ -1,5 +1,9 @@
 local M = {}
 
+function M.setup()
+    require("yvim.utils.keymap").set_leader("n", { v = "Expand region" })
+end
+
 function M.config()
     require("nvim-treesitter.configs").setup({
         highlight = { enable = true },
@@ -7,10 +11,10 @@ function M.config()
         incremental_selection = {
             enable = true,
             keymaps = {
-                init_selection = "C-=",
-                node_incremental = "C-=",
+                init_selection = "<Leader>v",
+                node_incremental = "v",
                 scope_incremental = "<Nop>",
-                node_decremental = "C--",
+                node_decremental = "V",
             },
         },
         refactor = {
