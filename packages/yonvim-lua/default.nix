@@ -1,4 +1,4 @@
-{ lib, stdenv, vimPlugins }:
+{ lib, vimPlugins, vimUtils }:
 
 let
   inherit (lib) escapeShellArgs flatten mapAttrsToList licenses platforms;
@@ -58,7 +58,7 @@ let
       tree-sitter-zig
     ]);
 in
-stdenv.mkDerivation {
+vimUtils.buildVimPluginFrom2Nix {
   pname = "yonvim.lua";
   version = "1.0.0";
 
@@ -70,16 +70,6 @@ stdenv.mkDerivation {
       --subst-var-by treesitter ${nvim-treesitter.rtp} \
       --subst-var-by ts_rainbow ${vimPlugins.nvim-ts-rainbow.rtp} \
       ${escapeShellArgs substitutionArgs}
-  '';
-
-  dontBuild = true;
-
-  installPhase = ''
-    mkdir -p $out/pack/site/start/yonvim.lua
-    cp -r lua plugin $out/pack/site/start/yonvim.lua
-
-    mkdir -p $out/pack/site/opt
-    ln -s ${vimPlugins.packer-nvim.rtp} $out/pack/site/opt/packer.nvim
   '';
 
   meta = {

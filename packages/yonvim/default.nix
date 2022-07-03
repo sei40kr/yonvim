@@ -1,7 +1,11 @@
-{ neovim, yonvim-lua }:
+{ neovim, vimPlugins, yonvim-lua }:
 
 neovim.override {
-  configure.customRC = ''
-    lua vim.opt.packpath:append("${yonvim-lua}")
-  '';
+  configure.packages.myVimPackage = {
+    start = [
+      yonvim-lua
+      vimPlugins.packer-nvim
+      vimPlugins.which-key-nvim
+    ];
+  };
 }
