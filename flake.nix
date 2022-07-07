@@ -25,8 +25,10 @@
           inherit (pkgs.${system}) mkShell;
         in
         mkShell {
-          buildInputs = [ self.packages.${system}.yonvim ];
-          shellHook = "nvim";
+          buildInputs = [
+            self.packages.${system}.yonvim
+            self.packages.${system}.yonvim-qt
+          ];
         });
     };
 }
