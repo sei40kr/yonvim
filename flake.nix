@@ -16,8 +16,9 @@
           pkgs' = pkgs.${system};
           yonvim-lua = pkgs'.callPackage ./packages/yonvim-lua { };
           yonvim = pkgs'.callPackage ./packages/yonvim { inherit yonvim-lua; };
+          yonvim-qt = pkgs'.callPackage ./packages/yonvim-qt { inherit yonvim; };
         in
-        { inherit yonvim-lua yonvim; });
+        { inherit yonvim-lua yonvim yonvim-qt; });
 
       devShell = genAttrs systems (system:
         let
