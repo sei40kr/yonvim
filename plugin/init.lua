@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
-require("yvim.config"):load()
+require("yvim.config").load()
 
 require("yvim.plugins").load()
 
