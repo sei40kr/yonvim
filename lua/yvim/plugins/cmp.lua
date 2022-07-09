@@ -43,6 +43,7 @@ function M.config()
             { name = "copilot" },
             { name = "luasnip" },
             { name = "nvim_lsp", group_index = 1 },
+            { name = "nvim_lsp_signature_help", group_index = 1 },
             { name = "omni", group_index = 2 },
             { name = "path", group_index = 2 },
             { name = "buffer", group_index = 2 },

@@ -78,6 +78,11 @@ local plugins = {
         commit = "@cmp_rev@",
         requires = {
             {
+                "@cmp_nvim_lsp_signature_help_repo@",
+                after = "nvim-cmp",
+                commit = "@cmp_nvim_lsp_signature_help_rev@",
+            },
+            {
                 "@lspkind_repo@",
                 commit = "@lspkind_rev@",
                 module = "lspkind",
