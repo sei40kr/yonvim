@@ -35,6 +35,10 @@
     "repo": "onsails/lspkind.nvim",
     "rev": "57e5b5dfbe991151b07d272a06e365a77cc3d0e7"
   },
+  "cmp_buffer": {
+    "repo": "hrsh7th/cmp-buffer",
+    "rev": "62fc67a2b0205136bc3e312664624ba2ab4a9323"
+  },
   "cmp_cmdline": {
     "repo": "hrsh7th/cmp-cmdline",
     "rev": "c36ca4bc1dedb12b4ba6546b96c43896fd6e7252"

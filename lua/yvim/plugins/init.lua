@@ -84,6 +84,12 @@ local plugins = {
             },
             -- nvim-cmp sources
             {
+                "@cmp_buffer_repo@",
+                after = "nvim-cmp",
+                opt = true,
+                commit = "@cmp_buffer_rev@",
+            },
+            {
                 "@cmp_cmdline_repo@",
                 after = "nvim-cmp",
                 opt = true,
