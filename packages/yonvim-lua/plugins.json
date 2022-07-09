@@ -31,17 +31,25 @@
     "repo": "hrsh7th/nvim-cmp",
     "rev": "15c7bf7c0dfb7c75eb526c53f9574633c13dc22d"
   },
+  "lspkind": {
+    "repo": "onsails/lspkind.nvim",
+    "rev": "57e5b5dfbe991151b07d272a06e365a77cc3d0e7"
+  },
   "cmp_cmdline": {
     "repo": "hrsh7th/cmp-cmdline",
     "rev": "c36ca4bc1dedb12b4ba6546b96c43896fd6e7252"
   },
-  "cmp_nvim_lsp": {
-    "repo": "hrsh7th/cmp-nvim-lsp",
-    "rev": "affe808a5c56b71630f17aa7c38e15c59fd648a8"
+  "copilot_cmp": {
+    "repo": "zbirenbaum/copilot-cmp",
+    "rev": "bcf4a3b8f2b7bb61a2d736adbb315d081444549f"
   },
   "cmp_luasnip": {
     "repo": "saadparwaiz1/cmp_luasnip",
     "rev": "a9de941bcbda508d0a45d28ae366bb3f08db2e36"
+  },
+  "cmp_nvim_lsp": {
+    "repo": "hrsh7th/cmp-nvim-lsp",
+    "rev": "affe808a5c56b71630f17aa7c38e15c59fd648a8"
   },
   "cmp_omni": {
     "repo": "hrsh7th/cmp-omni",
@@ -55,9 +63,13 @@
     "repo": "f3fora/cmp-spell",
     "rev": "5602f1a0de7831f8dad5b0c6db45328fbd539971"
   },
-  "lspkind": {
-    "repo": "onsails/lspkind.nvim",
-    "rev": "57e5b5dfbe991151b07d272a06e365a77cc3d0e7"
+  "copilot_vim": {
+    "repo": "github/copilot.vim",
+    "rev": "c2e75a3a7519c126c6fdb35984976df9ae13f564"
+  },
+  "copilot_lua": {
+    "repo": "zbirenbaum/copilot.lua",
+    "rev": "2bd8d80e8eaf60d5237e02784081959ae13e90b7"
   },
   "hop": {
     "repo": "phaazon/hop.nvim",

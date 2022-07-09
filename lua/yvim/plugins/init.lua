@@ -78,44 +78,74 @@ local plugins = {
         commit = "@cmp_rev@",
         requires = {
             {
+                "@lspkind_repo@",
+                commit = "@lspkind_rev@",
+                module = "lspkind",
+            },
+            -- nvim-cmp sources
+            {
                 "@cmp_cmdline_repo@",
-                commit = "@cmp_cmdline_rev@",
                 after = "nvim-cmp",
+                opt = true,
+                commit = "@cmp_cmdline_rev@",
+            },
+            {
+                "@copilot_cmp_repo@",
+                as = "copilot-cmp",
+                opt = true,
+                commit = "@copilot_cmp_rev@",
+                requires = "copilot.lua",
+                module = "copilot_cmp",
+            },
+            {
+                "@cmp_luasnip_repo@",
+                after = "nvim-cmp",
+                opt = true,
+                commit = "@cmp_luasnip_rev@",
             },
             {
                 "@cmp_nvim_lsp_repo@",
                 as = "cmp-nvim-lsp",
+                after = "nvim-cmp",
+                opt = true,
                 commit = "@cmp_nvim_lsp_rev@",
-                after = "nvim-cmp",
-            },
-            {
-                "@cmp_luasnip_repo@",
-                commit = "@cmp_luasnip_rev@",
-                after = "nvim-cmp",
             },
             {
                 "@cmp_omni_repo@",
                 commit = "@cmp_omni_rev@",
                 after = "nvim-cmp",
+                opt = true,
             },
             {
                 "@cmp_path_repo@",
-                commit = "@cmp_path_rev@",
                 after = "nvim-cmp",
+                opt = true,
+                commit = "@cmp_path_rev@",
             },
             {
                 "@cmp_spell_repo@",
-                commit = "@cmp_spell_rev@",
                 after = "nvim-cmp",
-            },
-            {
-                "@lspkind_repo@",
-                commit = "@lspkind_rev@",
-                module = "lspkind",
+                opt = true,
+                commit = "@cmp_spell_rev@",
             },
         },
         config = function()
             require("yvim.plugins.cmp").config()
+        end,
+        event = { "InsertEnter", "CmdlineEnter" },
+    },
+    {
+        "@copilot_vim_repo@",
+        commit = "@copilot_vim_rev@",
+        cmd = "Copilot",
+    },
+    {
+        "@copilot_lua_repo@",
+        commit = "@copilot_lua_rev@",
+        config = function()
+            vim.schedule(function()
+                require("copilot").setup()
+            end)
         end,
     },
 
