@@ -119,6 +119,10 @@
     "repo": "nvim-telescope/telescope.nvim",
     "rev": "nvim-0.6"
   },
+  "telescope_fzy_native": {
+    "repo": "nvim-telescope/telescope-fzy-native.nvim",
+    "rev": "7b3d2528102f858036627a68821ccf5fc1d78ce4"
+  },
   "telescope_file_browser": {
     "repo": "nvim-telescope/telescope-file-browser.nvim",
     "rev": "c6f5104ff309649ebbaec283bbd1ab54511dd109"

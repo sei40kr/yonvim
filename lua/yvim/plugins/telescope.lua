@@ -1,9 +1,10 @@
 local M = {}
 
 function M.config()
+    local telescope = require("telescope")
     local actions = require("telescope.actions")
 
-    require("telescope").setup({
+    telescope.setup({
         defaults = {
             mappings = {
                 i = {
@@ -21,6 +22,7 @@ function M.config()
             },
         },
     })
+    telescope.load_extension("fzy_native")
 end
 
 return M

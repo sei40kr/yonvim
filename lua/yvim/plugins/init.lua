@@ -267,6 +267,10 @@ local plugins = {
             "nvim-web-devicons",
             "plenary.nvim",
             {
+                "@telescope_fzy_native_repo@",
+                commit = "@telescope_fzy_native_rev@",
+            },
+            {
                 "@telescope_file_browser_repo@",
                 commit = "@telescope_file_browser_rev@",
             },
