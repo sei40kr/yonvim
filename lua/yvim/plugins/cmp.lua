@@ -4,6 +4,9 @@ function M.config()
     local cmp = require("cmp")
 
     cmp.setup({
+        window = {
+            documentation = cmp.config.window.bordered(),
+        },
         mapping = cmp.mapping.preset.insert({
             ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item()),
             ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item()),
