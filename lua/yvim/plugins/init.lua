@@ -308,12 +308,6 @@ local plugins = {
         config = function()
             require("todo-comments").setup()
         end,
-        cmd = {
-            "TodoQuickFix",
-            "TodoLocList",
-            "TodoTrouble",
-            "TodoTelescope",
-        },
     },
 
     {
