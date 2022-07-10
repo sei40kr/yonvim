@@ -1,4 +1,8 @@
 return {
-  leader = " ",
-  localleader = ",",
+    leader = " ",
+    localleader = ",",
+
+    lsp = {
+        servers = {},
+    },
 }

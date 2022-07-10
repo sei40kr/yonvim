@@ -386,7 +386,7 @@ local plugins = {
             },
         },
         config = function()
-            require("yvim.plugins.lspconfig").config()
+            require("yvim.lsp").config()
         end,
     },
 
