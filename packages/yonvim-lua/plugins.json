@@ -87,6 +87,10 @@
     "repo": "L3MON4D3/LuaSnip",
     "rev": "52f4aed58db32a3a03211d31d2b12c0495c45580"
   },
+  "friendly_snippets": {
+    "repo": "rafamadriz/friendly-snippets",
+    "rev": "24afb4c178d8ea28bfa73f37814ada43be478b1d"
+  },
   "autopairs": {
     "repo": "windwp/nvim-autopairs",
     "rev": "84cde3547e9a8b16db0bfe523e98e19b7be5148b"

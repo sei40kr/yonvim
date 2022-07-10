@@ -178,6 +178,11 @@ local plugins = {
         event = "InsertEnter *",
         module = "luasnip",
     },
+    {
+        "@friendly_snippets_repo@",
+        disable = not yvim.snippets.friendly_snippets.enable,
+        commit = "@friendly_snippets_rev@",
+    },
 
     {
         "@autopairs_repo@",
