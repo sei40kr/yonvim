@@ -167,7 +167,7 @@ local plugins = {
         "@hop_repo@",
         tag = "@hop_rev@",
         config = function()
-            require("yvim.plugins.hop").config()
+            require("hop").setup({})
         end,
         module = "hop",
     },
@@ -306,7 +306,7 @@ local plugins = {
             "trouble.nvim",
         },
         config = function()
-            require("yvim.plugins.todo-comments").config()
+            require("todo-comments").setup()
         end,
         cmd = {
             "TodoQuickFix",
