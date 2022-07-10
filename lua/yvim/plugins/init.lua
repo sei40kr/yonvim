@@ -370,10 +370,9 @@ local plugins = {
         commit = "@null_ls_rev@",
         requires = { "plenary.nvim" },
         config = function()
-            require("yvim.plugins.null-ls").config()
+            require("yvim.lsp.null-ls").config()
         end,
     },
-
     {
         "@lspconfig_repo@",
         tag = "@lspconfig_rev@",
@@ -388,6 +387,14 @@ local plugins = {
         config = function()
             require("yvim.lsp").config()
         end,
+    },
+    {
+        "@lsp_format_repo@",
+        tag = "@lsp_format_rev@",
+        config = function()
+            require("lsp-format").setup({})
+        end,
+        module = "lsp-format",
     },
 
     {

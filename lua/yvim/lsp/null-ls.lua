@@ -14,15 +14,7 @@ function M.config()
             unpack(formatters),
         },
         on_attach = function(client, bufnr)
-            if client.resolved_capabilities.completion then
-                vim.api.nvim_buf_set_option(
-                    bufnr,
-                    "omnifunc",
-                    "v:lua.vim.lsp.omnifunc"
-                )
-            end
-
-            require("yvim.keymaps.lsp").setup(client, bufnr)
+            require("yvim.lsp").setup_lsp(client, bufnr)
         end,
     })
 end

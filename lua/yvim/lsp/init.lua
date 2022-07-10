@@ -1,8 +1,12 @@
 local M = {}
 
-local function setup_lsp_buffer(client, bufnr)
+function M.setup_lsp(client, bufnr)
     if client.resolved_capabilities.completion then
         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+    end
+
+    if yvim.format.format_on_save then
+        require("lsp-format").on_attach(client)
     end
 
     require("yvim.keymaps.lsp").setup(client, bufnr)
@@ -15,7 +19,7 @@ function M.config()
         vim.lsp.protocol.make_client_capabilities()
     )
     local opts = {
-        on_attach = setup_lsp_buffer,
+        on_attach = M.setup_lsp,
         capabilities = capabilities,
         flags = { debouce_text_changes = 150 },
     }

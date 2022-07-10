@@ -167,6 +167,10 @@
     "repo": "neovim/nvim-lspconfig",
     "rev": "v0.1.3"
   },
+  "lsp_format": {
+    "repo": "lukas-reineke/lsp-format.nvim",
+    "rev": "v2.4.1"
+  },
   "lua_dev": {
     "repo": "folke/lua-dev.nvim",
     "rev": "a0ee77789d9948adce64d98700cc90cecaef88d5"
