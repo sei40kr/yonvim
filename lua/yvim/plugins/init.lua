@@ -118,8 +118,8 @@ local plugins = {
                 "@cmp_nvim_lsp_repo@",
                 as = "cmp-nvim-lsp",
                 after = "nvim-cmp",
-                opt = true,
                 commit = "@cmp_nvim_lsp_rev@",
+                module = "cmp_nvim_lsp",
             },
             {
                 "@cmp_omni_repo@",
@@ -379,14 +379,6 @@ local plugins = {
     {
         "@lspconfig_repo@",
         tag = "@lspconfig_rev@",
-        after = "cmp-nvim-lsp",
-        requires = {
-            "cmp-nvim-lsp",
-            {
-                "@lua_dev_repo@",
-                commit = "@lua_dev_rev@",
-            },
-        },
         config = function()
             require("yvim.lsp").config()
         end,
@@ -398,6 +390,11 @@ local plugins = {
             require("lsp-format").setup({})
         end,
         module = "lsp-format",
+    },
+    {
+        "@lua_dev_repo@",
+        commit = "@lua_dev_rev@",
+        module = "lua-dev",
     },
 
     {
