@@ -231,6 +231,14 @@ local plugins = {
     },
 
     {
+        "@indent_blankline_repo@",
+        tag = "@indent_blankline_rev@",
+        config = function()
+            require("yvim.plugins.indent-blankline").config()
+        end,
+    },
+
+    {
         "@gitsigns_repo@",
         tag = "@gitsigns_rev@",
         requires = "plenary.nvim",

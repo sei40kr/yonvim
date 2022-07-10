@@ -103,6 +103,10 @@
     "repo": "akinsho/bufferline.nvim",
     "rev": "v2.2.1"
   },
+  "indent_blankline": {
+    "repo": "lukas-reineke/indent-blankline.nvim",
+    "rev": "v2.19.1"
+  },
   "gitsigns": {
     "repo": "lewis6991/gitsigns.nvim",
     "rev": "v0.4"
