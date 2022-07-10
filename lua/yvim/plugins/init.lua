@@ -269,18 +269,22 @@ local plugins = {
             {
                 "@telescope_fzy_native_repo@",
                 commit = "@telescope_fzy_native_rev@",
+                module = "telescope._extensions.fzy_native",
             },
             {
                 "@telescope_file_browser_repo@",
                 commit = "@telescope_file_browser_rev@",
+                module = "telescope._extensions.file_browser",
             },
             {
                 "@telescope_luasnip_repo@",
                 commit = "@telescope_luasnip_rev@",
+                module = "telescope._extensions.luasnip",
             },
             {
                 "@telescope_project_repo@",
                 commit = "@telescope_project_rev@",
+                module = "telescope._extensions.project",
             },
             {
                 "@telescope_symbols_repo@",
@@ -290,8 +294,7 @@ local plugins = {
         config = function()
             require("yvim.plugins.telescope").config()
         end,
-        cmd = "Telescope",
-        module = "telescope",
+        module = { "telescope", "telescope.builtin" },
     },
 
     {
