@@ -16,13 +16,14 @@ function M.config()
             },
         },
         extensions = {
-            luasnip = {},
             project = {
                 base_dirs = { { "~/ghq", max_depth = 4 } },
             },
         },
     })
     telescope.load_extension("fzy_native")
+    telescope.load_extension("luasnip")
+    telescope.load_extension("project")
 end
 
 return M
