@@ -33,6 +33,10 @@
             self.packages.${system}.yonvim
             self.packages.${system}.yonvim-qt
           ];
+          shellHook = ''
+            export YVIM_CACHE_DIR=$(mktemp -d)
+            export YVIM_RUNTIME_DIR=$(mktemp -d)
+          '';
         });
     };
 }
