@@ -6,8 +6,17 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
+local path = require("yvim.utils.path")
+local runtime_dir = path.get_runtime_dir()
+
+vim.opt.runtimepath:append(path.join_paths(runtime_dir, "site"))
+vim.opt.packpath:append(path.join_paths(runtime_dir, "site"))
+
 require("yvim.config").load()
 
-require("yvim.plugins").load()
+require("yvim.plugins").load({
+    package_root = path.join_paths(runtime_dir, "site", "pack"),
+    compile_path = path.join_paths(runtime_dir, "lua", "packer_compiled.lua"),
+})
 
 require("yvim.keymaps").setup()

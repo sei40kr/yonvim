@@ -460,13 +460,14 @@ local plugins = {
     },
 }
 
-function M.load()
+function M.load(opts)
     pcall(require, "packer_compiled")
 
     local packer = require("packer")
 
     packer.init({
-        compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",
+        package_root = opts.package_root,
+        compile_path = opts.compile_path,
     })
 
     packer.startup(function(use)
