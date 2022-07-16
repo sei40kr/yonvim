@@ -1,16 +1,6 @@
 local M = {}
 
-function M.setup_lsp(client, bufnr)
-    if client.resolved_capabilities.completion then
-        vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-    end
-
-    if yvim.format.format_on_save then
-        require("lsp-format").on_attach(client)
-    end
-
-    require("yvim.keymaps.lsp").setup(client, bufnr)
-end
+function M.setup() end
 
 function M.config()
     local nvim_lsp = require("lspconfig")
@@ -49,6 +39,37 @@ function M.config()
             severity_sort = true,
         }
     )
+
+    -- null-ls.nvim
+    local null_ls = require("null-ls")
+    local formatters = vim.tbl_map(function(formatter)
+        return null_ls.builtins.formatting[formatter]
+    end, yvim.format.formatters)
+    null_ls.setup({
+        sources = {
+            null_ls.builtins.code_actions.shellcheck,
+            null_ls.builtins.diagnostics.shellcheck,
+            unpack(formatters),
+        },
+        on_attach = function(client, bufnr)
+            require("yvim.lsp").setup_lsp(client, bufnr)
+        end,
+    })
+
+    -- lsp-format.nvim
+    require("lsp-format").setup({})
+end
+
+function M.setup_lsp(client, bufnr)
+    if client.resolved_capabilities.completion then
+        vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+    end
+
+    if yvim.format.format_on_save then
+        require("lsp-format").on_attach(client)
+    end
+
+    require("yvim.keymaps.lsp").setup(client, bufnr)
 end
 
 return M

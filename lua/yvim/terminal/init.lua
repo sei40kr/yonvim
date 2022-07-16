@@ -1,5 +1,7 @@
 local M = {}
 
+function M.setup() end
+
 function M.config()
     require("toggleterm").setup({
         open_mapping = "<NOP>",

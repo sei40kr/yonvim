@@ -4,13 +4,14 @@
 , vimPlugins
 , writeShellScriptBin
 , yonvim-lua
+, yonvimPlugins
 }:
 
 let
   version = import ./version.nix;
 
   neovim-configured = import ./neovim-configured.nix {
-    inherit neovim vimPlugins yonvim-lua;
+    inherit neovim vimPlugins yonvim-lua yonvimPlugins;
   };
   yonvim-bin = writeShellScriptBin "yvim" ''
     export YVIM_CACHE_DIR="''${YVIM_CACHE_DIR:-''${XDG_CACHE_HOME:-''${HOME}/.cache}/yvim}"
