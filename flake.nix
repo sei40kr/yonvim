@@ -15,8 +15,12 @@
         let
           pkgs' = pkgs.${system};
           yonvim-lua = pkgs'.callPackage ./packages/yonvim-lua { };
-          yonvim = pkgs'.callPackage ./packages/yonvim { inherit yonvim-lua; };
-          yonvim-qt = pkgs'.callPackage ./packages/yonvim-qt { inherit yonvim; };
+          yonvim = pkgs'.callPackage ./packages/yonvim/yonvim.nix {
+            inherit yonvim-lua;
+          };
+          yonvim-qt = pkgs'.callPackage ./packages/yonvim/yonvim-qt.nix {
+            inherit yonvim;
+          };
         in
         { inherit yonvim-lua yonvim yonvim-qt; });
 
