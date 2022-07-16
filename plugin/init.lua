@@ -16,7 +16,12 @@ require("yvim.config").load()
 
 require("yvim.plugins").load({
     package_root = path.join_paths(runtime_dir, "site", "pack"),
-    compile_path = path.join_paths(runtime_dir, "lua", "packer_compiled.lua"),
+    compile_path = path.join_paths(
+        runtime_dir,
+        "site",
+        "lua",
+        "packer_compiled.lua"
+    ),
 })
 
 require("yvim.keymaps").setup()
