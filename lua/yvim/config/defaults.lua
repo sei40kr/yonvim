@@ -14,5 +14,6 @@ return {
 
     format = {
         format_on_save = true,
+        formatters = {},
     },
 }
