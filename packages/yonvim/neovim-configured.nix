@@ -67,6 +67,7 @@ neovim.override {
       project-nvim
 
       ## editors
+      editorconfig-nvim
       # TODO defer loading
       hop-nvim
       mini-nvim

@@ -98,6 +98,13 @@
         "sha256": "1vr7yx7i863brmpbayxc7k9z14ai0naa030ck43cknib1bdilpkp"
     },
     {
+        "version": "2022-07-13",
+        "owner": "gpanders",
+        "repo": "editorconfig.nvim",
+        "rev": "918279fe8a432aea7555fae4aac52c705d7f3c2e",
+        "sha256": "1smb1zd7skhdivap7pr1wgn1cfxp83zlssxbs044rdcqg6h4zjb8"
+    },
+    {
         "version": "2022-07-06",
         "owner": "rafamadriz",
         "repo": "friendly-snippets",
