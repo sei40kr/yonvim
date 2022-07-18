@@ -72,10 +72,7 @@ function M.config()
     })
 
     -- indent-blankline.nvim
-    require("indent_blankline").setup({
-        show_current_context = true,
-        show_current_context_start = true,
-    })
+    require("indent_blankline").setup({ show_first_indent_level = false })
 
     -- lualine.nvim
     require("lualine").setup({
