@@ -201,7 +201,23 @@ function M.config()
     })
 
     -- todo-comments.nvim
-    require("todo-comments").setup()
+    require("todo-comments").setup({
+        signs = false,
+        keywords = {
+            PERF = { icon = "  ", alt = { "OPTIMIZE" } },
+            NOTE = { icon = "  ", color = "hint" },
+            REVIEW = { icon = "  ", color = "info" },
+            TODO = { icon = "  ", color = "info" },
+            HACK = { icon = "  ", color = "warning" },
+            XXX = { icon = "  ", color = "warning" },
+            FIXME = { icon = "  ", color = "error" },
+        },
+        highlight = {
+            before = "",
+            keyword = "bg",
+            after = "",
+        },
+    })
 
     -- tokyonight.nvim
     vim.cmd([[colorscheme tokyonight]])
