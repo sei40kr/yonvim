@@ -242,6 +242,22 @@
     meta.homepage = "https://github.com/sindrets/diffview.nvim";
   };
 
+  dressing-nvim = vimUtils.buildVimPlugin {
+    pname = "dressing.nvim";
+    version = "2022-07-14";
+
+    src = fetchFromGitHub {
+      owner = "stevearc";
+      repo = "dressing.nvim";
+      rev = "1e60c07ae9a8557ac6395144606c3a5335ad47e0";
+      sha256 = "1bavk3zf1x5x29jfhms6sdqjdl7zpjnhiggmgwbc8qjvr3vj6jgj";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/stevearc/dressing.nvim";
+  };
+
   editorconfig-nvim = vimUtils.buildVimPlugin {
     pname = "editorconfig.nvim";
     version = "2022-07-13";

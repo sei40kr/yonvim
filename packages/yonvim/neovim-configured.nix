@@ -117,6 +117,7 @@ neovim.override {
       bufferline-nvim
       # TODO defer loading
       diffview-nvim
+      dressing-nvim
       gitsigns-nvim
       indent-blankline-nvim
       lualine-nvim

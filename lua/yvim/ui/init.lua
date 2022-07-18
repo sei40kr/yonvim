@@ -34,6 +34,17 @@ function M.config()
         },
     })
 
+    -- dressing.nvim
+    require("dressing").setup({
+        input = {
+            default_prompt = "Input",
+            prompt_align = "center",
+            relative = "editor",
+            winblend = 0,
+        },
+        select = { backend = { "telescope" } },
+    })
+
     -- gitsigns.nvim
     require("gitsigns").setup({
         signs = {
