@@ -18,6 +18,22 @@
     meta.homepage = "https://github.com/L3MON4D3/LuaSnip";
   };
 
+  auto-session = vimUtils.buildVimPlugin {
+    pname = "auto-session";
+    version = "2022-07-14";
+
+    src = fetchFromGitHub {
+      owner = "rmagatti";
+      repo = "auto-session";
+      rev = "50f5f2eaa7ff825c7036dc3c9981ebae7584b48e";
+      sha256 = "1h89cw34dnk3xgvpd12ic9bpll62sa3qpif4sfhb8rjcdxi9b1sl";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/rmagatti/auto-session";
+  };
+
   bufferline-nvim = vimUtils.buildVimPlugin {
     pname = "bufferline.nvim";
     version = "2022-06-05";
@@ -688,6 +704,22 @@
     dontBuild = true;
 
     meta.homepage = "https://github.com/ahmedkhalf/project.nvim";
+  };
+
+  session-lens = vimUtils.buildVimPlugin {
+    pname = "session-lens";
+    version = "2022-06-29";
+
+    src = fetchFromGitHub {
+      owner = "rmagatti";
+      repo = "session-lens";
+      rev = "5e95ad9aec94b34c83db3eff5dabc4ca1778de6d";
+      sha256 = "1gilz9nk9nc7qmzwz171k00l0bwdk94v3d9i9ars07x9bj9wmlvp";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/rmagatti/session-lens";
   };
 
   telescope-file-browser-nvim = vimUtils.buildVimPlugin {

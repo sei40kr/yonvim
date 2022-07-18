@@ -105,6 +105,10 @@ neovim.override {
       # copilot-vim
       copilot-lua
 
+      ## session
+      auto-session
+      session-lens
+
       ## snippets
       LuaSnip
       friendly-snippets

@@ -7,6 +7,13 @@
         "sha256": "0drc847m55xwiha1wa2ykd5cwynmvd5ik2sys9v727fb4fbqmpa0"
     },
     {
+        "version": "2022-07-14",
+        "owner": "rmagatti",
+        "repo": "auto-session",
+        "rev": "50f5f2eaa7ff825c7036dc3c9981ebae7584b48e",
+        "sha256": "1h89cw34dnk3xgvpd12ic9bpll62sa3qpif4sfhb8rjcdxi9b1sl"
+    },
+    {
         "version": "2022-06-05",
         "owner": "akinsho",
         "repo": "bufferline.nvim",
@@ -299,6 +306,13 @@
         "repo": "project.nvim",
         "rev": "541115e762764bc44d7d3bf501b6e367842d3d4f",
         "sha256": "0vabnhb5d8nc25ap9zixazmr4sm5ylq0iqzsc89cc3h1907xp6lz"
+    },
+    {
+        "version": "2022-06-29",
+        "owner": "rmagatti",
+        "repo": "session-lens",
+        "rev": "5e95ad9aec94b34c83db3eff5dabc4ca1778de6d",
+        "sha256": "1gilz9nk9nc7qmzwz171k00l0bwdk94v3d9i9ars07x9bj9wmlvp"
     },
     {
         "version": "2022-03-25",
