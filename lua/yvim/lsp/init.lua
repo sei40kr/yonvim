@@ -3,6 +3,19 @@ local M = {}
 function M.setup() end
 
 function M.config()
+    -- nvim-lsp-installer
+    require("nvim-lsp-installer").setup({
+        ui = {
+            icons = {
+                server_installed = "●",
+                server_pending = "●",
+                server_uninstalled = "●",
+            },
+        },
+        install_root_dir = join_paths(get_runtime_dir(), "lsp"),
+    })
+
+    -- nvim-lspconfig
     local nvim_lsp = require("lspconfig")
 
     local capabilities = require("cmp_nvim_lsp").update_capabilities(

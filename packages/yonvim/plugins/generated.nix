@@ -498,6 +498,22 @@
     meta.homepage = "https://github.com/hrsh7th/nvim-cmp";
   };
 
+  nvim-lsp-installer = vimUtils.buildVimPlugin {
+    pname = "nvim-lsp-installer";
+    version = "2022-07-19";
+
+    src = fetchFromGitHub {
+      owner = "williamboman";
+      repo = "nvim-lsp-installer";
+      rev = "c8d14017c9ec1e5429ba5f053b844257d74d4639";
+      sha256 = "05syzgwwj94251f00i5v7gvsy9mbn0k1lmzk50jsi58h182gynjb";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/williamboman/nvim-lsp-installer";
+  };
+
   nvim-lspconfig = vimUtils.buildVimPlugin {
     pname = "nvim-lspconfig";
     version = "2022-04-15";
