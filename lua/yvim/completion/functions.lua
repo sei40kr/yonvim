@@ -61,11 +61,43 @@ end
 
 function M.setup_cmp()
     local cmp = require("cmp")
-    local copilot_cmp_comparators = require("copilot_cmp.comparators")
+
+    local sources = {
+        { name = "luasnip" },
+        { name = "nvim_lsp", group_index = 1 },
+        { name = "nvim_lsp_signature_help", group_index = 1 },
+        { name = "omni", group_index = 2 },
+        { name = "path", group_index = 2 },
+        { name = "buffer", group_index = 2 },
+    }
+    local comparators = {
+        cmp.config.compare.offset,
+        cmp.config.compare.exact,
+        cmp.config.compare.score,
+        cmp.config.compare.recently_used,
+        cmp.config.compare.locality,
+        cmp.config.compare.kind,
+        cmp.config.compare.sort_text,
+        cmp.config.compare.length,
+        cmp.config.compare.order,
+    }
+
+    if yvim.completion.copilot.enable then
+        table.insert(sources, 1, { name = "copilot" })
+
+        local copilot_cmp_comparators = require("copilot_cmp.comparators")
+        table.insert(comparators, 1, copilot_cmp_comparators.prioritize)
+        table.insert(comparators, 2, copilot_cmp_comparators.score)
+    end
 
     cmp.setup({
         window = {
-            documentation = cmp.config.window.bordered(),
+            completion = yvim.completion.show_completion_borders
+                    and cmp.config.window.bordered()
+                or nil,
+            documentation = yvim.completion.show_documentation_borders
+                    and cmp.config.window.bordered()
+                or nil,
         },
         mapping = cmp.mapping.preset.insert({
             ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item()),
@@ -98,31 +130,10 @@ function M.setup_cmp()
                 return require("lspkind").cmp_format()(entry, vim_item)
             end,
         },
-        sources = cmp.config.sources({
-            { name = "copilot" },
-            { name = "luasnip" },
-            { name = "nvim_lsp", group_index = 1 },
-            { name = "nvim_lsp_signature_help", group_index = 1 },
-            { name = "omni", group_index = 2 },
-            { name = "path", group_index = 2 },
-            { name = "buffer", group_index = 2 },
-        }),
+        sources = cmp.config.sources(sources),
         sorting = {
             priority_weight = 2,
-            comparators = {
-                copilot_cmp_comparators.prioritize,
-                copilot_cmp_comparators.score,
-
-                cmp.config.compare.offset,
-                cmp.config.compare.exact,
-                cmp.config.compare.score,
-                cmp.config.compare.recently_used,
-                cmp.config.compare.locality,
-                cmp.config.compare.kind,
-                cmp.config.compare.sort_text,
-                cmp.config.compare.length,
-                cmp.config.compare.order,
-            },
+            comparators = comparators,
         },
     })
 

@@ -2,6 +2,12 @@ return {
     leader = " ",
     localleader = ",",
 
+    completion = {
+        show_completion_borders = false,
+        show_documentation_borders = true,
+        copilot = { enable = true },
+    },
+
     lsp = {
         servers = {},
     },
