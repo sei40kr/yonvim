@@ -84,6 +84,7 @@ neovim.override {
       nvim-ts-context-commentstring
 
       ## lsp
+      fidget-nvim
       null-ls-nvim
       nvim-lsp-installer
       nvim-lspconfig

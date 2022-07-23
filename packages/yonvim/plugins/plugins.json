@@ -119,6 +119,13 @@
         "sha256": "1smb1zd7skhdivap7pr1wgn1cfxp83zlssxbs044rdcqg6h4zjb8"
     },
     {
+        "version": "2022-06-12",
+        "owner": "j-hui",
+        "repo": "fidget.nvim",
+        "rev": "46d1110435f1f023c22fa95bb10b3906aecd7bde",
+        "sha256": "0v0jnzj288swbp0w8xa7287sbql1rfgziqdk1gbcgvzs7zlvczbr"
+    },
+    {
         "version": "2022-07-06",
         "owner": "rafamadriz",
         "repo": "friendly-snippets",

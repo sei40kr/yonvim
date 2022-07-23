@@ -3,6 +3,9 @@ local M = {}
 function M.setup() end
 
 function M.config()
+    -- fidget.nvim
+    require("fidget").setup({})
+
     -- nvim-lsp-installer
     require("nvim-lsp-installer").setup({
         ui = {

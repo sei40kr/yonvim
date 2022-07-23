@@ -274,6 +274,22 @@
     meta.homepage = "https://github.com/gpanders/editorconfig.nvim";
   };
 
+  fidget-nvim = vimUtils.buildVimPlugin {
+    pname = "fidget.nvim";
+    version = "2022-06-12";
+
+    src = fetchFromGitHub {
+      owner = "j-hui";
+      repo = "fidget.nvim";
+      rev = "46d1110435f1f023c22fa95bb10b3906aecd7bde";
+      sha256 = "0v0jnzj288swbp0w8xa7287sbql1rfgziqdk1gbcgvzs7zlvczbr";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/j-hui/fidget.nvim";
+  };
+
   friendly-snippets = vimUtils.buildVimPlugin {
     pname = "friendly-snippets";
     version = "2022-07-06";
