@@ -82,6 +82,7 @@ neovim.override {
       nvim-treesitter-textobjects
       nvim-ts-autotag
       nvim-ts-context-commentstring
+      spellsitter-nvim
 
       ## lsp
       fidget-nvim

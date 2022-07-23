@@ -336,6 +336,13 @@
         "sha256": "1gilz9nk9nc7qmzwz171k00l0bwdk94v3d9i9ars07x9bj9wmlvp"
     },
     {
+        "version": "2022-07-09",
+        "owner": "lewis6991",
+        "repo": "spellsitter.nvim",
+        "rev": "eb74c4b1f4240cf1a7860877423195cec6311bd5",
+        "sha256": "0qajg4kjwlwbxjjms580v5aisg1vjid4vbmvzwk6nsfms8nrzn18"
+    },
+    {
         "version": "2022-05-01",
         "owner": "simrat39",
         "repo": "symbols-outline.nvim",

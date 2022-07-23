@@ -52,6 +52,8 @@ function M.setup()
     })
 end
 
-function M.config() end
+function M.config()
+    require("spellsitter").setup()
+end
 
 return M

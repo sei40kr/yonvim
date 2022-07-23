@@ -770,6 +770,22 @@
     meta.homepage = "https://github.com/rmagatti/session-lens";
   };
 
+  spellsitter-nvim = vimUtils.buildVimPlugin {
+    pname = "spellsitter.nvim";
+    version = "2022-07-09";
+
+    src = fetchFromGitHub {
+      owner = "lewis6991";
+      repo = "spellsitter.nvim";
+      rev = "eb74c4b1f4240cf1a7860877423195cec6311bd5";
+      sha256 = "0qajg4kjwlwbxjjms580v5aisg1vjid4vbmvzwk6nsfms8nrzn18";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/lewis6991/spellsitter.nvim";
+  };
+
   symbols-outline-nvim = vimUtils.buildVimPlugin {
     pname = "symbols-outline.nvim";
     version = "2022-05-01";
