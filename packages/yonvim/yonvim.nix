@@ -1,5 +1,8 @@
-{ neovim
+{ lib
+, fd
+, neovim
 , makeWrapper
+, ripgrep
 , symlinkJoin
 , vimPlugins
 , writeShellScriptBin
@@ -14,6 +17,7 @@ let
     inherit neovim vimPlugins yonvim-lua yonvimPlugins;
   };
   yonvim-bin = writeShellScriptBin "yvim" ''
+    export PATH="${lib.makeBinPath [ fd ripgrep ]}''${PATH:+:$PATH}"
     export YVIM_CACHE_DIR="''${YVIM_CACHE_DIR:-''${XDG_CACHE_HOME:-''${HOME}/.cache}/yvim}"
     export YVIM_CONFIG_DIR="''${YVIM_CONFIG_DIR:-''${XDG_CONFIG_HOME:-''${HOME}/.config}/yvim}"
     export YVIM_RUNTIME_DIR="''${YVIM_RUNTIME_DIR:-''${XDG_DATA_HOME:-''${HOME}/.local/share}/yvim}"
