@@ -22,4 +22,12 @@ return {
         format_on_save = true,
         formatters = {},
     },
+
+    ui = {
+        font = {
+            name = "monospace",
+            size = 12,
+            forcedly_assign = false,
+        },
+    },
 }

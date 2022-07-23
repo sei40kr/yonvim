@@ -45,6 +45,14 @@ function M.load()
           GuiPopupmenu 0
         ]])
 
+        vim.cmd(
+            ("GuiFont%s %s:h%d"):format(
+                yvim.ui.font.forcedly_assign and "!" or "",
+                yvim.ui.font.name,
+                yvim.ui.font.size
+            )
+        )
+
         -- Enable mouse
         vim.opt.mouse = "a"
         vim.keymap.set(
