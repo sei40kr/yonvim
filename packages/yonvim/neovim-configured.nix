@@ -90,6 +90,7 @@ neovim.override {
       nvim-lspconfig
       lsp-format-nvim
       lua-dev-nvim
+      symbols-outline-nvim
 
       ## completion
       nvim-cmp

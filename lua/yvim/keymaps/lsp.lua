@@ -64,6 +64,15 @@ function M.setup(client, buffer)
         })
     end
 
+    if client.resolved_capabilities.document_symbol then
+        keymap.set_buflocal_leader(buffer, "n", {
+            cS = {
+                "<Cmd>SymbolsOutlineOpen<CR>",
+                "Symbols",
+            },
+        })
+    end
+
     if client.resolved_capabilities.find_references then
         vim.keymap.set(
             "n",

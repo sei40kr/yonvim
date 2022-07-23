@@ -336,6 +336,13 @@
         "sha256": "1gilz9nk9nc7qmzwz171k00l0bwdk94v3d9i9ars07x9bj9wmlvp"
     },
     {
+        "version": "2022-05-01",
+        "owner": "simrat39",
+        "repo": "symbols-outline.nvim",
+        "rev": "15ae99c27360ab42e931be127d130611375307d5",
+        "sha256": "170lxb2hw814wjxkpl0g4sic7wg3krp7pfkf3wp5j4dwk8czm2wi"
+    },
+    {
         "version": "2022-03-25",
         "owner": "nvim-telescope",
         "repo": "telescope-file-browser.nvim",

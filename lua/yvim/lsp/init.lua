@@ -1,6 +1,16 @@
 local M = {}
 
-function M.setup() end
+function M.setup()
+    -- symbols-outline.nvim
+    vim.g.symbols_outline = {
+        highlight_hovered_item = false,
+        show_guides = false,
+        position = "left",
+        width = 35,
+        -- TODO: Customize icons
+        symbols = {},
+    }
+end
 
 function M.config()
     -- fidget.nvim

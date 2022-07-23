@@ -770,6 +770,22 @@
     meta.homepage = "https://github.com/rmagatti/session-lens";
   };
 
+  symbols-outline-nvim = vimUtils.buildVimPlugin {
+    pname = "symbols-outline.nvim";
+    version = "2022-05-01";
+
+    src = fetchFromGitHub {
+      owner = "simrat39";
+      repo = "symbols-outline.nvim";
+      rev = "15ae99c27360ab42e931be127d130611375307d5";
+      sha256 = "170lxb2hw814wjxkpl0g4sic7wg3krp7pfkf3wp5j4dwk8czm2wi";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/simrat39/symbols-outline.nvim";
+  };
+
   telescope-file-browser-nvim = vimUtils.buildVimPlugin {
     pname = "telescope-file-browser.nvim";
     version = "2022-03-25";
