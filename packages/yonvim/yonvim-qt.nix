@@ -1,21 +1,27 @@
-{ makeDesktopItem
-, makeWrapper
+{ lib
+, makeDesktopItem
 , neovim-qt
+, stdenv
 , symlinkJoin
 , writeShellScriptBin
+, writeText
 , yonvim
 }:
 
 let
   version = import ./version.nix;
 
-  neovim-qt-configured = neovim-qt.override {
+  neovim-qt-overridden = neovim-qt.override {
+    # Only used to generate help tags at build time
     neovim = yonvim;
   };
-  yvim-qt-bin = writeShellScriptBin "yvim-qt" ''
-    exec ${neovim-qt-configured}/bin/nvim-qt --nvim ${yonvim}/bin/yvim -- "$@"
+  yonvim-qt-bin = writeShellScriptBin "yvim-qt" ''
+    exec ${neovim-qt-overridden}${if stdenv.isDarwin then "/Applications/nvim-qt.app/Contents/MacOS" else "/bin"}/nvim-qt \
+         --nvim ${yonvim}/bin/yvim \
+         -- \
+         "$@"
   '';
-  yvim-qt-desktop = makeDesktopItem {
+  desktopItem = makeDesktopItem {
     name = "yvim-qt";
     desktopName = "Yonvim";
     comment = "Qt GUI for Neovim text editor";
@@ -41,20 +47,50 @@ let
     terminal = false;
     categories = [ "Utility" "TextEditor" ];
   };
+  infoPlist = writeText "Info.plist" (lib.generators.toPlist { } {
+    CFBundleDevelopmentRegion = "English";
+    CFBundleExecutable = "yvim-qt";
+    CFBundleDisplayName = "Yonvim";
+    CFBundleGetInfoString = "Yonvim Qt GUI";
+    CFBundleIconFile = "neovim";
+    NSHighResolutionCapable = true;
+    CFBundleIdentifier = "neovim-qt";
+    CFBundleInfoDictionaryVersion = "6.0";
+    CFBundleLongVersionString = "0.2.16.1";
+    CFBundleVersion = "";
+    CSResourcesFileMapped = true;
+    LSRequiresCarbon = true;
+    NSHumanReadableCopyright = "";
+    CFBundleDocumentTypes = [{
+      CFBundleTypeName = "All Files";
+      CFBundleTypeRole = "Editor";
+      LSHandlerRank = "Alternate";
+      LSItemContentTypes = "public.item";
+    }];
+  });
 in
 symlinkJoin
 {
   name = "yonvim-qt-${version}";
 
-  paths = [ neovim-qt-configured yvim-qt-bin ];
+  paths = [ neovim-qt-overridden ];
 
-  nativeBuildInputs = [ makeWrapper ];
+  postBuild =
+    if stdenv.isDarwin then ''
+      app=$out/Applications/yvim-qt.app
+      mv $out/Applications/nvim-qt.app $app
 
-  postBuild = ''
-    rm $out/bin/nvim-qt
-    rm -r $out/share/applications
-    mkdir $out/share/applications
-    cp ${yvim-qt-desktop}/share/applications/yvim-qt.desktop \
-       $out/share/applications
-  '';
+      rm $app/Contents/MacOS/*
+      install -m755 ${yonvim-qt-bin}/bin/yvim-qt $app/Contents/MacOS
+
+      rm $app/Contents/Info.plist
+      install -m644 ${infoPlist} $app/Contents
+    '' else ''
+      rm $out/bin/*
+      install -m755 ${yonvim-qt-bin}/bin/yvim-qt $out/bin
+
+      rm -r $out/share/applications
+      install -Dm644 ${desktopItem}/share/applications/yvim-qt.desktop \
+                     $out/share/applications/yvim-qt.desktop
+    '';
 }
