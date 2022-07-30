@@ -46,6 +46,7 @@ let
     ];
     terminal = false;
     categories = [ "Utility" "TextEditor" ];
+    startupWMClass = ".nvim-qt-wrapped";
   };
   infoPlist = writeText "Info.plist" (lib.generators.toPlist { } {
     CFBundleDevelopmentRegion = "English";
