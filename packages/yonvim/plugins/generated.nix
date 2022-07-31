@@ -484,13 +484,13 @@
 
   neogit = vimUtils.buildVimPlugin {
     pname = "neogit";
-    version = "2022-06-09";
+    version = "2022-07-31";
 
     src = fetchFromGitHub {
       owner = "TimUntersberger";
       repo = "neogit";
-      rev = "0ce803d22e361080ec0daf6bee7aad45e8cf8b07";
-      sha256 = "0qh359k6x46na0raqrp5wkc7c25lsgsr5y35i0r426xxmr029kn8";
+      rev = "d0731367918c840a850d55ce03398c6ce87a9eb7";
+      sha256 = "09g8z67yjiqhsd8ym52ppbgq2prrmp5rq2s72zzrdjj7dqnm25ig";
     };
 
     dontBuild = true;
