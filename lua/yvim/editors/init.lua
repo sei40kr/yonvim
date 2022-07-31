@@ -10,29 +10,6 @@ function M.setup()
     vim.g.ministatusline_disable = true
     vim.g.minitabline_disable = true
     vim.g.minitrailspace_disable = true
-
-    -- vim-visual-multi
-    vim.g.VM_default_mappings = 0
-end
-
-function M.config()
-    -- hop.nvim
-    require("hop").setup({})
-
-    -- mini.nvim
-    require("mini.bufremove").setup({})
-    require("mini.comment").setup({})
-    require("mini.jump").setup({})
-    require("mini.surround").setup({
-        mappings = {
-            add = "",
-            delete = "ds",
-            find = "",
-            find_left = "",
-            highlight = "",
-            replace = "cs",
-        },
-    })
     vim.api.nvim_set_keymap(
         "n",
         "ys",
@@ -46,14 +23,8 @@ function M.config()
         { noremap = true, silent = true }
     )
 
-    -- nvim-autopairs
-    require("nvim-autopairs").setup({
-        check_ts = true,
-        map_c_h = true,
-        map_c_w = true,
-    })
-
     -- vim-visual-multi
+    vim.g.VM_default_mappings = 0
     vim.api.nvim_set_keymap("n", "<C-n>", "<Plug>(VM-Find-Under)", {})
     vim.api.nvim_set_keymap("n", "<C-Down>", "<Plug>(VM-Add-Cursor-Down)", {})
     vim.api.nvim_set_keymap("n", "<C-Up>", "<Plug>(VM-Add-Cursor-Up)", {})
@@ -84,6 +55,17 @@ function M.config()
         "<Plug>(VM-Mouse-Column)",
         {}
     )
+end
+
+function M.config()
+    -- hop.nvim
+    require("yvim.plugin.hop").config()
+
+    -- mini.nvim
+    require("yvim.plugin.mini").config()
+
+    -- nvim-autopairs
+    require("yvim.plugin.autopairs").config()
 end
 
 return M
