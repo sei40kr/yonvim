@@ -13,6 +13,8 @@ function M.setup()
 end
 
 function M.config()
+    local path = require("yvim.util.path")
+
     -- fidget.nvim
     require("fidget").setup({})
 
@@ -25,7 +27,7 @@ function M.config()
                 server_uninstalled = "●",
             },
         },
-        install_root_dir = join_paths(get_runtime_dir(), "lsp"),
+        install_root_dir = path.join_paths(path.get_runtime_dir(), "lsp"),
     })
 
     -- nvim-lspconfig

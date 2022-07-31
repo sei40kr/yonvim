@@ -3,9 +3,14 @@ local M = {}
 function M.setup() end
 
 function M.config()
+    local path = require("yvim.util.path")
+
     -- auto-session
     require("auto-session").setup({
-        auto_session_root_dir = join_paths(get_runtime_dir(), "sessions"),
+        auto_session_root_dir = path.join_paths(
+            path.get_runtime_dir(),
+            "sessions"
+        ),
     })
 
     -- session-lens
