@@ -128,6 +128,12 @@ function M.on_attach(client, buffer)
 
     -- Document range formatting
     if client.resolved_capabilities.document_range_formatting then
+        vim.api.nvim_buf_set_option(
+            buffer,
+            "formatexpr",
+            "v:lua.vim.lsp.formatexpr()"
+        )
+
         keymap.set_buflocal_leader(buffer, "x", {
             cf = {
                 ":lua vim.lsp.buf.range_formatting()<CR>",
@@ -201,6 +207,8 @@ function M.on_attach(client, buffer)
 
     -- Workspace symbol
     if client.resolved_capabilities.workspace_symbol then
+        vim.api.nvim_buf_set_option(buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
+
         keymap.set_buflocal_leader(buffer, "n", {
             cj = {
                 function()
