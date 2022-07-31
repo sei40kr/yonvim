@@ -12,7 +12,7 @@ function M.config()
             unpack(formatters),
         },
         on_attach = function(client, bufnr)
-            require("yvim.lsp").setup_lsp(client, bufnr)
+            require("yvim.lsp").on_attach(client, bufnr)
         end,
     })
 end

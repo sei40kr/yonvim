@@ -7,7 +7,7 @@ function M.config()
         vim.lsp.protocol.make_client_capabilities()
     )
     local opts = {
-        on_attach = require("yvim.lsp").setup_lsp,
+        on_attach = require("yvim.lsp").on_attach,
         capabilities = capabilities,
         flags = { debouce_text_changes = 150 },
     }
