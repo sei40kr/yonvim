@@ -6,7 +6,7 @@ function M.config()
     require("auto-session").setup({
         auto_session_root_dir = path.join_paths(
             path.get_runtime_dir(),
-            "sessions"
+            "sessions/"
         ),
     })
 end
