@@ -3,7 +3,8 @@ local M = {}
 function M.config()
     local path = require("yvim.util.path")
 
-    require("nvim-lsp-installer").setup({
+    require("mason").setup({
+        border = "rounded",
         ui = {
             icons = {
                 server_installed = "●",
@@ -11,7 +12,7 @@ function M.config()
                 server_uninstalled = "●",
             },
         },
-        install_root_dir = path.join_paths(path.get_runtime_dir(), "lsp"),
+        install_root_dir = path.join_paths(path.get_runtime_dir(), "mason"),
     })
 end
 

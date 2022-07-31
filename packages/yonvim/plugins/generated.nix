@@ -434,6 +434,38 @@
     meta.homepage = "https://github.com/nvim-lualine/lualine.nvim";
   };
 
+  mason-lspconfig-nvim = vimUtils.buildVimPlugin {
+    pname = "mason-lspconfig.nvim";
+    version = "2022-07-31";
+
+    src = fetchFromGitHub {
+      owner = "williamboman";
+      repo = "mason-lspconfig.nvim";
+      rev = "f87c5796603aa3436d9cb1d36dbe5b2e579e4034";
+      sha256 = "01d4y5qlsl3faxq3a03p7d1cqfclfrhy42m5yyrbzg3q2wmpgvqq";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/williamboman/mason-lspconfig.nvim";
+  };
+
+  mason-nvim = vimUtils.buildVimPlugin {
+    pname = "mason.nvim";
+    version = "2022-07-31";
+
+    src = fetchFromGitHub {
+      owner = "williamboman";
+      repo = "mason.nvim";
+      rev = "5676d6d63850ca63fe468a578387fed9eb0f69a3";
+      sha256 = "06b594lv8akxmd54sa18g5w18z1blcvs8zk2p9dnczx9107099yx";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/williamboman/mason.nvim";
+  };
+
   mini-nvim = vimUtils.buildVimPlugin {
     pname = "mini.nvim";
     version = "2022-05-26";
@@ -512,22 +544,6 @@
     dontBuild = true;
 
     meta.homepage = "https://github.com/hrsh7th/nvim-cmp";
-  };
-
-  nvim-lsp-installer = vimUtils.buildVimPlugin {
-    pname = "nvim-lsp-installer";
-    version = "2022-07-19";
-
-    src = fetchFromGitHub {
-      owner = "williamboman";
-      repo = "nvim-lsp-installer";
-      rev = "c8d14017c9ec1e5429ba5f053b844257d74d4639";
-      sha256 = "05syzgwwj94251f00i5v7gvsy9mbn0k1lmzk50jsi58h182gynjb";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/williamboman/nvim-lsp-installer";
   };
 
   nvim-lspconfig = vimUtils.buildVimPlugin {

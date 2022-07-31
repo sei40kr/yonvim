@@ -86,8 +86,9 @@ neovim.override {
 
       ## lsp
       fidget-nvim
+      mason-nvim
+      mason-lspconfig-nvim
       null-ls-nvim
-      nvim-lsp-installer
       nvim-lspconfig
       lsp-format-nvim
       lua-dev-nvim

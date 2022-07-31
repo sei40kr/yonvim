@@ -16,8 +16,11 @@ function M.config()
     -- fidget.nvim
     require("yvim.plugin.fidget").config()
 
-    -- nvim-lsp-installer
-    require("yvim.plugin.lsp-installer").config()
+    -- mason.nvim
+    require("yvim.plugin.mason").config()
+
+    -- mason-lspconfig.nvim
+    require("yvim.plugin.mason-lspconfig").config()
 
     -- nvim-lspconfig
     require("yvim.plugin.lspconfig").config()
