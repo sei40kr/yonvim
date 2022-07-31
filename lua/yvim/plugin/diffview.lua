@@ -1,7 +1,7 @@
 local M = {}
 
 function M.config()
-    local cb = require("diffview.config").diffview_callback
+    local actions = require("diffview.actions")
 
     require("diffview").setup({
         icons = {
@@ -10,9 +10,9 @@ function M.config()
         },
         file_panel = { listing_style = "list" },
         key_bindings = {
-            view = { q = cb("close") },
-            file_panel = { q = cb("close") },
-            file_history_panel = { q = cb("close") },
+            view = { q = actions.close },
+            file_panel = { q = actions.close },
+            file_history_panel = { q = actions.close },
         },
     })
 end
