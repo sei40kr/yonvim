@@ -1,5 +1,17 @@
 local M = {}
 
+local function cr(fallback)
+    local cmp = require("cmp")
+    local selected_entry = cmp.get_selected_entry()
+
+    if cmp.visible() and selected_entry then
+        cmp.confirm()
+        return
+    end
+
+    fallback()
+end
+
 function M.config()
     local cmp = require("cmp")
 
@@ -43,13 +55,7 @@ function M.config()
         mapping = cmp.mapping.preset.insert({
             ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item()),
             ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item()),
-            ["<CR>"] = function(fallback)
-                if cmp.visible() then
-                    cmp.confirm()
-                else
-                    fallback()
-                end
-            end,
+            ["<CR>"] = cr,
             ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item()),
             ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item()),
             ["<Tab>"] = cmp.config.disable,
