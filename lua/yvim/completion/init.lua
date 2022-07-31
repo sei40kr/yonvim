@@ -7,7 +7,7 @@ local function check_backspace()
     return col == 0 or line:sub(col, col):find("%s") ~= nil
 end
 
-function M.tab_complete()
+local function tab()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
@@ -26,7 +26,7 @@ function M.tab_complete()
     cmp.complete()
 end
 
-function M.s_tab_complete()
+local function s_tab()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
@@ -43,23 +43,30 @@ function M.s_tab_complete()
     )
 end
 
-function M.complete_buffer()
+local function complete_buffer()
     require("cmp").complete({ config = { sources = { { name = "buffer" } } } })
 end
 
-function M.complete_omni()
+local function complete_omni()
     require("cmp").complete({ config = { sources = { { name = "omni" } } } })
 end
 
-function M.complete_path()
+local function complete_path()
     require("cmp").complete({ config = { sources = { { name = "path" } } } })
 end
 
-function M.complete_spell()
+local function complete_spell()
     require("cmp").complete({ config = { sources = { { name = "spell" } } } })
 end
 
-function M.setup() end
+function M.setup()
+    vim.keymap.set("i", "<Tab>", tab)
+    vim.keymap.set("i", "<S-Tab>", s_tab)
+    vim.keymap.set("i", "<C-x><C-f>", complete_path)
+    vim.keymap.set("i", "<C-x><C-k>", complete_buffer)
+    vim.keymap.set("i", "<C-x><C-o>", complete_omni)
+    vim.keymap.set("i", "<C-x>s", complete_spell)
+end
 
 function M.config()
     -- nvim-cmp

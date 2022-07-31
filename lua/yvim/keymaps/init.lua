@@ -28,8 +28,6 @@ function M.setup()
     -- +window
     require("yvim.keymaps.window").setup()
 
-    require("yvim.keymaps.completion").setup()
-
     local keymap = require("yvim.utils.keymap")
 
     keymap.set_leader("n", {
