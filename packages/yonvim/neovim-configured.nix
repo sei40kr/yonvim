@@ -68,7 +68,7 @@ neovim.override {
       project-nvim
       stickybuf-nvim
 
-      ## editors
+      ## edit
       editorconfig-nvim
       # TODO defer loading
       hop-nvim
