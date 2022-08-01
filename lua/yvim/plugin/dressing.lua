@@ -5,6 +5,7 @@ function M.config()
         input = {
             default_prompt = "Input",
             prompt_align = "center",
+            border = yvim.ui.border,
             relative = "editor",
             winblend = 0,
         },

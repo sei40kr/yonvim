@@ -29,6 +29,7 @@ return {
             size = 12,
             forcedly_assign = false,
         },
+        border = "rounded",
         spinner = {
             "⠋",
             "⠙",

@@ -6,6 +6,7 @@ function M.config()
     require("mason").setup({
         border = "rounded",
         ui = {
+            border = yvim.ui.border,
             icons = {
                 server_installed = "●",
                 server_pending = "●",
