@@ -7,16 +7,21 @@ function M.config()
         vim.lsp.protocol.make_client_capabilities()
     )
     capabilities.textDocument.completion.completionItem.snippetSupport = true
-    local opts = {
+    local base_opts = {
         on_attach = require("yvim.lsp").on_attach,
         capabilities = capabilities,
         flags = { debouce_text_changes = 150 },
     }
 
-    for _, server in ipairs(yvim.lsp.servers) do
+    for server, extra_opts in pairs(yvim.lsp.servers) do
+        local opts = base_opts
+        if #extra_opts ~= 0 then
+            opts = vim.tbl_deep_extend("force", base_opts, extra_opts)
+        end
+
         lsp[server].setup(opts)
     end
-    lsp.sumneko_lua.setup(require("lua-dev").setup(opts))
+    lsp.sumneko_lua.setup(require("lua-dev").setup(base_opts))
 end
 
 return M
