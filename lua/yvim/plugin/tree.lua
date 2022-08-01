@@ -1,6 +1,8 @@
 local M = {}
 
 function M.config()
+    local special_buffer = require("yvim.util.special_buffer")
+
     require("nvim-tree").setup({
         renderer = {
             highlight_git = true,
@@ -40,6 +42,16 @@ function M.config()
                 list = {},
             },
             signcolumn = "no",
+        },
+        actions = {
+            open_file = {
+                window_picker = {
+                    exclude = {
+                        filetype = special_buffer.get_filetypes(),
+                        buftype = special_buffer.get_buftypes(),
+                    },
+                },
+            },
         },
     })
 end
