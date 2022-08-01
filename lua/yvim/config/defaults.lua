@@ -9,7 +9,7 @@ return {
     },
 
     completion = {
-        show_completion_borders = false,
+        show_menu_border = false,
         show_documentation_borders = true,
         copilot = { enable = true },
     },

@@ -45,7 +45,7 @@ function M.config()
 
     cmp.setup({
         window = {
-            completion = yvim.completion.show_completion_borders
+            completion = yvim.completion.show_menu_border
                     and cmp.config.window.bordered({ border = yvim.ui.border })
                 or nil,
             documentation = yvim.completion.show_documentation_borders
