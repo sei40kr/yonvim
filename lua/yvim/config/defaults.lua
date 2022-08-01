@@ -10,7 +10,7 @@ return {
 
     completion = {
         show_menu_border = false,
-        show_documentation_borders = true,
+        show_doc_border = true,
         copilot = { enable = true },
     },
 
