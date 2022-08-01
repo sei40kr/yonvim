@@ -357,6 +357,13 @@
         "sha256": "0qajg4kjwlwbxjjms580v5aisg1vjid4vbmvzwk6nsfms8nrzn18"
     },
     {
+        "version": "2022-06-08",
+        "owner": "stevearc",
+        "repo": "stickybuf.nvim",
+        "rev": "db2965ccd97b3f1012b19a76d8541f9843b12960",
+        "sha256": "131rkw3nrx01zg6h15l5vzfg83dz5d4w65s7ab82fxga5fkzpy17"
+    },
+    {
         "version": "2022-05-01",
         "owner": "simrat39",
         "repo": "symbols-outline.nvim",

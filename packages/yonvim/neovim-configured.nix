@@ -66,6 +66,7 @@ neovim.override {
       open-browser-github-vim
       plenary-nvim
       project-nvim
+      stickybuf-nvim
 
       ## editors
       editorconfig-nvim

@@ -11,6 +11,9 @@ function M.config()
 
     -- project.nvim
     require("yvim.plugin.project").config()
+
+    -- stickybuf.nvim
+    require("yvim.plugin.stickybuf").config()
 end
 
 return M

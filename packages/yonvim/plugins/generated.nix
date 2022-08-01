@@ -818,6 +818,22 @@
     meta.homepage = "https://github.com/lewis6991/spellsitter.nvim";
   };
 
+  stickybuf-nvim = vimUtils.buildVimPlugin {
+    pname = "stickybuf.nvim";
+    version = "2022-06-08";
+
+    src = fetchFromGitHub {
+      owner = "stevearc";
+      repo = "stickybuf.nvim";
+      rev = "db2965ccd97b3f1012b19a76d8541f9843b12960";
+      sha256 = "131rkw3nrx01zg6h15l5vzfg83dz5d4w65s7ab82fxga5fkzpy17";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/stevearc/stickybuf.nvim";
+  };
+
   symbols-outline-nvim = vimUtils.buildVimPlugin {
     pname = "symbols-outline.nvim";
     version = "2022-05-01";
