@@ -11,26 +11,26 @@ function M.get_buftypes()
     return vim.tbl_keys(buftypes)
 end
 
-function M.add_buftype(buftype)
-    buftypes[buftype] = true
-end
-
 function M.get_filetypes()
     return vim.tbl_keys(filetypes)
 end
 
-function M.add_filetype(filetype)
+function M.register_buftype(buftype)
+    buftypes[buftype] = true
+end
+
+function M.register_filetype(filetype)
     filetypes[filetype] = true
 end
 
-function M.is_special_buffer(buffer)
+function M.is(buffer)
     local buftype = vim.api.nvim_buf_get_option(buffer, "buftype")
-    if buftypes[buftype] ~= nil then
+    if buftypes[buftype] then
         return true
     end
 
     local filetype = vim.api.nvim_buf_get_option(buffer, "filetype")
-    if filetypes[filetype] ~= nil then
+    if filetypes[filetype] then
         return true
     end
 
