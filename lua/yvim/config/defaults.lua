@@ -16,7 +16,7 @@ return {
         servers = {},
     },
 
-    snippets = {
+    snippet = {
         friendly_snippets = {
             enable = true,
         },

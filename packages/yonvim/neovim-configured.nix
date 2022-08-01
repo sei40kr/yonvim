@@ -116,7 +116,7 @@ neovim.override {
       auto-session
       session-lens
 
-      ## snippets
+      ## snippet
       LuaSnip
       friendly-snippets
 
