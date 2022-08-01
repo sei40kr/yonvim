@@ -1,10 +1,21 @@
 local M = {}
 
 function M.setup()
+    local special_buffer = require("yvim.util.special_buffer")
+
+    -- diffview.nvim
+    special_buffer.register_filetype("DiffviewFiles")
+
+    -- nvim-tree.lua
+    special_buffer.register_filetype("NvimTree")
+
     -- tokyonight.nvim
     vim.g.tokyonight_style = "night"
     vim.g.tokyonight_italic_keywords = false
     vim.g.tokyonight_lualine_bold = true
+
+    -- trouble.lua
+    special_buffer.register_filetype("Trouble")
 end
 
 function M.config()
