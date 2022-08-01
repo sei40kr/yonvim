@@ -1,7 +1,7 @@
 local M = {}
 
 function M.init()
-    local keymap = require("yvim.utils.keymap")
+    local keymap = require("yvim.util.keymap")
 
     keymap.set_leader("n", {
         ["<Space>"] = { "<Leader>pf", "Find file in project", noremap = false },

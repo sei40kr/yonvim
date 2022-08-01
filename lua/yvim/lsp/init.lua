@@ -60,10 +60,10 @@ function M.config()
 end
 
 function M.on_attach(client, buffer)
-    local keymap = require("yvim.utils.keymap")
+    local keymap = require("yvim.util.keymap")
 
     -- Diagnostic
-    keymap.set_buflocal_leader(buffer, "n", {
+    keymap.buf_set_leader(buffer, "n", {
         c = {
             l = {
                 name = "+lsp",
@@ -86,14 +86,14 @@ function M.on_attach(client, buffer)
             },
         },
     })
-    keymap.set_buflocal(buffer, "n", {
+    keymap.buf_set(buffer, "n", {
         ["[e"] = { vim.diagnostic.goto_prev, "Jump to previous error" },
         ["]e"] = { vim.diagnostic.goto_next, "Jump to next error" },
     })
 
     -- Code action
     if client.resolved_capabilities.code_action then
-        keymap.set_buflocal_leader(buffer, "n", {
+        keymap.buf_set_leader(buffer, "n", {
             ca = {
                 function()
                     require("telescope.builtin").lsp_code_actions()
@@ -101,7 +101,7 @@ function M.on_attach(client, buffer)
                 "Execute code action",
             },
         })
-        keymap.set_buflocal_leader(buffer, "x", {
+        keymap.buf_set_leader(buffer, "x", {
             ca = {
                 ':lua require("telescope.builtin").lsp_range_code_actions()<CR>',
                 "Execute code action",
@@ -119,7 +119,7 @@ function M.on_attach(client, buffer)
 
     -- Document formatting
     if client.resolved_capabilities.document_formatting then
-        keymap.set_buflocal_leader(buffer, "n", {
+        keymap.buf_set_leader(buffer, "n", {
             cf = { vim.lsp.buf.formatting, "Format buffer" },
         })
 
@@ -137,7 +137,7 @@ function M.on_attach(client, buffer)
             "v:lua.vim.lsp.formatexpr()"
         )
 
-        keymap.set_buflocal_leader(buffer, "x", {
+        keymap.buf_set_leader(buffer, "x", {
             cf = {
                 ":lua vim.lsp.buf.range_formatting()<CR>",
                 "Format region",
@@ -147,7 +147,7 @@ function M.on_attach(client, buffer)
 
     -- Document symbol
     if client.resolved_capabilities.document_symbol then
-        keymap.set_buflocal_leader(buffer, "n", {
+        keymap.buf_set_leader(buffer, "n", {
             cS = {
                 "<Cmd>SymbolsOutlineOpen<CR>",
                 "Symbols",
@@ -179,7 +179,7 @@ function M.on_attach(client, buffer)
 
     -- Implementation
     if client.resolved_capabilities.implementation then
-        keymap.set_buflocal_leader(buffer, "n", {
+        keymap.buf_set_leader(buffer, "n", {
             ci = {
                 function()
                     require("telescope.builtin").lsp_implementations()
@@ -191,14 +191,14 @@ function M.on_attach(client, buffer)
 
     -- Rename
     if client.resolved_capabilities.rename then
-        keymap.set_buflocal_leader(buffer, "n", {
+        keymap.buf_set_leader(buffer, "n", {
             cr = { vim.lsp.buf.rename, "LSP Rename" },
         })
     end
 
     -- Type definition
     if client.resolved_capabilities.type_definition then
-        keymap.set_buflocal_leader(buffer, "n", {
+        keymap.buf_set_leader(buffer, "n", {
             ct = {
                 function()
                     require("telescope.builtin").lsp_type_definitions()
@@ -212,7 +212,7 @@ function M.on_attach(client, buffer)
     if client.resolved_capabilities.workspace_symbol then
         vim.api.nvim_buf_set_option(buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
 
-        keymap.set_buflocal_leader(buffer, "n", {
+        keymap.buf_set_leader(buffer, "n", {
             cj = {
                 function()
                     require("telescope.builtin").lsp_workspace_symbols()
