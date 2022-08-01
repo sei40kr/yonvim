@@ -26,13 +26,13 @@ function M.init()
             },
             d = {
                 function()
-                    require("mini.bufremove").delete()
+                    require("yvim.core.buffer").delete_buffer()
                 end,
                 "Kill buffer",
             },
             k = {
                 function()
-                    require("mini.bufremove").delete()
+                    require("yvim.core.buffer").delete_buffer()
                 end,
                 "Kill buffer",
             },

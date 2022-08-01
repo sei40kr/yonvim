@@ -58,6 +58,7 @@ neovim.override {
       nvim-treesitter
     ] ++ (with yonvimPlugins; [
       ## core
+      close-buffers-nvim
       nvim-web-devicons
       # TODO defer loading
       open-browser-vim

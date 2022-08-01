@@ -2,6 +2,7 @@ local M = {}
 
 function M.setup()
     -- mini.nvim
+    vim.g.minibufremove_disable = true
     vim.g.minicompletion_disable = true
     vim.g.minicursorword_disable = true
     vim.g.minipairs_disable = true
