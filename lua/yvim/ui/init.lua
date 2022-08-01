@@ -6,10 +6,6 @@ function M.setup()
     -- diffview.nvim
     special_buffer.register_filetype("DiffviewFiles")
 
-    -- indent-blankline.nvim
-    vim.g.indent_blankline_filetype_exclude = special_buffer.get_filetypes()
-    vim.g.indent_blankline_buftype_exclude = special_buffer.get_buftypes()
-
     -- nvim-tree.lua
     special_buffer.register_filetype("NvimTree")
 
