@@ -32,9 +32,7 @@ function M.config()
             },
         },
         extensions = {
-            project = {
-                base_dirs = { { "~/ghq", max_depth = 4 } },
-            },
+            project = yvim.core.project_base_dirs,
         },
     })
 
