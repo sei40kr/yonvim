@@ -35,6 +35,9 @@ function M.load()
     vim.opt.history = 1000
     vim.opt.tabpagemax = 50
     vim.opt.sessionoptions:remove("options")
+    vim.opt.sessionoptions:append("folds")
+    vim.opt.sessionoptions:append("terminal")
+    vim.opt.sessionoptions:append("winpos")
     vim.opt.viewoptions:remove("options")
 
     vim.opt.number = true
