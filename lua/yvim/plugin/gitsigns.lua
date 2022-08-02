@@ -5,13 +5,13 @@ function M.config()
         signs = {
             add = {
                 hl = "GitSignsAdd",
-                text = "▍",
+                text = "▎",
                 numhl = "GitSignsAddNr",
                 linehl = "GitSignsAddLn",
             },
             change = {
                 hl = "GitSignsChange",
-                text = "▍",
+                text = "▎",
                 numhl = "GitSignsChangeNr",
                 linehl = "GitSignsChangeLn",
             },
@@ -29,7 +29,7 @@ function M.config()
             },
             changedelete = {
                 hl = "GitSignsChange",
-                text = "▍",
+                text = "▎",
                 numhl = "GitSignsChangeNr",
                 linehl = "GitSignsChangeLn",
             },
