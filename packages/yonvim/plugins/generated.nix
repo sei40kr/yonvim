@@ -548,13 +548,13 @@
 
   nvim-cmp = vimUtils.buildVimPlugin {
     pname = "nvim-cmp";
-    version = "2022-06-09";
+    version = "2022-07-25";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "nvim-cmp";
-      rev = "15c7bf7c0dfb7c75eb526c53f9574633c13dc22d";
-      sha256 = "0fncx8cr915p5wxjb2wqmc5l3p1mjy0vwmkik4alz422c9zh436z";
+      rev = "706371f1300e7c0acb98b346f80dad2dd9b5f679";
+      sha256 = "1cwzzdwhsy3fqxwdx0big2qfvqha4m97nml83i1mp31agjk016pk";
     };
 
     dontBuild = true;
