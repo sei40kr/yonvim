@@ -60,15 +60,11 @@ function M.on_attach(client, buffer)
     if client.resolved_capabilities.call_hierarchy then
         keymap.buf_set_leader(buffer, "n", {
             cy = {
-                function()
-                    require("telescope.builtin").lsp_incoming_calls()
-                end,
+                vim.lsp.buf.incoming_calls,
                 "Incoming call hierarchy",
             },
             cY = {
-                function()
-                    require("telescope.builtin").lsp_outgoing_calls()
-                end,
+                vim.lsp.buf.outgoing_calls,
                 "Outgoing call hierarchy",
             },
         })
@@ -106,16 +102,11 @@ function M.on_attach(client, buffer)
     -- Code action
     if client.resolved_capabilities.code_action then
         keymap.buf_set_leader(buffer, "n", {
-            ca = {
-                function()
-                    require("telescope.builtin").lsp_code_actions()
-                end,
-                "Execute code action",
-            },
+            ca = { vim.lsp.buf.code_action, "Execute code action" },
         })
         keymap.buf_set_leader(buffer, "x", {
             ca = {
-                ':lua require("telescope.builtin").lsp_range_code_actions()<CR>',
+                ":lua vim.lsp.buf.range_code_action()<CR>",
                 "Execute code action",
             },
         })
@@ -179,9 +170,7 @@ function M.on_attach(client, buffer)
 
     -- Go to definition
     if client.resolved_capabilities.goto_definition then
-        vim.keymap.set("n", "gd", function()
-            require("telescope.builtin").lsp_definitions()
-        end, { buffer = buffer })
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = buffer })
     end
 
     -- Hover
@@ -192,12 +181,7 @@ function M.on_attach(client, buffer)
     -- Implementation
     if client.resolved_capabilities.implementation then
         keymap.buf_set_leader(buffer, "n", {
-            ci = {
-                function()
-                    require("telescope.builtin").lsp_implementations()
-                end,
-                "Find implementations",
-            },
+            ci = { vim.lsp.buf.implementation, "Find implementations" },
         })
     end
 
@@ -211,12 +195,7 @@ function M.on_attach(client, buffer)
     -- Type definition
     if client.resolved_capabilities.type_definition then
         keymap.buf_set_leader(buffer, "n", {
-            ct = {
-                function()
-                    require("telescope.builtin").lsp_type_definitions()
-                end,
-                "Find type definition",
-            },
+            ct = { vim.lsp.buf.type_definition, "Find type definition" },
         })
     end
 
@@ -226,9 +205,7 @@ function M.on_attach(client, buffer)
 
         keymap.buf_set_leader(buffer, "n", {
             cj = {
-                function()
-                    require("telescope.builtin").lsp_workspace_symbols()
-                end,
+                vim.lsp.buf.workspace_symbol,
                 "Jump to symbol in workspace",
             },
             cJ = {
