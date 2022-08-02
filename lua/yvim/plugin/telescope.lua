@@ -14,10 +14,6 @@ local function translate_border_chars(border_chars)
 end
 
 function M.config()
-    local border_chars = require("yvim.util.ui").get_border_chars(
-        yvim.ui.border
-    )
-
     local telescope = require("telescope")
     local actions = require("telescope.actions")
 
@@ -25,7 +21,7 @@ function M.config()
         defaults = {
             border = yvim.ui.border ~= "none",
             borderchars = yvim.ui.border ~= "none" and translate_border_chars(
-                border_chars
+                require("yvim.util.ui").get_border_chars(yvim.ui.border)
             ) or nil,
             mappings = {
                 i = {
