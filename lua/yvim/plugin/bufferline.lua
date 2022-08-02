@@ -8,6 +8,8 @@ function M.config()
             buffer_close_icon = "  ",
             modified_icon = "• ",
             indicator_icon = "▎ ",
+            diagnostics = "nvim_lsp",
+            diagnostics_indicator = nil,
             show_close_icon = false,
             separator_style = { "", "" },
             offsets = { { filetype = "NvimTree" } },
