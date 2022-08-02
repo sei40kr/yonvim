@@ -2,25 +2,12 @@ local M = {}
 
 local log = require("yvim.utils.log")
 
-local defaults = require("yvim.config.defaults")
-
-local function get_user_config_dir()
-    local base_dir = vim.fn.getenv("XDG_CONFIG_HOME")
-    if base_dir == vim.NIL then
-        base_dir = vim.fn.expand("~/.config", true, false)
-    end
-
-    return base_dir .. "/yvim"
-end
-
-local function get_user_config_path()
-    return get_user_config_dir() .. "/config.lua"
-end
-
 function M.load()
-    yvim = vim.deepcopy(defaults)
+    local path = require("yvim.util.path")
 
-    local config_path = get_user_config_path()
+    _G.yvim = {}
+
+    local config_path = path.join_paths(path.get_config_dir(), "config.lua")
     local ok, err = pcall(dofile, config_path)
     if not ok then
         if vim.fn.filereadable(config_path) then
@@ -32,6 +19,9 @@ function M.load()
             )
         end
     end
+
+    local defaults = require("yvim.config.defaults")
+    _G.yvim = vim.tbl_deep_extend("force", defaults, _G.yvim)
 
     require("yvim.config.options").load()
     require("yvim.config.autocmds").load()
