@@ -37,6 +37,9 @@ function M.config()
     -- mini.nvim
     require("yvim.plugin.mini").config()
 
+    -- null-ls.nvim
+    require("yvim.plugin.null-ls").config()
+
     -- nvim-web-devicons
     require("yvim.plugin.web-devicons").config()
 

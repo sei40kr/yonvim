@@ -28,9 +28,6 @@ function M.config()
     -- nvim-lspconfig
     require("yvim.plugin.lspconfig").config()
 
-    -- null-ls.nvim
-    require("yvim.plugin.null-ls").config()
-
     -- lsp-format.nvim
     if yvim.format.format_on_save then
         require("yvim.plugin.lsp-format").config()
