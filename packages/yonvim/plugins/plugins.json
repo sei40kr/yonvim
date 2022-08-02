@@ -63,11 +63,11 @@
         "sha256": "0f9mk0h3g1gg6lq9qnasi0liv8kvgc6rzfvgc9cflq5kkw97gjpw"
     },
     {
-        "version": "2022-02-02",
+        "version": "2022-07-26",
         "owner": "hrsh7th",
         "repo": "cmp-path",
-        "rev": "466b6b8270f7ba89abd59f402c73f63c7331ff6e",
-        "sha256": "15ksxnwxssv1yr1ss66mbl5w0layq0f4baisd9ki192alnkd7365"
+        "rev": "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1",
+        "sha256": "0nmxwfn0gp70z26w9x03dk2myx9bbjxqw7zywzvdm28lgr43dwhv"
     },
     {
         "version": "2021-10-19",
