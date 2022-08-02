@@ -91,11 +91,11 @@
         "sha256": "082wy3bpmzac0vgjdkaaiih3h8k91rn1cjcvvwzpk8hjsxbbhf96"
     },
     {
-        "version": "2022-07-02",
+        "version": "2022-07-28",
         "owner": "zbirenbaum",
         "repo": "copilot.lua",
-        "rev": "2bd8d80e8eaf60d5237e02784081959ae13e90b7",
-        "sha256": "1qz5b4v52fgahnp6a4mzibw84h4ihl061788q199d5c5ccn3fh8h"
+        "rev": "f345b7a1b86b85e479510923d37028872e491cb9",
+        "sha256": "1kc734pgp8v4cpr0ld8rkazl2s95m61cqivr98wdwm9ja9hx6zvv"
     },
     {
         "version": "2022-06-17",
