@@ -196,13 +196,13 @@
 
   copilot-cmp = vimUtils.buildVimPlugin {
     pname = "copilot-cmp";
-    version = "2022-06-20";
+    version = "2022-08-01";
 
     src = fetchFromGitHub {
       owner = "zbirenbaum";
       repo = "copilot-cmp";
-      rev = "bcf4a3b8f2b7bb61a2d736adbb315d081444549f";
-      sha256 = "082wy3bpmzac0vgjdkaaiih3h8k91rn1cjcvvwzpk8hjsxbbhf96";
+      rev = "aba78c62a0bdf523a5a9d55c9c37bb52c25302c2";
+      sha256 = "1v8w2lskqrngwnpjbxldb4p525wmqk7ilfjxa22mb70nndygig3y";
     };
 
     dontBuild = true;
