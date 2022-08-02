@@ -53,6 +53,7 @@ function M.config()
                     },
                 },
             },
+            remove_file = { close_window = false },
         },
     })
 end
