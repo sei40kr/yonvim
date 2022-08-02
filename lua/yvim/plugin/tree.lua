@@ -44,6 +44,7 @@ function M.config()
             signcolumn = "no",
         },
         actions = {
+            change_dir = { restrict_above_cwd = true },
             open_file = {
                 window_picker = {
                     exclude = {
