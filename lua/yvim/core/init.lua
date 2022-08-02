@@ -34,6 +34,9 @@ function M.config()
     -- close-buffers.nvim
     require("yvim.plugin.close-buffers").config()
 
+    -- mason.nvim
+    require("yvim.plugin.mason").config()
+
     -- mini.nvim
     require("yvim.plugin.mini").config()
 
