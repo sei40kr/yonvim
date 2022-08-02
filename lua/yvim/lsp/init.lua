@@ -56,6 +56,24 @@ end
 function M.on_attach(client, buffer)
     local keymap = require("yvim.util.keymap")
 
+    -- Call hierarchy
+    if client.resolved_capabilities.call_hierarchy then
+        keymap.buf_set_leader(buffer, "n", {
+            cy = {
+                function()
+                    require("telescope.builtin").lsp_incoming_calls()
+                end,
+                "Incoming call hierarchy",
+            },
+            cY = {
+                function()
+                    require("telescope.builtin").lsp_outgoing_calls()
+                end,
+                "Outgoing call hierarchy",
+            },
+        })
+    end
+
     -- Diagnostic
     keymap.buf_set_leader(buffer, "n", {
         c = {
