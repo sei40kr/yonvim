@@ -126,7 +126,6 @@ neovim.override {
       diffview-nvim
       dressing-nvim
       gitsigns-nvim
-      indent-blankline-nvim
       lualine-nvim
       # TODO defer loading
       nvim-tree-lua
@@ -151,5 +150,9 @@ neovim.override {
       # TODO defer loading
       octo-nvim
     ]);
+    opt = with yonvimPlugins; [
+      ## ui
+      indent-blankline-nvim
+    ];
   };
 }

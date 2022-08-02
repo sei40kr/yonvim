@@ -16,6 +16,20 @@ function M.setup()
 
     -- trouble.lua
     special_buffer.register_filetype("Trouble")
+
+    local group = vim.api.nvim_create_augroup("YvimUI", {})
+    vim.api.nvim_create_autocmd("VimEnter", {
+        group = group,
+        pattern = "*",
+        callback = function()
+            -- indent-blankline.nvim
+            -- HACK: Prevent indent-blankline.nvim overriding colorscheme
+            --  highlights
+            vim.g.__indent_blankline_setup_completed = true
+            vim.cmd([[packadd indent-blankline.nvim]])
+            require("yvim.plugin.indent-blankline").config()
+        end,
+    })
 end
 
 function M.config()
@@ -30,9 +44,6 @@ function M.config()
 
     -- gitsigns.nvim
     require("yvim.plugin.gitsigns").config()
-
-    -- indent-blankline.nvim
-    require("yvim.plugin.indent-blankline").config()
 
     -- lualine.nvim
     require("yvim.plugin.lualine").config()
