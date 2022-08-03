@@ -68,14 +68,25 @@ function M.config()
             end,
         },
         formatting = {
+            fields = { "kind", "abbr", "menu" },
             format = function(entry, vim_item)
+                local new_vim_item = require("lspkind").cmp_format({
+                    mode = "symbol_text",
+                })(entry, vim_item)
+
                 if entry.source.name == "copilot" then
-                    vim_item.kind = " Copilot"
-                    vim_item.kind_hl_group = "CmpItemKindCopilot"
-                    return vim_item
+                    new_vim_item.kind = "  "
+                    new_vim_item.kind_hl_group = "CmpItemKindCopilot"
+                    new_vim_item.menu = "    (Copilot)"
+                else
+                    local kind, menu = unpack(
+                        vim.split(new_vim_item.kind, "%s", { trimempty = true })
+                    )
+                    new_vim_item.kind = " " .. kind .. " "
+                    new_vim_item.menu = "    (" .. menu .. ")"
                 end
 
-                return require("lspkind").cmp_format()(entry, vim_item)
+                return new_vim_item
             end,
         },
         sources = cmp.config.sources(sources),
