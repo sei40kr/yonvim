@@ -12,6 +12,26 @@ local function cr(fallback)
     fallback()
 end
 
+local function select_prev_item(fallback)
+    local cmp = require("cmp")
+
+    if cmp.visible() then
+        cmp.select_prev_item()
+    else
+        fallback()
+    end
+end
+
+local function select_next_item(fallback)
+    local cmp = require("cmp")
+
+    if cmp.visible() then
+        cmp.select_next_item()
+    else
+        fallback()
+    end
+end
+
 function M.config()
     local cmp = require("cmp")
 
@@ -59,13 +79,11 @@ function M.config()
             }),
         },
         mapping = cmp.mapping.preset.insert({
-            ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item()),
-            ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item()),
-            ["<CR>"] = cr,
-            ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item()),
-            ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item()),
             ["<Tab>"] = cmp.config.disable,
             ["<S-Tab>"] = cmp.config.disable,
+            ["<CR>"] = cmp.mapping(cr),
+            ["<C-j>"] = cmp.mapping(select_next_item),
+            ["<C-k>"] = cmp.mapping(select_prev_item),
         }),
         snippet = {
             expand = function(args)
@@ -102,6 +120,13 @@ function M.config()
     })
 
     cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline({
+            ["<Tab>"] = cmp.config.disable,
+            ["<S-Tab>"] = cmp.config.disable,
+            ["<CR>"] = cmp.mapping(cr, { "c" }),
+            ["<C-j>"] = cmp.mapping(select_next_item, { "c" }),
+            ["<C-k>"] = cmp.mapping(select_prev_item, { "c" }),
+        }),
         sources = cmp.config.sources(
             { { name = "path" } },
             { { name = "cmdline" } }
