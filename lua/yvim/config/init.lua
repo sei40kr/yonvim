@@ -72,22 +72,58 @@ function M.load()
     end
 end
 
-function M.get_border_chars()
+function M.get_border_chars(hl)
+    local border_chars
     if yvim.ui.border == "single" then
-        return { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
+        border_chars = {
+            "┌",
+            "─",
+            "┐",
+            "│",
+            "┘",
+            "─",
+            "└",
+            "│",
+        }
     end
     if yvim.ui.border == "double" then
-        return { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
+        border_chars = {
+            "╔",
+            "═",
+            "╗",
+            "║",
+            "╝",
+            "═",
+            "╚",
+            "║",
+        }
     end
     if yvim.ui.border == "rounded" then
-        return { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+        border_chars = {
+            "╭",
+            "─",
+            "╮",
+            "│",
+            "╯",
+            "─",
+            "╰",
+            "│",
+        }
     end
     if yvim.ui.border == "solid" then
-        return { " ", " ", " ", " ", " ", " ", " ", " " }
+        border_chars = { " ", " ", " ", " ", " ", " ", " ", " " }
+    end
+    if yvim.ui.border == "none" then
+        return { "", "", "", "", "", "", "", "" }
     end
 
-    -- yvim.ui.border == "none"
-    return { "", "", "", "", "", "", "", "" }
+    if hl ~= nil then
+        border_chars = vim.tbl_map(function(char)
+            return { char, hl }
+        end, border_chars)
+    end
+
+    return border_chars
 end
 
 return M

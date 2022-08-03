@@ -15,6 +15,8 @@ end
 function M.config()
     local cmp = require("cmp")
 
+    local border_chars = require("yvim.config").get_border_chars("FloatBorder")
+
     local sources = {
         { name = "luasnip" },
         { name = "nvim_lsp", group_index = 1 },
@@ -34,7 +36,6 @@ function M.config()
         cmp.config.compare.length,
         cmp.config.compare.order,
     }
-
     if yvim.completion.copilot.enable then
         table.insert(sources, 1, { name = "copilot" })
 
@@ -46,10 +47,10 @@ function M.config()
     cmp.setup({
         window = {
             completion = yvim.completion.show_menu_border
-                    and cmp.config.window.bordered({ border = yvim.ui.border })
+                    and cmp.config.window.bordered({ border = border_chars })
                 or nil,
             documentation = yvim.completion.show_doc_border
-                    and cmp.config.window.bordered({ border = yvim.ui.border })
+                    and cmp.config.window.bordered({ border = border_chars })
                 or nil,
         },
         mapping = cmp.mapping.preset.insert({
