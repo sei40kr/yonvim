@@ -49,9 +49,9 @@ function M.config()
             completion = yvim.completion.show_menu_border
                     and cmp.config.window.bordered({ border = border_chars })
                 or nil,
-            documentation = yvim.completion.show_doc_border
-                    and cmp.config.window.bordered({ border = border_chars })
-                or nil,
+            documentation = cmp.config.window.bordered({
+                border = border_chars,
+            }),
         },
         mapping = cmp.mapping.preset.insert({
             ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item()),
