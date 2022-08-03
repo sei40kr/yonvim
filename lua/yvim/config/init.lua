@@ -72,4 +72,22 @@ function M.load()
     end
 end
 
+function M.get_border_chars()
+    if yvim.ui.border == "single" then
+        return { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
+    end
+    if yvim.ui.border == "double" then
+        return { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
+    end
+    if yvim.ui.border == "rounded" then
+        return { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+    end
+    if yvim.ui.border == "solid" then
+        return { " ", " ", " ", " ", " ", " ", " ", " " }
+    end
+
+    -- yvim.ui.border == "none"
+    return { "", "", "", "", "", "", "", "" }
+end
+
 return M

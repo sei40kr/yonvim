@@ -1,6 +1,6 @@
 local M = {}
 
-local function translate_border_chars(border_chars)
+local function translate_to_telescope_borderchars(border_chars)
     return {
         border_chars[2],
         border_chars[4],
@@ -20,8 +20,8 @@ function M.config()
     telescope.setup({
         defaults = {
             border = yvim.ui.border ~= "none",
-            borderchars = yvim.ui.border ~= "none" and translate_border_chars(
-                require("yvim.util.ui").get_border_chars(yvim.ui.border)
+            borderchars = translate_to_telescope_borderchars(
+                require("yvim.config").get_border_chars()
             ) or nil,
             mappings = {
                 i = {
