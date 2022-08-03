@@ -44,13 +44,18 @@ function M.config()
         table.insert(comparators, 2, copilot_cmp_comparators.score)
     end
 
+    local zindex = require("yvim.ui.zindex")
+
     cmp.setup({
         window = {
-            completion = yvim.completion.show_menu_border
-                    and cmp.config.window.bordered({ border = border_chars })
-                or nil,
+            completion = cmp.config.window.bordered({
+                border = yvim.completion.show_menu_border and border_chars
+                    or "none",
+                zindex = zindex.COMPLETION_MENU,
+            }),
             documentation = cmp.config.window.bordered({
                 border = border_chars,
+                zindex = zindex.COMPLETION_DOC,
             }),
         },
         mapping = cmp.mapping.preset.insert({

@@ -1,0 +1,5 @@
+return {
+    COMPLETION_MENU = 1001,
+    COMPLETION_DOC = 1001,
+    LSP_PROGRESS = 50,
+}
