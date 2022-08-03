@@ -13,6 +13,16 @@ function M.setup()
         symbols = {},
     }
     special_buffer.register_filetype("Outline")
+
+    local border_chars = require("yvim.config").get_border_chars("FloatBorder")
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+        vim.lsp.handlers.hover,
+        { border = border_chars }
+    )
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help,
+        { border = border_chars }
+    )
 end
 
 function M.config()
