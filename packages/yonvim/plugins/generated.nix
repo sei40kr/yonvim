@@ -402,6 +402,22 @@
     meta.homepage = "https://github.com/lukas-reineke/lsp-format.nvim";
   };
 
+  lsp_signature-nvim = vimUtils.buildVimPlugin {
+    pname = "lsp_signature.nvim";
+    version = "2022-07-30";
+
+    src = fetchFromGitHub {
+      owner = "ray-x";
+      repo = "lsp_signature.nvim";
+      rev = "4665921ff8e30601c7c1328625b3abc1427a6143";
+      sha256 = "0iiym7chxmidfbix150hjcq7i7hjnr2n010dhi67f0srq5vhwg22";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/ray-x/lsp_signature.nvim";
+  };
+
   lspkind-nvim = vimUtils.buildVimPlugin {
     pname = "lspkind.nvim";
     version = "2022-04-18";

@@ -29,16 +29,19 @@ function M.config()
     -- fidget.nvim
     require("yvim.plugin.fidget").config()
 
+    -- lsp-format.nvim
+    if yvim.format.format_on_save then
+        require("yvim.plugin.lsp-format").config()
+    end
+
+    -- lsp_signature.nvim
+    require("yvim.plugin.lsp_signature").config()
+
     -- mason-lspconfig.nvim
     require("yvim.plugin.mason-lspconfig").config()
 
     -- nvim-lspconfig
     require("yvim.plugin.lspconfig").config()
-
-    -- lsp-format.nvim
-    if yvim.format.format_on_save then
-        require("yvim.plugin.lsp-format").config()
-    end
 
     for severity, sign in pairs({
         Error = "",
@@ -63,7 +66,7 @@ function M.config()
     )
 end
 
-function M.on_attach(client, buffer)
+local function set_keymaps(client, buffer)
     local keymap = require("yvim.util.keymap")
 
     -- Call hierarchy
@@ -122,34 +125,15 @@ function M.on_attach(client, buffer)
         })
     end
 
-    if client.resolved_capabilities.completion then
-        vim.api.nvim_buf_set_option(
-            buffer,
-            "omnifunc",
-            "v:lua.vim.lsp.omnifunc"
-        )
-    end
-
     -- Document formatting
     if client.resolved_capabilities.document_formatting then
         keymap.buf_set_leader(buffer, "n", {
             cf = { vim.lsp.buf.formatting, "Format buffer" },
         })
-
-        -- Formatting on save
-        if yvim.format.format_on_save then
-            require("lsp-format").on_attach(client)
-        end
     end
 
     -- Document range formatting
     if client.resolved_capabilities.document_range_formatting then
-        vim.api.nvim_buf_set_option(
-            buffer,
-            "formatexpr",
-            "v:lua.vim.lsp.formatexpr()"
-        )
-
         keymap.buf_set_leader(buffer, "x", {
             cf = {
                 ":lua vim.lsp.buf.range_formatting()<CR>",
@@ -211,8 +195,6 @@ function M.on_attach(client, buffer)
 
     -- Workspace symbol
     if client.resolved_capabilities.workspace_symbol then
-        vim.api.nvim_buf_set_option(buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
-
         keymap.buf_set_leader(buffer, "n", {
             cj = {
                 vim.lsp.buf.workspace_symbol,
@@ -225,6 +207,37 @@ function M.on_attach(client, buffer)
                 "Jump to symbol in all workspaces",
             },
         })
+    end
+end
+
+function M.on_attach(client, buffer)
+    if client.resolved_capabilities.completion then
+        vim.api.nvim_buf_set_option(
+            buffer,
+            "omnifunc",
+            "v:lua.vim.lsp.omnifunc"
+        )
+    end
+
+    if client.resolved_capabilities.document_range_formatting then
+        vim.api.nvim_buf_set_option(
+            buffer,
+            "formatexpr",
+            "v:lua.vim.lsp.formatexpr()"
+        )
+    end
+
+    if client.resolved_capabilities.workspace_symbol then
+        vim.api.nvim_buf_set_option(buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
+    end
+
+    set_keymaps(client, buffer)
+
+    if
+        client.resolved_capabilities.document_formatting
+        and yvim.format.format_on_save
+    then
+        require("lsp-format").on_attach(client)
     end
 end
 

@@ -93,6 +93,7 @@ neovim.override {
       null-ls-nvim
       nvim-lspconfig
       lsp-format-nvim
+      lsp_signature-nvim
       lua-dev-nvim
       symbols-outline-nvim
 

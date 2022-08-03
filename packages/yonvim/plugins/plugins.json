@@ -175,6 +175,13 @@
         "sha256": "0lj40p9ykj5f0d3sl4g0g0gjbfwx1vm6y5q613zphimpjgs3wl64"
     },
     {
+        "version": "2022-07-30",
+        "owner": "ray-x",
+        "repo": "lsp_signature.nvim",
+        "rev": "4665921ff8e30601c7c1328625b3abc1427a6143",
+        "sha256": "0iiym7chxmidfbix150hjcq7i7hjnr2n010dhi67f0srq5vhwg22"
+    },
+    {
         "version": "2022-04-18",
         "owner": "onsails",
         "repo": "lspkind.nvim",
