@@ -5,7 +5,7 @@ function M.config()
         options = {
             disabled_filetypes = { "NvimTree" },
         },
-    }, require("yvim.plugin.lualine.evil")))
+    }, require("yvim.plugin.lualine.doom")))
 end
 
 return M
