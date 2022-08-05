@@ -122,6 +122,11 @@ yvim.snippet.user_snippet_dirs = {
         path.join_paths(path.get_config_dir(), "snippets", "snipmate"),
         loader = "snipmate",
     },
+    -- Use Lua snippets
+    {
+        path.join_paths(path.get_config_dir(), "snippets", "lua"),
+        loader = "lua",
+    },
 }
 ```
 
