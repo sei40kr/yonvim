@@ -4,10 +4,6 @@ return {
     leader = " ",
     localleader = ",",
 
-    core = {
-        project_base_dirs = { { "~/ghq", max_depth = 4 } },
-    },
-
     completion = {
         show_menu_border = false,
         copilot = { enable = true },
@@ -33,6 +29,8 @@ return {
         format_on_save = true,
         formatters = {},
     },
+
+    project = { base_dirs = { { "~/ghq", max_depth = 4 } } },
 
     ui = {
         font = {

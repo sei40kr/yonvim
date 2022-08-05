@@ -33,7 +33,7 @@ function M.config()
             },
         },
         extensions = {
-            project = yvim.core.project_base_dirs,
+            project = yvim.project.base_dirs,
         },
     })
 
