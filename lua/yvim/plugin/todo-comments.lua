@@ -12,11 +12,7 @@ function M.config()
             XXX = { icon = "  ", color = "warning" },
             FIXME = { icon = "  ", color = "error" },
         },
-        highlight = {
-            before = "",
-            keyword = "bg",
-            after = "",
-        },
+        highlight = { keyword = "bg" },
     })
 end
 
