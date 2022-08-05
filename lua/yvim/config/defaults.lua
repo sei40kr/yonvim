@@ -4,6 +4,8 @@ return {
     leader = " ",
     localleader = ",",
 
+    null_ls = { sources = {} },
+
     completion = {
         show_menu_border = false,
         copilot = { enable = true },
@@ -25,10 +27,7 @@ return {
         },
     },
 
-    format = {
-        format_on_save = true,
-        formatters = {},
-    },
+    format = { format_on_save = true },
 
     project = { base_dirs = { { "~/ghq", max_depth = 4 } } },
 
