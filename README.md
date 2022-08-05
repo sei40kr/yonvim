@@ -35,6 +35,8 @@ Then, add the following to your Nix configuration:
 
 ## Configuration
 
+You can write your Yonvim configuration in `~/.config/yvim/config.lua`.
+
 | Variable               | Default value | Description                                                                                                                                                                      |
 | :--------------------- | :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `yvim.leader`          | `" "` (Space) | The leader key. See `:h mapleader` for details.                                                                                                                                  |
@@ -43,7 +45,7 @@ Then, add the following to your Nix configuration:
 
 #### Example
 
-```
+```nix
 yvim.null_ls.sources = function(null_ls)
     return {
         null_ls.builtins.formatting.prettier,
@@ -55,9 +57,9 @@ end
 
 ### Completion
 
-| Variable                           | Default value | Description                                                                                               |
-| :--------------------------------- | :------------ | :-------------------------------------------------------------------------------------------------------- |
-| `yvim.completion.copilot.enable`   | `true`        | Whether to enable GitHub Copilot suggestions. You need to run `:Copilot setup` first to use this feature. |
+| Variable                         | Default value | Description                                                                                               |
+| :------------------------------- | :------------ | :-------------------------------------------------------------------------------------------------------- |
+| `yvim.completion.copilot.enable` | `true`        | Whether to enable GitHub Copilot suggestions. You need to run `:Copilot setup` first to use this feature. |
 
 ### Format
 
