@@ -532,13 +532,13 @@
 
   null-ls-nvim = vimUtils.buildVimPlugin {
     pname = "null-ls.nvim";
-    version = "2022-06-11";
+    version = "2022-08-04";
 
     src = fetchFromGitHub {
       owner = "jose-elias-alvarez";
       repo = "null-ls.nvim";
-      rev = "dfdd5fab3c53c30f83c78ea351b9a8f65715a5b7";
-      sha256 = "16yy40k5pxwlwdi36dhpywrg3p4qwgwdxsydqparw4filjbv0iks";
+      rev = "9caa5d6d19e4d0bc8782c2a75988af0c20eed59e";
+      sha256 = "0li1jl46w6yg8h2lx5jq5jknb8iakz0fpxaskbd1nc89rrhvzwa7";
     };
 
     dontBuild = true;
