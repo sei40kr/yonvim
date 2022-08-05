@@ -5,7 +5,7 @@ local log = require("yvim.utils.log")
 local function load_keymaps()
     local keymap = require("yvim.util.keymap")
 
-    for _, mode in ipairs({ "n", "v", "s", "x", "o", "i", "l", "c", "t" }) do
+    for _, mode in ipairs({ "n", "v", "s", "x", "o", "i", "c", "t" }) do
         keymap.set(mode, yvim.keymaps[mode])
     end
 end

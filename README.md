@@ -136,7 +136,7 @@ yvim.snippet.user_snippet_dirs = {
 ### Keymaps
 
 You can add custom keymaps for mode `mode` to `yvim.keymaps[mode]`.
-Possible modes: `n`, `v`, `s`, `x`, `o`, `i`, `l`, `c`, `t`, see `:h :mapping-modes` for details.
+Possible modes: `n`, `v`, `s`, `x`, `o`, `i`, `c`, `t`, see `:h :mapping-modes` for details.
 
 #### Example
 
