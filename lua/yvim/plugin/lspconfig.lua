@@ -2,6 +2,7 @@ local M = {}
 
 function M.config()
     local lsp = require("lspconfig")
+    local windows = require("lspconfig.ui.windows")
 
     local capabilities = require("cmp_nvim_lsp").update_capabilities(
         vim.lsp.protocol.make_client_capabilities()
@@ -22,6 +23,13 @@ function M.config()
         lsp[server].setup(opts)
     end
     lsp.sumneko_lua.setup(require("lua-dev").setup(base_opts))
+
+    local orig_windows_default_opts = windows.default_opts
+    windows.default_opts = function(opts)
+        opts = orig_windows_default_opts(opts)
+        opts.border = yvim.ui.border
+        return opts
+    end
 end
 
 return M
