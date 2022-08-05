@@ -1,5 +1,3 @@
-local path = require("yvim.util.path")
-
 return {
     leader = " ",
     localleader = ",",
@@ -16,15 +14,8 @@ return {
     },
 
     snippet = {
-        friendly_snippets = {
-            enable = true,
-        },
-        user_snippet_dirs = {
-            {
-                path.join_paths(path.get_config_dir(), "snippets"),
-                loader = "vscode",
-            },
-        },
+        friendly_snippets = { enable = true },
+        user_snippet_dirs = {},
     },
 
     format = { format_on_save = true },
