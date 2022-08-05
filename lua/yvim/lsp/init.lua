@@ -67,11 +67,11 @@ function M.config()
 end
 
 local function set_keymaps(client, buffer)
-    local keymap = require("yvim.util.keymap")
+    local keymaps = require("yvim.util.keymaps")
 
     -- Call hierarchy
     if client.resolved_capabilities.call_hierarchy then
-        keymap.buf_set_leader(buffer, "n", {
+        keymaps:set_leader_for_buffer(buffer, "n", {
             cy = {
                 vim.lsp.buf.incoming_calls,
                 "Incoming call hierarchy",
@@ -84,7 +84,7 @@ local function set_keymaps(client, buffer)
     end
 
     -- Diagnostic
-    keymap.buf_set_leader(buffer, "n", {
+    keymaps:set_leader_for_buffer(buffer, "n", {
         c = {
             l = {
                 name = "+lsp",
@@ -107,17 +107,17 @@ local function set_keymaps(client, buffer)
             },
         },
     })
-    keymap.buf_set(buffer, "n", {
+    keymaps:set_for_buffer(buffer, "n", {
         ["[e"] = { vim.diagnostic.goto_prev, "Jump to previous error" },
         ["]e"] = { vim.diagnostic.goto_next, "Jump to next error" },
     })
 
     -- Code action
     if client.resolved_capabilities.code_action then
-        keymap.buf_set_leader(buffer, "n", {
+        keymaps:set_leader_for_buffer(buffer, "n", {
             ca = { vim.lsp.buf.code_action, "Execute code action" },
         })
-        keymap.buf_set_leader(buffer, "x", {
+        keymaps:set_leader_for_buffer(buffer, "x", {
             ca = {
                 ":lua vim.lsp.buf.range_code_action()<CR>",
                 "Execute code action",
@@ -127,14 +127,14 @@ local function set_keymaps(client, buffer)
 
     -- Document formatting
     if client.resolved_capabilities.document_formatting then
-        keymap.buf_set_leader(buffer, "n", {
+        keymaps:set_leader_for_buffer(buffer, "n", {
             cf = { vim.lsp.buf.formatting, "Format buffer" },
         })
     end
 
     -- Document range formatting
     if client.resolved_capabilities.document_range_formatting then
-        keymap.buf_set_leader(buffer, "x", {
+        keymaps:set_leader_for_buffer(buffer, "x", {
             cf = {
                 ":lua vim.lsp.buf.range_formatting()<CR>",
                 "Format region",
@@ -144,7 +144,7 @@ local function set_keymaps(client, buffer)
 
     -- Document symbol
     if client.resolved_capabilities.document_symbol then
-        keymap.buf_set_leader(buffer, "n", {
+        keymaps:set_leader_for_buffer(buffer, "n", {
             cS = {
                 "<Cmd>SymbolsOutlineOpen<CR>",
                 "Symbols",
@@ -174,28 +174,28 @@ local function set_keymaps(client, buffer)
 
     -- Implementation
     if client.resolved_capabilities.implementation then
-        keymap.buf_set_leader(buffer, "n", {
+        keymaps:set_leader_for_buffer(buffer, "n", {
             ci = { vim.lsp.buf.implementation, "Find implementations" },
         })
     end
 
     -- Rename
     if client.resolved_capabilities.rename then
-        keymap.buf_set_leader(buffer, "n", {
+        keymaps:set_leader_for_buffer(buffer, "n", {
             cr = { vim.lsp.buf.rename, "LSP Rename" },
         })
     end
 
     -- Type definition
     if client.resolved_capabilities.type_definition then
-        keymap.buf_set_leader(buffer, "n", {
+        keymaps:set_leader_for_buffer(buffer, "n", {
             ct = { vim.lsp.buf.type_definition, "Find type definition" },
         })
     end
 
     -- Workspace symbol
     if client.resolved_capabilities.workspace_symbol then
-        keymap.buf_set_leader(buffer, "n", {
+        keymaps:set_leader_for_buffer(buffer, "n", {
             cj = {
                 vim.lsp.buf.workspace_symbol,
                 "Jump to symbol in workspace",

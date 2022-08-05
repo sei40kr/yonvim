@@ -1,24 +1,30 @@
-local M = {}
+local Keymaps = {}
 
-function M.set(mode, keymaps)
+Keymaps.init = function()
+    local keymaps = {}
+    setmetatable(keymaps, { __index = Keymaps })
+    return keymaps
+end
+
+function Keymaps:set(mode, keymaps)
     require("which-key").register(keymaps, { mode = mode })
 end
 
-function M.set_leader(mode, keymaps)
+function Keymaps:set_leader(mode, keymaps)
     require("which-key").register(keymaps, {
         mode = mode,
         prefix = "<Leader>",
     })
 end
 
-function M.buf_set(buffer, mode, keymaps)
+function Keymaps:set_for_buffer(buffer, mode, keymaps)
     require("which-key").register(keymaps, {
         mode = mode,
         buffer = buffer,
     })
 end
 
-function M.buf_set_leader(buffer, mode, keymaps)
+function Keymaps:set_leader_for_buffer(buffer, mode, keymaps)
     require("which-key").register(keymaps, {
         mode = mode,
         prefix = "<Leader>",
@@ -26,4 +32,4 @@ function M.buf_set_leader(buffer, mode, keymaps)
     })
 end
 
-return M
+return Keymaps.init()

@@ -3,10 +3,10 @@ local M = {}
 local log = require("yvim.utils.log")
 
 local function load_keymaps()
-    local keymap = require("yvim.util.keymap")
+    local keymaps = require("yvim.util.keymaps")
 
     for _, mode in ipairs({ "n", "v", "s", "x", "o", "i", "c", "t" }) do
-        keymap.set(mode, yvim.keymaps[mode])
+        keymaps:set(mode, yvim.keymaps[mode])
     end
 end
 

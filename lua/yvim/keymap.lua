@@ -1,9 +1,9 @@
 local M = {}
 
 function M.init()
-    local keymap = require("yvim.util.keymap")
+    local keymap = require("yvim.util.keymaps")
 
-    keymap.set_leader("n", {
+    keymap:set_leader("n", {
         ["<Space>"] = { "<Leader>pf", "Find file in project", noremap = false },
         ["'"] = {
             '<Cmd>lua require("telescope.builtin").resume()<CR>',
@@ -316,7 +316,7 @@ function M.init()
         },
     })
 
-    keymap.set_leader("x", {
+    keymap:set_leader("x", {
         g = {
             d = "Jump to definition",
             D = "Jump to references",
@@ -329,7 +329,7 @@ function M.init()
         },
     })
 
-    keymap.set("n", {
+    keymap:set("n", {
         ["[<Space>"] = {
             function()
                 require("yvim.core.insert").insert_newline_above()
@@ -359,11 +359,6 @@ function M.init()
 
     -- Clear last search highlighting on escape
     vim.keymap.set("n", "<Esc>", "<Cmd>nohls<CR>", {})
-
-    vim.keymap.set("n", "<M-Left>", "<Cmd>BufferLineCyclePrev<CR>")
-    vim.keymap.set("n", "<M-Right>", "<Cmd>BufferLineCycleNext<CR>")
-    vim.keymap.set("n", "<M-S-Left>", "<Cmd>BufferLineMovePrev<CR>")
-    vim.keymap.set("n", "<M-S-Right>", "<Cmd>BufferLineMoveNext<CR>")
 end
 
 return M
