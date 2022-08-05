@@ -1,29 +1,29 @@
 local M = {}
 
-local function check_backspace()
+local function has_word_before()
     local col = vim.api.nvim_win_get_cursor(0)[2]
     local line = vim.api.nvim_get_current_line()
 
-    return col == 0 or line:sub(col, col):find("%s") ~= nil
+    return col ~= 0 and line:sub(col, col):match("%s") == nil
 end
 
 local function tab()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
-    if luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-    elseif cmp.visible() then
+    if cmp.visible() then
         cmp.select_next_item()
-    elseif check_backspace() then
+    elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+    elseif has_word_before() then
+        cmp.complete()
+    else
         vim.api.nvim_feedkeys(
             vim.api.nvim_replace_termcodes("<Tab>", true, true, true),
             "n",
             true
         )
     end
-
-    cmp.complete()
 end
 
 local function s_tab()
@@ -34,13 +34,13 @@ local function s_tab()
         luasnip.jump(-1)
     elseif cmp.visible() then
         cmp.select_prev_item()
+    else
+        vim.api.nvim_feedkeys(
+            vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true),
+            "n",
+            true
+        )
     end
-
-    vim.api.nvim_feedkeys(
-        vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true),
-        "n",
-        true
-    )
 end
 
 local function complete_buffer()
@@ -60,8 +60,8 @@ local function complete_spell()
 end
 
 function M.setup()
-    vim.keymap.set("i", "<Tab>", tab)
-    vim.keymap.set("i", "<S-Tab>", s_tab)
+    vim.keymap.set({ "i", "s" }, "<Tab>", tab)
+    vim.keymap.set({ "i", "s" }, "<S-Tab>", s_tab)
     vim.keymap.set("i", "<C-x><C-f>", complete_path)
     vim.keymap.set("i", "<C-x><C-k>", complete_buffer)
     vim.keymap.set("i", "<C-x><C-o>", complete_omni)
