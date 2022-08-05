@@ -2,6 +2,14 @@ local M = {}
 
 local log = require("yvim.utils.log")
 
+local function load_keymaps()
+    local keymap = require("yvim.util.keymap")
+
+    for _, mode in ipairs({ "n", "v", "s", "x", "o", "i", "l", "c", "t" }) do
+        keymap.set(mode, yvim.keymaps[mode])
+    end
+end
+
 function M.load()
     local defaults = require("yvim.config.defaults")
     local path = require("yvim.util.path")
@@ -23,6 +31,7 @@ function M.load()
 
     require("yvim.config.options").load()
     require("yvim.config.autocmds").load()
+    load_keymaps()
 
     vim.g.mapleader = yvim.leader
     vim.g.maplocalleader = yvim.localleader

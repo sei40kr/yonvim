@@ -132,3 +132,19 @@ yvim.snippet.user_snippet_dirs = {
 | `yvim.ui.font.name`            | `"monospace"`                                          | The default font family                                                                                                          |
 | `yvim.ui.font.size`            | `12.0`                                                 | The default font size                                                                                                            |
 | `yvim.ui.font.forcedly_assign` | `false`                                                | Whether to forcedly assign an invalid font. Set this to `true` when you use a font like [Nerd Fonts](https://www.nerdfonts.com). |
+
+### Keymaps
+
+You can add custom keymaps for mode `mode` to `yvim.keymaps[mode]`.
+Possible modes: `n`, `v`, `s`, `x`, `o`, `i`, `l`, `c`, `t`, see `:h :mapping-modes` for details.
+
+#### Example
+
+```lua
+yvim.keymaps.n = {
+    ["<M-Left>"] = { "<Cmd>BufferLineCyclePrev<CR>", "Go to previous buffer" },
+    ["<M-Right>"] = { "<Cmd>BufferLineCycleNext<CR>", "Go to next buffer" },
+    ["<M-S-Left>"] = { "<Cmd>BufferLineMovePrev<CR>", "Move the current buffer backwards" },
+    ["<M-S-Right>"] = { "<Cmd>BufferLineMoveNext<CR>", "Move the current buffer forwards" },
+}
+```
