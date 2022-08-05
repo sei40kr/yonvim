@@ -108,9 +108,6 @@ function M.get_border_chars(hl)
             "│",
         }
     end
-    if yvim.ui.border == "solid" then
-        border_chars = { " ", " ", " ", " ", " ", " ", " ", " " }
-    end
     if yvim.ui.border == "none" then
         return { "", "", "", "", "", "", "", "" }
     end
