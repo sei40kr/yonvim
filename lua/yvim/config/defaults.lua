@@ -8,8 +8,6 @@ return {
     null_ls = { sources = {} },
 
     completion = {
-        -- Whether to show border for completion popup menu
-        show_menu_border = false,
         -- Whether to enable GitHub Copilot suggestions
         copilot = { enable = true },
     },

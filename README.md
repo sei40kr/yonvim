@@ -57,7 +57,6 @@ yvim.null_ls.sources = {
 
 | Variable                           | Default value | Description                                                                                               |
 | :--------------------------------- | :------------ | :-------------------------------------------------------------------------------------------------------- |
-| `yvim.completion.show_menu_border` | `false`       | Whether to show border for completion popup menu                                                          |
 | `yvim.completion.copilot.enable`   | `true`        | Whether to enable GitHub Copilot suggestions. You need to run `:Copilot setup` first to use this feature. |
 
 ### Format
