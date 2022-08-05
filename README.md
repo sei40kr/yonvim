@@ -45,7 +45,7 @@ You can write your Yonvim configuration in `~/.config/yvim/config.lua`.
 
 #### Example
 
-```nix
+```lua
 yvim.null_ls.sources = function(null_ls)
     return {
         null_ls.builtins.formatting.prettier,
@@ -171,7 +171,7 @@ Then add the plugin to `packages/yonvim/neovim-configured.nix`:
       close-buffers-nvim
       # ...
     ];
-  }
+  };
 }
 ```
 
