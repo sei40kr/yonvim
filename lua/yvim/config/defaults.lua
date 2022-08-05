@@ -20,7 +20,7 @@ return {
 
     format = { format_on_save = true },
 
-    project = { base_dirs = { { "~/ghq", max_depth = 4 } } },
+    project = { base_dirs = {} },
 
     ui = {
         font = {
