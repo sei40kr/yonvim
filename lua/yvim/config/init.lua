@@ -6,7 +6,7 @@ function M.load()
     local defaults = require("yvim.config.defaults")
     local path = require("yvim.util.path")
 
-    _G.yvim = defaults
+    _G.yvim = vim.tbl_deep_extend("force", {}, defaults)
 
     local config_path = path.join_paths(path.get_config_dir(), "config.lua")
     local ok, err = pcall(dofile, config_path)
