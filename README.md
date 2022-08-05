@@ -148,3 +148,38 @@ yvim.keymaps.n = {
     ["<M-S-Right>"] = { "<Cmd>BufferLineMoveNext<CR>", "Move the current buffer forwards" },
 }
 ```
+
+## Development
+
+### Add a plugin
+
+First, you need to generate a Nix derivation for the plugin which you want to add:
+
+```sh
+cd packages/yonvim/plugins
+./plugins.py add kazhala/close-buffers.nvim
+```
+
+Then add the plugin to `packages/yonvim/neovim-configured.nix`:
+
+```nix
+{
+  configure.packages.myVimPackage = {
+    start = with yonvimPlugins; [
+      close-buffers-nvim
+      # ...
+    ];
+  }
+}
+```
+
+### Update a plugin
+
+```sh
+cd packages/yonvim/plugins
+./plugins.py update close-buffers.nvim
+```
+
+---
+
+See `./plugins.py --help` for details.
