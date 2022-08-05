@@ -5,7 +5,11 @@ return {
     localleader = ",",
 
     -- null-ls.nvim sources to use
-    null_ls = { sources = {} },
+    null_ls = {
+        sources = function(_)
+            return {}
+        end,
+    },
 
     completion = {
         -- Whether to enable GitHub Copilot suggestions
