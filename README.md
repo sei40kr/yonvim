@@ -85,7 +85,7 @@ yvim.lsp.servers = {
 
 | Variable                 | Default value | Description                                                                                                                                                                       |
 | :----------------------- | :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `yvim.project.base_dirs` | `"{}"`        | Project base directories. See [telescope-project.nvim - Available setup settings](https://github.com/nvim-telescope/telescope-project.nvim#available-setup-settings) for details. |
+| `yvim.project.base_dirs` | `{}`          | Project base directories. See [telescope-project.nvim - Available setup settings](https://github.com/nvim-telescope/telescope-project.nvim#available-setup-settings) for details. |
 
 #### Examples
 
@@ -127,7 +127,7 @@ yvim.snippet.user_snippet_dirs = {
 
 | Variable                       | Default value                                          | Description                                                                                                                      |
 | :----------------------------- | :----------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `yvim.ui.border`               | `false`                                                | The default border style. Supported values: `"none"`, `"single"`, `"double"`, `"rounded"`.                                       |
+| `yvim.ui.border`               | `"rounded"`                                            | The default border style. Supported values: `"none"`, `"single"`, `"double"`, `"rounded"`.                                       |
 | `yvim.ui.spinner`              | `{ "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }` | The default spinner pattern                                                                                                      |
 | `yvim.ui.font.name`            | `"monospace"`                                          | The default font family                                                                                                          |
 | `yvim.ui.font.size`            | `12.0`                                                 | The default font size                                                                                                            |
