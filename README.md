@@ -183,3 +183,9 @@ cd packages/yonvim/plugins
 ---
 
 See `./plugins.py --help` for details.
+
+## Roadmap
+
+- [ ] Plugin lazy loading
+- [ ] Interactive REPL
+- [ ] DAP
