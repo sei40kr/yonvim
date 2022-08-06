@@ -10,6 +10,7 @@ function M.find_file_in_project()
     local ok, _ = pcall(telescope_builtin.git_files, {
         prompt_title = "Find File",
         cwd = get_project_root(),
+        show_untracked = true,
     })
 
     if not ok then
