@@ -90,6 +90,18 @@ function M.load()
                 end,
                 "Find file from here",
             },
+            p = {
+                function()
+                    require("yvim.core.file").find_file_in_private_config()
+                end,
+                "Find file in private config",
+            },
+            P = {
+                function()
+                    require("yvim.core.file").browse_private_config()
+                end,
+                "Browse private config",
+            },
             r = {
                 function()
                     require("telescope.builtin").oldfiles()
