@@ -30,10 +30,6 @@ function M.config()
         },
         respect_buf_cwd = true,
         update_cwd = true,
-        update_focused_file = {
-            enable = true,
-            update_cwd = true,
-        },
         view = {
             width = 35,
             mappings = {
