@@ -38,6 +38,7 @@ function M.config()
             },
             signcolumn = "no",
         },
+        filters = { custom = { "^\\.git$" } },
         actions = {
             change_dir = { restrict_above_cwd = true },
             open_file = {
