@@ -28,7 +28,6 @@ function M.config()
             },
             special_files = {},
         },
-        respect_buf_cwd = true,
         update_cwd = true,
         view = {
             width = 35,
