@@ -30,7 +30,6 @@ function M.load()
     end
 
     require("yvim.config.options").load()
-    require("yvim.config.autocmds").load()
     load_keymaps()
 
     vim.g.mapleader = yvim.leader

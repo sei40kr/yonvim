@@ -46,6 +46,8 @@ function M.load()
             s = { ":Gitsigns stage_hunk<CR>", "Git stage hunk" },
         },
     })
+
+    keymap:set_for_filetype("help", "n", { q = { "<Cmd>bd<CR>", "Quit" } })
 end
 
 return M

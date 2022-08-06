@@ -1,20 +1,19 @@
 local M = {}
 
 function M.config()
+    local keymap = require("yvim.util.keymaps")
+
     require("toggleterm").setup({
         open_mapping = "<NOP>",
         shade_terminals = false,
         insert_mappings = false,
     })
 
-    local group = vim.api.nvim_create_augroup("toggleterm", {})
-    vim.api.nvim_create_autocmd("FileType", {
-        group = group,
-        pattern = "toggleterm",
-        callback = function()
-            vim.keymap.set("n", "q", "<Cmd>ToggleTerm<CR>", { buffer = true })
-        end,
-    })
+    keymap:set_for_filetype(
+        "toggleterm",
+        "n",
+        { q = { "<Cmd>ToggleTerm<CR>", "Quit" } }
+    )
 end
 
 return M
