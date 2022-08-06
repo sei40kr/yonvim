@@ -39,7 +39,7 @@ function M.init()
     require("yvim.tools").config()
     require("yvim.ui").config()
 
-    require("yvim.keymap").init()
+    require("yvim.core.keymap").load()
 end
 
 return M

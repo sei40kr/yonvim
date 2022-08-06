@@ -1,6 +1,6 @@
 local M = {}
 
-function M.init()
+function M.load()
     local keymap = require("yvim.util.keymaps")
 
     keymap:set_leader("n", {
@@ -328,37 +328,6 @@ function M.init()
             s = { ":Gitsigns stage_hunk<CR>", "Git stage hunk" },
         },
     })
-
-    keymap:set("n", {
-        ["[<Space>"] = {
-            function()
-                require("yvim.core.insert").insert_newline_above()
-            end,
-            "Insert newline above",
-        },
-        ["]<Space>"] = {
-            function()
-                require("yvim.core.insert").insert_newline_below()
-            end,
-            "Insert newline below",
-        },
-        ["[c"] = "Previous comment",
-        ["]c"] = "Next comment",
-        ["[b"] = { "<Cmd>bp<CR>", "Previous buffer" },
-        ["]b"] = { "<Cmd>bn<CR>", "Next buffer" },
-        ["[d"] = { "<Cmd>Gitsigns prev_hunk<CR>", "Jump to previous hunk" },
-        ["]d"] = { "<Cmd>Gitsigns next_hunk<CR>", "Jump to next hunk" },
-    })
-
-    -- Disable Ex mode
-    vim.keymap.set("n", "Q", "<Nop>", { noremap = true })
-
-    -- Escape key sequence
-    vim.keymap.set("i", "jk", "<Esc>", { noremap = true })
-    vim.keymap.set("t", "jk", "<C-\\><C-n>", { noremap = true })
-
-    -- Clear last search highlighting on escape
-    vim.keymap.set("n", "<Esc>", "<Cmd>nohls<CR>", {})
 end
 
 return M
