@@ -1,6 +1,8 @@
 return {
-    -- The leader key
+    -- The leader prefix key
     leader = " ",
+    -- The alternative leader prefix key. Used for insert and select modes.
+    alt_leader = "<M-Space>",
     -- The local leader key
     localleader = ",",
 

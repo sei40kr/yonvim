@@ -1,5 +1,9 @@
 local Keymaps = {}
 
+local function get_leader_key(mode)
+    return (mode ~= "i" and mode ~= "s") and "<Leader>" or yvim.alt_leader
+end
+
 Keymaps.init = function()
     local augroup = vim.api.nvim_create_augroup("yvim_keymaps", {})
 
@@ -15,7 +19,7 @@ end
 function Keymaps:set_leader(mode, keymaps)
     require("which-key").register(keymaps, {
         mode = mode,
-        prefix = "<Leader>",
+        prefix = get_leader_key(mode),
     })
 end
 
@@ -29,7 +33,7 @@ end
 function Keymaps:set_leader_for_buffer(buffer, mode, keymaps)
     require("which-key").register(keymaps, {
         mode = mode,
-        prefix = "<Leader>",
+        prefix = get_leader_key(mode),
         buffer = buffer,
     })
 end
