@@ -328,6 +328,33 @@ function M.load()
         },
     })
 
+    keymap:set_leader("i", {
+        -- +insert
+        i = {
+            name = "+insert",
+            e = {
+                function()
+                    require("telescope.builtin").symbols({
+                        sources = { "emoji" },
+                    })
+                end,
+                "Emoji",
+            },
+            r = {
+                function()
+                    require("telescope.builtin").registers()
+                end,
+                "From register",
+            },
+            s = {
+                function()
+                    require("telescope").extensions.luasnip.luasnip({})
+                end,
+                "Snippet",
+            },
+        },
+    })
+
     keymap:set_leader("x", {
         g = {
             d = "Jump to definition",
