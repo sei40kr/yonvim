@@ -2,7 +2,7 @@ return {
     -- The leader prefix key
     leader_key = " ",
     -- The alternative leader prefix key. Used for insert and select modes.
-    alt_leader = "<M-Space>",
+    alt_leader_key = "<M-Space>",
     -- The local leader key
     localleader = ",",
 

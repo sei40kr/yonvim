@@ -1,7 +1,7 @@
 local Keymaps = {}
 
 local function get_leader_key(mode)
-    return (mode ~= "i" and mode ~= "s") and "<Leader>" or yvim.alt_leader
+    return (mode ~= "i" and mode ~= "s") and "<Leader>" or yvim.alt_leader_key
 end
 
 Keymaps.init = function()
