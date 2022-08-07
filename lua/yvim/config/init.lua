@@ -32,7 +32,7 @@ function M.load()
     require("yvim.config.options").load()
     load_keymaps()
 
-    vim.g.mapleader = yvim.leader
+    vim.g.mapleader = yvim.leader_key
     vim.g.maplocalleader = yvim.localleader
 
     if vim.g.GuiLoaded then
