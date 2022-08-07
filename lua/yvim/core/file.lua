@@ -1,6 +1,6 @@
 local M = {}
 
-function M.find_file()
+function M.browse_file()
     require("telescope").extensions.file_browser.file_browser({
         cwd = vim.fn.expand("%:p:h"),
     })

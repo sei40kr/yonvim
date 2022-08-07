@@ -1,9 +1,9 @@
 local M = {}
 
 function M.load()
-    local keymap = require("yvim.util.keymaps")
+    local keymaps = require("yvim.util.keymaps")
 
-    keymap:set_leader("n", {
+    keymaps:set_leader("n", {
         ["<Space>"] = { "<Leader>pf", "Find file in project", noremap = false },
         ["'"] = {
             '<Cmd>lua require("telescope.builtin").resume()<CR>',
@@ -80,7 +80,7 @@ function M.load()
             name = "+file",
             f = {
                 function()
-                    require("yvim.core.file").find_file()
+                    require("yvim.core.file").browse_file()
                 end,
                 "Find file",
             },
@@ -328,7 +328,7 @@ function M.load()
         },
     })
 
-    keymap:set_leader("i", {
+    keymaps:set_leader("i", {
         -- +insert
         i = {
             name = "+insert",
@@ -355,7 +355,7 @@ function M.load()
         },
     })
 
-    keymap:set_leader("x", {
+    keymaps:set_leader("x", {
         g = {
             d = "Jump to definition",
             D = "Jump to references",

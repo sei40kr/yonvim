@@ -1,7 +1,7 @@
 local M = {}
 
 function M.load()
-    local keymap = require("yvim.util.keymaps")
+    local keymaps = require("yvim.util.keymaps")
 
     -- Disable Ex mode
     vim.keymap.set("n", "Q", "<Nop>", { noremap = true })
@@ -13,7 +13,7 @@ function M.load()
     -- Clear last search highlighting on escape
     vim.keymap.set("n", "<Esc>", "<Cmd>nohls<CR>", {})
 
-    keymap:set("n", {
+    keymaps:set("n", {
         ["[<Space>"] = {
             function()
                 require("yvim.core.insert").insert_newline_above()
@@ -34,7 +34,7 @@ function M.load()
         ["]d"] = { "<Cmd>Gitsigns next_hunk<CR>", "Jump to next hunk" },
     })
 
-    keymap:set_leader("x", {
+    keymaps:set_leader("x", {
         g = {
             d = "Jump to definition",
             D = "Jump to references",
@@ -47,7 +47,7 @@ function M.load()
         },
     })
 
-    keymap:set_for_filetype("help", "n", { q = { "<Cmd>bd<CR>", "Quit" } })
+    keymaps:set_for_filetype("help", "n", { q = { "<Cmd>bd<CR>", "Quit" } })
 end
 
 return M

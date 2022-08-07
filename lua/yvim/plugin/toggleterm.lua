@@ -1,7 +1,7 @@
 local M = {}
 
 function M.config()
-    local keymap = require("yvim.util.keymaps")
+    local keymaps = require("yvim.util.keymaps")
 
     require("toggleterm").setup({
         open_mapping = "<NOP>",
@@ -9,7 +9,7 @@ function M.config()
         insert_mappings = false,
     })
 
-    keymap:set_for_filetype(
+    keymaps:set_for_filetype(
         "toggleterm",
         "n",
         { q = { "<Cmd>ToggleTerm<CR>", "Quit" } }
