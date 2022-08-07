@@ -4,7 +4,7 @@ return {
     -- The alternative leader prefix key. Used for insert and select modes.
     alt_leader_key = "<M-Space>",
     -- The local leader key
-    localleader = ",",
+    localleader_key = ",",
 
     -- null-ls.nvim sources to use
     null_ls = {

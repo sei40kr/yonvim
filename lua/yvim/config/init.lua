@@ -33,7 +33,7 @@ function M.load()
     load_keymaps()
 
     vim.g.mapleader = yvim.leader_key
-    vim.g.maplocalleader = yvim.localleader
+    vim.g.maplocalleader = yvim.localleader_key
 
     if vim.g.GuiLoaded then
         vim.cmd([[

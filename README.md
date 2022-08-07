@@ -41,7 +41,7 @@ You can write your Yonvim configuration in `~/.config/yvim/config.lua`.
 | :--------------------- | :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `yvim.leader_key`      | `" "` (Space) | The leader prefix key. See `:h mapleader` for details.                                                                                                                           |
 | `yvim.alt_leader_key`  | `"<M-Space>"` | The leader prefix key. Used for insert and select modes.                                                                                                                         |
-| `yvim.localleader`     | `","`         | The local leader key. See `:h maplocalleader` for details.                                                                                                                       |
+| `yvim.localleader_key` | `","`         | The local leader key. See `:h maplocalleader` for details.                                                                                                                       |
 | `yvim.null_ls.sources` | `{}`          | null-ls.nvim sources to use. See [null-ls.nvim - doc/BUILTIN_CONFIG.md](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md) for builtin sources. |
 
 #### Example
