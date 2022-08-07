@@ -37,7 +37,7 @@ return {
         -- Whether to enable friendly-snippets
         friendly_snippets = { enable = true },
         -- User snippet directories
-        user_snippet_dirs = {},
+        private_snippet_dirs = {},
     },
 
     ui = {
