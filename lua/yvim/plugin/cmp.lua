@@ -91,10 +91,10 @@ function M.config()
         },
         formatting = {
             fields = { "kind", "abbr", "menu" },
-            format = function(entry, vim_item)
+            format = function(entry, old_vim_item)
                 local new_vim_item = require("lspkind").cmp_format({
                     mode = "symbol_text",
-                })(entry, vim_item)
+                })(entry, old_vim_item)
 
                 if entry.source.name == "copilot" then
                     new_vim_item.kind = "  "
@@ -105,7 +105,7 @@ function M.config()
                         vim.split(new_vim_item.kind, "%s", { trimempty = true })
                     )
                     new_vim_item.kind = " " .. kind .. " "
-                    new_vim_item.menu = "    (" .. menu .. ")"
+                    new_vim_item.menu = menu and "    (" .. menu .. ")"
                 end
 
                 return new_vim_item
