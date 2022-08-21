@@ -1,7 +1,9 @@
 local M = {}
 
 function M.config()
-    require("luasnip.loaders.from_vscode").lazy_load()
+    if yvim.snippet.friendly_snippets.enable then
+        require("luasnip.loaders.from_vscode").lazy_load()
+    end
 end
 
 return M

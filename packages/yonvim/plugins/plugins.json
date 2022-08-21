@@ -336,6 +336,13 @@
         "sha256": "01qj967nch3wwkbshrsdzyyr4apvsqrpa4dkmpn21qr2183w84zz"
     },
     {
+        "version": "2022-08-15",
+        "owner": "wbthomason",
+        "repo": "packer.nvim",
+        "rev": "90b323bccc04ad9b23c971a85813a1405c7725a8",
+        "sha256": "05wzadwl8l3688v3kvmmr62frbwcfxkj3pawkwkblnl49n16jid0"
+    },
+    {
         "version": "2022-06-08",
         "owner": "nvim-lua",
         "repo": "plenary.nvim",

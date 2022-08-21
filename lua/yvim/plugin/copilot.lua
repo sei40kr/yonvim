@@ -1,9 +1,11 @@
 local M = {}
 
 function M.config()
-    vim.schedule(function()
-        require("copilot").setup()
-    end)
+    if yvim.completion.copilot.enable then
+        vim.schedule(function()
+            require("copilot").setup()
+        end)
+    end
 end
 
 return M

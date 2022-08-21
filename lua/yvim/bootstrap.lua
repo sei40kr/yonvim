@@ -3,6 +3,8 @@ local M = {}
 function M.init()
     require("yvim.config").load()
 
+    require("yvim.packer").init()
+
     require("yvim.core").setup()
     require("yvim.session").setup()
     require("yvim.treesitter").setup()

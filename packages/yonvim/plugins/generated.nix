@@ -770,6 +770,22 @@
     meta.homepage = "https://github.com/tyru/open-browser.vim";
   };
 
+  packer-nvim = vimUtils.buildVimPlugin {
+    pname = "packer.nvim";
+    version = "2022-08-15";
+
+    src = fetchFromGitHub {
+      owner = "wbthomason";
+      repo = "packer.nvim";
+      rev = "90b323bccc04ad9b23c971a85813a1405c7725a8";
+      sha256 = "05wzadwl8l3688v3kvmmr62frbwcfxkj3pawkwkblnl49n16jid0";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/wbthomason/packer.nvim";
+  };
+
   plenary-nvim = vimUtils.buildVimPlugin {
     pname = "plenary.nvim";
     version = "2022-06-08";

@@ -1,19 +1,6 @@
 local M = {}
 
 function M.setup()
-    local special_buffer = require("yvim.util.special_buffer")
-
-    -- symbols-outline.nvim
-    vim.g.symbols_outline = {
-        highlight_hovered_item = false,
-        show_guides = false,
-        position = "left",
-        width = 35,
-        -- TODO: Customize icons
-        symbols = {},
-    }
-    special_buffer.register_filetype("Outline")
-
     local border_chars = require("yvim.config").get_border_chars("FloatBorder")
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
         vim.lsp.handlers.hover,
@@ -26,23 +13,6 @@ function M.setup()
 end
 
 function M.config()
-    -- fidget.nvim
-    require("yvim.plugin.fidget").config()
-
-    -- lsp-format.nvim
-    if yvim.format.format_on_save then
-        require("yvim.plugin.lsp-format").config()
-    end
-
-    -- lsp_signature.nvim
-    require("yvim.plugin.lsp_signature").config()
-
-    -- mason-lspconfig.nvim
-    require("yvim.plugin.mason-lspconfig").config()
-
-    -- nvim-lspconfig
-    require("yvim.plugin.lspconfig").config()
-
     for severity, sign in pairs({
         Error = "",
         Hint = "",

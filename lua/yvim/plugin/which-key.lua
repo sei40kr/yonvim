@@ -12,6 +12,8 @@ function M.config()
             separator = "",
         },
     })
+
+    require("yvim.util.keymaps").load()
 end
 
 return M

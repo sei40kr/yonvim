@@ -6,12 +6,6 @@ function M.setup()
     keymaps:set_leader("n", { v = "Expand region" })
 end
 
-function M.config()
-    -- spellsitter.nvim
-    require("yvim.plugin.spellsitter").config()
-
-    -- nvim-treesitter
-    require("yvim.plugin.treesitter").config()
-end
+function M.config() end
 
 return M

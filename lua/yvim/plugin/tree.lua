@@ -1,5 +1,9 @@
 local M = {}
 
+function M.setup()
+    require("yvim.util.special_buffer").register_filetype("NvimTree")
+end
+
 function M.config()
     local special_buffer = require("yvim.util.special_buffer")
 

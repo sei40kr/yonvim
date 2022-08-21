@@ -1,5 +1,9 @@
 local M = {}
 
+function M.setup()
+    require("yvim.util.special_buffer").register_filetype("DiffviewFiles")
+end
+
 function M.config()
     local actions = require("diffview.actions")
 
