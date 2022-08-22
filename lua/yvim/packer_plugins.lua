@@ -229,6 +229,9 @@ return function(use)
     use({
         "@mason@",
         as = "mason.nvim",
+        setup = function()
+            require("yvim.plugin.mason").setup()
+        end,
         config = function()
             require("yvim.plugin.mason").config()
         end,
@@ -250,6 +253,9 @@ return function(use)
     use({
         "@lspconfig@",
         requires = { "cmp-nvim-lsp", "mason-lspconfig.nvim" },
+        setup = function()
+            require("yvim.plugin.lspconfig").setup()
+        end,
         config = function()
             require("yvim.plugin.lspconfig").config()
         end,

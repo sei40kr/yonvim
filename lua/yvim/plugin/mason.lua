@@ -1,5 +1,9 @@
 local M = {}
 
+function M.setup()
+    require("yvim.util.special_buffer").register_filetype("mason.nvim")
+end
+
 function M.config()
     local path = require("yvim.util.path")
 
