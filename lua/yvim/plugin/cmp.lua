@@ -102,8 +102,22 @@ end
 
 function M.config()
     local cmp = require("cmp")
+    local lspkind = require("lspkind")
 
     local border_chars = require("yvim.config").get_border_chars("FloatBorder")
+
+    local format = lspkind.cmp_format({
+        before = function(entry, vim_item)
+            if entry.source.name == "copilot" then
+                vim_item.kind = "Copilot"
+                vim_item.kind_hl_group = "CmpItemKindCopilot"
+            end
+
+            return vim_item
+        end,
+        mode = "symbol_text",
+        menu = { copilot = "Copilot" },
+    })
 
     local sources = {
         { name = "luasnip" },
@@ -134,6 +148,10 @@ function M.config()
 
     local zindex = require("yvim.ui.zindex")
 
+    lspkind.init({
+        symbol_map = { Copilot = "" },
+    })
+
     cmp.setup({
         window = {
             completion = cmp.config.window.bordered({
@@ -159,24 +177,15 @@ function M.config()
         },
         formatting = {
             fields = { "kind", "abbr", "menu" },
-            format = function(entry, old_vim_item)
-                local new_vim_item = require("lspkind").cmp_format({
-                    mode = "symbol_text",
-                })(entry, old_vim_item)
+            format = function(entry, vim_item)
+                vim_item = format(entry, vim_item)
+                local kind, menu = unpack(
+                    vim.split(vim_item.kind, "%s", { trimempty = true })
+                )
+                vim_item.kind = " " .. kind .. " "
+                vim_item.menu = menu and "    (" .. menu .. ")"
 
-                if entry.source.name == "copilot" then
-                    new_vim_item.kind = "  "
-                    new_vim_item.kind_hl_group = "CmpItemKindCopilot"
-                    new_vim_item.menu = "    (Copilot)"
-                else
-                    local kind, menu = unpack(
-                        vim.split(new_vim_item.kind, "%s", { trimempty = true })
-                    )
-                    new_vim_item.kind = " " .. kind .. " "
-                    new_vim_item.menu = menu and "    (" .. menu .. ")"
-                end
-
-                return new_vim_item
+                return vim_item
             end,
         },
         sources = cmp.config.sources(sources),
