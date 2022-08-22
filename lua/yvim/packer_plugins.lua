@@ -334,6 +334,8 @@ return function(use)
         config = function()
             require("yvim.plugin.luasnip").config()
         end,
+        event = "InsertEnter *",
+        module = "luasnip",
     })
     use({
         "@friendly_snippets@",
