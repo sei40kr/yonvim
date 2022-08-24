@@ -596,13 +596,13 @@
 
   nvim-tree-lua = vimUtils.buildVimPlugin {
     pname = "nvim-tree.lua";
-    version = "2022-06-11";
+    version = "2022-08-23";
 
     src = fetchFromGitHub {
       owner = "kyazdani42";
       repo = "nvim-tree.lua";
-      rev = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243";
-      sha256 = "1kyckmbcb3bh73z3bk4325f7ll8svwbscv8dnxgn895lqis4clvk";
+      rev = "c3ea264947671f44d836af5b7587e12c4b4611f9";
+      sha256 = "1kpnixzz26r6byzaasg0hxqs13g7aa9qb0iwg8r1splr2vzaghwi";
     };
 
     dontBuild = true;
