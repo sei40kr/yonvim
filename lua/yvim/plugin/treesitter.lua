@@ -2,6 +2,7 @@ local M = {}
 
 function M.config()
     require("nvim-treesitter.configs").setup({
+        endwise = { enable = true },
         highlight = { enable = true },
         indent = { enable = true },
         incremental_selection = {

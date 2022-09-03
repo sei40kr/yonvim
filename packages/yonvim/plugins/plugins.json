@@ -266,6 +266,13 @@
         "sha256": "1kpnixzz26r6byzaasg0hxqs13g7aa9qb0iwg8r1splr2vzaghwi"
     },
     {
+        "version": "2022-09-02",
+        "owner": "RRethy",
+        "repo": "nvim-treesitter-endwise",
+        "rev": "dbe426b2786ee41e55afd8ebded172ce206ffa65",
+        "sha256": "1j8zrhz8bb8zvki0nw2hyjdqb12skj65fh6j9cmbbmfbqff9prkg"
+    },
+    {
         "version": "2022-01-22",
         "owner": "nvim-treesitter",
         "repo": "nvim-treesitter-refactor",

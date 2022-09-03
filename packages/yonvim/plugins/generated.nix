@@ -610,6 +610,22 @@
     meta.homepage = "https://github.com/kyazdani42/nvim-tree.lua";
   };
 
+  nvim-treesitter-endwise = vimUtils.buildVimPlugin {
+    pname = "nvim-treesitter-endwise";
+    version = "2022-09-02";
+
+    src = fetchFromGitHub {
+      owner = "RRethy";
+      repo = "nvim-treesitter-endwise";
+      rev = "dbe426b2786ee41e55afd8ebded172ce206ffa65";
+      sha256 = "1j8zrhz8bb8zvki0nw2hyjdqb12skj65fh6j9cmbbmfbqff9prkg";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/RRethy/nvim-treesitter-endwise";
+  };
+
   nvim-treesitter-refactor = vimUtils.buildVimPlugin {
     pname = "nvim-treesitter-refactor";
     version = "2022-01-22";

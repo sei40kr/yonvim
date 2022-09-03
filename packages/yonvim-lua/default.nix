@@ -89,6 +89,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by nvimacs                             ${yonvimPlugins.nvimacs.rtp} \
       --subst-var-by visual_multi                        ${yonvimPlugins.vim-visual-multi.rtp} \
       --subst-var-by treesitter                          ${nvim-treesitter.rtp} \
+      --subst-var-by treesitter_endwise                  ${yonvimPlugins.nvim-treesitter-endwise.rtp} \
       --subst-var-by treesitter_refactor                 ${yonvimPlugins.nvim-treesitter-refactor.rtp} \
       --subst-var-by treesitter_textobjects              ${yonvimPlugins.nvim-treesitter-textobjects.rtp} \
       --subst-var-by treesitter_ts_autotag               ${yonvimPlugins.nvim-ts-autotag.rtp} \

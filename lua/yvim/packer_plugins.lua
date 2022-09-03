@@ -208,6 +208,7 @@ return function(use)
             require("yvim.plugin.treesitter").config()
         end,
     })
+    use("@treesitter_endwise@")
     use("@treesitter_refactor@")
     use("@treesitter_textobjects@")
     use("@treesitter_ts_autotag@")
