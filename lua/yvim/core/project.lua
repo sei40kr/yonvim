@@ -38,4 +38,8 @@ function M.find_file_in_project_sidebar()
     require("nvim-tree").find_file(true, bufnr)
 end
 
+function M.open_neogit_status()
+    require("neogit").open({ cwd = get_project_root() })
+end
+
 return M

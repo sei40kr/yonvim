@@ -370,7 +370,7 @@ return function(use)
         config = function()
             require("yvim.plugin.neogit").config()
         end,
-        cmd = "Neogit",
+        module = "neogit",
     })
     use({
         "@octo@",

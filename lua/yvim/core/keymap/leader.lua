@@ -132,7 +132,12 @@ function M.load()
                 i = { "<Cmd>Octo issue search<CR>", "Find issue" },
                 p = { "<Cmd>Octo pr search<CR>", "Find pull request" },
             },
-            g = { "<Cmd>Neogit<CR>", "Neogit status" },
+            g = {
+                function()
+                    require("yvim.core.project").open_neogit_status()
+                end,
+                "Neogit status",
+            },
             l = {
                 name = "+list",
                 i = { "<Cmd>Octo issue list<CR>", "List issues" },
