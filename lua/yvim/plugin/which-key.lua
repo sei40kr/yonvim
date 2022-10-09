@@ -13,7 +13,7 @@ function M.config()
         },
     })
 
-    require("yvim.util.keymaps").load()
+    require("yvim.util.keymaps"):load()
 end
 
 return M

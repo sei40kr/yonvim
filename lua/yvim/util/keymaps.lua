@@ -51,7 +51,10 @@ function Keymaps:load()
     local wk = require("which-key")
     local log = require("yvim.utils.log")
 
-    if packer_plugins["which-key.nvim"] then
+    if
+        not packer_plugins["which-key.nvim"]
+        or not packer_plugins["which-key.nvim"].loaded
+    then
         log.warn("which-key.nvim not loaded. Aborting.")
         return
     end
