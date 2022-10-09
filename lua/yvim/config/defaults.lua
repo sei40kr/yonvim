@@ -33,6 +33,18 @@ return {
         base_dirs = {},
     },
 
+    repl = {
+        -- The REPL handlers to use. See `:help iron-customizing`.
+        --
+        -- Example:
+        --  yvim.repl.handlers = {
+        --    sh = { command = { "zsh" } },
+        --  }
+        handlers = { },
+        -- The command to open the REPL window. See `:help opening-window`.
+        win_open_cmd = "botright 15 split",
+    },
+
     snippet = {
         -- Whether to enable friendly-snippets
         friendly_snippets = { enable = true },

@@ -246,6 +246,18 @@ function M.load()
                 end,
                 "Find file in project sidebar",
             },
+            r = {
+                function()
+                    require("yvim.core.repl").open_repl()
+                end,
+                "Open REPL",
+            },
+            R = {
+                function()
+                    require("yvim.core.repl").open_repl_in_same_win()
+                end,
+                "Open REPL",
+            },
             t = { "<Cmd>ToggleTerm<CR>", "Toggle terminal popup" },
         },
 
@@ -356,6 +368,16 @@ function M.load()
     })
 
     keymaps:set_leader("x", {
+        -- +code
+        c = {
+            s = {
+                function()
+                    require("yvim.core.repl").send_visual_to_repl()
+                end,
+                "Send to REPL",
+            },
+        },
+        -- +git
         g = {
             d = "Jump to definition",
             D = "Jump to references",

@@ -168,6 +168,13 @@
         "sha256": "03l28ja345vz4hrbj9ha864vfyagid116mqi4z8ka2g2nk7s1brd"
     },
     {
+        "version": "2022-09-30",
+        "owner": "hkupty",
+        "repo": "iron.nvim",
+        "rev": "d1e80812aacd0c7e1a5c3050596716851d223ce9",
+        "sha256": "1vhn51mlp9yzzg4gydsh65hpbxy2x7qqf98sibbnc10bsrd2drha"
+    },
+    {
         "version": "2022-05-21",
         "owner": "lukas-reineke",
         "repo": "lsp-format.nvim",

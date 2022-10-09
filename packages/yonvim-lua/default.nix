@@ -122,6 +122,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by session_lens                        ${yonvimPlugins.session-lens.rtp} \
       --subst-var-by luasnip                             ${yonvimPlugins.LuaSnip.rtp} \
       --subst-var-by friendly_snippets                   ${yonvimPlugins.friendly-snippets.rtp} \
+      --subst-var-by iron                                ${yonvimPlugins.iron-nvim.rtp} \
       --subst-var-by neogit                              ${yonvimPlugins.neogit.rtp} \
       --subst-var-by octo                                ${yonvimPlugins.octo-nvim.rtp}
   '';

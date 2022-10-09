@@ -10,6 +10,7 @@ function M.config()
                 "NvimTree",
                 "Outline",
                 "qf",
+                "terminal",
                 "toggleterm",
                 "Trouble",
             },

@@ -386,6 +386,22 @@
     meta.homepage = "https://github.com/lukas-reineke/indent-blankline.nvim";
   };
 
+  iron-nvim = vimUtils.buildVimPlugin {
+    pname = "iron.nvim";
+    version = "2022-09-30";
+
+    src = fetchFromGitHub {
+      owner = "hkupty";
+      repo = "iron.nvim";
+      rev = "d1e80812aacd0c7e1a5c3050596716851d223ce9";
+      sha256 = "1vhn51mlp9yzzg4gydsh65hpbxy2x7qqf98sibbnc10bsrd2drha";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/hkupty/iron.nvim";
+  };
+
   lsp-format-nvim = vimUtils.buildVimPlugin {
     pname = "lsp-format.nvim";
     version = "2022-05-21";

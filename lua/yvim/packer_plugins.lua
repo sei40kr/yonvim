@@ -359,6 +359,12 @@ return function(use)
 
     -- Tools
     use({
+        "@iron@",
+        config = function()
+            require("yvim.plugin.iron").config()
+        end,
+    })
+    use({
         "@neogit@",
         requires = "plenary.nvim",
         config = function()
