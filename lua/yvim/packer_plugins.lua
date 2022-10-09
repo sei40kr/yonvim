@@ -166,6 +166,12 @@ return function(use)
         end,
     })
     use({
+        "@virt_column@",
+        config = function()
+            require("yvim.plugin.virt-column").config()
+        end,
+    })
+    use({
         "@which_key@",
         as = "which-key.nvim",
         config = function()

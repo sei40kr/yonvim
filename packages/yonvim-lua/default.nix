@@ -83,6 +83,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by tree                                ${yonvimPlugins.nvim-tree-lua.rtp} \
       --subst-var-by trouble                             ${yonvimPlugins.trouble-nvim.rtp} \
       --subst-var-by which_key                           ${yonvimPlugins.which-key-nvim.rtp} \
+      --subst-var-by virt_column                         ${yonvimPlugins.virt-column-nvim.rtp} \
       --subst-var-by editorconfig                        ${yonvimPlugins.editorconfig-nvim.rtp} \
       --subst-var-by hop                                 ${yonvimPlugins.hop-nvim.rtp} \
       --subst-var-by autopairs                           ${yonvimPlugins.nvim-autopairs.rtp} \

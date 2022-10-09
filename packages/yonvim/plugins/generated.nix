@@ -1074,6 +1074,22 @@
     meta.homepage = "https://github.com/mg979/vim-visual-multi";
   };
 
+  virt-column-nvim = vimUtils.buildVimPlugin {
+    pname = "virt-column.nvim";
+    version = "2022-09-21";
+
+    src = fetchFromGitHub {
+      owner = "lukas-reineke";
+      repo = "virt-column.nvim";
+      rev = "36fa3be9cba9195081e934b4f9729021726c5889";
+      sha256 = "097ki3ms89a2m2kvv3fg43dq7cfj6j62n3g58fmr945j5a7srssj";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/lukas-reineke/virt-column.nvim";
+  };
+
   which-key-nvim = vimUtils.buildVimPlugin {
     pname = "which-key.nvim";
     version = "2022-05-04";

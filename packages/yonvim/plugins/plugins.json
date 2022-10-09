@@ -469,6 +469,13 @@
         "sha256": "0jggmhxgs3lkm8hfjicminhsmfdjw8gsp0p5jgamdx68bryp818g"
     },
     {
+        "version": "2022-09-21",
+        "owner": "lukas-reineke",
+        "repo": "virt-column.nvim",
+        "rev": "36fa3be9cba9195081e934b4f9729021726c5889",
+        "sha256": "097ki3ms89a2m2kvv3fg43dq7cfj6j62n3g58fmr945j5a7srssj"
+    },
+    {
         "version": "2022-05-04",
         "owner": "folke",
         "repo": "which-key.nvim",
