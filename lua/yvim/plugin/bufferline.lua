@@ -3,8 +3,8 @@ local M = {}
 function M.config()
     require("bufferline").setup({
         options = {
-            close_command = 'lua require("yvim.core.buffer").delete_buffer()',
-            right_mouse_command = 'lua require("yvim.core.buffer").delete_buffer()',
+            close_command = 'lua require("yvim.buffer").del_buf()',
+            right_mouse_command = 'lua require("yvim.buffer").del_buf()',
             buffer_close_icon = "  ",
             modified_icon = "• ",
             indicator_icon = "▎ ",

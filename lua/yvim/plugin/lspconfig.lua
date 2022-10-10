@@ -7,7 +7,7 @@ end
 function M.config()
     local lsp = require("lspconfig")
     local windows = require("lspconfig.ui.windows")
-    local keymaps = require("yvim.util.keymaps")
+    local keymap = require("yvim.util.keymap")
 
     local capabilities = require("cmp_nvim_lsp").update_capabilities(
         vim.lsp.protocol.make_client_capabilities()
@@ -36,7 +36,7 @@ function M.config()
         return opts
     end
 
-    keymaps:set_for_filetype(
+    keymap:set_for_ft(
         "lspinfo",
         "n",
         { q = { "<Esc>", "Quit", noremap = false } }

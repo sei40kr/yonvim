@@ -1,9 +1,9 @@
 local M = {}
 
 function M.setup()
-    local keymaps = require("yvim.util.keymaps")
+    local keymap = require("yvim.util.keymap")
 
-    keymaps:set_leader("n", { v = "Expand region" })
+    keymap:set_leader("n", { v = "Expand region" })
 end
 
 function M.config() end

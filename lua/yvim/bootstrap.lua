@@ -11,7 +11,7 @@ function M.init()
     require("yvim.treesitter").config()
     require("yvim.lsp").config()
 
-    require("yvim.core.keymap").load()
+    require("yvim.keymap").load()
 end
 
 return M
