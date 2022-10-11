@@ -610,6 +610,22 @@
     meta.homepage = "https://github.com/neovim/nvim-lspconfig";
   };
 
+  nvim-notify = vimUtils.buildVimPlugin {
+    pname = "nvim-notify";
+    version = "2022-10-10";
+
+    src = fetchFromGitHub {
+      owner = "rcarriga";
+      repo = "nvim-notify";
+      rev = "56f65a9474e9ce294a89eb325fccf4391646bfd4";
+      sha256 = "1dr3yv8b3zv50yls8xwf6k75xk7l8y78cbbs7zvjmwri31sw5w4f";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/rcarriga/nvim-notify";
+  };
+
   nvim-tree-lua = vimUtils.buildVimPlugin {
     pname = "nvim-tree.lua";
     version = "2022-08-23";

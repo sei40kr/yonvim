@@ -3,4 +3,5 @@ return {
     COMPLETION_DOC = 1001,
     LSP_PROGRESS = 50,
     LSP_SIGNATURE_HELP = 200,
+    NOTIFICATION = 50,
 }

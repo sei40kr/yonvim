@@ -6,6 +6,7 @@ function M.config()
         disable_context_highlighting = true,
         disable_commit_confirmation = true,
         disable_insert_on_commit = false,
+        disable_builtin_notifications = true,
         commit_popup = { kind = "tab" },
         signs = {
             section = { "", "" },

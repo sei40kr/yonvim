@@ -1,5 +1,9 @@
 local M = {}
 
+local function view_notifications()
+    require("telescope").extensions.notify.notify({ prompt_title = "Filter" })
+end
+
 function M.config()
     -- https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
     local augroup = vim.api.nvim_create_augroup("yvim_core", {})
@@ -90,6 +94,7 @@ function M.load_keymaps()
                 end,
                 "manpages",
             },
+            n = { view_notifications, "Notifications" },
             o = {
                 function()
                     require("telescope.builtin").vim_options()

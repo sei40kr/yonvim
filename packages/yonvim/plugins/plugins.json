@@ -266,6 +266,13 @@
         "sha256": "1x9b87d965q9a7a726dw6q6k0lady04acg0n4c1shjwin7cl6kx9"
     },
     {
+        "version": "2022-10-10",
+        "owner": "rcarriga",
+        "repo": "nvim-notify",
+        "rev": "56f65a9474e9ce294a89eb325fccf4391646bfd4",
+        "sha256": "1dr3yv8b3zv50yls8xwf6k75xk7l8y78cbbs7zvjmwri31sw5w4f"
+    },
+    {
         "version": "2022-08-23",
         "owner": "kyazdani42",
         "repo": "nvim-tree.lua",

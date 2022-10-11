@@ -17,6 +17,12 @@ return function(use)
         end,
     })
     use({
+        "@notify@",
+        config = function()
+            require("yvim.plugin.notify").config()
+        end,
+    })
+    use({
         "@open_browser@",
         cmd = {
             "OpenBrowser",

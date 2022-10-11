@@ -59,6 +59,7 @@ vimUtils.buildVimPluginFrom2Nix {
     substituteInPlace $out/lua/yvim/packer_plugins.lua \
       --subst-var-by close_buffers                       ${yonvimPlugins.close-buffers-nvim.rtp} \
       --subst-var-by mini                                ${yonvimPlugins.mini-nvim.rtp} \
+      --subst-var-by notify                              ${yonvimPlugins.nvim-notify.rtp} \
       --subst-var-by open_browser                        ${yonvimPlugins.open-browser-vim.rtp} \
       --subst-var-by open_browser_github                 ${yonvimPlugins.open-browser-github-vim.rtp} \
       --subst-var-by plenary                             ${yonvimPlugins.plenary-nvim.rtp} \
