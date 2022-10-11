@@ -8,6 +8,7 @@ function M.init()
     require("yvim.treesitter").setup()
     require("yvim.lsp").setup()
 
+    require("yvim.core").config()
     require("yvim.treesitter").config()
     require("yvim.lsp").config()
 
