@@ -102,22 +102,8 @@ end
 
 function M.config()
     local cmp = require("cmp")
-    local lspkind = require("lspkind")
 
     local border_chars = require("yvim.config").get_border_chars("FloatBorder")
-
-    local format = lspkind.cmp_format({
-        before = function(entry, vim_item)
-            if entry.source.name == "copilot" then
-                vim_item.kind = "Copilot"
-                vim_item.kind_hl_group = "CmpItemKindCopilot"
-            end
-
-            return vim_item
-        end,
-        mode = "symbol_text",
-        menu = { copilot = "Copilot" },
-    })
 
     local sources = {
         { name = "luasnip" },
@@ -149,10 +135,6 @@ function M.config()
 
     local zindex = require("yvim.ui.zindex")
 
-    lspkind.init({
-        symbol_map = { Copilot = "" },
-    })
-
     cmp.setup({
         window = {
             completion = cmp.config.window.bordered({
@@ -177,17 +159,9 @@ function M.config()
             end,
         },
         formatting = {
-            fields = { "kind", "abbr", "menu" },
-            format = function(entry, vim_item)
-                vim_item = format(entry, vim_item)
-                local kind, menu = unpack(
-                    vim.split(vim_item.kind, "%s", { trimempty = true })
-                )
-                vim_item.kind = " " .. kind .. " "
-                vim_item.menu = menu and "    (" .. menu .. ")"
-
-                return vim_item
-            end,
+            format = require("lspkind").cmp_format({
+                symbol_map = { Copilot = "" },
+            }),
         },
         sources = cmp.config.sources(sources),
         sorting = {
