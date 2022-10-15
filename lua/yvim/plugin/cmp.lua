@@ -131,6 +131,7 @@ function M.config()
         cmp.config.compare.offset,
         cmp.config.compare.exact,
         cmp.config.compare.score,
+        require("cmp-under-comparator").under,
         cmp.config.compare.recently_used,
         cmp.config.compare.locality,
         cmp.config.compare.kind,

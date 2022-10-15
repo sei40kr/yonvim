@@ -178,6 +178,22 @@
     meta.homepage = "https://github.com/f3fora/cmp-spell";
   };
 
+  cmp-under-comparator = vimUtils.buildVimPlugin {
+    pname = "cmp-under-comparator";
+    version = "2021-11-11";
+
+    src = fetchFromGitHub {
+      owner = "lukas-reineke";
+      repo = "cmp-under-comparator";
+      rev = "6857f10272c3cfe930cece2afa2406e1385bfef8";
+      sha256 = "18kcxl9rg6qrg5wv6bb0hv0sjafspjhy57irf8gyaa66svwmgxmh";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/lukas-reineke/cmp-under-comparator";
+  };
+
   cmp_luasnip = vimUtils.buildVimPlugin {
     pname = "cmp_luasnip";
     version = "2022-05-01";

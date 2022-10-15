@@ -115,6 +115,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by cmp_omni                            ${yonvimPlugins.cmp-omni.rtp} \
       --subst-var-by cmp_path                            ${yonvimPlugins.cmp-path.rtp} \
       --subst-var-by cmp_spell                           ${yonvimPlugins.cmp-spell.rtp} \
+      --subst-var-by cmp_under_comparator                ${yonvimPlugins.cmp-under-comparator.rtp} \
       --subst-var-by lspkind                             ${yonvimPlugins.lspkind-nvim.rtp} \
       --subst-var-by copilot_cmp                         ${yonvimPlugins.copilot-cmp.rtp} \
       --subst-var-by copilot_vim                         ${yonvimPlugins.copilot-vim.rtp} \

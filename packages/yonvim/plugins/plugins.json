@@ -77,6 +77,13 @@
         "sha256": "1pk6izww8canfqpiyrqd6qx1p3j18pwfzkfx4ynbng8kl9nh6nv5"
     },
     {
+        "version": "2021-11-11",
+        "owner": "lukas-reineke",
+        "repo": "cmp-under-comparator",
+        "rev": "6857f10272c3cfe930cece2afa2406e1385bfef8",
+        "sha256": "18kcxl9rg6qrg5wv6bb0hv0sjafspjhy57irf8gyaa66svwmgxmh"
+    },
+    {
         "version": "2022-05-01",
         "owner": "saadparwaiz1",
         "repo": "cmp_luasnip",

@@ -321,6 +321,7 @@ return function(use)
     use({ "@cmp_omni@", after = "nvim-cmp", opt = true })
     use({ "@cmp_path@", after = "nvim-cmp", opt = true })
     use({ "@cmp_spell@", after = "nvim-cmp", opt = true })
+    use("@cmp_under_comparator@")
     use({ "@lspkind@", module = "lspkind" })
     use({
         "@copilot_cmp@",
