@@ -135,6 +135,21 @@ function M.config()
 
     local zindex = require("yvim.ui.zindex")
 
+    local mapping = cmp.mapping.preset.insert({
+        ["<Tab>"] = cmp.config.disable,
+        ["<S-Tab>"] = cmp.config.disable,
+        ["<CR>"] = cmp.mapping(cr),
+        ["<C-j>"] = cmp.mapping(select_next_item),
+        ["<C-k>"] = cmp.mapping(select_prev_item),
+    })
+    local cmdline_mapping = cmp.mapping.preset.cmdline({
+        ["<Tab>"] = cmp.config.disable,
+        ["<S-Tab>"] = cmp.config.disable,
+        ["<CR>"] = cmp.mapping(cr, { "c" }),
+        ["<C-j>"] = cmp.mapping(select_next_item, { "c" }),
+        ["<C-k>"] = cmp.mapping(select_prev_item, { "c" }),
+    })
+
     cmp.setup({
         window = {
             completion = cmp.config.window.bordered({
@@ -146,13 +161,7 @@ function M.config()
                 zindex = zindex.COMPLETION_DOC,
             }),
         },
-        mapping = cmp.mapping.preset.insert({
-            ["<Tab>"] = cmp.config.disable,
-            ["<S-Tab>"] = cmp.config.disable,
-            ["<CR>"] = cmp.mapping(cr),
-            ["<C-j>"] = cmp.mapping(select_next_item),
-            ["<C-k>"] = cmp.mapping(select_prev_item),
-        }),
+        mapping = mapping,
         snippet = {
             expand = function(args)
                 require("luasnip").lsp_expand(args.body)
@@ -170,14 +179,13 @@ function M.config()
         },
     })
 
+    cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmdline_mapping,
+        sources = cmp.config.sources({ { name = "buffer" } }),
+    })
+
     cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline({
-            ["<Tab>"] = cmp.config.disable,
-            ["<S-Tab>"] = cmp.config.disable,
-            ["<CR>"] = cmp.mapping(cr, { "c" }),
-            ["<C-j>"] = cmp.mapping(select_next_item, { "c" }),
-            ["<C-k>"] = cmp.mapping(select_prev_item, { "c" }),
-        }),
+        mapping = cmdline_mapping,
         sources = cmp.config.sources(
             { { name = "path" } },
             { { name = "cmdline" } }
