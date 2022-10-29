@@ -68,13 +68,13 @@
 
   cmp-buffer = vimUtils.buildVimPlugin {
     pname = "cmp-buffer";
-    version = "2022-06-15";
+    version = "2022-08-10";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-buffer";
-      rev = "62fc67a2b0205136bc3e312664624ba2ab4a9323";
-      sha256 = "0wcys2z1yw6raxr9x5nm19ac04q8gfri4pw9mfsh18smv4rnl8zs";
+      rev = "3022dbc9166796b644a841a02de8dd1cc1d311fa";
+      sha256 = "1cwx8ky74633y0bmqmvq1lqzmphadnhzmhzkddl3hpb7rgn18vkl";
     };
 
     dontBuild = true;
@@ -84,13 +84,13 @@
 
   cmp-cmdline = vimUtils.buildVimPlugin {
     pname = "cmp-cmdline";
-    version = "2022-05-02";
+    version = "2022-09-16";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-cmdline";
-      rev = "c36ca4bc1dedb12b4ba6546b96c43896fd6e7252";
-      sha256 = "04h6np207781l3wa36l6nqd56lx39s1kycf4jvclgfrr6ddnbv68";
+      rev = "c66c379915d68fb52ad5ad1195cdd4265a95ef1e";
+      sha256 = "00ivhdq1skdccmkn0sd0kr8b9gnap84in34q5r2mkmnd07vhiwr2";
     };
 
     dontBuild = true;
@@ -100,13 +100,13 @@
 
   cmp-nvim-lsp = vimUtils.buildVimPlugin {
     pname = "cmp-nvim-lsp";
-    version = "2022-05-16";
+    version = "2022-10-29";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp";
-      rev = "affe808a5c56b71630f17aa7c38e15c59fd648a8";
-      sha256 = "1v88bw8ri8w4s8yn7jw5anyiwyw8swwzrjf843zqzai18kh9mlnp";
+      rev = "78924d1d677b29b3d1fe429864185341724ee5a2";
+      sha256 = "1gzn4v70wa61yyw9vfxb8m8kkabz0p35nja1l26cfhl71pnkqrka";
     };
 
     dontBuild = true;
@@ -116,13 +116,13 @@
 
   cmp-nvim-lsp-signature-help = vimUtils.buildVimPlugin {
     pname = "cmp-nvim-lsp-signature-help";
-    version = "2022-07-20";
+    version = "2022-10-14";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp-signature-help";
-      rev = "57c4db7d3a663bd31ef60c4b5ed32683301247e9";
-      sha256 = "0lygd43zfhss9kirlhfc3rq95m0hdkk3cxc85nlfr2xx36plrarc";
+      rev = "d2768cb1b83de649d57d967085fe73c5e01f8fd7";
+      sha256 = "13imcdv0yws084z2x2lmdj17zy4ngf126i7djknnwp2jfkca1120";
     };
 
     dontBuild = true;
@@ -148,13 +148,13 @@
 
   cmp-path = vimUtils.buildVimPlugin {
     pname = "cmp-path";
-    version = "2022-07-26";
+    version = "2022-10-03";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-path";
-      rev = "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1";
-      sha256 = "0nmxwfn0gp70z26w9x03dk2myx9bbjxqw7zywzvdm28lgr43dwhv";
+      rev = "91ff86cd9c29299a64f968ebb45846c485725f23";
+      sha256 = "18ixx14ibc7qrv32nj0ylxrx8w4ggg49l5vhcqd35hkp4n56j6mn";
     };
 
     dontBuild = true;
@@ -164,13 +164,13 @@
 
   cmp-spell = vimUtils.buildVimPlugin {
     pname = "cmp-spell";
-    version = "2021-10-19";
+    version = "2022-10-03";
 
     src = fetchFromGitHub {
       owner = "f3fora";
       repo = "cmp-spell";
-      rev = "5602f1a0de7831f8dad5b0c6db45328fbd539971";
-      sha256 = "1pk6izww8canfqpiyrqd6qx1p3j18pwfzkfx4ynbng8kl9nh6nv5";
+      rev = "60584cb75e5e8bba5a0c9e4c3ab0791e0698bffa";
+      sha256 = "1lzv8wbq1w45pbig7lcgyj46nmz4gkag7b37j72p04bixr7wgabv";
     };
 
     dontBuild = true;
@@ -196,13 +196,13 @@
 
   cmp_luasnip = vimUtils.buildVimPlugin {
     pname = "cmp_luasnip";
-    version = "2022-05-01";
+    version = "2022-10-28";
 
     src = fetchFromGitHub {
       owner = "saadparwaiz1";
       repo = "cmp_luasnip";
-      rev = "a9de941bcbda508d0a45d28ae366bb3f08db2e36";
-      sha256 = "0mh7gimav9p6cgv4j43l034dknz8szsnmrz49b2ra04yk9ihk1zj";
+      rev = "18095520391186d634a0045dacaa346291096566";
+      sha256 = "0b91ap1l3nph46r7b5hcn7413yj3zhrz1jmn4xqp387ng35qz537";
     };
 
     dontBuild = true;
@@ -212,13 +212,13 @@
 
   copilot-cmp = vimUtils.buildVimPlugin {
     pname = "copilot-cmp";
-    version = "2022-08-01";
+    version = "2022-10-12";
 
     src = fetchFromGitHub {
       owner = "zbirenbaum";
       repo = "copilot-cmp";
-      rev = "aba78c62a0bdf523a5a9d55c9c37bb52c25302c2";
-      sha256 = "1v8w2lskqrngwnpjbxldb4p525wmqk7ilfjxa22mb70nndygig3y";
+      rev = "84d5a0e8e4d1638e7554899cb7b642fa24cf463f";
+      sha256 = "180y6d89bldlpilhfz7dakyaml6mfhspnxjn4jliwql4k45xckbi";
     };
 
     dontBuild = true;
@@ -228,13 +228,13 @@
 
   copilot-lua = vimUtils.buildVimPlugin {
     pname = "copilot.lua";
-    version = "2022-07-28";
+    version = "2022-10-19";
 
     src = fetchFromGitHub {
       owner = "zbirenbaum";
       repo = "copilot.lua";
-      rev = "f345b7a1b86b85e479510923d37028872e491cb9";
-      sha256 = "1kc734pgp8v4cpr0ld8rkazl2s95m61cqivr98wdwm9ja9hx6zvv";
+      rev = "81ffc4971c3fde809f90bc92232fd0d14bd6bc09";
+      sha256 = "1f9d5gcj1s2maikbj4kjm9nsfc95l6maz1hvna7xr5d8dpf4c70k";
     };
 
     dontBuild = true;
@@ -244,13 +244,13 @@
 
   copilot-vim = vimUtils.buildVimPlugin {
     pname = "copilot.vim";
-    version = "2022-06-17";
+    version = "2022-10-12";
 
     src = fetchFromGitHub {
       owner = "github";
       repo = "copilot.vim";
-      rev = "c2e75a3a7519c126c6fdb35984976df9ae13f564";
-      sha256 = "0m65y0pvc7sdj2xc3r97nb5md1i0iqcyri6h83hvs88skrmwnpap";
+      rev = "8ba151a20bc1d7a5c72e592e51bfc925d5bbb837";
+      sha256 = "0wr703fg7vvygx8iyym8jqqqm51nwffkz8aldma7ahkc5vwi2v0s";
     };
 
     dontBuild = true;
@@ -452,13 +452,13 @@
 
   lspkind-nvim = vimUtils.buildVimPlugin {
     pname = "lspkind.nvim";
-    version = "2022-04-18";
+    version = "2022-09-22";
 
     src = fetchFromGitHub {
       owner = "onsails";
       repo = "lspkind.nvim";
-      rev = "57e5b5dfbe991151b07d272a06e365a77cc3d0e7";
-      sha256 = "1c13ll09v16prhzgmv8pappck4x3ahhc5sizp6r61kb7k4mkfpfk";
+      rev = "c68b3a003483cf382428a43035079f78474cd11e";
+      sha256 = "0qrfqajpbkb757vbcjz1g7v5rihsyhg1f1jxrbwg08dbxpw101av";
     };
 
     dontBuild = true;
@@ -596,13 +596,13 @@
 
   nvim-cmp = vimUtils.buildVimPlugin {
     pname = "nvim-cmp";
-    version = "2022-07-25";
+    version = "2022-10-29";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "nvim-cmp";
-      rev = "706371f1300e7c0acb98b346f80dad2dd9b5f679";
-      sha256 = "1cwzzdwhsy3fqxwdx0big2qfvqha4m97nml83i1mp31agjk016pk";
+      rev = "9bb8ee6e2d6ab3c8cc53323b79f05886bc722faa";
+      sha256 = "1z7b53yxamph255rvrs5a4pq5hbqa0nbwpdh1xy8fvfc71gap80n";
     };
 
     dontBuild = true;
