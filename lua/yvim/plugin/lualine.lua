@@ -13,9 +13,9 @@ local components = {
                 return "*"
             end
             if not vim.bo.modifiable then
-                return "-"
+                return "%"
             end
-            return ""
+            return "-"
         end,
         padding = { left = 1, right = 0 },
     },
