@@ -29,6 +29,8 @@ end
 function M.load()
     define_leader_groups()
 
+    require("yvim.git").load_autocmds()
+
     require("yvim.core").load_keymaps()
     require("yvim.buffer").load_keymaps()
     require("yvim.code").load_keymaps()
