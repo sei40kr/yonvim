@@ -120,14 +120,14 @@ yvim.repl.handlers = {
 | Variable                                | Default value | Description                                                                            |
 | :-------------------------------------- | :------------ | :------------------------------------------------------------------------------------- |
 | `yvim.snippet.friendly_snippets.enable` | `true`        | Whether to enable [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) |
-| `yvim.snippet.private_snippet_dirs`     | `{}`          | User snippet directories. See **Example** below for details.                           |
+| `yvim.snippet.user_snippet_dirs`        | `{}`          | User snippet directories. See **Example** below for details.                           |
 
 #### Example
 
 ```lua
 local path = require("yvim.util.path")
 
-yvim.snippet.private_snippet_dirs = {
+yvim.snippet.user_snippet_dirs = {
     -- Use VSCode snippets
     {
         path.join_paths(path.get_config_dir(), "snippets", "vscode"),

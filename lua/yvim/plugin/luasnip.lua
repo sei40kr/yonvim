@@ -9,7 +9,7 @@ function M.config()
         lua = {},
     }
 
-    for _, dir in ipairs(yvim.snippet.private_snippet_dirs) do
+    for _, dir in ipairs(yvim.snippet.user_snippet_dirs) do
         local path = dir[1]
         local loader = dir.loader or "vscode"
 

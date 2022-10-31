@@ -49,7 +49,7 @@ return {
         -- Whether to enable friendly-snippets
         friendly_snippets = { enable = true },
         -- User snippet directories
-        private_snippet_dirs = {},
+        user_snippet_dirs = {},
     },
 
     ui = {
