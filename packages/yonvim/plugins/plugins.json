@@ -182,6 +182,13 @@
         "sha256": "1vhn51mlp9yzzg4gydsh65hpbxy2x7qqf98sibbnc10bsrd2drha"
     },
     {
+        "version": "2023-01-03",
+        "owner": "folke",
+        "repo": "lazy.nvim",
+        "rev": "2e3e65b0f7b16773f5f83ee4eea09fe6bca653cd",
+        "sha256": "127az575f70mi3w58pxjrwwi655z5jji5gcmx1zz6q7rjb5dnmay"
+    },
+    {
         "version": "2022-05-21",
         "owner": "lukas-reineke",
         "repo": "lsp-format.nvim",
@@ -362,13 +369,6 @@
         "repo": "open-browser.vim",
         "rev": "80ec3f2bb0a86ac13c998e2f2c86e16e6d2f20bb",
         "sha256": "01qj967nch3wwkbshrsdzyyr4apvsqrpa4dkmpn21qr2183w84zz"
-    },
-    {
-        "version": "2022-08-15",
-        "owner": "wbthomason",
-        "repo": "packer.nvim",
-        "rev": "90b323bccc04ad9b23c971a85813a1405c7725a8",
-        "sha256": "05wzadwl8l3688v3kvmmr62frbwcfxkj3pawkwkblnl49n16jid0"
     },
     {
         "version": "2022-06-08",

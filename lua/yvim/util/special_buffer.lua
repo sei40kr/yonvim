@@ -5,7 +5,7 @@ local buftypes = {
     help = true,
     terminal = true,
 }
-local filetypes = { packer = true }
+local filetypes = { lazy = true }
 
 function M.get_buftypes()
     return vim.tbl_keys(buftypes)

@@ -1,5 +1,7 @@
 local Keymap = {}
 
+local lazy = require("yvim.lazy")
+
 local function get_leader_key(mode)
     return (mode ~= "i" and mode ~= "s") and "<Leader>" or yvim.alt_leader_key
 end
@@ -16,9 +18,7 @@ Keymap.init = function()
 end
 
 function Keymap:__set(mappings, opts)
-    local packer = require("yvim.packer")
-
-    if packer.plugin_loaded("which-key.nvim") then
+    if lazy.plugin_loaded("which-key.nvim") then
         require("which-key").register(mappings, opts)
     else
         table.insert(self.wk_queue, { mappings, opts })
@@ -56,8 +56,7 @@ function Keymap:set_for_ft(ft, mode, keymaps)
 end
 
 function Keymap:load()
-    local packer = require("yvim.packer")
-    if packer.plugin_loaded("which-key.nvim") then
+    if not lazy.plugin_loaded("which-key.nvim") then
         local log = require("yvim.utils.log")
         log.error("which-key.nvim not loaded. Aborting.")
         return

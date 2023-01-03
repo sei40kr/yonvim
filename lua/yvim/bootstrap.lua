@@ -3,7 +3,7 @@ local M = {}
 function M.init()
     require("yvim.config").load()
 
-    require("yvim.packer").init()
+    require("yvim.lazy").init()
 
     require("yvim.treesitter").setup()
     require("yvim.lsp").setup()

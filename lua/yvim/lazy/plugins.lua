@@ -1,149 +1,152 @@
-return function(use)
+return {
+    {
+        dir = "@tokyonight@",
+        init = function()
+            require("yvim.plugin.tokyonight").setup()
+        end,
+        config = function()
+            require("yvim.plugin.tokyonight").config()
+        end
+    },
+
     -- Core
-    use({
-        "@close_buffers@",
+    {
+        dir = "@close_buffers@",
         config = function()
             require("yvim.plugin.close-buffers").config()
         end,
         module = "close_buffers",
-    })
-    use({
-        "@mini@",
-        setup = function()
+    },
+    {
+        dir = "@mini@",
+        init = function()
             require("yvim.plugin.mini").setup()
         end,
         config = function()
             require("yvim.plugin.mini").config()
         end,
-    })
-    use({
-        "@notify@",
+    },
+    {
+        dir = "@notify@",
         config = function()
             require("yvim.plugin.notify").config()
         end,
-    })
-    use({
-        "@open_browser@",
+    },
+    {
+        dir = "@open_browser@",
         cmd = {
             "OpenBrowser",
             "OpenBrowserSearch",
             "OpenBrowserSmartSearch",
         },
-    })
-    use({
-        "@open_browser_github@",
+    },
+    {
+        dir = "@open_browser_github@",
         cmd = {
             "OpenGithubFile",
             "OpenGithubIssue",
             "OpenGithubPullReq",
             "OpenGithubProject",
         },
-    })
-    use({ "@plenary@", as = "plenary.nvim" })
-    use({
-        "@project@",
+    },
+    { dir = "@plenary@", name = "plenary.nvim" },
+    {
+        dir = "@project@",
         config = function()
             require("yvim.plugin.project").config()
         end,
-    })
-    use({
-        "@stickybuf@",
+    },
+    {
+        dir = "@stickybuf@",
         config = function()
             require("yvim.plugin.stickybuf").config()
         end,
-    })
-    use({
-        "@web_devicons@",
-        as = "nvim-web-devicons",
+    },
+    {
+        dir = "@web_devicons@",
+        name = "nvim-web-devicons",
         config = function()
             require("yvim.plugin.web-devicons").config()
         end,
         module = "nvim-web-devicons",
-    })
+    },
 
     -- UI
-    use({
-        "@bufferline@",
-        requires = "nvim-web-devicons",
+    {
+        dir = "@bufferline@",
+        dependencies = { "nvim-web-devicons" },
         config = function()
             require("yvim.plugin.bufferline").config()
         end,
-    })
-    use({
-        "@diffview@",
-        requires = { "nvim-web-devicons", "plenary.nvim" },
-        setup = function()
+    },
+    {
+        dir = "@diffview@",
+        dependencies = { "nvim-web-devicons", "plenary.nvim" },
+        init = function()
             require("yvim.plugin.diffview").setup()
         end,
         config = function()
             require("yvim.plugin.diffview").config()
         end,
         cmd = { "DiffviewOpen", "DiffviewFileHistory" },
-    })
-    use({
-        "@dressing@",
+    },
+    {
+        dir = "@dressing@",
         config = function()
             require("yvim.plugin.dressing").config()
         end,
-    })
-    use({
-        "@gitsigns@",
+    },
+    {
+        dir = "@gitsigns@",
         config = function()
             require("yvim.plugin.gitsigns").config()
         end,
-    })
+    },
     -- HACK: Preventing indent-blankline.nvim from overriding colorscheme
-    use({
-        "@indent_blankline@",
-        setup = function()
+    {
+        dir = "@indent_blankline@",
+        init = function()
             vim.g.__indent_blankline_setup_completed = true
         end,
         config = function()
             require("yvim.plugin.indent-blankline").config()
         end,
         event = "VimEnter *",
-    })
-    use({
-        "@lualine@",
-        requires = "nvim-web-devicons",
+    },
+    {
+        dir = "@lualine@",
+        dependencies = { "nvim-web-devicons" },
         config = function()
             require("yvim.plugin.lualine").config()
         end,
-    })
-    use({
-        "@telescope@",
-        as = "telescope.nvim",
+    },
+    {
+        dir = "@telescope@",
+        name = "telescope.nvim",
+        dependencies = {
+            { dir = "@telescope_file_browser@" },
+            { dir = "@telescope_fzy_native@" },
+            { dir = "@telescope_luasnip@" },
+            { dir = "@telescope_project@" },
+            { dir = "@telescope_symbols@" },
+        },
         config = function()
             require("yvim.plugin.telescope").config()
         end,
-        cmd = "Telescope",
-        module = { "telescope", "telescope.builtins" },
-    })
-    use("@telescope_file_browser@")
-    use("@telescope_fzy_native@")
-    use("@telescope_luasnip@")
-    use("@telescope_project@")
-    use("@telescope_symbols@")
-    use({
-        "@toggleterm@",
+        -- cmd = "Telescope",
+        -- module = { "telescope", "telescope.builtins" },
+    },
+    {
+        dir = "@toggleterm@",
         config = function()
             require("yvim.plugin.toggleterm").config()
         end,
         cmd = "ToggleTerm",
-    })
-    use({
-        "@tokyonight@",
-        setup = function()
-            require("yvim.plugin.tokyonight").setup()
-        end,
-        config = function()
-            require("yvim.plugin.tokyonight").config()
-        end,
-    })
-    use({
-        "@tree@",
-        requires = "nvim-web-devicons",
-        setup = function()
+    },
+    {
+        dir = "@tree@",
+        dependencies = { "nvim-web-devicons" },
+        init = function()
             require("yvim.plugin.tree").setup()
         end,
         config = function()
@@ -151,237 +154,239 @@ return function(use)
         end,
         cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus" },
         module = "nvim-tree",
-    })
-    use({
-        "@trouble@",
-        as = "trouble.nvim",
-        requires = "nvim-web-devicons",
-        setup = function()
+    },
+    {
+        dir = "@trouble@",
+        name = "trouble.nvim",
+        dependencies = { "nvim-web-devicons" },
+        init = function()
             require("yvim.plugin.trouble").setup()
         end,
         config = function()
             require("yvim.plugin.trouble").config()
         end,
         cmd = "Trouble",
-    })
-    use({
-        "@todo_comments@",
-        requires = "trouble.nvim",
+    },
+    {
+        dir = "@todo_comments@",
+        dependencies = { "trouble.nvim" },
         config = function()
             require("yvim.plugin.todo-comments").config()
         end,
-    })
-    use({
-        "@virt_column@",
+    },
+    {
+        dir = "@virt_column@",
         config = function()
             require("yvim.plugin.virt-column").config()
         end,
-    })
-    use({
-        "@which_key@",
-        as = "which-key.nvim",
+    },
+    {
+        dir = "@which_key@",
+        name = "which-key.nvim",
         config = function()
             require("yvim.plugin.which-key").config()
         end,
-    })
+    },
 
     -- Edit
-    use("@editorconfig@")
-    use({
-        "@hop@",
+    { dir = "@editorconfig@" },
+    {
+        dir = "@hop@",
         config = function()
             require("yvim.plugin.hop").config()
         end,
         module = "hop",
-    })
-    use({
-        "@autopairs@",
+    },
+    {
+        dir = "@autopairs@",
         config = function()
             require("yvim.plugin.autopairs").config()
         end,
         event = { "InsertEnter *", "CmdlineEnter *" },
-    })
-    use({
-        "@nvimacs@",
+    },
+    {
+        dir = "@nvimacs@",
         event = { "InsertEnter *", "CmdlineEnter *" },
-    })
-    use({
-        "@visual_multi@",
-        setup = function()
+    },
+    {
+        dir = "@visual_multi@",
+        init = function()
             require("yvim.plugin.visual-multi").setup()
         end,
-        keys = "<Plug>(VM-",
-    })
+        keys = "<Plug>VM-",
+    },
 
     -- Tree-sitter
-    use({
-        "@treesitter@",
+    {
+        dir = "@treesitter@",
+        dependencies = {
+            { dir = "@treesitter_endwise@" },
+            { dir = "@treesitter_refactor@" },
+            { dir = "@treesitter_textobjects@" },
+            { dir = "@treesitter_ts_autotag@" },
+            { dir = "@treesitter_ts_context_commentstring@" },
+        },
         config = function()
             require("yvim.plugin.treesitter").config()
         end,
-    })
-    use("@treesitter_endwise@")
-    use("@treesitter_refactor@")
-    use("@treesitter_textobjects@")
-    use("@treesitter_ts_autotag@")
-    use("@treesitter_ts_context_commentstring@")
-    use({
-        "@spellsitter@",
+    },
+    {
+        dir = "@spellsitter@",
         config = function()
             require("yvim.plugin.spellsitter").config()
         end,
-    })
+    },
 
     -- LSP
-    use({
-        "@fidget@",
+    {
+        dir = "@fidget@",
         config = function()
             require("yvim.plugin.fidget").config()
         end,
-    })
-    use({
-        "@mason@",
-        as = "mason.nvim",
-        setup = function()
+    },
+    {
+        dir = "@mason@",
+        name = "mason.nvim",
+        init = function()
             require("yvim.plugin.mason").setup()
         end,
         config = function()
             require("yvim.plugin.mason").config()
         end,
-    })
-    use({
-        "@mason_lspconfig@",
-        as = "mason-lspconfig.nvim",
-        requires = "mason.nvim",
+    },
+    {
+        dir = "@mason_lspconfig@",
+        name = "mason-lspconfig.nvim",
+        dependencies = { "mason.nvim" },
         config = function()
             require("yvim.plugin.mason-lspconfig").config()
         end,
-    })
-    use({
-        "@null_ls@",
+    },
+    {
+        dir = "@null_ls@",
         config = function()
             require("yvim.plugin.null-ls").config()
         end,
-    })
-    use({
-        "@lspconfig@",
-        requires = { "cmp-nvim-lsp", "mason-lspconfig.nvim" },
-        setup = function()
+    },
+    {
+        dir = "@lspconfig@",
+        dependencies = { "cmp-nvim-lsp", "mason-lspconfig.nvim" },
+        init = function()
             require("yvim.plugin.lspconfig").setup()
         end,
         config = function()
             require("yvim.plugin.lspconfig").config()
         end,
-    })
-    use({
-        "@lsp_format@",
+    },
+    {
+        dir = "@lsp_format@",
         config = function()
             require("yvim.plugin.lsp-format").config()
         end,
         module = "lsp-format",
-    })
-    use({
-        "@lsp_signature@",
+    },
+    {
+        dir = "@lsp_signature@",
         config = function()
             require("yvim.plugin.lsp_signature").config()
         end,
         module = "lsp_signature",
-    })
-    use("@lua_dev@")
-    use({
-        "@symbols_outline@",
-        setup = function()
+    },
+    { dir = "@lua_dev@" },
+    {
+        dir = "@symbols_outline@",
+        init = function()
             require("yvim.plugin.symbols-outline").setup()
         end,
         cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
-    })
+    },
 
     -- Completion
-    use({
-        "@cmp@",
-        as = "nvim-cmp",
-        setup = function()
+    {
+        dir = "@cmp@",
+        name = "nvim-cmp",
+        dependencies = {
+            { dir = "@cmp_buffer@" },
+            { dir = "@cmp_cmdline@" },
+            { dir = "@cmp_luasnip@" },
+            {
+                dir = "@cmp_nvim_lsp@",
+                name = "cmp-nvim-lsp",
+            },
+            { dir = "@cmp_nvim_lsp_signature_help@" },
+            { dir = "@cmp_omni@" },
+            { dir = "@cmp_path@" },
+            { dir = "@cmp_spell@" },
+        },
+        init = function()
             require("yvim.plugin.cmp").setup()
         end,
         config = function()
             require("yvim.plugin.cmp").config()
         end,
         event = { "InsertEnter *", "CmdlineEnter *" },
-    })
-    use({ "@cmp_buffer@", after = "nvim-cmp", opt = true })
-    use({ "@cmp_cmdline@", after = "nvim-cmp", opt = true })
-    use({ "@cmp_luasnip@", after = "nvim-cmp", opt = true })
-    use({
-        "@cmp_nvim_lsp@",
-        after = "nvim-cmp",
-        opt = true,
-        module = "cmp_nvim_lsp",
-    })
-    use({ "@cmp_nvim_lsp_signature_help@", after = "nvim-cmp", opt = true })
-    use({ "@cmp_omni@", after = "nvim-cmp", opt = true })
-    use({ "@cmp_path@", after = "nvim-cmp", opt = true })
-    use({ "@cmp_spell@", after = "nvim-cmp", opt = true })
-    use("@cmp_under_comparator@")
-    use("@lspkind@")
-    use({
-        "@copilot_cmp@",
+    },
+    { dir = "@cmp_under_comparator@" },
+    { dir = "@lspkind@" },
+    {
+        dir = "@copilot_cmp@",
         config = function()
             require("yvim.plugin.copilot").config()
         end,
-    })
-    use({ "@copilot_vim@", cmd = "Copilot" })
-    use({ "@copilot_lua@", module = "copilot" })
+    },
+    { dir = "@copilot_vim@", cmd = "Copilot" },
+    { dir = "@copilot_lua@", module = "copilot" },
 
     -- Session
-    use({
-        "@auto_session@",
+    {
+        dir = "@auto_session@",
         config = function()
             require("yvim.plugin.auto-session").config()
         end,
-    })
-    use({
-        "@session_lens@",
-        requires = { "auto-session", "telescope.nvim" },
+    },
+    {
+        dir = "@session_lens@",
+        dependencies = { "auto-session", "telescope.nvim" },
         config = function()
             require("yvim.plugin.session-lens").config()
         end,
         cmd = "SearchSession",
-    })
+    },
 
     -- Snippet
-    use({
-        "@luasnip@",
+    {
+        dir = "@luasnip@",
         config = function()
             require("yvim.plugin.luasnip").config()
         end,
         event = "InsertEnter *",
         module = "luasnip",
-    })
-    use({
-        "@friendly_snippets@",
+    },
+    {
+        dir = "@friendly_snippets@",
         config = function()
             require("yvim.plugin.friendly-snippets").config()
         end,
-    })
+    },
 
     -- Tools
-    use({
-        "@iron@",
+    {
+        dir = "@iron@",
         config = function()
             require("yvim.plugin.iron").config()
         end,
-    })
-    use({
-        "@neogit@",
-        requires = "plenary.nvim",
+    },
+    {
+        dir = "@neogit@",
+        dependencies = { "plenary.nvim" },
         config = function()
             require("yvim.plugin.neogit").config()
         end,
         module = "neogit",
-    })
-    use({
-        "@octo@",
-        requires = {
+    },
+    {
+        dir = "@octo@",
+        dependencies = {
             "nvim-web-devicons",
             "plenary.nvim",
             "telescope.nvim",
@@ -390,5 +395,5 @@ return function(use)
             require("yvim.plugin.octo").config()
         end,
         cmd = "Octo",
-    })
-end
+    },
+}

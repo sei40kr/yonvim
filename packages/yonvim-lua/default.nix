@@ -56,7 +56,7 @@ vimUtils.buildVimPluginFrom2Nix {
   src = ../..;
 
   postFixup = ''
-    substituteInPlace $out/lua/yvim/packer_plugins.lua \
+    substituteInPlace $out/lua/yvim/lazy/plugins.lua \
       --subst-var-by close_buffers                       ${yonvimPlugins.close-buffers-nvim.outPath} \
       --subst-var-by mini                                ${yonvimPlugins.mini-nvim.outPath} \
       --subst-var-by notify                              ${yonvimPlugins.nvim-notify.outPath} \
