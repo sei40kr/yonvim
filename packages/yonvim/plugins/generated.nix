@@ -930,6 +930,22 @@ _self: {
     meta.homepage = "https://github.com/stevearc/stickybuf.nvim";
   };
 
+  structlog-nvim = vimUtils.buildVimPlugin {
+    pname = "structlog.nvim";
+    version = "2023-01-08";
+
+    src = fetchFromGitHub {
+      owner = "Tastyep";
+      repo = "structlog.nvim";
+      rev = "45b26a2b1036bb93c0e83f4225e85ab3cee8f476";
+      hash = "sha256-Bq4YNpLQ1+iSBuN5MG4OBmI5r3DGWyDou4kRCMnked0=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/Tastyep/structlog.nvim";
+  };
+
   symbols-outline-nvim = vimUtils.buildVimPlugin {
     pname = "symbols-outline.nvim";
     version = "2022-05-01";

@@ -1,8 +1,8 @@
 local M = {}
 
-function M.config()
-    local log = require("yvim.utils.log")
+local Logger = require("yvim.utils.logger")
 
+function M.config()
     local snippet_dirs = {
         vscode = {},
         snipmate = {},
@@ -16,7 +16,7 @@ function M.config()
         if loader == "vscode" or loader == "snipmate" or loader == "lua" then
             table.insert(snippet_dirs[loader], path)
         else
-            log.warn(
+            Logger:warn(
                 ("Invalid snippet loader: loader = %s, path = %s"):format(
                     loader,
                     path

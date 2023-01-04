@@ -38,6 +38,7 @@ let
           configure.packages.myVimPackage.start = [
             yonvim-lua
             yonvimPlugins.lazy-nvim
+            yonvimPlugins.structlog-nvim
           ];
         })
         # Supress warning at gitsigns setup
@@ -68,6 +69,7 @@ let
       packages.myVimPackage.start = [
         yonvim-lua
         yonvimPlugins.lazy-nvim
+        yonvimPlugins.structlog-nvim
       ];
     };
   };

@@ -1,6 +1,6 @@
 local M = {}
 
-local log = require("yvim.utils.log")
+local Logger = require("yvim.utils.logger")
 
 local function load_keymaps()
     local keymap = require("yvim.util.keymap")
@@ -20,7 +20,7 @@ function M.load()
     local ok, err = pcall(dofile, config_path)
     if not ok then
         if vim.fn.filereadable(config_path) then
-            log.warn("Invalid configuration: " .. err)
+            Logger:warn("Invalid configuration: " .. err)
         else
             vim.notify_once(
                 ("Unable to find configuration file [%s]"):format(config_path),

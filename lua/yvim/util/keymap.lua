@@ -1,6 +1,7 @@
 local Keymap = {}
 
 local lazy = require("yvim.lazy")
+local Logger = require("yvim.utils.logger")
 
 local function get_leader_key(mode)
     return (mode ~= "i" and mode ~= "s") and "<Leader>" or yvim.alt_leader_key
@@ -57,8 +58,7 @@ end
 
 function Keymap:load()
     if not lazy.plugin_loaded("which-key.nvim") then
-        local log = require("yvim.utils.log")
-        log.error("which-key.nvim not loaded. Aborting.")
+        Logger:error("which-key.nvim not loaded. Aborting.")
         return
     end
 

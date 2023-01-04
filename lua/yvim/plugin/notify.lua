@@ -3,6 +3,8 @@ local M = {}
 function M.config()
     local notify = require("notify")
     local keymap = require("yvim.util.keymap")
+    local log = require("structlog")
+    local Logger = require("yvim.utils.logger")
     local z = require("yvim.ui.zindex")
 
     notify.setup({
@@ -18,10 +20,20 @@ function M.config()
             end
         end,
     })
-
     vim.notify = notify
 
-    keymap:set_for_ft("notify" , "n", {
+    Logger:add_pipeline(log.Pipeline(
+        log.level.WARN,
+        {},
+        log.formatters.Format(
+            "%s",
+            { "msg" },
+            { blacklist = { "level", "logger_name" } }
+        ),
+        log.sinks.NvimNotify()
+    ))
+
+    keymap:set_for_ft("notify", "n", {
         q = { "<C-w>c", "Quit" },
     })
 end
