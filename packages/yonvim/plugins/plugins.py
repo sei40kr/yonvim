@@ -33,16 +33,17 @@ def get_branch_head_rev(owner, repo, branch):
     response = requests.get(url, headers={
         "Accept": "application/vnd.github+json"
     }).json()
-    hash = response['commit']['sha']
+    commit_sha = response['commit']['sha']
     date = response['commit']['commit']['author']['date']
     return {
-        "hash": hash,
+        "commit_sha": commit_sha,
         "date": datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
     }
 
 
 def get_rev_nix_hash(owner, repo, rev_hash):
     url = f'https://github.com/{owner}/{repo}/archive/{rev_hash}.zip'
+
     try:
         proc = subprocess.run(
             ["nix-prefetch-url", "--type", "sha256", "--unpack", url],
@@ -51,6 +52,18 @@ def get_rev_nix_hash(owner, repo, rev_hash):
         )
     except subprocess.CalledProcessError as e:
         print(e.stderr.decode())
+
+    sha256 = proc.stdout.decode().splitlines()[0].strip()
+
+    try:
+        proc = subprocess.run(
+                ["nix", "hash", "to-sri", "--type", "sha256", sha256],
+                check=True,
+                capture_output=True
+        )
+    except subprocess.CalledProcessError as e:
+        print(e.stderr.decode())
+
     return proc.stdout.decode().splitlines()[0].strip()
 
 
@@ -68,7 +81,7 @@ def generate_nix_derivations(plugins):
       owner = "{p['owner']}";
       repo = "{p['repo']}";
       rev = "{p['rev']}";
-      sha256 = "{p['sha256']}";
+      hash = "{p['hash']}";
     }};
 
     dontBuild = true;
@@ -104,14 +117,14 @@ def add(location):
     head_rev = get_branch_head_rev(
         owner=owner, repo=repo, branch=default_branch)
     nix_hash = get_rev_nix_hash(
-        owner=owner, repo=repo, rev_hash=head_rev['hash'])
+        owner=owner, repo=repo, rev_hash=head_rev['commit_sha'])
 
     plugins.append({
         'version': head_rev['date'].strftime("%Y-%m-%d"),
         'owner': owner,
         'repo': repo,
-        'rev': head_rev['hash'],
-        'sha256': nix_hash
+        'rev': head_rev['commit_sha'],
+        'hash': nix_hash
     })
     plugins.sort(key=lambda p: p['repo'])
 
@@ -148,23 +161,23 @@ def update(name):
     # TODO parallelize updates
     for i in indexes:
         plugin = plugins[i]
-        owner, repo, rev, sha256 = operator.itemgetter(
-            "owner", "repo", "rev", "sha256")(plugin)
+        owner, repo, rev, hash = operator.itemgetter(
+            "owner", "repo", "rev", "hash")(plugin)
 
         default_branch = get_repo_default_branch(
             owner=owner, repo=repo)
         head_rev = get_branch_head_rev(
             owner=owner, repo=repo, branch=default_branch)
-        if head_rev['hash'] != rev:
-            print(f"- {owner}/{repo}: {rev} -> {head_rev['hash']}")
+        if head_rev['commit_sha'] != rev:
+            print(f"- {owner}/{repo}: {rev} -> {head_rev['commit_sha']}")
 
             nix_hash = get_rev_nix_hash(
-                owner=owner, repo=repo, rev_hash=head_rev['hash'])
+                owner=owner, repo=repo, rev_hash=head_rev['commit_sha'])
 
             plugin.update({
                 'version': head_rev['date'].strftime("%Y-%m-%d"),
-                'rev': head_rev['hash'],
-                'sha256': nix_hash
+                'rev': head_rev['commit_sha'],
+                'hash': nix_hash
             })
 
             # TODO show the commit log since last update

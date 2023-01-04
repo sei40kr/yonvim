@@ -10,7 +10,7 @@ _self: {
       owner = "L3MON4D3";
       repo = "LuaSnip";
       rev = "52f4aed58db32a3a03211d31d2b12c0495c45580";
-      sha256 = "0drc847m55xwiha1wa2ykd5cwynmvd5ik2sys9v727fb4fbqmpa0";
+      hash = "sha256-QN2KlyPLHXF20l6LGUvb1XrOSpteKB4UjLyXUg9BLDc=";
     };
 
     dontBuild = true;
@@ -26,7 +26,7 @@ _self: {
       owner = "rmagatti";
       repo = "auto-session";
       rev = "50f5f2eaa7ff825c7036dc3c9981ebae7584b48e";
-      sha256 = "1h89cw34dnk3xgvpd12ic9bpll62sa3qpif4sfhb8rjcdxi9b1sl";
+      hash = "sha256-VIeVYm9MZrSg08TFi4fSwlB6V2JRhHb362PaRgZnCcE=";
     };
 
     dontBuild = true;
@@ -42,7 +42,7 @@ _self: {
       owner = "akinsho";
       repo = "bufferline.nvim";
       rev = "c4dd9b4de03b891f648b098c25e4dc1bc48a13e5";
-      sha256 = "0i9xpsg49m4m16m22iixhsfajnbcyw383iql1r9s5r8cwmzax0kq";
+      hash = "sha256-eIKufuUM5aJTDhTHgQb3bFmpnIY9RiGqCZXURJ6+PUU=";
     };
 
     dontBuild = true;
@@ -58,7 +58,7 @@ _self: {
       owner = "kazhala";
       repo = "close-buffers.nvim";
       rev = "3acbcad1211572342632a6c0151f839e7dead27f";
-      sha256 = "0gncvn531grcgdmxismfp49dqprj2qjasb3h3xr3jagiwvqkffgy";
+      hash = "sha256-/jk38ebxKTlyH3AsrSQWMl/cErmu6threyy/MIrdzD4=";
     };
 
     dontBuild = true;
@@ -74,7 +74,7 @@ _self: {
       owner = "hrsh7th";
       repo = "cmp-buffer";
       rev = "3022dbc9166796b644a841a02de8dd1cc1d311fa";
-      sha256 = "1cwx8ky74633y0bmqmvq1lqzmphadnhzmhzkddl3hpb7rgn18vkl";
+      hash = "sha256-dG4U7MtnXThoa/PD+qFtCt76MQ14V1wX8GMYcvxEnbM=";
     };
 
     dontBuild = true;
@@ -90,7 +90,7 @@ _self: {
       owner = "hrsh7th";
       repo = "cmp-cmdline";
       rev = "c66c379915d68fb52ad5ad1195cdd4265a95ef1e";
-      sha256 = "00ivhdq1skdccmkn0sd0kr8b9gnap84in34q5r2mkmnd07vhiwr2";
+      hash = "sha256-IvMI9wHN1llFLpgMGwm6yr60UJ6gaWBnZaxNHXCDOwI=";
     };
 
     dontBuild = true;
@@ -106,7 +106,7 @@ _self: {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp";
       rev = "78924d1d677b29b3d1fe429864185341724ee5a2";
-      sha256 = "1gzn4v70wa61yyw9vfxb8m8kkabz0p35nja1l26cfhl71pnkqrka";
+      hash = "sha256-amY87Q2HQseMoEFJW8YFf6k5UUWru52498EoDs4m9r8=";
     };
 
     dontBuild = true;
@@ -122,7 +122,7 @@ _self: {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp-signature-help";
       rev = "d2768cb1b83de649d57d967085fe73c5e01f8fd7";
-      sha256 = "13imcdv0yws084z2x2lmdj17zy4ngf126i7djknnwp2jfkca1120";
+      hash = "sha256-QISg2HRSXG7tlO1EI4J7lvh/gmyVii4+QUBzD3ZjNY4=";
     };
 
     dontBuild = true;
@@ -138,7 +138,7 @@ _self: {
       owner = "hrsh7th";
       repo = "cmp-omni";
       rev = "7a457f0c4f9e0801fee777d955eb841659aa3b84";
-      sha256 = "0f9mk0h3g1gg6lq9qnasi0liv8kvgc6rzfvgc9cflq5kkw97gjpw";
+      hash = "sha256-/Mp3Ep+zYOpYYm+7nw17e6IdKYhaWZwwNe+FNyCYNTk=";
     };
 
     dontBuild = true;
@@ -154,7 +154,7 @@ _self: {
       owner = "hrsh7th";
       repo = "cmp-path";
       rev = "91ff86cd9c29299a64f968ebb45846c485725f23";
-      sha256 = "18ixx14ibc7qrv32nj0ylxrx8w4ggg49l5vhcqd35hkp4n56j6mn";
+      hash = "sha256-thppiiV3wjIaZnAXmsh7j3DUc6ceSCvGzviwFUnoPaI=";
     };
 
     dontBuild = true;
@@ -170,7 +170,7 @@ _self: {
       owner = "f3fora";
       repo = "cmp-spell";
       rev = "60584cb75e5e8bba5a0c9e4c3ab0791e0698bffa";
-      sha256 = "1lzv8wbq1w45pbig7lcgyj46nmz4gkag7b37j72p04bixr7wgabv";
+      hash = "sha256-e6nHT+5xEXDFkWes89R85FdriPSP0fPiuoXwgBdH+9M=";
     };
 
     dontBuild = true;
@@ -186,7 +186,7 @@ _self: {
       owner = "lukas-reineke";
       repo = "cmp-under-comparator";
       rev = "6857f10272c3cfe930cece2afa2406e1385bfef8";
-      sha256 = "18kcxl9rg6qrg5wv6bb0hv0sjafspjhy57irf8gyaa66svwmgxmh";
+      hash = "sha256-sPZX+dbGKOUfcjme4qG82impwYZgLbN5eRmblxPtbKI=";
     };
 
     dontBuild = true;
@@ -202,7 +202,7 @@ _self: {
       owner = "saadparwaiz1";
       repo = "cmp_luasnip";
       rev = "18095520391186d634a0045dacaa346291096566";
-      sha256 = "0b91ap1l3nph46r7b5hcn7413yj3zhrz1jmn4xqp387ng35qz537";
+      hash = "sha256-Z5SPy3j2oHFxJ7bK8DP8Q/oRyLEMlnWyIfDaQcNVIS0=";
     };
 
     dontBuild = true;
@@ -218,7 +218,7 @@ _self: {
       owner = "zbirenbaum";
       repo = "copilot-cmp";
       rev = "84d5a0e8e4d1638e7554899cb7b642fa24cf463f";
-      sha256 = "180y6d89bldlpilhfz7dakyaml6mfhspnxjn4jliwql4k45xckbi";
+      hash = "sha256-cU3WC5mEYh6pJFZ2ezV01dCq/FTtfAdpvLTRlVAzHqA=";
     };
 
     dontBuild = true;
@@ -234,7 +234,7 @@ _self: {
       owner = "zbirenbaum";
       repo = "copilot.lua";
       rev = "81ffc4971c3fde809f90bc92232fd0d14bd6bc09";
-      sha256 = "1f9d5gcj1s2maikbj4kjm9nsfc95l6maz1hvna7xr5d8dpf4c70k";
+      hash = "sha256-ExxG3G2oldyPshuGr6qhJTGnbapyErlmVFXoINkrLbk=";
     };
 
     dontBuild = true;
@@ -250,7 +250,7 @@ _self: {
       owner = "github";
       repo = "copilot.vim";
       rev = "8ba151a20bc1d7a5c72e592e51bfc925d5bbb837";
-      sha256 = "0wr703fg7vvygx8iyym8jqqqm51nwffkz8aldma7ahkc5vwi2v0s";
+      hash = "sha256-GmwR+S5sQnVUbVShP53jNpSKMZaoeh9Rf37v89wAJ3M=";
     };
 
     dontBuild = true;
@@ -266,7 +266,7 @@ _self: {
       owner = "sindrets";
       repo = "diffview.nvim";
       rev = "a45163cb9ee65742cf26b940c2b24cc652f295c9";
-      sha256 = "0vp6id3lqhvn9db5hd2bml5xfsmcy65hn19wbl82pscl6vqx80n4";
+      hash = "sha256-xALU8TaU6SsQXTwFC4vxrGrXC61LNFhWS3ZDTEeL5m4=";
     };
 
     dontBuild = true;
@@ -282,7 +282,7 @@ _self: {
       owner = "stevearc";
       repo = "dressing.nvim";
       rev = "1e60c07ae9a8557ac6395144606c3a5335ad47e0";
-      sha256 = "1bavk3zf1x5x29jfhms6sdqjdl7zpjnhiggmgwbc8qjvr3vj6jgj";
+      hash = "sha256-8kkj98hbYsQWf/W9CK28/9AmcdNGV+hkEr304P6YW60=";
     };
 
     dontBuild = true;
@@ -298,7 +298,7 @@ _self: {
       owner = "gpanders";
       repo = "editorconfig.nvim";
       rev = "918279fe8a432aea7555fae4aac52c705d7f3c2e";
-      sha256 = "1smb1zd7skhdivap7pr1wgn1cfxp83zlssxbs044rdcqg6h4zjb8";
+      hash = "sha256-aMlPoHmYtUwI0KtrTf9AtzsW7OMh33PVjg1OfdoPq+o=";
     };
 
     dontBuild = true;
@@ -314,7 +314,7 @@ _self: {
       owner = "j-hui";
       repo = "fidget.nvim";
       rev = "46d1110435f1f023c22fa95bb10b3906aecd7bde";
-      sha256 = "0v0jnzj288swbp0w8xa7287sbql1rfgziqdk1gbcgvzs7zlvczbr";
+      hash = "sha256-eX226T/678fWC7Ph+J/LgeKlDxJHdcTBXVwjJOS3Emw=";
     };
 
     dontBuild = true;
@@ -330,7 +330,7 @@ _self: {
       owner = "rafamadriz";
       repo = "friendly-snippets";
       rev = "24afb4c178d8ea28bfa73f37814ada43be478b1d";
-      sha256 = "09fx4nrj9z0w8idv9pm80dlm57ffy5cxj9yy2agxwiwr0c1lkxsr";
+      hash = "sha256-WfdJAwOZR96fEt4n2Vnxzp1SaQOo3rRbRBz8JLMl3SU=";
     };
 
     dontBuild = true;
@@ -346,7 +346,7 @@ _self: {
       owner = "lewis6991";
       repo = "gitsigns.nvim";
       rev = "9110ea15a134b421723cc45c3a8775a6491df39a";
-      sha256 = "16mvlivkcfnvchlw9lqfxhs3bw4nbrv0jmkpqbm4adxz4wmplfna";
+      hash = "sha256-yjp6Kye/N0XqwndWCXZelvA1NOwO08QpZNs6Nneku5o=";
     };
 
     dontBuild = true;
@@ -362,7 +362,7 @@ _self: {
       owner = "phaazon";
       repo = "hop.nvim";
       rev = "v1.3.0";
-      sha256 = "08yvjh70saffnjjxdhis9sfcbkpmbgm8jl3ax0qal41crwrv7ibb";
+      hash = "sha256-a8WzM88sEKow6GpQiepb9c7FnE46wtaltM4pDQ6U2yM=";
     };
 
     dontBuild = true;
@@ -378,7 +378,7 @@ _self: {
       owner = "lewis6991";
       repo = "impatient.nvim";
       rev = "3ea9abedb6941995b05fdad654d9cfd51c38a31f";
-      sha256 = "06b8h3g77wrjxvhapkvx149pha29a0zcq28bj2pcvh7686cysz9k";
+      hash = "sha256-M33tmUHmwM2ukAsJzD5QSSh4Ewl9z6vg7jLzc96AaBk=";
     };
 
     dontBuild = true;
@@ -394,7 +394,7 @@ _self: {
       owner = "lukas-reineke";
       repo = "indent-blankline.nvim";
       rev = "c15bbe9f23d88b5c0b4ca45a446e01a0a3913707";
-      sha256 = "03l28ja345vz4hrbj9ha864vfyagid116mqi4z8ka2g2nk7s1brd";
+      hash = "sha256-La+gz7TiCTXRJxFXE0KLT3m3iUEKJrkyJH8XMpREgg4=";
     };
 
     dontBuild = true;
@@ -410,7 +410,7 @@ _self: {
       owner = "hkupty";
       repo = "iron.nvim";
       rev = "d1e80812aacd0c7e1a5c3050596716851d223ce9";
-      sha256 = "1vhn51mlp9yzzg4gydsh65hpbxy2x7qqf98sibbnc10bsrd2drha";
+      hash = "sha256-CuYmWtYLBGbXiholh/Hpwvd1YTFQN//I+9+nS2soFu4=";
     };
 
     dontBuild = true;
@@ -426,7 +426,7 @@ _self: {
       owner = "folke";
       repo = "lazy.nvim";
       rev = "2e3e65b0f7b16773f5f83ee4eea09fe6bca653cd";
-      sha256 = "127az575f70mi3w58pxjrwwi655z5jji5gcmx1zz6q7rjb5dnmay";
+      hash = "sha256-XlXbypL5YPN/6JW9EqUsvxQTOc+yX1T4iBUcV0756og=";
     };
 
     dontBuild = true;
@@ -442,7 +442,7 @@ _self: {
       owner = "lukas-reineke";
       repo = "lsp-format.nvim";
       rev = "v2.4.1";
-      sha256 = "0lj40p9ykj5f0d3sl4g0g0gjbfwx1vm6y5q613zphimpjgs3wl64";
+      hash = "sha256-xFA+9JO3Rnj/CAYXb+oOnbslH3jgEapHA67I6dMFRFI=";
     };
 
     dontBuild = true;
@@ -458,7 +458,7 @@ _self: {
       owner = "ray-x";
       repo = "lsp_signature.nvim";
       rev = "4665921ff8e30601c7c1328625b3abc1427a6143";
-      sha256 = "0iiym7chxmidfbix150hjcq7i7hjnr2n010dhi67f0srq5vhwg22";
+      hash = "sha256-QjwOd8FZA3dMhA0EYEW2Ep54MJMQlNDjci3WDtmpPkY=";
     };
 
     dontBuild = true;
@@ -474,7 +474,7 @@ _self: {
       owner = "onsails";
       repo = "lspkind.nvim";
       rev = "c68b3a003483cf382428a43035079f78474cd11e";
-      sha256 = "0qrfqajpbkb757vbcjz1g7v5rihsyhg1f1jxrbwg08dbxpw101av";
+      hash = "sha256-WwUQ+O2rIfD4yl0GFx70GsZc9nnhS7b2KWfNdaXCLmM=";
     };
 
     dontBuild = true;
@@ -490,7 +490,7 @@ _self: {
       owner = "folke";
       repo = "lua-dev.nvim";
       rev = "a0ee77789d9948adce64d98700cc90cecaef88d5";
-      sha256 = "10hc5iyqicbwjchwfyk7dz2wph0hz7ikjanvga9ncjk62qm2154f";
+      hash = "sha256-jpQgKhZmSmaTetsqOeP5EMDLxW9neschk3yxiH0sDII=";
     };
 
     dontBuild = true;
@@ -506,7 +506,7 @@ _self: {
       owner = "nvim-lualine";
       repo = "lualine.nvim";
       rev = "3362b28f917acc37538b1047f187ff1b5645ecdd";
-      sha256 = "0pfkh7zhnwhbfdcild5vayymw4vqzcfb31nq1y33pk1zlvpwxksv";
+      hash = "sha256-W8/O76Y/zDuGD9iGsRz7eBNevVe7NBpZcwtyC/+B010=";
     };
 
     dontBuild = true;
@@ -522,7 +522,7 @@ _self: {
       owner = "williamboman";
       repo = "mason-lspconfig.nvim";
       rev = "f87c5796603aa3436d9cb1d36dbe5b2e579e4034";
-      sha256 = "01d4y5qlsl3faxq3a03p7d1cqfclfrhy42m5yyrbzg3q2wmpgvqq";
+      hash = "sha256-GO93Kxd4vL+y96UK4mF2lDnMQjt3ADVwV25QTXHxpAU=";
     };
 
     dontBuild = true;
@@ -538,7 +538,7 @@ _self: {
       owner = "williamboman";
       repo = "mason.nvim";
       rev = "5676d6d63850ca63fe468a578387fed9eb0f69a3";
-      sha256 = "06b594lv8akxmd54sa18g5w18z1blcvs8zk2p9dnczx9107099yx";
+      hash = "sha256-3acEDgipf2ZbumJ+pDejK3wUeHkoKE1Kq30qtClJZRk=";
     };
 
     dontBuild = true;
@@ -554,7 +554,7 @@ _self: {
       owner = "echasnovski";
       repo = "mini.nvim";
       rev = "75ab5efe4b33ec713b12811984b21067348e3eab";
-      sha256 = "0b5pgkkzx7295hmrvqipk0y2gij6sy419is8fpm5q9sbhdyb40b8";
+      hash = "sha256-aAGyfINLJ1zqdUjHFIjXRsYnPJg34p0rLEmc/ud8tyw=";
     };
 
     dontBuild = true;
@@ -570,7 +570,7 @@ _self: {
       owner = "TimUntersberger";
       repo = "neogit";
       rev = "1acb13c07b34622fe1054695afcecff537d9a00a";
-      sha256 = "1wihkwfqhxvaxazn2wsd18jh8qd9cc2rc1m0rd2bw3ywm7jm24aw";
+      hash = "sha256-XBFR5ancD75Ey6AGlgVjqWEEJQpNc2G/6mp3iB2fMPI=";
     };
 
     dontBuild = true;
@@ -586,7 +586,7 @@ _self: {
       owner = "jose-elias-alvarez";
       repo = "null-ls.nvim";
       rev = "9caa5d6d19e4d0bc8782c2a75988af0c20eed59e";
-      sha256 = "0li1jl46w6yg8h2lx5jq5jknb8iakz0fpxaskbd1nc89rrhvzwa7";
+      hash = "sha256-R/G/Yc4JMRvamlr168CfKqJlpyxYlk4FRM8bbgiVIVI=";
     };
 
     dontBuild = true;
@@ -602,7 +602,7 @@ _self: {
       owner = "windwp";
       repo = "nvim-autopairs";
       rev = "84cde3547e9a8b16db0bfe523e98e19b7be5148b";
-      sha256 = "0hkfa28lcldacsxfccp99wbp42qp3cxffh5rg5s2brkkr3xdp3yl";
+      hash = "sha256-1I/b+shz5iV0eblA5zobFwtyF0/pMua6ZqpRRpFQbkI=";
     };
 
     dontBuild = true;
@@ -618,7 +618,7 @@ _self: {
       owner = "hrsh7th";
       repo = "nvim-cmp";
       rev = "9bb8ee6e2d6ab3c8cc53323b79f05886bc722faa";
-      sha256 = "1z7b53yxamph255rvrs5a4pq5hbqa0nbwpdh1xy8fvfc71gap80n";
+      hash = "sha256-FqCrXjjMbYd8D7BdvixQeMGCL1FF551LEfBW1f0o6/w=";
     };
 
     dontBuild = true;
@@ -634,7 +634,7 @@ _self: {
       owner = "neovim";
       repo = "nvim-lspconfig";
       rev = "v0.1.3";
-      sha256 = "1x9b87d965q9a7a726dw6q6k0lady04acg0n4c1shjwin7cl6kx9";
+      hash = "sha256-qU9D2bGRS6gDIxY8pgjwTVEwDTa8GXHUUQkXk9pBK/U=";
     };
 
     dontBuild = true;
@@ -650,7 +650,7 @@ _self: {
       owner = "rcarriga";
       repo = "nvim-notify";
       rev = "56f65a9474e9ce294a89eb325fccf4391646bfd4";
-      sha256 = "1dr3yv8b3zv50yls8xwf6k75xk7l8y78cbbs7zvjmwri31sw5w4f";
+      hash = "sha256-jvDCdRgx8yr3P3otho5H9MxezjSOd6SpB2X/sdD2I7c=";
     };
 
     dontBuild = true;
@@ -666,7 +666,7 @@ _self: {
       owner = "kyazdani42";
       repo = "nvim-tree.lua";
       rev = "c3ea264947671f44d836af5b7587e12c4b4611f9";
-      sha256 = "1kpnixzz26r6byzaasg0hxqs13g7aa9qb0iwg8r1splr2vzaghwi";
+      hash = "sha256-kcOn/haZXh0yejyChZNS542gcYfgaaW+XyYb8X+P9s4=";
     };
 
     dontBuild = true;
@@ -682,7 +682,7 @@ _self: {
       owner = "RRethy";
       repo = "nvim-treesitter-endwise";
       rev = "dbe426b2786ee41e55afd8ebded172ce206ffa65";
-      sha256 = "1j8zrhz8bb8zvki0nw2hyjdqb12skj65fh6j9cmbbmfbqff9prkg";
+      hash = "sha256-b+abnMPL1bUqS9JAV4ycWoSFm/RQcAvi3B+thT7MH8k=";
     };
 
     dontBuild = true;
@@ -698,7 +698,7 @@ _self: {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter-refactor";
       rev = "0dc8069641226904f9757de786a6ab2273eb73ea";
-      sha256 = "193fk657wjxz7hfbkjw566bng62vv7432cjhb5rwcig04xd5izqm";
+      hash = "sha256-Ff9YWifgRcZzWVAyMcjZW5hnlzGFy7kcPL9LfoqZbqQ=";
     };
 
     dontBuild = true;
@@ -714,7 +714,7 @@ _self: {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter-textobjects";
       rev = "29c5e9effe53f19f250e3a88d1427b35031bc90d";
-      sha256 = "09bpgd0fqpcwifs2wna1lqyrfn4rmp2gfan4635lwjp4sixj52vc";
+      hash = "sha256-bIsie9TkSk7LMMQq98StmViXPaZBWS60i5xd7EB7dyU=";
     };
 
     dontBuild = true;
@@ -730,7 +730,7 @@ _self: {
       owner = "windwp";
       repo = "nvim-ts-autotag";
       rev = "57035b5814f343bc6110676c9ae2eacfcd5340c2";
-      sha256 = "06fj3bpfakbzbb4saqa2dss0wz6z98farljv3xmih162qbybr2c1";
+      hash = "sha256-gYm8/MLCBBhrH1vSrBxK33wOtG5CYaXJWn9N5e4a0hk=";
     };
 
     dontBuild = true;
@@ -746,7 +746,7 @@ _self: {
       owner = "JoosepAlviste";
       repo = "nvim-ts-context-commentstring";
       rev = "88343753dbe81c227a1c1fd2c8d764afb8d36269";
-      sha256 = "1qfgg9lzva7m3kbrxhhccf766by5n2sf456cdvadypr83sniq6ay";
+      hash = "sha256-XhkcrR4oX9/UbswU4rSwxS9jjmMMwp7XHPWo/Wl6z+E=";
     };
 
     dontBuild = true;
@@ -762,7 +762,7 @@ _self: {
       owner = "p00f";
       repo = "nvim-ts-rainbow";
       rev = "9dd019e84dc3b470dfdb5b05e3bb26158fef8a0c";
-      sha256 = "0gmh1h28vvrzgmaiz3mv41d7dmvs83r4d2ha8409zvs5bv5d19ad";
+      hash = "sha256-TaXQyl5F758AQQqKRvJAetd2WiC7jh9VfT/vjQQMsD4=";
     };
 
     dontBuild = true;
@@ -778,7 +778,7 @@ _self: {
       owner = "kyazdani42";
       repo = "nvim-web-devicons";
       rev = "8d2c5337f0a2d0a17de8e751876eeb192b32310e";
-      sha256 = "0jb25z0bw2xyix18pf59lrmbnih8yxxkb81xi9zl034k9l9cmsv3";
+      hash = "sha256-Y+vKEk2TDEB/ij2gNXv3CEa7aqapuItCj74LvsAvYkk=";
     };
 
     dontBuild = true;
@@ -794,7 +794,7 @@ _self: {
       owner = "sei40kr";
       repo = "nvimacs";
       rev = "99f063cd25957cabc21e85f9d4d860d5be689a81";
-      sha256 = "1pavy7kalgch9d73mlbz8v2rvy9v19c4pvqw1a6gbxraajiz4nkz";
+      hash = "sha256-f1ryo1Qq9/WMChzvS1gKO/mdxUZ/0TpOS5A9qubxW90=";
     };
 
     dontBuild = true;
@@ -810,7 +810,7 @@ _self: {
       owner = "pwntester";
       repo = "octo.nvim";
       rev = "71d4dcfe56d4c45b7f1a1520d65ef5a86d2bc9bd";
-      sha256 = "020k4nni9kqq4sqh86rsca3vkf49b56pllxk81yriwyazn8m3y2r";
+      hash = "sha256-WfhRkf3K85h9QLNTek1Zibi5h2I6GwSxJhjPFK0lEwg=";
     };
 
     dontBuild = true;
@@ -826,7 +826,7 @@ _self: {
       owner = "tyru";
       repo = "open-browser-github.vim";
       rev = "ac7c034e300f36d591ef234dcd5eb5cd5c07c74f";
-      sha256 = "0n62h0gjakdc3bnpysny0rndhqhq7g5c97pgr42wz599wnr1pily";
+      hash = "sha256-nsYbsuUplc8Fye+exMo7GGLYbAbean/tGqxNJR+Awlg=";
     };
 
     dontBuild = true;
@@ -842,7 +842,7 @@ _self: {
       owner = "tyru";
       repo = "open-browser.vim";
       rev = "80ec3f2bb0a86ac13c998e2f2c86e16e6d2f20bb";
-      sha256 = "01qj967nch3wwkbshrsdzyyr4apvsqrpa4dkmpn21qr2183w84zz";
+      hash = "sha256-/xPEBwoi4yDsrbMRdTPW+yqSvf9NZ6jX5HxAZo9JEgc=";
     };
 
     dontBuild = true;
@@ -858,7 +858,7 @@ _self: {
       owner = "nvim-lua";
       repo = "plenary.nvim";
       rev = "9c3239bc5f99b85be1123107f7290d16a68f8e64";
-      sha256 = "1d948hq5aa8wbr1lvpi3c54mlgh8z6yk25bfn4ckbs1g1giar8ih";
+      hash = "sha256-MKKs4gsv6DUZsW4VMb35CD5aSWEj3k1DXhwpVTBEJLU=";
     };
 
     dontBuild = true;
@@ -874,7 +874,7 @@ _self: {
       owner = "ahmedkhalf";
       repo = "project.nvim";
       rev = "541115e762764bc44d7d3bf501b6e367842d3d4f";
-      sha256 = "0vabnhb5d8nc25ap9zixazmr4sm5ylq0iqzsc89cc3h1907xp6lz";
+      hash = "sha256-n5rbD0gBDsYSYvrjCDD1pWqS61c9/nRVEcyiVha0S20=";
     };
 
     dontBuild = true;
@@ -890,7 +890,7 @@ _self: {
       owner = "rmagatti";
       repo = "session-lens";
       rev = "5e95ad9aec94b34c83db3eff5dabc4ca1778de6d";
-      sha256 = "1gilz9nk9nc7qmzwz171k00l0bwdk94v3d9i9ars07x9bj9wmlvp";
+      hash = "sha256-d9PKk1ypH6CzSjG1sUmajS9AAZjhhM9/xYfZNG36NL4=";
     };
 
     dontBuild = true;
@@ -906,7 +906,7 @@ _self: {
       owner = "lewis6991";
       repo = "spellsitter.nvim";
       rev = "eb74c4b1f4240cf1a7860877423195cec6311bd5";
-      sha256 = "0qajg4kjwlwbxjjms580v5aisg1vjid4vbmvzwk6nsfms8nrzn18";
+      hash = "sha256-KNifLdLVaWsm/7uuTVqUOzwdVdkAFV2l7ItTLid5UmE=";
     };
 
     dontBuild = true;
@@ -922,7 +922,7 @@ _self: {
       owner = "stevearc";
       repo = "stickybuf.nvim";
       rev = "db2965ccd97b3f1012b19a76d8541f9843b12960";
-      sha256 = "131rkw3nrx01zg6h15l5vzfg83dz5d4w65s7ab82fxga5fkzpy17";
+      hash = "sha256-J/j7pyvqdSfQUkcXw0krvw303N+FlgDN+wH0bAefOYw=";
     };
 
     dontBuild = true;
@@ -938,7 +938,7 @@ _self: {
       owner = "simrat39";
       repo = "symbols-outline.nvim";
       rev = "15ae99c27360ab42e931be127d130611375307d5";
-      sha256 = "170lxb2hw814wjxkpl0g4sic7wg3krp7pfkf3wp5j4dwk8czm2wi";
+      hash = "sha256-kYv6GZq8EVkuH266e26e4/HDoiYP0Du75CQgDsXqFJw=";
     };
 
     dontBuild = true;
@@ -954,7 +954,7 @@ _self: {
       owner = "nvim-telescope";
       repo = "telescope-file-browser.nvim";
       rev = "4272c52078cc457dfaabce6fa3545e7495651d04";
-      sha256 = "0mrd9z0n96h7fwsk5dgb25ax3p3xygwfav4gfgyysb7s7fz3529d";
+      hash = "sha256-LYkyvjv6LO39c49s5fjzfdzRVRHrtTI1dweaZMFPLVc=";
     };
 
     dontBuild = true;
@@ -970,7 +970,7 @@ _self: {
       owner = "nvim-telescope";
       repo = "telescope-fzy-native.nvim";
       rev = "7b3d2528102f858036627a68821ccf5fc1d78ce4";
-      sha256 = "13jxrvf7cgzhw5zbf69hcnjf1la3prll780lq07h06wakpyrrm4y";
+      hash = "sha256-ntSc/Z2KGwAPwBSgQ2m+Q9HgpGUwGbd+4fA/dtzOXY4=";
     };
 
     dontBuild = true;
@@ -986,7 +986,7 @@ _self: {
       owner = "benfowler";
       repo = "telescope-luasnip.nvim";
       rev = "b4ebc74bb49fadc28fb7432f448ba8cbcee58904";
-      sha256 = "0sdh5i11202sn1dq908i7bw70x9lylbyjrljpbk7sndn22pk5r93";
+      hash = "sha256-I+UyrxC2WX3mupJm6Rf1NHVw+DoRgYRbsFoAEUIssGk=";
     };
 
     dontBuild = true;
@@ -1002,7 +1002,7 @@ _self: {
       owner = "nvim-telescope";
       repo = "telescope-project.nvim";
       rev = "8cd22b696e14b353fe8ea9648a03364cb56c39d4";
-      sha256 = "1qrk2i7yvvrqg4yjma1q6c26wdlapc60yriiqx5mhfam9xh28s24";
+      hash = "sha256-RGgkYE9VOVhLxzFmDwy7ijZuBDM4qCo9eTjv7U8UM+M=";
     };
 
     dontBuild = true;
@@ -1018,7 +1018,7 @@ _self: {
       owner = "nvim-telescope";
       repo = "telescope-symbols.nvim";
       rev = "f7d7c84873c95c7bd5682783dd66f84170231704";
-      sha256 = "1yw09d2snma0vy36nfdswm1snf21w183aji7f6y8jnkx47g6gc37";
+      hash = "sha256-Z7Bn3iF9Wom8cSdKNVDgQTirQ+W6OWuG30BVq0VLgPs=";
     };
 
     dontBuild = true;
@@ -1034,7 +1034,7 @@ _self: {
       owner = "nvim-telescope";
       repo = "telescope.nvim";
       rev = "75a5e5065376d9103fc4bafc3ae6327304cee6e9";
-      sha256 = "1dkh69kwyjmksbl1hi33mik1wf2cljmkaq0h1imk075x26l1zym2";
+      hash = "sha256-ovofqBG9HDBrDBBgNaukTDgeZqxjRBjo0rNKz2cycLY=";
     };
 
     dontBuild = true;
@@ -1050,7 +1050,7 @@ _self: {
       owner = "folke";
       repo = "todo-comments.nvim";
       rev = "98b1ebf198836bdc226c0562b9f906584e6c400e";
-      sha256 = "02qjn45qpvxhw7zifw0a86alika5r8b5a98y1199jpdx2d7zks7j";
+      hash = "sha256-8uj5TxO9XZlSCB4lVRbKRc1IlUEKcBf/4bDviwuxEgs=";
     };
 
     dontBuild = true;
@@ -1066,7 +1066,7 @@ _self: {
       owner = "akinsho";
       repo = "toggleterm.nvim";
       rev = "aaeed9e02167c5e8f00f25156895a6fd95403af8";
-      sha256 = "0r1c361kg6xvyx785vjwang9qf1i7laaxh7bwryz76pb0byi80c0";
+      hash = "sha256-gAEU/QLrmvN95uvArhQ9MTicnlVc7oJO97ubN4MZLGQ=";
     };
 
     dontBuild = true;
@@ -1082,7 +1082,7 @@ _self: {
       owner = "folke";
       repo = "tokyonight.nvim";
       rev = "8223c970677e4d88c9b6b6d81bda23daf11062bb";
-      sha256 = "1rzg0h0ab3jsfrimdawh8vlxa6y3j3rmk57zyapnmzpzllcswj0i";
+      hash = "sha256-EUiuGaX//mqv8v+UWfOQwxvV6UaQq1ZjdlqOpQAE7+c=";
     };
 
     dontBuild = true;
@@ -1098,7 +1098,7 @@ _self: {
       owner = "folke";
       repo = "trouble.nvim";
       rev = "da61737d860ddc12f78e638152834487eabf0ee5";
-      sha256 = "1aa45r9z8mghak8f5gymhm875rssi1afs92h0mpnn43y0j76xy31";
+      hash = "sha256-YfhujgR+EGtvBVAk7VSIWudyUIXVv+LQVPBV9FMuRKk=";
     };
 
     dontBuild = true;
@@ -1114,7 +1114,7 @@ _self: {
       owner = "mg979";
       repo = "vim-visual-multi";
       rev = "v0.5.8";
-      sha256 = "0jggmhxgs3lkm8hfjicminhsmfdjw8gsp0p5jgamdx68bryp818g";
+      hash = "sha256-DwV0fV7I9FbVk+WCqx/isrmqoY2VRekgqpMO/Tqs70k=";
     };
 
     dontBuild = true;
@@ -1130,7 +1130,7 @@ _self: {
       owner = "lukas-reineke";
       repo = "virt-column.nvim";
       rev = "36fa3be9cba9195081e934b4f9729021726c5889";
-      sha256 = "097ki3ms89a2m2kvv3fg43dq7cfj6j62n3g58fmr945j5a7srssj";
+      hash = "sha256-UuusjyqykJSrQ+UNK4w00rGD2yDPjb2nqEIlpOuI8yQ=";
     };
 
     dontBuild = true;
@@ -1146,7 +1146,7 @@ _self: {
       owner = "folke";
       repo = "which-key.nvim";
       rev = "bd4411a2ed4dd8bb69c125e339d837028a6eea71";
-      sha256 = "0vf685xgdb967wmvffk1pfrvbhg1jkvzp1kb7r0vs90mg8gpv1aj";
+      hash = "sha256-UoV9H3oVJL1BPmuG+/eU4cG1s7thOrcrPyat9npBxm0=";
     };
 
     dontBuild = true;
