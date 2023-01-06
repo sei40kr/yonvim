@@ -612,13 +612,13 @@ _self: {
 
   nvim-lspconfig = vimUtils.buildVimPlugin {
     pname = "nvim-lspconfig";
-    version = "2022-04-15";
+    version = "2023-01-04";
 
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "v0.1.3";
-      hash = "sha256-qU9D2bGRS6gDIxY8pgjwTVEwDTa8GXHUUQkXk9pBK/U=";
+      rev = "e69978a39e4d3262b09ce6a316beff384f443e3b";
+      hash = "sha256-ZlYRnFnH+dSZPS5qVRBSt+mdUTjxo3VUeu1L0eah5jc=";
     };
 
     dontBuild = true;
