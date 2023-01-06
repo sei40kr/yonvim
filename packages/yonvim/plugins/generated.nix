@@ -516,13 +516,13 @@ _self: {
 
   mason-nvim = vimUtils.buildVimPlugin {
     pname = "mason.nvim";
-    version = "2022-07-31";
+    version = "2023-01-06";
 
     src = fetchFromGitHub {
       owner = "williamboman";
       repo = "mason.nvim";
-      rev = "5676d6d63850ca63fe468a578387fed9eb0f69a3";
-      hash = "sha256-3acEDgipf2ZbumJ+pDejK3wUeHkoKE1Kq30qtClJZRk=";
+      rev = "73831cbe979fb3b385ed8e61626d16d9306a1f06";
+      hash = "sha256-m4O6DKLfz4s1mTMiHR+E7Syop5uCf4MsJNjSA05iiXU=";
     };
 
     dontBuild = true;
