@@ -11,13 +11,6 @@ return {
 
     -- Core
     {
-        dir = "@close_buffers@",
-        config = function()
-            require("yvim.plugin.close-buffers").config()
-        end,
-        module = "close_buffers",
-    },
-    {
         dir = "@mini@",
         init = function()
             require("yvim.plugin.mini").setup()

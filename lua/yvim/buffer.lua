@@ -1,20 +1,6 @@
 local M = {}
 
-function M.del_buf()
-    require("close_buffers").delete({ type = "this" })
-end
-
-local function del_other_bufs()
-    require("close_buffers").delete({ type = "other" })
-end
-
-local function del_unloaded_bufs()
-    require("close_buffers").wipe({ type = "all" })
-end
-
-local function new_empty_buf()
-    vim.api.nvim_set_current_buf(vim.api.nvim_create_buf(true, false))
-end
+local commands = require("yvim.commands.buffer")
 
 function M.load_keymaps()
     local keymap = require("yvim.util.keymap")
@@ -31,10 +17,10 @@ function M.load_keymaps()
                 end,
                 "Switch buffer",
             },
-            d = { M.del_buf, "Kill buffer" },
-            k = { M.del_buf, "Kill buffer" },
-            N = { new_empty_buf, "New empty buffer" },
-            O = { del_other_bufs, "Kill other buffers" },
+            d = { commands.kill_buffer, "Kill buffer" },
+            k = { commands.kill_buffer, "Kill buffer" },
+            N = { commands.new_empty_buffer, "New empty buffer" },
+            O = { commands.kill_other_buffers, "Kill other buffers" },
             p = { "[b", "Previous buffer", noremap = false },
             n = { "]b", "Next buffer", noremap = false },
             s = { "<Cmd>w<CR>", "Save buffer" },
@@ -45,7 +31,7 @@ function M.load_keymaps()
                 end,
                 "Unload buffer",
             },
-            Z = { del_unloaded_bufs, "Kill unloaded buffers" },
+            Z = { commands.kill_unloaded_buffers, "Kill unloaded buffers" },
         },
     })
 end

@@ -34,22 +34,6 @@ _self: {
     meta.homepage = "https://github.com/akinsho/bufferline.nvim";
   };
 
-  close-buffers-nvim = vimUtils.buildVimPlugin {
-    pname = "close-buffers.nvim";
-    version = "2021-11-14";
-
-    src = fetchFromGitHub {
-      owner = "kazhala";
-      repo = "close-buffers.nvim";
-      rev = "3acbcad1211572342632a6c0151f839e7dead27f";
-      hash = "sha256-/jk38ebxKTlyH3AsrSQWMl/cErmu6threyy/MIrdzD4=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/kazhala/close-buffers.nvim";
-  };
-
   cmp-buffer = vimUtils.buildVimPlugin {
     pname = "cmp-buffer";
     version = "2022-08-10";

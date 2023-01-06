@@ -14,13 +14,6 @@
         "hash": "sha256-eIKufuUM5aJTDhTHgQb3bFmpnIY9RiGqCZXURJ6+PUU="
     },
     {
-        "version": "2021-11-14",
-        "owner": "kazhala",
-        "repo": "close-buffers.nvim",
-        "rev": "3acbcad1211572342632a6c0151f839e7dead27f",
-        "hash": "sha256-/jk38ebxKTlyH3AsrSQWMl/cErmu6threyy/MIrdzD4="
-    },
-    {
         "version": "2022-08-10",
         "owner": "hrsh7th",
         "repo": "cmp-buffer",

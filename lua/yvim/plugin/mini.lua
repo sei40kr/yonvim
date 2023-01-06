@@ -2,7 +2,6 @@ local M = {}
 
 function M.setup()
     vim.g.miniai_disable = true
-    vim.g.minibufremove_disable = true
     vim.g.minicompletion_disable = true
     vim.g.minicursorword_disable = true
     vim.g.minidoc_disable = true
@@ -31,6 +30,7 @@ function M.setup()
 end
 
 function M.config()
+    require("mini.bufremove").setup({})
     require("mini.comment").setup({})
     require("mini.jump").setup({})
     require("mini.surround").setup({
