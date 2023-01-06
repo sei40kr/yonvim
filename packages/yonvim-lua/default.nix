@@ -120,8 +120,6 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by copilot_cmp                         ${yonvimPlugins.copilot-cmp.outPath} \
       --subst-var-by copilot_vim                         ${yonvimPlugins.copilot-vim.outPath} \
       --subst-var-by copilot_lua                         ${yonvimPlugins.copilot-lua.outPath} \
-      --subst-var-by auto_session                        ${yonvimPlugins.auto-session.outPath} \
-      --subst-var-by session_lens                        ${yonvimPlugins.session-lens.outPath} \
       --subst-var-by luasnip                             ${yonvimPlugins.LuaSnip.outPath} \
       --subst-var-by friendly_snippets                   ${yonvimPlugins.friendly-snippets.outPath} \
       --subst-var-by iron                                ${yonvimPlugins.iron-nvim.outPath} \

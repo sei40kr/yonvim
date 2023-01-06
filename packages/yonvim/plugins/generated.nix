@@ -18,22 +18,6 @@ _self: {
     meta.homepage = "https://github.com/L3MON4D3/LuaSnip";
   };
 
-  auto-session = vimUtils.buildVimPlugin {
-    pname = "auto-session";
-    version = "2022-07-14";
-
-    src = fetchFromGitHub {
-      owner = "rmagatti";
-      repo = "auto-session";
-      rev = "50f5f2eaa7ff825c7036dc3c9981ebae7584b48e";
-      hash = "sha256-VIeVYm9MZrSg08TFi4fSwlB6V2JRhHb362PaRgZnCcE=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/rmagatti/auto-session";
-  };
-
   bufferline-nvim = vimUtils.buildVimPlugin {
     pname = "bufferline.nvim";
     version = "2022-07-24";
@@ -880,22 +864,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/ahmedkhalf/project.nvim";
-  };
-
-  session-lens = vimUtils.buildVimPlugin {
-    pname = "session-lens";
-    version = "2022-06-29";
-
-    src = fetchFromGitHub {
-      owner = "rmagatti";
-      repo = "session-lens";
-      rev = "5e95ad9aec94b34c83db3eff5dabc4ca1778de6d";
-      hash = "sha256-d9PKk1ypH6CzSjG1sUmajS9AAZjhhM9/xYfZNG36NL4=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/rmagatti/session-lens";
   };
 
   spellsitter-nvim = vimUtils.buildVimPlugin {

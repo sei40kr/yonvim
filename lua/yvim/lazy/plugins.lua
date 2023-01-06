@@ -337,22 +337,6 @@ return {
     { dir = "@copilot_vim@", cmd = "Copilot" },
     { dir = "@copilot_lua@", module = "copilot" },
 
-    -- Session
-    {
-        dir = "@auto_session@",
-        config = function()
-            require("yvim.plugin.auto-session").config()
-        end,
-    },
-    {
-        dir = "@session_lens@",
-        dependencies = { "auto-session", "telescope.nvim" },
-        config = function()
-            require("yvim.plugin.session-lens").config()
-        end,
-        cmd = "SearchSession",
-    },
-
     -- Snippet
     {
         dir = "@luasnip@",
