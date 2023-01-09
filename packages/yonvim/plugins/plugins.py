@@ -1,8 +1,10 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i python3 -p "python3.withPackages (ps: with ps; [ requests ])"
+#!nix-shell -i python3 -p "python3.withPackages (ps: with ps; [ colorama humanize requests ])"
 
 import argparse
+from colorama import init, Fore, Style
 from datetime import datetime
+import humanize
 import json
 import operator
 import requests
@@ -188,8 +190,41 @@ def update(name):
 
     generate_nix_derivations(plugins)
 
+def list_outdated():
+    plugins = read_plugins()
+
+    for plugin in plugins:
+        owner, repo, commit_sha = operator.itemgetter("owner", "repo", "rev")(plugin)
+        url = f'https://api.github.com/repos/{owner}/{repo}/compare/{commit_sha}...HEAD'
+        response = requests.get(url, headers={
+            "Accept": "application/vnd.github+json"
+        }).json()
+        commits = response['commits']
+        if len(commits) == 0:
+            continue
+        latest_commit_sha = commits[-1]['sha']
+
+        status = []
+        if response["ahead_by"] != 0:
+            status.append(f'{response["ahead_by"]} commits ahead')
+        if response["behind_by"] != 0:
+            status.append(f'{response["behind_by"]} commits behind')
+        print(f'{owner}/{repo}', end='')
+        print(f' {Style.BRIGHT}{commit_sha[0:7]} -> {latest_commit_sha[0:7]}{Style.RESET_ALL}', end='')
+        if len(status) != 0:
+            print(f' {Style.DIM}({", ".join(status)}){Style.RESET_ALL}')
+        for commit in commits:
+            sha, message,date=commit["sha"], commit["commit"]["message"], commit["commit"]["author"]["date"]
+            print(f'  ',end='')
+            print(f'{Fore.RED}{sha[0:7]}{Style.RESET_ALL}', end='')
+            print(f' {message.splitlines()[0].strip()}', end='')
+            print(f' {Style.DIM}({humanize.naturaltime(datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ"))}){Style.RESET_ALL}')
+        print('')
+
 
 def main():
+    init(autoreset=True)
+
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest='subcommand')
 
@@ -205,6 +240,8 @@ def main():
     update_parser.add_argument(
         'name', type=str, nargs='?', help='plugin name to update (updates all if omitted)')
 
+    outdated_parser = subparsers.add_parser('outdated', help='list outdated plugins')
+
     args = parser.parse_args()
 
     if args.subcommand == 'add':
@@ -213,6 +250,8 @@ def main():
         remove(args.name)
     elif args.subcommand == 'update':
         update(args.name)
+    elif args.subcommand == 'outdated':
+        list_outdated()
     else:
         parser.print_help()
 
