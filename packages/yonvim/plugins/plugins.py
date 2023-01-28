@@ -7,6 +7,7 @@ from datetime import datetime
 import humanize
 import json
 import operator
+import os
 import requests
 import subprocess
 import sys
@@ -24,16 +25,20 @@ def write_plugins(plugins):
 
 def get_repo_default_branch(owner, repo):
     url = f'https://api.github.com/repos/{owner}/{repo}'
+    token = os.environ.get("GITHUB_API_TOKEN", "")
     response = requests.get(url, headers={
-        "Accept": "application/vnd.github+json"
+        "Accept": "application/vnd.github+json",
+        "Authorization": f'Bearer {token}'
     }).json()
     return response['default_branch']
 
 
 def get_branch_head_rev(owner, repo, branch):
     url = f'https://api.github.com/repos/{owner}/{repo}/branches/{branch}'
+    token = os.environ.get("GITHUB_API_TOKEN", "")
     response = requests.get(url, headers={
-        "Accept": "application/vnd.github+json"
+        "Accept": "application/vnd.github+json",
+        "Authorization": f'Bearer {token}'
     }).json()
     commit_sha = response['commit']['sha']
     date = response['commit']['commit']['author']['date']
@@ -196,8 +201,10 @@ def list_outdated():
     for plugin in plugins:
         owner, repo, commit_sha = operator.itemgetter("owner", "repo", "rev")(plugin)
         url = f'https://api.github.com/repos/{owner}/{repo}/compare/{commit_sha}...HEAD'
+        token = os.environ.get("GITHUB_API_TOKEN", "")
         response = requests.get(url, headers={
-            "Accept": "application/vnd.github+json"
+            "Accept": "application/vnd.github+json",
+            "Authorization": f'Bearer {token}'
         }).json()
         commits = response['commits']
         if len(commits) == 0:
