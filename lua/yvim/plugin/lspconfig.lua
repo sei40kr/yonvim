@@ -25,7 +25,6 @@ function M.config()
 
         lsp[server].setup(opts)
     end
-    lsp.sumneko_lua.setup(require("lua-dev").setup(base_opts))
 
     local orig_windows_default_opts = windows.default_opts
     windows.default_opts = function(opts)

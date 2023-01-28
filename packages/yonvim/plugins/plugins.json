@@ -196,13 +196,6 @@
         "hash": "sha256-WwUQ+O2rIfD4yl0GFx70GsZc9nnhS7b2KWfNdaXCLmM="
     },
     {
-        "version": "2022-01-18",
-        "owner": "folke",
-        "repo": "lua-dev.nvim",
-        "rev": "a0ee77789d9948adce64d98700cc90cecaef88d5",
-        "hash": "sha256-jpQgKhZmSmaTetsqOeP5EMDLxW9neschk3yxiH0sDII="
-    },
-    {
         "version": "2022-05-30",
         "owner": "nvim-lualine",
         "repo": "lualine.nvim",
@@ -229,6 +222,13 @@
         "repo": "mini.nvim",
         "rev": "75ab5efe4b33ec713b12811984b21067348e3eab",
         "hash": "sha256-aAGyfINLJ1zqdUjHFIjXRsYnPJg34p0rLEmc/ud8tyw="
+    },
+    {
+        "version": "2023-01-28",
+        "owner": "folke",
+        "repo": "neodev.nvim",
+        "rev": "8fd21037453f4306f500e437c5cbdf6e8b6c2f99",
+        "hash": "sha256-QiuXv988AcKM4nwaxuEi0lZKuz7XF7nv4OeYIghhqn8="
     },
     {
         "version": "2022-10-27",

@@ -450,22 +450,6 @@ _self: {
     meta.homepage = "https://github.com/onsails/lspkind.nvim";
   };
 
-  lua-dev-nvim = vimUtils.buildVimPlugin {
-    pname = "lua-dev.nvim";
-    version = "2022-01-18";
-
-    src = fetchFromGitHub {
-      owner = "folke";
-      repo = "lua-dev.nvim";
-      rev = "a0ee77789d9948adce64d98700cc90cecaef88d5";
-      hash = "sha256-jpQgKhZmSmaTetsqOeP5EMDLxW9neschk3yxiH0sDII=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/folke/lua-dev.nvim";
-  };
-
   lualine-nvim = vimUtils.buildVimPlugin {
     pname = "lualine.nvim";
     version = "2022-05-30";
@@ -528,6 +512,22 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/echasnovski/mini.nvim";
+  };
+
+  neodev-nvim = vimUtils.buildVimPlugin {
+    pname = "neodev.nvim";
+    version = "2023-01-28";
+
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "neodev.nvim";
+      rev = "8fd21037453f4306f500e437c5cbdf6e8b6c2f99";
+      hash = "sha256-QiuXv988AcKM4nwaxuEi0lZKuz7XF7nv4OeYIghhqn8=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/folke/neodev.nvim";
   };
 
   neogit = vimUtils.buildVimPlugin {

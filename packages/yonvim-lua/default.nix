@@ -99,11 +99,11 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by fidget                              ${yonvimPlugins.fidget-nvim.outPath} \
       --subst-var-by mason                               ${yonvimPlugins.mason-nvim.outPath} \
       --subst-var-by mason_lspconfig                     ${yonvimPlugins.mason-lspconfig-nvim.outPath} \
+      --subst-var-by neodev                              ${yonvimPlugins.neodev-nvim.outPath} \
       --subst-var-by null_ls                             ${yonvimPlugins.null-ls-nvim.outPath} \
       --subst-var-by lspconfig                           ${yonvimPlugins.nvim-lspconfig.outPath} \
       --subst-var-by lsp_format                          ${yonvimPlugins.lsp-format-nvim.outPath} \
       --subst-var-by lsp_signature                       ${yonvimPlugins.lsp_signature-nvim.outPath} \
-      --subst-var-by lua_dev                             ${yonvimPlugins.lua-dev-nvim.outPath} \
       --subst-var-by symbols_outline                     ${yonvimPlugins.symbols-outline-nvim.outPath} \
       --subst-var-by cmp                                 ${yonvimPlugins.nvim-cmp.outPath} \
       --subst-var-by cmp_buffer                          ${yonvimPlugins.cmp-buffer.outPath} \

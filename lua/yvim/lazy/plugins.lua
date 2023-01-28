@@ -256,6 +256,13 @@ return {
         end,
     },
     {
+        dir = "@neodev@",
+        name = "neodev.nvim",
+        config = function()
+            require("yvim.plugin.neodev").config()
+        end,
+    },
+    {
         dir = "@null_ls@",
         config = function()
             require("yvim.plugin.null-ls").config()
@@ -263,7 +270,7 @@ return {
     },
     {
         dir = "@lspconfig@",
-        dependencies = { "cmp-nvim-lsp", "mason-lspconfig.nvim" },
+        dependencies = { "cmp-nvim-lsp", "mason-lspconfig.nvim", "neodev.nvim" },
         init = function()
             require("yvim.plugin.lspconfig").setup()
         end,
@@ -285,7 +292,6 @@ return {
         end,
         module = "lsp_signature",
     },
-    { dir = "@lua_dev@" },
     {
         dir = "@symbols_outline@",
         init = function()
