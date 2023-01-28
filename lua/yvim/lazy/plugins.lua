@@ -1,9 +1,6 @@
 return {
     {
         dir = "@tokyonight@",
-        init = function()
-            require("yvim.plugin.tokyonight").setup()
-        end,
         config = function()
             require("yvim.plugin.tokyonight").config()
         end
