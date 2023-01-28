@@ -52,13 +52,13 @@ _self: {
 
   cmp-cmdline = vimUtils.buildVimPlugin {
     pname = "cmp-cmdline";
-    version = "2022-09-16";
+    version = "2022-11-27";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-cmdline";
-      rev = "c66c379915d68fb52ad5ad1195cdd4265a95ef1e";
-      hash = "sha256-IvMI9wHN1llFLpgMGwm6yr60UJ6gaWBnZaxNHXCDOwI=";
+      rev = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063";
+      hash = "sha256-hzLiqPMU0tDQ4MTwKxvb3gY2JdD5KwqltGYckuSOzm0=";
     };
 
     dontBuild = true;
