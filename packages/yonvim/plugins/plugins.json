@@ -84,11 +84,11 @@
         "hash": "sha256-41dHpSJhapXd5p74T9E1e8Vy0dKYfmVztQTswmauBVA="
     },
     {
-        "version": "2022-10-19",
+        "version": "2023-01-25",
         "owner": "zbirenbaum",
         "repo": "copilot.lua",
-        "rev": "81ffc4971c3fde809f90bc92232fd0d14bd6bc09",
-        "hash": "sha256-ExxG3G2oldyPshuGr6qhJTGnbapyErlmVFXoINkrLbk="
+        "rev": "cfedeb726dc18b25f69d2f2a084b41061ae16e8f",
+        "hash": "sha256-Kgz9D+2AzW/4yn3qP2BzkyKco3ypt8mb4GzMXVkaT/s="
     },
     {
         "version": "2022-10-12",
