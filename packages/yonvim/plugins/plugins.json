@@ -28,11 +28,11 @@
         "hash": "sha256-hzLiqPMU0tDQ4MTwKxvb3gY2JdD5KwqltGYckuSOzm0="
     },
     {
-        "version": "2022-10-29",
+        "version": "2022-11-16",
         "owner": "hrsh7th",
         "repo": "cmp-nvim-lsp",
-        "rev": "78924d1d677b29b3d1fe429864185341724ee5a2",
-        "hash": "sha256-amY87Q2HQseMoEFJW8YFf6k5UUWru52498EoDs4m9r8="
+        "rev": "59224771f91b86d1de12570b4070fe4ad7cd1eeb",
+        "hash": "sha256-Mqkp8IH/laUx0cK7S0BjusTT+OtOOJOamZM4+93RHdU="
     },
     {
         "version": "2022-10-14",
