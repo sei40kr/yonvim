@@ -514,6 +514,22 @@ _self: {
     meta.homepage = "https://github.com/echasnovski/mini.nvim";
   };
 
+  neoconf-nvim = vimUtils.buildVimPlugin {
+    pname = "neoconf.nvim";
+    version = "2023-01-28";
+
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "neoconf.nvim";
+      rev = "d65df617fd98d1224b342fc6a6ee3cfcc2b6c751";
+      hash = "sha256-XTIxDguVLuk3HOcqG0h3KsJstaTBGGrPHkRffpm5QbE=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/folke/neoconf.nvim";
+  };
+
   neodev-nvim = vimUtils.buildVimPlugin {
     pname = "neodev.nvim";
     version = "2023-01-28";

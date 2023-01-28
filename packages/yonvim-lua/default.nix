@@ -99,6 +99,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by fidget                              ${yonvimPlugins.fidget-nvim.outPath} \
       --subst-var-by mason                               ${yonvimPlugins.mason-nvim.outPath} \
       --subst-var-by mason_lspconfig                     ${yonvimPlugins.mason-lspconfig-nvim.outPath} \
+      --subst-var-by neoconf                             ${yonvimPlugins.neoconf-nvim.outPath} \
       --subst-var-by neodev                              ${yonvimPlugins.neodev-nvim.outPath} \
       --subst-var-by null_ls                             ${yonvimPlugins.null-ls-nvim.outPath} \
       --subst-var-by lspconfig                           ${yonvimPlugins.nvim-lspconfig.outPath} \

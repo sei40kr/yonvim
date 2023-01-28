@@ -256,6 +256,13 @@ return {
         end,
     },
     {
+        dir = "@neoconf@",
+        name = "neoconf.nvim",
+        config = function()
+            require("yvim.plugin.neoconf").config()
+        end,
+    },
+    {
         dir = "@neodev@",
         name = "neodev.nvim",
         config = function()
@@ -270,7 +277,12 @@ return {
     },
     {
         dir = "@lspconfig@",
-        dependencies = { "cmp-nvim-lsp", "mason-lspconfig.nvim", "neodev.nvim" },
+        dependencies = {
+            "cmp-nvim-lsp",
+            "mason-lspconfig.nvim",
+            "neoconf.nvim",
+            "neodev.nvim",
+        },
         init = function()
             require("yvim.plugin.lspconfig").setup()
         end,
