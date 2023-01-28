@@ -260,13 +260,13 @@ _self: {
 
   editorconfig-nvim = vimUtils.buildVimPlugin {
     pname = "editorconfig.nvim";
-    version = "2022-07-13";
+    version = "2023-01-10";
 
     src = fetchFromGitHub {
       owner = "gpanders";
       repo = "editorconfig.nvim";
-      rev = "918279fe8a432aea7555fae4aac52c705d7f3c2e";
-      hash = "sha256-aMlPoHmYtUwI0KtrTf9AtzsW7OMh33PVjg1OfdoPq+o=";
+      rev = "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf";
+      hash = "sha256-pR57tITdVGF4luEmmRYv/XFb35E3KDfcgYRijkPAc+Y=";
     };
 
     dontBuild = true;
