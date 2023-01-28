@@ -26,12 +26,8 @@ function M.config()
     vim.api.nvim_create_autocmd("FileChangedShellPost", {
         group = augroup,
         pattern = "*",
-        callback = function()
-            vim.notify(
-                "Reverting buffer ["
-                    .. vim.fn.expand("<afile>:t", false, false)
-                    .. "]."
-            )
+        callback = function(args)
+            vim.notify("Reverting buffer [" .. vim.fs.basename(args.file) .. "].")
         end,
     })
 end

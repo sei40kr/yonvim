@@ -37,7 +37,7 @@ function M.config()
 end
 
 function M.on_attach(client, buffer)
-    if client.resolved_capabilities.completion then
+    if client.server_capabilities.completionProvider then
         vim.api.nvim_buf_set_option(
             buffer,
             "omnifunc",
@@ -45,7 +45,7 @@ function M.on_attach(client, buffer)
         )
     end
 
-    if client.resolved_capabilities.document_range_formatting then
+    if client.server_capabilities.documentRangeFormattingProvider then
         vim.api.nvim_buf_set_option(
             buffer,
             "formatexpr",
@@ -53,14 +53,13 @@ function M.on_attach(client, buffer)
         )
     end
 
-    if client.resolved_capabilities.workspace_symbol then
+    if client.server_capabilities.workspaceSymbolProvider then
         vim.api.nvim_buf_set_option(buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
     end
 
     require("yvim.lsp.keymaps").load(client, buffer)
 
-    if
-        client.resolved_capabilities.document_formatting
+    if client.server_capabilities.documentFormattingProvider
         and yvim.format.format_on_save
     then
         require("lsp-format").on_attach(client)

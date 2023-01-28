@@ -4,7 +4,7 @@ function M.load(client, buffer)
     local keymap = require("yvim.util.keymap")
 
     -- Call hierarchy
-    if client.resolved_capabilities.call_hierarchy then
+    if client.server_capabilities.callsProvider then
         keymap:set_buf_leader(buffer, "n", {
             cy = {
                 vim.lsp.buf.incoming_calls,
@@ -47,7 +47,7 @@ function M.load(client, buffer)
     })
 
     -- Code action
-    if client.resolved_capabilities.code_action then
+    if client.server_capabilities.codeActionProvider then
         keymap:set_buf_leader(buffer, "n", {
             ca = { vim.lsp.buf.code_action, "Execute code action" },
         })
@@ -60,24 +60,31 @@ function M.load(client, buffer)
     end
 
     -- Document formatting
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.documentFormattingProvider then
         keymap:set_buf_leader(buffer, "n", {
-            cf = { vim.lsp.buf.formatting, "Format buffer" },
+            cf = {
+                function()
+                    vim.lsp.buf.format({ async = true })
+                end,
+                "Format buffer"
+            },
         })
     end
 
     -- Document range formatting
-    if client.resolved_capabilities.document_range_formatting then
+    if client.server_capabilities.documentRangeFormattingProvider then
         keymap:set_buf_leader(buffer, "x", {
             cf = {
-                ":lua vim.lsp.buf.range_formatting()<CR>",
+                function()
+                    vim.lsp.buf.format({ async = true })
+                end,
                 "Format region",
             },
         })
     end
 
     -- Document symbol
-    if client.resolved_capabilities.document_symbol then
+    if client.server_capabilities.documentSymbolProvider then
         keymap:set_buf_leader(buffer, "n", {
             cS = {
                 "<Cmd>SymbolsOutlineOpen<CR>",
@@ -87,7 +94,7 @@ function M.load(client, buffer)
     end
 
     -- Find references
-    if client.resolved_capabilities.find_references then
+    if client.server_capabilities.referencesProvider then
         vim.keymap.set(
             "n",
             "gD",
@@ -97,38 +104,38 @@ function M.load(client, buffer)
     end
 
     -- Go to definition
-    if client.resolved_capabilities.goto_definition then
+    if client.server_capabilities.definitionProvider then
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = buffer })
     end
 
     -- Hover
-    if client.resolved_capabilities.hover then
+    if client.server_capabilities.hoverProvider then
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = buffer })
     end
 
     -- Implementation
-    if client.resolved_capabilities.implementation then
+    if client.server_capabilities.implementationProvider then
         keymap:set_buf_leader(buffer, "n", {
             ci = { vim.lsp.buf.implementation, "Find implementations" },
         })
     end
 
     -- Rename
-    if client.resolved_capabilities.rename then
+    if client.server_capabilities.renameProvider then
         keymap:set_buf_leader(buffer, "n", {
             cr = { vim.lsp.buf.rename, "LSP Rename" },
         })
     end
 
     -- Type definition
-    if client.resolved_capabilities.type_definition then
+    if client.server_capabilities.typeDefinitionProvider then
         keymap:set_buf_leader(buffer, "n", {
             ct = { vim.lsp.buf.type_definition, "Find type definition" },
         })
     end
 
     -- Workspace symbol
-    if client.resolved_capabilities.workspace_symbol then
+    if client.server_capabilities.workspaceSymbolProvider then
         keymap:set_buf_leader(buffer, "n", {
             cj = {
                 vim.lsp.buf.workspace_symbol,

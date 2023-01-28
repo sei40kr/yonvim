@@ -276,13 +276,13 @@ _self: {
 
   fidget-nvim = vimUtils.buildVimPlugin {
     pname = "fidget.nvim";
-    version = "2022-06-12";
+    version = "2022-11-27";
 
     src = fetchFromGitHub {
       owner = "j-hui";
       repo = "fidget.nvim";
-      rev = "46d1110435f1f023c22fa95bb10b3906aecd7bde";
-      hash = "sha256-eX226T/678fWC7Ph+J/LgeKlDxJHdcTBXVwjJOS3Emw=";
+      rev = "44585a0c0085765195e6961c15529ba6c5a2a13b";
+      hash = "sha256-FC0vjzpFhXmE/dtQ8XNjLarndf9v3JbokBxnK3yVVYQ=";
     };
 
     dontBuild = true;
@@ -404,13 +404,13 @@ _self: {
 
   lsp-format-nvim = vimUtils.buildVimPlugin {
     pname = "lsp-format.nvim";
-    version = "2022-05-21";
+    version = "2022-11-25";
 
     src = fetchFromGitHub {
       owner = "lukas-reineke";
       repo = "lsp-format.nvim";
-      rev = "v2.4.1";
-      hash = "sha256-xFA+9JO3Rnj/CAYXb+oOnbslH3jgEapHA67I6dMFRFI=";
+      rev = "ca0df5c8544e51517209ea7b86ecc522c98d4f0a";
+      hash = "sha256-UeeM+rHDjsZS27L2Orh+doB6eo6YNV8gb0yLs0PjkLA=";
     };
 
     dontBuild = true;
@@ -564,13 +564,13 @@ _self: {
 
   null-ls-nvim = vimUtils.buildVimPlugin {
     pname = "null-ls.nvim";
-    version = "2023-01-05";
+    version = "2023-01-28";
 
     src = fetchFromGitHub {
       owner = "jose-elias-alvarez";
       repo = "null-ls.nvim";
-      rev = "6830a1ed04f89e6d556cb6bcc200433173004307";
-      hash = "sha256-NArSS97ZqPqjVaXHRFkRUS3kE33oM5j5B/rA3oks600=";
+      rev = "7b2b28e207a1df4ebb13c7dc0bd83f69b5403d71";
+      hash = "sha256-6Cv7hservZJwBQCmUGdnqDQCrj3LoBRMGGT2MPZ5Ngo=";
     };
 
     dontBuild = true;
@@ -612,13 +612,13 @@ _self: {
 
   nvim-lspconfig = vimUtils.buildVimPlugin {
     pname = "nvim-lspconfig";
-    version = "2023-01-04";
+    version = "2023-01-27";
 
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "e69978a39e4d3262b09ce6a316beff384f443e3b";
-      hash = "sha256-ZlYRnFnH+dSZPS5qVRBSt+mdUTjxo3VUeu1L0eah5jc=";
+      rev = "1e988250a0f52a68ddb72905d623405d634e9c5d";
+      hash = "sha256-pPFhBx3peiJVxsaBl3L6h1b9ID+Zm62baQgCFapvddA=";
     };
 
     dontBuild = true;

@@ -2,7 +2,7 @@ local M = {}
 
 local function find_file_from_here()
     require("telescope.builtin").find_files({
-        cwd = vim.fn.expand("%:p:h", false, false),
+        cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
     })
 end
 
@@ -12,7 +12,7 @@ end
 
 local function browse_file()
     require("telescope").extensions.file_browser.file_browser({
-        cwd = vim.fn.expand("%:p:h", false, false),
+        cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
     })
 end
 
