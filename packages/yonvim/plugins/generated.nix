@@ -180,13 +180,13 @@ _self: {
 
   copilot-cmp = vimUtils.buildVimPlugin {
     pname = "copilot-cmp";
-    version = "2022-10-12";
+    version = "2023-01-07";
 
     src = fetchFromGitHub {
       owner = "zbirenbaum";
       repo = "copilot-cmp";
-      rev = "84d5a0e8e4d1638e7554899cb7b642fa24cf463f";
-      hash = "sha256-cU3WC5mEYh6pJFZ2ezV01dCq/FTtfAdpvLTRlVAzHqA=";
+      rev = "b732a58ac8b7287b981cd9f0d9c0f61e5e9d5760";
+      hash = "sha256-41dHpSJhapXd5p74T9E1e8Vy0dKYfmVztQTswmauBVA=";
     };
 
     dontBuild = true;
