@@ -324,13 +324,13 @@ _self: {
 
   hop-nvim = vimUtils.buildVimPlugin {
     pname = "hop.nvim";
-    version = "2022-02-07";
+    version = "2022-10-30";
 
     src = fetchFromGitHub {
       owner = "phaazon";
       repo = "hop.nvim";
-      rev = "v1.3.0";
-      hash = "sha256-a8WzM88sEKow6GpQiepb9c7FnE46wtaltM4pDQ6U2yM=";
+      rev = "90db1b2c61b820e230599a04fedcd2679e64bd07";
+      hash = "sha256-UZZlo5n1x8UfM9OP7RHfT3sFRfMpLkBLbEdcSO+SU6E=";
     };
 
     dontBuild = true;
