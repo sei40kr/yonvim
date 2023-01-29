@@ -63,6 +63,24 @@ return {
 
     -- UI
     {
+        dir = "@aerial@",
+        dependencies = { "nvim-web-devicons" },
+        setup = function()
+            require("yvim.plugin.aerial").setup()
+        end,
+        config = function()
+            require("yvim.plugin.aerial").config()
+        end,
+        keys = {
+            {
+                "<Leader>cS",
+                "<Cmd>AerialOpen<CR>",
+                mode = "n",
+                desc = "Symbols"
+            }
+        },
+    },
+    {
         dir = "@bufferline@",
         dependencies = { "nvim-web-devicons" },
         config = function()
@@ -301,13 +319,6 @@ return {
             require("yvim.plugin.lsp_signature").config()
         end,
         module = "lsp_signature",
-    },
-    {
-        dir = "@symbols_outline@",
-        init = function()
-            require("yvim.plugin.symbols-outline").setup()
-        end,
-        cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
     },
 
     -- Completion

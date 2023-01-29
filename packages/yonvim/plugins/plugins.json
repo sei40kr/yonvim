@@ -7,6 +7,13 @@
         "hash": "sha256-S34ZFnKDEeMpL8bnUup3p0+pdZg0UcJMw729hy2S6kk="
     },
     {
+        "version": "2023-01-28",
+        "owner": "stevearc",
+        "repo": "aerial.nvim",
+        "rev": "911373eb6be91700a3597aeb228f553d4a29aec1",
+        "hash": "sha256-MOnuGGPIg/tddCuMcwGsRayBwCJC76hXrk4Sq7m5mdk="
+    },
+    {
         "version": "2022-12-24",
         "owner": "akinsho",
         "repo": "bufferline.nvim",
@@ -404,13 +411,6 @@
         "repo": "structlog.nvim",
         "rev": "45b26a2b1036bb93c0e83f4225e85ab3cee8f476",
         "hash": "sha256-Bq4YNpLQ1+iSBuN5MG4OBmI5r3DGWyDou4kRCMnked0="
-    },
-    {
-        "version": "2022-05-01",
-        "owner": "simrat39",
-        "repo": "symbols-outline.nvim",
-        "rev": "15ae99c27360ab42e931be127d130611375307d5",
-        "hash": "sha256-kYv6GZq8EVkuH266e26e4/HDoiYP0Du75CQgDsXqFJw="
     },
     {
         "version": "2022-12-31",

@@ -18,6 +18,22 @@ _self: {
     meta.homepage = "https://github.com/L3MON4D3/LuaSnip";
   };
 
+  aerial-nvim = vimUtils.buildVimPlugin {
+    pname = "aerial.nvim";
+    version = "2023-01-28";
+
+    src = fetchFromGitHub {
+      owner = "stevearc";
+      repo = "aerial.nvim";
+      rev = "911373eb6be91700a3597aeb228f553d4a29aec1";
+      hash = "sha256-MOnuGGPIg/tddCuMcwGsRayBwCJC76hXrk4Sq7m5mdk=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/stevearc/aerial.nvim";
+  };
+
   bufferline-nvim = vimUtils.buildVimPlugin {
     pname = "bufferline.nvim";
     version = "2022-12-24";
@@ -928,22 +944,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/Tastyep/structlog.nvim";
-  };
-
-  symbols-outline-nvim = vimUtils.buildVimPlugin {
-    pname = "symbols-outline.nvim";
-    version = "2022-05-01";
-
-    src = fetchFromGitHub {
-      owner = "simrat39";
-      repo = "symbols-outline.nvim";
-      rev = "15ae99c27360ab42e931be127d130611375307d5";
-      hash = "sha256-kYv6GZq8EVkuH266e26e4/HDoiYP0Du75CQgDsXqFJw=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/simrat39/symbols-outline.nvim";
   };
 
   telescope-file-browser-nvim = vimUtils.buildVimPlugin {

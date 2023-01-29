@@ -65,6 +65,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by project                             ${yonvimPlugins.project-nvim.outPath} \
       --subst-var-by stickybuf                           ${yonvimPlugins.stickybuf-nvim.outPath} \
       --subst-var-by web_devicons                        ${yonvimPlugins.nvim-web-devicons.outPath} \
+      --subst-var-by aerial                              ${yonvimPlugins.aerial-nvim.outPath} \
       --subst-var-by bufferline                          ${yonvimPlugins.bufferline-nvim.outPath} \
       --subst-var-by colorizer                           ${yonvimPlugins.nvim-colorizer-lua.outPath} \
       --subst-var-by diffview                            ${yonvimPlugins.diffview-nvim.outPath} \
@@ -106,7 +107,6 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by lspconfig                           ${yonvimPlugins.nvim-lspconfig.outPath} \
       --subst-var-by lsp_format                          ${yonvimPlugins.lsp-format-nvim.outPath} \
       --subst-var-by lsp_signature                       ${yonvimPlugins.lsp_signature-nvim.outPath} \
-      --subst-var-by symbols_outline                     ${yonvimPlugins.symbols-outline-nvim.outPath} \
       --subst-var-by cmp                                 ${yonvimPlugins.nvim-cmp.outPath} \
       --subst-var-by cmp_buffer                          ${yonvimPlugins.cmp-buffer.outPath} \
       --subst-var-by cmp_cmdline                         ${yonvimPlugins.cmp-cmdline.outPath} \

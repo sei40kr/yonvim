@@ -83,16 +83,6 @@ function M.load(client, buffer)
         })
     end
 
-    -- Document symbol
-    if client.server_capabilities.documentSymbolProvider then
-        keymap:set_buf_leader(buffer, "n", {
-            cS = {
-                "<Cmd>SymbolsOutlineOpen<CR>",
-                "Symbols",
-            },
-        })
-    end
-
     -- Find references
     if client.server_capabilities.referencesProvider then
         vim.keymap.set(
