@@ -420,11 +420,11 @@
         "hash": "sha256-ntSc/Z2KGwAPwBSgQ2m+Q9HgpGUwGbd+4fA/dtzOXY4="
     },
     {
-        "version": "2022-04-02",
+        "version": "2022-12-21",
         "owner": "benfowler",
         "repo": "telescope-luasnip.nvim",
-        "rev": "b4ebc74bb49fadc28fb7432f448ba8cbcee58904",
-        "hash": "sha256-I+UyrxC2WX3mupJm6Rf1NHVw+DoRgYRbsFoAEUIssGk="
+        "rev": "1f0057d04985ddcc698b2b29d6eb198a7876e651",
+        "hash": "sha256-VF4LKDbcfPwgRwMb8l7QrJJLnVusFS7LuzMv797/QI0="
     },
     {
         "version": "2022-06-12",
