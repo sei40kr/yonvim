@@ -820,13 +820,13 @@ _self: {
 
   open-browser-vim = vimUtils.buildVimPlugin {
     pname = "open-browser.vim";
-    version = "2021-10-05";
+    version = "2022-10-08";
 
     src = fetchFromGitHub {
       owner = "tyru";
       repo = "open-browser.vim";
-      rev = "80ec3f2bb0a86ac13c998e2f2c86e16e6d2f20bb";
-      hash = "sha256-/xPEBwoi4yDsrbMRdTPW+yqSvf9NZ6jX5HxAZo9JEgc=";
+      rev = "7d4c1d8198e889d513a030b5a83faa07606bac27";
+      hash = "sha256-9QZgTv8W0BFlF0lsH1BPPAzjD6iXWXHXZf2zpouQH2s=";
     };
 
     dontBuild = true;
