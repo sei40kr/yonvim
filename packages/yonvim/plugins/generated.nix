@@ -836,13 +836,13 @@ _self: {
 
   plenary-nvim = vimUtils.buildVimPlugin {
     pname = "plenary.nvim";
-    version = "2022-06-08";
+    version = "2023-01-10";
 
     src = fetchFromGitHub {
       owner = "nvim-lua";
       repo = "plenary.nvim";
-      rev = "9c3239bc5f99b85be1123107f7290d16a68f8e64";
-      hash = "sha256-MKKs4gsv6DUZsW4VMb35CD5aSWEj3k1DXhwpVTBEJLU=";
+      rev = "1c7e3e6b0f4dd5a174fcea9fda8a4d7de593b826";
+      hash = "sha256-UWrp5ZoDRhOXSMsHZxrZHPfqBtgnKWf9SA8ChIVKF4o=";
     };
 
     dontBuild = true;
