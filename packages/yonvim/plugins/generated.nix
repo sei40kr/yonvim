@@ -724,13 +724,13 @@ _self: {
 
   nvim-ts-context-commentstring = vimUtils.buildVimPlugin {
     pname = "nvim-ts-context-commentstring";
-    version = "2022-04-07";
+    version = "2023-01-16";
 
     src = fetchFromGitHub {
       owner = "JoosepAlviste";
       repo = "nvim-ts-context-commentstring";
-      rev = "88343753dbe81c227a1c1fd2c8d764afb8d36269";
-      hash = "sha256-XhkcrR4oX9/UbswU4rSwxS9jjmMMwp7XHPWo/Wl6z+E=";
+      rev = "a0f89563ba36b3bacd62cf967b46beb4c2c29e52";
+      hash = "sha256-HHsja6sz5+k4slmK697cRZZmkeCAt7Cjr0REYn15IX0=";
     };
 
     dontBuild = true;
