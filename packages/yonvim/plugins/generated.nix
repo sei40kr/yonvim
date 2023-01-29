@@ -884,13 +884,13 @@ _self: {
 
   stickybuf-nvim = vimUtils.buildVimPlugin {
     pname = "stickybuf.nvim";
-    version = "2022-06-08";
+    version = "2022-09-30";
 
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "stickybuf.nvim";
-      rev = "db2965ccd97b3f1012b19a76d8541f9843b12960";
-      hash = "sha256-J/j7pyvqdSfQUkcXw0krvw303N+FlgDN+wH0bAefOYw=";
+      rev = "cde97217a7e81ea4488e0c32b8ae6c9d181156c8";
+      hash = "sha256-o87pPmTt2vMDAo/ayQZruQuplaCtD5skTBgnG1lh9E8=";
     };
 
     dontBuild = true;
