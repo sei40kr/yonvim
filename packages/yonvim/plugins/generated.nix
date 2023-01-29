@@ -740,13 +740,13 @@ _self: {
 
   nvim-ts-rainbow = vimUtils.buildVimPlugin {
     pname = "nvim-ts-rainbow";
-    version = "2022-07-14";
+    version = "2023-01-02";
 
     src = fetchFromGitHub {
       owner = "p00f";
       repo = "nvim-ts-rainbow";
-      rev = "9dd019e84dc3b470dfdb5b05e3bb26158fef8a0c";
-      hash = "sha256-TaXQyl5F758AQQqKRvJAetd2WiC7jh9VfT/vjQQMsD4=";
+      rev = "ef95c15a935f97c65a80e48e12fe72d49aacf9b9";
+      hash = "sha256-4RQptdc3ktaj+Vw1Ykr6jD4q1JEsKNyBNUgUEdNDu1E=";
     };
 
     dontBuild = true;
