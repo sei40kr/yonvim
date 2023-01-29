@@ -2,9 +2,10 @@ local M = {}
 
 function M.config()
     if yvim.completion.copilot.enable then
-        vim.defer_fn(function()
-            require("copilot").setup()
-        end, 100)
+        require("copilot").setup({
+            panel = { enabled = false },
+            suggestion = { enabled = false },
+        })
     end
 end
 

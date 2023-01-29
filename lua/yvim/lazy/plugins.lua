@@ -320,6 +320,7 @@ return {
             { dir = "@cmp_omni@" },
             { dir = "@cmp_path@" },
             { dir = "@cmp_spell@" },
+            "copilot_cmp"
         },
         init = function()
             require("yvim.plugin.cmp").setup()
@@ -333,12 +334,23 @@ return {
     { dir = "@lspkind@" },
     {
         dir = "@copilot_cmp@",
+        name = "copilot_cmp",
+        lazy = true,
+        dependencies = { "copilot" },
+        config = function()
+            require("yvim.plugin.copilot_cmp").config()
+        end,
+    },
+    {
+        dir = "@copilot_lua@",
+        name = "copilot",
+        lazy = true,
         config = function()
             require("yvim.plugin.copilot").config()
         end,
+        cmd = "Copilot",
     },
     { dir = "@copilot_vim@", cmd = "Copilot" },
-    { dir = "@copilot_lua@", module = "copilot" },
 
     -- Snippet
     {
