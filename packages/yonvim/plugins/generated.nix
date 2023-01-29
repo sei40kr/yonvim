@@ -948,12 +948,12 @@ _self: {
 
   telescope-fzy-native-nvim = vimUtils.buildVimPlugin {
     pname = "telescope-fzy-native.nvim";
-    version = "2021-04-08";
+    version = "2022-09-11";
 
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope-fzy-native.nvim";
-      rev = "7b3d2528102f858036627a68821ccf5fc1d78ce4";
+      rev = "282f069504515eec762ab6d6c89903377252bf5b";
       hash = "sha256-ntSc/Z2KGwAPwBSgQ2m+Q9HgpGUwGbd+4fA/dtzOXY4=";
     };
 
