@@ -610,6 +610,22 @@ _self: {
     meta.homepage = "https://github.com/hrsh7th/nvim-cmp";
   };
 
+  nvim-colorizer-lua = vimUtils.buildVimPlugin {
+    pname = "nvim-colorizer.lua";
+    version = "2022-10-06";
+
+    src = fetchFromGitHub {
+      owner = "NvChad";
+      repo = "nvim-colorizer.lua";
+      rev = "760e27df4dd966607e8fb7fd8b6b93e3c7d2e193";
+      hash = "sha256-toNEfgZn2RNwyjI5FOyRU9Bdu6jFDZbSb1SjiY9sHH8=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/NvChad/nvim-colorizer.lua";
+  };
+
   nvim-lspconfig = vimUtils.buildVimPlugin {
     pname = "nvim-lspconfig";
     version = "2023-01-27";

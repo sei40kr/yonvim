@@ -66,6 +66,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by stickybuf                           ${yonvimPlugins.stickybuf-nvim.outPath} \
       --subst-var-by web_devicons                        ${yonvimPlugins.nvim-web-devicons.outPath} \
       --subst-var-by bufferline                          ${yonvimPlugins.bufferline-nvim.outPath} \
+      --subst-var-by colorizer                           ${yonvimPlugins.nvim-colorizer-lua.outPath} \
       --subst-var-by diffview                            ${yonvimPlugins.diffview-nvim.outPath} \
       --subst-var-by dressing                            ${yonvimPlugins.dressing-nvim.outPath} \
       --subst-var-by gitsigns                            ${yonvimPlugins.gitsigns-nvim.outPath} \

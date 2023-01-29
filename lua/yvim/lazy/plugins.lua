@@ -70,6 +70,12 @@ return {
         end,
     },
     {
+        dir = "@colorizer@",
+        config = function()
+            require("yvim.plugin.colorizer").config()
+        end
+    },
+    {
         dir = "@diffview@",
         dependencies = { "nvim-web-devicons", "plenary.nvim" },
         init = function()

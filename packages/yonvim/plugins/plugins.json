@@ -266,6 +266,13 @@
         "hash": "sha256-53ubj39XyXep+AyWMU7Vxs9uTvIVZkctl6/M9LLpock="
     },
     {
+        "version": "2022-10-06",
+        "owner": "NvChad",
+        "repo": "nvim-colorizer.lua",
+        "rev": "760e27df4dd966607e8fb7fd8b6b93e3c7d2e193",
+        "hash": "sha256-toNEfgZn2RNwyjI5FOyRU9Bdu6jFDZbSb1SjiY9sHH8="
+    },
+    {
         "version": "2023-01-27",
         "owner": "neovim",
         "repo": "nvim-lspconfig",
