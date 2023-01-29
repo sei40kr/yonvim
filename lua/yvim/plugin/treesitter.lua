@@ -46,7 +46,7 @@ function M.config()
         },
         rainbow = {
             enable = true,
-            disable = { "help", "NvimTree", "toggleterm", "Trouble" },
+            disable = { "help", "neo-tree", "toggleterm", "Trouble" },
         },
     })
 end

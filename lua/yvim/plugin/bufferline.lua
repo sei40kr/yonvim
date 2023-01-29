@@ -15,7 +15,7 @@ function M.config()
             diagnostics_indicator = nil,
             show_close_icon = false,
             separator_style = { "", "" },
-            offsets = { { filetype = "NvimTree" } },
+            offsets = { { filetype = "neo-tree" } },
         },
     })
 end

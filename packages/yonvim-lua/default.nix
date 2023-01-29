@@ -73,6 +73,8 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by gitsigns                            ${yonvimPlugins.gitsigns-nvim.outPath} \
       --subst-var-by indent_blankline                    ${yonvimPlugins.indent-blankline-nvim.outPath} \
       --subst-var-by lualine                             ${yonvimPlugins.lualine-nvim.outPath} \
+      --subst-var-by neo_tree                            ${yonvimPlugins.neo-tree-nvim.outPath} \
+      --subst-var-by nui                                 ${yonvimPlugins.nui-nvim.outPath} \
       --subst-var-by telescope                           ${yonvimPlugins.telescope-nvim.outPath} \
       --subst-var-by telescope_file_browser              ${yonvimPlugins.telescope-file-browser-nvim.outPath} \
       --subst-var-by telescope_fzy_native                ${yonvimPlugins.telescope-fzy-native-nvim.outPath} \
@@ -82,7 +84,6 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by todo_comments                       ${yonvimPlugins.todo-comments-nvim.outPath} \
       --subst-var-by toggleterm                          ${yonvimPlugins.toggleterm-nvim.outPath} \
       --subst-var-by tokyonight                          ${yonvimPlugins.tokyonight-nvim.outPath} \
-      --subst-var-by tree                                ${yonvimPlugins.nvim-tree-lua.outPath} \
       --subst-var-by trouble                             ${yonvimPlugins.trouble-nvim.outPath} \
       --subst-var-by which_key                           ${yonvimPlugins.which-key-nvim.outPath} \
       --subst-var-by virt_column                         ${yonvimPlugins.virt-column-nvim.outPath} \

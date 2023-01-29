@@ -530,6 +530,22 @@ _self: {
     meta.homepage = "https://github.com/echasnovski/mini.nvim";
   };
 
+  neo-tree-nvim = vimUtils.buildVimPlugin {
+    pname = "neo-tree.nvim";
+    version = "2023-01-12";
+
+    src = fetchFromGitHub {
+      owner = "nvim-neo-tree";
+      repo = "neo-tree.nvim";
+      rev = "8238865e1d9c61f1a260c290653f2c419503e0a9";
+      hash = "sha256-a0EoEWUKwonL/zy14k0XKkts5RaAwuhltfOpOlBvNqM=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/nvim-neo-tree/neo-tree.nvim";
+  };
+
   neoconf-nvim = vimUtils.buildVimPlugin {
     pname = "neoconf.nvim";
     version = "2023-01-28";
@@ -576,6 +592,22 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/TimUntersberger/neogit";
+  };
+
+  nui-nvim = vimUtils.buildVimPlugin {
+    pname = "nui.nvim";
+    version = "2023-01-16";
+
+    src = fetchFromGitHub {
+      owner = "MunifTanjim";
+      repo = "nui.nvim";
+      rev = "b99e6cb13dc51768abc1c4c8585045a0c0459ef1";
+      hash = "sha256-IbqBbWD1cO/HhU38+CvTpfvf5HD/BmtFpgofPZGJ/Dk=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/MunifTanjim/nui.nvim";
   };
 
   null-ls-nvim = vimUtils.buildVimPlugin {
@@ -672,22 +704,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/rcarriga/nvim-notify";
-  };
-
-  nvim-tree-lua = vimUtils.buildVimPlugin {
-    pname = "nvim-tree.lua";
-    version = "2023-01-28";
-
-    src = fetchFromGitHub {
-      owner = "nvim-tree";
-      repo = "nvim-tree.lua";
-      rev = "e14989c0eaa6f9c299d48f7e45ce1ed04b21180f";
-      hash = "sha256-SD3ijI4xptHlfvMStq3+mKfiSqNZ2rGCuuRN5RhNnRM=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/nvim-tree/nvim-tree.lua";
   };
 
   nvim-treesitter-endwise = vimUtils.buildVimPlugin {

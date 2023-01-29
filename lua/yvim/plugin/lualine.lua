@@ -77,7 +77,7 @@ function M.config()
                 "DiffviewFiles",
                 "help",
                 "man",
-                "NvimTree",
+                "neo-tree",
                 "qf",
                 "terminal",
                 "toggleterm",

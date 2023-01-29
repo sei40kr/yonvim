@@ -35,15 +35,6 @@ local function search_in_project()
     })
 end
 
-local function toggle_project_sidebar()
-    require("nvim-tree").toggle(false, false, get_project_root())
-end
-
-local function find_file_in_project_sidebar()
-    local bufnr = vim.api.nvim_get_current_buf()
-    require("nvim-tree").find_file(true, bufnr)
-end
-
 local function open_neogit_status()
     require("neogit").open({ cwd = get_project_root() })
 end
@@ -63,14 +54,6 @@ function M.load_keymaps()
             f = { find_file_in_project, "Find file in project" },
             p = { switch_project, "Switch project" },
             t = { "<Cmd>TodoTrouble<CR>", "List project todos" },
-        },
-        -- +open
-        o = {
-            p = { toggle_project_sidebar, "Project sidebar" },
-            P = {
-                find_file_in_project_sidebar,
-                "Find file in project sidebar",
-            },
         },
         -- +search
         s = {

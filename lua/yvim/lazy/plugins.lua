@@ -130,6 +130,32 @@ return {
         end,
     },
     {
+        dir = "@neo_tree@",
+        dependencies = { "plenary.nvim", "nvim-web-devicons", "nui.nvim" },
+        config = function()
+            require("yvim.plugin.neo-tree").config()
+        end,
+        keys = {
+            {
+                "<Leader>op",
+                "<Cmd>Neotree toggle<CR>",
+                mode = "n",
+                desc = "Project sidebar",
+            },
+            {
+                "<Leader>oP",
+                "<Cmd>Neotree reveal<CR>",
+                mode = "n",
+                desc = "Find file in project sidebar",
+            },
+        },
+    },
+    {
+        dir = "@nui@",
+        name = "nui.nvim",
+        lazy = true,
+    },
+    {
         dir = "@telescope@",
         name = "telescope.nvim",
         dependencies = {
@@ -151,18 +177,6 @@ return {
             require("yvim.plugin.toggleterm").config()
         end,
         cmd = "ToggleTerm",
-    },
-    {
-        dir = "@tree@",
-        dependencies = { "nvim-web-devicons" },
-        init = function()
-            require("yvim.plugin.tree").setup()
-        end,
-        config = function()
-            require("yvim.plugin.tree").config()
-        end,
-        cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus" },
-        module = "nvim-tree",
     },
     {
         dir = "@trouble@",
