@@ -1,10 +1,10 @@
 [
     {
-        "version": "2022-05-28",
+        "version": "2023-01-27",
         "owner": "L3MON4D3",
         "repo": "LuaSnip",
-        "rev": "52f4aed58db32a3a03211d31d2b12c0495c45580",
-        "hash": "sha256-QN2KlyPLHXF20l6LGUvb1XrOSpteKB4UjLyXUg9BLDc="
+        "rev": "94f192cf5f0a1931b3035c2d8affdebec460968c",
+        "hash": "sha256-S34ZFnKDEeMpL8bnUup3p0+pdZg0UcJMw729hy2S6kk="
     },
     {
         "version": "2022-12-24",
