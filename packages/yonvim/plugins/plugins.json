@@ -287,11 +287,11 @@
         "hash": "sha256-SD3ijI4xptHlfvMStq3+mKfiSqNZ2rGCuuRN5RhNnRM="
     },
     {
-        "version": "2022-09-02",
+        "version": "2022-09-26",
         "owner": "RRethy",
         "repo": "nvim-treesitter-endwise",
-        "rev": "dbe426b2786ee41e55afd8ebded172ce206ffa65",
-        "hash": "sha256-b+abnMPL1bUqS9JAV4ycWoSFm/RQcAvi3B+thT7MH8k="
+        "rev": "0cf4601c330cf724769a2394df555a57d5fd3f34",
+        "hash": "sha256-Pns+3gLlwhrojKQWN+zOFxOmgRkG3vTPGoLX90Sg+oo="
     },
     {
         "version": "2022-01-22",

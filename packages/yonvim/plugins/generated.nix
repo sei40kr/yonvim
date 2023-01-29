@@ -660,13 +660,13 @@ _self: {
 
   nvim-treesitter-endwise = vimUtils.buildVimPlugin {
     pname = "nvim-treesitter-endwise";
-    version = "2022-09-02";
+    version = "2022-09-26";
 
     src = fetchFromGitHub {
       owner = "RRethy";
       repo = "nvim-treesitter-endwise";
-      rev = "dbe426b2786ee41e55afd8ebded172ce206ffa65";
-      hash = "sha256-b+abnMPL1bUqS9JAV4ycWoSFm/RQcAvi3B+thT7MH8k=";
+      rev = "0cf4601c330cf724769a2394df555a57d5fd3f34";
+      hash = "sha256-Pns+3gLlwhrojKQWN+zOFxOmgRkG3vTPGoLX90Sg+oo=";
     };
 
     dontBuild = true;
