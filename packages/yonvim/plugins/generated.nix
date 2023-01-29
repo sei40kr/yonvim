@@ -1108,13 +1108,13 @@ _self: {
 
   virt-column-nvim = vimUtils.buildVimPlugin {
     pname = "virt-column.nvim";
-    version = "2022-09-21";
+    version = "2023-01-20";
 
     src = fetchFromGitHub {
       owner = "lukas-reineke";
       repo = "virt-column.nvim";
-      rev = "36fa3be9cba9195081e934b4f9729021726c5889";
-      hash = "sha256-UuusjyqykJSrQ+UNK4w00rGD2yDPjb2nqEIlpOuI8yQ=";
+      rev = "93b40ea038f676f5a72d7d1f2336fe7b051fc0ce";
+      hash = "sha256-6EbEzg2bfoHmVZyggwvsDlW9OOA4UkcfO0qG0TEDKQs=";
     };
 
     dontBuild = true;
