@@ -117,9 +117,8 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by cmp_spell                           ${yonvimPlugins.cmp-spell.outPath} \
       --subst-var-by cmp_under_comparator                ${yonvimPlugins.cmp-under-comparator.outPath} \
       --subst-var-by lspkind                             ${yonvimPlugins.lspkind-nvim.outPath} \
+      --subst-var-by copilot                             ${yonvimPlugins.copilot-lua.outPath} \
       --subst-var-by copilot_cmp                         ${yonvimPlugins.copilot-cmp.outPath} \
-      --subst-var-by copilot_vim                         ${yonvimPlugins.copilot-vim.outPath} \
-      --subst-var-by copilot_lua                         ${yonvimPlugins.copilot-lua.outPath} \
       --subst-var-by luasnip                             ${yonvimPlugins.LuaSnip.outPath} \
       --subst-var-by friendly_snippets                   ${yonvimPlugins.friendly-snippets.outPath} \
       --subst-var-by iron                                ${yonvimPlugins.iron-nvim.outPath} \

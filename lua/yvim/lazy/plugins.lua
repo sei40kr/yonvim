@@ -333,6 +333,15 @@ return {
     { dir = "@cmp_under_comparator@" },
     { dir = "@lspkind@" },
     {
+        dir = "@copilot@",
+        name = "copilot",
+        lazy = true,
+        config = function()
+            require("yvim.plugin.copilot").config()
+        end,
+        cmd = "Copilot",
+    },
+    {
         dir = "@copilot_cmp@",
         name = "copilot_cmp",
         lazy = true,
@@ -341,16 +350,6 @@ return {
             require("yvim.plugin.copilot_cmp").config()
         end,
     },
-    {
-        dir = "@copilot_lua@",
-        name = "copilot",
-        lazy = true,
-        config = function()
-            require("yvim.plugin.copilot").config()
-        end,
-        cmd = "Copilot",
-    },
-    { dir = "@copilot_vim@", cmd = "Copilot" },
 
     -- Snippet
     {
