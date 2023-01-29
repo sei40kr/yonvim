@@ -92,16 +92,11 @@ return {
             require("yvim.plugin.gitsigns").config()
         end,
     },
-    -- HACK: Preventing indent-blankline.nvim from overriding colorscheme
     {
         dir = "@indent_blankline@",
-        init = function()
-            vim.g.__indent_blankline_setup_completed = true
-        end,
         config = function()
             require("yvim.plugin.indent-blankline").config()
         end,
-        event = "VimEnter *",
     },
     {
         dir = "@lualine@",
