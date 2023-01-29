@@ -852,13 +852,13 @@ _self: {
 
   project-nvim = vimUtils.buildVimPlugin {
     pname = "project.nvim";
-    version = "2022-05-29";
+    version = "2022-10-29";
 
     src = fetchFromGitHub {
       owner = "ahmedkhalf";
       repo = "project.nvim";
-      rev = "541115e762764bc44d7d3bf501b6e367842d3d4f";
-      hash = "sha256-n5rbD0gBDsYSYvrjCDD1pWqS61c9/nRVEcyiVha0S20=";
+      rev = "685bc8e3890d2feb07ccf919522c97f7d33b94e4";
+      hash = "sha256-fW4ztvYpeXTC0DbkZS4usG/KENiMJG/sWVTD4e8k42g=";
     };
 
     dontBuild = true;
