@@ -20,7 +20,6 @@ function M.config()
             end
         end,
     })
-    vim.notify = notify
 
     Logger:add_pipeline(log.Pipeline(
         log.level.WARN,

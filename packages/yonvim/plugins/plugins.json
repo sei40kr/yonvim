@@ -112,25 +112,11 @@
         "hash": "sha256-xALU8TaU6SsQXTwFC4vxrGrXC61LNFhWS3ZDTEeL5m4="
     },
     {
-        "version": "2022-07-14",
-        "owner": "stevearc",
-        "repo": "dressing.nvim",
-        "rev": "1e60c07ae9a8557ac6395144606c3a5335ad47e0",
-        "hash": "sha256-8kkj98hbYsQWf/W9CK28/9AmcdNGV+hkEr304P6YW60="
-    },
-    {
         "version": "2023-01-10",
         "owner": "gpanders",
         "repo": "editorconfig.nvim",
         "rev": "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf",
         "hash": "sha256-pR57tITdVGF4luEmmRYv/XFb35E3KDfcgYRijkPAc+Y="
-    },
-    {
-        "version": "2022-11-27",
-        "owner": "j-hui",
-        "repo": "fidget.nvim",
-        "rev": "44585a0c0085765195e6961c15529ba6c5a2a13b",
-        "hash": "sha256-FC0vjzpFhXmE/dtQ8XNjLarndf9v3JbokBxnK3yVVYQ="
     },
     {
         "version": "2022-07-06",
@@ -187,13 +173,6 @@
         "repo": "lsp-format.nvim",
         "rev": "ca0df5c8544e51517209ea7b86ecc522c98d4f0a",
         "hash": "sha256-UeeM+rHDjsZS27L2Orh+doB6eo6YNV8gb0yLs0PjkLA="
-    },
-    {
-        "version": "2022-07-30",
-        "owner": "ray-x",
-        "repo": "lsp_signature.nvim",
-        "rev": "4665921ff8e30601c7c1328625b3abc1427a6143",
-        "hash": "sha256-QjwOd8FZA3dMhA0EYEW2Ep54MJMQlNDjci3WDtmpPkY="
     },
     {
         "version": "2022-09-22",
@@ -257,6 +236,13 @@
         "repo": "neogit",
         "rev": "1acb13c07b34622fe1054695afcecff537d9a00a",
         "hash": "sha256-XBFR5ancD75Ey6AGlgVjqWEEJQpNc2G/6mp3iB2fMPI="
+    },
+    {
+        "version": "2023-03-03",
+        "owner": "folke",
+        "repo": "noice.nvim",
+        "rev": "c22651651da01239fc4afac4cdb7261797d5f02e",
+        "hash": "sha256-3XQklNVwwzkrQtaKw8U8iXnNcDMiuEvXtceE2ACY6wc="
     },
     {
         "version": "2023-01-16",

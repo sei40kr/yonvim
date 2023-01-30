@@ -25,6 +25,7 @@ let nvim-treesitter = vimPlugins.nvim-treesitter.withPlugins (ps: with ps; [
   tree-sitter-lua
   tree-sitter-make
   tree-sitter-markdown
+  tree-sitter-markdown-inline
   tree-sitter-nix
   tree-sitter-norg
   tree-sitter-ocaml
@@ -32,6 +33,7 @@ let nvim-treesitter = vimPlugins.nvim-treesitter.withPlugins (ps: with ps; [
   tree-sitter-php
   tree-sitter-python
   tree-sitter-r
+  tree-sitter-regex
   tree-sitter-ruby
   tree-sitter-rust
   tree-sitter-scala
@@ -69,11 +71,11 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by bufferline                          ${yonvimPlugins.bufferline-nvim.outPath} \
       --subst-var-by colorizer                           ${yonvimPlugins.nvim-colorizer-lua.outPath} \
       --subst-var-by diffview                            ${yonvimPlugins.diffview-nvim.outPath} \
-      --subst-var-by dressing                            ${yonvimPlugins.dressing-nvim.outPath} \
       --subst-var-by gitsigns                            ${yonvimPlugins.gitsigns-nvim.outPath} \
       --subst-var-by indent_blankline                    ${yonvimPlugins.indent-blankline-nvim.outPath} \
       --subst-var-by lualine                             ${yonvimPlugins.lualine-nvim.outPath} \
       --subst-var-by neo_tree                            ${yonvimPlugins.neo-tree-nvim.outPath} \
+      --subst-var-by noice_nvim                          ${yonvimPlugins.noice-nvim.outPath} \
       --subst-var-by nui                                 ${yonvimPlugins.nui-nvim.outPath} \
       --subst-var-by telescope                           ${yonvimPlugins.telescope-nvim.outPath} \
       --subst-var-by telescope_file_browser              ${yonvimPlugins.telescope-file-browser-nvim.outPath} \
@@ -99,7 +101,6 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by treesitter_ts_autotag               ${yonvimPlugins.nvim-ts-autotag.outPath} \
       --subst-var-by treesitter_ts_context_commentstring ${yonvimPlugins.nvim-ts-context-commentstring.outPath} \
       --subst-var-by spellsitter                         ${yonvimPlugins.spellsitter-nvim.outPath} \
-      --subst-var-by fidget                              ${yonvimPlugins.fidget-nvim.outPath} \
       --subst-var-by mason                               ${yonvimPlugins.mason-nvim.outPath} \
       --subst-var-by mason_lspconfig                     ${yonvimPlugins.mason-lspconfig-nvim.outPath} \
       --subst-var-by neoconf                             ${yonvimPlugins.neoconf-nvim.outPath} \
@@ -107,7 +108,6 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by null_ls                             ${yonvimPlugins.null-ls-nvim.outPath} \
       --subst-var-by lspconfig                           ${yonvimPlugins.nvim-lspconfig.outPath} \
       --subst-var-by lsp_format                          ${yonvimPlugins.lsp-format-nvim.outPath} \
-      --subst-var-by lsp_signature                       ${yonvimPlugins.lsp_signature-nvim.outPath} \
       --subst-var-by cmp                                 ${yonvimPlugins.nvim-cmp.outPath} \
       --subst-var-by cmp_buffer                          ${yonvimPlugins.cmp-buffer.outPath} \
       --subst-var-by cmp_cmdline                         ${yonvimPlugins.cmp-cmdline.outPath} \

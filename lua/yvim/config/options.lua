@@ -52,7 +52,6 @@ function M.load()
 
     vim.opt.confirm = true
     vim.opt.hidden = true
-    vim.opt.lazyredraw = true
     vim.opt.signcolumn = "yes:1"
     vim.opt.splitbelow = true
     vim.opt.splitright = true

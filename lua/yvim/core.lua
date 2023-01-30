@@ -1,7 +1,7 @@
 local M = {}
 
 local function view_notifications()
-    require("telescope").extensions.notify.notify({ prompt_title = "Filter" })
+    require("noice").cmd("telescope")
 end
 
 function M.config()

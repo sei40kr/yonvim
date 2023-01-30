@@ -18,6 +18,7 @@ return {
     },
     {
         dir = "@notify@",
+        name = "nvim-notify",
         config = function()
             require("yvim.plugin.notify").config()
         end,
@@ -105,12 +106,6 @@ return {
         cmd = { "DiffviewOpen", "DiffviewFileHistory" },
     },
     {
-        dir = "@dressing@",
-        config = function()
-            require("yvim.plugin.dressing").config()
-        end,
-    },
-    {
         dir = "@gitsigns@",
         config = function()
             require("yvim.plugin.gitsigns").config()
@@ -149,6 +144,13 @@ return {
                 desc = "Find file in project sidebar",
             },
         },
+    },
+    {
+        dir = "@noice_nvim@",
+        dependencies = { "nvim-notify", "nui.nvim" },
+        config = function()
+            require("yvim.plugin.noice").config()
+        end,
     },
     {
         dir = "@nui@",
@@ -262,12 +264,6 @@ return {
 
     -- LSP
     {
-        dir = "@fidget@",
-        config = function()
-            require("yvim.plugin.fidget").config()
-        end,
-    },
-    {
         dir = "@mason@",
         name = "mason.nvim",
         init = function()
@@ -326,13 +322,6 @@ return {
             require("yvim.plugin.lsp-format").config()
         end,
         module = "lsp-format",
-    },
-    {
-        dir = "@lsp_signature@",
-        config = function()
-            require("yvim.plugin.lsp_signature").config()
-        end,
-        module = "lsp_signature",
     },
 
     -- Completion

@@ -258,22 +258,6 @@ _self: {
     meta.homepage = "https://github.com/sindrets/diffview.nvim";
   };
 
-  dressing-nvim = vimUtils.buildVimPlugin {
-    pname = "dressing.nvim";
-    version = "2022-07-14";
-
-    src = fetchFromGitHub {
-      owner = "stevearc";
-      repo = "dressing.nvim";
-      rev = "1e60c07ae9a8557ac6395144606c3a5335ad47e0";
-      hash = "sha256-8kkj98hbYsQWf/W9CK28/9AmcdNGV+hkEr304P6YW60=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/stevearc/dressing.nvim";
-  };
-
   editorconfig-nvim = vimUtils.buildVimPlugin {
     pname = "editorconfig.nvim";
     version = "2023-01-10";
@@ -288,22 +272,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/gpanders/editorconfig.nvim";
-  };
-
-  fidget-nvim = vimUtils.buildVimPlugin {
-    pname = "fidget.nvim";
-    version = "2022-11-27";
-
-    src = fetchFromGitHub {
-      owner = "j-hui";
-      repo = "fidget.nvim";
-      rev = "44585a0c0085765195e6961c15529ba6c5a2a13b";
-      hash = "sha256-FC0vjzpFhXmE/dtQ8XNjLarndf9v3JbokBxnK3yVVYQ=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/j-hui/fidget.nvim";
   };
 
   friendly-snippets = vimUtils.buildVimPlugin {
@@ -432,22 +400,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/lukas-reineke/lsp-format.nvim";
-  };
-
-  lsp_signature-nvim = vimUtils.buildVimPlugin {
-    pname = "lsp_signature.nvim";
-    version = "2022-07-30";
-
-    src = fetchFromGitHub {
-      owner = "ray-x";
-      repo = "lsp_signature.nvim";
-      rev = "4665921ff8e30601c7c1328625b3abc1427a6143";
-      hash = "sha256-QjwOd8FZA3dMhA0EYEW2Ep54MJMQlNDjci3WDtmpPkY=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/ray-x/lsp_signature.nvim";
   };
 
   lspkind-nvim = vimUtils.buildVimPlugin {
@@ -592,6 +544,22 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/TimUntersberger/neogit";
+  };
+
+  noice-nvim = vimUtils.buildVimPlugin {
+    pname = "noice.nvim";
+    version = "2023-03-03";
+
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "noice.nvim";
+      rev = "c22651651da01239fc4afac4cdb7261797d5f02e";
+      hash = "sha256-3XQklNVwwzkrQtaKw8U8iXnNcDMiuEvXtceE2ACY6wc=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/folke/noice.nvim";
   };
 
   nui-nvim = vimUtils.buildVimPlugin {

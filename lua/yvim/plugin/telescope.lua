@@ -38,6 +38,7 @@ function M.config()
     })
 
     telescope.load_extension("luasnip")
+    telescope.load_extension("noice")
     telescope.load_extension("notify")
     -- FIXME: these extensions cause an error while generating rplugin.vim
     -- telescope.load_extension("fzy_native")
