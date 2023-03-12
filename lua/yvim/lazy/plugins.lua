@@ -241,9 +241,6 @@ return {
     },
     {
         dir = "@mini_surround@",
-        init = function()
-            require("yvim.plugin.mini-surround").init()
-        end,
         config = function()
             require("yvim.plugin.mini-surround").config()
         end,
