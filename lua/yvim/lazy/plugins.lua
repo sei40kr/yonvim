@@ -393,6 +393,7 @@ return {
     -- Snippet
     {
         dir = "@luasnip@",
+        dependencies = { "friendly-snippets" },
         config = function()
             require("yvim.plugin.luasnip").config()
         end,
@@ -401,6 +402,8 @@ return {
     },
     {
         dir = "@friendly_snippets@",
+        name = "friendly-snippets",
+        lazy = true,
         config = function()
             require("yvim.plugin.friendly-snippets").config()
         end,
