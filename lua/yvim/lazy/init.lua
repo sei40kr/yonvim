@@ -1,24 +1,20 @@
 local M = {}
 
 function M.init()
-    require("lazy").setup(
-        require("yvim.lazy.plugins"),
-        {
-            lockfile = os.getenv("YVIM_LAZY_LOCKFILE"),
-            install = { missing = false },
-            ui = { border = yvim.ui.border },
-            change_detection = { enabled = false },
-            performance = {
-                cache = {
-                    enabled = true,
-                    path = os.getenv("YVIM_LAZY_CACHE_PATH"),
-                },
-                reset_packpath = false,
-                rtp = { reset = false },
-            },
-            readme = { root = os.getenv("YVIM_LAZY_README_ROOT") },
-        }
-    )
+    -- NOTE: somehow os.getenv doesn't work so using vim.fn.expand instead
+    require("lazy.core.cache").path = vim.fn.expand("$LAZY_CACHE")
+    require("lazy").setup(require("yvim.lazy.plugins"), {
+        lockfile = vim.fn.expand("$LAZY_LOCKFILE"),
+        install = { missing = false },
+        ui = { border = yvim.ui.border },
+        change_detection = { enabled = false },
+        performance = {
+            cache = { enabled = true },
+            reset_packpath = false,
+            rtp = { reset = false },
+        },
+        readme = { root = vim.fn.expand("$LAZY_README") },
+    })
 end
 
 local Config = require("lazy.core.config")

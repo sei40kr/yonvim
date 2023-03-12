@@ -1,18 +1,17 @@
 { lib
 , curl
 , fd
-, git
 , gnutar
 , gzip
 , neovim
 , makeWrapper
 , ripgrep
-, runCommandLocal
 , symlinkJoin
 , unzip
 , vimPlugins
 , wget
 , writeShellScriptBin
+, yonvim-lazy-files
 , yonvim-lua
 , yonvimPlugins
 }:
@@ -33,44 +32,11 @@ let
     ripgrep
   ];
 
-  lazyFiles = runCommandLocal "yonvim-lazy-files"
-    {
-      buildInputs = [
-        (neovim.override {
-          configure.packages.myVimPackage.start = [
-            yonvim-lua
-            yonvimPlugins.lazy-nvim
-            yonvimPlugins.structlog-nvim
-          ];
-        })
-        # Supress warning at gitsigns setup
-        git
-      ];
-    } ''
-    export HOME=$(mktemp -d)
-    export XDG_CACHE_HOME=$(mktemp -d)
-    export XDG_DATA_HOME=$(mktemp -d)
-    export XDG_STATE_HOME=$(mktemp -d)
-
-    mkdir -p $out/share/nvim/lazy
-    export YVIM_LAZY_LOCKFILE=$out/share/nvim/lazy/lazy-lock.json
-    export YVIM_LAZY_CACHE_PATH=$out/share/nvim/lazy/cache
-    export YVIM_LAZY_README_ROOT=$out/share/nvim/lazy/readme
-
-    nvim -V1 -n -i NONE --headless \
-         +'Lazy! sync' \
-         +'lua require("lazy.help").update()' \
-         +'lua require("lazy.core.cache").autosave()' \
-         +qa
-
-    rm -rf $HOME $XDG_CACHE_HOME $XDG_DATA_HOME $XDG_STATE_HOME
-  '';
-
   neovim-configured = neovim.override {
     configure = {
       packages.myVimPackage.start = [
         yonvim-lua
-        yonvimPlugins.lazy-nvim
+        yonvimPlugins.lazy-nvim_readOnly
         yonvimPlugins.structlog-nvim
       ];
     };
@@ -82,9 +48,9 @@ let
     export YVIM_CONFIG_DIR="''${YVIM_CONFIG_DIR:-''${XDG_CONFIG_HOME:-''${HOME}/.config}/yvim}"
     export YVIM_RUNTIME_DIR="''${YVIM_RUNTIME_DIR:-''${XDG_DATA_HOME:-''${HOME}/.local/share}/yvim}"
 
-    export YVIM_LAZY_LOCKFILE=${lazyFiles}/share/nvim/lazy/lazy-lock.json
-    export YVIM_LAZY_CACHE_PATH=${lazyFiles}/share/nvim/lazy/cache
-    export YVIM_LAZY_README_ROOT=${lazyFiles}/share/nvim/lazy/readme
+    export LAZY_LOCKFILE=${yonvim-lazy-files}/share/lazy/lazy-lock.json
+    export LAZY_CACHE=${yonvim-lazy-files}/share/lazy/luac
+    export LAZY_README=${yonvim-lazy-files}/share/lazy/readme
 
     exec ${neovim-configured}/bin/nvim "$@"
   '';
