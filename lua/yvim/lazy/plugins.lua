@@ -64,7 +64,7 @@ return {
     {
         dir = "@aerial@",
         dependencies = { "nvim-web-devicons" },
-        setup = function()
+        init = function()
             require("yvim.plugin.aerial").setup()
         end,
         config = function()
