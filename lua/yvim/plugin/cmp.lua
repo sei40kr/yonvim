@@ -136,6 +136,8 @@ function M.config()
     local zindex = require("yvim.ui.zindex")
 
     local mapping = cmp.mapping.preset.insert({
+        ["<C-b>"] = cmp.mapping.scroll_docs( -4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<Tab>"] = cmp.config.disable,
         ["<S-Tab>"] = cmp.config.disable,
         ["<CR>"] = cmp.mapping(cr),
