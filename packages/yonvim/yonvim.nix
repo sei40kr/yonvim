@@ -11,6 +11,7 @@
 , symlinkJoin
 , unzip
 , vimPlugins
+, wget
 , writeShellScriptBin
 , yonvim-lua
 , yonvimPlugins
@@ -25,6 +26,7 @@ let
     gnutar
     gzip
     unzip
+    wget
 
     # nvim-telescope
     fd
