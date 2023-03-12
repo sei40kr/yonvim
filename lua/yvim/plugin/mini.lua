@@ -2,13 +2,19 @@ local M = {}
 
 function M.setup()
     vim.g.miniai_disable = true
+    vim.g.minialign_disable = true
+    vim.g.minianimate_disable = true
+    vim.g.minibracketed_disable = true
     vim.g.minicompletion_disable = true
     vim.g.minicursorword_disable = true
     vim.g.minidoc_disable = true
     vim.g.miniindentscope_disable = true
     vim.g.minijump2d_disable = true
+    vim.g.minimap_disable = true
+    vim.g.minimove_disable = true
     vim.g.minipairs_disable = true
     vim.g.minisessions_disable = true
+    vim.g.minisplitjoin_disable = true
     vim.g.ministarter_disable = true
     vim.g.ministatusline_disable = true
     vim.g.minitabline_disable = true

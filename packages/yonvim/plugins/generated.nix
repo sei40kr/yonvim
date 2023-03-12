@@ -468,13 +468,13 @@ _self: {
 
   mini-nvim = vimUtils.buildVimPlugin {
     pname = "mini.nvim";
-    version = "2022-08-01";
+    version = "2023-03-10";
 
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.nvim";
-      rev = "75ab5efe4b33ec713b12811984b21067348e3eab";
-      hash = "sha256-aAGyfINLJ1zqdUjHFIjXRsYnPJg34p0rLEmc/ud8tyw=";
+      rev = "82693318b691de0676c17457b5d7d26a7798f761";
+      hash = "sha256-jnlgp039VF4OUFk9abv64ylCV4dPToSdJ2EMdahPem4=";
     };
 
     dontBuild = true;
