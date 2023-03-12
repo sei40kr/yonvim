@@ -44,7 +44,16 @@ local function s_tab()
 end
 
 local function complete_buffer()
-    require("cmp").complete({ config = { sources = { { name = "buffer" } } } })
+    require("cmp").complete({
+        config = {
+            sources = {
+                {
+                    name = "buffer",
+                    option = {},
+                }
+            }
+        }
+    })
 end
 
 local function complete_omni()
@@ -111,7 +120,7 @@ function M.config()
         { name = "nvim_lsp_signature_help", group_index = 1 },
         { name = "omni", group_index = 2 },
         { name = "path", group_index = 2 },
-        { name = "buffer", group_index = 2 },
+        { name = "buffer",                  option = {},    group_index = 2 },
     }
     local comparators = {
         cmp.config.compare.offset,
@@ -183,7 +192,12 @@ function M.config()
 
     cmp.setup.cmdline({ "/", "?" }, {
         mapping = cmdline_mapping,
-        sources = cmp.config.sources({ { name = "buffer" } }),
+        sources = cmp.config.sources({
+            {
+                name = "buffer",
+                option = {},
+            },
+        }),
     })
 
     cmp.setup.cmdline(":", {
