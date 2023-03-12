@@ -249,6 +249,12 @@ return {
         end,
     },
     {
+        dir = "@mini_trailspace@",
+        config = function()
+            require("yvim.plugin.mini-trailspace").config()
+        end,
+    },
+    {
         dir = "@nvimacs@",
         event = { "InsertEnter *", "CmdlineEnter *" },
     },

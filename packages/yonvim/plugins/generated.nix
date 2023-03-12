@@ -530,6 +530,22 @@ _self: {
     meta.homepage = "https://github.com/echasnovski/mini.surround";
   };
 
+  mini-trailspace = vimUtils.buildVimPlugin {
+    pname = "mini.trailspace";
+    version = "2023-02-24";
+
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.trailspace";
+      rev = "b6e60878b010eb9cca6a44a549f01936917711b2";
+      hash = "sha256-eKkUe4Ncp+Tu6RLeB97avHyN00AvQAPGOE3YrQOVfK0=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/echasnovski/mini.trailspace";
+  };
+
   neo-tree-nvim = vimUtils.buildVimPlugin {
     pname = "neo-tree.nvim";
     version = "2023-01-12";

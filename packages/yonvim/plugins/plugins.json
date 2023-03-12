@@ -231,6 +231,13 @@
         "hash": "sha256-YVUNe6z6m9tXyzIVOl0Vu0RYts3dPjEP/ePd5K/sfUU="
     },
     {
+        "version": "2023-02-24",
+        "owner": "echasnovski",
+        "repo": "mini.trailspace",
+        "rev": "b6e60878b010eb9cca6a44a549f01936917711b2",
+        "hash": "sha256-eKkUe4Ncp+Tu6RLeB97avHyN00AvQAPGOE3YrQOVfK0="
+    },
+    {
         "version": "2023-01-12",
         "owner": "nvim-neo-tree",
         "repo": "neo-tree.nvim",

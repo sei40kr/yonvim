@@ -96,6 +96,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by editorconfig                        ${yonvimPlugins.editorconfig-nvim.outPath} \
       --subst-var-by hop                                 ${yonvimPlugins.hop-nvim.outPath} \
       --subst-var-by autopairs                           ${yonvimPlugins.nvim-autopairs.outPath} \
+      --subst-var-by mini_trailspace                     ${yonvimPlugins.mini-trailspace.outPath} \
       --subst-var-by nvimacs                             ${yonvimPlugins.nvimacs.outPath} \
       --subst-var-by visual_multi                        ${yonvimPlugins.vim-visual-multi.outPath} \
       --subst-var-by treesitter                          ${nvim-treesitter.outPath} \
