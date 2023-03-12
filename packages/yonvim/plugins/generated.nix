@@ -466,20 +466,68 @@ _self: {
     meta.homepage = "https://github.com/williamboman/mason.nvim";
   };
 
-  mini-nvim = vimUtils.buildVimPlugin {
-    pname = "mini.nvim";
+  mini-bufremove = vimUtils.buildVimPlugin {
+    pname = "mini.bufremove";
     version = "2023-03-10";
 
     src = fetchFromGitHub {
       owner = "echasnovski";
-      repo = "mini.nvim";
-      rev = "82693318b691de0676c17457b5d7d26a7798f761";
-      hash = "sha256-jnlgp039VF4OUFk9abv64ylCV4dPToSdJ2EMdahPem4=";
+      repo = "mini.bufremove";
+      rev = "8d17f868e66ea3b143ab76f09f13f473d61450e2";
+      hash = "sha256-hpUaQ7FY9xzO9Hzucxic1GgpCgwNwquR/98jbZKmqvY=";
     };
 
     dontBuild = true;
 
-    meta.homepage = "https://github.com/echasnovski/mini.nvim";
+    meta.homepage = "https://github.com/echasnovski/mini.bufremove";
+  };
+
+  mini-comment = vimUtils.buildVimPlugin {
+    pname = "mini.comment";
+    version = "2023-02-24";
+
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.comment";
+      rev = "5e8c7f75c48d958ef84ed75772b0263284c8621d";
+      hash = "sha256-LePzlLNP28HsO5Hg7v5MUgrGlOr/0AktaSSg9PMqhq0=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/echasnovski/mini.comment";
+  };
+
+  mini-jump = vimUtils.buildVimPlugin {
+    pname = "mini.jump";
+    version = "2023-02-24";
+
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.jump";
+      rev = "534552990149fff923e672add3e89dc6aee813df";
+      hash = "sha256-lpkXTeCyG+ZpK3AJFkDR9cZbcDrAYofyWllaJ2X/M1U=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/echasnovski/mini.jump";
+  };
+
+  mini-surround = vimUtils.buildVimPlugin {
+    pname = "mini.surround";
+    version = "2023-03-10";
+
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.surround";
+      rev = "ab995ab83cdbee9141166d82e278dbebff4491de";
+      hash = "sha256-YVUNe6z6m9tXyzIVOl0Vu0RYts3dPjEP/ePd5K/sfUU=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/echasnovski/mini.surround";
   };
 
   neo-tree-nvim = vimUtils.buildVimPlugin {

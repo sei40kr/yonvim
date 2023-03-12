@@ -59,7 +59,10 @@ vimUtils.buildVimPluginFrom2Nix {
 
   postFixup = ''
     substituteInPlace $out/lua/yvim/lazy/plugins.lua \
-      --subst-var-by mini                                ${yonvimPlugins.mini-nvim.outPath} \
+      --subst-var-by mini_bufremove                      ${yonvimPlugins.mini-bufremove.outPath} \
+      --subst-var-by mini_comment                        ${yonvimPlugins.mini-comment.outPath} \
+      --subst-var-by mini_jump                           ${yonvimPlugins.mini-jump.outPath} \
+      --subst-var-by mini_surround                       ${yonvimPlugins.mini-surround.outPath} \
       --subst-var-by notify                              ${yonvimPlugins.nvim-notify.outPath} \
       --subst-var-by open_browser                        ${yonvimPlugins.open-browser-vim.outPath} \
       --subst-var-by open_browser_github                 ${yonvimPlugins.open-browser-github-vim.outPath} \

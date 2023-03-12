@@ -8,12 +8,10 @@ return {
 
     -- Core
     {
-        dir = "@mini@",
-        init = function()
-            require("yvim.plugin.mini").setup()
-        end,
+        dir = "@mini_bufremove@",
+        module = "mini.bufremove",
         config = function()
-            require("yvim.plugin.mini").config()
+            require("yvim.plugin.mini-bufremove").config()
         end,
     },
     {
@@ -228,6 +226,27 @@ return {
             require("yvim.plugin.autopairs").config()
         end,
         event = { "InsertEnter *", "CmdlineEnter *" },
+    },
+    {
+        dir = "@mini_comment@",
+        config = function()
+            require("yvim.plugin.mini-comment").config()
+        end,
+    },
+    {
+        dir = "@mini_jump@",
+        config = function()
+            require("yvim.plugin.mini-jump").config()
+        end,
+    },
+    {
+        dir = "@mini_surround@",
+        init = function()
+            require("yvim.plugin.mini-surround").init()
+        end,
+        config = function()
+            require("yvim.plugin.mini-surround").config()
+        end,
     },
     {
         dir = "@nvimacs@",

@@ -205,9 +205,30 @@
     {
         "version": "2023-03-10",
         "owner": "echasnovski",
-        "repo": "mini.nvim",
-        "rev": "82693318b691de0676c17457b5d7d26a7798f761",
-        "hash": "sha256-jnlgp039VF4OUFk9abv64ylCV4dPToSdJ2EMdahPem4="
+        "repo": "mini.bufremove",
+        "rev": "8d17f868e66ea3b143ab76f09f13f473d61450e2",
+        "hash": "sha256-hpUaQ7FY9xzO9Hzucxic1GgpCgwNwquR/98jbZKmqvY="
+    },
+    {
+        "version": "2023-02-24",
+        "owner": "echasnovski",
+        "repo": "mini.comment",
+        "rev": "5e8c7f75c48d958ef84ed75772b0263284c8621d",
+        "hash": "sha256-LePzlLNP28HsO5Hg7v5MUgrGlOr/0AktaSSg9PMqhq0="
+    },
+    {
+        "version": "2023-02-24",
+        "owner": "echasnovski",
+        "repo": "mini.jump",
+        "rev": "534552990149fff923e672add3e89dc6aee813df",
+        "hash": "sha256-lpkXTeCyG+ZpK3AJFkDR9cZbcDrAYofyWllaJ2X/M1U="
+    },
+    {
+        "version": "2023-03-10",
+        "owner": "echasnovski",
+        "repo": "mini.surround",
+        "rev": "ab995ab83cdbee9141166d82e278dbebff4491de",
+        "hash": "sha256-YVUNe6z6m9tXyzIVOl0Vu0RYts3dPjEP/ePd5K/sfUU="
     },
     {
         "version": "2023-01-12",
