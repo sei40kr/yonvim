@@ -145,6 +145,7 @@ return {
     },
     {
         dir = "@noice_nvim@",
+        name = "noice.nvim",
         dependencies = { "nvim-notify", "nui.nvim" },
         config = function()
             require("yvim.plugin.noice").config()
@@ -159,6 +160,8 @@ return {
         dir = "@telescope@",
         name = "telescope.nvim",
         dependencies = {
+            "plenary.nvim",
+            "noice.nvim",
             { dir = "@telescope_file_browser@" },
             { dir = "@telescope_fzy_native@" },
             { dir = "@telescope_luasnip@" },
