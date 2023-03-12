@@ -5,6 +5,7 @@ function M.config()
 
     require("indent_blankline").setup({
         show_first_indent_level = false,
+        disable_with_nolist = true,
         filetype_exclude = special_buffer.get_filetypes(),
         buftype_exclude = special_buffer.get_buftypes(),
     })
