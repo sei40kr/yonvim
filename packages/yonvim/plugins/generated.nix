@@ -68,13 +68,13 @@ _self: {
 
   cmp-cmdline = vimUtils.buildVimPlugin {
     pname = "cmp-cmdline";
-    version = "2022-11-27";
+    version = "2023-02-16";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-cmdline";
-      rev = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063";
-      hash = "sha256-hzLiqPMU0tDQ4MTwKxvb3gY2JdD5KwqltGYckuSOzm0=";
+      rev = "8fcc934a52af96120fe26358985c10c035984b53";
+      hash = "sha256-Yz2N7bzpQE4Qt89CAO3LEvBkhtgJR4OPN+734IayEK4=";
     };
 
     dontBuild = true;
@@ -84,13 +84,13 @@ _self: {
 
   cmp-nvim-lsp = vimUtils.buildVimPlugin {
     pname = "cmp-nvim-lsp";
-    version = "2022-11-16";
+    version = "2023-02-06";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp";
-      rev = "59224771f91b86d1de12570b4070fe4ad7cd1eeb";
-      hash = "sha256-Mqkp8IH/laUx0cK7S0BjusTT+OtOOJOamZM4+93RHdU=";
+      rev = "0e6b2ed705ddcff9738ec4ea838141654f12eeef";
+      hash = "sha256-DxpcPTBlvVP88PDoTheLV2fC76EXDqS2UpM5mAfj/D4=";
     };
 
     dontBuild = true;
@@ -100,13 +100,13 @@ _self: {
 
   cmp-nvim-lsp-signature-help = vimUtils.buildVimPlugin {
     pname = "cmp-nvim-lsp-signature-help";
-    version = "2022-10-14";
+    version = "2023-02-03";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp-signature-help";
-      rev = "d2768cb1b83de649d57d967085fe73c5e01f8fd7";
-      hash = "sha256-QISg2HRSXG7tlO1EI4J7lvh/gmyVii4+QUBzD3ZjNY4=";
+      rev = "3d8912ebeb56e5ae08ef0906e3a54de1c66b92f1";
+      hash = "sha256-yDxYvjTIeXIKYR3tg+bf+okXKr5JYc/I9obP+6uKey4=";
     };
 
     dontBuild = true;
@@ -676,13 +676,13 @@ _self: {
 
   nvim-cmp = vimUtils.buildVimPlugin {
     pname = "nvim-cmp";
-    version = "2023-01-26";
+    version = "2023-03-05";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "nvim-cmp";
-      rev = "e7e2ef7031db8e0cfad7ad9916ec766ddd9dbb3b";
-      hash = "sha256-53ubj39XyXep+AyWMU7Vxs9uTvIVZkctl6/M9LLpock=";
+      rev = "feed47fd1da7a1bad2c7dca456ea19c8a5a9823a";
+      hash = "sha256-rAFEmCXbPoHo1nZ6YHGdKcbGCpKXgQeZ0aa7InmZo2c=";
     };
 
     dontBuild = true;
