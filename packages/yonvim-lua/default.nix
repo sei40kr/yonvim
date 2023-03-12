@@ -8,7 +8,7 @@ let
     cpp
     css
     dockerfile
-    elisp
+    # elisp
     fish
     go
     gomod
@@ -136,6 +136,8 @@ vimUtils.buildVimPluginFrom2Nix {
   postInstall = ''
     rm -rf $out/packages $out/flake.*
   '';
+
+  passthru.tree-sitter-grammars = nvim-treesitter.dependencies;
 
   meta = with lib; {
     description = "My personal Neovim distribution";

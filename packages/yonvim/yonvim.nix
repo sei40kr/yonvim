@@ -38,7 +38,7 @@ let
         yonvim-lua
         yonvimPlugins.lazy-nvim_readOnly
         yonvimPlugins.structlog-nvim
-      ];
+      ] ++ yonvim-lua.tree-sitter-grammars;
     };
   };
   yonvim-bin = writeShellScriptBin "yvim" ''
