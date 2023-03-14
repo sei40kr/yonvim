@@ -420,13 +420,13 @@ _self: {
 
   mason-lspconfig-nvim = vimUtils.buildVimPlugin {
     pname = "mason-lspconfig.nvim";
-    version = "2023-01-26";
+    version = "2023-03-14";
 
     src = fetchFromGitHub {
       owner = "williamboman";
       repo = "mason-lspconfig.nvim";
-      rev = "422b9745143150e16cd3fe331c74f6737de75e72";
-      hash = "sha256-XvnH86yS4yOzKtevEf89XDpna3Tb0be6VamA8j/oukY=";
+      rev = "3924f2d264097b2caf13e713485dbc3e9d616574";
+      hash = "sha256-LqAfY9RrBUogwjPO/j3JM+NRErLyJEf51ivRHi1KUV0=";
     };
 
     dontBuild = true;
@@ -436,13 +436,13 @@ _self: {
 
   mason-nvim = vimUtils.buildVimPlugin {
     pname = "mason.nvim";
-    version = "2023-01-28";
+    version = "2023-03-14";
 
     src = fetchFromGitHub {
       owner = "williamboman";
       repo = "mason.nvim";
-      rev = "2469bfc2538652cb0cf88c129f67d38e46a9cb59";
-      hash = "sha256-UIr2PgCZjClxwoykOnV9bKk/7WSJeXUIO23+gBDz1Y8=";
+      rev = "441c9ea2ab385c2e6407a637775b4b392533d265";
+      hash = "sha256-OqlSMp13u5ZZY/XWrzeO0WAWLEOfTaN+bBZoz5AUATQ=";
     };
 
     dontBuild = true;
@@ -692,13 +692,13 @@ _self: {
 
   nvim-lspconfig = vimUtils.buildVimPlugin {
     pname = "nvim-lspconfig";
-    version = "2023-01-27";
+    version = "2023-03-10";
 
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "1e988250a0f52a68ddb72905d623405d634e9c5d";
-      hash = "sha256-pPFhBx3peiJVxsaBl3L6h1b9ID+Zm62baQgCFapvddA=";
+      rev = "4bb0f1845c5cc6465aecedc773fc2d619fcd8faf";
+      hash = "sha256-2A/4IeUbZ7GdiSU1pMQfvbMGV9cjNFlSgJaHARwnAdw=";
     };
 
     dontBuild = true;
