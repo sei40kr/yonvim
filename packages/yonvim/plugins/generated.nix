@@ -820,13 +820,13 @@ _self: {
 
   nvim-web-devicons = vimUtils.buildVimPlugin {
     pname = "nvim-web-devicons";
-    version = "2023-01-28";
+    version = "2023-03-14";
 
     src = fetchFromGitHub {
       owner = "nvim-tree";
       repo = "nvim-web-devicons";
-      rev = "a421d183ef37dfa13f51a5805bed2381aebf9080";
-      hash = "sha256-DfU4UcCf6uFVpAr1Lng9Vvw/x16XOmz92Yr9qJKopBw=";
+      rev = "f1b1cee3a561590a6c1637a9326c406f6e4af914";
+      hash = "sha256-7GiM/A6Tf9zxqAbv/o+3a+8mw2M6SOtyLfkzmwu88ro=";
     };
 
     dontBuild = true;
