@@ -245,11 +245,11 @@
         "hash": "sha256-XTIxDguVLuk3HOcqG0h3KsJstaTBGGrPHkRffpm5QbE="
     },
     {
-        "version": "2023-01-28",
+        "version": "2023-03-13",
         "owner": "folke",
         "repo": "neodev.nvim",
-        "rev": "8fd21037453f4306f500e437c5cbdf6e8b6c2f99",
-        "hash": "sha256-QiuXv988AcKM4nwaxuEi0lZKuz7XF7nv4OeYIghhqn8="
+        "rev": "abdc346ff59c414698de551f876bcf3f223ed224",
+        "hash": "sha256-E0v7An4u8ng9LVWRLtXVs8aGkHQRi4nIvYW2poZXcG8="
     },
     {
         "version": "2022-10-27",
