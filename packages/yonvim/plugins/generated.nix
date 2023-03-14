@@ -50,22 +50,6 @@ _self: {
     meta.homepage = "https://github.com/akinsho/bufferline.nvim";
   };
 
-  cmp-buffer = vimUtils.buildVimPlugin {
-    pname = "cmp-buffer";
-    version = "2022-08-10";
-
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-buffer";
-      rev = "3022dbc9166796b644a841a02de8dd1cc1d311fa";
-      hash = "sha256-dG4U7MtnXThoa/PD+qFtCt76MQ14V1wX8GMYcvxEnbM=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/hrsh7th/cmp-buffer";
-  };
-
   cmp-cmdline = vimUtils.buildVimPlugin {
     pname = "cmp-cmdline";
     version = "2023-02-16";

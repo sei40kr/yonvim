@@ -354,7 +354,6 @@ return {
         dir = "@cmp@",
         name = "nvim-cmp",
         dependencies = {
-            { dir = "@cmp_buffer@" },
             { dir = "@cmp_cmdline@" },
             { dir = "@cmp_luasnip@" },
             {

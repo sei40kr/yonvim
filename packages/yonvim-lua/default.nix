@@ -114,7 +114,6 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by lspconfig                           ${yonvimPlugins.nvim-lspconfig.outPath} \
       --subst-var-by lsp_format                          ${yonvimPlugins.lsp-format-nvim.outPath} \
       --subst-var-by cmp                                 ${yonvimPlugins.nvim-cmp.outPath} \
-      --subst-var-by cmp_buffer                          ${yonvimPlugins.cmp-buffer.outPath} \
       --subst-var-by cmp_cmdline                         ${yonvimPlugins.cmp-cmdline.outPath} \
       --subst-var-by cmp_luasnip                         ${yonvimPlugins.cmp_luasnip.outPath} \
       --subst-var-by cmp_nvim_lsp                        ${yonvimPlugins.cmp-nvim-lsp.outPath} \

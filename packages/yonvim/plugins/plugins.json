@@ -21,13 +21,6 @@
         "hash": "sha256-q8nwZRN97Sfrr7lHtNYwGdbS63obMOAxFFs/gSvqbqM="
     },
     {
-        "version": "2022-08-10",
-        "owner": "hrsh7th",
-        "repo": "cmp-buffer",
-        "rev": "3022dbc9166796b644a841a02de8dd1cc1d311fa",
-        "hash": "sha256-dG4U7MtnXThoa/PD+qFtCt76MQ14V1wX8GMYcvxEnbM="
-    },
-    {
         "version": "2023-02-16",
         "owner": "hrsh7th",
         "repo": "cmp-cmdline",
