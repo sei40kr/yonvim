@@ -413,11 +413,11 @@
         "hash": "sha256-KNifLdLVaWsm/7uuTVqUOzwdVdkAFV2l7ItTLid5UmE="
     },
     {
-        "version": "2022-09-30",
+        "version": "2023-03-06",
         "owner": "stevearc",
         "repo": "stickybuf.nvim",
-        "rev": "cde97217a7e81ea4488e0c32b8ae6c9d181156c8",
-        "hash": "sha256-o87pPmTt2vMDAo/ayQZruQuplaCtD5skTBgnG1lh9E8="
+        "rev": "776177b105ea1fda52959450b8b8a04d070c283b",
+        "hash": "sha256-xmiLpNlU/aeI6sBJNHh6TJ4bK7HZ4NpiG+KWm3l3rDo="
     },
     {
         "version": "2023-01-08",

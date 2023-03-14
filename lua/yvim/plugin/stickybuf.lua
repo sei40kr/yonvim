@@ -1,6 +1,8 @@
 local M = {}
 
 function M.config()
+    local stickybuf = require("stickybuf")
+
     local special_buffer = require("yvim.util.special_buffer")
 
     local filetypes = {}
@@ -8,18 +10,11 @@ function M.config()
         filetypes[filetype] = "filetype"
     end
 
-    require("stickybuf").setup({
-        buftype = {
-            [""] = false,
-            acwrite = false,
-            help = "buftype",
-            nofile = false,
-            nowrite = false,
-            quickfix = "buftype",
-            terminal = false,
-            prompt = "bufnr",
-        },
-        filetype = filetypes,
+    stickybuf.setup({
+        get_auto_pin = function(bufnr)
+            return stickybuf.should_auto_pin(bufnr)
+                or vim.tbl_contains(filetypes, vim.bo[bufnr].filetype)
+        end,
     })
 end
 
