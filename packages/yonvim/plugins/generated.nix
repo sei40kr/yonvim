@@ -1076,13 +1076,13 @@ _self: {
 
   todo-comments-nvim = vimUtils.buildVimPlugin {
     pname = "todo-comments.nvim";
-    version = "2023-01-23";
+    version = "2023-03-12";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "todo-comments.nvim";
-      rev = "74c7d28cb50b0713c881ef69bcb6cdd77d8907d1";
-      hash = "sha256-2BV8ahB5iZmEh5N/JFqMdz4CqVXAIdmxE7rNC1+igsw=";
+      rev = "6ccb0bebeb22dbe31940776a750db54b844ae653";
+      hash = "sha256-/IVjGvXy6GbP80s95YNFqrGa+idKzbMqzrxlUo/Pu7Y=";
     };
 
     dontBuild = true;
