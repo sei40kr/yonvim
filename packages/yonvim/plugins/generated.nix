@@ -180,13 +180,13 @@ _self: {
 
   copilot-cmp = vimUtils.buildVimPlugin {
     pname = "copilot-cmp";
-    version = "2023-01-07";
+    version = "2023-02-26";
 
     src = fetchFromGitHub {
       owner = "zbirenbaum";
       repo = "copilot-cmp";
-      rev = "b732a58ac8b7287b981cd9f0d9c0f61e5e9d5760";
-      hash = "sha256-41dHpSJhapXd5p74T9E1e8Vy0dKYfmVztQTswmauBVA=";
+      rev = "92535dfd9c430b49ca7d9a7da336c5db65826b65";
+      hash = "sha256-Bu9Lx+1H1pG97ibwn8Q7jOHOKOrzg1nyucTTqbdlapI=";
     };
 
     dontBuild = true;
@@ -196,13 +196,13 @@ _self: {
 
   copilot-lua = vimUtils.buildVimPlugin {
     pname = "copilot.lua";
-    version = "2023-01-25";
+    version = "2023-02-27";
 
     src = fetchFromGitHub {
       owner = "zbirenbaum";
       repo = "copilot.lua";
-      rev = "cfedeb726dc18b25f69d2f2a084b41061ae16e8f";
-      hash = "sha256-Kgz9D+2AzW/4yn3qP2BzkyKco3ypt8mb4GzMXVkaT/s=";
+      rev = "b41d4c9c7d4f5e0272bcf94061b88e244904c56f";
+      hash = "sha256-n/SCrzzzL5WUHJk0sCXbgGusk/dQuy8DI9Pqdh+lVeQ=";
     };
 
     dontBuild = true;
