@@ -30,8 +30,6 @@ function M.load_keymaps()
         ["]<Space>"] = { insert_newline_below, "Insert newline below" },
         ["[c"] = "Previous comment",
         ["]c"] = "Next comment",
-    })
-    keymap:set_leader("i", {
         -- +insert
         i = {
             e = {
@@ -69,6 +67,25 @@ function M.load_keymaps()
                     require("telescope.builtin").marks()
                 end,
                 "Jump to mark",
+            },
+        },
+    })
+    keymap:set_leader("i", {
+        -- +insert
+        i = {
+            e = {
+                function()
+                    require("telescope.builtin").symbols({
+                        sources = { "emoji" },
+                    })
+                end,
+                "Emoji",
+            },
+            r = {
+                function()
+                    require("telescope.builtin").registers()
+                end,
+                "From register",
             },
         },
     })
