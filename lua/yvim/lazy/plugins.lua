@@ -23,6 +23,7 @@ return {
     },
     {
         dir = "@open_browser@",
+        name = "open-browser.vim",
         cmd = {
             "OpenBrowser",
             "OpenBrowserSearch",
@@ -31,11 +32,16 @@ return {
     },
     {
         dir = "@open_browser_github@",
+        dependencies = { "open-browser.vim" },
         cmd = {
             "OpenGithubFile",
             "OpenGithubIssue",
             "OpenGithubPullReq",
             "OpenGithubProject",
+        },
+        keys = {
+            { "<Leader>goo", ":OpenGithubFile<CR>",        mode = { "n", "x" },   desc = "Browse file" },
+            { "<Leader>gor", "<Cmd>OpenGithubProject<CR>", desc = "Browse remote" },
         },
     },
     { dir = "@plenary@", name = "plenary.nvim" },
@@ -171,8 +177,64 @@ return {
         config = function()
             require("yvim.plugin.telescope").config()
         end,
-        -- cmd = "Telescope",
-        -- module = { "telescope", "telescope.builtins" },
+        keys = {
+            { "<Leader>'", function()
+                require("telescope.builtin").resume()
+            end, desc = "Resume last search" },
+            { "<Leader>:", function()
+                require("telescope.builtin").commands()
+            end, desc = ":" },
+            { "<Leader>bb", function()
+                require("telescope.builtin").buffers()
+            end, desc = "Switch buffer" },
+            { "<Leader>fr", function()
+                require("telescope.builtin").oldfiles()
+            end, desc = "Recent files" },
+            { "<Leader>gb", function()
+                require("telescope.builtin").git_branches()
+            end, desc = "Switch branch" },
+            { "<Leader>ha", function()
+                require("telescope.builtin").autocommands()
+            end, desc = "autocmds" },
+            { "<Leader>hf", function()
+                require("telescope.builtin").filetypes()
+            end, desc = "filetypes" },
+            { "<Leader>hh", function()
+                require("telescope.builtin").help_tags()
+            end, desc = "help" },
+            { "<Leader>hH", function()
+                require("telescope.builtin").highlights()
+            end, desc = "highlights" },
+            { "<Leader>hk", function()
+                require("telescope.builtin").keymaps()
+            end, desc = "keymaps" },
+            { "<Leader>hm", function()
+                require("telescope.builtin").man_pages()
+            end, desc = "manpages" },
+            { "<Leader>ho", function()
+                require("telescope.builtin").vim_options()
+            end, desc = "vim options" },
+            { "<Leader>ie", function()
+                require("telescope.builtin").symbols({ sources = { "emoji" } })
+            end, desc = "Emoji" },
+            { "<M-Space>ie", function()
+                require("telescope.builtin").symbols({ sources = { "emoji" } })
+            end, mode = "i", desc = "Emoji" },
+            { "<Leader>ir", function()
+                require("telescope.builtin").registers()
+            end, desc = "From register" },
+            { "<M-Space>ir", function()
+                require("telescope.builtin").registers()
+            end, mode = "i", desc = "From register" },
+            { "<Leader>sj", function()
+                require("telescope.builtin").jumplist()
+            end, desc = "Jump list" },
+            { "<Leader>sr", function()
+                require("telescope.builtin").marks()
+            end, desc = "Jump to mark" },
+        },
+        cmd = "Telescope",
+        module = { "telescope", "telescope.builtin" },
     },
     {
         dir = "@toggleterm@",
@@ -180,6 +242,9 @@ return {
             require("yvim.plugin.toggleterm").config()
         end,
         cmd = "ToggleTerm",
+        keys = {
+            { "<Leader>ot", "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal popup" },
+        },
     },
     {
         dir = "@trouble@",
@@ -221,7 +286,11 @@ return {
         config = function()
             require("yvim.plugin.hop").config()
         end,
-        module = "hop",
+        keys = {
+            { "<Leader>j", function()
+                require("hop").hint_char2()
+            end, desc = "Jump to" },
+        },
     },
     {
         dir = "@autopairs@",
@@ -420,6 +489,17 @@ return {
         config = function()
             require("yvim.plugin.iron").config()
         end,
+        keys = {
+            { "<Leader>cs", function()
+                require("iron.core").visual_send()
+            end, mode = { "n", "x" }, desc = "Send to REPL" },
+            { "<Leader>or", function()
+                require("iron.core").repl_for(vim.bo.filetype)
+            end, mode = "n", desc = "Open REPL" },
+            { "<Leader>oR", function()
+                require("iron.core").repl_here(vim.bo.filetype)
+            end, mode = "n", desc = "Open REPL" },
+        },
     },
     {
         dir = "@neogit@",
@@ -440,5 +520,14 @@ return {
             require("yvim.plugin.octo").config()
         end,
         cmd = "Octo",
+        keys = {
+            { "<Leader>gci", "<Cmd>Octo issue create<CR>", desc = "Issue" },
+            { "<Leader>gcp", "<Cmd>Octo pr create<CR>",    desc = "Pull request" },
+            { "<Leader>gfi", "<Cmd>Octo issue search<CR>", desc = "Find issue" },
+            { "<Leader>gfp", "<Cmd>Octo pr search<CR>",    desc = "Find pull request" },
+            { "<Leader>gli", "<Cmd>Octo issue list<CR>",   desc = "List issues" },
+            { "<Leader>glp", "<Cmd>Octo pr list<CR>",      desc = "List pull requests" },
+            { "<Leader>glg", "<Cmd>Octo gist list<CR>",    desc = "List gits" },
+        },
     },
 }

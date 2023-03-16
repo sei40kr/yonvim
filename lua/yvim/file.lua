@@ -6,10 +6,6 @@ local function find_file_from_here()
     })
 end
 
-local function open_recent_file()
-    require("telescope.builtin").oldfiles()
-end
-
 local function browse_file()
     require("telescope").extensions.file_browser.file_browser({
         cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
@@ -39,7 +35,6 @@ function M.load_keymaps()
             F = { find_file_from_here, "Find file from here" },
             p = { find_file_in_private_config, "Find file in private config" },
             P = { browse_private_config, "Browse private config" },
-            r = { open_recent_file, "Recent files" },
             s = { "<Cmd>w<CR>", "Save file" },
         },
     })

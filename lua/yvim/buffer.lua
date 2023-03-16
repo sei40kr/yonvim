@@ -11,12 +11,6 @@ function M.load_keymaps()
     })
     keymap:set_leader("n", {
         b = {
-            b = {
-                function()
-                    require("telescope.builtin").buffers()
-                end,
-                "Switch buffer",
-            },
             d = { commands.kill_buffer, "Kill buffer" },
             k = { commands.kill_buffer, "Kill buffer" },
             N = { commands.new_empty_buffer, "New empty buffer" },

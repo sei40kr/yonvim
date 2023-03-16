@@ -38,7 +38,6 @@ function M.load()
     require("yvim.file").load_keymaps()
     require("yvim.git").load_keymaps()
     require("yvim.project").load_keymaps()
-    require("yvim.repl").load_keymaps()
     require("yvim.term").load_keymaps()
     require("yvim.window").load_keymaps()
 end
