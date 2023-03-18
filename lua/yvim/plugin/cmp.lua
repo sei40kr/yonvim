@@ -157,6 +157,7 @@ function M.config()
                 zindex = zindex.COMPLETION_DOC,
             }),
         },
+        preselect = cmp.PreselectMode.None,
         mapping = mapping,
         snippet = {
             expand = function(args)
