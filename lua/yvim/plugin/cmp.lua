@@ -167,6 +167,8 @@ function M.config()
         formatting = {
             format = require("lspkind").cmp_format({
                 symbol_map = { Copilot = "" },
+                maxwidth = 60,
+                ellipsis_char = "…",
             }),
         },
         sources = cmp.config.sources(sources),
