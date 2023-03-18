@@ -56,6 +56,8 @@ local function complete_spell()
 end
 
 function M.setup()
+    vim.opt.pumheight = 14
+
     vim.keymap.set({ "i", "s" }, "<Tab>", tab)
     vim.keymap.set({ "i", "s" }, "<S-Tab>", s_tab)
     vim.keymap.set("i", "<C-x><C-f>", complete_path)
