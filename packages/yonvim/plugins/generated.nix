@@ -914,6 +914,22 @@ _self: {
     meta.homepage = "https://github.com/ahmedkhalf/project.nvim";
   };
 
+  scope-nvim = vimUtils.buildVimPlugin {
+    pname = "scope.nvim";
+    version = "2022-06-27";
+
+    src = fetchFromGitHub {
+      owner = "tiagovla";
+      repo = "scope.nvim";
+      rev = "2db6d31de8e3a98d2b41c0f0d1f5dc299ee76875";
+      hash = "sha256-BdX+C5KBHZcFgDG2fXvhMl2Gp/6ffJWEBvA/JvVWh4I=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/tiagovla/scope.nvim";
+  };
+
   stickybuf-nvim = vimUtils.buildVimPlugin {
     pname = "stickybuf.nvim";
     version = "2023-03-06";

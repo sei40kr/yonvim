@@ -399,6 +399,13 @@
         "hash": "sha256-fW4ztvYpeXTC0DbkZS4usG/KENiMJG/sWVTD4e8k42g="
     },
     {
+        "version": "2022-06-27",
+        "owner": "tiagovla",
+        "repo": "scope.nvim",
+        "rev": "2db6d31de8e3a98d2b41c0f0d1f5dc299ee76875",
+        "hash": "sha256-BdX+C5KBHZcFgDG2fXvhMl2Gp/6ffJWEBvA/JvVWh4I="
+    },
+    {
         "version": "2023-03-06",
         "owner": "stevearc",
         "repo": "stickybuf.nvim",

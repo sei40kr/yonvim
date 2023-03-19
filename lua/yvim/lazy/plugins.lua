@@ -8,6 +8,10 @@ return {
 
     -- Core
     {
+        dir = "@scope@",
+        config = true,
+    },
+    {
         dir = "@mini_bufremove@",
         module = "mini.bufremove",
         config = function()

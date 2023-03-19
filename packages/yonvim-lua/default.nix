@@ -60,6 +60,7 @@ vimUtils.buildVimPluginFrom2Nix {
 
   postFixup = ''
     substituteInPlace $out/lua/yvim/lazy/plugins.lua \
+      --subst-var-by scope                               ${yonvimPlugins.scope-nvim.outPath} \
       --subst-var-by mini_bufremove                      ${yonvimPlugins.mini-bufremove.outPath} \
       --subst-var-by mini_comment                        ${yonvimPlugins.mini-comment.outPath} \
       --subst-var-by mini_jump                           ${yonvimPlugins.mini-jump.outPath} \
