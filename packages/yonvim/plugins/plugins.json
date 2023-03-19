@@ -140,13 +140,6 @@
         "hash": "sha256-M33tmUHmwM2ukAsJzD5QSSh4Ewl9z6vg7jLzc96AaBk="
     },
     {
-        "version": "2023-01-26",
-        "owner": "lukas-reineke",
-        "repo": "indent-blankline.nvim",
-        "rev": "8299fe7703dfff4b1752aeed271c3b95281a952d",
-        "hash": "sha256-EZ5h4Gj942L9MaykWAprjLb/ZYr2JptQi16Ym5SyWfw="
-    },
-    {
         "version": "2022-12-29",
         "owner": "hkupty",
         "repo": "iron.nvim",
@@ -208,6 +201,13 @@
         "repo": "mini.comment",
         "rev": "5e8c7f75c48d958ef84ed75772b0263284c8621d",
         "hash": "sha256-LePzlLNP28HsO5Hg7v5MUgrGlOr/0AktaSSg9PMqhq0="
+    },
+    {
+        "version": "2023-03-13",
+        "owner": "echasnovski",
+        "repo": "mini.indentscope",
+        "rev": "43f6761c9a3e397b7c12b3c72f678bcf61efcfcf",
+        "hash": "sha256-0+bNJUpgZSVk4sHK2WlZlqZ5GMNVAbx1g85NklVuvUg="
     },
     {
         "version": "2023-02-24",

@@ -116,17 +116,31 @@ return {
         end,
     },
     {
-        dir = "@indent_blankline@",
-        config = function()
-            require("yvim.plugin.indent-blankline").config()
-        end,
-    },
-    {
         dir = "@lualine@",
         dependencies = { "nvim-web-devicons" },
         config = function()
             require("yvim.plugin.lualine").config()
         end,
+    },
+    {
+        dir = "@mini_indentscope@",
+        opts = function()
+            return {
+                draw = {
+                    animation = require("mini.indentscope").gen_animation.none(),
+                },
+                mappings = {
+                    object_scope = '',
+                    object_scope_with_border = '',
+                    goto_top = '',
+                    goto_bottom = '',
+                },
+                symbol = '╎',
+            }
+        end,
+        config = function(_, opts)
+            require("mini.indentscope").setup(opts)
+        end
     },
     {
         dir = "@neo_tree@",

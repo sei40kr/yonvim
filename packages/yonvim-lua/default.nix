@@ -76,8 +76,8 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by colorizer                           ${yonvimPlugins.nvim-colorizer-lua.outPath} \
       --subst-var-by diffview                            ${yonvimPlugins.diffview-nvim.outPath} \
       --subst-var-by gitsigns                            ${yonvimPlugins.gitsigns-nvim.outPath} \
-      --subst-var-by indent_blankline                    ${yonvimPlugins.indent-blankline-nvim.outPath} \
       --subst-var-by lualine                             ${yonvimPlugins.lualine-nvim.outPath} \
+      --subst-var-by mini_indentscope                    ${yonvimPlugins.mini-indentscope.outPath} \
       --subst-var-by neo_tree                            ${yonvimPlugins.neo-tree-nvim.outPath} \
       --subst-var-by noice_nvim                          ${yonvimPlugins.noice-nvim.outPath} \
       --subst-var-by nui                                 ${yonvimPlugins.nui-nvim.outPath} \

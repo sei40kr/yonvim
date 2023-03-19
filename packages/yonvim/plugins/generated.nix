@@ -322,22 +322,6 @@ _self: {
     meta.homepage = "https://github.com/lewis6991/impatient.nvim";
   };
 
-  indent-blankline-nvim = vimUtils.buildVimPlugin {
-    pname = "indent-blankline.nvim";
-    version = "2023-01-26";
-
-    src = fetchFromGitHub {
-      owner = "lukas-reineke";
-      repo = "indent-blankline.nvim";
-      rev = "8299fe7703dfff4b1752aeed271c3b95281a952d";
-      hash = "sha256-EZ5h4Gj942L9MaykWAprjLb/ZYr2JptQi16Ym5SyWfw=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/lukas-reineke/indent-blankline.nvim";
-  };
-
   iron-nvim = vimUtils.buildVimPlugin {
     pname = "iron.nvim";
     version = "2022-12-29";
@@ -480,6 +464,22 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/echasnovski/mini.comment";
+  };
+
+  mini-indentscope = vimUtils.buildVimPlugin {
+    pname = "mini.indentscope";
+    version = "2023-03-13";
+
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.indentscope";
+      rev = "43f6761c9a3e397b7c12b3c72f678bcf61efcfcf";
+      hash = "sha256-0+bNJUpgZSVk4sHK2WlZlqZ5GMNVAbx1g85NklVuvUg=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/echasnovski/mini.indentscope";
   };
 
   mini-jump = vimUtils.buildVimPlugin {
