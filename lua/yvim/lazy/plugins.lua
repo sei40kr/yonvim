@@ -363,12 +363,6 @@ return {
             require("yvim.plugin.treesitter").config()
         end,
     },
-    {
-        dir = "@spellsitter@",
-        config = function()
-            require("yvim.plugin.spellsitter").config()
-        end,
-    },
 
     -- LSP
     {

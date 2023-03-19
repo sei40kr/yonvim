@@ -914,22 +914,6 @@ _self: {
     meta.homepage = "https://github.com/ahmedkhalf/project.nvim";
   };
 
-  spellsitter-nvim = vimUtils.buildVimPlugin {
-    pname = "spellsitter.nvim";
-    version = "2022-07-09";
-
-    src = fetchFromGitHub {
-      owner = "lewis6991";
-      repo = "spellsitter.nvim";
-      rev = "eb74c4b1f4240cf1a7860877423195cec6311bd5";
-      hash = "sha256-KNifLdLVaWsm/7uuTVqUOzwdVdkAFV2l7ItTLid5UmE=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/lewis6991/spellsitter.nvim";
-  };
-
   stickybuf-nvim = vimUtils.buildVimPlugin {
     pname = "stickybuf.nvim";
     version = "2023-03-06";

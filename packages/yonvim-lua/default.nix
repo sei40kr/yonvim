@@ -105,7 +105,6 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by treesitter_textobjects              ${yonvimPlugins.nvim-treesitter-textobjects.outPath} \
       --subst-var-by treesitter_ts_autotag               ${yonvimPlugins.nvim-ts-autotag.outPath} \
       --subst-var-by treesitter_ts_context_commentstring ${yonvimPlugins.nvim-ts-context-commentstring.outPath} \
-      --subst-var-by spellsitter                         ${yonvimPlugins.spellsitter-nvim.outPath} \
       --subst-var-by mason                               ${yonvimPlugins.mason-nvim.outPath} \
       --subst-var-by mason_lspconfig                     ${yonvimPlugins.mason-lspconfig-nvim.outPath} \
       --subst-var-by neoconf                             ${yonvimPlugins.neoconf-nvim.outPath} \

@@ -399,13 +399,6 @@
         "hash": "sha256-fW4ztvYpeXTC0DbkZS4usG/KENiMJG/sWVTD4e8k42g="
     },
     {
-        "version": "2022-07-09",
-        "owner": "lewis6991",
-        "repo": "spellsitter.nvim",
-        "rev": "eb74c4b1f4240cf1a7860877423195cec6311bd5",
-        "hash": "sha256-KNifLdLVaWsm/7uuTVqUOzwdVdkAFV2l7ItTLid5UmE="
-    },
-    {
         "version": "2023-03-06",
         "owner": "stevearc",
         "repo": "stickybuf.nvim",
