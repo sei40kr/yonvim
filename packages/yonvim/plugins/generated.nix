@@ -306,22 +306,6 @@ _self: {
     meta.homepage = "https://github.com/phaazon/hop.nvim";
   };
 
-  impatient-nvim = vimUtils.buildVimPlugin {
-    pname = "impatient.nvim";
-    version = "2021-12-26";
-
-    src = fetchFromGitHub {
-      owner = "lewis6991";
-      repo = "impatient.nvim";
-      rev = "3ea9abedb6941995b05fdad654d9cfd51c38a31f";
-      hash = "sha256-M33tmUHmwM2ukAsJzD5QSSh4Ewl9z6vg7jLzc96AaBk=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/lewis6991/impatient.nvim";
-  };
-
   iron-nvim = vimUtils.buildVimPlugin {
     pname = "iron.nvim";
     version = "2022-12-29";

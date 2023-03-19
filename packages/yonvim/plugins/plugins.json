@@ -133,13 +133,6 @@
         "hash": "sha256-UZZlo5n1x8UfM9OP7RHfT3sFRfMpLkBLbEdcSO+SU6E="
     },
     {
-        "version": "2021-12-26",
-        "owner": "lewis6991",
-        "repo": "impatient.nvim",
-        "rev": "3ea9abedb6941995b05fdad654d9cfd51c38a31f",
-        "hash": "sha256-M33tmUHmwM2ukAsJzD5QSSh4Ewl9z6vg7jLzc96AaBk="
-    },
-    {
         "version": "2022-12-29",
         "owner": "hkupty",
         "repo": "iron.nvim",
