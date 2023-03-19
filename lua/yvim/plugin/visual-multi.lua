@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup()
+function M.init()
     vim.g.VM_default_mappings = 0
     vim.api.nvim_set_keymap("n", "<C-n>", "<Plug>(VM-Find-Under)", {})
     vim.api.nvim_set_keymap("n", "<C-Down>", "<Plug>(VM-Add-Cursor-Down)", {})

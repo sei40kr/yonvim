@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup()
+function M.init()
     require("yvim.util.special_buffer").register_filetype("lspinfo")
 end
 

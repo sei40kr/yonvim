@@ -55,7 +55,7 @@ local function complete_spell()
     require("cmp").complete({ config = { sources = { { name = "spell" } } } })
 end
 
-function M.setup()
+function M.init()
     vim.opt.pumheight = 14
 
     vim.keymap.set({ "i", "s" }, "<Tab>", tab)

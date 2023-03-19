@@ -3,7 +3,7 @@ local M = {}
 function M.init()
     -- NOTE: somehow os.getenv doesn't work so using vim.fn.expand instead
     require("lazy.core.cache").path = vim.fn.expand("$LAZY_CACHE")
-    require("lazy").setup(require("yvim.lazy.plugins"), {
+    require("lazy").setup("yvim.plugins", {
         lockfile = vim.fn.expand("$LAZY_LOCKFILE"),
         install = { missing = false },
         ui = { border = yvim.ui.border },
