@@ -174,6 +174,7 @@ return {
                 indent = { with_markers = false },
             },
             window = { width = 35 },
+            filesystem = { use_libuv_file_watcher = false },
         },
         main = "neo-tree",
         keys = {
