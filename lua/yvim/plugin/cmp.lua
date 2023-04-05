@@ -67,14 +67,12 @@ end
 
 local function cr(fallback)
     local cmp = require("cmp")
-    local selected_entry = cmp.get_selected_entry()
 
-    if cmp.visible() and selected_entry then
-        cmp.confirm()
-        return
+    if cmp.visible() and cmp.get_active_entry() then
+        cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace })
+    else
+        fallback()
     end
-
-    fallback()
 end
 
 local function select_prev_item(fallback)
