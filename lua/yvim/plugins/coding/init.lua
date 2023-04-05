@@ -24,7 +24,6 @@ return {
             { dir = "@cmp_omni@" },
             { dir = "@cmp_path@" },
             { dir = "@cmp_spell@" },
-            "copilot_cmp"
         },
         init = function()
             require("yvim.plugin.cmp").init()
@@ -37,29 +36,8 @@ return {
     { dir = "@cmp_under_comparator@" },
     { dir = "@lspkind@" },
     {
-        dir = "@copilot@",
-        name = "copilot",
-        lazy = true,
-        opts = {
-            panel = { enabled = false },
-            suggestion = { enabled = false },
-        },
-        main = "copilot",
-        cmd = "Copilot",
-    },
-    {
-        dir = "@copilot_cmp@",
-        name = "copilot_cmp",
-        lazy = true,
+        import = "yvim.plugins.coding.extras.copilot",
         enabled = yvim.completion.copilot.enable,
-        dependencies = { "copilot" },
-        opts = function()
-            return {
-                formatters = {
-                    insert_text = require("copilot_cmp.format").remove_existing,
-                },
-            }
-        end,
     },
 
     { dir = "@editorconfig@" },

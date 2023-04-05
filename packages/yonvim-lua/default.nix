@@ -59,7 +59,7 @@ vimUtils.buildVimPluginFrom2Nix {
   src = ../..;
 
   postFixup = ''
-    substituteInPlace $out/lua/yvim/plugins/coding.lua \
+    substituteInPlace $out/lua/yvim/plugins/coding/init.lua \
       --subst-var-by autopairs                   ${yonvimPlugins.nvim-autopairs.outPath} \
       --subst-var-by editorconfig                ${yonvimPlugins.editorconfig-nvim.outPath} \
       --subst-var-by cmp                         ${yonvimPlugins.nvim-cmp.outPath} \
@@ -72,14 +72,16 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by cmp_spell                   ${yonvimPlugins.cmp-spell.outPath} \
       --subst-var-by cmp_under_comparator        ${yonvimPlugins.cmp-under-comparator.outPath} \
       --subst-var-by lspkind                     ${yonvimPlugins.lspkind-nvim.outPath} \
-      --subst-var-by copilot                     ${yonvimPlugins.copilot-lua.outPath} \
-      --subst-var-by copilot_cmp                 ${yonvimPlugins.copilot-cmp.outPath} \
       --subst-var-by luasnip                     ${yonvimPlugins.LuaSnip.outPath} \
       --subst-var-by friendly_snippets           ${yonvimPlugins.friendly-snippets.outPath} \
       --subst-var-by mini_comment                ${yonvimPlugins.mini-comment.outPath} \
       --subst-var-by mini_surround               ${yonvimPlugins.mini-surround.outPath} \
       --subst-var-by nvimacs                     ${yonvimPlugins.nvimacs.outPath} \
       --subst-var-by visual_multi                ${yonvimPlugins.vim-visual-multi.outPath}
+    substituteInPlace $out/lua/yvim/plugins/coding/extras/copilot.lua \
+      --subst-var-by cmp         ${yonvimPlugins.nvim-cmp.outPath} \
+      --subst-var-by copilot     ${yonvimPlugins.copilot-lua.outPath} \
+      --subst-var-by copilot_cmp ${yonvimPlugins.copilot-cmp.outPath}
 
     substituteInPlace $out/lua/yvim/plugins/colorscheme.lua \
       --subst-var-by tokyonight ${yonvimPlugins.tokyonight-nvim.outPath}
