@@ -53,7 +53,13 @@ return {
         lazy = true,
         enabled = yvim.completion.copilot.enable,
         dependencies = { "copilot" },
-        config = true,
+        opts = function()
+            return {
+                formatters = {
+                    insert_text = require("copilot_cmp.format").remove_existing,
+                },
+            }
+        end,
     },
 
     { dir = "@editorconfig@" },
