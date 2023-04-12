@@ -61,7 +61,6 @@ vimUtils.buildVimPluginFrom2Nix {
   postFixup = ''
     substituteInPlace $out/lua/yvim/plugins/coding/init.lua \
       --subst-var-by autopairs                   ${yonvimPlugins.nvim-autopairs.outPath} \
-      --subst-var-by editorconfig                ${yonvimPlugins.editorconfig-nvim.outPath} \
       --subst-var-by cmp                         ${yonvimPlugins.nvim-cmp.outPath} \
       --subst-var-by cmp_cmdline                 ${yonvimPlugins.cmp-cmdline.outPath} \
       --subst-var-by cmp_luasnip                 ${yonvimPlugins.cmp_luasnip.outPath} \

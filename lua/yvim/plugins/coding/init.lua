@@ -40,8 +40,6 @@ return {
         enabled = yvim.completion.copilot.enable,
     },
 
-    { dir = "@editorconfig@" },
-
     {
         dir = "@luasnip@",
         dependencies = { "friendly-snippets" },

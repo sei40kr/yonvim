@@ -105,13 +105,6 @@
         "hash": "sha256-xALU8TaU6SsQXTwFC4vxrGrXC61LNFhWS3ZDTEeL5m4="
     },
     {
-        "version": "2023-01-10",
-        "owner": "gpanders",
-        "repo": "editorconfig.nvim",
-        "rev": "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf",
-        "hash": "sha256-pR57tITdVGF4luEmmRYv/XFb35E3KDfcgYRijkPAc+Y="
-    },
-    {
         "version": "2022-07-06",
         "owner": "rafamadriz",
         "repo": "friendly-snippets",

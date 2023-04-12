@@ -242,22 +242,6 @@ _self: {
     meta.homepage = "https://github.com/sindrets/diffview.nvim";
   };
 
-  editorconfig-nvim = vimUtils.buildVimPlugin {
-    pname = "editorconfig.nvim";
-    version = "2023-01-10";
-
-    src = fetchFromGitHub {
-      owner = "gpanders";
-      repo = "editorconfig.nvim";
-      rev = "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf";
-      hash = "sha256-pR57tITdVGF4luEmmRYv/XFb35E3KDfcgYRijkPAc+Y=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/gpanders/editorconfig.nvim";
-  };
-
   friendly-snippets = vimUtils.buildVimPlugin {
     pname = "friendly-snippets";
     version = "2022-07-06";
