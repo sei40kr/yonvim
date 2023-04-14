@@ -708,13 +708,13 @@ _self: {
 
   nvim-treesitter-refactor = vimUtils.buildVimPlugin {
     pname = "nvim-treesitter-refactor";
-    version = "2022-05-13";
+    version = "2023-04-04";
 
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter-refactor";
-      rev = "75f5895cc662d61eb919da8050b7a0124400d589";
-      hash = "sha256-8iAwtoMqh+2ef8qooxBFzm1eAm+P+8IKjjepV4n/+vI=";
+      rev = "65ad2eca822dfaec2a3603119ec3cc8826a7859e";
+      hash = "sha256-yzSkoH690qIEqvhiv0exeH7pS+J5ZVkqidEUOn0kb5M=";
     };
 
     dontBuild = true;
