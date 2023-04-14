@@ -119,6 +119,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by neodev          ${yonvimPlugins.neodev-nvim.outPath} \
       --subst-var-by null_ls         ${yonvimPlugins.null-ls-nvim.outPath} \
       --subst-var-by lsp_format      ${yonvimPlugins.lsp-format-nvim.outPath} \
+      --subst-var-by lsp_inlayhints  ${yonvimPlugins.lsp-inlayhints-nvim.outPath} \
       --subst-var-by lspconfig       ${yonvimPlugins.nvim-lspconfig.outPath}
 
     substituteInPlace $out/lua/yvim/plugins/treesitter.lua \

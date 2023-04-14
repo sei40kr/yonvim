@@ -338,6 +338,22 @@ _self: {
     meta.homepage = "https://github.com/lukas-reineke/lsp-format.nvim";
   };
 
+  lsp-inlayhints-nvim = vimUtils.buildVimPlugin {
+    pname = "lsp-inlayhints.nvim";
+    version = "2023-01-21";
+
+    src = fetchFromGitHub {
+      owner = "lvimuser";
+      repo = "lsp-inlayhints.nvim";
+      rev = "84ca3abe8aaecbb5b30ad89e4701d4a9c821b72c";
+      hash = "sha256-jjr9Tl2Ucg+zGJEnPMzExJBpsZt8nJ5qerbJpzTXoDs=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/lvimuser/lsp-inlayhints.nvim";
+  };
+
   lspkind-nvim = vimUtils.buildVimPlugin {
     pname = "lspkind.nvim";
     version = "2022-09-22";

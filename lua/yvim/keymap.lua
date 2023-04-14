@@ -14,6 +14,7 @@ local function define_leader_groups()
         p = { name = "+project" },
         q = { name = "+quit" },
         s = { name = "+search" },
+        t = { name = "+toggle" },
         w = { name = "+window" },
     })
     keymap:set_leader("i", {

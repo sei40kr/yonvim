@@ -147,6 +147,13 @@
         "hash": "sha256-UeeM+rHDjsZS27L2Orh+doB6eo6YNV8gb0yLs0PjkLA="
     },
     {
+        "version": "2023-01-21",
+        "owner": "lvimuser",
+        "repo": "lsp-inlayhints.nvim",
+        "rev": "84ca3abe8aaecbb5b30ad89e4701d4a9c821b72c",
+        "hash": "sha256-jjr9Tl2Ucg+zGJEnPMzExJBpsZt8nJ5qerbJpzTXoDs="
+    },
+    {
         "version": "2022-09-22",
         "owner": "onsails",
         "repo": "lspkind.nvim",
