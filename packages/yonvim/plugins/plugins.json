@@ -266,11 +266,11 @@
         "hash": "sha256-EsLtJxZoqRhx8dpWHF97DRaxRxqI2ZLznjJmLdAV/hY="
     },
     {
-        "version": "2023-01-21",
+        "version": "2023-04-09",
         "owner": "windwp",
         "repo": "nvim-autopairs",
-        "rev": "31042a5823b55c4bfb30efcbba2fc1b5b53f90dc",
-        "hash": "sha256-wQjcJgyBmEeS7yrhQ29rUjzdfAVk1vikOVG0g2rlPMo="
+        "rev": "7470af886ffb3df32800e5ef9c072a6cd825770d",
+        "hash": "sha256-Z9m+6qhxdUNe5zQga2q+GXjWmJQBgCL8PN2LPCP9t4I="
     },
     {
         "version": "2023-03-05",
