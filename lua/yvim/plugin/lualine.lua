@@ -126,6 +126,32 @@ function M.config()
             lualine_y = {},
             lualine_z = {},
         },
+        winbar = {
+            lualine_a = {},
+            lualine_b = {},
+            lualine_c = {
+                {
+                    function()
+                        return require("nvim-navic").get_location()
+                    end,
+                    cond = function()
+                        return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
+                    end,
+                    draw_empty = true,
+                },
+            },
+            lualine_x = {},
+            lualine_y = {},
+            lualine_z = {},
+        },
+        inactive_winbar = {
+            lualine_a = {},
+            lualine_b = {},
+            lualine_c = {},
+            lualine_x = {},
+            lualine_y = {},
+            lualine_z = {},
+        },
     })
 end
 

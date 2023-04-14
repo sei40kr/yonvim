@@ -301,6 +301,13 @@
         "hash": "sha256-2A/4IeUbZ7GdiSU1pMQfvbMGV9cjNFlSgJaHARwnAdw="
     },
     {
+        "version": "2023-04-02",
+        "owner": "SmiteshP",
+        "repo": "nvim-navic",
+        "rev": "27124a773d362628b114cd12016e743dab4ccf3e",
+        "hash": "sha256-1hUnU6CayNerK7olqhSkAQSW0zE6JIhsmZIBw2fyYnc="
+    },
+    {
         "version": "2023-01-18",
         "owner": "rcarriga",
         "repo": "nvim-notify",

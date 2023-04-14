@@ -112,6 +112,26 @@ return {
     },
 
     {
+        dir = "@navic@",
+        name = "nvim-navic",
+        init = function()
+            local Util = require("yvim.util")
+            Util.on_attach(function(client, bufnr)
+                if client.server_capabilities.documentSymbolProvider then
+                    require("nvim-navic").attach(client, bufnr)
+                end
+            end)
+        end,
+        opts = {
+            highlight = true,
+            separator = " ",
+            depth_limit = 5,
+        },
+        main = "nvim-navic",
+        module = "nvim-navic",
+    },
+
+    {
         dir = "@notify@",
         name = "nvim-notify",
         config = function()

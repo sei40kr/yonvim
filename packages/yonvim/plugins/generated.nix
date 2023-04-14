@@ -690,6 +690,22 @@ _self: {
     meta.homepage = "https://github.com/neovim/nvim-lspconfig";
   };
 
+  nvim-navic = vimUtils.buildVimPlugin {
+    pname = "nvim-navic";
+    version = "2023-04-02";
+
+    src = fetchFromGitHub {
+      owner = "SmiteshP";
+      repo = "nvim-navic";
+      rev = "27124a773d362628b114cd12016e743dab4ccf3e";
+      hash = "sha256-1hUnU6CayNerK7olqhSkAQSW0zE6JIhsmZIBw2fyYnc=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/SmiteshP/nvim-navic";
+  };
+
   nvim-notify = vimUtils.buildVimPlugin {
     pname = "nvim-notify";
     version = "2023-01-18";

@@ -136,6 +136,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by gitsigns         ${yonvimPlugins.gitsigns-nvim.outPath} \
       --subst-var-by lualine          ${yonvimPlugins.lualine-nvim.outPath} \
       --subst-var-by mini_indentscope ${yonvimPlugins.mini-indentscope.outPath} \
+      --subst-var-by navic            ${yonvimPlugins.nvim-navic.outPath} \
       --subst-var-by noice            ${yonvimPlugins.noice-nvim.outPath} \
       --subst-var-by notify           ${yonvimPlugins.nvim-notify.outPath} \
       --subst-var-by nui              ${yonvimPlugins.nui-nvim.outPath} \
