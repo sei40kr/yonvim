@@ -23,7 +23,14 @@ function M.config()
             opts = vim.tbl_deep_extend("force", base_opts, extra_opts)
         end
 
+        -- setting up rust-analyzer here causes conflicts with rust-tools.nvim
+        if server == "rust_analyzer" then
+            goto continue
+        end
+
         lsp[server].setup(opts)
+
+        ::continue::
     end
 
     local orig_windows_default_opts = windows.default_opts

@@ -406,6 +406,13 @@
         "hash": "sha256-fW4ztvYpeXTC0DbkZS4usG/KENiMJG/sWVTD4e8k42g="
     },
     {
+        "version": "2023-02-20",
+        "owner": "simrat39",
+        "repo": "rust-tools.nvim",
+        "rev": "71d2cf67b5ed120a0e31b2c8adb210dd2834242f",
+        "hash": "sha256-Cuk/vdoviB9ibt2rrkNRmNFy4S+6czhbExmIjTJRdZM="
+    },
+    {
         "version": "2022-06-27",
         "owner": "tiagovla",
         "repo": "scope.nvim",

@@ -112,6 +112,9 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by trouble                ${yonvimPlugins.trouble-nvim.outPath} \
       --subst-var-by which_key              ${yonvimPlugins.which-key-nvim.outPath}
 
+    substituteInPlace $out/lua/yvim/plugins/lang/extras/rust.lua \
+      --subst-var-by rust_tools ${yonvimPlugins.rust-tools-nvim.outPath}
+
     substituteInPlace $out/lua/yvim/plugins/lsp.lua \
       --subst-var-by mason           ${yonvimPlugins.mason-nvim.outPath} \
       --subst-var-by mason_lspconfig ${yonvimPlugins.mason-lspconfig-nvim.outPath} \

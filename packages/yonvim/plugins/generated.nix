@@ -930,6 +930,22 @@ _self: {
     meta.homepage = "https://github.com/ahmedkhalf/project.nvim";
   };
 
+  rust-tools-nvim = vimUtils.buildVimPlugin {
+    pname = "rust-tools.nvim";
+    version = "2023-02-20";
+
+    src = fetchFromGitHub {
+      owner = "simrat39";
+      repo = "rust-tools.nvim";
+      rev = "71d2cf67b5ed120a0e31b2c8adb210dd2834242f";
+      hash = "sha256-Cuk/vdoviB9ibt2rrkNRmNFy4S+6czhbExmIjTJRdZM=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/simrat39/rust-tools.nvim";
+  };
+
   scope-nvim = vimUtils.buildVimPlugin {
     pname = "scope.nvim";
     version = "2022-06-27";
