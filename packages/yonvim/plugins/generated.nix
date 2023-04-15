@@ -1154,6 +1154,22 @@ _self: {
     meta.homepage = "https://github.com/folke/trouble.nvim";
   };
 
+  typescript-nvim = vimUtils.buildVimPlugin {
+    pname = "typescript.nvim";
+    version = "2023-01-03";
+
+    src = fetchFromGitHub {
+      owner = "jose-elias-alvarez";
+      repo = "typescript.nvim";
+      rev = "f66d4472606cb24615dfb7dbc6557e779d177624";
+      hash = "sha256-PHVY5NJbOGvY9p0F0QNSfMKmAWdqjw1RB0Vspq88qMI=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/jose-elias-alvarez/typescript.nvim";
+  };
+
   vim-visual-multi = vimUtils.buildVimPlugin {
     pname = "vim-visual-multi";
     version = "2020-09-01";

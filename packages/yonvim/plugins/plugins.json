@@ -504,6 +504,13 @@
         "hash": "sha256-5ZclnMkYOOD9l1zu5VF/WBV9po356PdTC7iX3EBC2mw="
     },
     {
+        "version": "2023-01-03",
+        "owner": "jose-elias-alvarez",
+        "repo": "typescript.nvim",
+        "rev": "f66d4472606cb24615dfb7dbc6557e779d177624",
+        "hash": "sha256-PHVY5NJbOGvY9p0F0QNSfMKmAWdqjw1RB0Vspq88qMI="
+    },
+    {
         "version": "2020-09-01",
         "owner": "mg979",
         "repo": "vim-visual-multi",

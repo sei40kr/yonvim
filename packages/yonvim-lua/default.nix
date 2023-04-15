@@ -114,6 +114,8 @@ vimUtils.buildVimPluginFrom2Nix {
 
     substituteInPlace $out/lua/yvim/plugins/lang/extras/rust.lua \
       --subst-var-by rust_tools ${yonvimPlugins.rust-tools-nvim.outPath}
+    substituteInPlace $out/lua/yvim/plugins/lang/extras/typescript.lua \
+      --subst-var-by typescript ${yonvimPlugins.typescript-nvim.outPath}
 
     substituteInPlace $out/lua/yvim/plugins/lsp.lua \
       --subst-var-by mason           ${yonvimPlugins.mason-nvim.outPath} \
