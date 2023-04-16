@@ -138,6 +138,7 @@ vimUtils.buildVimPluginFrom2Nix {
     substituteInPlace $out/lua/yvim/plugins/ui.lua \
       --subst-var-by bufferline       ${yonvimPlugins.bufferline-nvim.outPath} \
       --subst-var-by colorizer        ${yonvimPlugins.nvim-colorizer-lua.outPath} \
+      --subst-var-by dressing         ${yonvimPlugins.dressing-nvim.outPath} \
       --subst-var-by gitsigns         ${yonvimPlugins.gitsigns-nvim.outPath} \
       --subst-var-by lualine          ${yonvimPlugins.lualine-nvim.outPath} \
       --subst-var-by mini_indentscope ${yonvimPlugins.mini-indentscope.outPath} \

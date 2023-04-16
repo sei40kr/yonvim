@@ -36,6 +36,30 @@ return {
     },
 
     {
+        dir = "@dressing@",
+        name = "dressing.nvim",
+        lazy = true,
+        init = function()
+            vim.ui.input = function(...)
+                require("lazy").load({ plugins = { "dressing.nvim" } })
+                return vim.ui.input(...)
+            end
+            vim.ui.select = function(...)
+                require("lazy").load({ plugins = { "dressing.nvim" } })
+                return vim.ui.select(...)
+            end
+        end,
+        opts = {
+            input = { border = yvim.ui.border },
+            select = {
+                nui = {
+                    border = { style = yvim.ui.border },
+                },
+            },
+        },
+    },
+
+    {
         dir = "@gitsigns@",
         opts = {
             signs = {

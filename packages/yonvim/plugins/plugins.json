@@ -105,6 +105,13 @@
         "hash": "sha256-xALU8TaU6SsQXTwFC4vxrGrXC61LNFhWS3ZDTEeL5m4="
     },
     {
+        "version": "2023-04-12",
+        "owner": "stevearc",
+        "repo": "dressing.nvim",
+        "rev": "0e3e1eba147fee6e638ac1ac28f0495bcde17319",
+        "hash": "sha256-8HSxDkHxrjNCT9OpI3Fxt4bwLM49UmdH2TtQWGzyzXo="
+    },
+    {
         "version": "2022-07-06",
         "owner": "rafamadriz",
         "repo": "friendly-snippets",
