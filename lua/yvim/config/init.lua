@@ -29,6 +29,7 @@ function M.load()
         end
     end
 
+    require("yvim.config.autocmds")
     require("yvim.config.options").load()
     load_keymaps()
 

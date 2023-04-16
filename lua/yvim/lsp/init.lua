@@ -57,8 +57,6 @@ function M.on_attach(client, buffer)
         vim.api.nvim_buf_set_option(buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
     end
 
-    require("yvim.lsp.keymaps").load(client, buffer)
-
     if client.server_capabilities.documentFormattingProvider
         and yvim.format.format_on_save
     then

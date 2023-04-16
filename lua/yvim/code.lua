@@ -8,7 +8,7 @@ function M.load_keymaps()
             d = { "gd", "Jump to definition", noremap = false },
             D = { "gD", "Jump to references", noremap = false },
             k = { "K", "Jump to documentation", noremap = false },
-            r = "TS Rename",
+            r = "Rename",
         },
     })
 end

@@ -5,7 +5,13 @@ local function define_leader_groups()
 
     keymap:set_leader("n", {
         b = { name = "+buffer" },
-        c = { name = "+code" },
+        c = {
+            name = "+code",
+            l = {
+                name = "+lsp",
+                F = { name = "+folders" },
+            }
+        },
         f = { name = "+file" },
         g = { name = "+git" },
         h = { name = "+help" },
