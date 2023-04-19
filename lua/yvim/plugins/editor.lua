@@ -381,7 +381,10 @@ return {
     {
         dir = "@telescope_luasnip@",
         dependencies = { "telescope.nvim" },
-        -- TODO: add keymaps
+        keys = {
+            { "<Leader>is",  "<Cmd>Telescope luasnip luasnip<CR>", desc = "Snippets" },
+            { "<M-Space>is", "<Cmd>Telescope luasnip luasnip<CR>", mode = "i",       desc = "Snippets" },
+        },
     },
     {
         dir = "@telescope_project@",
