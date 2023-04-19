@@ -97,6 +97,22 @@ return {
             keymaps = {},
         },
         main = "gitsigns",
+        keys = {
+            { "[d",         "<Cmd>Gitsigns prev_hunk<CR>",    desc = "Jump to previous hunk" },
+            { "]d",         "<Cmd>Gitsigns next_hunk<CR>",    desc = "Jump to next hunk" },
+            { "<Leader>g[", "<Cmd>Gitsigns prev_hunk<CR>",    desc = "Jump to previous hunk" },
+            { "<Leader>g]", "<Cmd>Gitsigns next_hunk<CR>",    desc = "Jump to next hunk" },
+            { "<Leader>gr", ":Gitsigns reset_hunk<CR>",       mode = { "n", "x" },           desc = "Revert hunk" },
+            { "<Leader>gR", "<Cmd>Gitsigns reset_buffer<CR>", desc = "Revert file" },
+            {
+                "<Leader>gs",
+                ":Gitsigns stage_hunk<CR>",
+                mode = { "n", "x" },
+                desc = "Git stage hunk"
+            },
+            { "<Leader>gS", "<Cmd>Gitsigns stage_buffer<CR>",       desc = "Git stage file" },
+            { "<Leader>gU", "<Cmd>Gitsigns reset_buffer_index<CR>", desc = "Git unstage file" },
+        },
     },
 
     {

@@ -65,6 +65,16 @@ return {
                 disable = { "help", "neo-tree", "toggleterm", "Trouble" },
             },
         },
-        main = "nvim-treesitter.configs",
+        config = function(_, opts)
+            require("nvim-treesitter.configs").setup(opts)
+
+            require("yvim.util").on_very_lazy(function()
+                require("which-key").register({
+                    ["<Leader>v"] = "Expand region",
+                    ["[c"] = "Previous comment",
+                    ["]c"] = "Next comment",
+                })
+            end)
+        end,
     },
 }

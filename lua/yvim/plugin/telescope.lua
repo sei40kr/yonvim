@@ -21,8 +21,8 @@ function M.config()
         defaults = {
             border = yvim.ui.border ~= "none",
             borderchars = translate_to_telescope_borderchars(
-                require("yvim.config").get_border_chars()
-            ) or nil,
+                    require("yvim.config").get_border_chars()
+                ) or nil,
             mappings = {
                 i = {
                     ["<C-k>"] = actions.move_selection_previous,
@@ -36,13 +36,6 @@ function M.config()
             project = { base_dirs = yvim.project.base_dirs },
         },
     })
-
-    telescope.load_extension("luasnip")
-    telescope.load_extension("noice")
-    telescope.load_extension("notify")
-    -- FIXME: these extensions cause an error while generating rplugin.vim
-    -- telescope.load_extension("fzy_native")
-    -- telescope.load_extension("project")
 end
 
 return M

@@ -23,7 +23,10 @@ function M.config()
             },
         },
         popupmenu = { backend = "cmp" },
-        presets = { lsp_doc_border = true },
+        presets = {
+            lsp_doc_border = true,
+            inc_rename = true,
+        },
     })
 
     -- LSP Hover Doc Scrolling
@@ -34,7 +37,7 @@ function M.config()
         end
     end, { silent = true, expr = true })
     vim.keymap.set({ "n", "i", "s" }, "<C-b>", function()
-        if not require("noice.lsp").scroll( -4) then
+        if not require("noice.lsp").scroll(-4) then
             return "<c-b>"
         end
     end, { silent = true, expr = true })

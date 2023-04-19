@@ -12,7 +12,6 @@ return {
                     width = 0.2,
                     placement = "edge",
                 },
-
                 float = { border = yvim.ui.border },
             },
         },
@@ -21,7 +20,6 @@ return {
             {
                 "<Leader>cS",
                 "<Cmd>AerialOpen<CR>",
-                mode = "n",
                 desc = "Symbols"
             }
         },
@@ -57,9 +55,13 @@ return {
         opts = {},
         main = "hop",
         keys = {
-            { "<Leader>j", function()
-                require("hop").hint_char2()
-            end, desc = "Jump to" },
+            {
+                "<Leader>j",
+                function()
+                    require("hop").hint_char2()
+                end,
+                desc = "Jump to"
+            },
         },
     },
 
@@ -90,15 +92,28 @@ return {
         },
         main = "iron.core",
         keys = {
-            { "<Leader>cs", function()
-                require("iron.core").visual_send()
-            end, mode = { "n", "x" }, desc = "Send to REPL" },
-            { "<Leader>or", function()
-                require("iron.core").repl_for(vim.bo.filetype)
-            end, mode = "n", desc = "Open REPL" },
-            { "<Leader>oR", function()
-                require("iron.core").repl_here(vim.bo.filetype)
-            end, mode = "n", desc = "Open REPL" },
+            {
+                "<Leader>cs",
+                function()
+                    require("iron.core").visual_send()
+                end,
+                mode = { "n", "x" },
+                desc = "Send to REPL"
+            },
+            {
+                "<Leader>or",
+                function()
+                    require("iron.core").repl_for(vim.bo.filetype)
+                end,
+                desc = "Open REPL"
+            },
+            {
+                "<Leader>oR",
+                function()
+                    require("iron.core").repl_here(vim.bo.filetype)
+                end,
+                desc = "Open REPL"
+            },
         },
     },
 
@@ -157,7 +172,9 @@ return {
             integrations = { diffview = true },
         },
         main = "neogit",
-        module = "neogit",
+        keys = {
+            { "<Leader>gg", "<Cmd>Neogit<CR>", desc = "Neogit status" }
+        },
     },
 
     {
@@ -181,13 +198,11 @@ return {
             {
                 "<Leader>op",
                 "<Cmd>Neotree toggle<CR>",
-                mode = "n",
                 desc = "Project sidebar",
             },
             {
                 "<Leader>oP",
                 "<Cmd>Neotree reveal<CR>",
-                mode = "n",
                 desc = "Find file in project sidebar",
             },
         },
@@ -269,74 +284,136 @@ return {
         name = "telescope.nvim",
         dependencies = {
             "plenary.nvim",
+            -- TODO: lazy load
             "noice.nvim",
-            { dir = "@telescope_file_browser@" },
             { dir = "@telescope_fzy_native@" },
-            { dir = "@telescope_luasnip@" },
-            { dir = "@telescope_project@" },
-            { dir = "@telescope_symbols@" },
         },
         config = function()
             require("yvim.plugin.telescope").config()
         end,
         keys = {
-            { "<Leader>'", function()
-                require("telescope.builtin").resume()
-            end, desc = "Resume last search" },
-            { "<Leader>:", function()
-                require("telescope.builtin").commands()
-            end, desc = ":" },
-            { "<Leader>bb", function()
-                require("telescope.builtin").buffers()
-            end, desc = "Switch buffer" },
-            { "<Leader>fr", function()
-                require("telescope.builtin").oldfiles()
-            end, desc = "Recent files" },
-            { "<Leader>gb", function()
-                require("telescope.builtin").git_branches()
-            end, desc = "Switch branch" },
-            { "<Leader>ha", function()
-                require("telescope.builtin").autocommands()
-            end, desc = "autocmds" },
-            { "<Leader>hf", function()
-                require("telescope.builtin").filetypes()
-            end, desc = "filetypes" },
-            { "<Leader>hh", function()
-                require("telescope.builtin").help_tags()
-            end, desc = "help" },
-            { "<Leader>hH", function()
-                require("telescope.builtin").highlights()
-            end, desc = "highlights" },
-            { "<Leader>hk", function()
-                require("telescope.builtin").keymaps()
-            end, desc = "keymaps" },
-            { "<Leader>hm", function()
-                require("telescope.builtin").man_pages()
-            end, desc = "manpages" },
-            { "<Leader>ho", function()
-                require("telescope.builtin").vim_options()
-            end, desc = "vim options" },
-            { "<Leader>ie", function()
-                require("telescope.builtin").symbols({ sources = { "emoji" } })
-            end, desc = "Emoji" },
-            { "<M-Space>ie", function()
-                require("telescope.builtin").symbols({ sources = { "emoji" } })
-            end, mode = "i", desc = "Emoji" },
-            { "<Leader>ir", function()
-                require("telescope.builtin").registers()
-            end, desc = "From register" },
-            { "<M-Space>ir", function()
-                require("telescope.builtin").registers()
-            end, mode = "i", desc = "From register" },
-            { "<Leader>sj", function()
-                require("telescope.builtin").jumplist()
-            end, desc = "Jump list" },
-            { "<Leader>sr", function()
-                require("telescope.builtin").marks()
-            end, desc = "Jump to mark" },
+            { "<Leader><Space>", "<Leader>pf",                  remap = true,               desc = "Find file in project" },
+            { "<Leader>'",       "<Cmd>Telescope resume<CR>",   desc = "Resume last search" },
+            { "<Leader>/",       "<Leader>sp",                  remap = true,               desc = "Search project" },
+            { "<Leader>:",       "<Cmd>Telescope commands<CR>", desc = ":" },
+            { "<Leader>bb",      "<Cmd>Telescope buffers<CR>",  desc = "Switch buffer" },
+            {
+                "<Leader>fF",
+                function()
+                    require("telescope.builtin").find_files({
+                        cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
+                    })
+                end,
+                desc = "Find file from here",
+            },
+            { "<Leader>fr",  "<Cmd>Telescope oldfiles<CR>",     desc = "Recent files" },
+            { "<Leader>gb",  "<Cmd>Telescope git_branches<CR>", desc = "Switch branch" },
+            { "<Leader>ha",  "<Cmd>Telescope autocommands<CR>", desc = "autocmds" },
+            { "<Leader>hf",  "<Cmd>Telescope filetypes<CR>",    desc = "filetypes" },
+            { "<Leader>hh",  "<Cmd>Telescope help_tags<CR>",    desc = "help" },
+            { "<Leader>hH",  "<Cmd>Telescope highlights<CR>",   desc = "highlights" },
+            { "<Leader>hk",  "<Cmd>Telescope keymaps<CR>",      desc = "keymaps" },
+            { "<Leader>hm",  "<Cmd>Telescope man_pages<CR>",    desc = "manpages" },
+            { "<Leader>ho",  "<Cmd>Telescope vim_options<CR>",  desc = "vim options" },
+            { "<Leader>ir",  "<Cmd>Telescope registers<CR>",    desc = "From register" },
+            { "<M-Space>ir", "<Cmd>Telescope registers<CR>",    mode = "i",            desc = "From register" },
+            {
+                "<Leader>pf",
+                function()
+                    local telescope_builtin = require("telescope.builtin")
+
+                    local ok, _ = pcall(telescope_builtin.git_files, {
+                        prompt_title = "Find File",
+                        show_untracked = true,
+                    })
+
+                    if not ok then
+                        telescope_builtin.find_files({
+                            prompt_title = "Find File",
+                            hidden = true,
+                        })
+                    end
+                end,
+                desc = "Find file in project",
+            },
+            {
+                "<Leader>sp",
+                "<Cmd>Telescope live_grep prompt_title=Search\\ Project<CR>",
+                desc = "Search project",
+            },
+            { "<Leader>sj", "<Cmd>Telescope jumplist<CR>", desc = "Jump list" },
+            { "<Leader>sr", "<Cmd>Telescope marks<CR>",    desc = "Jump to mark" },
         },
-        cmd = "Telescope",
-        module = { "telescope", "telescope.builtin" },
+    },
+    {
+        dir = "@telescope_file_browser@",
+        dependencies = { "telescope.nvim" },
+        keys = {
+            {
+                "<Leader>ff",
+                function()
+                    require("telescope").extensions.file_browser.file_browser({
+                        cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
+                    })
+                end,
+                desc = "Find file",
+            },
+            {
+                "<Leader>fp",
+                function()
+                    local path = require("yvim.util.path")
+
+                    require("telescope.builtin").find_files({ cwd = require("yvim.util.path").get_config_dir() })
+                end,
+                desc = "Find file in private config",
+            },
+            {
+                "<Leader>fP",
+                function()
+                    require("telescope").extensions.file_browser.file_browser({
+                        cwd = vim.loop.fs_realpath(require("yvim.util.path").get_config_dir()),
+                    })
+                end,
+                desc = "Browse private config",
+            },
+        },
+    },
+    {
+        dir = "@telescope_luasnip@",
+        dependencies = { "telescope.nvim" },
+        -- TODO: add keymaps
+    },
+    {
+        dir = "@telescope_project@",
+        dependencies = { "telescope.nvim" },
+        keys = {
+            {
+                "<Leader>pp",
+                "<Cmd>Telescope project project display_type=full<CR>",
+                desc = "Switch project"
+            },
+        },
+    },
+    {
+        dir = "@telescope_symbols@",
+        dependencies = { "telescope.nvim" },
+        keys = {
+            {
+                "<Leader>ie",
+                function()
+                    require("telescope.builtin").symbols({ sources = { "emoji" } })
+                end,
+                desc = "Emoji"
+            },
+            {
+                "<M-Space>ie",
+                function()
+                    require("telescope.builtin").symbols({ sources = { "emoji" } })
+                end,
+                mode = "i",
+                desc = "Emoji"
+            },
+        },
     },
 
     {
@@ -356,6 +433,9 @@ return {
             highlight = { keyword = "bg" },
         },
         main = "todo-comments",
+        keys = {
+            { "<Leader>pt", "<Cmd>TodoTrouble<CR>", desc = "List project todos" },
+        },
     },
 
     {
@@ -392,8 +472,59 @@ return {
     {
         dir = "@which_key@",
         name = "which-key.nvim",
-        config = function()
-            require("yvim.plugin.which-key").config()
+        opts = {
+            key_labels = {
+                ["<space>"] = "SPC",
+                ["<cr>"] = "RET",
+                ["<tab>"] = "TAB",
+            },
+            icons = {
+                breadcrumb = "",
+                separator = "",
+            },
+        },
+        config = function(_, opts)
+            local wk = require("which-key")
+            wk.setup(opts)
+
+            wk.register({
+                b = { name = "+buffer" },
+                c = {
+                    name = "+code",
+                    l = {
+                        name = "+lsp",
+                        F = { name = "+folders" },
+                    }
+                },
+                f = { name = "+file" },
+                g = {
+                    name = "+git",
+                    c = { name = "+create" },
+                    f = { name = "+find" },
+                    l = { name = "+list" },
+                    o = { name = "+open in browser" },
+                },
+                h = { name = "+help" },
+                i = { name = "+insert" },
+                o = { name = "+open" },
+                p = { name = "+project" },
+                q = { name = "+quit" },
+                s = { name = "+search" },
+                t = { name = "+toggle" },
+                w = { name = "+window" },
+            }, { prefix = "<Leader>" })
+            -- Somehow these doesn't work
+            wk.register({
+                i = { name = "+insert" },
+            }, { mode = "i", prefix = "<M-Space>" })
+            wk.register({
+                c = { name = "+code" },
+                g = {
+                    name = "+git",
+                    o = { name = "+open in browser" },
+                },
+                i = { name = "+insert" },
+            }, { mode = "x", prefix = "<Leader>" })
         end,
     },
 }

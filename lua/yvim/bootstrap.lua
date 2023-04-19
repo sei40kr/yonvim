@@ -15,11 +15,11 @@ function M.init()
 
     require("yvim.lazy").init()
 
-    require("yvim.treesitter").setup()
+    require("yvim.config.keymaps")
+
     require("yvim.lsp").setup()
 
     require("yvim.core").config()
-    require("yvim.treesitter").config()
     require("yvim.lsp").config()
 
     require("yvim.keymap").load()
