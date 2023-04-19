@@ -491,6 +491,7 @@ return {
             wk.setup(opts)
 
             wk.register({
+                ["<Tab>"] = { name = "+tab" },
                 b = { name = "+buffer" },
                 c = {
                     name = "+code",

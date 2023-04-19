@@ -93,6 +93,23 @@ end
 map("n", "<Leader>qq", "<Cmd>qa<CR>", { desc = "Quit" })
 map("n", "<Leader>qQ", "<Cmd>qa!<CR>", { desc = "Quit without saving" })
 
+-- +tab
+map("n", "<Leader><Tab>0", "<Cmd>tabl<CR>", { desc = "Switch to final tab" })
+map("n", "<Leader><Tab>1", "<Cmd>1tabn<CR>", { desc = "Switch to 1st tab" })
+map("n", "<Leader><Tab>2", "<Cmd>2tabn<CR>", { desc = "Switch to 2nd tab" })
+map("n", "<Leader><Tab>3", "<Cmd>3tabn<CR>", { desc = "Switch to 3rd tab" })
+map("n", "<Leader><Tab>4", "<Cmd>4tabn<CR>", { desc = "Switch to 4th tab" })
+map("n", "<Leader><Tab>5", "<Cmd>5tabn<CR>", { desc = "Switch to 5th tab" })
+map("n", "<Leader><Tab>6", "<Cmd>6tabn<CR>", { desc = "Switch to 6th tab" })
+map("n", "<Leader><Tab>7", "<Cmd>7tabn<CR>", { desc = "Switch to 7th tab" })
+map("n", "<Leader><Tab>8", "<Cmd>8tabn<CR>", { desc = "Switch to 8th tab" })
+map("n", "<Leader><Tab>9", "<Cmd>9tabn<CR>", { desc = "Switch to 9th tab" })
+map("n", "<Leader><Tab>[", "<Cmd>tabp<CR>", { desc = "Previous tab" })
+map("n", "<Leader><Tab>]", "<Cmd>tabN<CR>", { desc = "Next tab" })
+map("n", "<Leader><Tab>`", "g<Tab>", { desc = "Switch to last tab" })
+map("n", "<Leader><Tab>d", "<Cmd>tabc<CR>", { desc = "Delete this tab" })
+map("n", "<Leader><Tab>n", "<Cmd>tabnew<CR>", { desc = "New tab" })
+
 -- +window
 map("n", "<Leader>w+", "<C-w>+", { desc = "Increase height" })
 map("n", "<Leader>w-", "<C-w>-", { desc = "Decrease height" })
