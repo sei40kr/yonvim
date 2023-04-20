@@ -153,6 +153,18 @@ return {
     },
 
     {
+        dir = "@navigator@",
+        config = true,
+        main = "Navigator",
+        keys = {
+            { "<A-h>", "<Cmd>NavigatorLeft<CR>",  mode = { "n", "t" } },
+            { "<A-j>", "<Cmd>NavigatorDown<CR>",  mode = { "n", "t" } },
+            { "<A-k>", "<Cmd>NavigatorUp<CR>",    mode = { "n", "t" } },
+            { "<A-l>", "<Cmd>NavigatorRight<CR>", mode = { "n", "t" } },
+        },
+    },
+
+    {
         dir = "@neogit@",
         dependencies = { "plenary.nvim" },
         opts = {

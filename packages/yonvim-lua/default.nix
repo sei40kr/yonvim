@@ -93,6 +93,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by mini_bufremove         ${yonvimPlugins.mini-bufremove.outPath} \
       --subst-var-by mini_jump              ${yonvimPlugins.mini-jump.outPath} \
       --subst-var-by mini_trailspace        ${yonvimPlugins.mini-trailspace.outPath} \
+      --subst-var-by navigator              ${yonvimPlugins.Navigator-nvim.outPath} \
       --subst-var-by neogit                 ${yonvimPlugins.neogit.outPath} \
       --subst-var-by neo_tree               ${yonvimPlugins.neo-tree-nvim.outPath} \
       --subst-var-by octo                   ${yonvimPlugins.octo-nvim.outPath} \

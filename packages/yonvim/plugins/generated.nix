@@ -18,6 +18,22 @@ _self: {
     meta.homepage = "https://github.com/L3MON4D3/LuaSnip";
   };
 
+  Navigator-nvim = vimUtils.buildVimPlugin {
+    pname = "Navigator.nvim";
+    version = "2023-02-02";
+
+    src = fetchFromGitHub {
+      owner = "numToStr";
+      repo = "Navigator.nvim";
+      rev = "91d86506ac2a039504d5205d32a1d4bc7aa57072";
+      hash = "sha256-Oyuv8mLPiMEsZPRnIgEjBFYJjGEhMzg+gnNhSSRvGoo=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/numToStr/Navigator.nvim";
+  };
+
   aerial-nvim = vimUtils.buildVimPlugin {
     pname = "aerial.nvim";
     version = "2023-01-28";
