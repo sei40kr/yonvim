@@ -97,23 +97,11 @@ return {
                 function()
                     require("iron.core").visual_send()
                 end,
-                mode = { "n", "x" },
-                desc = "Send to REPL"
+                mode = "x",
+                desc = "Send to REPL",
             },
-            {
-                "<Leader>or",
-                function()
-                    require("iron.core").repl_for(vim.bo.filetype)
-                end,
-                desc = "Open REPL"
-            },
-            {
-                "<Leader>oR",
-                function()
-                    require("iron.core").repl_here(vim.bo.filetype)
-                end,
-                desc = "Open REPL"
-            },
+            { "<Leader>or", "<Cmd>IronRepl<CR>",     desc = "Open REPL" },
+            { "<Leader>oR", "<Cmd>IronReplHere<CR>", desc = "Open REPL (same window)" },
         },
     },
 
