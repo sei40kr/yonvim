@@ -107,6 +107,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by telescope_luasnip      ${yonvimPlugins.telescope-luasnip-nvim.outPath} \
       --subst-var-by telescope_project      ${yonvimPlugins.telescope-project-nvim.outPath} \
       --subst-var-by telescope_symbols      ${yonvimPlugins.telescope-symbols-nvim.outPath} \
+      --subst-var-by telescope_tabs         ${yonvimPlugins.telescope-tabs.outPath} \
       --subst-var-by todo_comments          ${yonvimPlugins.todo-comments-nvim.outPath} \
       --subst-var-by toggleterm             ${yonvimPlugins.toggleterm-nvim.outPath} \
       --subst-var-by trouble                ${yonvimPlugins.trouble-nvim.outPath} \

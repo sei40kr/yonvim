@@ -476,6 +476,13 @@
         "hash": "sha256-Z7Bn3iF9Wom8cSdKNVDgQTirQ+W6OWuG30BVq0VLgPs="
     },
     {
+        "version": "2023-04-19",
+        "owner": "LukasPietzschmann",
+        "repo": "telescope-tabs",
+        "rev": "24c99f28599819955f8bd3bc5a24a212cea16c11",
+        "hash": "sha256-pG4Tgz0JEODLFgbuMUJ7T6D70h/JWCv/YTvbZvE4K+c="
+    },
+    {
         "version": "2023-04-10",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",

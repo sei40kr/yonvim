@@ -418,6 +418,13 @@ return {
             },
         },
     },
+    {
+        dir = "@telescope_tabs@",
+        dependencies = { "telescope.nvim" },
+        keys = {
+            { "<Leader><Tab>.", "<Cmd>Telescope telescope-tabs list_tabs show_preview=false<CR>", desc = "Switch tab" },
+        },
+    },
 
     {
         dir = "@todo_comments@",

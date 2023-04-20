@@ -1090,6 +1090,22 @@ _self: {
     meta.homepage = "https://github.com/nvim-telescope/telescope-symbols.nvim";
   };
 
+  telescope-tabs = vimUtils.buildVimPlugin {
+    pname = "telescope-tabs";
+    version = "2023-04-19";
+
+    src = fetchFromGitHub {
+      owner = "LukasPietzschmann";
+      repo = "telescope-tabs";
+      rev = "24c99f28599819955f8bd3bc5a24a212cea16c11";
+      hash = "sha256-pG4Tgz0JEODLFgbuMUJ7T6D70h/JWCv/YTvbZvE4K+c=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/LukasPietzschmann/telescope-tabs";
+  };
+
   telescope-nvim = vimUtils.buildVimPlugin {
     pname = "telescope.nvim";
     version = "2023-04-10";
