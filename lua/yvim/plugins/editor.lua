@@ -428,6 +428,7 @@ return {
 
     {
         dir = "@todo_comments@",
+        lazy = false,
         dependencies = { "trouble.nvim" },
         opts = {
             signs = false,
