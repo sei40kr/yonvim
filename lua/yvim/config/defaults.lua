@@ -40,9 +40,7 @@ return {
         --  yvim.repl.handlers = {
         --    sh = { command = { "zsh" } },
         --  }
-        handlers = { },
-        -- The command to open the REPL window. See `:help opening-window`.
-        win_open_cmd = "botright 15 split",
+        handlers = {},
     },
 
     snippet = {

@@ -76,6 +76,7 @@ function M.config()
                 "aerial",
                 "DiffviewFiles",
                 "help",
+                "iron",
                 "man",
                 "neo-tree",
                 "qf",

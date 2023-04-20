@@ -62,7 +62,13 @@ return {
             },
             rainbow = {
                 enable = true,
-                disable = { "help", "neo-tree", "toggleterm", "Trouble" },
+                disable = {
+                    "help",
+                    "iron",
+                    "neo-tree",
+                    "toggleterm",
+                    "Trouble",
+                },
             },
         },
         config = function(_, opts)

@@ -102,10 +102,9 @@ yvim.project.base_dirs = {
 
 ### REPL
 
-| Variable                 | Default value         | Description                                                      |
-|:-------------------------|:----------------------|:-----------------------------------------------------------------|
-| `yvim.repl.handlers`     | `{}`                  | The REPL handlers to use. See `:help iron-customizing`.          |
-| `yvim.repl.win_open_cmd` | `"botright 15 split"` | The command to open the REPL window. See `:help opening-window`. |
+| Variable             | Default value | Description                                             |
+|:---------------------|:--------------|:--------------------------------------------------------|
+| `yvim.repl.handlers` | `{}`          | The REPL handlers to use. See `:help iron-customizing`. |
 
 #### Example
 
