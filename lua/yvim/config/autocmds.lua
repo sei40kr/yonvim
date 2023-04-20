@@ -37,6 +37,24 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+local resize_augroup = augroup("resize")
+
+vim.api.nvim_create_autocmd("FileType", {
+    group = resize_augroup,
+    pattern = { "man" },
+    callback = function()
+        vim.cmd("resize " .. math.ceil(vim.o.lines * 0.45))
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    group = resize_augroup,
+    pattern = { "help" },
+    callback = function()
+        vim.cmd("resize " .. math.ceil(vim.o.lines * 0.42))
+    end,
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = augroup("lsp_keymaps"),
     callback = function(args)
