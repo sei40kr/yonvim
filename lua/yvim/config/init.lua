@@ -21,7 +21,6 @@ function M.load()
         end
     end
 
-    require("yvim.config.autocmds")
     require("yvim.config.options").load()
 
     vim.g.mapleader = yvim.leader_key

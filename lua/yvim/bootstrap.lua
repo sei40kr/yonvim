@@ -15,14 +15,12 @@ function M.init()
 
     require("yvim.lazy").init()
 
+    require("yvim.config.autocmds")
     require("yvim.config.keymaps")
 
     require("yvim.lsp").setup()
 
-    require("yvim.core").config()
     require("yvim.lsp").config()
-
-    require("yvim.keymap").load()
 end
 
 return M

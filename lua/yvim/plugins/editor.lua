@@ -451,9 +451,12 @@ return {
 
     {
         dir = "@toggleterm@",
-        config = function()
-            require("yvim.plugin.toggleterm").config()
-        end,
+        opts = {
+            open_mapping = "<Nop>",
+            shade_terminals = false,
+            insert_mappings = false,
+        },
+        main = "toggleterm",
         cmd = "ToggleTerm",
         keys = {
             { "<Leader>ot", "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal popup" },

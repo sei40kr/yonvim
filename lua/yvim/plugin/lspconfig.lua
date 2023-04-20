@@ -7,7 +7,6 @@ end
 function M.config()
     local lsp = require("lspconfig")
     local windows = require("lspconfig.ui.windows")
-    local keymap = require("yvim.util.keymap")
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -43,12 +42,6 @@ function M.config()
         opts.border = yvim.ui.border
         return opts
     end
-
-    keymap:set_for_ft(
-        "lspinfo",
-        "n",
-        { q = { "<Esc>", "Quit", noremap = false } }
-    )
 end
 
 return M

@@ -2,7 +2,6 @@ local M = {}
 
 function M.config()
     local notify = require("notify")
-    local keymap = require("yvim.util.keymap")
     local log = require("structlog")
     local Logger = require("yvim.utils.logger")
     local z = require("yvim.ui.zindex")
@@ -31,10 +30,6 @@ function M.config()
         ),
         log.sinks.NvimNotify()
     ))
-
-    keymap:set_for_ft("notify", "n", {
-        q = { "<C-w>c", "Quit" },
-    })
 end
 
 return M
