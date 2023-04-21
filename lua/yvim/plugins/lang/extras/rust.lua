@@ -11,5 +11,7 @@ return {
             }, yvim.lsp.servers.rust_analyzer or {})
         },
         main = "rust-tools",
+        ft = "rust",
+        module = "rust-tools",
     },
 }
