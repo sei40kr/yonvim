@@ -95,7 +95,6 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by mini_trailspace        ${yonvimPlugins.mini-trailspace.outPath} \
       --subst-var-by navigator              ${yonvimPlugins.Navigator-nvim.outPath} \
       --subst-var-by neogit                 ${yonvimPlugins.neogit.outPath} \
-      --subst-var-by neo_tree               ${yonvimPlugins.neo-tree-nvim.outPath} \
       --subst-var-by octo                   ${yonvimPlugins.octo-nvim.outPath} \
       --subst-var-by open_browser           ${yonvimPlugins.open-browser-vim.outPath} \
       --subst-var-by open_browser_github    ${yonvimPlugins.open-browser-github-vim.outPath} \
@@ -111,6 +110,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by telescope_tabs         ${yonvimPlugins.telescope-tabs.outPath} \
       --subst-var-by todo_comments          ${yonvimPlugins.todo-comments-nvim.outPath} \
       --subst-var-by toggleterm             ${yonvimPlugins.toggleterm-nvim.outPath} \
+      --subst-var-by tree                   ${yonvimPlugins.nvim-tree-lua.outPath} \
       --subst-var-by trouble                ${yonvimPlugins.trouble-nvim.outPath} \
       --subst-var-by which_key              ${yonvimPlugins.which-key-nvim.outPath}
 

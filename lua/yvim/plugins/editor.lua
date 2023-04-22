@@ -187,37 +187,6 @@ return {
     },
 
     {
-        dir = "@neo_tree@",
-        dependencies = { "plenary.nvim", "nvim-web-devicons", "nui.nvim" },
-        init = function()
-            vim.g.neo_tree_remove_legacy_commands = 1
-        end,
-        opts = {
-            close_if_last_window = true,
-            popup_border_style = yvim.ui.border,
-            default_component_configs = {
-                container = { enable_character_fade = false },
-                indent = { with_markers = false },
-            },
-            window = { width = 35 },
-            filesystem = { use_libuv_file_watcher = false },
-        },
-        main = "neo-tree",
-        keys = {
-            {
-                "<Leader>op",
-                "<Cmd>Neotree toggle<CR>",
-                desc = "Project sidebar",
-            },
-            {
-                "<Leader>oP",
-                "<Cmd>Neotree reveal<CR>",
-                desc = "Find file in project sidebar",
-            },
-        },
-    },
-
-    {
         dir = "@octo@",
         dependencies = {
             "nvim-web-devicons",
@@ -469,6 +438,149 @@ return {
         cmd = "ToggleTerm",
         keys = {
             { "<Leader>ot", "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal popup" },
+        },
+    },
+
+    {
+        dir = "@tree@",
+        dependencies = { "nvim-web-devicons" },
+        opts = function()
+            local api = require("nvim-tree.api")
+
+            local function wrap_node(f)
+                return function(node, ...)
+                    node = node or api.tree.get_node_under_cursor()
+                    if node then
+                        return f(node, ...)
+                    end
+                end
+            end
+
+            local expand_or_collapse = wrap_node(function(node)
+                if node.nodes then
+                    require("nvim-tree.lib").expand_or_collapse(node)
+                end
+            end)
+
+            local collapse_or_up = wrap_node(function(node)
+                if node.open then
+                    expand_or_collapse(node)
+                else
+                    api.node.navigate.parent(node)
+                end
+            end)
+
+            local expand_or_down_or_open = wrap_node(function(node)
+                if node.nodes then
+                    if node.open then
+                        if 0 < #node.nodes then
+                            vim.cmd("norm! j")
+                        end
+                    else
+                        expand_or_collapse(node)
+                    end
+                else
+                    api.node.open.edit(node)
+                end
+            end)
+
+            return {
+                on_attach = function(bufnr)
+                    local map = function(lhs, rhs, opts)
+                        opts = opts or {}
+                        opts.buffer = bufnr
+                        opts.silent = opts.silent ~= false
+                        vim.keymap.set("n", lhs, rhs, opts)
+                    end
+
+                    map("<CR>", expand_or_down_or_open, { desc = "Open" })
+                    map("<Tab>", expand_or_collapse, { desc = "Expand/collapse" })
+                    -- TODO: z
+                    -- TODO: go
+                    -- TODO: gO
+                    map("gr", api.tree.reload, { desc = "Refresh" })
+                    map("q", api.tree.close, { desc = "Close" })
+                    map("H", api.tree.toggle_hidden_filter, { desc = "Toggle hidden" })
+                    map("gh", api.tree.toggle_hidden_filter, { desc = "Toggle hidden" })
+                    -- TODO: gk
+                    -- TODO: gj
+                    map("gv", api.node.run.system, { desc = "Run system" })
+                    map("c", api.fs.create, { desc = "Create" })
+                    -- TODO: Copy
+                    map("r", api.fs.rename, { desc = "Rename/move" })
+                    map("R", api.tree.change_root_to_node, { desc = "CD" })
+                    map("d", api.fs.remove, { desc = "Delete" })
+                    map("ge", expand_or_down_or_open, { desc = "Expand/down/open" })
+
+                    map("U", api.tree.change_root_to_parent, { desc = "Up" })
+                    map("|", api.node.open.vertical, { desc = "Open: vertical split" })
+                    map("-", api.node.open.horizontal, { desc = "Open: horizontal split" })
+
+                    map("<BS>", "<C-w>p", { desc = "Go to previous window" })
+                    map("h", collapse_or_up, { desc = "Collapse/up" })
+                    map("l", expand_or_down_or_open, { desc = "Expand/down/open" })
+                    map("J", api.node.navigate.sibling.next, { desc = "Next sibling" })
+                    map("K", api.node.navigate.sibling.prev, { desc = "Previous sibling" })
+                    map("v", api.node.open.vertical, { desc = "Open: vertical split" })
+                    map("s", api.node.open.horizontal, { desc = "Open: horizontal split" })
+
+                    map("[d", api.node.navigate.git.prev, { desc = "Previous git" })
+                    map("]d", api.node.navigate.git.next, { desc = "Next git" })
+                    map("<Esc>", api.live_filter.clear, { desc = "Clean filter" })
+                    map("/", api.live_filter.start, { desc = "Filter" })
+
+                    map("?", api.tree.toggle_help, { desc = "Help" })
+                end,
+                view = {
+                    centralize_selection = true,
+                    width = 35,
+                    signcolumn = "no",
+                },
+                renderer = {
+                    highlight_git = true,
+                    root_folder_label = function(path)
+                        return "󰺿  " .. vim.fs.basename(path)
+                    end,
+                    icons = {
+                        symlink_arrow = " ➛  ",
+                        show = { git = false },
+                        glyphs = {
+                            default = " ",
+                            symlink = " ",
+                            folder = {
+                                default = " ",
+                                open = " ",
+                                empty = " ",
+                                empty_open = " ",
+                                symlink = " ",
+                                symlink_open = " ",
+                            },
+                        },
+                    }
+                },
+                filters = { custom = { "^\\.git$" } },
+                actions = {
+                    change_dir = {
+                        enable = false,
+                        restrict_above_cwd = true,
+                    },
+                    file_popup = {
+                        open_win_config = { border = yvim.ui.border },
+                    },
+                    open_file = {
+                        window_picker = {
+                            -- exclude = {},
+                        },
+                    },
+                    remove_file = { close_window = false },
+                },
+                live_filter = { prefix = "/" },
+            }
+        end,
+        main = "nvim-tree",
+        keys = {
+            { "<Leader>op", "<Cmd>NvimTreeToggle<CR>",   desc = "Project sidebar" },
+            { "<Leader>oP", "<Cmd>NvimTreeFindFile<CR>", desc = "Find file in project sidebar" },
         },
     },
 

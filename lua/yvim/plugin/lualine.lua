@@ -78,7 +78,7 @@ function M.config()
                 "help",
                 "iron",
                 "man",
-                "neo-tree",
+                "NvimTree",
                 "qf",
                 "terminal",
                 "toggleterm",

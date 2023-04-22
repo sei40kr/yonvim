@@ -65,7 +65,7 @@ return {
                 disable = {
                     "help",
                     "iron",
-                    "neo-tree",
+                    "NvimTree",
                     "toggleterm",
                     "Trouble",
                 },

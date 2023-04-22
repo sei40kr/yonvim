@@ -238,13 +238,6 @@
         "hash": "sha256-eKkUe4Ncp+Tu6RLeB97avHyN00AvQAPGOE3YrQOVfK0="
     },
     {
-        "version": "2023-01-12",
-        "owner": "nvim-neo-tree",
-        "repo": "neo-tree.nvim",
-        "rev": "8238865e1d9c61f1a260c290653f2c419503e0a9",
-        "hash": "sha256-a0EoEWUKwonL/zy14k0XKkts5RaAwuhltfOpOlBvNqM="
-    },
-    {
         "version": "2023-01-28",
         "owner": "folke",
         "repo": "neoconf.nvim",
@@ -327,6 +320,13 @@
         "repo": "nvim-notify",
         "rev": "bdd647f61a05c9b8a57c83b78341a0690e9c29d7",
         "hash": "sha256-zPSlenKjuZ8Xygu/KuU9+bSf5uUjSDK9HOTWnpUk1jo="
+    },
+    {
+        "version": "2023-04-22",
+        "owner": "nvim-tree",
+        "repo": "nvim-tree.lua",
+        "rev": "517dee64c150821efdc1d5adcd4285fdf9c30371",
+        "hash": "sha256-rk01rriNw2+oGSZG0nUWNh8Jr7VBlmV8rMUSa9XOX9Y="
     },
     {
         "version": "2022-09-26",
