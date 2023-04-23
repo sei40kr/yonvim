@@ -94,7 +94,6 @@ return {
                     linehl = "GitSignsChangeLn",
                 },
             },
-            keymaps = {},
         },
         main = "gitsigns",
         keys = {
