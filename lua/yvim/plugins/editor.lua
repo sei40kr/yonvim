@@ -270,31 +270,41 @@ return {
             require("yvim.plugin.telescope").config()
         end,
         keys = {
-            { "<Leader><Space>", "<Leader>pf",                  remap = true,               desc = "Find file in project" },
-            { "<Leader>'",       "<Cmd>Telescope resume<CR>",   desc = "Resume last search" },
-            { "<Leader>/",       "<Leader>sp",                  remap = true,               desc = "Search project" },
-            { "<Leader>:",       "<Cmd>Telescope commands<CR>", desc = ":" },
-            { "<Leader>bb",      "<Cmd>Telescope buffers<CR>",  desc = "Switch buffer" },
             {
-                "<Leader>fF",
-                function()
-                    require("telescope.builtin").find_files({
-                        cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
-                    })
-                end,
-                desc = "Find file from here",
+                "<Leader><Space>",
+                "<Leader>pf",
+                remap = true,
+                desc =
+                "Find file in project"
             },
-            { "<Leader>fr",  "<Cmd>Telescope oldfiles<CR>",     desc = "Recent files" },
-            { "<Leader>gb",  "<Cmd>Telescope git_branches<CR>", desc = "Switch branch" },
-            { "<Leader>ha",  "<Cmd>Telescope autocommands<CR>", desc = "autocmds" },
-            { "<Leader>hf",  "<Cmd>Telescope filetypes<CR>",    desc = "filetypes" },
-            { "<Leader>hh",  "<Cmd>Telescope help_tags<CR>",    desc = "help" },
-            { "<Leader>hH",  "<Cmd>Telescope highlights<CR>",   desc = "highlights" },
-            { "<Leader>hk",  "<Cmd>Telescope keymaps<CR>",      desc = "keymaps" },
-            { "<Leader>hm",  "<Cmd>Telescope man_pages<CR>",    desc = "manpages" },
-            { "<Leader>ho",  "<Cmd>Telescope vim_options<CR>",  desc = "vim options" },
-            { "<Leader>ir",  "<Cmd>Telescope registers<CR>",    desc = "From register" },
-            { "<M-Space>ir", "<Cmd>Telescope registers<CR>",    mode = "i",            desc = "From register" },
+            { "<Leader>'",  "<Cmd>Telescope resume<CR>",               desc = "Resume last search" },
+            {
+                "<Leader>/",
+                "<Leader>sp",
+                remap = true,
+                desc =
+                "Search project"
+            },
+            { "<Leader>:",  "<Cmd>Telescope commands<CR>",             desc = ":" },
+            { "<Leader>bb", "<Cmd>Telescope buffers<CR>",              desc = "Switch buffer" },
+            { "<Leader>fF", "<Cmd>Telescope find_files cwd=%:p:h<CR>", desc = "Find file from here" },
+            { "<Leader>fr", "<Cmd>Telescope oldfiles<CR>",             desc = "Recent files" },
+            { "<Leader>gb", "<Cmd>Telescope git_branches<CR>",         desc = "Switch branch" },
+            { "<Leader>ha", "<Cmd>Telescope autocommands<CR>",         desc = "autocmds" },
+            { "<Leader>hf", "<Cmd>Telescope filetypes<CR>",            desc = "filetypes" },
+            { "<Leader>hh", "<Cmd>Telescope help_tags<CR>",            desc = "help" },
+            { "<Leader>hH", "<Cmd>Telescope highlights<CR>",           desc = "highlights" },
+            { "<Leader>hk", "<Cmd>Telescope keymaps<CR>",              desc = "keymaps" },
+            { "<Leader>hm", "<Cmd>Telescope man_pages<CR>",            desc = "manpages" },
+            { "<Leader>ho", "<Cmd>Telescope vim_options<CR>",          desc = "vim options" },
+            { "<Leader>ir", "<Cmd>Telescope registers<CR>",            desc = "From register" },
+            {
+                "<M-Space>ir",
+                "<Cmd>Telescope registers<CR>",
+                mode = "i",
+                desc =
+                "From register"
+            },
             {
                 "<Leader>pf",
                 function()
@@ -330,20 +340,10 @@ return {
             require("telescope").load_extension("file_browser")
         end,
         keys = {
-            {
-                "<Leader>ff",
-                function()
-                    require("telescope").extensions.file_browser.file_browser({
-                        cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
-                    })
-                end,
-                desc = "Find file",
-            },
+            { "<Leader>ff", "<Cmd>Telescope file_browser path=%:p:h<CR>", desc = "Find file" },
             {
                 "<Leader>fp",
                 function()
-                    local path = require("yvim.util.path")
-
                     require("telescope.builtin").find_files({ cwd = require("yvim.util.path").get_config_dir() })
                 end,
                 desc = "Find file in private config",
