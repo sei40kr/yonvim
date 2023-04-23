@@ -16,6 +16,21 @@ end
 function M.config()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
+    local Util = require("yvim.util")
+
+    local trouble_mappings = {
+        n = {},
+        i = {},
+    }
+
+    if Util.has("trouble.nvim") then
+        trouble_mappings.n["<C-t>"] = function(...)
+            require("trouble.providers.telescope").open_with_trouble(...)
+        end
+        trouble_mappings.i["<C-t>"] = function(...)
+            require("trouble.providers.telescope").open_with_trouble(...)
+        end
+    end
 
     telescope.setup({
         defaults = {
@@ -31,6 +46,9 @@ function M.config()
                     jk = actions.close,
                 },
             },
+        },
+        pickers = {
+            live_grep = { mappings = trouble_mappings },
         },
         extensions = {
             project = { base_dirs = yvim.project.base_dirs },
