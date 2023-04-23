@@ -94,24 +94,26 @@ return {
                     linehl = "GitSignsChangeLn",
                 },
             },
+            on_attach = function(bufnr)
+                local map = function(mode, lhs, rhs, opts)
+                    opts = opts or {}
+                    opts.buffer = bufnr
+                    opts.silent = opts.silent ~= false
+                    vim.keymap.set(mode, lhs, rhs, opts)
+                end
+
+                map("n", "[d", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Jump to previous hunk" })
+                map("n", "]d", "<Cmd>Gitsigns next_hunk<CR>", { desc = "Jump to next hunk" })
+                map("n", "<Leader>g[", "[d", { remap = true, desc = "Jump to previous hunk" })
+                map("n", "<Leader>g]", "]d", { remap = true, desc = "Jump to next hunk" })
+                map({ "n", "x" }, "<Leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Revert hunk" })
+                map("n", "<Leader>gR", "<Cmd>Gitsigns reset_buffer<CR>", { desc = "Revert file" })
+                map({ "n", "x" }, "<Leader>gs", ":Gitsigns stage_hunk<CR>", { desc = "Git stage hunk" })
+                map("n", "<Leader>gS", "<Cmd>Gitsigns stage_buffer<CR>", { desc = "Git stage file" })
+                map("n", "<Leader>gU", "<Cmd>Gitsigns reset_buffer_index<CR>", { desc = "Git unstage file" })
+            end,
         },
         main = "gitsigns",
-        keys = {
-            { "[d",         "<Cmd>Gitsigns prev_hunk<CR>",    desc = "Jump to previous hunk" },
-            { "]d",         "<Cmd>Gitsigns next_hunk<CR>",    desc = "Jump to next hunk" },
-            { "<Leader>g[", "<Cmd>Gitsigns prev_hunk<CR>",    desc = "Jump to previous hunk" },
-            { "<Leader>g]", "<Cmd>Gitsigns next_hunk<CR>",    desc = "Jump to next hunk" },
-            { "<Leader>gr", ":Gitsigns reset_hunk<CR>",       mode = { "n", "x" },           desc = "Revert hunk" },
-            { "<Leader>gR", "<Cmd>Gitsigns reset_buffer<CR>", desc = "Revert file" },
-            {
-                "<Leader>gs",
-                ":Gitsigns stage_hunk<CR>",
-                mode = { "n", "x" },
-                desc = "Git stage hunk"
-            },
-            { "<Leader>gS", "<Cmd>Gitsigns stage_buffer<CR>",       desc = "Git stage file" },
-            { "<Leader>gU", "<Cmd>Gitsigns reset_buffer_index<CR>", desc = "Git unstage file" },
-        },
     },
 
     {
