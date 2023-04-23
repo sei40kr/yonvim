@@ -16,13 +16,6 @@ local function get_keymaps()
                 desc = "Execute code action",
                 has = "codeAction"
             },
-            {
-                "gd",
-                vim.lsp.buf.definition,
-                desc = "Goto definition",
-                has =
-                "definition"
-            },
             { "[e", vim.diagnostic.goto_prev, desc = "Jump to previous error" },
             { "]e", vim.diagnostic.goto_next, desc = "Jump to next error" },
             {
@@ -43,21 +36,7 @@ local function get_keymaps()
                 has = "documentRangeFormatting"
             },
             { "K",          vim.lsp.buf.hover,  desc = "Hover",  has = "hover" },
-            {
-                "<Leader>ci",
-                vim.lsp.buf.implementation,
-                desc = "Find implementations",
-                has =
-                "implementation"
-            },
             { "<Leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
-            {
-                "<Leader>ct",
-                vim.lsp.buf.type_definition,
-                desc = "Find type definition",
-                has =
-                "typeDefinition"
-            },
             {
                 "<Leader>cj",
                 vim.lsp.buf.workspace_symbol,
@@ -70,15 +49,65 @@ local function get_keymaps()
         }
 
         if Util.has("trouble.nvim") then
-            table.insert(_keymaps,
-                { "gD", "<Cmd>Trouble lsp_references<CR>", desc = "References", has = "references" })
-            table.insert(_keymaps,
-                { "<Leader>cx", "<Cmd>Trouble document_diagnostics<CR>", desc = "List errors in buffer" })
-            table.insert(_keymaps,
-                { "<Leader>cX", "<Cmd>Trouble workspace_diagnostics<CR>", desc = "List errors in workspace" })
+            table.insert(_keymaps, {
+                "gd",
+                "<Cmd>Trouble lsp_definitions<CR>",
+                desc = "Goto definition",
+                has = "definition",
+            })
+            table.insert(_keymaps, {
+                "gi",
+                "<Cmd>Trouble lsp_implementations<CR>",
+                desc = "Find implementations",
+                has = "implementation",
+            })
+            table.insert(_keymaps, {
+                "gr",
+                "<Cmd>Trouble lsp_references<CR>",
+                desc = "Jump to references",
+                has = "references",
+            })
+            table.insert(_keymaps, {
+                "<Leader>ct",
+                "<Cmd>Trouble lsp_type_definitions<CR>",
+                desc = "Find type definition",
+                has = "typeDefinition",
+            })
+            table.insert(_keymaps, {
+                "<Leader>cx",
+                "<Cmd>Trouble document_diagnostics<CR>",
+                desc = "List errors in buffer",
+            })
+            table.insert(_keymaps, {
+                "<Leader>cX",
+                "<Cmd>Trouble workspace_diagnostics<CR>",
+                desc = "List errors in workspace",
+            })
         else
-            table.insert(_keymaps,
-                { "gD", vim.lsp.buf.references, desc = "References", has = "references" })
+            table.insert(_keymaps, {
+                "gd",
+                vim.lsp.buf.definition,
+                desc = "Goto definition",
+                has = "definition",
+            })
+            table.insert(_keymaps, {
+                "gi",
+                vim.lsp.buf.implementation,
+                desc = "Find implementations",
+                has = "implementation",
+            })
+            table.insert(_keymaps, {
+                "gr",
+                vim.lsp.buf.references,
+                desc = "Jump to references",
+                has = "references",
+            })
+            table.insert(_keymaps, {
+                "<Leader>ct",
+                vim.lsp.buf.type_definition,
+                desc = "Find type definition",
+                has = "typeDefinition",
+            })
         end
     end
 

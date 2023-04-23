@@ -76,7 +76,8 @@ map(
 
 -- +code
 map("n", "<Leader>cd", "gd", { remap = true, desc = "Jump to definition" })
-map("n", "<Leader>cD", "gD", { remap = true, desc = "Jump to references" })
+map("n", "<Leader>ci", "gi", { remap = true, desc = "Find implementations" })
+map("n", "<Leader>cD", "gr", { remap = true, desc = "Jump to references" })
 map("n", "<Leader>ck", "K", { remap = true, desc = "Jump to documentation" })
 
 -- +file

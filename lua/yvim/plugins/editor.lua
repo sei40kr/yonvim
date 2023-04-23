@@ -606,6 +606,7 @@ return {
                 "lsp_definitions",
                 "lsp_implementations",
                 "lsp_references",
+                "lsp_type_definitions",
             },
             use_diagnostic_signs = true,
         },
