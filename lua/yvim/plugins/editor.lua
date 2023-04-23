@@ -326,6 +326,9 @@ return {
     {
         dir = "@telescope_file_browser@",
         dependencies = { "telescope.nvim" },
+        config = function()
+            require("telescope").load_extension("file_browser")
+        end,
         keys = {
             {
                 "<Leader>ff",
@@ -359,6 +362,9 @@ return {
     {
         dir = "@telescope_luasnip@",
         dependencies = { "telescope.nvim" },
+        config = function()
+            require("telescope").load_extension("luasnip")
+        end,
         keys = {
             { "<Leader>is",  "<Cmd>Telescope luasnip luasnip<CR>", desc = "Snippets" },
             { "<M-Space>is", "<Cmd>Telescope luasnip luasnip<CR>", mode = "i",       desc = "Snippets" },
@@ -367,6 +373,9 @@ return {
     {
         dir = "@telescope_project@",
         dependencies = { "telescope.nvim" },
+        config = function()
+            require("telescope").load_extension("project")
+        end,
         keys = {
             {
                 "<Leader>pp",
