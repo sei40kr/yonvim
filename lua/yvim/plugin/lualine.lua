@@ -75,6 +75,7 @@ function M.config()
             disabled_filetypes = {
                 "aerial",
                 "DiffviewFiles",
+                "DiffviewFileHistory",
                 "help",
                 "iron",
                 "man",

@@ -34,11 +34,15 @@ return {
         opts = function()
             local actions = require("diffview.actions")
             return {
+                enhanced_diff_hl = true,
                 icons = {
                     folder_closed = " ",
                     folder_open = " ",
                 },
-                file_panel = { listing_style = "list" },
+                file_panel = {
+                    listing_style = "list",
+                    win_config = { width = 35 },
+                },
                 key_bindings = {
                     view = { q = actions.close },
                     file_panel = { q = actions.close },
@@ -48,6 +52,9 @@ return {
         end,
         main = "diffview",
         cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+        keys = {
+            { "<Leader>gt", "<Cmd>DiffviewFileHistory %<CR>", desc = "Git time machine" },
+        },
     },
 
     {
