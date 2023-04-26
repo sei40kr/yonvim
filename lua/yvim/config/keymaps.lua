@@ -119,7 +119,7 @@ map(
     "n",
     "<Leader>tr",
     function()
-        vim.o.modifiable = not vim.o.modifiable
+        vim.bo.modifiable = not vim.bo.modifiable
     end,
     { desc = "Read-only mode" }
 )
