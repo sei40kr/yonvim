@@ -157,17 +157,15 @@ yvim.snippet.user_snippet_dirs = {
 
 ### Keymaps
 
-You can add custom keymaps for mode `mode` to `yvim.keymaps[mode]`.
-Possible modes: `n`, `v`, `s`, `x`, `o`, `i`, `c`, `t`, see `:h :map-modes` for details.
+You can add user-defined keymaps to `yvim.keymaps`.
 
 #### Example
 
 ```lua
-yvim.keymaps.n = {
-    ["<M-Left>"] = { "<Cmd>BufferLineCyclePrev<CR>", "Go to previous buffer" },
-    ["<M-Right>"] = { "<Cmd>BufferLineCycleNext<CR>", "Go to next buffer" },
-    ["<M-S-Left>"] = { "<Cmd>BufferLineMovePrev<CR>", "Move the current buffer backwards" },
-    ["<M-S-Right>"] = { "<Cmd>BufferLineMoveNext<CR>", "Move the current buffer forwards" },
+yvim.keymaps = {
+    { "<M-Left>",  "<Cmd>BufferLineCyclePrev<CR>", desc = "Go to previous buffer" },
+    { "<M-Right>", "<Cmd>BufferLineCycleNext<CR>", desc = "Go to next buffer" },
+    -- { lhs, rhs, mode = ..., silent = ..., remap = ..., nowait = ..., desc = ... },
 }
 ```
 
