@@ -111,6 +111,32 @@ map("n", "<Leader><Tab>`", "g<Tab>", { desc = "Switch to last tab" })
 map("n", "<Leader><Tab>d", "<Cmd>tabc<CR>", { desc = "Delete this tab" })
 map("n", "<Leader><Tab>n", "<Cmd>tabnew<CR>", { desc = "New tab" })
 
+-- +toggle
+map(
+    "n",
+    "<Leader>tr",
+    function()
+        vim.o.modifiable = not vim.o.modifiable
+    end,
+    { desc = "Read-only mode" }
+)
+map(
+    "n",
+    "<Leader>ts",
+    function()
+        vim.o.spell = not vim.o.spell
+    end,
+    { desc = "Spell checker" }
+)
+map(
+    "n",
+    "<Leader>tw",
+    function()
+        vim.o.wrap = not vim.o.wrap
+    end,
+    { desc = "Soft line wrapping" }
+)
+
 -- +window
 map("n", "<Leader>w+", "<C-w>+", { desc = "Increase height" })
 map("n", "<Leader>w-", "<C-w>-", { desc = "Decrease height" })
