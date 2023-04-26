@@ -61,6 +61,7 @@ return {
 
     {
         dir = "@gitsigns@",
+        name = "gitsigns.nvim",
         opts = {
             signs = {
                 add = { text = "▍" },
@@ -70,6 +71,7 @@ return {
                 changedelete = { text = "▍" },
                 untracked = { text = "▍" },
             },
+            current_line_blame = true,
             on_attach = function(bufnr)
                 local map = function(mode, lhs, rhs, opts)
                     opts = opts or {}

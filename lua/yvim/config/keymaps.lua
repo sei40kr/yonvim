@@ -112,6 +112,9 @@ map("n", "<Leader><Tab>d", "<Cmd>tabc<CR>", { desc = "Delete this tab" })
 map("n", "<Leader><Tab>n", "<Cmd>tabnew<CR>", { desc = "New tab" })
 
 -- +toggle
+if Util.has("gitsigns.nvim") then
+    map("n", "<Leader>tB", "<Cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Git blame" })
+end
 map(
     "n",
     "<Leader>tr",
