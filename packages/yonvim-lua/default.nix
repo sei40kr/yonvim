@@ -42,6 +42,7 @@ let
     sql
     svelte
     # swift
+    terraform
     toml
     tsx
     typescript
