@@ -38,12 +38,14 @@
             self.packages.${system}.yonvim-qt
           ];
           shellHook = ''
-            export YVIM_CACHE_DIR=$(mktemp -d)
-            export YVIM_RUNTIME_DIR=$(mktemp -d)
+            export XDG_CACHE_HOME=$(mktemp -d)
+            export XDG_CONFIG_HOME=$(mktemp -d)
+            export XDG_DATA_HOME=$(mktemp -d)
+            export XDG_STATE_HOME=$(mktemp -d)
 
             _clean() {
-              rm -rf $YVIM_CACHE_DIR \
-                     $YVIM_RUNTIME_DIR
+              rm -rf $XDG_CACHE_HOME $XDG_CONFIG_HOME $XDG_DATA_HOME \
+                     $XDG_STATE_HOME
             }
 
             trap _clean EXIT

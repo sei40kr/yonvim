@@ -351,7 +351,9 @@ return {
             {
                 "<Leader>fp",
                 function()
-                    require("telescope.builtin").find_files({ cwd = require("yvim.util.path").get_config_dir() })
+                    require("telescope.builtin").find_files({
+                        cwd = vim.fn.stdpath("config"),
+                    })
                 end,
                 desc = "Find file in private config",
             },
@@ -359,7 +361,7 @@ return {
                 "<Leader>fP",
                 function()
                     require("telescope").extensions.file_browser.file_browser({
-                        cwd = vim.loop.fs_realpath(require("yvim.util.path").get_config_dir()),
+                        cwd = vim.fn.stdpath("config"),
                     })
                 end,
                 desc = "Browse private config",

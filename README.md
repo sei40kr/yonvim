@@ -35,7 +35,7 @@ Then, add the following to your Nix configuration:
 
 ## Configuration
 
-You can write your Yonvim configuration in `~/.config/yvim/config.lua`.
+You can write your Yonvim configuration in `~/.config/yonvim/config.lua`.
 
 | Variable               | Default value | Description                                                                                                                                                                      |
 | :--------------------- | :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -149,24 +149,13 @@ yvim.repl.handlers = {
 #### Example
 
 ```lua
-local path = require("yvim.util.path")
-
 yvim.snippet.user_snippet_dirs = {
     -- Use VSCode snippets
-    {
-        path.join_paths(path.get_config_dir(), "snippets", "vscode"),
-        loader = "vscode",
-    },
+    { vim.fn.stdpath("config") .. "/snippets/vscode", loader = "vscode" },
     -- Use TextMate (snipMate) snippets
-    {
-        path.join_paths(path.get_config_dir(), "snippets", "snipmate"),
-        loader = "snipmate",
-    },
+    { vim.fn.stdpath("config") .. "/snippets/snipmate", loader = "snipmate" },
     -- Use Lua snippets
-    {
-        path.join_paths(path.get_config_dir(), "snippets", "lua"),
-        loader = "lua",
-    },
+    { vim.fn.stdpath("config") .. "/snippets/lua", loader = "lua" },
 }
 ```
 

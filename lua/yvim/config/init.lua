@@ -4,11 +4,10 @@ local Logger = require("yvim.utils.logger")
 
 function M.load()
     local defaults = require("yvim.config.defaults")
-    local path = require("yvim.util.path")
 
     _G.yvim = vim.tbl_deep_extend("force", {}, defaults)
 
-    local config_path = path.join_paths(path.get_config_dir(), "config.lua")
+    local config_path = vim.fn.stdpath("config") .. "/config.lua"
     local ok, err = pcall(dofile, config_path)
     if not ok then
         if vim.fn.filereadable(config_path) then

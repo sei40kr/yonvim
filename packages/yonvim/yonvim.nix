@@ -39,14 +39,28 @@ let
         yonvimPlugins.lazy-nvim_readOnly
         yonvimPlugins.structlog-nvim
       ] ++ yonvim-lua.tree-sitter-grammars;
+      customRC = ''
+        lua <<EOF
+          local stdpath = vim.fn.stdpath
+          vim.fn.stdpath = function(what)
+            if what == "cache" then
+              return os.getenv("XDG_CACHE_HOME") .. "/yonvim"
+            elseif what == "config" then
+              return os.getenv("XDG_CONFIG_HOME") .. "/yonvim"
+            elseif what == "data" then
+              return os.getenv("XDG_DATA_HOME") .. "/yonvim"
+            elseif what == "log" or what == "state" then
+              return os.getenv("XDG_STATE_HOME") .. "/yonvim"
+            else
+              return stdpath(name)
+            end
+          end
+        EOF
+      '';
     };
   };
-  yonvim-bin = writeShellScriptBin "yvim" ''
+  yonvim-bin = writeShellScriptBin "yonvim" ''
     export PATH="${lib.makeBinPath runtimeDeps}''${PATH:+:$PATH}"
-
-    export YVIM_CACHE_DIR="''${YVIM_CACHE_DIR:-''${XDG_CACHE_HOME:-''${HOME}/.cache}/yvim}"
-    export YVIM_CONFIG_DIR="''${YVIM_CONFIG_DIR:-''${XDG_CONFIG_HOME:-''${HOME}/.config}/yvim}"
-    export YVIM_RUNTIME_DIR="''${YVIM_RUNTIME_DIR:-''${XDG_DATA_HOME:-''${HOME}/.local/share}/yvim}"
 
     export LAZY_LOCKFILE=${yonvim-lazy-files}/share/lazy/lazy-lock.json
     export LAZY_CACHE=${yonvim-lazy-files}/share/lazy/luac
@@ -64,6 +78,6 @@ symlinkJoin {
 
   postBuild = ''
     rm $out/bin/nvim
-    cp ${yonvim-bin}/bin/yvim $out/bin
+    cp ${yonvim-bin}/bin/yonvim $out/bin
   '';
 }

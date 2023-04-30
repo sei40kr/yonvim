@@ -15,18 +15,18 @@ let
     # Only used to generate help tags at build time
     neovim = yonvim;
   };
-  yonvim-qt-bin = writeShellScriptBin "yvim-qt" ''
+  yonvim-qt-bin = writeShellScriptBin "yonvim-qt" ''
     exec ${neovim-qt-overridden}${if stdenv.isDarwin then "/Applications/nvim-qt.app/Contents/MacOS" else "/bin"}/nvim-qt \
-         --nvim ${yonvim}/bin/yvim \
+         --nvim ${yonvim}/bin/yonvim \
          -- \
          "$@"
   '';
   desktopItem = makeDesktopItem {
-    name = "yvim-qt";
+    name = "yonvim-qt";
     desktopName = "Yonvim";
     comment = "Qt GUI for Neovim text editor";
     icon = "nvim-qt";
-    exec = "yvim-qt -- %F";
+    exec = "yonvim-qt -- %F";
     mimeTypes = [
       "text/english"
       "text/plain"
@@ -50,7 +50,7 @@ let
   };
   infoPlist = writeText "Info.plist" (lib.generators.toPlist { } {
     CFBundleDevelopmentRegion = "English";
-    CFBundleExecutable = "yvim-qt";
+    CFBundleExecutable = "yonvim-qt";
     CFBundleDisplayName = "Yonvim";
     CFBundleGetInfoString = "Yonvim Qt GUI";
     CFBundleIconFile = "neovim";
@@ -78,20 +78,20 @@ symlinkJoin
 
   postBuild =
     if stdenv.isDarwin then ''
-      app=$out/Applications/yvim-qt.app
+      app=$out/Applications/yonvim-qt.app
       mv $out/Applications/nvim-qt.app $app
 
       rm $app/Contents/MacOS/*
-      install -m755 ${yonvim-qt-bin}/bin/yvim-qt $app/Contents/MacOS
+      install -m755 ${yonvim-qt-bin}/bin/yonvim-qt $app/Contents/MacOS
 
       rm $app/Contents/Info.plist
       install -m644 ${infoPlist} $app/Contents
     '' else ''
       rm $out/bin/*
-      install -m755 ${yonvim-qt-bin}/bin/yvim-qt $out/bin
+      install -m755 ${yonvim-qt-bin}/bin/yonvim-qt $out/bin
 
       rm -r $out/share/applications
-      install -Dm644 ${desktopItem}/share/applications/yvim-qt.desktop \
-                     $out/share/applications/yvim-qt.desktop
+      install -Dm644 ${desktopItem}/share/applications/yonvim-qt.desktop \
+                     $out/share/applications/yonvim-qt.desktop
     '';
 }

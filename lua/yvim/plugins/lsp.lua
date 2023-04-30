@@ -36,7 +36,6 @@ return {
             require("yvim.plugin.mason").init()
         end,
         opts = function()
-            local path = require("yvim.util.path")
             return {
                 border = "rounded",
                 ui = {
@@ -47,7 +46,7 @@ return {
                         server_uninstalled = "●",
                     },
                 },
-                install_root_dir = path.join_paths(path.get_runtime_dir(), "mason"),
+                install_root_dir = vim.fn.stdpath("data") .. "/mason",
             }
         end,
         main = "mason",
