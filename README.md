@@ -60,12 +60,16 @@ end
 
 #### Copilot
 
-| Variable                            | Default value | Description                                                                                               |
-| :---------------------------------- | :------------ | :-------------------------------------------------------------------------------------------------------- |
-| `yvim.completion.copilot.enable`    | `true`        | Whether to enable GitHub Copilot suggestions. You need to run `:Copilot setup` first to use this feature. |
-| `yvim.completion.copilot.filetypes` | -             | The filetypes to enable Copilot for.                                                                      |
+| Variable                            | Default value | Description                                   |
+| :---------------------------------- | :------------ | :-------------------------------------------- |
+| `yvim.completion.copilot.enable`    | `true`        | Whether to enable GitHub Copilot suggestions. |
+| `yvim.completion.copilot.filetypes` | -             | The filetypes to enable Copilot for.          |
 
-For example, Copilot is disabled for some filetypes by default.
+You need to log in to GitHub to use Copilot by running `:Copilot setup`.
+
+---
+
+Copilot is disabled for some filetypes by default.
 
 This is because those filetypes often contain sensitive data, but Copilot sends
 the contents of the buffer to GitHub for suggestions.
