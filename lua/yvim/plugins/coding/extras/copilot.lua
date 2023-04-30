@@ -5,13 +5,7 @@ return {
         opts = {
             panel = { enabled = false },
             suggestion = { auto_trigger = true },
-            filetypes = {
-                help = true,
-                markdown = true,
-                sh = function()
-                    return not vim.endswith(vim.api.nvim_buf_get_name(0), ".env")
-                end,
-            },
+            filetypes = yvim.completion.copilot.filetypes,
         },
         main = "copilot",
         event = "InsertEnter *",

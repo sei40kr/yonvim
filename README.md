@@ -58,9 +58,30 @@ end
 
 ### Completion
 
-| Variable                         | Default value | Description                                                                                               |
-| :------------------------------- | :------------ | :-------------------------------------------------------------------------------------------------------- |
-| `yvim.completion.copilot.enable` | `true`        | Whether to enable GitHub Copilot suggestions. You need to run `:Copilot setup` first to use this feature. |
+#### Copilot
+
+| Variable                            | Default value | Description                                                                                               |
+| :---------------------------------- | :------------ | :-------------------------------------------------------------------------------------------------------- |
+| `yvim.completion.copilot.enable`    | `true`        | Whether to enable GitHub Copilot suggestions. You need to run `:Copilot setup` first to use this feature. |
+| `yvim.completion.copilot.filetypes` | -             | The filetypes to enable Copilot for.                                                                      |
+
+For example, Copilot is disabled for some filetypes by default.
+
+This is because those filetypes often contain sensitive data, but Copilot sends
+the contents of the buffer to GitHub for suggestions.
+
+You can manually enable Copilot for those filetypes by your own risk.
+
+```lua
+yvim.completion.copilot.filetypes = {
+  yaml = true,
+  -- You can also pass a function to determine whether to enable Copilot.
+  -- In this example, Copilot is enabled for sh filetype except for .env files.
+  sh = function()
+    return not vim.endswith(vim.api.nvim_buf_get_name(0), ".env")
+  end,
+}
+```
 
 ### Format
 

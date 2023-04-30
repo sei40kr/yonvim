@@ -14,8 +14,19 @@ return {
     },
 
     completion = {
-        -- Whether to enable GitHub Copilot suggestions
-        copilot = { enable = true },
+        copilot = {
+            -- Whether to enable GitHub Copilot suggestions
+            enable = true,
+            -- The filetypes to enable Copilot for
+            filetypes = {
+                help = true,
+                markdown = true,
+                yaml = true,
+                sh = function()
+                    return not vim.endswith(vim.api.nvim_buf_get_name(0), ".env")
+                end,
+            },
+        },
     },
 
     format = {
