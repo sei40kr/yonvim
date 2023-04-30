@@ -523,11 +523,11 @@ return {
                     -- TODO: gk
                     -- TODO: gj
                     map("gv", api.node.run.system, { desc = "Run system" })
-                    map("c", api.fs.create, { desc = "Create" })
+                    map("c", api.fs.create, { nowait = true, desc = "Create" })
                     -- TODO: Copy
                     map("r", api.fs.rename, { desc = "Rename/move" })
                     map("R", api.tree.change_root_to_node, { desc = "CD" })
-                    map("d", api.fs.remove, { desc = "Delete" })
+                    map("d", api.fs.remove, { nowait = true, desc = "Delete" })
                     map("ge", expand_or_down_or_open, { desc = "Expand/down/open" })
 
                     map("U", api.tree.change_root_to_parent, { desc = "Up" })
@@ -539,7 +539,7 @@ return {
                     map("l", expand_or_down_or_open, { desc = "Expand/down/open" })
                     map("J", api.node.navigate.sibling.next, { desc = "Next sibling" })
                     map("K", api.node.navigate.sibling.prev, { desc = "Previous sibling" })
-                    map("v", api.node.open.vertical, { desc = "Open: vertical split" })
+                    map("v", api.node.open.vertical, { nowait = true, desc = "Open: vertical split" })
                     map("s", api.node.open.horizontal, { desc = "Open: horizontal split" })
 
                     map("[d", api.node.navigate.git.prev, { desc = "Previous git" })
