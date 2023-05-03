@@ -6,7 +6,10 @@ return {
             { dir = "@treesitter_refactor@" },
             { dir = "@treesitter_textobjects@" },
             { dir = "@treesitter_ts_autotag@" },
-            { dir = "@treesitter_ts_context_commentstring@" },
+            {
+                dir = "@treesitter_ts_context_commentstring@",
+                lazy = true,
+            },
         },
         opts = {
             endwise = { enable = true },
@@ -38,7 +41,10 @@ return {
                 },
             },
             autotag = { enable = true },
-            context_commentstring = { enable = true },
+            context_commentstring = {
+                enable = true,
+                enable_autocmd = false,
+            },
             move = {
                 enable = true,
                 goto_next_start = {
