@@ -8,11 +8,9 @@ function M.config()
     local lsp = require("lspconfig")
     local windows = require("lspconfig.ui.windows")
 
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
     local base_opts = {
         on_attach = require("yvim.lsp").on_attach,
-        capabilities = capabilities,
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
         flags = { debouce_text_changes = 150 },
     }
 
