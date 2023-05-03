@@ -39,28 +39,12 @@ let
         yonvimPlugins.lazy-nvim_readOnly
         yonvimPlugins.structlog-nvim
       ] ++ yonvim-lua.tree-sitter-grammars;
-      customRC = ''
-        lua <<EOF
-          local stdpath = vim.fn.stdpath
-          vim.fn.stdpath = function(what)
-            if what == "cache" then
-              return os.getenv("XDG_CACHE_HOME") .. "/yonvim"
-            elseif what == "config" then
-              return os.getenv("XDG_CONFIG_HOME") .. "/yonvim"
-            elseif what == "data" then
-              return os.getenv("XDG_DATA_HOME") .. "/yonvim"
-            elseif what == "log" or what == "state" then
-              return os.getenv("XDG_STATE_HOME") .. "/yonvim"
-            else
-              return stdpath(name)
-            end
-          end
-        EOF
-      '';
     };
   };
   yonvim-bin = writeShellScriptBin "yonvim" ''
     export PATH="${lib.makeBinPath runtimeDeps}''${PATH:+:$PATH}"
+
+    export NVIM_APPNAME=yonvim
 
     export LAZY_LOCKFILE=${yonvim-lazy-files}/share/lazy/lazy-lock.json
     export LAZY_CACHE=${yonvim-lazy-files}/share/lazy/luac
