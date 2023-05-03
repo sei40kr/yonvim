@@ -5,40 +5,51 @@ function M.init()
 end
 
 function M.config()
-    local lsp = require("lspconfig")
-    local windows = require("lspconfig.ui.windows")
+    local lspconfig = require("lspconfig")
 
-    local base_opts = {
-        on_attach = require("yvim.lsp").on_attach,
-        capabilities = require("cmp_nvim_lsp").default_capabilities(),
-        flags = { debouce_text_changes = 150 },
-    }
+    require("lspconfig.ui.windows").default_options.border = yvim.ui.border
 
-    for server, extra_opts in pairs(yvim.lsp.servers) do
-        local opts = base_opts
-        if #extra_opts ~= 0 then
-            opts = vim.tbl_deep_extend("force", base_opts, extra_opts)
-        end
+    lspconfig.util.default_config = vim.tbl_extend(
+        "force",
+        lspconfig.util.default_config,
+        {
+            capabilities = require("cmp_nvim_lsp").default_capabilities(),
+            flags = { debouce_text_changes = 150 },
+        }
+    )
 
-        -- setting up rust-analyzer here causes conflicts with rust-tools.nvim
+    for name, sign in pairs({
+        Error = "",
+        Hint = "",
+        Info = "",
+        Warn = "",
+    }) do
+        name = "DiagnosticSign" .. name
+        vim.fn.sign_define(name, { text = sign, texthl = name, numhl = "" })
+    end
+
+    vim.diagnostic.config({
+        underline = true,
+        virtual_text = {
+            spacing = 4,
+            prefix = "●",
+        },
+        severity_sort = true,
+    })
+
+    for server, opts in pairs(yvim.lsp.servers) do
+        -- Setting up rust_analyzer here causes conflicts with rust-tools.nvim
         if server == "rust_analyzer" then
             goto continue
         end
-        -- setting up tsserver here causes conflicts with typescript.nvim
+        -- Setting up tsserver here causes conflicts with typescript.nvim
         if server == "tsserver" then
             goto continue
         end
 
-        lsp[server].setup(opts)
+        lspconfig[server].setup(opts)
 
         ::continue::
-    end
-
-    local orig_windows_default_opts = windows.default_opts
-    windows.default_opts = function(opts)
-        opts = orig_windows_default_opts(opts)
-        opts.border = yvim.ui.border
-        return opts
     end
 end
 

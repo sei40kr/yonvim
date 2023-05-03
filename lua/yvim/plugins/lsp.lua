@@ -78,20 +78,23 @@ return {
         opts = function()
             local null_ls = require("null-ls")
 
-            return {
-                sources = yvim.null_ls.sources(null_ls),
-                on_attach = function(client, bufnr)
-                    require("yvim.lsp").on_attach(client, bufnr)
-                end,
-            }
+            return { sources = yvim.null_ls.sources(null_ls) }
         end,
         main = "null-ls",
     },
 
     {
         dir = "@lsp_format@",
+        cond = yvim.format.format_on_save,
+        init = function()
+            local Util = require("yvim.util")
+
+            Util.on_attach(function(client)
+                require("lsp-format").on_attach(client)
+            end)
+        end,
         opts = {},
-        module = "lsp-format",
+        main = "lsp-format",
     },
 
     {

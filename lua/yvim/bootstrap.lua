@@ -17,10 +17,6 @@ function M.init()
 
     require("yvim.config.autocmds")
     require("yvim.config.keymaps")
-
-    require("yvim.lsp").setup()
-
-    require("yvim.lsp").config()
 end
 
 return M
