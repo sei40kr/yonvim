@@ -52,7 +52,29 @@ function M.config()
         },
         extensions = {
             file_browser = { dir_icon = " " },
-            project = { base_dirs = yvim.project.base_dirs },
+            project = {
+                base_dirs = yvim.project.base_dirs,
+                on_project_selected = function(prompt_bufnr)
+                    local project_actions = require("telescope._extensions.project.actions")
+                    local selected_path = project_actions.get_selected_path(prompt_bufnr)
+
+                    actions.close(prompt_bufnr)
+
+                    for _, tabnr in ipairs(vim.api.nvim_list_tabpages()) do
+                        -- If the current working directory of the tab is the
+                        -- same as the selected path, then switch to that tab.
+                        if vim.fn.getcwd(-1, tabnr) == selected_path then
+                            vim.api.nvim_set_current_tabpage(tabnr)
+                            return
+                        end
+                    end
+
+                    -- If we didn't find a tab with the same working directory,
+                    -- then open a new tab with the selected path.
+                    vim.cmd("tabe")
+                    vim.cmd.tcd(selected_path)
+                end,
+            },
         },
     })
 end
