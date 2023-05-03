@@ -95,6 +95,17 @@ return {
     },
 
     {
+        dir = "@illuminate@",
+        lazy = false,
+        opts = {
+            providers = { "lsp", "treesitter" }
+        },
+        config = function(_, opts)
+            require("illuminate").configure(opts)
+        end,
+    },
+
+    {
         dir = "@lualine@",
         dependencies = { "nvim-web-devicons" },
         config = function()

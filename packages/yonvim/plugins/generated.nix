@@ -1218,6 +1218,22 @@ _self: {
     meta.homepage = "https://github.com/jose-elias-alvarez/typescript.nvim";
   };
 
+  vim-illuminate = vimUtils.buildVimPlugin {
+    pname = "vim-illuminate";
+    version = "2023-03-19";
+
+    src = fetchFromGitHub {
+      owner = "RRethy";
+      repo = "vim-illuminate";
+      rev = "a2907275a6899c570d16e95b9db5fd921c167502";
+      hash = "sha256-8dL3cBjQ2iY4D4gTxKVVmOGhxcSSRuDBvmEwwFIbWsQ=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/RRethy/vim-illuminate";
+  };
+
   vim-visual-multi = vimUtils.buildVimPlugin {
     pname = "vim-visual-multi";
     version = "2020-09-01";

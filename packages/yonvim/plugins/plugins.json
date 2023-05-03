@@ -532,6 +532,13 @@
         "hash": "sha256-PHVY5NJbOGvY9p0F0QNSfMKmAWdqjw1RB0Vspq88qMI="
     },
     {
+        "version": "2023-03-19",
+        "owner": "RRethy",
+        "repo": "vim-illuminate",
+        "rev": "a2907275a6899c570d16e95b9db5fd921c167502",
+        "hash": "sha256-8dL3cBjQ2iY4D4gTxKVVmOGhxcSSRuDBvmEwwFIbWsQ="
+    },
+    {
         "version": "2020-09-01",
         "owner": "mg979",
         "repo": "vim-visual-multi",
