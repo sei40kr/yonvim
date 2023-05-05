@@ -107,18 +107,77 @@ return {
             }
         end,
         main = "iron.core",
-        keys = {
-            {
-                "<Leader>cs",
-                function()
-                    require("iron.core").visual_send()
-                end,
-                mode = "x",
-                desc = "Send to REPL",
-            },
-            { "<Leader>or", "<Cmd>IronRepl<CR>",     desc = "Open REPL" },
-            { "<Leader>oR", "<Cmd>IronReplHere<CR>", desc = "Open REPL (same window)" },
-        },
+        keys = function()
+            local function is_ts_highlighter_active(bufnr)
+                if bufnr == 0 then
+                    bufnr = vim.api.nvim_get_current_buf()
+                end
+
+                return require("vim.treesitter.highlighter").active[bufnr] ~= nil
+            end
+
+            local function send_to_repl()
+                if not is_ts_highlighter_active(0) then
+                    vim.notify(
+                        "Treesitter is not active for this buffer",
+                        vim.log.levels.WARN
+                    )
+                    return
+                end
+
+                -- Get the range of the current line (normal mode) or selection
+                -- (visual mode)
+                local mode = vim.api.nvim_get_mode().mode
+                local range
+                if mode == "n" then
+                    local row = vim.api.nvim_win_get_cursor(0)[1] - 1
+                    -- Exclude the indent of the current line from the range
+                    local start_col = vim.fn.indent(row + 1)
+                    local end_col = vim.fn.charcol("$") - 1
+
+                    range = { row, start_col, row, end_col }
+                elseif mode == "v" or mode == "V" then
+                    local _, start_lnum, start_col, _ = unpack(vim.fn.getcharpos("'<"))
+                    local _, end_lnum, end_col, _ = unpack(vim.fn.getcharpos("'>"))
+                    local start_row, end_row = start_lnum - 1, end_lnum - 1
+                    start_col = start_col - 1
+                    -- Exclude the indent of the first line from the range
+                    start_col = start_col + vim.fn.indent(start_row + 1)
+
+                    range = { start_row, start_col, end_row, end_col }
+                else
+                    vim.notify("Unsupported mode: " .. mode, vim.log.levels.ERROR)
+                    return
+                end
+
+                -- Get the node at the first non-blank character of the current
+                -- line (normal mode) or selection (visual mode)
+                local node = vim.treesitter.get_node({
+                    pos = { range[1], range[2] },
+                })
+                if node == nil then
+                    vim.notify("No node found", vim.log.levels.WARN)
+                    return
+                end
+
+                -- Get the smallest node that contains the current line
+                -- (normal mode) or selection (visual mode)
+                while not vim.treesitter.node_contains(node, range) and node:parent() ~= nil do
+                    node = node:parent()
+                end
+
+                -- Extract the text of the node
+                local data = vim.treesitter.get_node_text(node, 0, {})
+
+                require("iron.core").send(vim.bo.filetype, data)
+            end
+
+            return {
+                { "<Leader>cs", send_to_repl,            mode = { "n", "x" },             desc = "Send to REPL" },
+                { "<Leader>or", "<Cmd>IronRepl<CR>",     desc = "Open REPL" },
+                { "<Leader>oR", "<Cmd>IronReplHere<CR>", desc = "Open REPL (same window)" },
+            }
+        end,
     },
 
     {
