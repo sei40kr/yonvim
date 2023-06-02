@@ -18,6 +18,14 @@ vim.api.nvim_create_autocmd(
     }
 )
 
+-- Show LSP diagnostics on cursor hold
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+    group = augroup("show_lsp_diagnostics"),
+    callback = function()
+        vim.diagnostic.open_float(nil, { focus = false })
+    end,
+})
+
 vim.api.nvim_create_autocmd("FileChangedShellPost", {
     group = augroup("checktime"),
     callback = function(args)
