@@ -135,8 +135,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by treesitter_endwise                  ${yonvimPlugins.nvim-treesitter-endwise.outPath} \
       --subst-var-by treesitter_refactor                 ${yonvimPlugins.nvim-treesitter-refactor.outPath} \
       --subst-var-by treesitter_textobjects              ${yonvimPlugins.nvim-treesitter-textobjects.outPath} \
-      --subst-var-by treesitter_ts_autotag               ${yonvimPlugins.nvim-ts-autotag.outPath} \
-      --subst-var-by treesitter_ts_context_commentstring ${yonvimPlugins.nvim-ts-context-commentstring.outPath}
+      --subst-var-by treesitter_ts_autotag               ${yonvimPlugins.nvim-ts-autotag.outPath}
 
     substituteInPlace $out/lua/yvim/plugins/ui.lua \
       --subst-var-by bufferline       ${yonvimPlugins.bufferline-nvim.outPath} \

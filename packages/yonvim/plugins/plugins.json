@@ -203,11 +203,11 @@
         "hash": "sha256-hpUaQ7FY9xzO9Hzucxic1GgpCgwNwquR/98jbZKmqvY="
     },
     {
-        "version": "2023-02-24",
+        "version": "2023-05-25",
         "owner": "echasnovski",
         "repo": "mini.comment",
-        "rev": "5e8c7f75c48d958ef84ed75772b0263284c8621d",
-        "hash": "sha256-LePzlLNP28HsO5Hg7v5MUgrGlOr/0AktaSSg9PMqhq0="
+        "rev": "877acea5b2a32ff55f808fc0ebe9aa898648318c",
+        "hash": "sha256-oeXDsSlXHnVt2EcTlJZOdATs90TpWUX+yfKKhxALnZo="
     },
     {
         "version": "2023-03-13",
@@ -355,13 +355,6 @@
         "repo": "nvim-ts-autotag",
         "rev": "cac97f3b47bcb927db6d1d784c0c323056506ef3",
         "hash": "sha256-qi1PF75HeaAkHAvsinyXtfvggE12agUNnx7mrSsBiDo="
-    },
-    {
-        "version": "2023-01-16",
-        "owner": "JoosepAlviste",
-        "repo": "nvim-ts-context-commentstring",
-        "rev": "a0f89563ba36b3bacd62cf967b46beb4c2c29e52",
-        "hash": "sha256-HHsja6sz5+k4slmK697cRZZmkeCAt7Cjr0REYn15IX0="
     },
     {
         "version": "2023-01-02",

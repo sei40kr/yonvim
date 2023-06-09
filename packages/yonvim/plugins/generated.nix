@@ -468,13 +468,13 @@ _self: {
 
   mini-comment = vimUtils.buildVimPlugin {
     pname = "mini.comment";
-    version = "2023-02-24";
+    version = "2023-05-25";
 
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.comment";
-      rev = "5e8c7f75c48d958ef84ed75772b0263284c8621d";
-      hash = "sha256-LePzlLNP28HsO5Hg7v5MUgrGlOr/0AktaSSg9PMqhq0=";
+      rev = "877acea5b2a32ff55f808fc0ebe9aa898648318c";
+      hash = "sha256-oeXDsSlXHnVt2EcTlJZOdATs90TpWUX+yfKKhxALnZo=";
     };
 
     dontBuild = true;
@@ -816,22 +816,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/windwp/nvim-ts-autotag";
-  };
-
-  nvim-ts-context-commentstring = vimUtils.buildVimPlugin {
-    pname = "nvim-ts-context-commentstring";
-    version = "2023-01-16";
-
-    src = fetchFromGitHub {
-      owner = "JoosepAlviste";
-      repo = "nvim-ts-context-commentstring";
-      rev = "a0f89563ba36b3bacd62cf967b46beb4c2c29e52";
-      hash = "sha256-HHsja6sz5+k4slmK697cRZZmkeCAt7Cjr0REYn15IX0=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring";
   };
 
   nvim-ts-rainbow = vimUtils.buildVimPlugin {
