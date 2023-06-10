@@ -532,13 +532,13 @@ _self: {
 
   mini-trailspace = vimUtils.buildVimPlugin {
     pname = "mini.trailspace";
-    version = "2023-02-24";
+    version = "2023-04-30";
 
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.trailspace";
-      rev = "b6e60878b010eb9cca6a44a549f01936917711b2";
-      hash = "sha256-eKkUe4Ncp+Tu6RLeB97avHyN00AvQAPGOE3YrQOVfK0=";
+      rev = "c41ab1035d184ff20c1aebd76639320c055afebe";
+      hash = "sha256-NFMd1JAmBbUYPUYQpHqLCDp8lkSxt7OQ7vlZSVbw24g=";
     };
 
     dontBuild = true;
