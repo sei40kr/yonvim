@@ -84,11 +84,11 @@
         "hash": "sha256-Z5SPy3j2oHFxJ7bK8DP8Q/oRyLEMlnWyIfDaQcNVIS0="
     },
     {
-        "version": "2023-02-26",
+        "version": "2023-05-11",
         "owner": "zbirenbaum",
         "repo": "copilot-cmp",
-        "rev": "92535dfd9c430b49ca7d9a7da336c5db65826b65",
-        "hash": "sha256-Bu9Lx+1H1pG97ibwn8Q7jOHOKOrzg1nyucTTqbdlapI="
+        "rev": "c2cdb3c0f5078b0619055af192295830a7987790",
+        "hash": "sha256-+MzEGnhlrYRvAfskOwmw69OC1CsPXt7s3z+xPe9XPqs="
     },
     {
         "version": "2023-02-27",
