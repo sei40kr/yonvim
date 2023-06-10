@@ -324,13 +324,13 @@ _self: {
 
   iron-nvim = vimUtils.buildVimPlugin {
     pname = "iron.nvim";
-    version = "2022-12-29";
+    version = "2023-06-04";
 
     src = fetchFromGitHub {
       owner = "hkupty";
       repo = "iron.nvim";
-      rev = "f4131638454aeb96cbd92652dd8c396e48eb4118";
-      hash = "sha256-6RE6+wfwPYuKBb+/bFbmj2A9L98g3WBGUkfrdkHDoT8=";
+      rev = "9017061849e543d8e94b79d2a94b95e856ab6a10";
+      hash = "sha256-XJXi3i7wpBWDd5sny90Gw6ucOlnn1m8sYSVcUh/3Ufk=";
     };
 
     dontBuild = true;
