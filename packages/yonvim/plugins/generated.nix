@@ -868,13 +868,13 @@ _self: {
 
   octo-nvim = vimUtils.buildVimPlugin {
     pname = "octo.nvim";
-    version = "2023-01-27";
+    version = "2023-06-02";
 
     src = fetchFromGitHub {
       owner = "pwntester";
       repo = "octo.nvim";
-      rev = "7900dc0cd37e7bb5d4175a37c9c4c3dfb94a1f7b";
-      hash = "sha256-9ox+KS1YZ5hY172wy9g+afSlxZnXRBj+SbCw+ZToJ4U=";
+      rev = "2d2769ff80a82a0da24dcf636ae146f3ed5d7ae5";
+      hash = "sha256-aC/78YTub4FR0CTNfADO9ZPjOsSBmjpcmWTc1PJvQrY=";
     };
 
     dontBuild = true;
