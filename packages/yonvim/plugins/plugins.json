@@ -406,11 +406,11 @@
         "hash": "sha256-5qtGxspjtCnkuoaE2gDnti58U4r34O1bBvjvUdTgKmU="
     },
     {
-        "version": "2022-10-29",
+        "version": "2023-04-04",
         "owner": "ahmedkhalf",
         "repo": "project.nvim",
-        "rev": "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
-        "hash": "sha256-fW4ztvYpeXTC0DbkZS4usG/KENiMJG/sWVTD4e8k42g="
+        "rev": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb",
+        "hash": "sha256-avV3wMiDbraxW4mqlEsKy0oeewaRj9Q33K8NzWoaptU="
     },
     {
         "version": "2023-02-20",
