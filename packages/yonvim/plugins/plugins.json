@@ -210,11 +210,11 @@
         "hash": "sha256-oeXDsSlXHnVt2EcTlJZOdATs90TpWUX+yfKKhxALnZo="
     },
     {
-        "version": "2023-03-13",
+        "version": "2023-05-02",
         "owner": "echasnovski",
         "repo": "mini.indentscope",
-        "rev": "43f6761c9a3e397b7c12b3c72f678bcf61efcfcf",
-        "hash": "sha256-0+bNJUpgZSVk4sHK2WlZlqZ5GMNVAbx1g85NklVuvUg="
+        "rev": "f60e9b51a6214c73a170ffc5445ce91560981031",
+        "hash": "sha256-lqy5GMi0J90X7TDrp4ao5Mp6FmBascfJhLjLurq1TMA="
     },
     {
         "version": "2023-02-24",
