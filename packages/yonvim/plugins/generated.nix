@@ -676,13 +676,13 @@ _self: {
 
   nvim-colorizer-lua = vimUtils.buildVimPlugin {
     pname = "nvim-colorizer.lua";
-    version = "2022-10-06";
+    version = "2023-02-27";
 
     src = fetchFromGitHub {
       owner = "NvChad";
       repo = "nvim-colorizer.lua";
-      rev = "760e27df4dd966607e8fb7fd8b6b93e3c7d2e193";
-      hash = "sha256-toNEfgZn2RNwyjI5FOyRU9Bdu6jFDZbSb1SjiY9sHH8=";
+      rev = "dde3084106a70b9a79d48f426f6d6fec6fd203f7";
+      hash = "sha256-hShQabr+UafsP+yicWkHycWLTbPhOpRpoa9oTMMVZ9o=";
     };
 
     dontBuild = true;
