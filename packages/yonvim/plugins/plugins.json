@@ -315,11 +315,11 @@
         "hash": "sha256-8B1T25edif1c1gUGWfysa/f4k9EoWP9rFPE1G8y/WXM="
     },
     {
-        "version": "2023-01-18",
+        "version": "2023-06-05",
         "owner": "rcarriga",
         "repo": "nvim-notify",
-        "rev": "bdd647f61a05c9b8a57c83b78341a0690e9c29d7",
-        "hash": "sha256-zPSlenKjuZ8Xygu/KuU9+bSf5uUjSDK9HOTWnpUk1jo="
+        "rev": "ea9c8ce7a37f2238f934e087c255758659948e0f",
+        "hash": "sha256-Rr2tzuEr06M9ZbvQbC07qcxkyjFJFYdABwRpYelKBFI="
     },
     {
         "version": "2023-04-22",
