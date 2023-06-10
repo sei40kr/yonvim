@@ -126,11 +126,11 @@
         "hash": "sha256-WfdJAwOZR96fEt4n2Vnxzp1SaQOo3rRbRBz8JLMl3SU="
     },
     {
-        "version": "2023-04-21",
+        "version": "2023-06-07",
         "owner": "lewis6991",
         "repo": "gitsigns.nvim",
-        "rev": "7dfe4be94b4f84a9931098f0f0f618d055e50bd5",
-        "hash": "sha256-61Olwe9BuOPQncKgzsCMgIBi2rmIhSYl16yJZbaP8co="
+        "rev": "4455bb5364d29ff86639dfd5533d4fe4b48192d4",
+        "hash": "sha256-DmbtKxU/tyFzIUNzoKvtsqlucdINYCSePzLiV7LLGn4="
     },
     {
         "version": "2022-10-30",
