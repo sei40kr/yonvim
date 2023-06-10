@@ -119,11 +119,11 @@
         "hash": "sha256-Tz/yG7HjwRDF4LXTng2laP9k3K+O/a0ttjEaSNcRnZs="
     },
     {
-        "version": "2022-07-06",
+        "version": "2023-06-09",
         "owner": "rafamadriz",
         "repo": "friendly-snippets",
-        "rev": "24afb4c178d8ea28bfa73f37814ada43be478b1d",
-        "hash": "sha256-WfdJAwOZR96fEt4n2Vnxzp1SaQOo3rRbRBz8JLMl3SU="
+        "rev": "b71d1ddc30a10ce0474156f7ee93bc9006d0cd74",
+        "hash": "sha256-YVzyD9/UI+xm/NQDL0NTPv3ZaIGkfXBJWYowk9Ipsks="
     },
     {
         "version": "2023-06-07",
