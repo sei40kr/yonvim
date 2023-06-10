@@ -500,13 +500,13 @@ _self: {
 
   mini-jump = vimUtils.buildVimPlugin {
     pname = "mini.jump";
-    version = "2023-02-24";
+    version = "2023-05-30";
 
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.jump";
-      rev = "534552990149fff923e672add3e89dc6aee813df";
-      hash = "sha256-lpkXTeCyG+ZpK3AJFkDR9cZbcDrAYofyWllaJ2X/M1U=";
+      rev = "5d48b26f98ce77d4575c1eb181727fa37ed3fbc6";
+      hash = "sha256-AsemBxQzxq+GCjkaBbw063X4yFuK6KepN0yZg85t1dM=";
     };
 
     dontBuild = true;
