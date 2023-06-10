@@ -1076,13 +1076,13 @@ _self: {
 
   telescope-symbols-nvim = vimUtils.buildVimPlugin {
     pname = "telescope-symbols.nvim";
-    version = "2022-04-17";
+    version = "2023-02-19";
 
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope-symbols.nvim";
-      rev = "f7d7c84873c95c7bd5682783dd66f84170231704";
-      hash = "sha256-Z7Bn3iF9Wom8cSdKNVDgQTirQ+W6OWuG30BVq0VLgPs=";
+      rev = "f2060117d965df4a626f068a4ebbd8ee051aa076";
+      hash = "sha256-cNBqJe6kjwi3d+SNiJhy9DQYqClcxvy1+TMLip6QN70=";
     };
 
     dontBuild = true;
