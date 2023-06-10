@@ -372,13 +372,13 @@ _self: {
 
   lsp-inlayhints-nvim = vimUtils.buildVimPlugin {
     pname = "lsp-inlayhints.nvim";
-    version = "2023-01-21";
+    version = "2023-06-08";
 
     src = fetchFromGitHub {
       owner = "lvimuser";
       repo = "lsp-inlayhints.nvim";
-      rev = "84ca3abe8aaecbb5b30ad89e4701d4a9c821b72c";
-      hash = "sha256-jjr9Tl2Ucg+zGJEnPMzExJBpsZt8nJ5qerbJpzTXoDs=";
+      rev = "d981f65c9ae0b6062176f0accb9c151daeda6f16";
+      hash = "sha256-06CiJ+xeMO4+OJkckcslqwloJyt2gwg514JuxV6KOfQ=";
     };
 
     dontBuild = true;
