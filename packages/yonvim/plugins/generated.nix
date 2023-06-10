@@ -420,13 +420,13 @@ _self: {
 
   mason-lspconfig-nvim = vimUtils.buildVimPlugin {
     pname = "mason-lspconfig.nvim";
-    version = "2023-03-14";
+    version = "2023-06-05";
 
     src = fetchFromGitHub {
       owner = "williamboman";
       repo = "mason-lspconfig.nvim";
-      rev = "3924f2d264097b2caf13e713485dbc3e9d616574";
-      hash = "sha256-LqAfY9RrBUogwjPO/j3JM+NRErLyJEf51ivRHi1KUV0=";
+      rev = "5230617372e656d4a2e1e236e03bf7e7b4b97273";
+      hash = "sha256-lIdqihLKyfJV0dVo8JnIRweyBOUaHj8cEdBPvFhYzfE=";
     };
 
     dontBuild = true;
