@@ -133,11 +133,11 @@
         "hash": "sha256-DmbtKxU/tyFzIUNzoKvtsqlucdINYCSePzLiV7LLGn4="
     },
     {
-        "version": "2022-10-30",
+        "version": "2023-05-17",
         "owner": "phaazon",
         "repo": "hop.nvim",
-        "rev": "90db1b2c61b820e230599a04fedcd2679e64bd07",
-        "hash": "sha256-UZZlo5n1x8UfM9OP7RHfT3sFRfMpLkBLbEdcSO+SU6E="
+        "rev": "03f0434869f1f38868618198b5f4f2ab6d39aef2",
+        "hash": "sha256-xdjFbdp0+S3pVdwcOFmad8PMUU033WeDzswOSdxSQjg="
     },
     {
         "version": "2022-12-29",
