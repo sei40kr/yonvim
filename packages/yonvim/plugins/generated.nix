@@ -452,13 +452,13 @@ _self: {
 
   mini-bufremove = vimUtils.buildVimPlugin {
     pname = "mini.bufremove";
-    version = "2023-03-10";
+    version = "2023-03-30";
 
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.bufremove";
-      rev = "8d17f868e66ea3b143ab76f09f13f473d61450e2";
-      hash = "sha256-hpUaQ7FY9xzO9Hzucxic1GgpCgwNwquR/98jbZKmqvY=";
+      rev = "14805473144fffbd019d07e51bed2d176e065ee9";
+      hash = "sha256-BCfKulQFxKL1Q0doFddnf/VGUu3ROq5X0f1dudA0aVk=";
     };
 
     dontBuild = true;
