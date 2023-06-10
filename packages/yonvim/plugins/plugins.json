@@ -504,11 +504,11 @@
         "hash": "sha256-Qjhod1cmzAYuMl6Z0JlYtOq8CLdmQJ9esCwmynuzkYs="
     },
     {
-        "version": "2023-03-14",
+        "version": "2023-05-30",
         "owner": "folke",
         "repo": "tokyonight.nvim",
-        "rev": "467d889ba82a74e26821c812aa8e70d7dff04c6c",
-        "hash": "sha256-4H/g/QMvMm0Amje+Gkvltd1KVMZ1BmnvWwrDZaNnJTM="
+        "rev": "161114bd39b990995e08dbf941f6821afbdcd666",
+        "hash": "sha256-IMrqcx/f5cauDBxSLP1bjsaFXLBv24XXCPxpyj+Jb/E="
     },
     {
         "version": "2023-02-28",
