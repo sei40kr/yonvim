@@ -1188,13 +1188,13 @@ _self: {
 
   typescript-nvim = vimUtils.buildVimPlugin {
     pname = "typescript.nvim";
-    version = "2023-01-03";
+    version = "2023-06-06";
 
     src = fetchFromGitHub {
       owner = "jose-elias-alvarez";
       repo = "typescript.nvim";
-      rev = "f66d4472606cb24615dfb7dbc6557e779d177624";
-      hash = "sha256-PHVY5NJbOGvY9p0F0QNSfMKmAWdqjw1RB0Vspq88qMI=";
+      rev = "5b3680e5c386e8778c081173ea0c978c14a40ccb";
+      hash = "sha256-v1HJTsm3T+B9RDFFqEdp8mWamR+7CRsX7YJ49Nl6vUc=";
     };
 
     dontBuild = true;
