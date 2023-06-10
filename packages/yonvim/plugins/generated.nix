@@ -644,13 +644,13 @@ _self: {
 
   nvim-autopairs = vimUtils.buildVimPlugin {
     pname = "nvim-autopairs";
-    version = "2023-04-09";
+    version = "2023-05-25";
 
     src = fetchFromGitHub {
       owner = "windwp";
       repo = "nvim-autopairs";
-      rev = "7470af886ffb3df32800e5ef9c072a6cd825770d";
-      hash = "sha256-Z9m+6qhxdUNe5zQga2q+GXjWmJQBgCL8PN2LPCP9t4I=";
+      rev = "59df87a84c80a357ca8d8fe86e451b93ac476ccc";
+      hash = "sha256-maSCppPEOFbkEfTYFKLq3M6Dg+fRjnqbCtsyWO9SILA=";
     };
 
     dontBuild = true;
