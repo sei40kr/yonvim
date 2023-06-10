@@ -462,11 +462,11 @@
         "hash": "sha256-rRTvZ97cQlzOn68JkSVCqhMBU77SQMHeCDDSgTEkScQ="
     },
     {
-        "version": "2023-03-23",
+        "version": "2023-04-27",
         "owner": "nvim-telescope",
         "repo": "telescope-project.nvim",
-        "rev": "fa081e35ba7397e5147a51ece693aa3afda167fc",
-        "hash": "sha256-E8ZpI/B9B8nC7laq7lK1sGcd4I89YFIV6nBowfPE+C4="
+        "rev": "7c64b181dd4e72deddcf6f319e3bf1e95b2a2f30",
+        "hash": "sha256-H6lrPjpOUVleKHB0ziI+6dthg9ymitHhEWtcgYJTrKo="
     },
     {
         "version": "2022-04-17",
