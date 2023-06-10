@@ -388,13 +388,13 @@ _self: {
 
   lspkind-nvim = vimUtils.buildVimPlugin {
     pname = "lspkind.nvim";
-    version = "2022-09-22";
+    version = "2023-05-05";
 
     src = fetchFromGitHub {
       owner = "onsails";
       repo = "lspkind.nvim";
-      rev = "c68b3a003483cf382428a43035079f78474cd11e";
-      hash = "sha256-WwUQ+O2rIfD4yl0GFx70GsZc9nnhS7b2KWfNdaXCLmM=";
+      rev = "57610d5ab560c073c465d6faf0c19f200cb67e6e";
+      hash = "sha256-S+qZm51hw/cRujIfHV/1x1fYyCKI4XQ0utSL8uy4l6I=";
     };
 
     dontBuild = true;

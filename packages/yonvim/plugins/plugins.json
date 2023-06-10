@@ -168,11 +168,11 @@
         "hash": "sha256-06CiJ+xeMO4+OJkckcslqwloJyt2gwg514JuxV6KOfQ="
     },
     {
-        "version": "2022-09-22",
+        "version": "2023-05-05",
         "owner": "onsails",
         "repo": "lspkind.nvim",
-        "rev": "c68b3a003483cf382428a43035079f78474cd11e",
-        "hash": "sha256-WwUQ+O2rIfD4yl0GFx70GsZc9nnhS7b2KWfNdaXCLmM="
+        "rev": "57610d5ab560c073c465d6faf0c19f200cb67e6e",
+        "hash": "sha256-S+qZm51hw/cRujIfHV/1x1fYyCKI4XQ0utSL8uy4l6I="
     },
     {
         "version": "2023-04-09",
