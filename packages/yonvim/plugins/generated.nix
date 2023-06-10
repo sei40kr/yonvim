@@ -1012,13 +1012,13 @@ _self: {
 
   telescope-file-browser-nvim = vimUtils.buildVimPlugin {
     pname = "telescope-file-browser.nvim";
-    version = "2022-12-31";
+    version = "2023-06-06";
 
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope-file-browser.nvim";
-      rev = "304508fb7bea78e3c0eeddd88c4837501e403ae8";
-      hash = "sha256-FVyvqY2dQlzz0mGPkrPrBKRzj3Dv6Hw8RuQYcLkL3kM=";
+      rev = "fc70589a93d7bb42f4671ad75c8628a29995bcbe";
+      hash = "sha256-aG6sRv/lY/0d+E2ouUQssekkIpVIXlZmxnXlkTXdTQE=";
     };
 
     dontBuild = true;
