@@ -313,7 +313,8 @@ return {
 
     {
         dir = "@scope@",
-        config = true,
+        opts = {},
+        main = "scope",
     },
 
     {
