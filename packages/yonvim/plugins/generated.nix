@@ -116,13 +116,13 @@ _self: {
 
   cmp-omni = vimUtils.buildVimPlugin {
     pname = "cmp-omni";
-    version = "2022-11-17";
+    version = "2023-05-25";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-omni";
-      rev = "8457e4144ea2fc5efbadb7d22250d5ee8f8862ba";
-      hash = "sha256-WXW9DPogGNqdhF3tAlztdl+1ct6spWQbNztbIxZyGAc=";
+      rev = "9436e6cdd7c5dfa24a99a60d9280b24dbdea3649";
+      hash = "sha256-rXOPRu6jWbC0HSU71qtA8VPSKdS7TllWKwXf5Iv+10s=";
     };
 
     dontBuild = true;
