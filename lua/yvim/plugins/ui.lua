@@ -1,5 +1,33 @@
 return {
     {
+        dir = "@alpha@",
+        dependencies = { "nvim-web-devicons" },
+        event = "VimEnter",
+        opts = function()
+            local dashboard = require 'alpha.themes.dashboard'
+
+            dashboard.section.header.val = {
+                [[                               __                ]],
+                [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+                [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+                [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+                [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+                [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+            }
+            dashboard.section.buttons.val = {
+                -- TODO: Consider a situation where the user has a different
+                --  leader key
+                dashboard.button("SPC f r", "  Recently opened files"),
+                dashboard.button("SPC p p", "  Open project"),
+                dashboard.button("SPC f p", "  Open private configuration"),
+            }
+
+            return dashboard.config
+        end,
+        main = "alpha",
+    },
+
+    {
         dir = "@bufferline@",
         dependencies = { "nvim-web-devicons" },
         opts = {
@@ -25,6 +53,10 @@ return {
     {
         dir = "@colorizer@",
         opts = {
+            filetypes = {
+                "*",
+                "!alpha",
+            },
             user_default_options = {
                 mode = "virtualtext",
                 css = true,
@@ -133,7 +165,7 @@ return {
             local augroup = vim.api.nvim_create_augroup("yvim_indentscope", {})
             vim.api.nvim_create_autocmd("FileType", {
                 group = augroup,
-                pattern = "NvimTree",
+                pattern = { "alpha", "NvimTree" },
                 callback = function()
                     vim.b.miniindentscope_disable = true
                 end,

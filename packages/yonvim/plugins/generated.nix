@@ -50,6 +50,22 @@ _self: {
     meta.homepage = "https://github.com/stevearc/aerial.nvim";
   };
 
+  alpha-nvim = vimUtils.buildVimPlugin {
+    pname = "alpha-nvim";
+    version = "2023-06-09";
+
+    src = fetchFromGitHub {
+      owner = "goolord";
+      repo = "alpha-nvim";
+      rev = "9e33db324b8bb7a147bce9ea5496686ee859461d";
+      hash = "sha256-DgKL4BgEVGSESxdBf8CbWMeAkcN/7vi1DuqIZVvmtlA=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/goolord/alpha-nvim";
+  };
+
   bufferline-nvim = vimUtils.buildVimPlugin {
     pname = "bufferline.nvim";
     version = "2023-06-02";

@@ -61,6 +61,7 @@ return {
             rainbow = {
                 enable = true,
                 disable = {
+                    "alpha",
                     "help",
                     "iron",
                     "NvimTree",

@@ -138,6 +138,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by treesitter_ts_autotag               ${yonvimPlugins.nvim-ts-autotag.outPath}
 
     substituteInPlace $out/lua/yvim/plugins/ui.lua \
+      --subst-var-by alpha            ${yonvimPlugins.alpha-nvim.outPath} \
       --subst-var-by bufferline       ${yonvimPlugins.bufferline-nvim.outPath} \
       --subst-var-by colorizer        ${yonvimPlugins.nvim-colorizer-lua.outPath} \
       --subst-var-by dressing         ${yonvimPlugins.dressing-nvim.outPath} \
