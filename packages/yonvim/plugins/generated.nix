@@ -290,6 +290,22 @@ _self: {
     meta.homepage = "https://github.com/stevearc/dressing.nvim";
   };
 
+  flash-nvim = vimUtils.buildVimPlugin {
+    pname = "flash.nvim";
+    version = "2023-06-23";
+
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "flash.nvim";
+      rev = "b2e4730317115153da8ff58696ce99709fdb1212";
+      hash = "sha256-sGKM2v1QPqvf3vaFZW+v+Gk3rsql+ykYQ0a4rvFxEYQ=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/folke/flash.nvim";
+  };
+
   friendly-snippets = vimUtils.buildVimPlugin {
     pname = "friendly-snippets";
     version = "2023-06-09";
@@ -320,22 +336,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/lewis6991/gitsigns.nvim";
-  };
-
-  hop-nvim = vimUtils.buildVimPlugin {
-    pname = "hop.nvim";
-    version = "2023-05-17";
-
-    src = fetchFromGitHub {
-      owner = "phaazon";
-      repo = "hop.nvim";
-      rev = "03f0434869f1f38868618198b5f4f2ab6d39aef2";
-      hash = "sha256-xdjFbdp0+S3pVdwcOFmad8PMUU033WeDzswOSdxSQjg=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/phaazon/hop.nvim";
   };
 
   iron-nvim = vimUtils.buildVimPlugin {
@@ -512,22 +512,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/echasnovski/mini.indentscope";
-  };
-
-  mini-jump = vimUtils.buildVimPlugin {
-    pname = "mini.jump";
-    version = "2023-05-30";
-
-    src = fetchFromGitHub {
-      owner = "echasnovski";
-      repo = "mini.jump";
-      rev = "5d48b26f98ce77d4575c1eb181727fa37ed3fbc6";
-      hash = "sha256-AsemBxQzxq+GCjkaBbw063X4yFuK6KepN0yZg85t1dM=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/echasnovski/mini.jump";
   };
 
   mini-surround = vimUtils.buildVimPlugin {

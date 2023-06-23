@@ -58,17 +58,23 @@ return {
     },
 
     {
-        dir = "@hop@",
-        opts = {},
-        main = "hop",
+        dir = "@flash@",
+        event = "VeryLazy",
+        opts = {
+            incremental = true,
+            modes = {
+                search = { enabled = false },
+            },
+        },
+        main = "flash",
         keys = {
             {
                 "<Leader>j",
                 function()
-                    require("hop").hint_char2()
+                    require("flash").jump()
                 end,
-                desc = "Jump to"
-            },
+                desc = "Jump to",
+            }
         },
     },
 
@@ -185,12 +191,6 @@ return {
         module = "mini.bufremove",
         opts = {},
         main = "mini.bufremove",
-    },
-
-    {
-        dir = "@mini_jump@",
-        opts = {},
-        main = "mini.jump",
     },
 
     {

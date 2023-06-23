@@ -126,6 +126,13 @@
         "hash": "sha256-Tz/yG7HjwRDF4LXTng2laP9k3K+O/a0ttjEaSNcRnZs="
     },
     {
+        "version": "2023-06-23",
+        "owner": "folke",
+        "repo": "flash.nvim",
+        "rev": "b2e4730317115153da8ff58696ce99709fdb1212",
+        "hash": "sha256-sGKM2v1QPqvf3vaFZW+v+Gk3rsql+ykYQ0a4rvFxEYQ="
+    },
+    {
         "version": "2023-06-09",
         "owner": "rafamadriz",
         "repo": "friendly-snippets",
@@ -138,13 +145,6 @@
         "repo": "gitsigns.nvim",
         "rev": "4455bb5364d29ff86639dfd5533d4fe4b48192d4",
         "hash": "sha256-DmbtKxU/tyFzIUNzoKvtsqlucdINYCSePzLiV7LLGn4="
-    },
-    {
-        "version": "2023-05-17",
-        "owner": "phaazon",
-        "repo": "hop.nvim",
-        "rev": "03f0434869f1f38868618198b5f4f2ab6d39aef2",
-        "hash": "sha256-xdjFbdp0+S3pVdwcOFmad8PMUU033WeDzswOSdxSQjg="
     },
     {
         "version": "2023-06-04",
@@ -222,13 +222,6 @@
         "repo": "mini.indentscope",
         "rev": "f60e9b51a6214c73a170ffc5445ce91560981031",
         "hash": "sha256-lqy5GMi0J90X7TDrp4ao5Mp6FmBascfJhLjLurq1TMA="
-    },
-    {
-        "version": "2023-05-30",
-        "owner": "echasnovski",
-        "repo": "mini.jump",
-        "rev": "5d48b26f98ce77d4575c1eb181727fa37ed3fbc6",
-        "hash": "sha256-AsemBxQzxq+GCjkaBbw063X4yFuK6KepN0yZg85t1dM="
     },
     {
         "version": "2023-06-09",
