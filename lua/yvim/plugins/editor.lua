@@ -58,6 +58,48 @@ return {
     },
 
     {
+        dir = "@edgy@",
+        event = "VeryLazy",
+        opts = {
+            left = {
+                "NvimTree",
+            },
+            bottom = {
+                {
+                    ft = "qf",
+                    size = { height = 0.22 },
+                },
+                {
+                    ft = "help",
+                    size = { height = 0.42 },
+                    filter = function(buf, _)
+                        return vim.bo[buf].buftype == "help"
+                    end,
+                },
+                {
+                    ft = "man",
+                    size = { height = 0.45 },
+                },
+                "iron",
+                {
+                    ft = "toggleterm",
+                    -- Exclude floating windows
+                    filter = function(_, win)
+                        return vim.api.nvim_win_get_config(win).relative == ""
+                    end,
+                },
+                "Trouble",
+            },
+            right = {
+                "aerial",
+            },
+            animate = { enabled = false },
+            exit_when_last = true,
+        },
+        main = "edgy",
+    },
+
+    {
         dir = "@flash@",
         event = "VeryLazy",
         opts = {
@@ -318,13 +360,6 @@ return {
     },
 
     {
-        dir = "@stickybuf@",
-        config = function()
-            require("yvim.plugin.stickybuf").config()
-        end,
-    },
-
-    {
         dir = "@telescope@",
         name = "telescope.nvim",
         dependencies = {
@@ -508,6 +543,13 @@ return {
     {
         dir = "@toggleterm@",
         opts = {
+            size = function(term)
+                if term.direction == "horizontal" then
+                    return 15
+                elseif term.direction == "vertical" then
+                    return vim.o.columns * 0.35
+                end
+            end,
             open_mapping = "<Nop>",
             shade_terminals = false,
             insert_mappings = false,

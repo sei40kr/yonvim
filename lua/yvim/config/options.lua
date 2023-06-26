@@ -14,7 +14,6 @@ function M.load()
     vim.opt.smartcase = true
     vim.opt.wrapscan = true
 
-    vim.opt.laststatus = 2
     vim.opt.ruler = true
     -- vim.opt.wildmenu = true
 
@@ -58,6 +57,10 @@ function M.load()
     if vim.call("has", "termguicolors") == 1 then
         vim.opt.termguicolors = true
     end
+
+    -- edgy.nvim recommended options
+    vim.opt.laststatus = 3
+    vim.opt.splitkeep = "screen"
 end
 
 return M

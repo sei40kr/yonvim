@@ -89,6 +89,7 @@ vimUtils.buildVimPluginFrom2Nix {
     substituteInPlace $out/lua/yvim/plugins/editor.lua \
       --subst-var-by aerial                 ${yonvimPlugins.aerial-nvim.outPath} \
       --subst-var-by diffview               ${yonvimPlugins.diffview-nvim.outPath} \
+      --subst-var-by edgy                   ${yonvimPlugins.edgy-nvim.outPath} \
       --subst-var-by flash                  ${yonvimPlugins.flash-nvim.outPath} \
       --subst-var-by iron                   ${yonvimPlugins.iron-nvim.outPath} \
       --subst-var-by mini_bufremove         ${yonvimPlugins.mini-bufremove.outPath} \

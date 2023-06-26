@@ -126,6 +126,13 @@
         "hash": "sha256-Tz/yG7HjwRDF4LXTng2laP9k3K+O/a0ttjEaSNcRnZs="
     },
     {
+        "version": "2023-06-21",
+        "owner": "folke",
+        "repo": "edgy.nvim",
+        "rev": "c2a056a72e59d239218dd5d50848851fba33a378",
+        "hash": "sha256-l117yYWvH2ZNk7AiCfwd1HjNSvBqU0idO+bzJZN5K5I="
+    },
+    {
         "version": "2023-06-23",
         "owner": "folke",
         "repo": "flash.nvim",

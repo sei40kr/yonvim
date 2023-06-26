@@ -33,18 +33,6 @@ vim.api.nvim_create_autocmd("FileChangedShellPost", {
     end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-    group = augroup("close_with_q"),
-    pattern = { "help", "iron", "lspinfo", "notify", "toggleterm" },
-    callback = function(event)
-        vim.bo[event.buf].buflisted = false
-        vim.keymap.set("n", "q", "<Cmd>close<CR>", {
-            buffer = event.buf,
-            silent = true
-        })
-    end,
-})
-
 local resize_augroup = augroup("resize")
 
 vim.api.nvim_create_autocmd("FileType", {

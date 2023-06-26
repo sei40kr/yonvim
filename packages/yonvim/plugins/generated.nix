@@ -290,6 +290,22 @@ _self: {
     meta.homepage = "https://github.com/stevearc/dressing.nvim";
   };
 
+  edgy-nvim = vimUtils.buildVimPlugin {
+    pname = "edgy.nvim";
+    version = "2023-06-21";
+
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "edgy.nvim";
+      rev = "c2a056a72e59d239218dd5d50848851fba33a378";
+      hash = "sha256-l117yYWvH2ZNk7AiCfwd1HjNSvBqU0idO+bzJZN5K5I=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/folke/edgy.nvim";
+  };
+
   flash-nvim = vimUtils.buildVimPlugin {
     pname = "flash.nvim";
     version = "2023-06-23";
