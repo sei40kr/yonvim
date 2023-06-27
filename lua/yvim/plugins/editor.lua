@@ -2,9 +2,6 @@ return {
     {
         dir = "@aerial@",
         dependencies = { "nvim-web-devicons" },
-        init = function()
-            require("yvim.plugin.aerial").init()
-        end,
         opts = {
             {
                 layout = {
@@ -27,9 +24,6 @@ return {
     {
         dir = "@diffview@",
         dependencies = { "nvim-web-devicons", "plenary.nvim" },
-        init = function()
-            require("yvim.plugin.diffview").init()
-        end,
         opts = function()
             local actions = require("diffview.actions")
             return {
@@ -729,9 +723,6 @@ return {
         dir = "@trouble@",
         name = "trouble.nvim",
         dependencies = { "nvim-web-devicons" },
-        init = function()
-            require("yvim.plugin.trouble").init()
-        end,
         opts = {
             indent_lines = false,
             auto_jump = {

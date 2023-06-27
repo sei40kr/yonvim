@@ -32,9 +32,6 @@ return {
     {
         dir = "@mason@",
         name = "mason.nvim",
-        init = function()
-            require("yvim.plugin.mason").init()
-        end,
         opts = function()
             return {
                 border = "rounded",
@@ -105,9 +102,6 @@ return {
             "neoconf.nvim",
             "neodev.nvim",
         },
-        init = function()
-            require("yvim.plugin.lspconfig").init()
-        end,
         config = function()
             require("yvim.plugin.lspconfig").config()
         end,

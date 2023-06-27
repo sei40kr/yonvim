@@ -1,9 +1,5 @@
 local M = {}
 
-function M.init()
-    require("yvim.util.special_buffer").register_filetype("lspinfo")
-end
-
 function M.config()
     local lspconfig = require("lspconfig")
 
