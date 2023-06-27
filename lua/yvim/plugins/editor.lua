@@ -82,6 +82,20 @@ return {
                 },
                 "iron",
                 {
+                    ft = "NeogitBranchSelectView",
+                    size = { height = 0.22 },
+                },
+                "NeogitCommandHistory",
+                {
+                    ft = "NeogitCommitSelectView",
+                    size = { height = 0.22 },
+                },
+                {
+                    ft = "NeogitLogView",
+                    size = { height = 0.5 },
+                },
+                "NeogitPopup",
+                {
                     ft = "toggleterm",
                     -- Exclude floating windows
                     filter = function(_, win)
@@ -92,6 +106,10 @@ return {
             },
             right = {
                 "aerial",
+                {
+                    ft = "NeogitCommitView",
+                    size = { width = 0.5 },
+                },
             },
             animate = { enabled = false },
             exit_when_last = true,
