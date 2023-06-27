@@ -8,8 +8,7 @@ return {
         opts = {
             {
                 layout = {
-                    max_width = 35,
-                    width = 0.2,
+                    width = 35,
                     placement = "edge",
                 },
                 float = { border = yvim.ui.border },
@@ -63,6 +62,10 @@ return {
         opts = {
             left = {
                 "NvimTree",
+                {
+                    ft = "aerial",
+                    title = "LSP Symbols",
+                },
             },
             bottom = {
                 {
@@ -105,7 +108,6 @@ return {
                 "Trouble",
             },
             right = {
-                "aerial",
                 {
                     ft = "NeogitCommitView",
                     size = { width = 0.5 },
