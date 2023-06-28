@@ -357,11 +357,11 @@
         "hash": "sha256-UqderGoFad6tIny3pn38mB2XibA0dzxUVWNBYmsxAMw="
     },
     {
-        "version": "2023-04-27",
+        "version": "2023-06-16",
         "owner": "windwp",
         "repo": "nvim-ts-autotag",
-        "rev": "40615e96075c743ef47aaf9de966dc348bec6459",
-        "hash": "sha256-zv3m7IvDbWOOESZL3+8DcNt9vNT9fSfz2X7EOD6rqHQ="
+        "rev": "6be1192965df35f94b8ea6d323354f7dc7a557e4",
+        "hash": "sha256-4qTtXYA5HyG1sADV0wsiccO/G89qEoYPmlg8tTx7h8g="
     },
     {
         "version": "2023-01-02",
