@@ -100,13 +100,13 @@ _self: {
 
   cmp-nvim-lsp = vimUtils.buildVimPlugin {
     pname = "cmp-nvim-lsp";
-    version = "2023-02-06";
+    version = "2023-06-23";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp";
-      rev = "0e6b2ed705ddcff9738ec4ea838141654f12eeef";
-      hash = "sha256-DxpcPTBlvVP88PDoTheLV2fC76EXDqS2UpM5mAfj/D4=";
+      rev = "44b16d11215dce86f253ce0c30949813c0a90765";
+      hash = "sha256-mU0soCz79erJXMMqD/FyrJZ0mu2n6fE0deymPzQlxts=";
     };
 
     dontBuild = true;
