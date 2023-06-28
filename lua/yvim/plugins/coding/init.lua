@@ -101,4 +101,46 @@ return {
         end,
         keys = "<Plug>VM-",
     },
+
+    {
+        dir = "@yanky@",
+        dependencies = { "telescope.nvim" },
+        opts = function()
+            local mapping = require("yanky.telescope.mapping")
+
+            return {
+                picker = {
+                    telescope = {
+                        use_default_mappings = false,
+                        mappings = { default = mapping.put("p") },
+                    },
+                },
+                highlight = { timer = 150 },
+            }
+        end,
+        keys = {
+            { "y",  "<Plug>(YankyYank)",       mode = { "n", "x" }, desc = "Yank text" },
+            { "p",  "<Plug>(YankyPutAfter)",   mode = { "n", "x" }, desc = "Put yanked text after cursor" },
+            { "P",  "<Plug>(YankyPutBefore)",  mode = { "n", "x" }, desc = "Put yanked text before cursor" },
+            { "gp", "<Plug>(YankyGPutAfter)",  mode = { "n", "x" }, desc = "Put yanked text after selection" },
+            { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before selection" },
+            {
+                "<Leader>iy",
+                function()
+                    require("telescope").extensions.yank_history.yank_history({})
+                end,
+                mode = { "n", "x" },
+                desc = "From clipboard",
+            },
+            {
+                "<M-Space>iy",
+                function()
+                    require("telescope").extensions.yank_history.yank_history({})
+                end,
+                mode = "i",
+                desc = "From clipboard",
+            },
+        },
+        main = "yanky",
+    }
 }

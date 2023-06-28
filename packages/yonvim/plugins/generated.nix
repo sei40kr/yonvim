@@ -1281,4 +1281,20 @@ _self: {
 
     meta.homepage = "https://github.com/folke/which-key.nvim";
   };
+
+  yanky-nvim = vimUtils.buildVimPlugin {
+    pname = "yanky.nvim";
+    version = "2023-06-21";
+
+    src = fetchFromGitHub {
+      owner = "gbprod";
+      repo = "yanky.nvim";
+      rev = "b12561386a25645adb7504e0e6a8c5dc8b31e6da";
+      hash = "sha256-WpOOjSf8Kdqn1Nl4nYnKm9z4d+peXFDwomuZl0PTWmg=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/gbprod/yanky.nvim";
+  };
 }

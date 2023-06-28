@@ -77,7 +77,8 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by mini_comment                ${yonvimPlugins.mini-comment.outPath} \
       --subst-var-by mini_surround               ${yonvimPlugins.mini-surround.outPath} \
       --subst-var-by nvimacs                     ${yonvimPlugins.nvimacs.outPath} \
-      --subst-var-by visual_multi                ${yonvimPlugins.vim-visual-multi.outPath}
+      --subst-var-by visual_multi                ${yonvimPlugins.vim-visual-multi.outPath} \
+      --subst-var-by yanky                       ${yonvimPlugins.yanky-nvim.outPath}
     substituteInPlace $out/lua/yvim/plugins/coding/extras/copilot.lua \
       --subst-var-by cmp         ${yonvimPlugins.nvim-cmp.outPath} \
       --subst-var-by copilot     ${yonvimPlugins.copilot-lua.outPath} \
