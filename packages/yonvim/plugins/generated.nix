@@ -308,13 +308,13 @@ _self: {
 
   flash-nvim = vimUtils.buildVimPlugin {
     pname = "flash.nvim";
-    version = "2023-06-23";
+    version = "2023-06-28";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "flash.nvim";
-      rev = "b2e4730317115153da8ff58696ce99709fdb1212";
-      hash = "sha256-sGKM2v1QPqvf3vaFZW+v+Gk3rsql+ykYQ0a4rvFxEYQ=";
+      rev = "c90eae5172a00551d51883cf8b67306a812a713f";
+      hash = "sha256-AxDjgvH1rB+tez3I+4yTsQpBX79QWY4Mk5t36mJlHGI=";
     };
 
     dontBuild = true;
