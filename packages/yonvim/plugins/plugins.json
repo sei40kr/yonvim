@@ -504,11 +504,11 @@
         "hash": "sha256-lHtgGzRk5OpUtlpEEEzIjyvh2DkehlB5x7S79Wzs4Ec="
     },
     {
-        "version": "2023-05-30",
+        "version": "2023-06-26",
         "owner": "akinsho",
         "repo": "toggleterm.nvim",
-        "rev": "cf146a267a6a7db62b1e2aff40414b20081048a1",
-        "hash": "sha256-Qjhod1cmzAYuMl6Z0JlYtOq8CLdmQJ9esCwmynuzkYs="
+        "rev": "4cac5c96445df3a97f162a0f810e38fde1eb525e",
+        "hash": "sha256-MkCjGyKmPp8JB1g+cG+ElwYAgqiig1OfQQOXOkqWGVE="
     },
     {
         "version": "2023-06-24",
