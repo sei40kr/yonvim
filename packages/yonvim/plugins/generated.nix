@@ -580,13 +580,13 @@ _self: {
 
   neodev-nvim = vimUtils.buildVimPlugin {
     pname = "neodev.nvim";
-    version = "2023-06-10";
+    version = "2023-06-28";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "neodev.nvim";
-      rev = "d69254e1fbdc4a04c56719dde19e5eafb7b04b58";
-      hash = "sha256-vtC3BgdDtY5aMUzyH+T/XxyZ6kugSZGLbD6QDv1yMlE=";
+      rev = "a2b1d8fb9fa4daa35d3fd9123bccccccbd4a3520";
+      hash = "sha256-FmX47jnWGqk+yufpT3UNk2HvgmwmvKfBFn/MOcTqoPo=";
     };
 
     dontBuild = true;
