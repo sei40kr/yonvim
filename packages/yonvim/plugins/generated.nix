@@ -324,13 +324,13 @@ _self: {
 
   friendly-snippets = vimUtils.buildVimPlugin {
     pname = "friendly-snippets";
-    version = "2023-06-09";
+    version = "2023-06-21";
 
     src = fetchFromGitHub {
       owner = "rafamadriz";
       repo = "friendly-snippets";
-      rev = "b71d1ddc30a10ce0474156f7ee93bc9006d0cd74";
-      hash = "sha256-YVzyD9/UI+xm/NQDL0NTPv3ZaIGkfXBJWYowk9Ipsks=";
+      rev = "5749f093759c29e3694053d048ceb940fe12c3d3";
+      hash = "sha256-iWdCUKGmvTehStNV7p6reDIc04fyzmJBsi5igxDhH+o=";
     };
 
     dontBuild = true;
