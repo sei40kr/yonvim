@@ -1188,13 +1188,13 @@ _self: {
 
   trouble-nvim = vimUtils.buildVimPlugin {
     pname = "trouble.nvim";
-    version = "2023-06-08";
+    version = "2023-06-24";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "trouble.nvim";
-      rev = "2af0dd9767526410c88c628f1cbfcb6cf22dd683";
-      hash = "sha256-0aYCAP0714za8CoXPqwWOX8RKn/OdIHxsVWyo2X00fM=";
+      rev = "d99e2abd10808ef91738ce98a5c767e6a51df449";
+      hash = "sha256-HvgCL5VTEuvFKLAs0f2zbVnetd5jAsgoYREqLMS+vkg=";
     };
 
     dontBuild = true;
