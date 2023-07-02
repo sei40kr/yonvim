@@ -133,11 +133,11 @@
         "hash": "sha256-9zBKTH48jxHgWao4gIJWzS6u1nTiUnMyrpYp6GjEg/A="
     },
     {
-        "version": "2023-06-28",
+        "version": "2023-07-01",
         "owner": "folke",
         "repo": "flash.nvim",
-        "rev": "c90eae5172a00551d51883cf8b67306a812a713f",
-        "hash": "sha256-AxDjgvH1rB+tez3I+4yTsQpBX79QWY4Mk5t36mJlHGI="
+        "rev": "30a6385c92cc37822eb701c6984d6ba9cbd6f1ab",
+        "hash": "sha256-qE+qQ/urO1OG+1aAl4f0Ww0rGyAel6hz4whSJjplaGI="
     },
     {
         "version": "2023-07-01",
