@@ -612,13 +612,13 @@ _self: {
 
   noice-nvim = vimUtils.buildVimPlugin {
     pname = "noice.nvim";
-    version = "2023-06-26";
+    version = "2023-07-01";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "noice.nvim";
-      rev = "4f4a1702a3b2677878e68111af95cc4e775322e1";
-      hash = "sha256-8bHtJ4PAol/mWZen82OcFBf9Iu5w5V3YEhc1kbqFJl4=";
+      rev = "6c87c1d11c38180fb72bf8f45518a0a3e081afc1";
+      hash = "sha256-khzQ8JNf2Q3rzpXTCJXhAEgrcEVN9NQvyEEQNSjlDng=";
     };
 
     dontBuild = true;
