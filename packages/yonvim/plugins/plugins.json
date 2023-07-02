@@ -196,11 +196,11 @@
         "hash": "sha256-ltHE8UIquGo07BSlFGM1l3wmTNN43i8kx6QY7Fj2CNo="
     },
     {
-        "version": "2023-06-27",
+        "version": "2023-07-06",
         "owner": "williamboman",
         "repo": "mason-lspconfig.nvim",
-        "rev": "c993ca55e3991535bc74cd2d6ef273810d066c84",
-        "hash": "sha256-yvX4DzOlvxITdfw6h/CIRxRjOXPSxMPhxSD3KyT5mXs="
+        "rev": "82685fdd0f67a694b244cb058b83761f54664d68",
+        "hash": "sha256-prTjtybNw0T0PFrYaFZUdXZEgdL4McJNF8oY0ythFUk="
     },
     {
         "version": "2023-06-28",
