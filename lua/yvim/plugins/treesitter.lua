@@ -8,6 +8,8 @@ return {
             { dir = "@treesitter_ts_autotag@" },
         },
         opts = {
+            parser_install_dir = vim.fn.stdpath("data") .. "/nvim-treesitter/parsers",
+
             endwise = { enable = true },
             highlight = {
                 enable = true,
