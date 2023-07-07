@@ -724,13 +724,13 @@ _self: {
 
   nvim-navic = vimUtils.buildVimPlugin {
     pname = "nvim-navic";
-    version = "2023-06-25";
+    version = "2023-07-06";
 
     src = fetchFromGitHub {
       owner = "SmiteshP";
       repo = "nvim-navic";
-      rev = "32cff45f1c84bec5e2a7bf15c0f3c6739b64c85d";
-      hash = "sha256-AUs1Y5agzQfn9H9lRTOgjTzTp+aSvkPkcQzMCRrkWOw=";
+      rev = "e3b9d8a974bec71b88d5640f1c87bf5b4a7e4113";
+      hash = "sha256-ZwbLxOsm7GWToy3JQO3PT2xFfouvj/HIp1s2ROgfoHs=";
     };
 
     dontBuild = true;
