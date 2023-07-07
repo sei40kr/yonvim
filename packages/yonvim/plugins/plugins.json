@@ -154,11 +154,11 @@
         "hash": "sha256-V16DU/uq5D9GmvNjdZEVIj5xG9JoS6tII1Y9dev0As8="
     },
     {
-        "version": "2023-06-04",
+        "version": "2023-07-04",
         "owner": "hkupty",
         "repo": "iron.nvim",
-        "rev": "9017061849e543d8e94b79d2a94b95e856ab6a10",
-        "hash": "sha256-XJXi3i7wpBWDd5sny90Gw6ucOlnn1m8sYSVcUh/3Ufk="
+        "rev": "f603de5263be81782125a9c3010182f55b7d1dfc",
+        "hash": "sha256-RENemUvPtQjpyDkOT65jGnlQx+cNHlzRUjxSCbYEWhM="
     },
     {
         "version": "2023-03-07",
