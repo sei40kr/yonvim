@@ -1,3 +1,4 @@
+local config_opts = require("yvim.config").opts
 local Util = require("yvim.util")
 
 local function map(mode, lhs, rhs, opts)
@@ -165,7 +166,7 @@ map("n", "<Leader>ww", "<C-w>w", { desc = "Next window" })
 map("n", "<Leader>wW", "<C-w>W", { desc = "Previous window" })
 
 -- Load user-defined keymaps
-for _, keymap in ipairs(yvim.keymaps) do
+for _, keymap in ipairs(config_opts.keymaps) do
     local opts = {
         silent = keymap.silent ~= false,
         remap = keymap.remap,

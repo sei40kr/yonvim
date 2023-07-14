@@ -1,76 +1,14 @@
 local M = {}
 
-local Logger = require("yvim.utils.logger")
+local default_opts = require("yvim.config.defaults")
 
-function M.load()
-    local defaults = require("yvim.config.defaults")
-
-    _G.yvim = vim.tbl_deep_extend("force", {}, defaults)
-
-    local config_path = vim.fn.stdpath("config") .. "/config.lua"
-    local ok, err = pcall(dofile, config_path)
-    if not ok then
-        if vim.fn.filereadable(config_path) then
-            Logger:warn("Invalid configuration: " .. err)
-        else
-            vim.notify_once(
-                ("Unable to find configuration file [%s]"):format(config_path),
-                vim.log.levels.WARN
-            )
-        end
-    end
-
-    require("yvim.config.options").load()
-
-    vim.g.mapleader = yvim.leader_key
-    vim.g.maplocalleader = yvim.localleader_key
-
-    if vim.g.GuiLoaded then
-        vim.cmd([[
-          GuiTabline   0
-          GuiPopupmenu 0
-        ]])
-
-        vim.cmd(
-            ("GuiFont%s %s:h%d"):format(
-                yvim.ui.font.forcedly_assign and "!" or "",
-                yvim.ui.font.name,
-                yvim.ui.font.size
-            )
-        )
-
-        -- Enable mouse
-        vim.opt.mouse = "a"
-        vim.keymap.set(
-            "n",
-            "<RightMouse>",
-            "<Cmd>call GuiShowContextMenu()<CR>",
-            { silent = true }
-        )
-        vim.keymap.set(
-            "i",
-            "<RightMouse>",
-            "<Cmd>call GuiShowContextMenu()<CR>",
-            { silent = true }
-        )
-        vim.keymap.set(
-            "x",
-            "<RightMouse>",
-            "<Cmd>call GuiShowContextMenu()<CR>",
-            { silent = true }
-        )
-        vim.keymap.set(
-            "s",
-            "<RightMouse>",
-            "<Cmd>call GuiShowContextMenu()<CR>",
-            { silent = true }
-        )
-    end
+function M.init(opts)
+    M.opts = vim.tbl_deep_extend("force", default_opts, opts or {})
 end
 
 function M.get_border_chars(hl)
     local border_chars
-    if yvim.ui.border == "single" then
+    if M.opts.ui.border == "single" then
         border_chars = {
             "┌",
             "─",
@@ -82,7 +20,7 @@ function M.get_border_chars(hl)
             "│",
         }
     end
-    if yvim.ui.border == "double" then
+    if M.opts.ui.border == "double" then
         border_chars = {
             "╔",
             "═",
@@ -94,7 +32,7 @@ function M.get_border_chars(hl)
             "║",
         }
     end
-    if yvim.ui.border == "rounded" then
+    if M.opts.ui.border == "rounded" then
         border_chars = {
             "╭",
             "─",
@@ -106,7 +44,7 @@ function M.get_border_chars(hl)
             "│",
         }
     end
-    if yvim.ui.border == "none" then
+    if M.opts.ui.border == "none" then
         return { "", "", "", "", "", "", "", "" }
     end
 

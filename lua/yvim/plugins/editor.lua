@@ -1,3 +1,5 @@
+local config_opts = require("yvim.config").opts
+
 return {
     {
         dir = "@aerial@",
@@ -8,7 +10,7 @@ return {
                     width = 35,
                     placement = "edge",
                 },
-                float = { border = yvim.ui.border },
+                float = { border = config_opts.ui.border },
             },
         },
         main = "aerial",
@@ -143,7 +145,7 @@ return {
             return {
                 config = {
                     scratch_repl = true,
-                    repl_definition = yvim.repl.handlers,
+                    repl_definition = config_opts.repl.handlers,
                     should_map_plug = false,
                     repl_open_cmd = function(bufnr)
                         vim.bo[bufnr].filetype = "iron"
@@ -700,7 +702,7 @@ return {
                         restrict_above_cwd = true,
                     },
                     file_popup = {
-                        open_win_config = { border = yvim.ui.border },
+                        open_win_config = { border = config_opts.ui.border },
                     },
                     open_file = {
                         window_picker = {

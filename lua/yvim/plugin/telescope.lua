@@ -1,5 +1,7 @@
 local M = {}
 
+local config_opts = require("yvim.config").opts
+
 local function translate_to_telescope_borderchars(border_chars)
     return {
         border_chars[2],
@@ -34,10 +36,10 @@ function M.config()
 
     telescope.setup({
         defaults = {
-            border = yvim.ui.border ~= "none",
+            border = config_opts.ui.border ~= "none",
             borderchars = translate_to_telescope_borderchars(
-                    require("yvim.config").get_border_chars()
-                ) or nil,
+                require("yvim.config").get_border_chars()
+            ) or nil,
             mappings = {
                 i = {
                     ["<C-k>"] = actions.move_selection_previous,
@@ -53,7 +55,7 @@ function M.config()
         extensions = {
             file_browser = { dir_icon = " " },
             project = {
-                base_dirs = yvim.project.base_dirs,
+                base_dirs = config_opts.project.base_dirs,
                 on_project_selected = function(prompt_bufnr)
                     local project_actions = require("telescope._extensions.project.actions")
                     local selected_path = project_actions.get_selected_path(prompt_bufnr)

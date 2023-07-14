@@ -163,10 +163,4 @@ vimUtils.buildVimPluginFrom2Nix {
   '';
 
   passthru.tree-sitter-grammars = nvim-treesitter.dependencies;
-
-  meta = with lib; {
-    description = "My personal Neovim distribution";
-    license = licenses.mit;
-    platforms = platforms.all;
-  };
 }

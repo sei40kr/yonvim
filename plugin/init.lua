@@ -1,1 +1,0 @@
-require("yvim.bootstrap").init()

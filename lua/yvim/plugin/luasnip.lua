@@ -1,5 +1,6 @@
 local M = {}
 
+local config_opts = require("yvim.config").opts
 local Logger = require("yvim.utils.logger")
 
 function M.config()
@@ -9,7 +10,7 @@ function M.config()
         lua = {},
     }
 
-    for _, dir in ipairs(yvim.snippet.user_snippet_dirs) do
+    for _, dir in ipairs(config_opts.snippet.user_snippet_dirs) do
         local path = dir[1]
         local loader = dir.loader or "vscode"
 

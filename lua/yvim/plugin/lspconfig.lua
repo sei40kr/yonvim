@@ -1,9 +1,11 @@
 local M = {}
 
+local config_opts = require("yvim.config").opts
+
 function M.config()
     local lspconfig = require("lspconfig")
 
-    require("lspconfig.ui.windows").default_options.border = yvim.ui.border
+    require("lspconfig.ui.windows").default_options.border = config_opts.ui.border
 
     lspconfig.util.default_config = vim.tbl_extend(
         "force",
@@ -33,7 +35,7 @@ function M.config()
         severity_sort = true,
     })
 
-    for server, opts in pairs(yvim.lsp.servers) do
+    for server, opts in pairs(config_opts.lsp.servers) do
         -- Setting up rust_analyzer here causes conflicts with rust-tools.nvim
         if server == "rust_analyzer" then
             goto continue

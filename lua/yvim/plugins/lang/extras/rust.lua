@@ -1,14 +1,16 @@
+local config_opts = require("yvim.config").opts
+
 return {
     {
         dir = "@rust_tools@",
-        cond = yvim.lsp.servers.rust_analyzer ~= nil,
+        cond = config_opts.lsp.servers.rust_analyzer ~= nil,
         opts = {
             tools = {
                 inlay_hints = { auto = false },
             },
             server = vim.tbl_deep_extend("force", {
                 standalone = true
-            }, yvim.lsp.servers.rust_analyzer or {})
+            }, config_opts.lsp.servers.rust_analyzer or {})
         },
         main = "rust-tools",
         ft = "rust",

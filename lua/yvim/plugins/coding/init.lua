@@ -1,3 +1,5 @@
+local config_opts = require("yvim.config").opts
+
 return {
     {
         dir = "@autopairs@",
@@ -37,7 +39,7 @@ return {
     { dir = "@lspkind@" },
     {
         import = "yvim.plugins.coding.extras.copilot",
-        enabled = yvim.completion.copilot.enable,
+        enabled = config_opts.completion.copilot.enable,
     },
 
     {

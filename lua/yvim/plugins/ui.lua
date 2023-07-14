@@ -1,3 +1,5 @@
+local config_opts = require("yvim.config").opts
+
 return {
     {
         dir = "@alpha@",
@@ -82,10 +84,10 @@ return {
             end
         end,
         opts = {
-            input = { border = yvim.ui.border },
+            input = { border = config_opts.ui.border },
             select = {
                 nui = {
-                    border = { style = yvim.ui.border },
+                    border = { style = config_opts.ui.border },
                 },
             },
         },

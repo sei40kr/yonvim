@@ -1,3 +1,5 @@
+local config_opts = require("yvim.config").opts
+
 return {
     {
         dir = "@lsp_inlayhints@",
@@ -36,7 +38,7 @@ return {
             return {
                 border = "rounded",
                 ui = {
-                    border = yvim.ui.border,
+                    border = config_opts.ui.border,
                     icons = {
                         server_installed = "●",
                         server_pending = "●",
@@ -75,14 +77,14 @@ return {
         opts = function()
             local null_ls = require("null-ls")
 
-            return { sources = yvim.null_ls.sources(null_ls) }
+            return { sources = config_opts.null_ls.sources(null_ls) }
         end,
         main = "null-ls",
     },
 
     {
         dir = "@lsp_format@",
-        cond = yvim.format.format_on_save,
+        cond = config_opts.format.format_on_save,
         init = function()
             local Util = require("yvim.util")
 

@@ -3,13 +3,14 @@
 , fd
 , gnutar
 , gzip
-, neovim
-, makeWrapper
+, neovim-unwrapped
 , ripgrep
+, runCommandLocal
 , symlinkJoin
 , unzip
 , vimPlugins
 , wget
+, wrapNeovimUnstable
 , writeShellScriptBin
 , yonvim-lazy-files
 , yonvim-lua
@@ -32,36 +33,30 @@ let
     ripgrep
   ];
 
-  neovim-configured = neovim.override {
-    configure = {
-      packages.myVimPackage.start = [
-        yonvim-lua
-        yonvimPlugins.lazy-nvim_readOnly
-        yonvimPlugins.structlog-nvim
-      ] ++ yonvim-lua.tree-sitter-grammars;
-    };
+  neovim-yonvim = wrapNeovimUnstable neovim-unwrapped {
+    extraName = "-yonvim";
+    wrapperArgs = [
+      "--prefix" "PATH" ":" (lib.makeBinPath runtimeDeps)
+      "--set" "NVIM_APPNAME" "yonvim"
+      "--set" "LAZY_LOCKFILE" "${yonvim-lazy-files}/share/lazy/lazy-lock.json"
+      "--set" "LAZY_CACHE" "${yonvim-lazy-files}/share/lazy/luac"
+      "--set" "LAZY_README" "${yonvim-lazy-files}/share/lazy/readme"
+    ];
+    wrapRc = false;
+    packpathDirs.myNeovimPackages.start =  [
+      yonvim-lua
+      yonvimPlugins.lazy-nvim_readOnly
+      yonvimPlugins.structlog-nvim
+    ] ++ yonvim-lua.tree-sitter-grammars;
   };
-  yonvim-bin = writeShellScriptBin "yonvim" ''
-    export PATH="${lib.makeBinPath runtimeDeps}''${PATH:+:$PATH}"
+in runCommandLocal "yonvim-${version}" {
+  buildInputs = [ neovim-yonvim ];
 
-    export NVIM_APPNAME=yonvim
-
-    export LAZY_LOCKFILE=${yonvim-lazy-files}/share/lazy/lazy-lock.json
-    export LAZY_CACHE=${yonvim-lazy-files}/share/lazy/luac
-    export LAZY_README=${yonvim-lazy-files}/share/lazy/readme
-
-    exec ${neovim-configured}/bin/nvim "$@"
-  '';
-in
-symlinkJoin {
-  name = "yonvim-${version}";
-
-  paths = [ neovim-configured ];
-
-  nativeBuildInputs = [ makeWrapper ];
-
-  postBuild = ''
-    rm $out/bin/nvim
-    cp ${yonvim-bin}/bin/yonvim $out/bin
-  '';
-}
+  meta = with lib; {
+    description = "My personal Neovim distribution";
+    license = licenses.mit;
+    platforms = platforms.all;
+  };
+} ''
+  install -Dm755 ${neovim-yonvim}/bin/nvim $out/bin/yonvim
+''

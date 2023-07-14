@@ -1,3 +1,5 @@
+local config_opts = require("yvim.config").opts
+
 return {
     {
         dir = "@copilot@",
@@ -5,7 +7,7 @@ return {
         opts = {
             panel = { enabled = false },
             suggestion = { auto_trigger = true },
-            filetypes = yvim.completion.copilot.filetypes,
+            filetypes = config_opts.completion.copilot.filetypes,
         },
         config = function(_, opts)
             require("copilot").setup(opts)

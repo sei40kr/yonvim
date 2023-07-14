@@ -1,5 +1,7 @@
 local M = {}
 
+local config_opts = require("yvim.config").opts
+
 local function has_word_before()
     local col = vim.api.nvim_win_get_cursor(0)[2]
     local line = vim.api.nvim_get_current_line()
@@ -119,7 +121,7 @@ function M.config()
         cmp.config.compare.length,
         cmp.config.compare.order,
     }
-    if yvim.completion.copilot.enable then
+    if config_opts.completion.copilot.enable then
         table.insert(sources, 1, { name = "copilot" })
 
         local copilot_cmp_comparators = require("copilot_cmp.comparators")

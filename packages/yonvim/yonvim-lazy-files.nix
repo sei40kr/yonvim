@@ -31,6 +31,7 @@ runCommandLocal "yonvim-lazy-files"
   export LAZY_README=$out/share/lazy/readme
 
   nvim -V1 -n -i NONE --headless \
+       +'require("yvim").setup {}' \
        +'Lazy! sync' \
        +'lua require("lazy.help").update()' \
        +qa
