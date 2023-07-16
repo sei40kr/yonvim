@@ -306,7 +306,21 @@ return {
             },
             integrations = { diffview = true },
         },
-        main = "neogit",
+        config = function(_, opts)
+            require("neogit").setup(opts)
+
+            local augroup =
+                vim.api.nvim_create_augroup("neogit_commit_message", {})
+            vim.api.nvim_create_autocmd("FileType", {
+                group = augroup,
+                pattern = "NeogitCommitMessage",
+                callback = function()
+                    -- List the commit message buffer so that we can use
+                    -- Copilot to write the commit message.
+                    vim.bo.buflisted = true
+                end,
+            })
+        end,
         keys = {
             { "<Leader>gg", "<Cmd>Neogit<CR>", desc = "Neogit status" }
         },
