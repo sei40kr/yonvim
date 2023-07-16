@@ -39,7 +39,6 @@ let
       "--prefix" "PATH" ":" (lib.makeBinPath runtimeDeps)
       "--set" "NVIM_APPNAME" "yonvim"
       "--set" "LAZY_LOCKFILE" "${yonvim-lazy-files}/share/lazy/lazy-lock.json"
-      "--set" "LAZY_CACHE" "${yonvim-lazy-files}/share/lazy/luac"
       "--set" "LAZY_README" "${yonvim-lazy-files}/share/lazy/readme"
     ];
     wrapRc = false;

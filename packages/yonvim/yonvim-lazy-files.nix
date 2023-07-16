@@ -27,7 +27,6 @@ runCommandLocal "yonvim-lazy-files"
 
   mkdir -p $out/share/lazy
   export LAZY_LOCKFILE=$out/share/lazy/lazy-lock.json
-  export LAZY_CACHE=$out/share/lazy/luac
   export LAZY_README=$out/share/lazy/readme
 
   nvim -V1 -n -i NONE --headless \
