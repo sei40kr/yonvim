@@ -1,5 +1,6 @@
 local M = {}
 
+local Util = require("yvim.util")
 local config_opts = require("yvim.config").opts
 
 local function has_word_before()
@@ -187,6 +188,12 @@ function M.config()
             { { name = "cmdline" } }
         ),
     })
+
+    -- nvim-autopairs integration
+    if Util.has("nvim-autopairs") then
+        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+    end
 end
 
 return M
