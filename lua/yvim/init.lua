@@ -23,7 +23,7 @@ M.setup = function(opts)
     require("yvim.lazy").init()
     require("yvim.config.autocmds")
     require("yvim.config.keymaps")
-    require("yvim.config.options")
+    require("yvim.config.options").load()
 
     if vim.g.GuiLoaded then
         vim.cmd([[
