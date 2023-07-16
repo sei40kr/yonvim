@@ -3,6 +3,21 @@ local config_opts = require("yvim.config").opts
 return {
     {
         dir = "@autopairs@",
+        dependencies = {
+            {
+                name = "nvim-cmp",
+                config = function()
+                    local cmp = require("cmp")
+                    local cmp_autopairs =
+                        require("nvim-autopairs.completion.cmp")
+
+                    cmp.event:on(
+                        "confirm_done",
+                        cmp_autopairs.on_confirm_done()
+                    )
+                end,
+            },
+        },
         opts = {
             check_ts = true,
             map_c_h = true,
