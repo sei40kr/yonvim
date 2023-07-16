@@ -197,11 +197,17 @@ return {
                 end
             end)
         end,
-        opts = {
-            highlight = true,
-            separator = " ",
-            depth_limit = 5,
-        },
+        opts = function()
+            return {
+                -- Add a space after each icon
+                icons = vim.tbl_map(function(icon)
+                    return icon .. " "
+                end, config_opts.icons.kinds),
+                highlight = true,
+                separator = "  ",
+                depth_limit = 5,
+            }
+        end,
         main = "nvim-navic",
         module = "nvim-navic",
     },

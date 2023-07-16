@@ -169,7 +169,7 @@ function M.config()
         },
         formatting = {
             format = require("lspkind").cmp_format({
-                symbol_map = { Copilot = "" },
+                symbol_map = config_opts.icons.kinds,
                 maxwidth = 60,
                 ellipsis_char = "…",
             }),

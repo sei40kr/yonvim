@@ -11,6 +11,7 @@ return {
                     width = 35,
                     placement = "edge",
                 },
+                icons = config_opts.icons.kinds,
                 float = { border = config_opts.ui.border },
             },
         },
