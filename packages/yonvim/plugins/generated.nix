@@ -930,6 +930,22 @@ _self: {
     meta.homepage = "https://github.com/tyru/open-browser.vim";
   };
 
+  overseer-nvim = vimUtils.buildVimPlugin {
+    pname = "overseer.nvim";
+    version = "2023-07-14";
+
+    src = fetchFromGitHub {
+      owner = "stevearc";
+      repo = "overseer.nvim";
+      rev = "4d046a116c80db4300a66a58288a6b75b5a8c54f";
+      hash = "sha256-jj4XRgrqMY6wv8wWZTfBBu+pN2aUjRUVKTQAjXM4Du4=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/stevearc/overseer.nvim";
+  };
+
   plenary-nvim = vimUtils.buildVimPlugin {
     pname = "plenary.nvim";
     version = "2023-07-06";

@@ -100,6 +100,7 @@ vimUtils.buildVimPluginFrom2Nix {
       --subst-var-by octo                   ${yonvimPlugins.octo-nvim.outPath} \
       --subst-var-by open_browser           ${yonvimPlugins.open-browser-vim.outPath} \
       --subst-var-by open_browser_github    ${yonvimPlugins.open-browser-github-vim.outPath} \
+      --subst-var-by overseer               ${yonvimPlugins.overseer-nvim.outPath} \
       --subst-var-by project                ${yonvimPlugins.project-nvim.outPath} \
       --subst-var-by scope                  ${yonvimPlugins.scope-nvim.outPath} \
       --subst-var-by stickybuf              ${yonvimPlugins.stickybuf-nvim.outPath} \

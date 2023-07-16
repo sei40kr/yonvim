@@ -1,3 +1,4 @@
+local Util = require("yvim.util")
 local config_opts = require("yvim.config").opts
 
 return {
@@ -360,6 +361,40 @@ return {
     },
 
     {
+        dir = "@overseer@",
+        name = "overseer",
+        opts = {
+            strategy = Util.has("toggleterm.nvim") and "toggleterm"
+                or "terminal",
+            form = {
+                border = config_opts.border,
+                win_opts = { winblend = 0 },
+            },
+            confirm = {
+                border = config_opts.border,
+                win_opts = { winblend = 0 },
+            },
+            task_win = {
+                border = config_opts.border,
+                win_opts = { winblend = 0 },
+            },
+            log = {
+                {
+                    type = "notify",
+                    level = vim.log.levels.WARN,
+                },
+            },
+        },
+        keys = {
+            {
+                "<Leader>pz",
+                "<Cmd>OverseerRun<CR>",
+                desc = "List project tasks",
+            },
+        },
+    },
+
+    {
         dir = "@project@",
         opts = {
             manual_mode = true,
@@ -558,6 +593,7 @@ return {
 
     {
         dir = "@toggleterm@",
+        name = "toggleterm.nvim",
         opts = {
             size = function(term)
                 if term.direction == "horizontal" then
