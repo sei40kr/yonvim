@@ -3,6 +3,16 @@ local M = {}
 local lsp_pseudo_clients = vim.tbl_add_reverse_lookup({ "copilot", "null-ls" })
 
 local components = {
+    navic = {
+        function()
+            return require("nvim-navic").get_location()
+        end,
+        cond = function()
+            return package.loaded["nvim-navic"]
+                and require("nvim-navic").is_available()
+        end,
+        draw_empty = true,
+    },
     mode = "mode",
     winnr = function()
         return vim.api.nvim_win_get_number(0)
@@ -131,17 +141,7 @@ function M.config()
         winbar = {
             lualine_a = {},
             lualine_b = {},
-            lualine_c = {
-                {
-                    function()
-                        return require("nvim-navic").get_location()
-                    end,
-                    cond = function()
-                        return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
-                    end,
-                    draw_empty = true,
-                },
-            },
+            lualine_c = { components.navic },
             lualine_x = {},
             lualine_y = {},
             lualine_z = {},
@@ -149,7 +149,7 @@ function M.config()
         inactive_winbar = {
             lualine_a = {},
             lualine_b = {},
-            lualine_c = {},
+            lualine_c = { components.navic },
             lualine_x = {},
             lualine_y = {},
             lualine_z = {},
