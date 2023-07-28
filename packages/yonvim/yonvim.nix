@@ -44,7 +44,7 @@ let
     wrapRc = false;
     packpathDirs.myNeovimPackages.start =  [
       yonvim-lua
-      yonvimPlugins.lazy-nvim_readOnly
+      yonvimPlugins.lazy-nvim
       yonvimPlugins.structlog-nvim
     ] ++ yonvim-lua.tree-sitter-grammars;
   };
