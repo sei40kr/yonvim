@@ -388,13 +388,13 @@ _self: {
 
   lsp-format-nvim = vimUtils.buildVimPlugin {
     pname = "lsp-format.nvim";
-    version = "2022-11-25";
+    version = "2023-09-13";
 
     src = fetchFromGitHub {
       owner = "lukas-reineke";
       repo = "lsp-format.nvim";
-      rev = "ca0df5c8544e51517209ea7b86ecc522c98d4f0a";
-      hash = "sha256-UeeM+rHDjsZS27L2Orh+doB6eo6YNV8gb0yLs0PjkLA=";
+      rev = "e8782a5468a4849ae440a1531be559d85aebe142";
+      hash = "sha256-2diLMxkJ+Snno54xeKFHZwtZS5jXSB4EJZJFYy7ENxM=";
     };
 
     dontBuild = true;

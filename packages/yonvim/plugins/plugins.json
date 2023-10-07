@@ -168,11 +168,11 @@
         "hash": "sha256-rWuqJ4jQ2+VnAUP0GAMMxomDj55Kcqgh7OS/O1qZiH0="
     },
     {
-        "version": "2022-11-25",
+        "version": "2023-09-13",
         "owner": "lukas-reineke",
         "repo": "lsp-format.nvim",
-        "rev": "ca0df5c8544e51517209ea7b86ecc522c98d4f0a",
-        "hash": "sha256-UeeM+rHDjsZS27L2Orh+doB6eo6YNV8gb0yLs0PjkLA="
+        "rev": "e8782a5468a4849ae440a1531be559d85aebe142",
+        "hash": "sha256-2diLMxkJ+Snno54xeKFHZwtZS5jXSB4EJZJFYy7ENxM="
     },
     {
         "version": "2023-06-08",
