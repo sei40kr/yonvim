@@ -980,13 +980,13 @@ _self: {
 
   rust-tools-nvim = vimUtils.buildVimPlugin {
     pname = "rust-tools.nvim";
-    version = "2023-02-20";
+    version = "2023-07-10";
 
     src = fetchFromGitHub {
       owner = "simrat39";
       repo = "rust-tools.nvim";
-      rev = "71d2cf67b5ed120a0e31b2c8adb210dd2834242f";
-      hash = "sha256-Cuk/vdoviB9ibt2rrkNRmNFy4S+6czhbExmIjTJRdZM=";
+      rev = "0cc8adab23117783a0292a0c8a2fbed1005dc645";
+      hash = "sha256-jtfyDxifchznUupLSao6nmpVqaX1yO0xN+NhqS9fgxg=";
     };
 
     dontBuild = true;
