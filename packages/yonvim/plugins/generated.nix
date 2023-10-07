@@ -52,13 +52,13 @@ _self: {
 
   alpha-nvim = vimUtils.buildVimPlugin {
     pname = "alpha-nvim";
-    version = "2023-06-09";
+    version = "2023-09-14";
 
     src = fetchFromGitHub {
       owner = "goolord";
       repo = "alpha-nvim";
-      rev = "9e33db324b8bb7a147bce9ea5496686ee859461d";
-      hash = "sha256-DgKL4BgEVGSESxdBf8CbWMeAkcN/7vi1DuqIZVvmtlA=";
+      rev = "234822140b265ec4ba3203e3e0be0e0bb826dff5";
+      hash = "sha256-rXCibNJlNcF+p9PF7EoQM4/pnA1C+KGf7RrIyCY3OJY=";
     };
 
     dontBuild = true;
