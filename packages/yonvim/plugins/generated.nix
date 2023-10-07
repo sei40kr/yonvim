@@ -564,13 +564,13 @@ _self: {
 
   neoconf-nvim = vimUtils.buildVimPlugin {
     pname = "neoconf.nvim";
-    version = "2023-06-29";
+    version = "2023-10-07";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "neoconf.nvim";
-      rev = "08f146d53e075055500dca35e93281faff95716b";
-      hash = "sha256-e/VlxOqRBAzarrRoAcfTaC4spbiQNo1Nbe6DKuZNK+M=";
+      rev = "f2f29dfb94890abfe64a0915fa3b31ec2aea85e6";
+      hash = "sha256-3Uxl1WzDuiPFLMYk8Gz9E/niqQ+H5tBNZx6/V+3R1xE=";
     };
 
     dontBuild = true;
