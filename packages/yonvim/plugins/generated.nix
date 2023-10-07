@@ -996,13 +996,13 @@ _self: {
 
   scope-nvim = vimUtils.buildVimPlugin {
     pname = "scope.nvim";
-    version = "2023-06-28";
+    version = "2023-09-10";
 
     src = fetchFromGitHub {
       owner = "tiagovla";
       repo = "scope.nvim";
-      rev = "4a67c3e16867b2b241f5f2db2ab291497b76bece";
-      hash = "sha256-Ii1k+tiA/K1Yx2Cm/P5ayQLWjtXJVVvmXGfpADkfSKI=";
+      rev = "01ce40fe7434fba9a122c01b4734479b3860609a";
+      hash = "sha256-6yTCqbBxJpcw8RfLBPfBHPRwii1TOdG+zUycX6MYbIE=";
     };
 
     dontBuild = true;
