@@ -164,13 +164,13 @@ _self: {
 
   cmp-spell = vimUtils.buildVimPlugin {
     pname = "cmp-spell";
-    version = "2022-10-03";
+    version = "2023-09-20";
 
     src = fetchFromGitHub {
       owner = "f3fora";
       repo = "cmp-spell";
-      rev = "60584cb75e5e8bba5a0c9e4c3ab0791e0698bffa";
-      hash = "sha256-e6nHT+5xEXDFkWes89R85FdriPSP0fPiuoXwgBdH+9M=";
+      rev = "32a0867efa59b43edbb2db67b0871cfad90c9b66";
+      hash = "sha256-bdkO+fuZlSHTMRrUWT8dDcJL3JxQU3lHmiQ2swJmIvs=";
     };
 
     dontBuild = true;
