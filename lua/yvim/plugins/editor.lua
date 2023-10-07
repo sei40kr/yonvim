@@ -86,15 +86,7 @@ return {
                     ft = "NeogitBranchSelectView",
                     size = { height = 0.22 },
                 },
-                "NeogitCommandHistory",
-                {
-                    ft = "NeogitCommitSelectView",
-                    size = { height = 0.22 },
-                },
-                {
-                    ft = "NeogitLogView",
-                    size = { height = 0.5 },
-                },
+                "NeogitGitCommandHistory",
                 "NeogitPopup",
                 {
                     ft = "toggleterm",
