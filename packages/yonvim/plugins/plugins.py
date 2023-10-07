@@ -1,9 +1,10 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i python3 -p "python3.withPackages (ps: with ps; [ colorama humanize requests ])"
+#!nix-shell -i python3 -p "python3.withPackages (ps: with ps; [ colorama GitPython humanize requests ])"
 
 import argparse
 from colorama import init, Fore, Style
 from datetime import datetime
+from git import Repo
 import humanize
 import json
 import operator
@@ -31,6 +32,10 @@ def get_repo_default_branch(owner, repo):
         "Authorization": f'Bearer {token}'
     }).json()
     return response['default_branch']
+
+
+def get_git_repo():
+    return Repo(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 
 
 def get_branch_head_rev(owner, repo, branch):
@@ -156,44 +161,73 @@ def remove(name):
 
 
 def update(name):
-    plugins = read_plugins()
+    git_repo = get_git_repo()
 
-    indexes = [
-        i for i, p in enumerate(plugins) if name is None or p['repo'] == name
-    ]
-    if name is not None and len(indexes) == 0:
-        print(f'Plugin {name} is not found', file=sys.stderr)
+    if git_repo.is_dirty(index=True, working_tree=False, untracked_files=False):
+        print(
+            "You have uncommitted changes. Please commit or stash your changes first.",
+            file=sys.stderr,
+        )
         exit(1)
 
-    # TODO parallelize updates
-    for i in indexes:
-        plugin = plugins[i]
-        owner, repo, rev, hash = operator.itemgetter(
-            "owner", "repo", "rev", "hash")(plugin)
+    if git_repo.is_dirty(
+        index=True,
+        working_tree=True,
+        untracked_files=True,
+        path="packages/yonvim/plugins/plugins.json",
+    ):
+        print(
+            "packages/yonvim/plugins/plugins.json is dirty. Please commit or stash your changes first.",  # noqa: E501
+            file=sys.stderr,
+        )
+        exit(1)
 
-        default_branch = get_repo_default_branch(
-            owner=owner, repo=repo)
-        head_rev = get_branch_head_rev(
-            owner=owner, repo=repo, branch=default_branch)
-        if head_rev['commit_sha'] != rev:
-            print(f"- {owner}/{repo}: {rev} -> {head_rev['commit_sha']}")
+    plugins = read_plugins()
+    plugin = next(p for p in plugins if p["repo"] == name)
+    if plugin is None:
+        print(f"Plugin {name} is not found", file=sys.stderr)
+        exit(1)
 
-            nix_hash = get_rev_nix_hash(
-                owner=owner, repo=repo, rev_hash=head_rev['commit_sha'])
+    owner, repo, rev, hash = operator.itemgetter("owner", "repo", "rev", "hash")(plugin)
 
-            plugin.update({
-                'version': head_rev['date'].strftime("%Y-%m-%d"),
-                'rev': head_rev['commit_sha'],
-                'hash': nix_hash
-            })
+    default_branch = get_repo_default_branch(owner=owner, repo=repo)
+    head_rev = get_branch_head_rev(owner=owner, repo=repo, branch=default_branch)
+    if head_rev["commit_sha"] != rev:
+        print(f"- {owner}/{repo}: {rev} -> {head_rev['commit_sha']}")
 
-            # TODO show the commit log since last update
-        else:
-            print(f"- {plugin['owner']}/{plugin['repo']}: up-to-date")
+        nix_hash = get_rev_nix_hash(
+            owner=owner, repo=repo, rev_hash=head_rev["commit_sha"]
+        )
 
-    write_plugins(plugins)
+        plugin.update(
+            {
+                "version": head_rev["date"].strftime("%Y-%m-%d"),
+                "rev": head_rev["commit_sha"],
+                "hash": nix_hash,
+            }
+        )
 
-    generate_nix_derivations(plugins)
+        # TODO show the commit log since last update
+
+        write_plugins(plugins)
+
+        generate_nix_derivations(plugins)
+
+        git_repo.index.add(
+            [
+                "packages/yonvim/plugins/plugins.json",
+                "packages/yonvim/plugins/generated.nix",
+            ]
+        )
+        git_repo.index.commit(
+            message=f"""feat: bump {repo}
+
+{owner}/{repo}@{rev} -> {owner}/{repo}@{head_rev["commit_sha"]}
+"""
+        )
+    else:
+        print(f"- {plugin['owner']}/{plugin['repo']}: up-to-date")
+
 
 def list_outdated():
     plugins = read_plugins()
@@ -243,9 +277,8 @@ def main():
     remove_parser.add_argument(
         'name', type=str, help='plugin name to remove')
 
-    update_parser = subparsers.add_parser('update', help='update plugin(s)')
-    update_parser.add_argument(
-        'name', type=str, nargs='?', help='plugin name to update (updates all if omitted)')
+    update_parser = subparsers.add_parser('update', help='update plugin')
+    update_parser.add_argument('name', type=str, help='plugin name to update')
 
     outdated_parser = subparsers.add_parser('outdated', help='list outdated plugins')
 
