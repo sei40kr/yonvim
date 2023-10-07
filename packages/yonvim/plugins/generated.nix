@@ -628,13 +628,13 @@ _self: {
 
   nui-nvim = vimUtils.buildVimPlugin {
     pname = "nui.nvim";
-    version = "2023-06-18";
+    version = "2023-09-06";
 
     src = fetchFromGitHub {
       owner = "MunifTanjim";
       repo = "nui.nvim";
-      rev = "d146966a423e60699b084eeb28489fe3b6427599";
-      hash = "sha256-OFfkkFPkBJoVf9W6CL/AD5E4erPKYTMg069E1cI54DE=";
+      rev = "c8de23342caf8d50b15d6b28368d36a56a69d76f";
+      hash = "sha256-Ao+xnowsZPR9x3Wm439l1QIlgt3Rt6n9DZIqkUKsR1k=";
     };
 
     dontBuild = true;
