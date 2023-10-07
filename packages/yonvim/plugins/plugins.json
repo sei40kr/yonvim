@@ -315,11 +315,11 @@
         "hash": "sha256-i3lDsFwoMddpN1I4t3Fj+Dthyxq7twCgpYuNtlvfI5Y="
     },
     {
-        "version": "2023-07-06",
+        "version": "2023-09-18",
         "owner": "SmiteshP",
         "repo": "nvim-navic",
-        "rev": "e3b9d8a974bec71b88d5640f1c87bf5b4a7e4113",
-        "hash": "sha256-ZwbLxOsm7GWToy3JQO3PT2xFfouvj/HIp1s2ROgfoHs="
+        "rev": "0ffa7ffe6588f3417e680439872f5049e38a24db",
+        "hash": "sha256-X4CFFihI5PFIiHlwQt6VoUIxhm5oBuUvIQxCo9k7zRE="
     },
     {
         "version": "2023-06-05",
