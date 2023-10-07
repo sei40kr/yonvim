@@ -1076,13 +1076,13 @@ _self: {
 
   telescope-luasnip-nvim = vimUtils.buildVimPlugin {
     pname = "telescope-luasnip.nvim";
-    version = "2023-02-02";
+    version = "2023-10-05";
 
     src = fetchFromGitHub {
       owner = "benfowler";
       repo = "telescope-luasnip.nvim";
-      rev = "849c4ee1951f34041a26744d2a88284545564ff0";
-      hash = "sha256-rRTvZ97cQlzOn68JkSVCqhMBU77SQMHeCDDSgTEkScQ=";
+      rev = "2ef7da3a363890686dbaad18ddbf59177cfe4f78";
+      hash = "sha256-oilJP2HG4Q0bgy98Iavjq2xQiD9hxpCCbMqZ43GY2s8=";
     };
 
     dontBuild = true;
