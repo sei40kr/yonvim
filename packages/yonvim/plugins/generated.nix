@@ -228,13 +228,13 @@ _self: {
 
   copilot-lua = vimUtils.buildVimPlugin {
     pname = "copilot.lua";
-    version = "2023-07-01";
+    version = "2023-09-21";
 
     src = fetchFromGitHub {
       owner = "zbirenbaum";
       repo = "copilot.lua";
-      rev = "e48bd7020a98be217d85c006a298656294fd6210";
-      hash = "sha256-lD9FdbKKZ6d/BjIfqp0Ust2hqSYNLpCFWxuaKUO9qLs=";
+      rev = "1a8032ae496916ccc7a7a52ee79194fbef29f462";
+      hash = "sha256-UqdPuLf8EPG3aGqj0yk9lTxkDUOdoEc9CRbINJZFcyg=";
     };
 
     dontBuild = true;
