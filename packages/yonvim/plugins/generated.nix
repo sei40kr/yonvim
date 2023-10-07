@@ -244,13 +244,13 @@ _self: {
 
   copilot-vim = vimUtils.buildVimPlugin {
     pname = "copilot.vim";
-    version = "2022-10-12";
+    version = "2023-09-20";
 
     src = fetchFromGitHub {
       owner = "github";
       repo = "copilot.vim";
-      rev = "8ba151a20bc1d7a5c72e592e51bfc925d5bbb837";
-      hash = "sha256-GmwR+S5sQnVUbVShP53jNpSKMZaoeh9Rf37v89wAJ3M=";
+      rev = "998cf5ab1b85e844c7e8edb864a997e590df7182";
+      hash = "sha256-7Qfsx4g4FeovOZmV5erFzJKNCkGSGL12gkFIz7cxxek=";
     };
 
     dontBuild = true;
