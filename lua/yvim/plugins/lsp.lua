@@ -73,7 +73,7 @@ return {
     },
 
     {
-        dir = "@null_ls@",
+        dir = "@none_ls@",
         opts = function()
             local null_ls = require("null-ls")
 

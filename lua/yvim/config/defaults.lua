@@ -6,7 +6,7 @@ return {
     -- The local leader key
     localleader_key = ",",
 
-    -- null-ls.nvim sources to use
+    -- none-ls.nvim sources to use
     null_ls = {
         sources = function(_)
             return {}

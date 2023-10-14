@@ -273,18 +273,18 @@
         "hash": "sha256-TlLMPdi2aOoyTWNv5BjJ3xkCsJ/52gsBisHnOPNf/ao="
     },
     {
+        "version": "2023-10-07",
+        "owner": "nvimtools",
+        "repo": "none-ls.nvim",
+        "rev": "ae339f45590cc421a68de885fc5a3261cc247362",
+        "hash": "sha256-4+B2F4ZweWTqXlhSs0jiBaKSv52G4X7p37KHfYl6sPo="
+    },
+    {
         "version": "2023-09-06",
         "owner": "MunifTanjim",
         "repo": "nui.nvim",
         "rev": "c8de23342caf8d50b15d6b28368d36a56a69d76f",
         "hash": "sha256-Ao+xnowsZPR9x3Wm439l1QIlgt3Rt6n9DZIqkUKsR1k="
-    },
-    {
-        "version": "2023-07-06",
-        "owner": "jose-elias-alvarez",
-        "repo": "null-ls.nvim",
-        "rev": "db09b6c691def0038c456551e4e2772186449f35",
-        "hash": "sha256-6KJtj9pbvBm6fOVpnyzO2fEVC+cVrw2XtZHOgq9ieIw="
     },
     {
         "version": "2023-09-23",

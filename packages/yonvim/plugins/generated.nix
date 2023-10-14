@@ -626,6 +626,22 @@ _self: {
     meta.homepage = "https://github.com/folke/noice.nvim";
   };
 
+  none-ls-nvim = vimUtils.buildVimPlugin {
+    pname = "none-ls.nvim";
+    version = "2023-10-07";
+
+    src = fetchFromGitHub {
+      owner = "nvimtools";
+      repo = "none-ls.nvim";
+      rev = "ae339f45590cc421a68de885fc5a3261cc247362";
+      hash = "sha256-4+B2F4ZweWTqXlhSs0jiBaKSv52G4X7p37KHfYl6sPo=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/nvimtools/none-ls.nvim";
+  };
+
   nui-nvim = vimUtils.buildVimPlugin {
     pname = "nui.nvim";
     version = "2023-09-06";
@@ -640,22 +656,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/MunifTanjim/nui.nvim";
-  };
-
-  null-ls-nvim = vimUtils.buildVimPlugin {
-    pname = "null-ls.nvim";
-    version = "2023-07-06";
-
-    src = fetchFromGitHub {
-      owner = "jose-elias-alvarez";
-      repo = "null-ls.nvim";
-      rev = "db09b6c691def0038c456551e4e2772186449f35";
-      hash = "sha256-6KJtj9pbvBm6fOVpnyzO2fEVC+cVrw2XtZHOgq9ieIw=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/jose-elias-alvarez/null-ls.nvim";
   };
 
   nvim-autopairs = vimUtils.buildVimPlugin {
