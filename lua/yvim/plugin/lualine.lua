@@ -45,7 +45,7 @@ function M.config()
             ),
             modified = lualine_utils.extract_color_from_hllist(
                 "fg",
-                { "BufferLineModified", "NvimTreeModifiedFile" },
+                { "BufferLineModified", "NeoTreeModified" },
                 "#000000"
             ),
             branch = lualine_utils.extract_color_from_hllist(
@@ -107,7 +107,7 @@ function M.config()
                 "NeogitLogView",
                 "NeogitPopup",
                 "NeogitStatus",
-                "NvimTree",
+                "neo-tree",
                 "qf",
                 "terminal",
                 "toggleterm",

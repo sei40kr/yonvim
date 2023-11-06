@@ -245,6 +245,13 @@
         "hash": "sha256-NFMd1JAmBbUYPUYQpHqLCDp8lkSxt7OQ7vlZSVbw24g="
     },
     {
+        "version": "2023-10-31",
+        "owner": "nvim-neo-tree",
+        "repo": "neo-tree.nvim",
+        "rev": "76dd1b49c302620f2e11946ac7a7201105180be2",
+        "hash": "sha256-fkoqXGQd4T66AW73rM8iUsi5g16wcRTsI5+ttClh1cQ="
+    },
+    {
         "version": "2023-10-07",
         "owner": "folke",
         "repo": "neoconf.nvim",
@@ -329,13 +336,6 @@
         "hash": "sha256-1tWvzE4x1lgldg6vAHCQy9XDMcxJ6G9bZPSG1pEn+qg="
     },
     {
-        "version": "2023-10-07",
-        "owner": "nvim-tree",
-        "repo": "nvim-tree.lua",
-        "rev": "85abe2939620fe63b73ec97d3e2e0c7f2ec4fe23",
-        "hash": "sha256-jOpN62CqceIHVLtmRnGLGA0VPDFXxEs/iwEzLdV7q48="
-    },
-    {
         "version": "2023-09-23",
         "owner": "RRethy",
         "repo": "nvim-treesitter-endwise",
@@ -376,6 +376,13 @@
         "repo": "nvim-web-devicons",
         "rev": "45d0237c427baba8cd05e0ab26d30e2ee58c2c82",
         "hash": "sha256-k1oq5TBF0ZAfC1aihw/HLrvOHwZSX8ToDU3aZ3YXdzE="
+    },
+    {
+        "version": "2023-09-24",
+        "owner": "s1n7ax",
+        "repo": "nvim-window-picker",
+        "rev": "e7b6699fbd007bbe61dc444734b9bade445b2984",
+        "hash": "sha256-IpaWJMZH5TUtQhQZzzSA35liZhZ2YMrJm2E/6hdohQY="
     },
     {
         "version": "2022-06-22",

@@ -562,6 +562,22 @@ _self: {
     meta.homepage = "https://github.com/echasnovski/mini.trailspace";
   };
 
+  neo-tree-nvim = vimUtils.buildVimPlugin {
+    pname = "neo-tree.nvim";
+    version = "2023-10-31";
+
+    src = fetchFromGitHub {
+      owner = "nvim-neo-tree";
+      repo = "neo-tree.nvim";
+      rev = "76dd1b49c302620f2e11946ac7a7201105180be2";
+      hash = "sha256-fkoqXGQd4T66AW73rM8iUsi5g16wcRTsI5+ttClh1cQ=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/nvim-neo-tree/neo-tree.nvim";
+  };
+
   neoconf-nvim = vimUtils.buildVimPlugin {
     pname = "neoconf.nvim";
     version = "2023-10-07";
@@ -754,22 +770,6 @@ _self: {
     meta.homepage = "https://github.com/rcarriga/nvim-notify";
   };
 
-  nvim-tree-lua = vimUtils.buildVimPlugin {
-    pname = "nvim-tree.lua";
-    version = "2023-10-07";
-
-    src = fetchFromGitHub {
-      owner = "nvim-tree";
-      repo = "nvim-tree.lua";
-      rev = "85abe2939620fe63b73ec97d3e2e0c7f2ec4fe23";
-      hash = "sha256-jOpN62CqceIHVLtmRnGLGA0VPDFXxEs/iwEzLdV7q48=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/nvim-tree/nvim-tree.lua";
-  };
-
   nvim-treesitter-endwise = vimUtils.buildVimPlugin {
     pname = "nvim-treesitter-endwise";
     version = "2023-09-23";
@@ -864,6 +864,22 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/nvim-tree/nvim-web-devicons";
+  };
+
+  nvim-window-picker = vimUtils.buildVimPlugin {
+    pname = "nvim-window-picker";
+    version = "2023-09-24";
+
+    src = fetchFromGitHub {
+      owner = "s1n7ax";
+      repo = "nvim-window-picker";
+      rev = "e7b6699fbd007bbe61dc444734b9bade445b2984";
+      hash = "sha256-IpaWJMZH5TUtQhQZzzSA35liZhZ2YMrJm2E/6hdohQY=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/s1n7ax/nvim-window-picker";
   };
 
   nvimacs = vimUtils.buildVimPlugin {

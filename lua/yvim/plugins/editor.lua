@@ -59,7 +59,7 @@ return {
         event = "VeryLazy",
         opts = {
             left = {
-                "NvimTree",
+                "neo-tree",
                 {
                     ft = "aerial",
                     title = "LSP Symbols",
@@ -622,146 +622,305 @@ return {
     },
 
     {
-        dir = "@tree@",
-        dependencies = { "nvim-web-devicons" },
+        dir = "@neo_tree@",
+        dependencies = {
+            "nui.nvim",
+            "nvim-web-devicons",
+            "plenary.nvim",
+            {
+                dir = "@window_picker@",
+                event = "VeryLazy",
+                opts = {
+                    filter_rules = {
+                        bo = {
+                            filetype = {
+                                "aerial",
+                                "help",
+                                "iron",
+                                "NeogitBranchSelectView",
+                                "NeogitCommitView",
+                                "NeogitGitCommandHistory",
+                                "NeogitPopup",
+                                "man",
+                                "neo-tree",
+                                "qf",
+                                "toggleterm",
+                                "Trouble",
+                            },
+                            buftype = {
+                                "quickfix",
+                                "terminal",
+                            },
+                        }
+                    },
+                },
+                main = "window-picker",
+            },
+        },
         opts = function()
-            local api = require("nvim-tree.api")
-
-            local function wrap_node(f)
-                return function(node, ...)
-                    node = node or api.tree.get_node_under_cursor()
-                    if node then
-                        return f(node, ...)
-                    end
-                end
-            end
-
-            local expand_or_collapse = wrap_node(function(node)
-                if node.nodes then
-                    require("nvim-tree.lib").expand_or_collapse(node)
-                end
-            end)
-
-            local collapse_or_up = wrap_node(function(node)
-                if node.open then
-                    expand_or_collapse(node)
-                else
-                    api.node.navigate.parent(node)
-                end
-            end)
-
-            local expand_or_down_or_open = wrap_node(function(node)
-                if node.nodes then
-                    if node.open then
-                        if 0 < #node.nodes then
-                            vim.cmd("norm! j")
-                        end
-                    else
-                        expand_or_collapse(node)
-                    end
-                else
-                    api.node.open.edit(node)
-                end
-            end)
+            local common_actions = require("neo-tree.sources.common.commands")
+            local fs = require("neo-tree.sources.filesystem")
+            local renderer = require("neo-tree.ui.renderer")
+            local utils = require("neo-tree.utils")
 
             return {
-                sync_root_with_cwd = true,
-                on_attach = function(bufnr)
-                    local map = function(lhs, rhs, opts)
-                        opts = opts or {}
-                        opts.buffer = bufnr
-                        opts.silent = opts.silent ~= false
-                        vim.keymap.set("n", lhs, rhs, opts)
-                    end
-
-                    map("<CR>", expand_or_down_or_open, { desc = "Open" })
-                    map("<Tab>", expand_or_collapse, { desc = "Expand/collapse" })
-                    -- TODO: z
-                    -- TODO: go
-                    -- TODO: gO
-                    map("gr", api.tree.reload, { desc = "Refresh" })
-                    map("q", api.tree.close, { desc = "Close" })
-                    map("H", api.tree.toggle_hidden_filter, { desc = "Toggle hidden" })
-                    map("gh", api.tree.toggle_hidden_filter, { desc = "Toggle hidden" })
-                    -- TODO: gk
-                    -- TODO: gj
-                    map("gv", api.node.run.system, { desc = "Run system" })
-                    map("c", api.fs.create, { nowait = true, desc = "Create" })
-                    -- TODO: Copy
-                    map("r", api.fs.rename, { desc = "Rename/move" })
-                    map("R", api.tree.change_root_to_node, { desc = "CD" })
-                    map("d", api.fs.remove, { nowait = true, desc = "Delete" })
-                    map("ge", expand_or_down_or_open, { desc = "Expand/down/open" })
-
-                    map("U", api.tree.change_root_to_parent, { desc = "Up" })
-                    map("|", api.node.open.vertical, { desc = "Open: vertical split" })
-                    map("-", api.node.open.horizontal, { desc = "Open: horizontal split" })
-
-                    map("<BS>", "<C-w>p", { desc = "Go to previous window" })
-                    map("h", collapse_or_up, { desc = "Collapse/up" })
-                    map("l", expand_or_down_or_open, { desc = "Expand/down/open" })
-                    map("J", api.node.navigate.sibling.next, { desc = "Next sibling" })
-                    map("K", api.node.navigate.sibling.prev, { desc = "Previous sibling" })
-                    map("v", api.node.open.vertical, { nowait = true, desc = "Open: vertical split" })
-                    map("s", api.node.open.horizontal, { desc = "Open: horizontal split" })
-
-                    map("[d", api.node.navigate.git.prev, { desc = "Previous git" })
-                    map("]d", api.node.navigate.git.next, { desc = "Next git" })
-                    map("<Esc>", api.live_filter.clear, { desc = "Clean filter" })
-                    map("/", api.live_filter.start, { desc = "Filter" })
-
-                    map("?", api.tree.toggle_help, { desc = "Help" })
-                end,
-                view = {
-                    centralize_selection = true,
-                    width = 35,
-                    signcolumn = "no",
+                close_if_last_window = false,
+                popup_border_style = config_opts.border,
+                enable_diagnostics = false,
+                default_component_configs = {
+                    container = { enable_character_fade = false },
+                    indent = { with_markers = false },
+                    icon = {
+                        folder_closed = " ",
+                        folder_open = " ",
+                        folder_empty = " ",
+                    },
+                    modified = { symbol = "" },
+                    git_status = {
+                        symbols = {
+                            -- Change type
+                            added     = "",
+                            modified  = "",
+                            deleted   = "",
+                            renamed   = "",
+                            -- Status type
+                            untracked = "",
+                            ignored   = "",
+                            unstaged  = "",
+                            staged    = "",
+                            conflict  = "",
+                        }
+                    },
+                    file_size = { enabled = false },
+                    type = { enabled = false },
+                    last_modified = { enabled = false },
+                    created = { enabled = false },
                 },
-                renderer = {
-                    highlight_git = true,
-                    root_folder_label = function(path)
-                        return "󰺿  " .. vim.fs.basename(path)
+                commands = {
+                    goto_previous_window = function(_)
+                        vim.cmd [[wincmd p]]
                     end,
-                    icons = {
-                        symlink_arrow = " ➛  ",
-                        show = { git = false },
-                        glyphs = {
-                            default = " ",
-                            symlink = " ",
-                            folder = {
-                                default = " ",
-                                open = " ",
-                                empty = " ",
-                                empty_open = " ",
-                                symlink = " ",
-                                symlink_open = " ",
-                            },
+                    select_up_node = function(state)
+                        local node = state.tree:get_node()
+
+                        local parent_id = node:get_parent_id()
+                        if parent_id == nil then
+                            return
+                        end
+
+                        renderer.focus_node(state, parent_id)
+                    end,
+                    select_down_node = function(state)
+                        local node = state.tree:get_node()
+
+                        if node:is_expanded() then
+                            local child_ids = node:get_child_ids()
+
+                            for _, id in ipairs(child_ids) do
+                                local child = state.tree:get_node(id)
+                                if child:is_expanded() then
+                                    renderer.focus_node(state, id)
+                                    return
+                                end
+                            end
+
+                            if 0 < #child_ids then
+                                renderer.focus_node(state, child_ids[1])
+                            end
+
+                            return
+                        end
+
+                        local parent_id = node:get_parent_id()
+                        if parent_id == nil then
+                            return
+                        end
+
+                        local sibling_ids = state.tree:get_node(parent_id):get_child_ids()
+                        local index
+                        for i, id in ipairs(sibling_ids) do
+                            if id == node.id then
+                                index = i
+                                break
+                            end
+                        end
+                        for i, id in ipairs(sibling_ids) do
+                            if i > index then
+                                local sibling = state.tree:get_node(id)
+                                if sibling:is_expanded() then
+                                    renderer.focus_node(state, id)
+                                    return
+                                end
+                            end
+                        end
+                    end,
+                    select_previous_sibling_node = function(state)
+                        local node = state.tree:get_node()
+
+                        local parent_id = node:get_parent_id()
+                        if parent_id == nil then
+                            return
+                        end
+
+                        local parent = state.tree:get_node(parent_id)
+                        local child_ids = parent:get_child_ids()
+                        local index
+                        for i, id in ipairs(child_ids) do
+                            if id == node.id then
+                                index = i
+                                break
+                            end
+                        end
+
+                        if 1 < index then
+                            renderer.focus_node(state, child_ids[index - 1])
+                        end
+                    end,
+                    select_next_sibling_node = function(state)
+                        local node = state.tree:get_node()
+
+                        local parent_id = node:get_parent_id()
+                        if parent_id == nil then
+                            return
+                        end
+
+                        local parent = state.tree:get_node(parent_id)
+                        local child_ids = parent:get_child_ids()
+                        local index
+                        for i, id in ipairs(child_ids) do
+                            if id == node.id then
+                                index = i
+                                break
+                            end
+                        end
+
+                        if index < #child_ids then
+                            renderer.focus_node(state, child_ids[index + 1])
+                        end
+                    end,
+                    close_or_up = function(state)
+                        local node = state.tree:get_node()
+
+                        if node:is_expanded() then
+                            common_actions.close_node(state)
+                            return
+                        end
+
+                        local parent_id = node:get_parent_id()
+                        if parent_id == nil then
+                            return
+                        end
+
+                        renderer.focus_node(state, parent_id)
+                    end,
+                    expand_or_down_or_open_with_window_picker = function(state)
+                        local node = state.tree:get_node()
+
+                        if node:is_expanded() then
+                            if node:has_children() then
+                                renderer.focus_node(state, node:get_child_ids()[1])
+                            end
+
+                            return
+                        end
+
+                        if utils.is_expandable(node) then
+                            common_actions.toggle_node(state, utils.wrap(fs.toggle_directory, state))
+                            return
+                        end
+
+                        common_actions.open_with_window_picker(state, nil)
+                    end,
+                },
+                window = {
+                    width = 35,
+                    mappings = {
+                        ["<CR>"] = "open_with_window_picker",
+                        ["<Tab>"] = "toggle_node",
+                        O = "expand_all_nodes",
+
+                        z = "toggle_node",
+                        gO = {
+                            "toggle_preview",
+                            config = {
+                                use_float = true,
+                                use_image_nvim = true,
+                            }
                         },
+                        ["<C-k>"] = "select_up_node",
+                        gk = "select_up_node",
+                        ["[["] = "select_up_node",
+                        ["<C-j>"] = "select_down_node",
+                        gj = "select_down_node",
+                        ["]]"] = "select_down_node",
+                        r = "rename",
+                        d = "delete",
+                        ge = "open_with_window_picker",
+                        ["|"] = "vsplit_with_window_picker",
+                        ["-"] = "split_with_window_picker",
+                        S = "select_previous_sibling_node",
+                        -- s = "select_next_sibling_node",
+
+                        ["<BS>"] = "goto_previous_window",
+                        h = "close_or_up",
+                        l = "expand_or_down_or_open_with_window_picker",
+                        J = "select_next_sibling_node",
+                        K = "select_previous_sibling_node",
+                        H = "select_up_node",
+                        L = "select_down_node",
+                        v = "vsplit_with_window_picker",
+                        s = "vsplit_with_window_picker",
+
+                        -- Unchanged mappings
+                        ["<Esc>"] = "cancel",
+                        y = "copy_to_clipboard",
+                        x = "cut_to_clipboard",
+                        p = "paste_from_clipboard",
+                        c = "copy",
+                        m = "move",
+                        q = "close_window",
+                        ["?"] = "show_help",
                     }
                 },
-                filters = { custom = { "^\\.git$" } },
-                actions = {
-                    change_dir = {
-                        enable = false,
-                        restrict_above_cwd = true,
+                filesystem = {
+                    filtered_items = {
+                        visible = false,
+                        hide_dotfiles = false,
+                        hide_gitignored = false,
+                        hide_by_name = { ".git" },
                     },
-                    file_popup = {
-                        open_win_config = { border = config_opts.ui.border },
-                    },
-                    open_file = {
-                        window_picker = {
-                            -- exclude = {},
+                    use_libuv_file_watcher = true,
+                    window = {
+                        mappings = {
+                            U = "navigate_up",
+
+                            gr = "refresh",
+                            -- H = "toggle_hidden",
+                            gh = "toggle_hidden",
+                            C = "add",
+                            R = "set_root",
+
+                            -- Unchanged mappings
+                            ["/"] = "fuzzy_finder",
+                        },
+                        fuzzy_finder_mappings = {
+                            ["<C-j>"] = "move_cursor_down",
+                            ["<C-k>"] = "move_cursor_up",
+
+                            -- Unchanged mappings
+                            ["<down>"] = "move_cursor_down",
+                            ["<C-n>"] = "move_cursor_down",
+                            ["<up>"] = "move_cursor_up",
+                            ["<C-p>"] = "move_cursor_up",
                         },
                     },
-                    remove_file = { close_window = false },
                 },
-                live_filter = { prefix = "/" },
             }
         end,
-        main = "nvim-tree",
+        main = "neo-tree",
         keys = {
-            { "<Leader>op", "<Cmd>NvimTreeToggle<CR>",   desc = "Project sidebar" },
-            { "<Leader>oP", "<Cmd>NvimTreeFindFile<CR>", desc = "Find file in project sidebar" },
+            { "<Leader>op", "<Cmd>Neotree source=filesystem<CR>",             desc = "Project sidebar" },
+            { "<Leader>oP", "<Cmd>Neotree source=filesystem reveal=true<CR>", desc = "Find file in project sidebar" },
         },
     },
 

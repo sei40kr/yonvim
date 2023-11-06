@@ -46,7 +46,7 @@ return {
                 diagnostics_indicator = nil,
                 show_close_icon = false,
                 separator_style = { "", "" },
-                offsets = { { filetype = "NvimTree" } },
+                offsets = { { filetype = "neo-tree" } },
             },
         },
         main = "bufferline",
@@ -167,7 +167,7 @@ return {
             local augroup = vim.api.nvim_create_augroup("yvim_indentscope", {})
             vim.api.nvim_create_autocmd("FileType", {
                 group = augroup,
-                pattern = { "alpha", "NvimTree" },
+                pattern = "alpha",
                 callback = function()
                     vim.b.miniindentscope_disable = true
                 end,
