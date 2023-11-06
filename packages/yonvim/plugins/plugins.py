@@ -7,7 +7,6 @@ from datetime import datetime
 from git import Repo
 import humanize
 import json
-import operator
 import os
 import requests
 import subprocess
@@ -200,7 +199,7 @@ def update(name):
         print(f"Plugin {name} is not found", file=sys.stderr)
         exit(1)
 
-    owner, repo, rev, hash = operator.itemgetter("owner", "repo", "rev", "hash")(plugin)
+    owner, repo, rev = (plugin["owner"], plugin["repo"], plugin["rev"])
 
     default_branch = get_repo_default_branch(owner=owner, repo=repo)
     head_rev = get_branch_head_rev(owner=owner, repo=repo, branch=default_branch)
@@ -245,7 +244,7 @@ def list_outdated():
     plugins = read_plugins()
 
     for plugin in plugins:
-        owner, repo, commit_sha = operator.itemgetter("owner", "repo", "rev")(plugin)
+        owner, repo, commit_sha = (plugin["owner"], plugin["repo"], plugin["rev"])
         url = f"https://api.github.com/repos/{owner}/{repo}/compare/{commit_sha}...HEAD"
         token = os.environ.get("GITHUB_API_TOKEN", "")
         response = requests.get(
