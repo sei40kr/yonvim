@@ -413,11 +413,11 @@
         "hash": "sha256-9QZgTv8W0BFlF0lsH1BPPAzjD6iXWXHXZf2zpouQH2s="
     },
     {
-        "version": "2023-10-06",
+        "version": "2023-10-28",
         "owner": "stevearc",
         "repo": "overseer.nvim",
-        "rev": "62e812574e93380ea0704de9455ee68e5a098e93",
-        "hash": "sha256-CIMzdwGUZ5+/NFm+NoF2BypHVYG++KVrBXqxmETKXQ4="
+        "rev": "6f462a61ce9a5f47743cbf78454bed14a855eb03",
+        "hash": "sha256-Q/W2i7FydgTj05/+yi4G0vzbJWhPEmsyq4F3KKtpuP8="
     },
     {
         "version": "2023-09-12",
