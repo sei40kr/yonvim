@@ -105,6 +105,7 @@ return {
             },
             animate = { enabled = false },
             exit_when_last = true,
+            wo = { winbar = false },
         },
         main = "edgy",
     },
