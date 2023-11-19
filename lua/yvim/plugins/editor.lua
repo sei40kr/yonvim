@@ -292,6 +292,7 @@ return {
             disable_commit_confirmation = true,
             disable_insert_on_commit = false,
             disable_builtin_notifications = true,
+            auto_show_console = false,
             commit_popup = { kind = "tab" },
             signs = {
                 section = { "", "" },
