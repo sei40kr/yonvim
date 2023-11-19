@@ -560,11 +560,11 @@
         "hash": "sha256-DwV0fV7I9FbVk+WCqx/isrmqoY2VRekgqpMO/Tqs70k="
     },
     {
-        "version": "2023-10-05",
+        "version": "2023-11-13",
         "owner": "lukas-reineke",
         "repo": "virt-column.nvim",
-        "rev": "9c82009c53e5f9d43b6c0f5e8cb69c53663b786a",
-        "hash": "sha256-YEzi6VQnptiInzOegVK6eAs5Bv7Q3vEyTk8OoDwQSp4="
+        "rev": "b62b4ef0774d19452d4ed18e473e824c7a756f2f",
+        "hash": "sha256-7ljjJ7UwN2U1xPCtsYbrKdnz6SGQGbM/HrxPTxNKlwo="
     },
     {
         "version": "2023-10-20",
