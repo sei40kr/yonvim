@@ -298,7 +298,7 @@ return {
             log_view = { kind = "auto" },
             reflog_view = { kind = "auto" },
             signs = {
-                section = { "", "" },
+                section = { "", "" },
                 item = { "", "" },
             },
             integrations = { diffview = true },
