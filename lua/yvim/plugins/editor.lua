@@ -301,7 +301,6 @@ return {
                 section = { "", "" },
                 item = { "", "" },
             },
-            integrations = { diffview = true },
         },
         config = function(_, opts)
             require("neogit").setup(opts)
