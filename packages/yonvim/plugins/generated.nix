@@ -1316,13 +1316,13 @@ _self: {
 
   yanky-nvim = vimUtils.buildVimPlugin {
     pname = "yanky.nvim";
-    version = "2023-10-06";
+    version = "2023-11-03";
 
     src = fetchFromGitHub {
       owner = "gbprod";
       repo = "yanky.nvim";
-      rev = "636632d70ac00c45bdc1751d7b35c83d47081f36";
-      hash = "sha256-HB/MXPzfUH5tTLHSQIQRo0dafBeTs2SPczPbvHWBfFc=";
+      rev = "9268018e92d02650a94e39dd5f5903c542f7ea11";
+      hash = "sha256-wpsTA9G/WK/mnm5gZHCXcmWgAGLSqeHLbDhITc2MdB0=";
     };
 
     dontBuild = true;
