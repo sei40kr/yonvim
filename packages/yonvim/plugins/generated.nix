@@ -532,13 +532,13 @@ _self: {
 
   mini-surround = vimUtils.buildVimPlugin {
     pname = "mini.surround";
-    version = "2023-07-01";
+    version = "2023-11-01";
 
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.surround";
-      rev = "9d1956b576d7051da3a483b251dfc778121c60db";
-      hash = "sha256-UXkTQyC0yOEVRltUYSn8angJ/+cVlmFpAqxNuoUcY8s=";
+      rev = "af8129efcabe95fc08a233e9f91569829bed031f";
+      hash = "sha256-y0lDAXOnPwcHaghgHjHfHaxlP77G4jXmabsZeberbpU=";
     };
 
     dontBuild = true;
