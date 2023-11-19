@@ -1108,13 +1108,13 @@ _self: {
 
   telescope-project-nvim = vimUtils.buildVimPlugin {
     pname = "telescope-project.nvim";
-    version = "2023-04-27";
+    version = "2023-11-06";
 
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope-project.nvim";
-      rev = "7c64b181dd4e72deddcf6f319e3bf1e95b2a2f30";
-      hash = "sha256-H6lrPjpOUVleKHB0ziI+6dthg9ymitHhEWtcgYJTrKo=";
+      rev = "5460c6c60d48618c5c746e5b1cad4c3e8262fdae";
+      hash = "sha256-SxtjDnvObVLl1+rpsmUDbhsgpCnNGa40NbNFlMzTRVY=";
     };
 
     dontBuild = true;
