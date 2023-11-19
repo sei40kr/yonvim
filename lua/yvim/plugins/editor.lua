@@ -292,7 +292,6 @@ return {
             disable_commit_confirmation = true,
             disable_insert_on_commit = false,
             disable_builtin_notifications = true,
-            use_telescope = Util.has("telescope.nvim"),
             commit_popup = { kind = "tab" },
             signs = {
                 section = { "", "" },
