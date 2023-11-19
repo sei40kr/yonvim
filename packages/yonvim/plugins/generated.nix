@@ -1204,13 +1204,13 @@ _self: {
 
   tokyonight-nvim = vimUtils.buildVimPlugin {
     pname = "tokyonight.nvim";
-    version = "2023-10-04";
+    version = "2023-10-25";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "tokyonight.nvim";
-      rev = "4412dafadf920deb9e08d4b9c1c11b2cf65ca1ca";
-      hash = "sha256-CdbUX1XH29n/G+vy3UuO5m6YdHI4wPMhQ02s30pLJ8Q=";
+      rev = "f247ee700b569ed43f39320413a13ba9b0aef0db";
+      hash = "sha256-axjZVZOI+WIv85FfMG+lxftDKlDIw/HzQKyJVFkL33M=";
     };
 
     dontBuild = true;
