@@ -273,11 +273,11 @@
         "hash": "sha256-9e4FkjudhmEBlUIUopWR39uW+esH1aDeppAiDUi29wI="
     },
     {
-        "version": "2023-10-07",
+        "version": "2023-10-25",
         "owner": "folke",
         "repo": "noice.nvim",
-        "rev": "4f32a3e2b7b47e9b6ca396c03641661056a978e7",
-        "hash": "sha256-TlLMPdi2aOoyTWNv5BjJ3xkCsJ/52gsBisHnOPNf/ao="
+        "rev": "92433164e2f7118d4122c7674c3834d9511722ba",
+        "hash": "sha256-7lgJK5pkMqwIXNeBDsz4B8UAKnkpUvDrHdeG/aSFRzM="
     },
     {
         "version": "2023-11-17",
