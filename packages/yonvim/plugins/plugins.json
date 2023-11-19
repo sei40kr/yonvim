@@ -189,11 +189,11 @@
         "hash": "sha256-S+qZm51hw/cRujIfHV/1x1fYyCKI4XQ0utSL8uy4l6I="
     },
     {
-        "version": "2023-08-03",
+        "version": "2023-10-20",
         "owner": "nvim-lualine",
         "repo": "lualine.nvim",
-        "rev": "45e27ca739c7be6c49e5496d14fcf45a303c3a63",
-        "hash": "sha256-v8finXk+sLNaFMA7pSHhEu0WF5mhPYWHEKhl0IKBv8c="
+        "rev": "2248ef254d0a1488a72041cfb45ca9caada6d994",
+        "hash": "sha256-jV+6mV0dyuhiHGei1UqE2r2GoiKJLtdZI2AMNexbi7E="
     },
     {
         "version": "2023-11-17",
