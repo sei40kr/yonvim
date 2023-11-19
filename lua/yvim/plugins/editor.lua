@@ -148,20 +148,6 @@ return {
                         return repl_open_cmd(bufnr)
                     end
                 },
-                keymaps = {
-                    send_motion = "<Nop>",
-                    visual_send = "<Nop>",
-                    send_file = "<Nop>",
-                    send_line = "<Nop>",
-                    send_mark = "<Nop>",
-                    mark_motion = "<Nop>",
-                    mark_visual = "<Nop>",
-                    remove_mark = "<Nop>",
-                    cr = "<Nop>",
-                    interrupt = "<Nop>",
-                    exit = "<Nop>",
-                    clear = "<Nop>",
-                },
                 highlight = { italic = false },
             }
         end,
@@ -613,7 +599,7 @@ return {
                     return vim.o.columns * 0.35
                 end
             end,
-            open_mapping = "<Nop>",
+            open_mapping = nil,
             shade_terminals = false,
             insert_mappings = false,
         },
