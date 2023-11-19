@@ -53,7 +53,7 @@ let
     zig
   ]);
 in
-vimUtils.buildVimPluginFrom2Nix {
+vimUtils.buildVimPlugin {
   pname = "yonvim.lua";
   version = "1.0.0";
 
