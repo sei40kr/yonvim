@@ -277,7 +277,6 @@ return {
             disable_context_highlighting = true,
             disable_commit_confirmation = true,
             disable_insert_on_commit = false,
-            disable_builtin_notifications = true,
             kind = "tab",
             auto_show_console = false,
             commit_select_view = { kind = "auto" },
