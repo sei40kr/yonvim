@@ -196,13 +196,13 @@ _self: {
 
   cmp_luasnip = vimUtils.buildVimPlugin {
     pname = "cmp_luasnip";
-    version = "2022-10-28";
+    version = "2023-10-09";
 
     src = fetchFromGitHub {
       owner = "saadparwaiz1";
       repo = "cmp_luasnip";
-      rev = "18095520391186d634a0045dacaa346291096566";
-      hash = "sha256-Z5SPy3j2oHFxJ7bK8DP8Q/oRyLEMlnWyIfDaQcNVIS0=";
+      rev = "05a9ab28b53f71d1aece421ef32fee2cb857a843";
+      hash = "sha256-nUJJl2zyK/oSwz5RzI9j3gf9zpDfCImCYbPbVsyXgz8=";
     };
 
     dontBuild = true;
