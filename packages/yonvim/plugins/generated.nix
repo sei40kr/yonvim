@@ -1300,13 +1300,13 @@ _self: {
 
   which-key-nvim = vimUtils.buildVimPlugin {
     pname = "which-key.nvim";
-    version = "2023-07-28";
+    version = "2023-10-20";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "which-key.nvim";
-      rev = "7ccf476ebe0445a741b64e36c78a682c1c6118b7";
-      hash = "sha256-B1+EHd2eH/EbD5Kip9PfhdPyyGfIkD6rsx0Z3rXvb5w=";
+      rev = "4433e5ec9a507e5097571ed55c02ea9658fb268a";
+      hash = "sha256-uvghPj/teWrRMm09Gh8iQ/LV2nYJw0lmoiZK6L4+1cY=";
     };
 
     dontBuild = true;
