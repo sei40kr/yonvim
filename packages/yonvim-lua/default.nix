@@ -104,7 +104,6 @@ vimUtils.buildVimPlugin {
       --subst-var-by overseer               ${yonvimPlugins.overseer-nvim.outPath} \
       --subst-var-by project                ${yonvimPlugins.project-nvim.outPath} \
       --subst-var-by scope                  ${yonvimPlugins.scope-nvim.outPath} \
-      --subst-var-by stickybuf              ${yonvimPlugins.stickybuf-nvim.outPath} \
       --subst-var-by telescope              ${yonvimPlugins.telescope-nvim.outPath} \
       --subst-var-by telescope_file_browser ${yonvimPlugins.telescope-file-browser-nvim.outPath} \
       --subst-var-by telescope_fzy_native   ${yonvimPlugins.telescope-fzy-native-nvim.outPath} \

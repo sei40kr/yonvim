@@ -1026,22 +1026,6 @@ _self: {
     meta.homepage = "https://github.com/tiagovla/scope.nvim";
   };
 
-  stickybuf-nvim = vimUtils.buildVimPlugin {
-    pname = "stickybuf.nvim";
-    version = "2023-05-27";
-
-    src = fetchFromGitHub {
-      owner = "stevearc";
-      repo = "stickybuf.nvim";
-      rev = "fc75dc22d12e5446c72a0d5f067cd7a16b3d921a";
-      hash = "sha256-bHwBZj0AETuxgenqoBjjvyQyAZ8uLutnfKVzWL+Ray0=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/stevearc/stickybuf.nvim";
-  };
-
   structlog-nvim = vimUtils.buildVimPlugin {
     pname = "structlog.nvim";
     version = "2023-01-08";
