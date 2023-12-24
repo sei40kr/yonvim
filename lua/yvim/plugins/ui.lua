@@ -15,7 +15,6 @@ return {
             vim.api.nvim_set_hl(0, "YonvimDashboardLogo1", { fg = blue })
             vim.api.nvim_set_hl(0, "YonvimDashboardLogo2", { fg = green })
             vim.api.nvim_set_hl(0, "YonvimDashboardLogo3", { fg = green, bg = blue })
-            vim.api.nvim_set_hl(0, "YonvimDashboardLogo4", { fg = gray })
 
             dashboard.section.header.val = {
                 [[            ]],
@@ -33,7 +32,7 @@ return {
                 { { "YonvimDashboardLogo2", 8, 13 } },
                 { { "YonvimDashboardLogo2", 8, 13 } },
                 {},
-                { { "YonvimDashboardLogo4", 0, 16 } },
+                {},
             }
             dashboard.section.buttons.val = {}
 
@@ -48,13 +47,15 @@ return {
                 end,
             })
 
+            vim.api.nvim_set_hl(0, "YonvimDashboardFooter", { fg = gray })
+
             dashboard.section.footer.val = function()
                 if not startup_time then
                     return {}
                 end
                 return { string.format("Loaded in %.0fms", startup_time) }
             end
-            dashboard.section.footer.opts.hl = { { { "YonvimDashboardLogo4", 0, 15 } } }
+            dashboard.section.footer.opts.hl = { { { "YonvimDashboardFooter", 0, 15 } } }
 
             return dashboard.config
         end,
