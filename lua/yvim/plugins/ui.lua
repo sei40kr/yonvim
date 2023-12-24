@@ -6,23 +6,36 @@ return {
         dependencies = { "nvim-web-devicons" },
         event = "VimEnter",
         opts = function()
+            local green = vim.g.terminal_color_2
+            local blue = vim.g.terminal_color_4
+            local gray = vim.api.nvim_get_hl(0, { name = "Comment" }).fg
+
+            vim.api.nvim_set_hl(0, "YonvimLogo1", { fg = blue })
+            vim.api.nvim_set_hl(0, "YonvimLogo2", { fg = green })
+            vim.api.nvim_set_hl(0, "YonvimLogo3", { fg = green, bg = blue })
+            vim.api.nvim_set_hl(0, "YonvimLogo4", { fg = gray })
+
             local dashboard = require 'alpha.themes.dashboard'
 
             dashboard.section.header.val = {
-                [[                               __                ]],
-                [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-                [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-                [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-                [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-                [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+                [[            ]],
+                [[     ██     ]],
+                [[      █      ]],
+                [[       ██       ]],
+                [[              ]],
+                [[]],
+                [[Y  O  N  V  I  M]],
             }
-            dashboard.section.buttons.val = {
-                -- TODO: Consider a situation where the user has a different
-                --  leader key
-                dashboard.button("SPC f r", "  Recently opened files"),
-                dashboard.button("SPC p p", "  Open project"),
-                dashboard.button("SPC f p", "  Open private configuration"),
+            dashboard.section.header.opts.hl = {
+                { { "YonvimLogo1", 6, 11 }, { "YonvimLogo2", 14, 19 } },
+                { { "YonvimLogo1", 6, 14 }, { "YonvimLogo2", 15, 23 } },
+                { { "YonvimLogo1", 7, 9 },  { "YonvimLogo3", 10, 12 }, { "YonvimLogo2", 13, 18 } },
+                { { "YonvimLogo2", 8, 13 } },
+                { { "YonvimLogo2", 8, 13 } },
+                {},
+                { { "YonvimLogo4", 0, 16 } },
             }
+            dashboard.section.buttons.val = {}
 
             return dashboard.config
         end,
