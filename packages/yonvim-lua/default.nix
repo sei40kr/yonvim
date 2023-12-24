@@ -138,23 +138,24 @@ vimUtils.buildVimPlugin {
       --subst-var-by treesitter_ts_autotag               ${yonvimPlugins.nvim-ts-autotag.outPath}
 
     substituteInPlace $out/lua/yvim/plugins/ui.lua \
-      --subst-var-by alpha            ${yonvimPlugins.alpha-nvim.outPath} \
-      --subst-var-by bufferline       ${yonvimPlugins.bufferline-nvim.outPath} \
-      --subst-var-by colorizer        ${yonvimPlugins.nvim-colorizer-lua.outPath} \
-      --subst-var-by dressing         ${yonvimPlugins.dressing-nvim.outPath} \
-      --subst-var-by flash            ${yonvimPlugins.flash-nvim.outPath} \
-      --subst-var-by gitsigns         ${yonvimPlugins.gitsigns-nvim.outPath} \
-      --subst-var-by illuminate       ${yonvimPlugins.vim-illuminate.outPath} \
-      --subst-var-by indent_blankline ${yonvimPlugins.indent-blankline-nvim.outPath} \
-      --subst-var-by lualine          ${yonvimPlugins.lualine-nvim.outPath} \
-      --subst-var-by mini_indentscope ${yonvimPlugins.mini-indentscope.outPath} \
-      --subst-var-by mini_trailspace  ${yonvimPlugins.mini-trailspace.outPath} \
-      --subst-var-by navic            ${yonvimPlugins.nvim-navic.outPath} \
-      --subst-var-by noice            ${yonvimPlugins.noice-nvim.outPath} \
-      --subst-var-by notify           ${yonvimPlugins.nvim-notify.outPath} \
-      --subst-var-by nui              ${yonvimPlugins.nui-nvim.outPath} \
-      --subst-var-by virt_column      ${yonvimPlugins.virt-column-nvim.outPath} \
-      --subst-var-by web_devicons     ${yonvimPlugins.nvim-web-devicons.outPath}
+      --subst-var-by alpha              ${yonvimPlugins.alpha-nvim.outPath} \
+      --subst-var-by bufferline         ${yonvimPlugins.bufferline-nvim.outPath} \
+      --subst-var-by colorizer          ${yonvimPlugins.nvim-colorizer-lua.outPath} \
+      --subst-var-by dressing           ${yonvimPlugins.dressing-nvim.outPath} \
+      --subst-var-by flash              ${yonvimPlugins.flash-nvim.outPath} \
+      --subst-var-by gitsigns           ${yonvimPlugins.gitsigns-nvim.outPath} \
+      --subst-var-by illuminate         ${yonvimPlugins.vim-illuminate.outPath} \
+      --subst-var-by indent_blankline   ${yonvimPlugins.indent-blankline-nvim.outPath} \
+      --subst-var-by lualine            ${yonvimPlugins.lualine-nvim.outPath} \
+      --subst-var-by mini_indentscope   ${yonvimPlugins.mini-indentscope.outPath} \
+      --subst-var-by mini_trailspace    ${yonvimPlugins.mini-trailspace.outPath} \
+      --subst-var-by navic              ${yonvimPlugins.nvim-navic.outPath} \
+      --subst-var-by noice              ${yonvimPlugins.noice-nvim.outPath} \
+      --subst-var-by notify             ${yonvimPlugins.nvim-notify.outPath} \
+      --subst-var-by nui                ${yonvimPlugins.nui-nvim.outPath} \
+      --subst-var-by rainbow_delimiters ${yonvimPlugins.rainbow-delimiters-nvim.outPath} \
+      --subst-var-by virt_column        ${yonvimPlugins.virt-column-nvim.outPath} \
+      --subst-var-by web_devicons       ${yonvimPlugins.nvim-web-devicons.outPath}
 
     substituteInPlace $out/lua/yvim/plugins/util.lua \
       --subst-var-by plenary ${yonvimPlugins.plenary-nvim.outPath}

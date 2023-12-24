@@ -962,6 +962,22 @@ _self: {
     meta.homepage = "https://github.com/ahmedkhalf/project.nvim";
   };
 
+  rainbow-delimiters-nvim = vimUtils.buildVimPlugin {
+    pname = "rainbow-delimiters.nvim";
+    version = "2023-12-24";
+
+    src = fetchFromGitHub {
+      owner = "HiPhish";
+      repo = "rainbow-delimiters.nvim";
+      rev = "35413f67fb918207a4acc4948ca9ccb75b6cf8d5";
+      hash = "sha256-927nX2n8W12oRqycrH7iYfJaXTvsH18y1dPZ+m/JhaE=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/HiPhish/rainbow-delimiters.nvim";
+  };
+
   rust-tools-nvim = vimUtils.buildVimPlugin {
     pname = "rust-tools.nvim";
     version = "2023-07-10";

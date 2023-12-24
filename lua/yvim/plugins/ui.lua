@@ -303,6 +303,10 @@ return {
     },
 
     {
+        dir = "@rainbow_delimiters@",
+    },
+
+    {
         dir = "@virt_column@",
         opts = { char = "│" },
         main = "virt-column",
