@@ -112,11 +112,11 @@
         "hash": "sha256-yuaG4kOSXSivFQCvc6iEZP230tlaFoXcZb0WxBjeWdA="
     },
     {
-        "version": "2023-10-05",
+        "version": "2023-11-20",
         "owner": "sindrets",
         "repo": "diffview.nvim",
-        "rev": "0437ef8bfdd67156d87140d692840a3c2824fa20",
-        "hash": "sha256-91HUTtHEE5+8pPSpI73/WbZ507x7Y7xrBBQnjmN3Eyc="
+        "rev": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f",
+        "hash": "sha256-3EdnBUka9Rh5Brl6TWpN6GlD9z32mmY3Ip+wyiKob/8="
     },
     {
         "version": "2023-11-07",
