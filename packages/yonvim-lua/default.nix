@@ -145,6 +145,7 @@ vimUtils.buildVimPlugin {
       --subst-var-by flash            ${yonvimPlugins.flash-nvim.outPath} \
       --subst-var-by gitsigns         ${yonvimPlugins.gitsigns-nvim.outPath} \
       --subst-var-by illuminate       ${yonvimPlugins.vim-illuminate.outPath} \
+      --subst-var-by indent_blankline ${yonvimPlugins.indent-blankline-nvim.outPath} \
       --subst-var-by lualine          ${yonvimPlugins.lualine-nvim.outPath} \
       --subst-var-by mini_indentscope ${yonvimPlugins.mini-indentscope.outPath} \
       --subst-var-by mini_trailspace  ${yonvimPlugins.mini-trailspace.outPath} \

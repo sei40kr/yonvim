@@ -354,6 +354,22 @@ _self: {
     meta.homepage = "https://github.com/lewis6991/gitsigns.nvim";
   };
 
+  indent-blankline-nvim = vimUtils.buildVimPlugin {
+    pname = "indent-blankline.nvim";
+    version = "2023-12-24";
+
+    src = fetchFromGitHub {
+      owner = "lukas-reineke";
+      repo = "indent-blankline.nvim";
+      rev = "0dca9284bce128e60da18693d92999968d6cb523";
+      hash = "sha256-uXycxfTs+rzYqxU8tEkZP0iGcc14Ss3c35HVf2/x0d4=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/lukas-reineke/indent-blankline.nvim";
+  };
+
   iron-nvim = vimUtils.buildVimPlugin {
     pname = "iron.nvim";
     version = "2023-07-13";

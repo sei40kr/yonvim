@@ -154,6 +154,13 @@
         "hash": "sha256-lzL+1OOS0bpMeB9SCkc147/OdweI206r0yPFBmhsN1g="
     },
     {
+        "version": "2023-12-24",
+        "owner": "lukas-reineke",
+        "repo": "indent-blankline.nvim",
+        "rev": "0dca9284bce128e60da18693d92999968d6cb523",
+        "hash": "sha256-uXycxfTs+rzYqxU8tEkZP0iGcc14Ss3c35HVf2/x0d4="
+    },
+    {
         "version": "2023-07-13",
         "owner": "hkupty",
         "repo": "iron.nvim",
