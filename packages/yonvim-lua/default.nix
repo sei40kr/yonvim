@@ -95,7 +95,6 @@ vimUtils.buildVimPlugin {
       --subst-var-by edgy                   ${yonvimPlugins.edgy-nvim.outPath} \
       --subst-var-by iron                   ${yonvimPlugins.iron-nvim.outPath} \
       --subst-var-by mini_bufremove         ${yonvimPlugins.mini-bufremove.outPath} \
-      --subst-var-by mini_trailspace        ${yonvimPlugins.mini-trailspace.outPath} \
       --subst-var-by navigator              ${yonvimPlugins.Navigator-nvim.outPath} \
       --subst-var-by neo_tree               ${yonvimPlugins.neo-tree-nvim.outPath} \
       --subst-var-by neogit                 ${yonvimPlugins.neogit.outPath} \
@@ -150,6 +149,7 @@ vimUtils.buildVimPlugin {
       --subst-var-by illuminate       ${yonvimPlugins.vim-illuminate.outPath} \
       --subst-var-by lualine          ${yonvimPlugins.lualine-nvim.outPath} \
       --subst-var-by mini_indentscope ${yonvimPlugins.mini-indentscope.outPath} \
+      --subst-var-by mini_trailspace  ${yonvimPlugins.mini-trailspace.outPath} \
       --subst-var-by navic            ${yonvimPlugins.nvim-navic.outPath} \
       --subst-var-by noice            ${yonvimPlugins.noice-nvim.outPath} \
       --subst-var-by notify           ${yonvimPlugins.nvim-notify.outPath} \

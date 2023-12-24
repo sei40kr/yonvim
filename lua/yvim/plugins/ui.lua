@@ -199,6 +199,31 @@ return {
     },
 
     {
+        dir = "@mini_trailspace@",
+        lazy = false,
+        opts = {},
+        main = "mini.trailspace",
+        keys = {
+            {
+                "<Leader>cw",
+                function()
+                    ---@diagnostic disable-next-line: undefined-global
+                    MiniTrailspace.trim()
+                end,
+                desc = "Delete trailing whitespace",
+            },
+            {
+                "<Leader>cW",
+                function()
+                    ---@diagnostic disable-next-line: undefined-global
+                    MiniTrailspace.trim_last_lines()
+                end,
+                desc = "Delete trailing newlines",
+            },
+        },
+    },
+
+    {
         dir = "@noice@",
         name = "noice.nvim",
         dependencies = { "nvim-notify", "nui.nvim" },
