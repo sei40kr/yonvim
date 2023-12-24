@@ -1172,13 +1172,13 @@ _self: {
 
   toggleterm-nvim = vimUtils.buildVimPlugin {
     pname = "toggleterm.nvim";
-    version = "2023-10-02";
+    version = "2023-12-13";
 
     src = fetchFromGitHub {
       owner = "akinsho";
       repo = "toggleterm.nvim";
-      rev = "c80844fd52ba76f48fabf83e2b9f9b93273f418d";
-      hash = "sha256-y+xMqHUJEBvZuE2+JRlfqZX9enWV0+qyTzuwU9PAK6c=";
+      rev = "91be5f327e42aa016da13b277540de8dba0b14e3";
+      hash = "sha256-hfsBRQ+0d3fAZGWE5Dh/OEdAJfqb3Wuf3IGVI4y2+yI=";
     };
 
     dontBuild = true;
