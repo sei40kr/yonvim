@@ -32,6 +32,7 @@ let
     ocaml
     perl
     php
+    prisma
     python
     r
     regex
