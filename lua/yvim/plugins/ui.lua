@@ -6,6 +6,8 @@ return {
         dependencies = { "nvim-web-devicons" },
         event = "VimEnter",
         opts = function()
+            local dashboard = require 'alpha.themes.dashboard'
+
             local green = vim.g.terminal_color_2
             local blue = vim.g.terminal_color_4
             local gray = vim.api.nvim_get_hl(0, { name = "Comment" }).fg
@@ -14,8 +16,6 @@ return {
             vim.api.nvim_set_hl(0, "YonvimDashboardLogo2", { fg = green })
             vim.api.nvim_set_hl(0, "YonvimDashboardLogo3", { fg = green, bg = blue })
             vim.api.nvim_set_hl(0, "YonvimDashboardLogo4", { fg = gray })
-
-            local dashboard = require 'alpha.themes.dashboard'
 
             dashboard.section.header.val = {
                 [[            ]],
@@ -36,6 +36,25 @@ return {
                 { { "YonvimDashboardLogo4", 0, 16 } },
             }
             dashboard.section.buttons.val = {}
+
+            local startup_time = nil
+            local augroup = vim.api.nvim_create_augroup("yonvim_alpha", {})
+            vim.api.nvim_create_autocmd("User", {
+                group = augroup,
+                pattern = "LazyVimStarted",
+                callback = function()
+                    startup_time = require("lazy").stats().startuptime
+                    vim.cmd("AlphaRedraw")
+                end,
+            })
+
+            dashboard.section.footer.val = function()
+                if not startup_time then
+                    return {}
+                end
+                return { string.format("Loaded in %.0fms", startup_time) }
+            end
+            dashboard.section.footer.opts.hl = { { { "YonvimDashboardLogo4", 0, 15 } } }
 
             return dashboard.config
         end,
