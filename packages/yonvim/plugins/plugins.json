@@ -483,11 +483,11 @@
         "hash": "sha256-SxtjDnvObVLl1+rpsmUDbhsgpCnNGa40NbNFlMzTRVY="
     },
     {
-        "version": "2023-02-19",
+        "version": "2023-11-24",
         "owner": "nvim-telescope",
         "repo": "telescope-symbols.nvim",
-        "rev": "f2060117d965df4a626f068a4ebbd8ee051aa076",
-        "hash": "sha256-cNBqJe6kjwi3d+SNiJhy9DQYqClcxvy1+TMLip6QN70="
+        "rev": "a6d0127a53d39b9fc2af75bd169d288166118aec",
+        "hash": "sha256-zYON9z3ELwjfqZ11LD6E7M+bymuBHxrSjYXhsCPEwR8="
     },
     {
         "version": "2023-07-22",
