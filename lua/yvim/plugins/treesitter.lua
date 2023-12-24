@@ -60,18 +60,6 @@ return {
                     ["[M"] = "@function.outer",
                 },
             },
-            rainbow = {
-                enable = true,
-                disable = {
-                    "alpha",
-                    "help",
-                    "iron",
-                    "neo-tree",
-                    "neo-tree-popup",
-                    "toggleterm",
-                    "Trouble",
-                },
-            },
         },
         config = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)

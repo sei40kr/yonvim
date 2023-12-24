@@ -818,22 +818,6 @@ _self: {
     meta.homepage = "https://github.com/windwp/nvim-ts-autotag";
   };
 
-  nvim-ts-rainbow = vimUtils.buildVimPlugin {
-    pname = "nvim-ts-rainbow";
-    version = "2023-01-02";
-
-    src = fetchFromGitHub {
-      owner = "p00f";
-      repo = "nvim-ts-rainbow";
-      rev = "ef95c15a935f97c65a80e48e12fe72d49aacf9b9";
-      hash = "sha256-4RQptdc3ktaj+Vw1Ykr6jD4q1JEsKNyBNUgUEdNDu1E=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/p00f/nvim-ts-rainbow";
-  };
-
   nvim-web-devicons = vimUtils.buildVimPlugin {
     pname = "nvim-web-devicons";
     version = "2023-12-24";
