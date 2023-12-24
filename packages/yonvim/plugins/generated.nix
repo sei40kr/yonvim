@@ -68,13 +68,13 @@ _self: {
 
   bufferline-nvim = vimUtils.buildVimPlugin {
     pname = "bufferline.nvim";
-    version = "2023-10-02";
+    version = "2023-12-13";
 
     src = fetchFromGitHub {
       owner = "akinsho";
       repo = "bufferline.nvim";
-      rev = "357cc8f8eeb64702e6fcf2995e3b9becee99a5d3";
-      hash = "sha256-Soi4os5X8bdDcMY82lqI0nl3+eipvzLeJPhDX6FeKVk=";
+      rev = "e48ce1805697e4bb97bc171c081e849a65859244";
+      hash = "sha256-xguFDEZVEVbIjdd0XnvRBjgB20Ym2ci1F+zw5jcVThk=";
     };
 
     dontBuild = true;
