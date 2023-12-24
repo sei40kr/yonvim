@@ -30,6 +30,7 @@ let
     nix
     norg
     ocaml
+    query
     perl
     php
     prisma
