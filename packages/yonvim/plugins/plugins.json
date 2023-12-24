@@ -308,11 +308,11 @@
         "hash": "sha256-auUHEjUDOaDkMI9loN6T+/whDDNzPl04bf+nqqLQ5+I="
     },
     {
-        "version": "2023-02-27",
+        "version": "2023-11-02",
         "owner": "NvChad",
         "repo": "nvim-colorizer.lua",
-        "rev": "dde3084106a70b9a79d48f426f6d6fec6fd203f7",
-        "hash": "sha256-hShQabr+UafsP+yicWkHycWLTbPhOpRpoa9oTMMVZ9o="
+        "rev": "85855b38011114929f4058efc97af1059ab3e41d",
+        "hash": "sha256-oKvFN2K+ASlPNwj2rhptR/ErYgo6XKBPhXSZotDdCP0="
     },
     {
         "version": "2023-12-22",
