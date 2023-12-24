@@ -371,11 +371,11 @@
         "hash": "sha256-4RQptdc3ktaj+Vw1Ykr6jD4q1JEsKNyBNUgUEdNDu1E="
     },
     {
-        "version": "2023-11-19",
+        "version": "2023-12-24",
         "owner": "nvim-tree",
         "repo": "nvim-web-devicons",
-        "rev": "e2f6e0e299e193d7e9c48634d355f7a6eb3020b4",
-        "hash": "sha256-EK/fF5hdMGp7aPl9cVeHwntAYon5xK93KB4qPYNCqBg="
+        "rev": "43aa2ddf476012a2155f5f969ee55ab17174da7a",
+        "hash": "sha256-FonYAQphOWxF+X3W1z5OS2MwX4bldcow/43HSMfcouM="
     },
     {
         "version": "2023-12-17",
