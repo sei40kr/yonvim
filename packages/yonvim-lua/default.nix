@@ -123,8 +123,6 @@ vimUtils.buildVimPlugin {
       --subst-var-by typescript ${yonvimPlugins.typescript-nvim.outPath}
 
     substituteInPlace $out/lua/yvim/plugins/lsp.lua \
-      --subst-var-by mason           ${yonvimPlugins.mason-nvim.outPath} \
-      --subst-var-by mason_lspconfig ${yonvimPlugins.mason-lspconfig-nvim.outPath} \
       --subst-var-by neoconf         ${yonvimPlugins.neoconf-nvim.outPath} \
       --subst-var-by neodev          ${yonvimPlugins.neodev-nvim.outPath} \
       --subst-var-by none_ls         ${yonvimPlugins.none-ls-nvim.outPath} \

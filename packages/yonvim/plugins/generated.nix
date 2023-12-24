@@ -450,38 +450,6 @@ _self: {
     meta.homepage = "https://github.com/nvim-lualine/lualine.nvim";
   };
 
-  mason-lspconfig-nvim = vimUtils.buildVimPlugin {
-    pname = "mason-lspconfig.nvim";
-    version = "2023-11-17";
-
-    src = fetchFromGitHub {
-      owner = "williamboman";
-      repo = "mason-lspconfig.nvim";
-      rev = "ab640b38ca9fa50d25d2d249b6606b9456b628d5";
-      hash = "sha256-Tw97TY4OaRohg6qxhGx0iwYMhqQb4tarlUngeL0RjJo=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/williamboman/mason-lspconfig.nvim";
-  };
-
-  mason-nvim = vimUtils.buildVimPlugin {
-    pname = "mason.nvim";
-    version = "2023-11-08";
-
-    src = fetchFromGitHub {
-      owner = "williamboman";
-      repo = "mason.nvim";
-      rev = "41e75af1f578e55ba050c863587cffde3556ffa6";
-      hash = "sha256-n76oy/VMn+++FMZ4rLE5a5QJeaaKto7pCFf6Ym3o640=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/williamboman/mason.nvim";
-  };
-
   mini-bufremove = vimUtils.buildVimPlugin {
     pname = "mini.bufremove";
     version = "2023-10-22";

@@ -31,32 +31,6 @@ return {
         },
         module = "lsp-inlayhints",
     },
-    {
-        dir = "@mason@",
-        name = "mason.nvim",
-        opts = function()
-            return {
-                border = "rounded",
-                ui = {
-                    border = config_opts.ui.border,
-                    icons = {
-                        server_installed = "●",
-                        server_pending = "●",
-                        server_uninstalled = "●",
-                    },
-                },
-                install_root_dir = vim.fn.stdpath("data") .. "/mason",
-            }
-        end,
-        main = "mason",
-    },
-
-    {
-        dir = "@mason_lspconfig@",
-        name = "mason-lspconfig.nvim",
-        dependencies = { "mason.nvim" },
-        config = true,
-    },
 
     {
         dir = "@neoconf@",
@@ -100,7 +74,6 @@ return {
         dir = "@lspconfig@",
         dependencies = {
             "cmp-nvim-lsp",
-            "mason-lspconfig.nvim",
             "neoconf.nvim",
             "neodev.nvim",
         },

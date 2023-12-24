@@ -21,13 +21,6 @@ let
   version = import ./version.nix;
 
   runtimeDeps = [
-    # mason.nvim
-    curl
-    gnutar
-    gzip
-    unzip
-    wget
-
     # nvim-telescope
     fd
     ripgrep
