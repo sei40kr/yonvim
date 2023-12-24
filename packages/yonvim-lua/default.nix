@@ -93,7 +93,6 @@ vimUtils.buildVimPlugin {
       --subst-var-by aerial                 ${yonvimPlugins.aerial-nvim.outPath} \
       --subst-var-by diffview               ${yonvimPlugins.diffview-nvim.outPath} \
       --subst-var-by edgy                   ${yonvimPlugins.edgy-nvim.outPath} \
-      --subst-var-by flash                  ${yonvimPlugins.flash-nvim.outPath} \
       --subst-var-by iron                   ${yonvimPlugins.iron-nvim.outPath} \
       --subst-var-by mini_bufremove         ${yonvimPlugins.mini-bufremove.outPath} \
       --subst-var-by mini_trailspace        ${yonvimPlugins.mini-trailspace.outPath} \
@@ -146,6 +145,7 @@ vimUtils.buildVimPlugin {
       --subst-var-by bufferline       ${yonvimPlugins.bufferline-nvim.outPath} \
       --subst-var-by colorizer        ${yonvimPlugins.nvim-colorizer-lua.outPath} \
       --subst-var-by dressing         ${yonvimPlugins.dressing-nvim.outPath} \
+      --subst-var-by flash            ${yonvimPlugins.flash-nvim.outPath} \
       --subst-var-by gitsigns         ${yonvimPlugins.gitsigns-nvim.outPath} \
       --subst-var-by illuminate       ${yonvimPlugins.vim-illuminate.outPath} \
       --subst-var-by lualine          ${yonvimPlugins.lualine-nvim.outPath} \

@@ -111,27 +111,6 @@ return {
     },
 
     {
-        dir = "@flash@",
-        event = "VeryLazy",
-        opts = {
-            incremental = true,
-            modes = {
-                search = { enabled = false },
-            },
-        },
-        main = "flash",
-        keys = {
-            {
-                "<Leader>j",
-                function()
-                    require("flash").jump()
-                end,
-                desc = "Jump to",
-            }
-        },
-    },
-
-    {
         dir = "@iron@",
         opts = function()
             local view = require("iron.view")

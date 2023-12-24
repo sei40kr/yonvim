@@ -94,6 +94,27 @@ return {
     },
 
     {
+        dir = "@flash@",
+        event = "VeryLazy",
+        opts = {
+            incremental = true,
+            modes = {
+                search = { enabled = false },
+            },
+        },
+        main = "flash",
+        keys = {
+            {
+                "<Leader>j",
+                function()
+                    require("flash").jump()
+                end,
+                desc = "Jump to",
+            }
+        },
+    },
+
+    {
         dir = "@gitsigns@",
         name = "gitsigns.nvim",
         opts = {
