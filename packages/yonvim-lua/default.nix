@@ -51,6 +51,7 @@ let
     rust
     scala
     scss
+    solidity
     sql
     svelte
     # swift
