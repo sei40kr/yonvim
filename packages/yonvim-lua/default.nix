@@ -15,6 +15,7 @@ let
     # elisp
     fish
     gitattributes
+    gitcommit
     go
     gomod
     graphql
