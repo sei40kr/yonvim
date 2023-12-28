@@ -14,6 +14,7 @@ let
     dockerfile
     # elisp
     fish
+    gitattributes
     go
     gomod
     graphql
