@@ -17,10 +17,10 @@ function M.config()
     )
 
     for name, sign in pairs({
-        Error = "",
-        Hint = "",
+        Error = "󰅚",
+        Hint = "󰌶",
         Info = "",
-        Warn = "",
+        Warn = "󰀪",
     }) do
         name = "DiagnosticSign" .. name
         vim.fn.sign_define(name, { text = sign, texthl = name, numhl = "" })
