@@ -123,7 +123,7 @@ function M.config()
         cmp.config.compare.order,
     }
     if config_opts.completion.copilot.enable then
-        table.insert(sources, 1, { name = "copilot" })
+        table.insert(sources, 1, { name = "copilot", keyword_length = 0 })
 
         local copilot_cmp_comparators = require("copilot_cmp.comparators")
         table.insert(comparators, 1, copilot_cmp_comparators.prioritize)
@@ -167,6 +167,12 @@ function M.config()
                 require("luasnip").lsp_expand(args.body)
             end,
         },
+        completion = {
+            autocomplete = {
+                cmp.TriggerEvent.InsertEnter,
+                cmp.TriggerEvent.TextChanged,
+            },
+        },
         formatting = {
             format = require("lspkind").cmp_format({
                 symbol_map = config_opts.icons.kinds,
@@ -179,6 +185,7 @@ function M.config()
             priority_weight = 2,
             comparators = comparators,
         },
+        experimental = { ghost_text = true },
     })
 
     cmp.setup.cmdline(":", {
