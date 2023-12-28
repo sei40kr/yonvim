@@ -6,6 +6,7 @@ let
     bash
     c
     c-sharp
+    clojure
     cpp
     css
     dockerfile
