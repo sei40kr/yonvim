@@ -607,7 +607,7 @@ return {
 
             return {
                 close_if_last_window = false,
-                popup_border_style = config_opts.border,
+                popup_border_style = config_opts.ui.border,
                 enable_diagnostics = false,
                 default_component_configs = {
                     container = { enable_character_fade = false },
