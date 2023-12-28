@@ -133,6 +133,7 @@ vimUtils.buildVimPlugin {
     substituteInPlace $out/lua/yvim/plugins/treesitter.lua \
       --subst-var-by treesitter                          ${nvim-treesitter.outPath} \
       --subst-var-by treesitter_endwise                  ${yonvimPlugins.nvim-treesitter-endwise.outPath} \
+      --subst-var-by treesitter_pairs                    ${yonvimPlugins.nvim-treesitter-pairs.outPath} \
       --subst-var-by treesitter_refactor                 ${yonvimPlugins.nvim-treesitter-refactor.outPath} \
       --subst-var-by treesitter_textobjects              ${yonvimPlugins.nvim-treesitter-textobjects.outPath} \
       --subst-var-by treesitter_ts_autotag               ${yonvimPlugins.nvim-ts-autotag.outPath}

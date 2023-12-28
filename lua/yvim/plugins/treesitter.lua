@@ -3,6 +3,7 @@ return {
         dir = "@treesitter@",
         dependencies = {
             { dir = "@treesitter_endwise@" },
+            { dir = "@treesitter_pairs@" },
             { dir = "@treesitter_refactor@" },
             { dir = "@treesitter_textobjects@" },
             { dir = "@treesitter_ts_autotag@" },
@@ -30,6 +31,13 @@ return {
                     scope_incremental = false,
                     node_decremental = "V",
                 },
+            },
+            pairs = {
+                enable = true,
+                highlight_pair_events = { "CursorMoved" },
+                highlight_self = true,
+                fallback_cmd_normal = "normal! %",
+                keymaps = {},
             },
             refactor = {
                 highlight_definitions = { enable = true },
