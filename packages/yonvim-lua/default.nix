@@ -7,6 +7,7 @@ let
     c
     c-sharp
     clojure
+    cmake
     cpp
     css
     dockerfile
