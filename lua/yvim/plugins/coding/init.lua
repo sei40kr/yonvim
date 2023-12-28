@@ -101,7 +101,7 @@ return {
         init = function()
             require("yvim.plugin.visual-multi").init()
         end,
-        keys = "<Plug>VM-",
+        keys = "<Plug>(VM-",
     },
 
     {
