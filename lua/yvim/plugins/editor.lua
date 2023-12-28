@@ -894,8 +894,8 @@ return {
                 ["<tab>"] = "TAB",
             },
             icons = {
-                breadcrumb = "",
-                separator = "",
+                breadcrumb = "󰁔",
+                separator = "󰁔",
             },
         },
         config = function(_, opts)
