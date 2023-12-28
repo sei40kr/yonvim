@@ -42,6 +42,7 @@ let
     php
     prisma
     pymanifest
+    purescript
     python
     r
     regex
