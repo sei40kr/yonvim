@@ -64,6 +64,7 @@ let
     vim
     vue
     yaml
+    xml
     zig
   ]);
 in
