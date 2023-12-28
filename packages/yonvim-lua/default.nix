@@ -37,6 +37,7 @@ let
     norg
     ocaml
     query
+    pem
     perl
     php
     prisma
