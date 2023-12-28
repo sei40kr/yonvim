@@ -53,6 +53,7 @@ let
     scss
     solidity
     sql
+    ssh_config
     svelte
     # swift
     terraform
