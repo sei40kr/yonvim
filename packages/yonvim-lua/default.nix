@@ -2,6 +2,7 @@
 
 let
   nvim-treesitter = vimPlugins.nvim-treesitter.withPlugins (ps: with ps; [
+    awk
     bash
     c
     c-sharp
