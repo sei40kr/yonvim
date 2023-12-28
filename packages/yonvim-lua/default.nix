@@ -46,6 +46,7 @@ let
     python
     r
     regex
+    requirements
     ruby
     rust
     scala
