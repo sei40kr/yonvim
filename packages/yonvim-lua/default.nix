@@ -10,6 +10,7 @@ let
     cmake
     cpp
     css
+    diff
     dockerfile
     # elisp
     fish
