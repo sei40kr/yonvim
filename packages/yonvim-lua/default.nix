@@ -41,6 +41,7 @@ let
     perl
     php
     prisma
+    pymanifest
     python
     r
     regex
