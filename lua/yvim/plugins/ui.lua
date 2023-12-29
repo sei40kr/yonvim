@@ -195,19 +195,33 @@ return {
 
     {
         dir = "@indent_blankline@",
-        lazy = false,
+        dependencies = { "rainbow-delimiters.nvim" },
         opts = {
             indent = { char = '▏' },
             whitespace = { remove_blankline_trail = false },
-            scope = { enabled = false },
+            scope = {
+                show_start = false,
+                show_end = false,
+                -- Use the same colors as rainbow-delimiters.nvim
+                highlight = {
+                    "RainbowDelimiterRed",
+                    "RainbowDelimiterYellow",
+                    "RainbowDelimiterBlue",
+                    "RainbowDelimiterOrange",
+                    "RainbowDelimiterGreen",
+                    "RainbowDelimiterViolet",
+                    "RainbowDelimiterCyan",
+                },
+            },
         },
         config = function(_, opts)
             require("ibl").setup(opts)
 
+            -- Integrate with rainbow-delimiters.nvim
             local hooks = require("ibl.hooks")
-            hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
-            hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
+            hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
         end,
+        event = { "BufNewFile", "BufReadPost" },
     },
 
     {
@@ -294,6 +308,8 @@ return {
 
     {
         dir = "@rainbow_delimiters@",
+        name = "rainbow-delimiters.nvim",
+        event = { "BufNewFile", "BufReadPost" },
     },
 
     {
