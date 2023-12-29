@@ -498,22 +498,6 @@ _self: {
     meta.homepage = "https://github.com/echasnovski/mini.comment";
   };
 
-  mini-indentscope = vimUtils.buildVimPlugin {
-    pname = "mini.indentscope";
-    version = "2023-05-02";
-
-    src = fetchFromGitHub {
-      owner = "echasnovski";
-      repo = "mini.indentscope";
-      rev = "f60e9b51a6214c73a170ffc5445ce91560981031";
-      hash = "sha256-lqy5GMi0J90X7TDrp4ao5Mp6FmBascfJhLjLurq1TMA=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/echasnovski/mini.indentscope";
-  };
-
   mini-surround = vimUtils.buildVimPlugin {
     pname = "mini.surround";
     version = "2023-11-01";

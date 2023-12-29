@@ -161,7 +161,6 @@ vimUtils.buildVimPlugin {
       --subst-var-by illuminate         ${yonvimPlugins.vim-illuminate.outPath} \
       --subst-var-by indent_blankline   ${yonvimPlugins.indent-blankline-nvim.outPath} \
       --subst-var-by lualine            ${yonvimPlugins.lualine-nvim.outPath} \
-      --subst-var-by mini_indentscope   ${yonvimPlugins.mini-indentscope.outPath} \
       --subst-var-by mini_trailspace    ${yonvimPlugins.mini-trailspace.outPath} \
       --subst-var-by navic              ${yonvimPlugins.nvim-navic.outPath} \
       --subst-var-by noice              ${yonvimPlugins.noice-nvim.outPath} \

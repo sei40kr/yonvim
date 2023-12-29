@@ -219,36 +219,6 @@ return {
     },
 
     {
-        dir = "@mini_indentscope@",
-        opts = function()
-            return {
-                draw = {
-                    animation = require("mini.indentscope").gen_animation.none(),
-                },
-                mappings = {
-                    object_scope = '',
-                    object_scope_with_border = '',
-                    goto_top = '',
-                    goto_bottom = '',
-                },
-                symbol = '▏',
-            }
-        end,
-        config = function(_, opts)
-            local augroup = vim.api.nvim_create_augroup("yvim_indentscope", {})
-            vim.api.nvim_create_autocmd("FileType", {
-                group = augroup,
-                pattern = "alpha",
-                callback = function()
-                    vim.b.miniindentscope_disable = true
-                end,
-            })
-
-            require("mini.indentscope").setup(opts)
-        end,
-    },
-
-    {
         dir = "@mini_trailspace@",
         lazy = false,
         opts = {},

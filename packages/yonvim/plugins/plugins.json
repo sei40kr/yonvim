@@ -217,13 +217,6 @@
         "hash": "sha256-+qu/wrHqMqSTa6dK0nWBDGSWkdd6VoWyOIKJZioN+0M="
     },
     {
-        "version": "2023-05-02",
-        "owner": "echasnovski",
-        "repo": "mini.indentscope",
-        "rev": "f60e9b51a6214c73a170ffc5445ce91560981031",
-        "hash": "sha256-lqy5GMi0J90X7TDrp4ao5Mp6FmBascfJhLjLurq1TMA="
-    },
-    {
         "version": "2023-11-01",
         "owner": "echasnovski",
         "repo": "mini.surround",
