@@ -33,6 +33,9 @@ let
       "--set" "NVIM_APPNAME" "yonvim"
       "--set" "LAZY_LOCKFILE" "${yonvim-lazy-files}/share/lazy/lazy-lock.json"
       "--set" "LAZY_README" "${yonvim-lazy-files}/share/lazy/readme"
+      # HACK: Make sure that Firenvim's helper script runs the correct Yonvim
+      #  executable.
+      "--run" "export APPIMAGE=$0"
     ];
     wrapRc = false;
     packpathDirs.myNeovimPackages.start =  [

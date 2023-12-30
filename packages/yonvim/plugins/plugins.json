@@ -133,6 +133,13 @@
         "hash": "sha256-moaypNxfVgaFg4OCpzDIw3zWmMgwxVPCMlyVCP3sVEI="
     },
     {
+        "version": "2023-08-18",
+        "owner": "glacambre",
+        "repo": "firenvim",
+        "rev": "138424db463e6c0e862a05166a4ccc781cd7c19d",
+        "hash": "sha256-h7G0/4uwn4+8zYbx5qcz4RY3Z3Ly8v81dhuFg7Sj3CI="
+    },
+    {
         "version": "2023-10-17",
         "owner": "folke",
         "repo": "flash.nvim",

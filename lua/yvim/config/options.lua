@@ -61,6 +61,14 @@ function M.load()
     -- edgy.nvim recommended options
     vim.opt.laststatus = 3
     vim.opt.splitkeep = "screen"
+
+    if vim.g.started_by_firenvim then
+        -- Firenvim recommended options
+        vim.o.laststatus = 0
+
+        local config_opts = require("yvim.config").opts
+        vim.o.guifont = config_opts.ui.font.name .. ":h" .. (config_opts.ui.font.size)
+    end
 end
 
 return M

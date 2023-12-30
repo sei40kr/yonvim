@@ -3,6 +3,7 @@ local config_opts = require("yvim.config").opts
 return {
     {
         dir = "@alpha@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         event = "VimEnter",
         opts = function()
@@ -64,6 +65,7 @@ return {
 
     {
         dir = "@bufferline@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         opts = {
             options = {
@@ -106,6 +108,7 @@ return {
         dir = "@dressing@",
         name = "dressing.nvim",
         lazy = true,
+        cond = not vim.g.started_by_firenvim,
         init = function()
             vim.ui.input = function(...)
                 require("lazy").load({ plugins = { "dressing.nvim" } })
@@ -150,6 +153,7 @@ return {
     {
         dir = "@gitsigns@",
         name = "gitsigns.nvim",
+        cond = not vim.g.started_by_firenvim,
         opts = {
             signs = {
                 add = { text = "▍" },
@@ -226,6 +230,7 @@ return {
 
     {
         dir = "@lualine@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         config = function()
             require("yvim.plugin.lualine").config()
@@ -260,6 +265,7 @@ return {
     {
         dir = "@noice@",
         name = "noice.nvim",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-notify", "nui.nvim" },
         config = function()
             require("yvim.plugin.noice").config()
@@ -269,6 +275,7 @@ return {
     {
         dir = "@navic@",
         name = "nvim-navic",
+        cond = not vim.g.started_by_firenvim,
         init = function()
             local Util = require("yvim.util")
             Util.on_attach(function(client, bufnr)
@@ -295,6 +302,7 @@ return {
     {
         dir = "@notify@",
         name = "nvim-notify",
+        cond = not vim.g.started_by_firenvim,
         config = function()
             require("yvim.plugin.notify").config()
         end,
@@ -303,6 +311,7 @@ return {
     {
         dir = "@nui@",
         name = "nui.nvim",
+        cond = not vim.g.started_by_firenvim,
         lazy = true,
     },
 

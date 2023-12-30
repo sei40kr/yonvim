@@ -306,6 +306,22 @@ _self: {
     meta.homepage = "https://github.com/folke/edgy.nvim";
   };
 
+  firenvim = vimUtils.buildVimPlugin {
+    pname = "firenvim";
+    version = "2023-08-18";
+
+    src = fetchFromGitHub {
+      owner = "glacambre";
+      repo = "firenvim";
+      rev = "138424db463e6c0e862a05166a4ccc781cd7c19d";
+      hash = "sha256-h7G0/4uwn4+8zYbx5qcz4RY3Z3Ly8v81dhuFg7Sj3CI=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/glacambre/firenvim";
+  };
+
   flash-nvim = vimUtils.buildVimPlugin {
     pname = "flash.nvim";
     version = "2023-10-17";

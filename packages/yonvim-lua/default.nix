@@ -106,6 +106,7 @@ vimUtils.buildVimPlugin {
       --subst-var-by aerial                 ${yonvimPlugins.aerial-nvim.outPath} \
       --subst-var-by diffview               ${yonvimPlugins.diffview-nvim.outPath} \
       --subst-var-by edgy                   ${yonvimPlugins.edgy-nvim.outPath} \
+      --subst-var-by firenvim               ${yonvimPlugins.firenvim.outPath} \
       --subst-var-by iron                   ${yonvimPlugins.iron-nvim.outPath} \
       --subst-var-by mini_bufremove         ${yonvimPlugins.mini-bufremove.outPath} \
       --subst-var-by navigator              ${yonvimPlugins.Navigator-nvim.outPath} \

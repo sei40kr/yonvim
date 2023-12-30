@@ -35,6 +35,7 @@ return {
     {
         dir = "@neoconf@",
         name = "neoconf.nvim",
+        cond = not vim.g.started_by_firenvim,
         opts = {},
         main = "neoconf",
     },
@@ -42,6 +43,7 @@ return {
     {
         dir = "@neodev@",
         name = "neodev.nvim",
+        cond = not vim.g.started_by_firenvim,
         opts = {},
         main = "neodev",
     },

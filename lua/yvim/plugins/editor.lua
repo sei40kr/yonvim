@@ -4,6 +4,7 @@ local config_opts = require("yvim.config").opts
 return {
     {
         dir = "@aerial@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         opts = {
             {
@@ -27,6 +28,7 @@ return {
 
     {
         dir = "@diffview@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons", "plenary.nvim" },
         opts = function()
             local actions = require("diffview.actions")
@@ -56,6 +58,7 @@ return {
 
     {
         dir = "@edgy@",
+        cond = not vim.g.started_by_firenvim,
         event = "VeryLazy",
         opts = {
             left = {
@@ -111,7 +114,21 @@ return {
     },
 
     {
+        dir = "@firenvim@",
+        lazy = not vim.g.started_by_firenvim,
+        config = function()
+            vim.api.nvim_create_user_command(
+                "FirenvimInstall",
+                [[call firenvim#install(0)]],
+                { desc = "Install Firenvim" }
+            )
+        end,
+        cmd = "FirenvimInstall",
+    },
+
+    {
         dir = "@iron@",
+        cond = not vim.g.started_by_firenvim,
         opts = function()
             local view = require("iron.view")
             local repl_open_cmd = view.split.horizontal.botright(0.30)
@@ -206,6 +223,7 @@ return {
 
     {
         dir = "@mini_bufremove@",
+        cond = not vim.g.started_by_firenvim,
         module = "mini.bufremove",
         opts = {},
         main = "mini.bufremove",
@@ -213,6 +231,7 @@ return {
 
     {
         dir = "@navigator@",
+        cond = not vim.g.started_by_firenvim,
         config = true,
         main = "Navigator",
         keys = {
@@ -225,6 +244,7 @@ return {
 
     {
         dir = "@neogit@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "plenary.nvim" },
         opts = {
             disable_hint = true,
@@ -263,6 +283,7 @@ return {
 
     {
         dir = "@octo@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = {
             "nvim-web-devicons",
             "plenary.nvim",
@@ -297,6 +318,7 @@ return {
 
     {
         dir = "@open_browser_github@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "open-browser.vim" },
         cmd = {
             "OpenGithubFile",
@@ -312,6 +334,7 @@ return {
 
     {
         dir = "@overseer@",
+        cond = not vim.g.started_by_firenvim,
         name = "overseer",
         opts = {
             strategy = Util.has("toggleterm.nvim") and "toggleterm"
@@ -346,6 +369,7 @@ return {
 
     {
         dir = "@project@",
+        cond = not vim.g.started_by_firenvim,
         opts = {
             manual_mode = true,
             detection_methods = { "pattern" },
@@ -356,6 +380,7 @@ return {
 
     {
         dir = "@scope@",
+        cond = not vim.g.started_by_firenvim,
         opts = {},
         main = "scope",
     },
@@ -363,6 +388,7 @@ return {
     {
         dir = "@telescope@",
         name = "telescope.nvim",
+        cond = not vim.g.started_by_firenvim,
         dependencies = {
             "plenary.nvim",
             -- TODO: lazy load
@@ -438,6 +464,7 @@ return {
     },
     {
         dir = "@telescope_file_browser@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
             require("telescope").load_extension("file_browser")
@@ -466,6 +493,7 @@ return {
     },
     {
         dir = "@telescope_luasnip@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
             require("telescope").load_extension("luasnip")
@@ -477,6 +505,7 @@ return {
     },
     {
         dir = "@telescope_project@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
             require("telescope").load_extension("project")
@@ -491,6 +520,7 @@ return {
     },
     {
         dir = "@telescope_symbols@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         keys = {
             {
@@ -512,6 +542,7 @@ return {
     },
     {
         dir = "@telescope_tabs@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         keys = {
             { "<Leader><Tab>.", "<Cmd>Telescope telescope-tabs list_tabs show_preview=false<CR>", desc = "Switch tab" },
@@ -521,6 +552,7 @@ return {
     {
         dir = "@todo_comments@",
         lazy = false,
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "trouble.nvim" },
         opts = {
             signs = false,
@@ -544,6 +576,7 @@ return {
     {
         dir = "@toggleterm@",
         name = "toggleterm.nvim",
+        cond = not vim.g.started_by_firenvim,
         opts = {
             size = function(term)
                 if term.direction == "horizontal" then
@@ -565,6 +598,7 @@ return {
 
     {
         dir = "@neo_tree@",
+        cond = not vim.g.started_by_firenvim,
         dependencies = {
             "nui.nvim",
             "nvim-web-devicons",
@@ -869,6 +903,7 @@ return {
     {
         dir = "@trouble@",
         name = "trouble.nvim",
+        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         opts = {
             indent_lines = false,
