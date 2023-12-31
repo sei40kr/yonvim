@@ -122,6 +122,29 @@ return {
                 [[call firenvim#install(0)]],
                 { desc = "Install Firenvim" }
             )
+
+            if vim.g.started_by_firenvim then
+                local delta = 0
+
+                local function set_guifont()
+                    vim.o.guifont = config_opts.ui.font.name .. ":h" .. (config_opts.ui.font.size + delta)
+                end
+
+                vim.keymap.set("n", "<C-=>", function()
+                    delta = delta + 1
+                    set_guifont()
+                end)
+                vim.keymap.set("n", "<C-->", function()
+                    delta = delta - 1
+                    set_guifont()
+                end)
+                vim.keymap.set("n", "<C-0>", function()
+                    delta = 0
+                    set_guifont()
+                end)
+
+                set_guifont()
+            end
         end,
         cmd = "FirenvimInstall",
     },
