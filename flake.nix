@@ -16,17 +16,14 @@
           pkgs' = pkgs.${system};
           yonvimPlugins = pkgs'.callPackage ./packages/yonvim/plugins { };
           yonvim-lua = pkgs'.callPackage ./packages/yonvim-lua { inherit yonvimPlugins; };
-          yonvim-lazy-files = pkgs'.callPackage ./packages/yonvim/yonvim-lazy-files.nix {
-            inherit yonvim-lua yonvimPlugins;
-          };
           yonvim = pkgs'.callPackage ./packages/yonvim/yonvim.nix {
-            inherit yonvim-lazy-files yonvim-lua yonvimPlugins;
+            inherit yonvim-lua yonvimPlugins;
           };
           yonvim-qt = pkgs'.callPackage ./packages/yonvim/yonvim-qt.nix {
             inherit yonvim;
           };
         in
-        { inherit yonvim-lua yonvim-lazy-files yonvim yonvim-qt yonvimPlugins; });
+        { inherit yonvim-lua yonvim yonvim-qt yonvimPlugins; });
 
       devShell = genAttrs systems (system:
         let

@@ -4,7 +4,6 @@ local config_opts = require("yvim.config").opts
 
 function M.init()
     require("lazy").setup("yvim.plugins", {
-        lockfile = vim.fn.expand("$LAZY_LOCKFILE"),
         ui = { border = config_opts.ui.border },
         change_detection = { enabled = false },
         performance = {

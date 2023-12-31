@@ -1,18 +1,9 @@
 { lib
-, curl
 , fd
-, gnutar
-, gzip
 , neovim-unwrapped
 , ripgrep
 , runCommandLocal
-, symlinkJoin
-, unzip
-, vimPlugins
-, wget
 , wrapNeovimUnstable
-, writeShellScriptBin
-, yonvim-lazy-files
 , yonvim-lua
 , yonvimPlugins
 }:
@@ -29,21 +20,28 @@ let
   neovim-yonvim = wrapNeovimUnstable neovim-unwrapped {
     extraName = "-yonvim";
     wrapperArgs = [
-      "--prefix" "PATH" ":" (lib.makeBinPath runtimeDeps)
-      "--set" "NVIM_APPNAME" "yonvim"
-      "--set" "LAZY_LOCKFILE" "${yonvim-lazy-files}/share/lazy/lazy-lock.json"
-      # HACK: Make sure that Firenvim's helper script runs the correct Yonvim
-      #  executable.
-      "--run" "export APPIMAGE=$0"
+      "--prefix"
+      "PATH"
+      ":"
+      (lib.makeBinPath runtimeDeps)
+      "--set"
+      "NVIM_APPNAME"
+      "yonvim"
+      # HACK: Make sure that Firenvim's helper script runs the Yonvim
+      #  executable, not unwrapped Neovim.
+      "--run"
+      "export APPIMAGE=$0"
     ];
     wrapRc = false;
-    packpathDirs.myNeovimPackages.start =  [
+    packpathDirs.myNeovimPackages.start = [
       yonvim-lua
       yonvimPlugins.lazy-nvim
       yonvimPlugins.structlog-nvim
     ] ++ yonvim-lua.tree-sitter-grammars;
   };
-in runCommandLocal "yonvim-${version}" {
+in
+runCommandLocal "yonvim-${version}"
+{
   buildInputs = [ neovim-yonvim ];
 
   meta = with lib; {
