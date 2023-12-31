@@ -221,6 +221,21 @@ yvim.setup {
 }
 ```
 
+## Firenvim
+
+You can use Firenvim to edit textareas in your browser with Yonvim.
+To enable Firenvim, install the Firenvim extension to your browser and run
+`:FirenvimInstall` in Yonvim.
+
+When you update Yonvim, you need to re-run `:FirenvimInstall` in the newer
+Yonvim and click the `Reload settings` in the Firenvim extension.
+
+| Key Binding | Description        |
+| :---------- | :----------------- |
+| `C--`       | Decrease font size |
+| `C-=`       | Increase font size |
+| `C-0`       | Reset font size    |
+
 ## Development
 
 ### Add a plugin
@@ -255,21 +270,6 @@ cd packages/yonvim/plugins
 ---
 
 See `./plugins.py --help` for details.
-
-## Firenvim
-
-You can use Firenvim to edit textareas in your browser with Yonvim.
-To enable Firenvim, install the Firenvim extension to your browser and run
-`:FirenvimInstall` in Yonvim.
-
-When you update Yonvim, you need to re-run `:FirenvimInstall` in the newer
-Yonvim and click the `Reload settings` in the Firenvim extension.
-
-| Key Binding | Description        |
-| :---------- | :----------------- |
-| `C--`       | Decrease font size |
-| `C-=`       | Increase font size |
-| `C-0`       | Reset font size    |
 
 ## Roadmap
 
