@@ -5,14 +5,15 @@ local config_opts = require("yvim.config").opts
 function M.init()
     require("lazy").setup("yvim.plugins", {
         lockfile = vim.fn.expand("$LAZY_LOCKFILE"),
-        install = { missing = false },
         ui = { border = config_opts.ui.border },
         change_detection = { enabled = false },
         performance = {
+            -- NOTE: Yonvim sets the packpath to load lazy.nvim and Tree-sitter
+            --  grammars.
             reset_packpath = false,
             rtp = { reset = false },
         },
-        readme = { root = vim.fn.expand("$LAZY_README") },
+        readme = { enabled = false },
     })
 end
 
