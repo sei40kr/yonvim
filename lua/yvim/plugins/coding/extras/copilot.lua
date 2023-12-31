@@ -2,8 +2,7 @@ local config_opts = require("yvim.config").opts
 
 return {
     {
-        dir = "@copilot@",
-        name = "copilot",
+        "copilot.lua",
         opts = {
             panel = { enabled = false },
             suggestion = { enabled = false },
@@ -13,13 +12,12 @@ return {
         cmd = "Copilot",
     },
     {
-        dir = "@cmp@",
+        "nvim-cmp",
         dependencies = {
             {
-                dir = "@copilot_cmp@",
-                name = "copilot_cmp",
+                "copilot-cmp",
                 lazy = true,
-                dependencies = { "copilot" },
+                dependencies = { "copilot.lua" },
                 config = true,
             },
         },

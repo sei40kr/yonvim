@@ -37,7 +37,7 @@ let
       yonvim-lua
       yonvimPlugins.lazy-nvim
       yonvimPlugins.structlog-nvim
-    ] ++ yonvim-lua.tree-sitter-grammars;
+    ] ++ yonvim-lua.treesitter-grammars;
   };
 in
 runCommandLocal "yonvim-${version}"

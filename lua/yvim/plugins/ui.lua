@@ -2,7 +2,7 @@ local config_opts = require("yvim.config").opts
 
 return {
     {
-        dir = "@alpha@",
+        "alpha-nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         event = "VimEnter",
@@ -64,7 +64,7 @@ return {
     },
 
     {
-        dir = "@bufferline@",
+        "bufferline.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         opts = {
@@ -88,7 +88,7 @@ return {
     },
 
     {
-        dir = "@colorizer@",
+        "nvim-colorizer.lua",
         opts = {
             filetypes = {
                 "*",
@@ -105,8 +105,7 @@ return {
     },
 
     {
-        dir = "@dressing@",
-        name = "dressing.nvim",
+        "dressing.nvim",
         lazy = true,
         cond = not vim.g.started_by_firenvim,
         init = function()
@@ -130,7 +129,7 @@ return {
     },
 
     {
-        dir = "@flash@",
+        "flash.nvim",
         event = "VeryLazy",
         opts = {
             incremental = true,
@@ -151,8 +150,7 @@ return {
     },
 
     {
-        dir = "@gitsigns@",
-        name = "gitsigns.nvim",
+        "gitsigns.nvim",
         cond = not vim.g.started_by_firenvim,
         opts = {
             signs = {
@@ -187,7 +185,7 @@ return {
     },
 
     {
-        dir = "@illuminate@",
+        "vim-illuminate",
         lazy = false,
         opts = {
             providers = { "lsp", "treesitter" }
@@ -198,7 +196,7 @@ return {
     },
 
     {
-        dir = "@indent_blankline@",
+        "indent-blankline.nvim",
         dependencies = { "rainbow-delimiters.nvim" },
         opts = {
             indent = { char = '▏' },
@@ -229,7 +227,7 @@ return {
     },
 
     {
-        dir = "@lualine@",
+        "lualine.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         config = function()
@@ -238,7 +236,7 @@ return {
     },
 
     {
-        dir = "@mini_trailspace@",
+        "mini.trailspace",
         lazy = false,
         opts = {},
         main = "mini.trailspace",
@@ -263,8 +261,7 @@ return {
     },
 
     {
-        dir = "@noice@",
-        name = "noice.nvim",
+        "noice.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-notify", "nui.nvim" },
         config = function()
@@ -273,8 +270,7 @@ return {
     },
 
     {
-        dir = "@navic@",
-        name = "nvim-navic",
+        "nvim-navic",
         cond = not vim.g.started_by_firenvim,
         init = function()
             local Util = require("yvim.util")
@@ -300,8 +296,7 @@ return {
     },
 
     {
-        dir = "@notify@",
-        name = "nvim-notify",
+        "nvim-notify",
         cond = not vim.g.started_by_firenvim,
         config = function()
             require("yvim.plugin.notify").config()
@@ -309,27 +304,24 @@ return {
     },
 
     {
-        dir = "@nui@",
-        name = "nui.nvim",
+        "nui.nvim",
         cond = not vim.g.started_by_firenvim,
         lazy = true,
     },
 
     {
-        dir = "@rainbow_delimiters@",
-        name = "rainbow-delimiters.nvim",
+        "rainbow-delimiters.nvim",
         event = { "BufNewFile", "BufReadPost" },
     },
 
     {
-        dir = "@virt_column@",
+        "virt-column.nvim",
         opts = { char = "│" },
         main = "virt-column",
     },
 
     {
-        dir = "@web_devicons@",
-        name = "nvim-web-devicons",
+        "nvim-web-devicons",
         config = function()
             require("yvim.plugin.web-devicons").config()
         end,

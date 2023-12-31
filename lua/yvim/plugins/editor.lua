@@ -3,7 +3,7 @@ local config_opts = require("yvim.config").opts
 
 return {
     {
-        dir = "@aerial@",
+        "aerial.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         opts = {
@@ -27,7 +27,7 @@ return {
     },
 
     {
-        dir = "@diffview@",
+        "diffview.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons", "plenary.nvim" },
         opts = function()
@@ -57,7 +57,7 @@ return {
     },
 
     {
-        dir = "@edgy@",
+        "edgy.nvim",
         cond = not vim.g.started_by_firenvim,
         event = "VeryLazy",
         opts = {
@@ -114,7 +114,7 @@ return {
     },
 
     {
-        dir = "@firenvim@",
+        "firenvim",
         lazy = not vim.g.started_by_firenvim,
         config = function()
             vim.api.nvim_create_user_command(
@@ -150,7 +150,7 @@ return {
     },
 
     {
-        dir = "@iron@",
+        "iron.nvim",
         cond = not vim.g.started_by_firenvim,
         opts = function()
             local view = require("iron.view")
@@ -245,7 +245,7 @@ return {
     },
 
     {
-        dir = "@mini_bufremove@",
+        "mini.bufremove",
         cond = not vim.g.started_by_firenvim,
         module = "mini.bufremove",
         opts = {},
@@ -253,7 +253,7 @@ return {
     },
 
     {
-        dir = "@navigator@",
+        "Navigator.nvim",
         cond = not vim.g.started_by_firenvim,
         config = true,
         main = "Navigator",
@@ -266,7 +266,7 @@ return {
     },
 
     {
-        dir = "@neogit@",
+        "neogit",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "plenary.nvim" },
         opts = {
@@ -305,7 +305,7 @@ return {
     },
 
     {
-        dir = "@octo@",
+        "octo.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = {
             "nvim-web-devicons",
@@ -330,8 +330,7 @@ return {
     },
 
     {
-        dir = "@open_browser@",
-        name = "open-browser.vim",
+        "open-browser.vim",
         cmd = {
             "OpenBrowser",
             "OpenBrowserSearch",
@@ -340,7 +339,7 @@ return {
     },
 
     {
-        dir = "@open_browser_github@",
+        "open-browser-github.vim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "open-browser.vim" },
         cmd = {
@@ -356,9 +355,8 @@ return {
     },
 
     {
-        dir = "@overseer@",
+        "overseer.nvim",
         cond = not vim.g.started_by_firenvim,
-        name = "overseer",
         opts = {
             strategy = Util.has("toggleterm.nvim") and "toggleterm"
                 or "terminal",
@@ -391,7 +389,7 @@ return {
     },
 
     {
-        dir = "@project@",
+        "project.nvim",
         cond = not vim.g.started_by_firenvim,
         opts = {
             manual_mode = true,
@@ -402,21 +400,20 @@ return {
     },
 
     {
-        dir = "@scope@",
+        "scope.nvim",
         cond = not vim.g.started_by_firenvim,
         opts = {},
         main = "scope",
     },
 
     {
-        dir = "@telescope@",
-        name = "telescope.nvim",
+        "telescope.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = {
             "plenary.nvim",
             -- TODO: lazy load
             "noice.nvim",
-            { dir = "@telescope_fzy_native@" },
+            "telescope-fzy-native.nvim",
         },
         config = function()
             require("yvim.plugin.telescope").config()
@@ -486,7 +483,7 @@ return {
         },
     },
     {
-        dir = "@telescope_file_browser@",
+        "telescope-file-browser.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
@@ -515,7 +512,7 @@ return {
         },
     },
     {
-        dir = "@telescope_luasnip@",
+        "telescope-luasnip.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
@@ -527,7 +524,7 @@ return {
         },
     },
     {
-        dir = "@telescope_project@",
+        "telescope-project.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
@@ -542,7 +539,7 @@ return {
         },
     },
     {
-        dir = "@telescope_symbols@",
+        "telescope-symbols.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         keys = {
@@ -564,7 +561,7 @@ return {
         },
     },
     {
-        dir = "@telescope_tabs@",
+        "telescope-tabs",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         keys = {
@@ -573,7 +570,7 @@ return {
     },
 
     {
-        dir = "@todo_comments@",
+        "todo-comments.nvim",
         lazy = false,
         cond = not vim.g.started_by_firenvim,
         dependencies = { "trouble.nvim" },
@@ -597,8 +594,7 @@ return {
     },
 
     {
-        dir = "@toggleterm@",
-        name = "toggleterm.nvim",
+        "toggleterm.nvim",
         cond = not vim.g.started_by_firenvim,
         opts = {
             size = function(term)
@@ -620,14 +616,14 @@ return {
     },
 
     {
-        dir = "@neo_tree@",
+        "neo-tree.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = {
             "nui.nvim",
             "nvim-web-devicons",
             "plenary.nvim",
             {
-                dir = "@window_picker@",
+                "nvim-window-picker",
                 event = "VeryLazy",
                 opts = {
                     filter_rules = {
@@ -924,8 +920,7 @@ return {
     },
 
     {
-        dir = "@trouble@",
-        name = "trouble.nvim",
+        "trouble.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         opts = {
@@ -943,8 +938,7 @@ return {
     },
 
     {
-        dir = "@which_key@",
-        name = "which-key.nvim",
+        "which-key.nvim",
         opts = {
             key_labels = {
                 ["<space>"] = "SPC",

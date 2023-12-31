@@ -2,7 +2,7 @@ local config_opts = require("yvim.config").opts
 
 return {
     {
-        dir = "@lsp_inlayhints@",
+        "lsp-inlayhints.nvim",
         init = function()
             vim.api.nvim_create_augroup("yvim_inlayhints", {})
             vim.api.nvim_create_autocmd("LspAttach", {
@@ -33,15 +33,14 @@ return {
     },
 
     {
-        dir = "@neoconf@",
-        name = "neoconf.nvim",
+        "neoconf.nvim",
         cond = not vim.g.started_by_firenvim,
         opts = {},
         main = "neoconf",
     },
 
     {
-        dir = "@neodev@",
+        "neodev.nvim",
         name = "neodev.nvim",
         cond = not vim.g.started_by_firenvim,
         opts = {},
@@ -49,7 +48,7 @@ return {
     },
 
     {
-        dir = "@none_ls@",
+        "none-ls.nvim",
         opts = function()
             local null_ls = require("null-ls")
 
@@ -59,7 +58,7 @@ return {
     },
 
     {
-        dir = "@lsp_format@",
+        "lsp-format.nvim",
         cond = config_opts.format.format_on_save,
         init = function()
             local Util = require("yvim.util")
@@ -73,7 +72,7 @@ return {
     },
 
     {
-        dir = "@lspconfig@",
+        "nvim-lspconfig",
         dependencies = {
             "cmp-nvim-lsp",
             "neoconf.nvim",

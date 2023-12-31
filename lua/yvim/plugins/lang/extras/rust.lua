@@ -2,7 +2,7 @@ local config_opts = require("yvim.config").opts
 
 return {
     {
-        dir = "@rust_tools@",
+        "rust-tools.nvim",
         cond = config_opts.lsp.servers.rust_analyzer ~= nil,
         opts = {
             tools = {

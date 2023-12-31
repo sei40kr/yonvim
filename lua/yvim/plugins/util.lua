@@ -1,3 +1,3 @@
 return {
-    { dir = "@plenary@",     name = "plenary.nvim" },
+    { "plenary.nvim" },
 }

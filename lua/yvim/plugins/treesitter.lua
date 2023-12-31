@@ -1,12 +1,12 @@
 return {
     {
-        dir = "@treesitter@",
+        "nvim-treesitter",
         dependencies = {
-            { dir = "@treesitter_endwise@" },
-            { dir = "@treesitter_pairs@" },
-            { dir = "@treesitter_refactor@" },
-            { dir = "@treesitter_textobjects@" },
-            { dir = "@treesitter_ts_autotag@" },
+            "nvim-treesitter-endwise",
+            "nvim-treesitter-pairs",
+            "nvim-treesitter-refactor",
+            "nvim-treesitter-textobjects",
+            "nvim-ts-autotag",
         },
         opts = {
             parser_install_dir = vim.fn.stdpath("data") .. "/nvim-treesitter/parsers",

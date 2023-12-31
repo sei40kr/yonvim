@@ -15,7 +15,10 @@
         let
           pkgs' = pkgs.${system};
           yonvimPlugins = pkgs'.callPackage ./packages/yonvim/plugins { };
-          yonvim-lua = pkgs'.callPackage ./packages/yonvim-lua { inherit yonvimPlugins; };
+          yonvim-all-plugin-specs = pkgs'.callPackage ./packages/yonvim-all-plugin-specs {
+            inherit yonvimPlugins;
+          };
+          yonvim-lua = pkgs'.callPackage ./packages/yonvim-lua { inherit yonvim-all-plugin-specs; };
           yonvim = pkgs'.callPackage ./packages/yonvim/yonvim.nix {
             inherit yonvim-lua yonvimPlugins;
           };
