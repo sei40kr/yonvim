@@ -240,23 +240,62 @@ Yonvim and click the `Reload settings` in the Firenvim extension.
 
 ### Add a plugin
 
-First, you need to generate a Nix derivation for the plugin which you want to add:
+First, you need to generate a Nix derivation for the plugin by running:
 
 ```sh
 cd packages/yonvim/plugins
-./plugins.py add kazhala/close-buffers.nvim
+./plugins.py add nvimdev/dashboard-nvim
 ```
 
-Then add the plugin to `packages/yonvim/neovim-configured.nix`:
+This will add the following to `packages/yonvim/plugins/generated.nix`:
 
 ```nix
 {
-  configure.packages.myVimPackage = {
-    start = with yonvimPlugins; [
-      close-buffers-nvim
-      # ...
-    ];
+  # ...
+  dashboard-nvim = vimUtils.buildVimPlugin {
+    pname = "dashboard-nvim";
+    version = "2023-11-10";
+
+    src = fetchFromGitHub {
+      owner = "nvimdev";
+      repo = "dashboard-nvim";
+      rev = "63df28409d940f9cac0a925df09d3dc369db9841";
+      hash = "sha256-LNjYIRL5xZyLgFkoTu3K5USOfk1mtaXe5RhKBAbzYRw=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/nvimdev/dashboard-nvim";
   };
+  # ...
+}
+```
+
+In build time, Lazy.nvim spec that just specifies the source directory of the
+plugin will be added:
+
+```lua
+return {
+    -- ...
+    {
+        dir = "/nix/store/wji57kh1j08rvvpynp8wwvkakahg0nly-vimplugin-dashboard-nvim-2023-11-10",
+        name = "dashboard-nvim",
+        pin = true,
+    },
+    -- ...
+}
+```
+
+You can manually set the rest of the Lazy.nvim spec of the plugin by its name.
+
+```lua
+{
+    "dashboard-nvim"
+    dependencies = { "nvim-web-devicons" },
+    event = "VimEnter",
+    config = function()
+        -- ...
+    end,
 }
 ```
 
@@ -264,7 +303,7 @@ Then add the plugin to `packages/yonvim/neovim-configured.nix`:
 
 ```sh
 cd packages/yonvim/plugins
-./plugins.py update close-buffers.nvim
+./plugins.py update dashboard-nvim
 ```
 
 ---
