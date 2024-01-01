@@ -1,4 +1,11 @@
 return {
+    colorscheme = {
+        -- The name of the colorscheme to use.
+        -- Possible values: `tokyonight-night`, `tokyonight-storm`,
+        -- `tokyonight-day`, `tokyonight-moon`
+        name = "tokyonight-night",
+    },
+
     -- The leader prefix key
     leader_key = " ",
     -- The alternative leader prefix key. Used for insert and select modes.

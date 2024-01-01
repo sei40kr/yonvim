@@ -1,8 +1,12 @@
 return {
     {
         "tokyonight.nvim",
-        config = function()
-            require("yvim.plugin.tokyonight").config()
-        end
+        lazy = true,
+        opts = {
+            styles = {
+                comments = { italic = true },
+            },
+            lualine_bold = true,
+        },
     },
 }

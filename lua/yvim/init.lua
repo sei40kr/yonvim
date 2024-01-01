@@ -25,6 +25,8 @@ M.setup = function(opts)
     require("yvim.config.keymaps")
     require("yvim.config.options").load()
 
+    vim.cmd("colorscheme " .. config_opts.colorscheme.name)
+
     if vim.g.GuiLoaded then
         vim.cmd([[
           GuiTabline   0

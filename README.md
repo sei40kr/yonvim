@@ -49,12 +49,13 @@ require("yvim").setup {
 }
 ```
 
-| Variable          | Default value | Description                                                                                                                                                             |
-| :---------------- | :------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `leader_key`      | `" "` (Space) | The leader prefix key. See `:h mapleader` for details.                                                                                                                  |
-| `alt_leader_key`  | `"<M-Space>"` | The leader prefix key. Used for insert and select modes.                                                                                                                |
-| `localleader_key` | `","`         | The local leader key. See `:h maplocalleader` for details.                                                                                                              |
-| `null_ls.sources` | `{}`          | none-ls.nvim sources to use. See [none-ls.nvim - doc/BUILTIN_CONFIG.md](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md) for builtin sources. |
+| Variable           | Default value  | Description                                                                                                                                                             |
+| :----------------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `colorscheme.name` | `"tokyonight"` | The name of the colorscheme to use. Possible values: `tokyonight-night`, `tokyonight-storm`, `tokyonight-day`, `tokyonight-moon`.                                       |
+| `leader_key`       | `" "` (Space)  | The leader prefix key. See `:h mapleader` for details.                                                                                                                  |
+| `alt_leader_key`   | `"<M-Space>"`  | The leader prefix key. Used for insert and select modes.                                                                                                                |
+| `localleader_key`  | `","`          | The local leader key. See `:h maplocalleader` for details.                                                                                                              |
+| `null_ls.sources`  | `{}`           | none-ls.nvim sources to use. See [none-ls.nvim - doc/BUILTIN_CONFIG.md](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md) for builtin sources. |
 
 #### Example
 
