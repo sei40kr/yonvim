@@ -301,9 +301,27 @@ You can manually set the rest of the Lazy.nvim spec of the plugin by its name.
 
 ### Update a plugin
 
+To update a plugin, run:
+
 ```sh
 cd packages/yonvim/plugins
 ./plugins.py update dashboard-nvim
+```
+
+Or you can update all plugins by running:
+
+```sh
+cd packages/yonvim/plugins
+./plugins.py update
+```
+
+This will make many requests to GitHub API to check if the plugin is updated,
+and it may cause GitHub API rate limit exceeded. In that case, you can set your
+GitHub personal access token to `GITHUB_API_TOKEN` environment variable.
+
+```sh
+cd packages/yonvim/plugins
+GITHUB_API_TOKEN='<your token>' ./plugins.py update
 ```
 
 ---
