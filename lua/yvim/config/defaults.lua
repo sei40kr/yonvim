@@ -4,6 +4,8 @@ return {
         -- Possible values: `tokyonight-night`, `tokyonight-storm`,
         -- `tokyonight-day`, `tokyonight-moon`
         name = "tokyonight-night",
+        -- Whether to disable setting the background color.
+        transparent = false,
     },
 
     -- The leader prefix key
