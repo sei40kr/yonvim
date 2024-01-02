@@ -224,6 +224,9 @@ return {
             hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
         end,
         event = { "BufNewFile", "BufReadPost" },
+        keys = {
+            { "<Leader>ti", "<Cmd>IBLToggle<CR>", desc = "Indent guides" },
+        },
     },
 
     {
