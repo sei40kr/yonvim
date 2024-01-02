@@ -666,9 +666,9 @@ return {
                     container = { enable_character_fade = false },
                     indent = { with_markers = false },
                     icon = {
-                        folder_closed = " ",
-                        folder_open = " ",
-                        folder_empty = " ",
+                        folder_closed = " ",
+                        folder_open = " ",
+                        folder_empty = " ",
                     },
                     modified = { symbol = "" },
                     git_status = {
