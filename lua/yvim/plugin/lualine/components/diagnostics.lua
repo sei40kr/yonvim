@@ -37,7 +37,7 @@ return {
         local count = 0
 
         if highest_severity == nil then
-            return ""
+            return " "
         end
 
         for _, diagnostic in ipairs(diagnostics) do
@@ -51,15 +51,18 @@ return {
     color = function()
         local diagnostics = vim.diagnostic.get(0)
         local highest_severity = get_highest_severity(diagnostics)
+        local hl_name
 
         if highest_severity == nil then
-            return nil
+            hl_name = "DiagnosticOk"
+        else
+            hl_name = hl_names_by_severity[highest_severity]
         end
 
         return {
             fg = lualine_utils.extract_color_from_hllist(
                 "fg",
-                { hl_names_by_severity[highest_severity] },
+                { hl_name },
                 nil
             ),
         }
