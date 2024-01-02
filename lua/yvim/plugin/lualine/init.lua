@@ -50,14 +50,6 @@ function M.config()
                         return str:sub(2, -2)
                     end,
                 },
-                {
-                    function()
-                        return "Recording @" .. vim.fn.reg_recording()
-                    end,
-                    cond = function()
-                        return vim.fn.reg_recording() ~= ""
-                    end,
-                },
             },
             lualine_b = {
                 {
