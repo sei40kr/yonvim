@@ -53,7 +53,7 @@ function M.config()
             live_grep = { mappings = trouble_mappings },
         },
         extensions = {
-            file_browser = { dir_icon = " " },
+            file_browser = { dir_icon = " " },
             project = {
                 base_dirs = config_opts.project.base_dirs,
                 on_project_selected = function(prompt_bufnr)
