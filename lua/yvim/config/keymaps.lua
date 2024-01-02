@@ -118,6 +118,18 @@ if Util.has("gitsigns.nvim") then
 end
 map(
     "n",
+    "<Leader>td",
+    function()
+        if vim.diagnostic.is_disabled() then
+            vim.diagnostic.enable()
+        else
+            vim.diagnostic.disable()
+        end
+    end,
+    { desc = "Diagnostics" }
+)
+map(
+    "n",
     "<Leader>tr",
     function()
         vim.bo.modifiable = not vim.bo.modifiable
