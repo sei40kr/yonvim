@@ -113,9 +113,19 @@ map("n", "<Leader><Tab>d", "<Cmd>tabc<CR>", { desc = "Delete this tab" })
 map("n", "<Leader><Tab>n", "<Cmd>tabnew<CR>", { desc = "New tab" })
 
 -- +toggle
+
+local function toggle_options(options)
+    return function()
+        for _, option in ipairs(options) do
+            vim.o[option] = not vim.o[option]
+        end
+    end
+end
+
 if Util.has("gitsigns.nvim") then
     map("n", "<Leader>tB", "<Cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Git blame" })
 end
+
 map(
     "n",
     "<Leader>td",
@@ -136,22 +146,8 @@ map(
     end,
     { desc = "Read-only mode" }
 )
-map(
-    "n",
-    "<Leader>ts",
-    function()
-        vim.o.spell = not vim.o.spell
-    end,
-    { desc = "Spell checker" }
-)
-map(
-    "n",
-    "<Leader>tw",
-    function()
-        vim.o.wrap = not vim.o.wrap
-    end,
-    { desc = "Soft line wrapping" }
-)
+map("n", "<Leader>ts", toggle_options({ "spell" }), { desc = "Spell checker" })
+map("n", "<Leader>tw", toggle_options({ "wrap" }), { desc = "Soft line wrapping" })
 
 -- +window
 map("n", "<Leader>w+", "<C-w>+", { desc = "Increase height" })
