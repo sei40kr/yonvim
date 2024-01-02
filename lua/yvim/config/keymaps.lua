@@ -138,6 +138,7 @@ map(
     end,
     { desc = "Diagnostics" }
 )
+map("n", "<Leader>tl", toggle_options({ "number", "relativenumber" }), { desc = "Line numbers" })
 map(
     "n",
     "<Leader>tr",
