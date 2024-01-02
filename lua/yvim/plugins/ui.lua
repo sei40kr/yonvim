@@ -316,8 +316,27 @@ return {
 
     {
         "virt-column.nvim",
+        lazy = false,
         opts = { char = "│" },
         main = "virt-column",
+        keys = {
+            {
+                "<Leader>tc",
+                function()
+                    local virt_column = require("virt-column")
+                    -- HACK: virt-column.nvim does not redraw the fill colum
+                    --  indicator immediately, so I force virt-column.nvim to
+                    --  re-initialize it.
+                    virt_column.initialized = false
+                    if require("virt-column.config").config.enabled then
+                        virt_column.update({ enabled = false })
+                    else
+                        virt_column.update({ enabled = true })
+                    end
+                end,
+                desc = "Fill column indicator"
+            },
+        },
     },
 
     {
