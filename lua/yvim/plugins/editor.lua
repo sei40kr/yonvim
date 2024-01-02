@@ -35,8 +35,8 @@ return {
             return {
                 enhanced_diff_hl = true,
                 icons = {
-                    folder_closed = " ",
-                    folder_open = " ",
+                    folder_closed = " ",
+                    folder_open = " ",
                 },
                 file_panel = {
                     listing_style = "list",
