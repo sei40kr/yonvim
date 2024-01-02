@@ -46,7 +46,7 @@ return {
             end
         end
 
-        return icons_by_severity[highest_severity] .. count
+        return icons_by_severity[highest_severity] .. " " .. count
     end,
     color = function()
         local diagnostics = vim.diagnostic.get(0)

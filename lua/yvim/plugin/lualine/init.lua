@@ -73,9 +73,9 @@ function M.config()
                 {
                     "diff",
                     symbols = {
-                        added = " ",
-                        modified = " ",
-                        removed = " ",
+                        added = "  ",
+                        modified = "  ",
+                        removed = "  ",
                     },
                 },
                 {
@@ -89,7 +89,7 @@ function M.config()
                             ),
                         }
                     end,
-                    icon = "",
+                    icon = " ",
                 },
                 {
                     "fileformat",
