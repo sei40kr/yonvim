@@ -1313,4 +1313,20 @@ _self: {
 
     meta.homepage = "https://github.com/gbprod/yanky.nvim";
   };
+
+  zen-mode-nvim = vimUtils.buildVimPlugin {
+    pname = "zen-mode.nvim";
+    version = "2023-10-20";
+
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "zen-mode.nvim";
+      rev = "50e2e2a36cc97847d9ab3b1a3555ba2ef6839b50";
+      hash = "sha256-+tRLfktRFecEozRa5iBc+LNrB1GuztGATM9HWdkJrPY=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/folke/zen-mode.nvim";
+  };
 }

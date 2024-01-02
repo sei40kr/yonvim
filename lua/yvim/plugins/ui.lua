@@ -349,4 +349,15 @@ return {
         end,
         module = "nvim-web-devicons",
     },
+
+    {
+        "zen-mode.nvim",
+        opts = {
+            window = { backdrop = 1.0 },
+        },
+        cmd  = "ZenMode",
+        keys = {
+            { "<Leader>tz", "<Cmd>ZenMode<CR>", desc = "Zen mode" },
+        },
+    },
 }
