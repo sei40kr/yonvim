@@ -71,8 +71,8 @@ return {
             options = {
                 close_command = 'lua require("yvim.buffer").del_buf()',
                 right_mouse_command = 'lua require("yvim.buffer").del_buf()',
-                buffer_close_icon = " 󰅖 ",
-                modified_icon = "• ",
+                buffer_close_icon = " ",
+                modified_icon = " ⦁",
                 indicator = {
                     style = "icon",
                     icon = "▎ ",
