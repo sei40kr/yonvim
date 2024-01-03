@@ -8,6 +8,13 @@ function M.config()
         cmdline = { enabled = false },
         messages = { enabled = false },
         lsp = {
+            progress = {
+                format_done = {
+                    { "  ", hl_group = "NoiceLspProgressSpinner" },
+                    { "{data.progress.title} ", hl_group = "NoiceLspProgressTitle" },
+                    { "{data.progress.client} ", hl_group = "NoiceLspProgressClient" },
+                },
+            },
             hover = {
                 opts = { zindex = z.LSP_HOVER },
             },
