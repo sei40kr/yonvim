@@ -1,10 +1,10 @@
-local config_opts = require("yvim.config").opts
+local yonvim_config = require("yvim.config").get()
 
 return {
     {
         "typescript.nvim",
-        cond = config_opts.lsp.servers.tsserver ~= nil,
-        opts = { server = config_opts.lsp.servers.tsserver },
+        cond = yonvim_config.lsp.servers.tsserver ~= nil,
+        opts = { server = yonvim_config.lsp.servers.tsserver },
         main = "typescript",
         ft = {
             'javascript',

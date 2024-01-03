@@ -1,14 +1,18 @@
 local M = {}
 
-local default_opts = require("yvim.config.defaults")
+local _opts = require("yvim.config.defaults")
 
-function M.init(opts)
-    M.opts = vim.tbl_deep_extend("force", default_opts, opts or {})
+function M.get()
+    return _opts
+end
+
+function M.overwrite(opts)
+    _opts = vim.tbl_deep_extend("force", _opts, opts)
 end
 
 function M.get_border_chars(hl)
     local border_chars
-    if M.opts.ui.border == "single" then
+    if _opts.ui.border == "single" then
         border_chars = {
             "┌",
             "─",
@@ -20,7 +24,7 @@ function M.get_border_chars(hl)
             "│",
         }
     end
-    if M.opts.ui.border == "double" then
+    if _opts.ui.border == "double" then
         border_chars = {
             "╔",
             "═",
@@ -32,7 +36,7 @@ function M.get_border_chars(hl)
             "║",
         }
     end
-    if M.opts.ui.border == "rounded" then
+    if _opts.ui.border == "rounded" then
         border_chars = {
             "╭",
             "─",
@@ -44,7 +48,7 @@ function M.get_border_chars(hl)
             "│",
         }
     end
-    if M.opts.ui.border == "none" then
+    if _opts.ui.border == "none" then
         return { "", "", "", "", "", "", "", "" }
     end
 

@@ -1,4 +1,4 @@
-local config_opts = require("yvim.config").opts
+local yonvim_config = require("yvim.config").get()
 
 return {
     {
@@ -6,7 +6,7 @@ return {
         opts = {
             panel = { enabled = false },
             suggestion = { enabled = false },
-            filetypes = config_opts.completion.copilot.filetypes,
+            filetypes = yonvim_config.completion.copilot.filetypes,
         },
         main = "copilot",
         cmd = "Copilot",

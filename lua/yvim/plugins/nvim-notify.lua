@@ -1,8 +1,8 @@
 local M = {}
 
-local config_opts = require("yvim.config").opts
-
 function M.config()
+    local yonvim_config = require("yvim.config").get()
+
     local notify = require("notify")
     local log = require("structlog")
     local Logger = require("yvim.utils.logger")
@@ -16,7 +16,7 @@ function M.config()
             if vim.api.nvim_win_is_valid(win) then
                 vim.api.nvim_win_set_config(win, {
                     zindex = z.NOTIFICATION,
-                    border = config_opts.ui.border,
+                    border = yonvim_config.ui.border,
                 })
             end
         end,

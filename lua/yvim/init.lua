@@ -1,11 +1,8 @@
 local M = {}
 
-local config = require("yvim.config")
-
 M.setup = function(opts)
-    config.init(opts)
-
-    local config_opts = config.opts
+    local config = require("yvim.config")
+    config.overwrite(opts)
 
     -- Disable built-in plugins
     vim.g.loaded_gzip = 1
@@ -17,57 +14,24 @@ M.setup = function(opts)
     vim.g.loaded_tutor = 1
     vim.g.loaded_zipPlugin = 1
 
-    vim.g.mapleader = config_opts.leader_key
-    vim.g.maplocalleader = config_opts.localleader_key
+    local yonvim_config = config.get()
+    vim.g.mapleader = yonvim_config.leader_key
+    vim.g.maplocalleader = yonvim_config.localleader_key
 
-    require("yvim.lazy").init()
-    require("yvim.config.autocmds")
-    require("yvim.config.keymaps")
-    require("yvim.config.options").load()
-
-    vim.cmd("colorscheme " .. config_opts.colorscheme.name)
+    require("yvim.options").load()
 
     if vim.g.GuiLoaded then
-        vim.cmd([[
-          GuiTabline   0
-          GuiPopupmenu 0
-        ]])
-
-        vim.cmd(
-            ("GuiFont%s %s:h%d"):format(
-                config_opts.ui.font.forcedly_assign and "!" or "",
-                config_opts.ui.font.name,
-                config_opts.ui.font.size
-            )
-        )
-
-        -- Enable mouse
-        vim.opt.mouse = "a"
-        vim.keymap.set(
-            "n",
-            "<RightMouse>",
-            "<Cmd>call GuiShowContextMenu()<CR>",
-            { silent = true }
-        )
-        vim.keymap.set(
-            "i",
-            "<RightMouse>",
-            "<Cmd>call GuiShowContextMenu()<CR>",
-            { silent = true }
-        )
-        vim.keymap.set(
-            "x",
-            "<RightMouse>",
-            "<Cmd>call GuiShowContextMenu()<CR>",
-            { silent = true }
-        )
-        vim.keymap.set(
-            "s",
-            "<RightMouse>",
-            "<Cmd>call GuiShowContextMenu()<CR>",
-            { silent = true }
-        )
+        require("yvim.gui").config()
     end
+
+    require("yvim.plugin-loader").load()
+
+    require("yvim.keymaps").load()
+    require("yvim.autocmds").load()
+
+    require("yvim.lsp").config()
+
+    vim.cmd("colorscheme " .. config.get().colorscheme.name)
 end
 
 return M

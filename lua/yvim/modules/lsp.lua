@@ -1,4 +1,4 @@
-local config_opts = require("yvim.config").opts
+local yonvim_config = require("yvim.config").get()
 
 return {
     {
@@ -52,18 +52,16 @@ return {
         opts = function()
             local null_ls = require("null-ls")
 
-            return { sources = config_opts.null_ls.sources(null_ls) }
+            return { sources = yonvim_config.null_ls.sources(null_ls) }
         end,
         main = "null-ls",
     },
 
     {
         "lsp-format.nvim",
-        cond = config_opts.format.format_on_save,
+        cond = yonvim_config.format.format_on_save,
         init = function()
-            local Util = require("yvim.util")
-
-            Util.on_attach(function(client)
+            require("yvim.utils.lsp").on_attach(function(client)
                 require("lsp-format").on_attach(client)
             end)
         end,
@@ -79,7 +77,7 @@ return {
             "neodev.nvim",
         },
         config = function()
-            require("yvim.plugin.lspconfig").config()
+            require("yvim.plugins.nvim-lspconfig").config()
         end,
     },
 }

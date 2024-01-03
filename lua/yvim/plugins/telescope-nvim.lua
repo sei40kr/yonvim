@@ -1,7 +1,5 @@
 local M = {}
 
-local config_opts = require("yvim.config").opts
-
 local function translate_to_telescope_borderchars(border_chars)
     return {
         border_chars[2],
@@ -18,14 +16,15 @@ end
 function M.config()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
-    local Util = require("yvim.util")
+
+    local yonvim_config = require("yvim.config").get()
 
     local trouble_mappings = {
         n = {},
         i = {},
     }
 
-    if Util.has("trouble.nvim") then
+    if require("yvim.utils.plugin").has("trouble.nvim") then
         trouble_mappings.n["<C-t>"] = function(...)
             require("trouble.providers.telescope").open_with_trouble(...)
         end
@@ -36,7 +35,7 @@ function M.config()
 
     telescope.setup({
         defaults = {
-            border = config_opts.ui.border ~= "none",
+            border = yonvim_config.ui.border ~= "none",
             borderchars = translate_to_telescope_borderchars(
                 require("yvim.config").get_border_chars()
             ) or nil,
@@ -55,7 +54,7 @@ function M.config()
         extensions = {
             file_browser = { dir_icon = " " },
             project = {
-                base_dirs = config_opts.project.base_dirs,
+                base_dirs = yonvim_config.project.base_dirs,
                 on_project_selected = function(prompt_bufnr)
                     local project_actions = require("telescope._extensions.project.actions")
                     local selected_path = project_actions.get_selected_path(prompt_bufnr)

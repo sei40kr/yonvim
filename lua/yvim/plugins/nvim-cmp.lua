@@ -1,8 +1,5 @@
 local M = {}
 
-local Util = require("yvim.util")
-local config_opts = require("yvim.config").opts
-
 local function has_word_before()
     local col = vim.api.nvim_win_get_cursor(0)[2]
     local line = vim.api.nvim_get_current_line()
@@ -100,6 +97,7 @@ end
 
 function M.config()
     local cmp = require("cmp")
+    local yonvim_config = require("yvim.config").get()
 
     local border_chars = require("yvim.config").get_border_chars("FloatBorder")
 
@@ -122,7 +120,7 @@ function M.config()
         cmp.config.compare.length,
         cmp.config.compare.order,
     }
-    if config_opts.completion.copilot.enable then
+    if yonvim_config.completion.copilot.enable then
         table.insert(sources, 1, { name = "copilot", keyword_length = 0 })
 
         local copilot_cmp_comparators = require("copilot_cmp.comparators")
@@ -175,7 +173,7 @@ function M.config()
         },
         formatting = {
             format = require("lspkind").cmp_format({
-                symbol_map = config_opts.icons.kinds,
+                symbol_map = yonvim_config.icons.kinds,
                 maxwidth = 60,
                 ellipsis_char = "…",
             }),
@@ -197,7 +195,7 @@ function M.config()
     })
 
     -- nvim-autopairs integration
-    if Util.has("nvim-autopairs") then
+    if require("yvim.utils.plugin").has("nvim-autopairs") then
         local cmp_autopairs = require("nvim-autopairs.completion.cmp")
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end

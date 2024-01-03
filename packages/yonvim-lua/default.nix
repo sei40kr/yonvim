@@ -9,7 +9,7 @@ vimUtils.buildVimPlugin {
   postFixup = ''
     # NOTE: Somehow nvim-cmp cannot be found if we rename this to
     #  `all-plugin-specs.lua`.
-    cp -f ${yonvim-all-plugin-specs} $out/lua/yvim/plugins/plugin-specs.lua
+    cp -f ${yonvim-all-plugin-specs} $out/lua/yvim/plugin-loader/plugin-specs.lua
   '';
 
   postInstall = ''

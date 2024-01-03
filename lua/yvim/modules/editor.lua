@@ -1,5 +1,5 @@
-local Util = require("yvim.util")
-local config_opts = require("yvim.config").opts
+local plugin_util = require("yvim.utils.plugin")
+local yonvim_config = require("yvim.config").get()
 
 return {
     {
@@ -12,8 +12,8 @@ return {
                     width = 35,
                     placement = "edge",
                 },
-                icons = config_opts.icons.kinds,
-                float = { border = config_opts.ui.border },
+                icons = yonvim_config.icons.kinds,
+                float = { border = yonvim_config.ui.border },
             },
         },
         main = "aerial",
@@ -127,7 +127,7 @@ return {
                 local delta = 0
 
                 local function set_guifont()
-                    vim.o.guifont = config_opts.ui.font.name .. ":h" .. (config_opts.ui.font.size + delta)
+                    vim.o.guifont = yonvim_config.ui.font.name .. ":h" .. (yonvim_config.ui.font.size + delta)
                 end
 
                 vim.keymap.set("n", "<C-=>", function()
@@ -159,7 +159,7 @@ return {
             return {
                 config = {
                     scratch_repl = true,
-                    repl_definition = config_opts.repl.handlers,
+                    repl_definition = yonvim_config.repl.handlers,
                     should_map_plug = false,
                     repl_open_cmd = function(bufnr)
                         vim.bo[bufnr].filetype = "iron"
@@ -358,18 +358,18 @@ return {
         "overseer.nvim",
         cond = not vim.g.started_by_firenvim,
         opts = {
-            strategy = Util.has("toggleterm.nvim") and "toggleterm"
+            strategy = plugin_util.has("toggleterm.nvim") and "toggleterm"
                 or "terminal",
             form = {
-                border = config_opts.border,
+                border = yonvim_config.border,
                 win_opts = { winblend = 0 },
             },
             confirm = {
-                border = config_opts.border,
+                border = yonvim_config.border,
                 win_opts = { winblend = 0 },
             },
             task_win = {
-                border = config_opts.border,
+                border = yonvim_config.border,
                 win_opts = { winblend = 0 },
             },
             log = {
@@ -416,7 +416,7 @@ return {
             "telescope-fzy-native.nvim",
         },
         config = function()
-            require("yvim.plugin.telescope").config()
+            require("yvim.plugins.telescope-nvim").config()
         end,
         keys = {
             {
@@ -653,264 +653,7 @@ return {
             },
         },
         opts = function()
-            local common_actions = require("neo-tree.sources.common.commands")
-            local fs = require("neo-tree.sources.filesystem")
-            local renderer = require("neo-tree.ui.renderer")
-            local utils = require("neo-tree.utils")
-
-            return {
-                close_if_last_window = false,
-                popup_border_style = config_opts.ui.border,
-                enable_diagnostics = false,
-                default_component_configs = {
-                    container = { enable_character_fade = false },
-                    indent = { with_markers = false },
-                    icon = {
-                        folder_closed = " ",
-                        folder_open = " ",
-                        folder_empty = " ",
-                    },
-                    modified = { symbol = "" },
-                    git_status = {
-                        symbols = {
-                            -- Change type
-                            added     = "",
-                            modified  = "",
-                            deleted   = "",
-                            renamed   = "",
-                            -- Status type
-                            untracked = "",
-                            ignored   = "",
-                            unstaged  = "",
-                            staged    = "",
-                            conflict  = "",
-                        }
-                    },
-                    file_size = { enabled = false },
-                    type = { enabled = false },
-                    last_modified = { enabled = false },
-                    created = { enabled = false },
-                },
-                commands = {
-                    goto_previous_window = function(_)
-                        vim.cmd [[wincmd p]]
-                    end,
-                    select_up_node = function(state)
-                        local node = state.tree:get_node()
-
-                        local parent_id = node:get_parent_id()
-                        if parent_id == nil then
-                            return
-                        end
-
-                        renderer.focus_node(state, parent_id)
-                    end,
-                    select_down_node = function(state)
-                        local node = state.tree:get_node()
-
-                        if node:is_expanded() then
-                            local child_ids = node:get_child_ids()
-
-                            for _, id in ipairs(child_ids) do
-                                local child = state.tree:get_node(id)
-                                if child:is_expanded() then
-                                    renderer.focus_node(state, id)
-                                    return
-                                end
-                            end
-
-                            if 0 < #child_ids then
-                                renderer.focus_node(state, child_ids[1])
-                            end
-
-                            return
-                        end
-
-                        local parent_id = node:get_parent_id()
-                        if parent_id == nil then
-                            return
-                        end
-
-                        local sibling_ids = state.tree:get_node(parent_id):get_child_ids()
-                        local index
-                        for i, id in ipairs(sibling_ids) do
-                            if id == node.id then
-                                index = i
-                                break
-                            end
-                        end
-                        for i, id in ipairs(sibling_ids) do
-                            if i > index then
-                                local sibling = state.tree:get_node(id)
-                                if sibling:is_expanded() then
-                                    renderer.focus_node(state, id)
-                                    return
-                                end
-                            end
-                        end
-                    end,
-                    select_previous_sibling_node = function(state)
-                        local node = state.tree:get_node()
-
-                        local parent_id = node:get_parent_id()
-                        if parent_id == nil then
-                            return
-                        end
-
-                        local parent = state.tree:get_node(parent_id)
-                        local child_ids = parent:get_child_ids()
-                        local index
-                        for i, id in ipairs(child_ids) do
-                            if id == node.id then
-                                index = i
-                                break
-                            end
-                        end
-
-                        if 1 < index then
-                            renderer.focus_node(state, child_ids[index - 1])
-                        end
-                    end,
-                    select_next_sibling_node = function(state)
-                        local node = state.tree:get_node()
-
-                        local parent_id = node:get_parent_id()
-                        if parent_id == nil then
-                            return
-                        end
-
-                        local parent = state.tree:get_node(parent_id)
-                        local child_ids = parent:get_child_ids()
-                        local index
-                        for i, id in ipairs(child_ids) do
-                            if id == node.id then
-                                index = i
-                                break
-                            end
-                        end
-
-                        if index < #child_ids then
-                            renderer.focus_node(state, child_ids[index + 1])
-                        end
-                    end,
-                    close_or_up = function(state)
-                        local node = state.tree:get_node()
-
-                        if node:is_expanded() then
-                            common_actions.close_node(state)
-                            return
-                        end
-
-                        local parent_id = node:get_parent_id()
-                        if parent_id == nil then
-                            return
-                        end
-
-                        renderer.focus_node(state, parent_id)
-                    end,
-                    expand_or_down_or_open_with_window_picker = function(state)
-                        local node = state.tree:get_node()
-
-                        if node:is_expanded() then
-                            if node:has_children() then
-                                renderer.focus_node(state, node:get_child_ids()[1])
-                            end
-
-                            return
-                        end
-
-                        if utils.is_expandable(node) then
-                            common_actions.toggle_node(state, utils.wrap(fs.toggle_directory, state))
-                            return
-                        end
-
-                        common_actions.open_with_window_picker(state, nil)
-                    end,
-                },
-                window = {
-                    width = 35,
-                    mappings = {
-                        ["<CR>"] = "open_with_window_picker",
-                        ["<Tab>"] = "toggle_node",
-                        O = "expand_all_nodes",
-
-                        z = "toggle_node",
-                        gO = {
-                            "toggle_preview",
-                            config = {
-                                use_float = true,
-                                use_image_nvim = true,
-                            }
-                        },
-                        ["<C-k>"] = "select_up_node",
-                        gk = "select_up_node",
-                        ["[["] = "select_up_node",
-                        ["<C-j>"] = "select_down_node",
-                        gj = "select_down_node",
-                        ["]]"] = "select_down_node",
-                        r = "rename",
-                        d = "delete",
-                        ge = "open_with_window_picker",
-                        ["|"] = "vsplit_with_window_picker",
-                        ["-"] = "split_with_window_picker",
-                        S = "select_previous_sibling_node",
-                        -- s = "select_next_sibling_node",
-
-                        ["<BS>"] = "goto_previous_window",
-                        h = "close_or_up",
-                        l = "expand_or_down_or_open_with_window_picker",
-                        J = "select_next_sibling_node",
-                        K = "select_previous_sibling_node",
-                        H = "select_up_node",
-                        L = "select_down_node",
-                        v = "vsplit_with_window_picker",
-                        s = "vsplit_with_window_picker",
-
-                        -- Unchanged mappings
-                        ["<Esc>"] = "cancel",
-                        y = "copy_to_clipboard",
-                        x = "cut_to_clipboard",
-                        p = "paste_from_clipboard",
-                        c = "copy",
-                        m = "move",
-                        q = "close_window",
-                        ["?"] = "show_help",
-                    }
-                },
-                filesystem = {
-                    filtered_items = {
-                        visible = false,
-                        hide_dotfiles = false,
-                        hide_gitignored = false,
-                        hide_by_name = { ".git" },
-                    },
-                    use_libuv_file_watcher = true,
-                    window = {
-                        mappings = {
-                            U = "navigate_up",
-
-                            gr = "refresh",
-                            -- H = "toggle_hidden",
-                            gh = "toggle_hidden",
-                            C = "add",
-                            R = "set_root",
-
-                            -- Unchanged mappings
-                            ["/"] = "fuzzy_finder",
-                        },
-                        fuzzy_finder_mappings = {
-                            ["<C-j>"] = "move_cursor_down",
-                            ["<C-k>"] = "move_cursor_up",
-
-                            -- Unchanged mappings
-                            ["<down>"] = "move_cursor_down",
-                            ["<C-n>"] = "move_cursor_down",
-                            ["<up>"] = "move_cursor_up",
-                            ["<C-p>"] = "move_cursor_up",
-                        },
-                    },
-                },
-            }
+            return require("yvim.plugins.neo-tree-nvim").opts()
         end,
         main = "neo-tree",
         keys = {

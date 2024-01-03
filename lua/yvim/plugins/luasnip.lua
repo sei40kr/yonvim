@@ -1,16 +1,16 @@
 local M = {}
 
-local config_opts = require("yvim.config").opts
-local Logger = require("yvim.utils.logger")
-
 function M.config()
+    local Logger = require("yvim.utils.logger")
+    local yonvim_config = require("yvim.config").get()
+
     local snippet_dirs = {
         vscode = {},
         snipmate = {},
         lua = {},
     }
 
-    for _, dir in ipairs(config_opts.snippet.user_snippet_dirs) do
+    for _, dir in ipairs(yonvim_config.snippet.user_snippet_dirs) do
         local path = dir[1]
         local loader = dir.loader or "vscode"
 

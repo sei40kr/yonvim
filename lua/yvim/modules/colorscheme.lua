@@ -1,11 +1,11 @@
-local config_opts = require("yvim.config").opts
+local yonvim_config = require("yvim.config").get()
 
 return {
     {
         "tokyonight.nvim",
         lazy = true,
         opts = {
-            transparent = config_opts.colorscheme.transparent,
+            transparent = yonvim_config.colorscheme.transparent,
             styles = {
                 comments = { italic = true },
             },

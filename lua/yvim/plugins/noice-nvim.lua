@@ -1,6 +1,6 @@
 local M = {}
 
-local config_opts = require("yvim.config").opts
+local yonvim_config = require("yvim.config").get()
 local z = require("yvim.ui.zindex")
 
 function M.config()
@@ -22,7 +22,7 @@ function M.config()
                 opts = { zindex = z.LSP_SIGNATURE },
             },
             documentation = {
-                opts = { border = config_opts.ui.border },
+                opts = { border = yonvim_config.ui.border },
             },
             override = {
                 ["vim.lsp.util.convert_input_to_markdown_lines"] = true,

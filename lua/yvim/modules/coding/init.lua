@@ -1,4 +1,4 @@
-local config_opts = require("yvim.config").opts
+local yonvim_config = require("yvim.config").get()
 
 return {
     {
@@ -24,25 +24,25 @@ return {
             "cmp-spell",
         },
         init = function()
-            require("yvim.plugin.cmp").init()
+            require("yvim.plugins.nvim-cmp").init()
         end,
         config = function()
-            require("yvim.plugin.cmp").config()
+            require("yvim.plugins.nvim-cmp").config()
         end,
         event = { "InsertEnter *", "CmdlineEnter *" },
     },
     { "cmp-under-comparator" },
     { "lspkind.nvim" },
     {
-        import = "yvim.plugins.coding.extras.copilot",
-        enabled = config_opts.completion.copilot.enable,
+        import = "yvim.modules.coding.extras.copilot",
+        enabled = yonvim_config.completion.copilot.enable,
     },
 
     {
         "LuaSnip",
         dependencies = { "friendly-snippets" },
         config = function()
-            require("yvim.plugin.luasnip").config()
+            require("yvim.plugins.luasnip").config()
         end,
         event = "InsertEnter *",
         module = "luasnip",
@@ -51,7 +51,7 @@ return {
         "friendly-snippets",
         lazy = true,
         config = function()
-            require("yvim.plugin.friendly-snippets").config()
+            require("yvim.plugins.friendly-snippets").config()
         end,
     },
 
@@ -94,7 +94,7 @@ return {
     {
         "vim-visual-multi",
         init = function()
-            require("yvim.plugin.visual-multi").init()
+            require("yvim.plugins.vim-visual-multi").init()
         end,
         keys = "<Plug>(VM-",
     },

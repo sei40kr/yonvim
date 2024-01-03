@@ -1,4 +1,4 @@
-local config_opts = require("yvim.config").opts
+local yonvim_config = require("yvim.config").get()
 
 return {
     {
@@ -119,10 +119,10 @@ return {
             end
         end,
         opts = {
-            input = { border = config_opts.ui.border },
+            input = { border = yonvim_config.ui.border },
             select = {
                 nui = {
-                    border = { style = config_opts.ui.border },
+                    border = { style = yonvim_config.ui.border },
                 },
             },
         },
@@ -234,7 +234,7 @@ return {
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         config = function()
-            require("yvim.plugin.lualine").config()
+            require("yvim.plugins.lualine-nvim").config()
         end,
     },
 
@@ -268,7 +268,7 @@ return {
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-notify", "nui.nvim" },
         config = function()
-            require("yvim.plugin.noice").config()
+            require("yvim.plugins.noice-nvim").config()
         end,
     },
 
@@ -276,8 +276,7 @@ return {
         "nvim-navic",
         cond = not vim.g.started_by_firenvim,
         init = function()
-            local Util = require("yvim.util")
-            Util.on_attach(function(client, bufnr)
+            require("yvim.utils.lsp").on_attach(function(client, bufnr)
                 if client.server_capabilities.documentSymbolProvider then
                     require("nvim-navic").attach(client, bufnr)
                 end
@@ -288,7 +287,7 @@ return {
                 -- Add a space after each icon
                 icons = vim.tbl_map(function(icon)
                     return icon .. " "
-                end, config_opts.icons.kinds),
+                end, yonvim_config.icons.kinds),
                 highlight = true,
                 separator = "  ",
                 depth_limit = 5,
@@ -302,7 +301,7 @@ return {
         "nvim-notify",
         cond = not vim.g.started_by_firenvim,
         config = function()
-            require("yvim.plugin.notify").config()
+            require("yvim.plugins.nvim-notify").config()
         end,
     },
 
@@ -345,7 +344,7 @@ return {
     {
         "nvim-web-devicons",
         config = function()
-            require("yvim.plugin.web-devicons").config()
+            require("yvim.plugins.nvim-web-devicons").config()
         end,
         module = "nvim-web-devicons",
     },

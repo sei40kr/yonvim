@@ -66,8 +66,8 @@ function M.config()
                 },
             },
             lualine_c = {
-                require("yvim.plugin.lualine.components.lsp_status"),
-                require("yvim.plugin.lualine.components.diagnostics"),
+                require("yvim.plugins.lualine-nvim.components.lsp_status"),
+                require("yvim.plugins.lualine-nvim.components.diagnostics"),
             },
             lualine_x = {
                 {
