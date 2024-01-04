@@ -12,6 +12,10 @@ local function does_any_lsp_client_support(method)
     return false
 end
 
+local function has_telescope_nvim()
+    return require("yvim.utils.plugin").has("telescope.nvim")
+end
+
 local function has_trouble_nvim()
     return require("yvim.utils.plugin").has("trouble.nvim")
 end
@@ -141,7 +145,11 @@ end
 
 function M.workspace_symbol()
     if does_any_lsp_client_support("workspace/symbol") then
-        vim.lsp.buf.workspace_symbol()
+        if has_telescope_nvim() then
+            require("telescope.builtin").lsp_workspace_symbols()
+        else
+            vim.lsp.buf.workspace_symbol()
+        end
     else
         vim.notify("No handler for workspace symbol", vim.log.levels.WARN)
     end
