@@ -678,6 +678,7 @@ return {
         },
         main = "trouble",
         cmd = "Trouble",
+        module = "trouble",
     },
 
     {
