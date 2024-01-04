@@ -25,7 +25,7 @@ function M.all_diagnostics()
         require("trouble").open("workspace_diagnostics")
     else
         -- TODO: Use quickfix list instead
-        vim.notify("No viewer for all diagnostics", vim.log.levels.WARN)
+        vim.notify("No handler for all diagnostics", vim.log.levels.WARN)
     end
 end
 
@@ -34,7 +34,7 @@ function M.buffer_diagnostics()
         require("trouble").open("document_diagnostics")
     else
         -- TODO: Use location list instead
-        vim.notify("No viewer for buffer diagnostics", vim.log.levels.WARN)
+        vim.notify("No handler for buffer diagnostics", vim.log.levels.WARN)
     end
 end
 
