@@ -14,7 +14,13 @@ function M.does_any_lsp_client_support(method)
     local clients = vim.lsp.get_active_clients({ bufnr = 0 })
 
     for _, client in ipairs(clients) do
-        if client.supports_method(method) then
+        -- NOTE: The pseudo LSP client `copilot` claims to support all methods,
+        --  but it actually supports only `textDocument/completion`.
+        if client.name == "copilot" then
+            if method == "textDocument/completion" then
+                return true
+            end
+        elseif client.supports_method(method) then
             return true
         end
     end

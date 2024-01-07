@@ -48,6 +48,9 @@ return {
 
         return icons_by_severity[highest_severity] .. " " .. count
     end,
+    cond = function()
+        return require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/diagnostic")
+    end,
     color = function()
         local diagnostics = vim.diagnostic.get(0)
         local highest_severity = get_highest_severity(diagnostics)
