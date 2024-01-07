@@ -268,7 +268,7 @@ return {
     {
         "neogit",
         cond = not vim.g.started_by_firenvim,
-        dependencies = { "plenary.nvim" },
+        dependencies = { "plenary.nvim", "telescope.nvim", "diffview.nvim" },
         opts = {
             disable_hint = true,
             disable_context_highlighting = true,
