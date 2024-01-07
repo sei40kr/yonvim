@@ -1,17 +1,5 @@
 local M = {}
 
-local function does_any_lsp_client_support(method)
-    local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-
-    for _, client in ipairs(clients) do
-        if client.supports_method(method) then
-            return true
-        end
-    end
-
-    return false
-end
-
 local function has_telescope_nvim()
     return require("yvim.utils.plugin").has("telescope.nvim")
 end
@@ -39,7 +27,7 @@ function M.buffer_diagnostics()
 end
 
 function M.code_action()
-    if does_any_lsp_client_support("textDocument/codeAction") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/codeAction") then
         vim.lsp.buf.code_action()
     else
         vim.notify("No handler for code actions", vim.log.levels.WARN)
@@ -47,7 +35,7 @@ function M.code_action()
 end
 
 function M.format_buffer()
-    if does_any_lsp_client_support("textDocument/formatting") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/formatting") then
         vim.lsp.buf.format({ async = true })
     else
         vim.notify("No handler for formatting", vim.log.levels.WARN)
@@ -55,7 +43,7 @@ function M.format_buffer()
 end
 
 function M.format_range()
-    if does_any_lsp_client_support("textDocument/rangeFormatting") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/rangeFormatting") then
         vim.lsp.buf.format({ async = true })
     else
         vim.notify("No handler for range formatting", vim.log.levels.WARN)
@@ -63,7 +51,7 @@ function M.format_range()
 end
 
 function M.hover()
-    if does_any_lsp_client_support("textDocument/hover") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/hover") then
         vim.lsp.buf.hover()
     else
         vim.notify("No handler for hover", vim.log.levels.WARN)
@@ -71,7 +59,7 @@ function M.hover()
 end
 
 function M.incoming_calls()
-    if does_any_lsp_client_support("callHierarchy/incomingCalls") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("callHierarchy/incomingCalls") then
         vim.lsp.buf.incoming_calls()
     else
         vim.notify("No handler for incoming calls", vim.log.levels.WARN)
@@ -79,7 +67,7 @@ function M.incoming_calls()
 end
 
 function M.outgoing_calls()
-    if does_any_lsp_client_support("callHierarchy/outgoingCalls") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("callHierarchy/outgoingCalls") then
         vim.lsp.buf.outgoing_calls()
     else
         vim.notify("No handler for outgoing calls", vim.log.levels.WARN)
@@ -87,7 +75,7 @@ function M.outgoing_calls()
 end
 
 function M.rename()
-    if does_any_lsp_client_support("textDocument/rename") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/rename") then
         vim.lsp.buf.rename()
     else
         -- TODO: Use Treesitter rename instead if available
@@ -96,7 +84,7 @@ function M.rename()
 end
 
 function M.definition()
-    if does_any_lsp_client_support("textDocument/definition") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/definition") then
         if has_trouble_nvim() then
             require("trouble").open("lsp_definitions")
         else
@@ -108,7 +96,7 @@ function M.definition()
 end
 
 function M.implementation()
-    if does_any_lsp_client_support("textDocument/implementation") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/implementation") then
         if has_trouble_nvim() then
             require("trouble").open("lsp_implementations")
         else
@@ -120,7 +108,7 @@ function M.implementation()
 end
 
 function M.references()
-    if does_any_lsp_client_support("textDocument/references") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/references") then
         if has_trouble_nvim() then
             require("trouble").open("lsp_references")
         else
@@ -132,7 +120,7 @@ function M.references()
 end
 
 function M.type_definition()
-    if does_any_lsp_client_support("textDocument/typeDefinition") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/typeDefinition") then
         if has_trouble_nvim() then
             require("trouble").open("lsp_type_definitions")
         else
@@ -144,7 +132,7 @@ function M.type_definition()
 end
 
 function M.workspace_symbol()
-    if does_any_lsp_client_support("workspace/symbol") then
+    if require("yvim.utils.lsp").does_any_lsp_client_support("workspace/symbol") then
         if has_telescope_nvim() then
             require("telescope.builtin").lsp_workspace_symbols()
         else

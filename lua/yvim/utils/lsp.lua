@@ -10,4 +10,16 @@ function M.on_attach(callback)
     })
 end
 
+function M.does_any_lsp_client_support(method)
+    local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+
+    for _, client in ipairs(clients) do
+        if client.supports_method(method) then
+            return true
+        end
+    end
+
+    return false
+end
+
 return M
