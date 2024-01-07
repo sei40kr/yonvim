@@ -11,6 +11,8 @@ end
 function M.all_diagnostics()
     if has_trouble_nvim() then
         require("trouble").open("workspace_diagnostics")
+    elseif has_telescope_nvim() then
+        require("telescope.builtin").diagnostics()
     else
         vim.diagnostic.setqflist()
     end
@@ -19,6 +21,8 @@ end
 function M.buffer_diagnostics()
     if has_trouble_nvim() then
         require("trouble").open("document_diagnostics")
+    elseif has_telescope_nvim() then
+        require("telescope.builtin").diagnostics({ bufnr = 0 })
     else
         vim.diagnostic.setloclist()
     end
