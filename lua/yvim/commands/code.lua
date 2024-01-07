@@ -62,7 +62,11 @@ end
 
 function M.incoming_calls()
     if require("yvim.utils.lsp").does_any_lsp_client_support("callHierarchy/incomingCalls") then
-        vim.lsp.buf.incoming_calls()
+        if has_telescope_nvim() then
+            require("telescope.builtin").lsp_incoming_calls()
+        else
+            vim.lsp.buf.incoming_calls()
+        end
     else
         vim.notify("No handler for incoming calls", vim.log.levels.WARN)
     end
@@ -70,7 +74,11 @@ end
 
 function M.outgoing_calls()
     if require("yvim.utils.lsp").does_any_lsp_client_support("callHierarchy/outgoingCalls") then
-        vim.lsp.buf.outgoing_calls()
+        if has_telescope_nvim() then
+            require("telescope.builtin").lsp_outgoing_calls()
+        else
+            vim.lsp.buf.outgoing_calls()
+        end
     else
         vim.notify("No handler for outgoing calls", vim.log.levels.WARN)
     end
@@ -89,6 +97,8 @@ function M.definition()
     if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/definition") then
         if has_trouble_nvim() then
             require("trouble").open("lsp_definitions")
+        elseif has_telescope_nvim() then
+            require("telescope.builtin").lsp_definitions()
         else
             vim.lsp.buf.definition()
         end
@@ -101,6 +111,8 @@ function M.implementation()
     if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/implementation") then
         if has_trouble_nvim() then
             require("trouble").open("lsp_implementations")
+        elseif has_telescope_nvim() then
+            require("telescope.builtin").lsp_implementations()
         else
             vim.lsp.buf.implementation()
         end
@@ -113,6 +125,8 @@ function M.references()
     if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/references") then
         if has_trouble_nvim() then
             require("trouble").open("lsp_references")
+        elseif has_telescope_nvim() then
+            require("telescope.builtin").lsp_references()
         else
             vim.lsp.buf.references()
         end
@@ -125,6 +139,8 @@ function M.type_definition()
     if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/typeDefinition") then
         if has_trouble_nvim() then
             require("trouble").open("lsp_type_definitions")
+        elseif has_telescope_nvim() then
+            require("telescope.builtin").lsp_type_definitions()
         else
             vim.lsp.buf.type_definition()
         end
