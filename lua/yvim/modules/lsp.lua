@@ -1,4 +1,5 @@
 local buffer_util = require("yvim.utils.buffer")
+local window_util = require("yvim.utils.window")
 local yonvim_config = require("yvim.config").get()
 
 return {
@@ -52,6 +53,7 @@ return {
         "none-ls.nvim",
         init = function()
             buffer_util.add_special_filetypes({ "null-ls-info" })
+            window_util.add_special_filetypes({ "null-ls-info" })
         end,
         opts = function()
             local null_ls = require("null-ls")
@@ -82,6 +84,7 @@ return {
         },
         init = function()
             buffer_util.add_special_filetypes({ "lspinfo" })
+            window_util.add_special_filetypes({ "lspinfo" })
         end,
         config = function()
             require("yvim.plugins.nvim-lspconfig").config()

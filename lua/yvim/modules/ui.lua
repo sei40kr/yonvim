@@ -1,4 +1,5 @@
 local buffer_util = require("yvim.utils.buffer")
+local window_util = require("yvim.utils.window")
 local yonvim_config = require("yvim.config").get()
 
 return {
@@ -271,6 +272,7 @@ return {
         cond = not vim.g.started_by_firenvim,
         init = function()
             buffer_util.add_special_filetypes({ "notify" })
+            window_util.add_special_filetypes({ "notify" })
         end,
         config = function()
             require("yvim.plugins.nvim-notify").config()
