@@ -1,5 +1,34 @@
 local M = {}
 
+local _special_filetypes = { "checkhealth", "help", "man", "qf", "terminal" }
+
+-- Types of special buffers that should be ignored by some plugins.
+M.special_buftypes = { "help", "nofile", "quickfix", "terminal", "prompt" }
+
+-- Get special filetypes that should be ignored by some plugins.
+---@return string[] # The list of special filetypes
+function M.get_special_filetypes()
+    return _special_filetypes
+end
+
+-- Add the given filetypes as special filetypes that should be ignored by some
+-- plugins. Make sure to call this function before loading any plugins.
+---@param filetypes string[] The list of special filetypes to add
+function M.add_special_filetypes(filetypes)
+    for _, filetype in ipairs(filetypes) do
+        table.insert(_special_filetypes, filetype)
+    end
+end
+
+-- Check whether the given buffer is a special buffer.
+---@param bufnr number Buffer handle, or 0 for current buffer
+function M.is_special(bufnr)
+    local special_filetypes = M.get_special_filetypes()
+
+    return vim.tbl_contains(M.special_buftypes, vim.bo[bufnr].buftype)
+        or vim.tbl_contains(special_filetypes, vim.bo[bufnr].filetype)
+end
+
 -- Delete a buffer. If `mini.bufremove` is installed, delete a buffer while
 -- preserving the window layout.
 ---@param bufnr number Buffer handle, or 0 for current buffer
