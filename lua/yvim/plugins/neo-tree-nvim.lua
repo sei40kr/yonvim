@@ -151,6 +151,7 @@ function M.opts()
     return {
         close_if_last_window = false,
         popup_border_style = yonvim_config.ui.border,
+        use_popups_for_input = false,
         enable_diagnostics = false,
         default_component_configs = {
             container = { enable_character_fade = false },
