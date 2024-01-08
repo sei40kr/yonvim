@@ -69,8 +69,12 @@ return {
         dependencies = { "nvim-web-devicons" },
         opts = {
             options = {
-                close_command = 'lua require("yvim.buffer").del_buf()',
-                right_mouse_command = 'lua require("yvim.buffer").del_buf()',
+                close_command = function(bufnr)
+                    require("yvim.utils.buffer").delete(bufnr, false)
+                end,
+                right_mouse_command = function(bufnr)
+                    require("yvim.utils.buffer").delete(bufnr, false)
+                end,
                 buffer_close_icon = " ",
                 modified_icon = " ⦁",
                 indicator = {
