@@ -1,3 +1,4 @@
+local buffer_util = require("yvim.utils.buffer")
 local plugin_util = require("yvim.utils.plugin")
 local yonvim_config = require("yvim.config").get()
 
@@ -6,6 +7,9 @@ return {
         "aerial.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
+        init = function()
+            buffer_util.add_special_filetypes({ "aerial" })
+        end,
         opts = {
             {
                 layout = {
@@ -30,6 +34,12 @@ return {
         "diffview.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons", "plenary.nvim" },
+        init = function()
+            buffer_util.add_special_filetypes({
+                "DiffviewFiles",
+                "DiffviewFileHistory",
+            })
+        end,
         opts = function()
             local actions = require("diffview.actions")
             return {
@@ -152,6 +162,9 @@ return {
     {
         "iron.nvim",
         cond = not vim.g.started_by_firenvim,
+        init = function()
+            buffer_util.add_special_filetypes({ "iron" })
+        end,
         opts = function()
             local view = require("iron.view")
             local repl_open_cmd = view.split.horizontal.botright(0.30)
@@ -269,6 +282,17 @@ return {
         "neogit",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "plenary.nvim", "telescope.nvim", "diffview.nvim" },
+        init = function()
+            buffer_util.add_special_filetypes({
+                "NeogitCommitSelectView",
+                "NeogitCommitView",
+                "NeogitConsole",
+                "NeogitGitCommandHistory",
+                "NeogitLogView",
+                "NeogitPopup",
+                "NeogitStatus",
+            })
+        end,
         opts = {
             disable_hint = true,
             disable_context_highlighting = true,
@@ -312,6 +336,9 @@ return {
             "plenary.nvim",
             "telescope.nvim",
         },
+        init = function()
+            buffer_util.add_special_filetypes({ "octo" })
+        end,
         opts = {
             right_bubble_delimiter = "",
             left_bubble_delimiter = "",
@@ -357,6 +384,12 @@ return {
     {
         "overseer.nvim",
         cond = not vim.g.started_by_firenvim,
+        init = function()
+            buffer_util.add_special_filetypes({
+                "OverseerForm",
+                "OverseerList",
+            })
+        end,
         opts = {
             strategy = plugin_util.has("toggleterm.nvim") and "toggleterm"
                 or "terminal",
@@ -415,6 +448,12 @@ return {
             "noice.nvim",
             "telescope-fzy-native.nvim",
         },
+        init = function()
+            buffer_util.add_special_filetypes({
+                "TelescopePrompt",
+                "TelescopePreview",
+            })
+        end,
         config = function()
             require("yvim.plugins.telescope-nvim").config()
         end,
@@ -606,6 +645,9 @@ return {
     {
         "toggleterm.nvim",
         cond = not vim.g.started_by_firenvim,
+        init = function()
+            buffer_util.add_special_filetypes({ "toggleterm" })
+        end,
         opts = {
             size = function(term)
                 if term.direction == "horizontal" then
@@ -627,6 +669,13 @@ return {
 
     {
         "neo-tree.nvim",
+        init = function()
+            buffer_util.add_special_filetypes({
+                "neo-tree",
+                "neo-tree-popup",
+                "neo-tree-preview",
+            })
+        end,
         cond = not vim.g.started_by_firenvim,
         dependencies = {
             "nui.nvim",
@@ -676,6 +725,9 @@ return {
         "trouble.nvim",
         cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
+        init = function()
+            buffer_util.add_special_filetypes({ "Trouble" })
+        end,
         opts = {
             indent_lines = false,
             auto_jump = {

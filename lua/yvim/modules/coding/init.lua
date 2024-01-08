@@ -1,3 +1,4 @@
+local buffer_util = require("yvim.utils.buffer")
 local yonvim_config = require("yvim.config").get()
 
 return {
@@ -24,6 +25,8 @@ return {
             "cmp-spell",
         },
         init = function()
+            buffer_util.add_special_filetypes({ "cmp_docs", "cmp_menu" })
+
             require("yvim.plugins.nvim-cmp").init()
         end,
         config = function()
