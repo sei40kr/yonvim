@@ -17,14 +17,7 @@ function M.config()
     )
 
     for server, opts in pairs(yonvim_config.lsp.servers) do
-        -- Setting up rust_analyzer here causes conflicts with rust-tools.nvim
-        if server == "rust_analyzer" then
-            goto continue
-        end
-
         lspconfig[server].setup(opts)
-
-        ::continue::
     end
 end
 

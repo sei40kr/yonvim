@@ -121,6 +121,7 @@ require("yvim").setup {
 
 | Variable                 | Default value | Description                           |
 | :----------------------- | :------------ | :------------------------------------ |
+| `lang.rust.enable`       | `false`       | Whether to enable Rust supports       |
 | `lang.typescript.enable` | `false`       | Whether to enable TypeScript supports |
 
 ### LSP
@@ -134,7 +135,6 @@ require("yvim").setup {
     lsp = {
         servers = {
             pyright = {},
-            rust_analyzer = {},
         },
     },
 }

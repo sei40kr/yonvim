@@ -84,6 +84,10 @@ return {
     },
 
     lang = {
+        rust = {
+            -- Whether to enable Rust supports
+            enable = false,
+        },
         typescript = {
             -- Whether to enable TypeScript supports
             enable = false,
