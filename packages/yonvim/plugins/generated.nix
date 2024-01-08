@@ -1042,6 +1042,22 @@ _self: {
     meta.homepage = "https://github.com/Tastyep/structlog.nvim";
   };
 
+  telescope-cmdline-nvim = vimUtils.buildVimPlugin {
+    pname = "telescope-cmdline.nvim";
+    version = "2023-12-30";
+
+    src = fetchFromGitHub {
+      owner = "jonarrien";
+      repo = "telescope-cmdline.nvim";
+      rev = "0943c44f19a9f9d157f3c07659a304368a9e09a2";
+      hash = "sha256-aeUJL0pfqS8nSGtCGmLqE8aLFycfrRDBio0q3W4hQpg=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/jonarrien/telescope-cmdline.nvim";
+  };
+
   telescope-file-browser-nvim = vimUtils.buildVimPlugin {
     pname = "telescope-file-browser.nvim";
     version = "2023-12-07";

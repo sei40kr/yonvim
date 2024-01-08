@@ -434,7 +434,6 @@ return {
                 desc =
                 "Search project"
             },
-            { "<Leader>:",  "<Cmd>Telescope commands<CR>",             desc = ":" },
             { "<Leader>bb", "<Cmd>Telescope buffers<CR>",              desc = "Switch buffer" },
             { "<Leader>fF", "<Cmd>Telescope find_files cwd=%:p:h<CR>", desc = "Find file from here" },
             { "<Leader>fr", "<Cmd>Telescope oldfiles<CR>",             desc = "Recent files" },
@@ -480,6 +479,17 @@ return {
             },
             { "<Leader>sj", "<Cmd>Telescope jumplist<CR>", desc = "Jump list" },
             { "<Leader>sr", "<Cmd>Telescope marks<CR>",    desc = "Jump to mark" },
+        },
+    },
+    {
+        "telescope-cmdline.nvim",
+        cond = not vim.g.started_by_firenvim,
+        dependencies = { "telescope.nvim" },
+        config = function()
+            require("telescope").load_extension("cmdline")
+        end,
+        keys = {
+            { "<Leader>:", "<Cmd>Telescope cmdline<CR>", desc = ":" },
         },
     },
     {
