@@ -32,6 +32,10 @@ local hl_names_by_severity = {
 
 return {
     function()
+        if vim.diagnostic.is_disabled() then
+            return " "
+        end
+
         local diagnostics = vim.diagnostic.get(0)
         local highest_severity = get_highest_severity(diagnostics)
         local count = 0
@@ -52,14 +56,19 @@ return {
         return require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/diagnostic")
     end,
     color = function()
-        local diagnostics = vim.diagnostic.get(0)
-        local highest_severity = get_highest_severity(diagnostics)
         local hl_name
 
-        if highest_severity == nil then
-            hl_name = "DiagnosticOk"
+        if vim.diagnostic.is_disabled() then
+            hl_name = "Comment"
         else
-            hl_name = hl_names_by_severity[highest_severity]
+            local diagnostics = vim.diagnostic.get(0)
+            local highest_severity = get_highest_severity(diagnostics)
+
+            if highest_severity == nil then
+                hl_name = "DiagnosticOk"
+            else
+                hl_name = hl_names_by_severity[highest_severity]
+            end
         end
 
         return {
