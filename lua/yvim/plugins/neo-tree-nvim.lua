@@ -154,7 +154,7 @@ function M.opts()
         enable_diagnostics = false,
         default_component_configs = {
             container = { enable_character_fade = false },
-            indent = { with_markers = false },
+            indent = { with_markers = true },
             icon = {
                 folder_closed = " ",
                 folder_open = " ",
