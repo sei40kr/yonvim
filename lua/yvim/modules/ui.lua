@@ -119,7 +119,10 @@ return {
             end
         end,
         opts = {
-            input = { border = yonvim_config.ui.border },
+            input = {
+                border = yonvim_config.ui.border,
+                relative = "editor",
+            },
             select = {
                 nui = {
                     border = { style = yonvim_config.ui.border },
