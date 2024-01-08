@@ -166,11 +166,18 @@ function M.load()
 
     -- +toggle
 
-    local function toggle_options(options)
+    local function toggle_options(options, name)
         return function()
+            local message
             for _, option in ipairs(options) do
                 vim.o[option] = not vim.o[option]
             end
+            if vim.o[options[1]] then
+                message = name .. " enabled"
+            else
+                message = name .. " disabled"
+            end
+            vim.notify(message, vim.log.levels.INFO)
         end
     end
 
@@ -182,16 +189,20 @@ function M.load()
         "n",
         "<Leader>td",
         function()
+            local message
             if vim.diagnostic.is_disabled() then
                 vim.diagnostic.enable()
+                message = "Diagnostics enabled"
             else
                 vim.diagnostic.disable()
+                message = "Diagnostics disabled"
             end
+            vim.notify(message, vim.log.levels.INFO)
         end,
         { desc = "Diagnostics" }
     )
-    map("n", "<Leader>tl", toggle_options({ "number", "relativenumber" }), { desc = "Line numbers" })
-    map("n", "<Leader>tL", toggle_options({ "list" }), { desc = "List mode" })
+    map("n", "<Leader>tl", toggle_options({ "number", "relativenumber" }, "Line numbers"), { desc = "Line numbers" })
+    map("n", "<Leader>tL", toggle_options({ "list" }, "List mode"), { desc = "List mode" })
     map(
         "n",
         "<Leader>tr",
@@ -200,8 +211,8 @@ function M.load()
         end,
         { desc = "Read-only mode" }
     )
-    map("n", "<Leader>ts", toggle_options({ "spell" }), { desc = "Spell checker" })
-    map("n", "<Leader>tw", toggle_options({ "wrap" }), { desc = "Soft line wrapping" })
+    map("n", "<Leader>ts", toggle_options({ "spell" }, "Spell checker"), { desc = "Spell checker" })
+    map("n", "<Leader>tw", toggle_options({ "wrap" }, "Soft line wrapping"), { desc = "Soft line wrapping" })
 
     -- +window
     map("n", "<Leader>w+", "<C-w>+", { desc = "Increase height" })
