@@ -11,58 +11,7 @@ return {
         dependencies = { "nvim-web-devicons" },
         event = "VimEnter",
         opts = function()
-            local dashboard = require 'alpha.themes.dashboard'
-
-            local green = vim.g.terminal_color_2
-            local blue = vim.g.terminal_color_4
-            local gray = vim.api.nvim_get_hl(0, { name = "Comment" }).fg
-
-            vim.api.nvim_set_hl(0, "YonvimDashboardLogo1", { fg = blue })
-            vim.api.nvim_set_hl(0, "YonvimDashboardLogo2", { fg = green })
-            vim.api.nvim_set_hl(0, "YonvimDashboardLogo3", { fg = green, bg = blue })
-
-            dashboard.section.header.val = {
-                [[            ]],
-                [[     ██     ]],
-                [[      █      ]],
-                [[       ██       ]],
-                [[              ]],
-                [[]],
-                [[Y  O  N  V  I  M]],
-            }
-            dashboard.section.header.opts.hl = {
-                { { "YonvimDashboardLogo1", 6, 11 }, { "YonvimDashboardLogo2", 14, 19 } },
-                { { "YonvimDashboardLogo1", 6, 14 }, { "YonvimDashboardLogo2", 15, 23 } },
-                { { "YonvimDashboardLogo1", 7, 9 },  { "YonvimDashboardLogo3", 10, 12 }, { "YonvimDashboardLogo2", 13, 18 } },
-                { { "YonvimDashboardLogo2", 8, 13 } },
-                { { "YonvimDashboardLogo2", 8, 13 } },
-                {},
-                {},
-            }
-            dashboard.section.buttons.val = {}
-
-            local startup_time = nil
-            local augroup = vim.api.nvim_create_augroup("yonvim_alpha", {})
-            vim.api.nvim_create_autocmd("User", {
-                group = augroup,
-                pattern = "LazyVimStarted",
-                callback = function()
-                    startup_time = require("lazy").stats().startuptime
-                    vim.cmd.AlphaRedraw()
-                end,
-            })
-
-            vim.api.nvim_set_hl(0, "YonvimDashboardFooter", { fg = gray })
-
-            dashboard.section.footer.val = function()
-                if not startup_time then
-                    return {}
-                end
-                return { string.format("Loaded in %.0fms", startup_time) }
-            end
-            dashboard.section.footer.opts.hl = { { { "YonvimDashboardFooter", 0, 15 } } }
-
-            return dashboard.config
+            return require("yvim.plugins.alpha-nvim").opts()
         end,
         main = "alpha",
     },
