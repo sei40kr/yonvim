@@ -1,61 +1,41 @@
 local M = {}
 
-function M.remove(predicate, opts)
-    opts = vim.tbl_extend("force", {
-        wipeout = false,
-        force = false,
-    }, opts or {})
-
-    local bufs = vim.tbl_filter(function(buf)
-        return vim.bo[buf].buflisted and predicate(buf)
-    end, vim.api.nvim_list_bufs())
-
-    if vim.tbl_isempty(bufs) then
-        vim.api.nvim_echo({ { "No buffers to kill" } }, false, {})
-        return
+-- Delete a buffer. If `mini.bufremove` is installed, delete a buffer while
+-- preserving the window layout.
+---@param bufnr number Buffer handle, or 0 for current buffer
+---@param force boolean Whether to force the deletion when the buffer is modified
+---@return boolean # Whether the buffer was successfully deleted
+function M.delete(bufnr, force)
+    if require("yvim.utils.plugin").has("mini.bufremove") then
+        return require("mini.bufremove").delete(bufnr, force) or false
     end
 
-    if not opts.force then
-        for _, buf in ipairs(bufs) do
-            if vim.bo[buf].modified then
-                local choice = vim.fn.confirm(
-                    string.format(
-                        [[Save changes to "%s"?]],
-                        vim.api.nvim_buf_get_name(buf)
-                    ),
-                    "&Yes\n&No\n&Cancel",
-                    3,
-                    "Question"
-                )
-                if choice == 3 then
-                    return
-                end
-                if choice == 1 then
-                    vim.api.nvim_buf_call(buf, function()
-                        vim.cmd("write")
-                    end)
-                end
-
-                vim.api.nvim_echo({ { "" } }, false, {})
-                vim.cmd("redraw")
-            end
-        end
+    if bufnr == 0 then
+        bufnr = vim.api.nvim_get_current_buf()
     end
 
-    local bufremove = require("mini.bufremove")
-    if opts.wipeout then
-        for _, buf in ipairs(bufs) do
-            bufremove.wipeout(buf, true)
-        end
+    if force then
+        vim.cmd(string.format([[silent bdelete! %d]], bufnr))
     else
-        for _, buf in ipairs(bufs) do
-            bufremove.delete(buf, true)
-        end
+        vim.cmd(string.format([[silent bdelete %d]], bufnr))
     end
 
-    vim.api.nvim_echo({ {
-        string.format("Killed %d buffers", #bufs)
-    } }, false, {})
+    return not vim.api.nvim_buf_is_loaded(bufnr)
+end
+
+-- Unload a buffer without saving unsaved changes. If `mini.bufremove` is
+-- installed, unload a buffer while preserving the window layout.
+---@param bufnr number Buffer handle, or 0 for current buffer
+function M.force_unload(bufnr)
+    if bufnr == 0 then
+        bufnr = vim.api.nvim_get_current_buf()
+    end
+
+    if require("yvim.utils.plugin").has("mini.bufremove") then
+        require("mini.bufremove").unshow(bufnr)
+    end
+
+    vim.cmd(string.format([[silent bunload! %d]], bufnr))
 end
 
 return M

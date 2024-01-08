@@ -42,41 +42,28 @@ function M.load()
     end, { desc = "Insert newline below" })
 
     -- +buffer
-    local function kill_buffer()
-        local cur_buf = vim.api.nvim_get_current_buf()
-        require("yvim.utils.buffer").remove(function(buf)
-            return buf == cur_buf
-        end)
-    end
+
     map("n", "[b", "<Cmd>bp<CR>", { desc = "Previous buffer" })
     map("n", "]b", "<Cmd>bn<CR>", { desc = "Next buffer" })
-    map("n", "<Leader>bd", kill_buffer, { desc = "Kill buffer" })
-    map("n", "<Leader>bk", kill_buffer, { desc = "Kill buffer" })
+    map("n", "<Leader>bd", function()
+        require("yvim.commands.buffer").delete_current_buffer()
+    end, { desc = "Delete buffer" })
+    map("n", "<Leader>bk", "<Leader>bd", {
+        desc = "Delete buffer",
+        remap = true,
+    })
     map("n", "<Leader>bN", "<Cmd>ene<CR>", { desc = "New empty buffer" })
-    map(
-        "n",
-        "<Leader>bO",
-        function()
-            local cur_buf = vim.api.nvim_get_current_buf()
-            require("yvim.utils.buffer").remove(function(buf)
-                return buf ~= cur_buf
-            end)
-        end,
-        { desc = "Kill other buffers" }
-    )
+    map("n", "<Leader>bO", function()
+        require("yvim.commands.buffer").delete_other_buffers()
+    end, { desc = "Delete other buffers" })
     map("n", "<Leader>bs", "<Cmd>w<CR>", { desc = "Save buffer" })
     map("n", "<Leader>bS", "<Cmd>wa<CR>", { desc = "Save all buffers" })
-    map("n", "<Leader>bz", "<Cmd>bun<CR>", { desc = "Unload buffer" })
-    map(
-        "n",
-        "<Leader>bZ",
-        function()
-            require("yvim.utils.buffer").remove(function(buf)
-                return not vim.api.nvim_buf_is_loaded(buf)
-            end, { wipeout = true })
-        end,
-        { desc = "Kill unloaded buffers" }
-    )
+    map("n", "<Leader>bz", function()
+        require("yvim.commands.buffer").force_to_unload_current_buffer()
+    end, { desc = "Unload buffer" })
+    map("n", "<Leader>bZ", function()
+        require("yvim.commands.buffer").wipeout_unloaded_buffers()
+    end, { desc = "Wipe out unloaded buffers" })
 
     -- +code
 
