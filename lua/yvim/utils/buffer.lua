@@ -44,9 +44,13 @@ function M.delete(bufnr, force)
     end
 
     if force then
-        vim.cmd(string.format([[silent bdelete! %d]], bufnr))
+        vim.cmd.bdelete({
+            bang = true,
+            args = { bufnr },
+            mods = { silent = true },
+        })
     else
-        vim.cmd(string.format([[silent bdelete %d]], bufnr))
+        vim.cmd.bdelete({ args = { bufnr }, mods = { silent = true } })
     end
 
     return not vim.api.nvim_buf_is_loaded(bufnr)
@@ -64,7 +68,7 @@ function M.force_unload(bufnr)
         require("mini.bufremove").unshow(bufnr)
     end
 
-    vim.cmd(string.format([[silent bunload! %d]], bufnr))
+    vim.cmd.bunload({ bang = true, args = { bufnr }, mods = { silent = true } })
 end
 
 return M

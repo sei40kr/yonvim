@@ -1,3 +1,3 @@
 return function()
-    vim.cmd [[wincmd p]]
+    vim.cmd.wincmd("p")
 end

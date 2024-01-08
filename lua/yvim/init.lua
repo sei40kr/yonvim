@@ -31,7 +31,7 @@ M.setup = function(opts)
 
     require("yvim.lsp").config()
 
-    vim.cmd("colorscheme " .. config.get().colorscheme.name)
+    vim.cmd.colorscheme(config.get().colorscheme.name)
 end
 
 return M

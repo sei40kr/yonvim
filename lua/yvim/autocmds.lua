@@ -15,7 +15,7 @@ function M.load()
                     mode.mode:find("c|r.?|!|t") == nil
                     and vim.fn.getcmdwintype() == ""
                 then
-                    vim.cmd([[checktime]])
+                    vim.cmd.checktime()
                 end
             end,
         }
@@ -42,7 +42,7 @@ function M.load()
         group = resize_augroup,
         pattern = { "man" },
         callback = function()
-            vim.cmd("resize " .. math.ceil(vim.o.lines * 0.45))
+            vim.cmd.resize(math.ceil(vim.o.lines * 0.45))
         end,
     })
 
@@ -50,7 +50,7 @@ function M.load()
         group = resize_augroup,
         pattern = { "help" },
         callback = function()
-            vim.cmd("resize " .. math.ceil(vim.o.lines * 0.42))
+            vim.cmd.resize(math.ceil(vim.o.lines * 0.42))
         end,
     })
 end

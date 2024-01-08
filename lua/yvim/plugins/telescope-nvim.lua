@@ -72,7 +72,7 @@ function M.config()
 
                     -- If we didn't find a tab with the same working directory,
                     -- then open a new tab with the selected path.
-                    vim.cmd("tabe")
+                    vim.cmd.tabedit()
                     vim.cmd.tcd(selected_path)
                 end,
             },

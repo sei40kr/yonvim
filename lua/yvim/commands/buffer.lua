@@ -40,7 +40,11 @@ function M.wipeout_unloaded_buffers()
     for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
         if not vim.api.nvim_buf_is_loaded(bufnr) then
             count = count + 1
-            vim.cmd(string.format("silent bwipeout! %d", bufnr))
+            vim.cmd.bwipeout({
+                bang = true,
+                args = { bufnr },
+                mods = { silent = true },
+            })
         end
     end
 

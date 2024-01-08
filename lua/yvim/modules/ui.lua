@@ -48,7 +48,7 @@ return {
                 pattern = "LazyVimStarted",
                 callback = function()
                     startup_time = require("lazy").stats().startuptime
-                    vim.cmd("AlphaRedraw")
+                    vim.cmd.AlphaRedraw()
                 end,
             })
 
