@@ -532,11 +532,11 @@
         "hash": "sha256-8nLghiueYOtWY7OGVxow9A2G/5lgt+Kt5D8q1xeJvVg="
     },
     {
-        "version": "2023-06-06",
-        "owner": "jose-elias-alvarez",
-        "repo": "typescript.nvim",
-        "rev": "5b3680e5c386e8778c081173ea0c978c14a40ccb",
-        "hash": "sha256-v1HJTsm3T+B9RDFFqEdp8mWamR+7CRsX7YJ49Nl6vUc="
+        "version": "2023-12-19",
+        "owner": "pmizio",
+        "repo": "typescript-tools.nvim",
+        "rev": "829b5dc4f6704b249624e5157ad094dcb20cdc6b",
+        "hash": "sha256-O/wJzIflMXUc8FbeiUcYuWgE4md8gjK7KUifWFYZNXg="
     },
     {
         "version": "2023-10-06",

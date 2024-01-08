@@ -83,6 +83,13 @@ return {
         },
     },
 
+    lang = {
+        typescript = {
+            -- Whether to enable TypeScript supports
+            enable = false,
+        },
+    },
+
     lsp = {
         -- LSP servers to use
         servers = {},

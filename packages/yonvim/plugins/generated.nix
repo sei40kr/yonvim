@@ -1218,20 +1218,20 @@ _self: {
     meta.homepage = "https://github.com/folke/trouble.nvim";
   };
 
-  typescript-nvim = vimUtils.buildVimPlugin {
-    pname = "typescript.nvim";
-    version = "2023-06-06";
+  typescript-tools-nvim = vimUtils.buildVimPlugin {
+    pname = "typescript-tools.nvim";
+    version = "2023-12-19";
 
     src = fetchFromGitHub {
-      owner = "jose-elias-alvarez";
-      repo = "typescript.nvim";
-      rev = "5b3680e5c386e8778c081173ea0c978c14a40ccb";
-      hash = "sha256-v1HJTsm3T+B9RDFFqEdp8mWamR+7CRsX7YJ49Nl6vUc=";
+      owner = "pmizio";
+      repo = "typescript-tools.nvim";
+      rev = "829b5dc4f6704b249624e5157ad094dcb20cdc6b";
+      hash = "sha256-O/wJzIflMXUc8FbeiUcYuWgE4md8gjK7KUifWFYZNXg=";
     };
 
     dontBuild = true;
 
-    meta.homepage = "https://github.com/jose-elias-alvarez/typescript.nvim";
+    meta.homepage = "https://github.com/pmizio/typescript-tools.nvim";
   };
 
   vim-illuminate = vimUtils.buildVimPlugin {

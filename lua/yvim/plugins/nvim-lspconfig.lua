@@ -21,10 +21,6 @@ function M.config()
         if server == "rust_analyzer" then
             goto continue
         end
-        -- Setting up tsserver here causes conflicts with typescript.nvim
-        if server == "tsserver" then
-            goto continue
-        end
 
         lspconfig[server].setup(opts)
 

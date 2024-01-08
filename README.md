@@ -117,6 +117,12 @@ require("yvim").setup {
 | :---------------------- | :------------ | :--------------------------------------- |
 | `format.format_on_save` | `false`       | Whether to format the buffer upon saving |
 
+### Language Supports
+
+| Variable                 | Default value | Description                           |
+| :----------------------- | :------------ | :------------------------------------ |
+| `lang.typescript.enable` | `false`       | Whether to enable TypeScript supports |
+
 ### LSP
 
 | Variable      | Default value | Description                                                                                                                                                                       |
@@ -128,7 +134,6 @@ require("yvim").setup {
     lsp = {
         servers = {
             pyright = {},
-            tsserver = {},
             rust_analyzer = {},
         },
     },

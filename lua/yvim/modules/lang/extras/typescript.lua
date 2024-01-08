@@ -1,11 +1,8 @@
-local yonvim_config = require("yvim.config").get()
-
 return {
     {
-        "typescript.nvim",
-        cond = yonvim_config.lsp.servers.tsserver ~= nil,
-        opts = { server = yonvim_config.lsp.servers.tsserver },
-        main = "typescript",
+        "typescript-tools.nvim",
+        dependencies = { "plenary.nvim", "nvim-lspconfig" },
+        opts = {},
         ft = {
             'javascript',
             'javascriptreact',
