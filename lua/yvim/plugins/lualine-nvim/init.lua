@@ -18,27 +18,7 @@ function M.config()
         options = {
             section_separators = { left = "", right = "" },
             component_separators = { left = "", right = "" },
-            disabled_filetypes = {
-                "aerial",
-                "alpha",
-                "DiffviewFiles",
-                "DiffviewFileHistory",
-                "help",
-                "iron",
-                "man",
-                "NeogitCommitSelectView",
-                "NeogitCommitView",
-                "NeogitConsole",
-                "NeogitGitCommandHistory",
-                "NeogitLogView",
-                "NeogitPopup",
-                "NeogitStatus",
-                "neo-tree",
-                "qf",
-                "terminal",
-                "toggleterm",
-                "Trouble",
-            },
+            disabled_filetypes = require("yvim.utils.buffer").get_special_filetypes(),
         },
         sections = {
             lualine_a = {

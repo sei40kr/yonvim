@@ -5,6 +5,7 @@ return {
     {
         "nvim-autopairs",
         opts = {
+            disable_filetype = buffer_util.get_special_filetypes(),
             check_ts = true,
             map_c_h = true,
             map_c_w = true,

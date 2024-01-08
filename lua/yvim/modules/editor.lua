@@ -687,25 +687,9 @@ return {
                 opts = {
                     filter_rules = {
                         bo = {
-                            filetype = {
-                                "aerial",
-                                "help",
-                                "iron",
-                                "NeogitBranchSelectView",
-                                "NeogitCommitView",
-                                "NeogitGitCommandHistory",
-                                "NeogitPopup",
-                                "man",
-                                "neo-tree",
-                                "qf",
-                                "toggleterm",
-                                "Trouble",
-                            },
-                            buftype = {
-                                "quickfix",
-                                "terminal",
-                            },
-                        }
+                            filetype = buffer_util.get_special_filetypes(),
+                            buftype = buffer_util.special_buftypes,
+                        },
                     },
                 },
                 main = "window-picker",

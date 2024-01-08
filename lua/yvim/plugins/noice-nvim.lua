@@ -30,6 +30,9 @@ function M.config()
                 ["cmp.entry.get_documentation"] = true,
             },
         },
+        smart_move = {
+            excluded_filetypes = require("yvim.utils.buffer").get_special_filetypes(),
+        },
         popupmenu = { backend = "cmp" },
         presets = {
             lsp_doc_border = true,

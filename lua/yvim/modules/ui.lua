@@ -97,18 +97,22 @@ return {
 
     {
         "nvim-colorizer.lua",
-        opts = {
-            filetypes = {
-                "*",
-                "!alpha",
-            },
-            user_default_options = {
-                mode = "virtualtext",
-                css = true,
-                tailwind = "lsp",
-                sass = { enable = true },
-            },
-        },
+        opts = function()
+            local filetypes = vim.tbl_map(function(filetype)
+                return "!" .. filetype
+            end, buffer_util.get_special_filetypes())
+            table.insert(filetypes, "*")
+
+            return {
+                filetypes = filetypes,
+                user_default_options = {
+                    mode = "virtualtext",
+                    css = true,
+                    tailwind = "lsp",
+                    sass = { enable = true },
+                },
+            }
+        end,
         main = "colorizer",
     },
 
@@ -199,7 +203,8 @@ return {
         "vim-illuminate",
         lazy = false,
         opts = {
-            providers = { "lsp", "treesitter" }
+            providers = { "lsp", "treesitter" },
+            filetypes_denylist = buffer_util.get_special_filetypes(),
         },
         config = function(_, opts)
             require("illuminate").configure(opts)
@@ -225,6 +230,10 @@ return {
                     "RainbowDelimiterViolet",
                     "RainbowDelimiterCyan",
                 },
+            },
+            exclude = {
+                filetypes = buffer_util.get_special_filetypes(),
+                buftypes = buffer_util.special_buftypes,
             },
         },
         config = function(_, opts)
@@ -333,7 +342,13 @@ return {
     {
         "virt-column.nvim",
         lazy = false,
-        opts = { char = "│" },
+        opts = {
+            char = "│",
+            exclude = {
+                filetypes = buffer_util.get_special_filetypes(),
+                buftypes = buffer_util.special_buftypes,
+            },
+        },
         main = "virt-column",
         keys = {
             {
