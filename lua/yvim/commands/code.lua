@@ -29,8 +29,16 @@ function M.buffer_diagnostics()
 end
 
 function M.code_action()
-    if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/codeAction") then
-        vim.lsp.buf.code_action()
+    if
+        require("yvim.utils.lsp").does_any_lsp_client_support(
+            "textDocument/codeAction"
+        )
+    then
+        if require("yvim.utils.plugin").has("actions-preview.nvim") then
+            require("actions-preview").code_actions()
+        else
+            vim.lsp.buf.code_action()
+        end
     else
         vim.notify("No handler for code actions", vim.log.levels.WARN)
     end

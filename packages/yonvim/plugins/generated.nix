@@ -34,6 +34,22 @@ _self: {
     meta.homepage = "https://github.com/numToStr/Navigator.nvim";
   };
 
+  actions-preview-nvim = vimUtils.buildVimPlugin {
+    pname = "actions-preview.nvim";
+    version = "2024-01-07";
+
+    src = fetchFromGitHub {
+      owner = "aznhe21";
+      repo = "actions-preview.nvim";
+      rev = "dd63df1a4ed0ffe1458945ee50ecb1dd02b605ab";
+      hash = "sha256-iXqs1+3z6ujm/6thDpbgoyWmUJ5Nd+D0zxAW4jc+T2c=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/aznhe21/actions-preview.nvim";
+  };
+
   aerial-nvim = vimUtils.buildVimPlugin {
     pname = "aerial.nvim";
     version = "2023-06-25";

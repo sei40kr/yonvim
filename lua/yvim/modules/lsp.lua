@@ -4,6 +4,16 @@ local yonvim_config = require("yvim.config").get()
 
 return {
     {
+        "actions-preview.nvim",
+        dependncies = { "telescope.nvim" },
+        opts = {
+            backend = { "telescope" },
+            telescope = {},
+        },
+        module = "actions-preview",
+    },
+
+    {
         "lsp-inlayhints.nvim",
         init = function()
             vim.api.nvim_create_augroup("yvim_inlayhints", {})
