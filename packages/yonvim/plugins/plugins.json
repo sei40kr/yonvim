@@ -112,13 +112,6 @@
         "hash": "sha256-x6ylgVR7nrMhvSvtwbh7CufOJO/q+30G+Tvrj3/wgZY="
     },
     {
-        "version": "2023-11-01",
-        "owner": "github",
-        "repo": "copilot.vim",
-        "rev": "309b3c803d1862d5e84c7c9c5749ae04010123b8",
-        "hash": "sha256-yuaG4kOSXSivFQCvc6iEZP230tlaFoXcZb0WxBjeWdA="
-    },
-    {
         "version": "2023-11-20",
         "owner": "sindrets",
         "repo": "diffview.nvim",

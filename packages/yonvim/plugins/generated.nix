@@ -258,22 +258,6 @@ _self: {
     meta.homepage = "https://github.com/zbirenbaum/copilot.lua";
   };
 
-  copilot-vim = vimUtils.buildVimPlugin {
-    pname = "copilot.vim";
-    version = "2023-11-01";
-
-    src = fetchFromGitHub {
-      owner = "github";
-      repo = "copilot.vim";
-      rev = "309b3c803d1862d5e84c7c9c5749ae04010123b8";
-      hash = "sha256-yuaG4kOSXSivFQCvc6iEZP230tlaFoXcZb0WxBjeWdA=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/github/copilot.vim";
-  };
-
   diffview-nvim = vimUtils.buildVimPlugin {
     pname = "diffview.nvim";
     version = "2023-11-20";
