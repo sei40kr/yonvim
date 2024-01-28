@@ -87,8 +87,9 @@ end
 function M.rename()
     if require("yvim.utils.lsp").does_any_lsp_client_support("textDocument/rename") then
         vim.lsp.buf.rename()
+    elseif require("yvim.utils.treesitter").is_highlight_enabled(0) then
+        require("nvim-treesitter-refactor.smart_rename").smart_rename()
     else
-        -- TODO: Use Treesitter rename instead if available
         vim.notify("No handler for rename", vim.log.levels.WARN)
     end
 end

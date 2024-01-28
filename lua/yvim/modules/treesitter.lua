@@ -43,7 +43,7 @@ return {
                 highlight_definitions = { enable = true },
                 smart_rename = {
                     enable = true,
-                    keymaps = { smart_rename = "<Leader>cr" },
+                    keymaps = { smart_rename = false },
                 },
             },
             autotag = { enable = true },
