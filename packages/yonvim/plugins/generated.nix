@@ -994,20 +994,20 @@ _self: {
     meta.homepage = "https://github.com/HiPhish/rainbow-delimiters.nvim";
   };
 
-  rust-tools-nvim = vimUtils.buildVimPlugin {
-    pname = "rust-tools.nvim";
-    version = "2023-07-10";
+  rustaceanvim = vimUtils.buildVimPlugin {
+    pname = "rustaceanvim";
+    version = "2024-01-28";
 
     src = fetchFromGitHub {
-      owner = "simrat39";
-      repo = "rust-tools.nvim";
-      rev = "0cc8adab23117783a0292a0c8a2fbed1005dc645";
-      hash = "sha256-jtfyDxifchznUupLSao6nmpVqaX1yO0xN+NhqS9fgxg=";
+      owner = "mrcjkb";
+      repo = "rustaceanvim";
+      rev = "d4331647cd38e76e30231dffe260853bbff2379c";
+      hash = "sha256-qZAsKGUVNQD0UlxCZpJ9WcsTTNSjmqjf1k3oLO55ZK0=";
     };
 
     dontBuild = true;
 
-    meta.homepage = "https://github.com/simrat39/rust-tools.nvim";
+    meta.homepage = "https://github.com/mrcjkb/rustaceanvim";
   };
 
   scope-nvim = vimUtils.buildVimPlugin {

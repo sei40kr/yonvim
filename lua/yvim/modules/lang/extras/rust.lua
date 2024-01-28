@@ -1,11 +1,7 @@
 return {
     {
-        "rust-tools.nvim",
-        opts = {
-            tools = {
-                inlay_hints = { auto = false },
-            },
-        },
+        "rustaceanvim",
+        config = function() end,
         ft = "rust",
     },
 }
