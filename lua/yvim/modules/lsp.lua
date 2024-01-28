@@ -1,4 +1,5 @@
 local buffer_util = require("yvim.utils.buffer")
+local lsp_util = require("yvim.utils.lsp")
 local window_util = require("yvim.utils.window")
 local yonvim_config = require("yvim.config").get()
 
@@ -71,6 +72,19 @@ return {
             return { sources = yonvim_config.null_ls.sources(null_ls) }
         end,
         main = "null-ls",
+    },
+
+    {
+        "nvim-lightbulb",
+        opts = {
+            sign = { text = " " },
+            autocmd = { enabled = true },
+            ignore = {
+                clients = lsp_util.pseudo_client_names,
+                ft = buffer_util.get_special_filetypes(),
+            },
+        },
+        event = "LspAttach",
     },
 
     {

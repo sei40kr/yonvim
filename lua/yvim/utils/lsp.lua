@@ -1,5 +1,7 @@
 local M = {}
 
+M.pseudo_client_names = { "copilot", "null-ls" }
+
 function M.on_attach(callback)
     vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)

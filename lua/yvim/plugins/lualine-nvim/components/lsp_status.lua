@@ -1,12 +1,13 @@
 local lualine_utils = require("lualine.utils.utils")
 
-local pseudo_clients = { "null-ls", "copilot" }
-
 local function get_lsp_actual_clients()
     local all_clients = vim.lsp.get_active_clients({ bufnr = 0 })
 
     return vim.tbl_filter(function(client)
-        return not vim.tbl_contains(pseudo_clients, client.name)
+        return not vim.tbl_contains(
+            require("yvim.utils.lsp").pseudo_client_names,
+            client.name
+        )
     end, all_clients)
 end
 
