@@ -292,13 +292,13 @@ _self: {
 
   edgy-nvim = vimUtils.buildVimPlugin {
     pname = "edgy.nvim";
-    version = "2023-10-14";
+    version = "2024-01-21";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "edgy.nvim";
-      rev = "8355be45610afdf79a0bab32b91ee297997455b4";
-      hash = "sha256-moaypNxfVgaFg4OCpzDIw3zWmMgwxVPCMlyVCP3sVEI=";
+      rev = "0b35dc6da4cae6cc2f724bc610eadf955cd2319b";
+      hash = "sha256-mx7E7ov09IN1UueAEsQ5OFNs05h4hw+v4y7ot+0JuxE=";
     };
 
     dontBuild = true;
