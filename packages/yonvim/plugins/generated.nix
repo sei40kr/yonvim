@@ -1060,13 +1060,13 @@ _self: {
 
   telescope-cmdline-nvim = vimUtils.buildVimPlugin {
     pname = "telescope-cmdline.nvim";
-    version = "2023-12-30";
+    version = "2024-01-20";
 
     src = fetchFromGitHub {
       owner = "jonarrien";
       repo = "telescope-cmdline.nvim";
-      rev = "0943c44f19a9f9d157f3c07659a304368a9e09a2";
-      hash = "sha256-aeUJL0pfqS8nSGtCGmLqE8aLFycfrRDBio0q3W4hQpg=";
+      rev = "38dfa6620fdf7308d795981d34aac3ff0c742001";
+      hash = "sha256-+/09zYB6BiDtP41ROZblm8Zd8/79hZzoBetcVYVaEi8=";
     };
 
     dontBuild = true;
