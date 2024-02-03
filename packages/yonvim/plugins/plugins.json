@@ -518,11 +518,11 @@
         "hash": "sha256-HwQP5Zxx2bKaPnuPiRfgwCxyUX+OyfVosvvKcgvZYZM="
     },
     {
-        "version": "2023-10-25",
+        "version": "2024-01-21",
         "owner": "folke",
         "repo": "todo-comments.nvim",
-        "rev": "4a6737a8d70fe1ac55c64dfa47fcb189ca431872",
-        "hash": "sha256-Z041A05I2zESNV+aSghtnijEUeDqPjLQxiOcCVVOwfE="
+        "rev": "833d8dd8b07eeda37a09e99460f72a02616935cb",
+        "hash": "sha256-DiyieXXx7iYGWkpeOvduJf0n7dnpaQ7rXmaWvZQaCyE="
     },
     {
         "version": "2023-12-13",
