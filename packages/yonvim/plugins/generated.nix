@@ -628,13 +628,13 @@ _self: {
 
   none-ls-nvim = vimUtils.buildVimPlugin {
     pname = "none-ls.nvim";
-    version = "2023-12-22";
+    version = "2024-02-03";
 
     src = fetchFromGitHub {
       owner = "nvimtools";
       repo = "none-ls.nvim";
-      rev = "e7382de51b4cf629e56f1fa18192e716e5ba8145";
-      hash = "sha256-XvOLC4N/fcoKQcpQXecwDJSAfF4z9pkszMjoMtWldNY=";
+      rev = "c10b7be7751aee820a02f2d1fafe76bc316fe223";
+      hash = "sha256-CLTXIT75uirA/BiWG1If9BOjOArqBJ38Vv3dCwJqqbk=";
     };
 
     dontBuild = true;
