@@ -1284,13 +1284,13 @@ _self: {
 
   vim-visual-multi = vimUtils.buildVimPlugin {
     pname = "vim-visual-multi";
-    version = "2020-09-01";
+    version = "2024-01-22";
 
     src = fetchFromGitHub {
       owner = "mg979";
       repo = "vim-visual-multi";
-      rev = "v0.5.8";
-      hash = "sha256-DwV0fV7I9FbVk+WCqx/isrmqoY2VRekgqpMO/Tqs70k=";
+      rev = "e67f7fa011c98fc5426352d3bb06362a0f70af3c";
+      hash = "sha256-rg2FLbnJfhRMdmOak+HSwkrNLbdn0YoV9ar74ylaUBQ=";
     };
 
     dontBuild = true;
