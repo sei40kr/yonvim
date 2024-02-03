@@ -948,13 +948,13 @@ _self: {
 
   overseer-nvim = vimUtils.buildVimPlugin {
     pname = "overseer.nvim";
-    version = "2023-10-28";
+    version = "2024-01-07";
 
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "overseer.nvim";
-      rev = "6f462a61ce9a5f47743cbf78454bed14a855eb03";
-      hash = "sha256-Q/W2i7FydgTj05/+yi4G0vzbJWhPEmsyq4F3KKtpuP8=";
+      rev = "68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0";
+      hash = "sha256-jcNHsK2kYiMYFOUelZ/1tpk9p3oxSeXPPdmHwNidKlY=";
     };
 
     dontBuild = true;
