@@ -500,13 +500,13 @@ _self: {
 
   mini-comment = vimUtils.buildVimPlugin {
     pname = "mini.comment";
-    version = "2023-11-01";
+    version = "2024-01-30";
 
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.comment";
-      rev = "3d9c8009615857e982f09bc5357fc95f2a2175f3";
-      hash = "sha256-+qu/wrHqMqSTa6dK0nWBDGSWkdd6VoWyOIKJZioN+0M=";
+      rev = "b0b359ada4293cdcea7ab4072dfd5b031aac3f8e";
+      hash = "sha256-dG8pdumK6RHfmpvG92zBcrPaTHbUf9QDyMtRaYLUWWM=";
     };
 
     dontBuild = true;
