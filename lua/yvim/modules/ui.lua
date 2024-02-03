@@ -126,6 +126,7 @@ return {
                 changedelete = { text = "▍" },
                 untracked = { text = "▍" },
             },
+            attach_to_untracked = true,
             current_line_blame = true,
             on_attach = function(bufnr)
                 local map = function(mode, lhs, rhs, opts)
