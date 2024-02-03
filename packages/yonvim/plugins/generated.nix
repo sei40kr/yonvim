@@ -276,13 +276,13 @@ _self: {
 
   dressing-nvim = vimUtils.buildVimPlugin {
     pname = "dressing.nvim";
-    version = "2023-11-07";
+    version = "2024-01-29";
 
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "dressing.nvim";
-      rev = "fe3071330a0720ce3695ac915820c8134b22d1b0";
-      hash = "sha256-htUCShHjjwJU26/POs2GHDoUFFxczCXd87Ao//as5ig=";
+      rev = "6f212262061a2120e42da0d1e87326e8a41c0478";
+      hash = "sha256-Y+ABLhb3GIaPKOuQzkxsZsTo1WfgURAYVioP/eCSp/Y=";
     };
 
     dontBuild = true;
