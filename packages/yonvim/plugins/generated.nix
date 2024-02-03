@@ -1156,13 +1156,13 @@ _self: {
 
   telescope-tabs = vimUtils.buildVimPlugin {
     pname = "telescope-tabs";
-    version = "2023-07-22";
+    version = "2024-01-16";
 
     src = fetchFromGitHub {
       owner = "LukasPietzschmann";
       repo = "telescope-tabs";
-      rev = "8fa5f3c453f3794c9289f88a05504e86eb8fd582";
-      hash = "sha256-HnQUXJqMsiTzuBk+MBmmjFReNhHHOGLmVifp2XGIkPo=";
+      rev = "c3572358e60817f40f0de31bc01906af0993d4c4";
+      hash = "sha256-4mVDF/GOeQod89jeSkmbKoQpGzyL8dYaiwnZK3M4sFU=";
     };
 
     dontBuild = true;
