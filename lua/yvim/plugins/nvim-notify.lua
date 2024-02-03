@@ -20,6 +20,7 @@ function M.config()
                 })
             end
         end,
+        animate = false,
     })
 
     Logger:add_pipeline(log.Pipeline(
