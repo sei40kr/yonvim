@@ -4,13 +4,13 @@
 _self: {
   LuaSnip = vimUtils.buildVimPlugin {
     pname = "LuaSnip";
-    version = "2023-12-17";
+    version = "2024-01-17";
 
     src = fetchFromGitHub {
       owner = "L3MON4D3";
       repo = "LuaSnip";
-      rev = "57c9f5c31b3d712376c704673eac8e948c82e9c1";
-      hash = "sha256-ly8DJ0Q8sIva3NEvycqI6A92CjoEeHOsCQ/NG+BTQR4=";
+      rev = "2dbef19461198630b3d7c39f414d09fb07d1fdd2";
+      hash = "sha256-TlzIaDERoWt5yOyuCVtqJq3lHEtDsEd0lHKnFcvVqo8=";
     };
 
     dontBuild = true;
