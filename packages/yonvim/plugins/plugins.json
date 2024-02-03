@@ -525,11 +525,11 @@
         "hash": "sha256-DiyieXXx7iYGWkpeOvduJf0n7dnpaQ7rXmaWvZQaCyE="
     },
     {
-        "version": "2023-12-13",
+        "version": "2024-01-22",
         "owner": "akinsho",
         "repo": "toggleterm.nvim",
-        "rev": "91be5f327e42aa016da13b277540de8dba0b14e3",
-        "hash": "sha256-hfsBRQ+0d3fAZGWE5Dh/OEdAJfqb3Wuf3IGVI4y2+yI="
+        "rev": "b49df5cdce67a8964d1b027dae94bde212092b51",
+        "hash": "sha256-y+83w0D2jD68QJpBCYXLqUUxVu9MTBZ+nJutYD7jAoQ="
     },
     {
         "version": "2024-01-31",
