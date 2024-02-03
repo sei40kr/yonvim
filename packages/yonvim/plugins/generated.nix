@@ -404,13 +404,13 @@ _self: {
 
   lazy-nvim = vimUtils.buildVimPlugin {
     pname = "lazy.nvim";
-    version = "2023-11-04";
+    version = "2024-01-23";
 
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "96584866b9c5e998cbae300594d0ccfd0c464627";
-      hash = "sha256-adBcg8iSSO5eRLuZJnmU6m7IiRJXjoMDzN6yH2JrQIc=";
+      rev = "aedcd79811d491b60d0a6577a9c1701063c2a609";
+      hash = "sha256-8gbwjDkpXOSiLwv7fIBSZWFPi8kd6jyLMFa3S5BZXdM=";
     };
 
     dontBuild = true;
