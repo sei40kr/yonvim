@@ -22,7 +22,7 @@ function M.load()
     )
 
     -- Show LSP diagnostics on cursor hold
-    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+    vim.api.nvim_create_autocmd("CursorHold", {
         group = augroup("show_lsp_diagnostics"),
         callback = function()
             vim.diagnostic.open_float(nil, { focus = false })
