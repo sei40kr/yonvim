@@ -740,13 +740,13 @@ _self: {
 
   nvim-notify = vimUtils.buildVimPlugin {
     pname = "nvim-notify";
-    version = "2024-01-15";
+    version = "2024-02-17";
 
     src = fetchFromGitHub {
       owner = "rcarriga";
       repo = "nvim-notify";
-      rev = "80b67b265530632505193553d05127ae7fe09ddd";
-      hash = "sha256-WhC80NnWXEAYHLORpUPIXb2s1ERJxyK3l2L9oke68mo=";
+      rev = "5371f4bfc1f6d3adf4fe9d62cd3a9d44356bfd15";
+      hash = "sha256-xJYPOX4YLcWojMCdP1RO22/7FMrbcBQxqxrcVCE2TrU=";
     };
 
     dontBuild = true;
