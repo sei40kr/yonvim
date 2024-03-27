@@ -154,11 +154,11 @@
         "hash": "sha256-Hde3mGfqPYd8U5JExTei+TBHo2DHl+i07+1yEHQj6sw="
     },
     {
-        "version": "2023-12-24",
+        "version": "2024-03-12",
         "owner": "lukas-reineke",
         "repo": "indent-blankline.nvim",
-        "rev": "0dca9284bce128e60da18693d92999968d6cb523",
-        "hash": "sha256-uXycxfTs+rzYqxU8tEkZP0iGcc14Ss3c35HVf2/x0d4="
+        "rev": "3d08501caef2329aba5121b753e903904088f7e6",
+        "hash": "sha256-Xp8ZQBz0in2MX3l0bnLUsSbH0lDPE+QvdmFpBFry5yY="
     },
     {
         "version": "2023-07-13",

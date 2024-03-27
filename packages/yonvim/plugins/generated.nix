@@ -356,13 +356,13 @@ _self: {
 
   indent-blankline-nvim = vimUtils.buildVimPlugin {
     pname = "indent-blankline.nvim";
-    version = "2023-12-24";
+    version = "2024-03-12";
 
     src = fetchFromGitHub {
       owner = "lukas-reineke";
       repo = "indent-blankline.nvim";
-      rev = "0dca9284bce128e60da18693d92999968d6cb523";
-      hash = "sha256-uXycxfTs+rzYqxU8tEkZP0iGcc14Ss3c35HVf2/x0d4=";
+      rev = "3d08501caef2329aba5121b753e903904088f7e6";
+      hash = "sha256-Xp8ZQBz0in2MX3l0bnLUsSbH0lDPE+QvdmFpBFry5yY=";
     };
 
     dontBuild = true;
