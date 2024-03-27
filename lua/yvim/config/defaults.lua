@@ -84,6 +84,10 @@ return {
     },
 
     lang = {
+        haskell = {
+            -- Whether to enable Haskell supports
+            enable = false,
+        },
         rust = {
             -- Whether to enable Rust supports
             enable = false,

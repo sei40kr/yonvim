@@ -121,6 +121,7 @@ require("yvim").setup {
 
 | Variable                 | Default value | Description                           |
 | :----------------------- | :------------ | :------------------------------------ |
+| `lang.haskell.enable`    | `false`       | Whether to enable Haskell supports    |
 | `lang.rust.enable`       | `false`       | Whether to enable Rust supports       |
 | `lang.typescript.enable` | `false`       | Whether to enable TypeScript supports |
 

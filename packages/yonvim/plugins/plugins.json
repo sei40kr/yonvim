@@ -154,6 +154,13 @@
         "hash": "sha256-Hde3mGfqPYd8U5JExTei+TBHo2DHl+i07+1yEHQj6sw="
     },
     {
+        "version": "2024-03-25",
+        "owner": "MrcJkb",
+        "repo": "haskell-tools.nvim",
+        "rev": "b53d4f2faef93c4b85c1510adef280747b37ec67",
+        "hash": "sha256-6+zP4YiMrN0WpoolRDHPppojvJx1XphRId0UQRIPUVE="
+    },
+    {
         "version": "2024-03-12",
         "owner": "lukas-reineke",
         "repo": "indent-blankline.nvim",

@@ -2,6 +2,10 @@ local yonvim_config = require("yvim.config").get()
 
 return {
     {
+        import = "yvim.modules.lang.extras.haskell",
+        cond = yonvim_config.lang.haskell.enable,
+    },
+    {
         import = "yvim.modules.lang.extras.rust",
         cond = yonvim_config.lang.rust.enable,
     },

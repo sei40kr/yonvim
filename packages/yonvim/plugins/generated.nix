@@ -354,6 +354,22 @@ _self: {
     meta.homepage = "https://github.com/lewis6991/gitsigns.nvim";
   };
 
+  haskell-tools-nvim = vimUtils.buildVimPlugin {
+    pname = "haskell-tools.nvim";
+    version = "2024-03-25";
+
+    src = fetchFromGitHub {
+      owner = "MrcJkb";
+      repo = "haskell-tools.nvim";
+      rev = "b53d4f2faef93c4b85c1510adef280747b37ec67";
+      hash = "sha256-6+zP4YiMrN0WpoolRDHPppojvJx1XphRId0UQRIPUVE=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/MrcJkb/haskell-tools.nvim";
+  };
+
   indent-blankline-nvim = vimUtils.buildVimPlugin {
     pname = "indent-blankline.nvim";
     version = "2024-03-12";
