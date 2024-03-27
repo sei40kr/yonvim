@@ -660,13 +660,13 @@ _self: {
 
   nvim-cmp = vimUtils.buildVimPlugin {
     pname = "nvim-cmp";
-    version = "2024-02-02";
+    version = "2024-03-24";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "nvim-cmp";
-      rev = "04e0ca376d6abdbfc8b52180f8ea236cbfddf782";
-      hash = "sha256-FF7OHYUC4VFwFvqWKI/R5BSAC0JL6qFKUS6/XRSd9H8=";
+      rev = "97dc716fc914c46577a4f254035ebef1aa72558a";
+      hash = "sha256-VFtf1mI1ucClWzsWn+rf+TlC3ZgkYPiHrPTQZci9zrQ=";
     };
 
     dontBuild = true;
