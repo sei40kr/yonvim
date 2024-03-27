@@ -61,11 +61,6 @@ function M.load()
     -- edgy.nvim recommended options
     vim.opt.laststatus = 3
     vim.opt.splitkeep = "screen"
-
-    if vim.g.started_by_firenvim then
-        -- Firenvim recommended options
-        vim.o.laststatus = 0
-    end
 end
 
 return M

@@ -20,10 +20,7 @@ let
   neovim-yonvim = wrapNeovimUnstable neovim-unwrapped {
     extraName = "-yonvim";
     wrapperArgs = [ "--prefix" "PATH" ":" (lib.makeBinPath runtimeDeps) ]
-      ++ [ "--set" "NVIM_APPNAME" "yonvim" ]
-      # HACK: Make sure that Firenvim's helper script runs the Yonvim
-      #  executable, not unwrapped Neovim.
-      ++ [ "--run" "export APPIMAGE=$0" ];
+      ++ [ "--set" "NVIM_APPNAME" "yonvim" ];
     wrapRc = false;
     packpathDirs.myNeovimPackages.start = [
       yonvim-lua

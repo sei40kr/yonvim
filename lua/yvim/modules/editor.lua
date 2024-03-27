@@ -6,7 +6,6 @@ local yonvim_config = require("yvim.config").get()
 return {
     {
         "aerial.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         init = function()
             buffer_util.add_special_filetypes({ "aerial" })
@@ -34,7 +33,6 @@ return {
 
     {
         "diffview.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons", "plenary.nvim" },
         init = function()
             buffer_util.add_special_filetypes({
@@ -74,7 +72,6 @@ return {
 
     {
         "edgy.nvim",
-        cond = not vim.g.started_by_firenvim,
         event = "VeryLazy",
         opts = {
             left = {
@@ -130,44 +127,7 @@ return {
     },
 
     {
-        "firenvim",
-        lazy = not vim.g.started_by_firenvim,
-        config = function()
-            vim.api.nvim_create_user_command(
-                "FirenvimInstall",
-                [[call firenvim#install(0)]],
-                { desc = "Install Firenvim" }
-            )
-
-            if vim.g.started_by_firenvim then
-                local delta = 0
-
-                local function set_guifont()
-                    vim.o.guifont = yonvim_config.ui.font.name .. ":h" .. (yonvim_config.ui.font.size + delta)
-                end
-
-                vim.keymap.set("n", "<C-=>", function()
-                    delta = delta + 1
-                    set_guifont()
-                end)
-                vim.keymap.set("n", "<C-->", function()
-                    delta = delta - 1
-                    set_guifont()
-                end)
-                vim.keymap.set("n", "<C-0>", function()
-                    delta = 0
-                    set_guifont()
-                end)
-
-                set_guifont()
-            end
-        end,
-        cmd = "FirenvimInstall",
-    },
-
-    {
         "iron.nvim",
-        cond = not vim.g.started_by_firenvim,
         init = function()
             buffer_util.add_special_filetypes({ "iron" })
             window_util.add_special_filetypes({ "iron" })
@@ -266,7 +226,6 @@ return {
 
     {
         "mini.bufremove",
-        cond = not vim.g.started_by_firenvim,
         module = "mini.bufremove",
         opts = {},
         main = "mini.bufremove",
@@ -274,7 +233,6 @@ return {
 
     {
         "Navigator.nvim",
-        cond = not vim.g.started_by_firenvim,
         config = true,
         main = "Navigator",
         keys = {
@@ -287,7 +245,6 @@ return {
 
     {
         "neogit",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "plenary.nvim", "telescope.nvim", "diffview.nvim" },
         init = function()
             buffer_util.add_special_filetypes({
@@ -345,7 +302,6 @@ return {
 
     {
         "octo.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = {
             "nvim-web-devicons",
             "plenary.nvim",
@@ -382,7 +338,6 @@ return {
 
     {
         "open-browser-github.vim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "open-browser.vim" },
         cmd = {
             "OpenGithubFile",
@@ -398,7 +353,6 @@ return {
 
     {
         "overseer.nvim",
-        cond = not vim.g.started_by_firenvim,
         init = function()
             buffer_util.add_special_filetypes({
                 "OverseerForm",
@@ -442,7 +396,6 @@ return {
 
     {
         "project.nvim",
-        cond = not vim.g.started_by_firenvim,
         opts = {
             manual_mode = true,
             detection_methods = { "pattern" },
@@ -453,14 +406,12 @@ return {
 
     {
         "scope.nvim",
-        cond = not vim.g.started_by_firenvim,
         opts = {},
         main = "scope",
     },
 
     {
         "telescope.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = {
             "plenary.nvim",
             -- TODO: lazy load
@@ -545,7 +496,6 @@ return {
     },
     {
         "telescope-cmdline.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
             require("telescope").load_extension("cmdline")
@@ -556,7 +506,6 @@ return {
     },
     {
         "telescope-file-browser.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
             require("telescope").load_extension("file_browser")
@@ -585,7 +534,6 @@ return {
     },
     {
         "telescope-luasnip.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
             require("telescope").load_extension("luasnip")
@@ -597,7 +545,6 @@ return {
     },
     {
         "telescope-project.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         config = function()
             require("telescope").load_extension("project")
@@ -612,7 +559,6 @@ return {
     },
     {
         "telescope-symbols.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         keys = {
             {
@@ -634,7 +580,6 @@ return {
     },
     {
         "telescope-tabs",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "telescope.nvim" },
         keys = {
             { "<Leader><Tab>.", "<Cmd>Telescope telescope-tabs list_tabs show_preview=false<CR>", desc = "Switch tab" },
@@ -644,7 +589,6 @@ return {
     {
         "todo-comments.nvim",
         lazy = false,
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "trouble.nvim" },
         opts = {
             signs = false,
@@ -667,7 +611,6 @@ return {
 
     {
         "toggleterm.nvim",
-        cond = not vim.g.started_by_firenvim,
         init = function()
             buffer_util.add_special_filetypes({ "toggleterm" })
             window_util.add_special_filetypes({ "toggleterm" })
@@ -705,7 +648,6 @@ return {
                 "neo-tree-preview",
             })
         end,
-        cond = not vim.g.started_by_firenvim,
         dependencies = {
             "nui.nvim",
             "nvim-web-devicons",
@@ -736,7 +678,6 @@ return {
 
     {
         "trouble.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         init = function()
             buffer_util.add_special_filetypes({ "Trouble" })

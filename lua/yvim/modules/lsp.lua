@@ -47,7 +47,6 @@ return {
 
     {
         "neoconf.nvim",
-        cond = not vim.g.started_by_firenvim,
         opts = {},
         main = "neoconf",
     },
@@ -55,7 +54,6 @@ return {
     {
         "neodev.nvim",
         name = "neodev.nvim",
-        cond = not vim.g.started_by_firenvim,
         opts = {},
         main = "neodev",
     },

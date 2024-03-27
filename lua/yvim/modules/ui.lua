@@ -5,7 +5,6 @@ local yonvim_config = require("yvim.config").get()
 return {
     {
         "alpha-nvim",
-        cond = not vim.g.started_by_firenvim,
         init = function()
             buffer_util.add_special_filetypes({ "alpha" })
         end,
@@ -19,7 +18,6 @@ return {
 
     {
         "bufferline.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         opts = {
             options = {
@@ -69,7 +67,6 @@ return {
     {
         "dressing.nvim",
         lazy = true,
-        cond = not vim.g.started_by_firenvim,
         init = function()
             vim.ui.input = function(...)
                 require("lazy").load({ plugins = { "dressing.nvim" } })
@@ -116,7 +113,6 @@ return {
 
     {
         "gitsigns.nvim",
-        cond = not vim.g.started_by_firenvim,
         opts = {
             signs = {
                 add = { text = "▍" },
@@ -202,7 +198,6 @@ return {
 
     {
         "lualine.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-web-devicons" },
         config = function()
             require("yvim.plugins.lualine-nvim").config()
@@ -236,7 +231,6 @@ return {
 
     {
         "noice.nvim",
-        cond = not vim.g.started_by_firenvim,
         dependencies = { "nvim-notify", "nui.nvim" },
         config = function()
             require("yvim.plugins.noice-nvim").config()
@@ -245,7 +239,6 @@ return {
 
     {
         "nvim-navic",
-        cond = not vim.g.started_by_firenvim,
         init = function()
             require("yvim.utils.lsp").on_attach(function(client, bufnr)
                 if client.server_capabilities.documentSymbolProvider then
@@ -270,7 +263,6 @@ return {
 
     {
         "nvim-notify",
-        cond = not vim.g.started_by_firenvim,
         init = function()
             buffer_util.add_special_filetypes({ "notify" })
             window_util.add_special_filetypes({ "notify" })
@@ -282,7 +274,6 @@ return {
 
     {
         "nui.nvim",
-        cond = not vim.g.started_by_firenvim,
         lazy = true,
     },
 
