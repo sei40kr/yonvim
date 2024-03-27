@@ -28,11 +28,11 @@
         "hash": "sha256-Msp8VZYwd6OVy8nlmBp7j0PpLMAtIKlkga4tJatHL2w="
     },
     {
-        "version": "2024-01-30",
+        "version": "2024-02-25",
         "owner": "goolord",
         "repo": "alpha-nvim",
-        "rev": "1356b9ef31b985d541d94314f2cf73c61124bf1d",
-        "hash": "sha256-y15fuINE0FGl5YSSyHZT+jzyE2F+aA42JWqbHhRV9uo="
+        "rev": "41283fb402713fc8b327e60907f74e46166f4cfd",
+        "hash": "sha256-kTVPKZ/e1us/uHfSwFwR38lFYN8EotJq2jKz6xm/eqg="
     },
     {
         "version": "2024-01-29",
