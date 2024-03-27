@@ -452,13 +452,13 @@ _self: {
 
   lualine-nvim = vimUtils.buildVimPlugin {
     pname = "lualine.nvim";
-    version = "2024-01-25";
+    version = "2024-03-21";
 
     src = fetchFromGitHub {
       owner = "nvim-lualine";
       repo = "lualine.nvim";
-      rev = "7d131a8d3ba5016229e8a1d08bf8782acea98852";
-      hash = "sha256-LMMcRY4qnGywdK6Bl4YeAEKLhnRuOZ2txn4oYoso2gI=";
+      rev = "b5e8bb642138f787a2c1c5aedc2a78cb2cebbd67";
+      hash = "sha256-+2fi58GolO3e0O7+kl+idNeFuTfJA1b5yCBdY2RnVjA=";
     };
 
     dontBuild = true;
