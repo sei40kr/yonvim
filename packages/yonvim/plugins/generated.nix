@@ -1252,13 +1252,13 @@ _self: {
 
   vim-illuminate = vimUtils.buildVimPlugin {
     pname = "vim-illuminate";
-    version = "2023-10-06";
+    version = "2024-02-04";
 
     src = fetchFromGitHub {
       owner = "RRethy";
       repo = "vim-illuminate";
-      rev = "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86";
-      hash = "sha256-KdF52Ho4c8VKt3qBgBIxYnDK8upXqlUj+YnL2IaJdHQ=";
+      rev = "305bf07b919ac526deb5193280379e2f8b599926";
+      hash = "sha256-KNIu4cNyZddZSRS8KZ0U0T8uSSLJu8iqNLQN8e+Bv94=";
     };
 
     dontBuild = true;
