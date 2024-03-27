@@ -42,11 +42,11 @@
         "hash": "sha256-M+QoCYR4WQRqH7KSkdKEBK4MyzPF2uoaA0UtMuc70ic="
     },
     {
-        "version": "2023-06-08",
+        "version": "2024-03-22",
         "owner": "hrsh7th",
         "repo": "cmp-cmdline",
-        "rev": "8ee981b4a91f536f52add291594e89fb6645e451",
-        "hash": "sha256-W8v/XhPjbvKSwCrfOAPihO2N9PEVnH5Cp/Fa25lNRw4="
+        "rev": "d250c63aa13ead745e3a40f61fdd3470efde3923",
+        "hash": "sha256-iBmXp+gUSMbgfkv7c7RDQAwPq02e07wEnBETP0dWBOo="
     },
     {
         "version": "2023-06-23",
