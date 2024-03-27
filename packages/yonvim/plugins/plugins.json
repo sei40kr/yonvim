@@ -273,11 +273,11 @@
         "hash": "sha256-FjDb53SNILxP9N9l5cJVBocj1ro/9eE8VKgR0Mv5+gs="
     },
     {
-        "version": "2024-01-04",
+        "version": "2024-03-18",
         "owner": "MunifTanjim",
         "repo": "nui.nvim",
-        "rev": "35da9ca1de0fc4dda96c2e214d93d363c145f418",
-        "hash": "sha256-SWG0IQDNXrgWK1ApQSpc2oPKNYgTPend877DQ6FuqUc="
+        "rev": "cbd2668414331c10039278f558630ed19b93e69b",
+        "hash": "sha256-Zr5CNx6BIM6naCXW8YBc/Oj1qOtWV/3tuMoaaZjoSZA="
     },
     {
         "version": "2024-03-20",
