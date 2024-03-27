@@ -51,14 +51,7 @@ function M.config()
                 require("yvim.plugins.lualine-nvim.components.diagnostics"),
             },
             lualine_x = {
-                {
-                    "diff",
-                    symbols = {
-                        added = "  ",
-                        modified = "  ",
-                        removed = "  ",
-                    },
-                },
+                "diff",
                 {
                     "branch",
                     color = function()
