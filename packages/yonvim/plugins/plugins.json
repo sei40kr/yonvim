@@ -168,11 +168,11 @@
         "hash": "sha256-dPPMh/8lpJKj6V9jFZaKKVc59IjVwcu/rX83M6fXx3k="
     },
     {
-        "version": "2024-01-23",
+        "version": "2024-03-27",
         "owner": "folke",
         "repo": "lazy.nvim",
-        "rev": "aedcd79811d491b60d0a6577a9c1701063c2a609",
-        "hash": "sha256-8gbwjDkpXOSiLwv7fIBSZWFPi8kd6jyLMFa3S5BZXdM="
+        "rev": "e888d5b64c34bc41f7ef2e8850a5e67e4b3e2731",
+        "hash": "sha256-OW7Smrf2X4MOJrbDa2Ipx8z7R41NVcZwxXUm3JdYHf4="
     },
     {
         "version": "2024-01-24",
