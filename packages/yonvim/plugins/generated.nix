@@ -546,6 +546,22 @@ _self: {
     meta.homepage = "https://github.com/echasnovski/mini.trailspace";
   };
 
+  molten-nvim = vimUtils.buildVimPlugin {
+    pname = "molten-nvim";
+    version = "2024-03-25";
+
+    src = fetchFromGitHub {
+      owner = "benlubas";
+      repo = "molten-nvim";
+      rev = "2fffc76616b645f8e0fff65a3acb89e5f38bd2a9";
+      hash = "sha256-/GESWkXrhlHav5IiYUq+Tj2VUnLU3luS2cxIE78qJjE=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/benlubas/molten-nvim";
+  };
+
   neo-tree-nvim = vimUtils.buildVimPlugin {
     pname = "neo-tree.nvim";
     version = "2024-03-21";

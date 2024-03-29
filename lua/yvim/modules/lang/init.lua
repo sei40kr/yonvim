@@ -6,6 +6,9 @@ return {
         cond = yonvim_config.lang.haskell.enable,
     },
     {
+        import = "yvim.modules.lang.extras.jupyter",
+    },
+    {
         import = "yvim.modules.lang.extras.rust",
         cond = yonvim_config.lang.rust.enable,
     },

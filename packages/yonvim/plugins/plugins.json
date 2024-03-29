@@ -238,6 +238,13 @@
         "hash": "sha256-zIijmUzHUwpRfmLYeC0eVQRo0mr6SezpmaVMh1tM3Wg="
     },
     {
+        "version": "2024-03-25",
+        "owner": "benlubas",
+        "repo": "molten-nvim",
+        "rev": "2fffc76616b645f8e0fff65a3acb89e5f38bd2a9",
+        "hash": "sha256-/GESWkXrhlHav5IiYUq+Tj2VUnLU3luS2cxIE78qJjE="
+    },
+    {
         "version": "2024-03-21",
         "owner": "nvim-neo-tree",
         "repo": "neo-tree.nvim",

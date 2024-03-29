@@ -1,6 +1,7 @@
 { lib
 , fd
 , neovim-unwrapped
+, python3
 , ripgrep
 , runCommandLocal
 , wrapNeovimUnstable
@@ -21,11 +22,26 @@ let
     extraName = "-yonvim";
     wrapperArgs = [ "--prefix" "PATH" ":" (lib.makeBinPath runtimeDeps) ]
       ++ [ "--set" "NVIM_APPNAME" "yonvim" ];
+    manifestRc = "";
+    python3Env = python3.withPackages(ps: with ps; [
+      pynvim
+      # Required by molten-nvim
+      cairosvg
+      jupyter-client
+      nbformat
+      pillow
+      plotly
+      pnglatex
+      pyperclip
+    ]);
     wrapRc = false;
     packpathDirs.myNeovimPackages.start = [
       yonvim-lua
       yonvimPlugins.lazy-nvim
       yonvimPlugins.structlog-nvim
+      # List remote plugins here to ensure the remote plugin manifest at the
+      # build time
+      yonvimPlugins.molten-nvim
     ] ++ yonvim-lua.treesitter-grammars;
   };
 in
