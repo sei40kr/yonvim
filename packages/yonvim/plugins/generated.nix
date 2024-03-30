@@ -34,6 +34,22 @@ _self: {
     meta.homepage = "https://github.com/numToStr/Navigator.nvim";
   };
 
+  NotebookNavigator-nvim = vimUtils.buildVimPlugin {
+    pname = "NotebookNavigator.nvim";
+    version = "2023-12-28";
+
+    src = fetchFromGitHub {
+      owner = "GCBallesteros";
+      repo = "NotebookNavigator.nvim";
+      rev = "42b686f3a3701ea0f9cd9bd9301ef09ed33c21e5";
+      hash = "sha256-bL2tO53HNvSD8AIQ/463JKCqIuAXZo+bV+n4xzCP4GY=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/GCBallesteros/NotebookNavigator.nvim";
+  };
+
   actions-preview-nvim = vimUtils.buildVimPlugin {
     pname = "actions-preview.nvim";
     version = "2024-03-09";

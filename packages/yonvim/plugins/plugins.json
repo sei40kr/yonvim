@@ -14,6 +14,13 @@
         "hash": "sha256-Oyuv8mLPiMEsZPRnIgEjBFYJjGEhMzg+gnNhSSRvGoo="
     },
     {
+        "version": "2023-12-28",
+        "owner": "GCBallesteros",
+        "repo": "NotebookNavigator.nvim",
+        "rev": "42b686f3a3701ea0f9cd9bd9301ef09ed33c21e5",
+        "hash": "sha256-bL2tO53HNvSD8AIQ/463JKCqIuAXZo+bV+n4xzCP4GY="
+    },
+    {
         "version": "2024-03-09",
         "owner": "aznhe21",
         "repo": "actions-preview.nvim",
