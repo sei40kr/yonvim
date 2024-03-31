@@ -10,7 +10,7 @@ return {
 
     {
         "NotebookNavigator.nvim",
-        dependencies = { "molten-nvim" },
+        dependencies = { "mini.comment", "molten-nvim" },
         opts = {
             show_hydra_hint = false,
             hydra_keys = {
