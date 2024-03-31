@@ -738,22 +738,6 @@ _self: {
     meta.homepage = "https://github.com/NvChad/nvim-colorizer.lua";
   };
 
-  nvim-lightbulb = vimUtils.buildVimPlugin {
-    pname = "nvim-lightbulb";
-    version = "2023-07-20";
-
-    src = fetchFromGitHub {
-      owner = "kosayoda";
-      repo = "nvim-lightbulb";
-      rev = "8f00b89dd1b1dbde16872bee5fbcee2e58c9b8e9";
-      hash = "sha256-Meoop66jINllnxN6aohuPmU7DEjn64FMq/b8zuy9FEQ=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/kosayoda/nvim-lightbulb";
-  };
-
   nvim-lspconfig = vimUtils.buildVimPlugin {
     pname = "nvim-lspconfig";
     version = "2024-03-24";

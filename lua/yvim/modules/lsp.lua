@@ -73,19 +73,6 @@ return {
     },
 
     {
-        "nvim-lightbulb",
-        opts = {
-            sign = { text = " " },
-            autocmd = { enabled = true },
-            ignore = {
-                clients = lsp_util.pseudo_client_names,
-                ft = buffer_util.get_special_filetypes(),
-            },
-        },
-        event = "LspAttach",
-    },
-
-    {
         "lsp-format.nvim",
         cond = yonvim_config.format.format_on_save,
         init = function()
