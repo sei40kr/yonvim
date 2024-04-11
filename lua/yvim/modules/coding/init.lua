@@ -37,10 +37,7 @@ return {
     },
     { "cmp-under-comparator" },
     { "lspkind.nvim" },
-    {
-        import = "yvim.modules.coding.extras.copilot",
-        enabled = yonvim_config.completion.copilot.enable,
-    },
+    { import = "yvim.modules.coding.extras.copilot" },
 
     {
         "LuaSnip",

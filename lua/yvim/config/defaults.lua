@@ -22,22 +22,6 @@ return {
         end,
     },
 
-    completion = {
-        copilot = {
-            -- Whether to enable GitHub Copilot suggestions
-            enable = true,
-            -- The filetypes to enable Copilot for
-            filetypes = {
-                help = true,
-                markdown = true,
-                yaml = true,
-                sh = function()
-                    return not vim.endswith(vim.api.nvim_buf_get_name(0), ".env")
-                end,
-            },
-        },
-    },
-
     format = {
         -- Whether to format the buffer upon saving
         format_on_save = true,
@@ -146,6 +130,31 @@ return {
             "⠧",
             "⠇",
             "⠏",
+        },
+    },
+
+    copilot = {
+        completion = {
+            -- Whether to enable Copilot completion
+            enable = true,
+            -- Filetypes to enable Copilot completion
+            filetypes = {
+                help = true,
+                markdown = true,
+                yaml = true,
+                sh = function()
+                    return not vim.endswith(vim.api.nvim_buf_get_name(0), ".env")
+                end,
+            },
+        },
+        chat = {
+            -- Whether to enable Copilot Chat
+            enable = false,
+            -- GPT model to use for Copilot Chat
+            -- Possible values: `gpt-3.5-turbo`, `gpt-4`
+            model = "gpt-4",
+            -- GPT temperature to use for Copilot Chat
+            temperature = 0.1,
         },
     },
 

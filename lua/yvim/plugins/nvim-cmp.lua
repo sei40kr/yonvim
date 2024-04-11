@@ -120,7 +120,7 @@ function M.config()
         cmp.config.compare.length,
         cmp.config.compare.order,
     }
-    if yonvim_config.completion.copilot.enable then
+    if yonvim_config.copilot.completion.enable then
         table.insert(sources, 1, { name = "copilot", keyword_length = 0 })
 
         local copilot_cmp_comparators = require("copilot_cmp.comparators")

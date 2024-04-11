@@ -2,6 +2,22 @@
 { fetchFromGitHub, vimUtils }:
 
 _self: {
+  CopilotChat-nvim = vimUtils.buildVimPlugin {
+    pname = "CopilotChat.nvim";
+    version = "2024-04-11";
+
+    src = fetchFromGitHub {
+      owner = "CopilotC-Nvim";
+      repo = "CopilotChat.nvim";
+      rev = "261bb6268761cedf70342e4a869d6b437e0ccc6c";
+      hash = "sha256-6Kup+c/i7JxYrbu843uE5eNCeZ1f1w++/uDht2pYES4=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/CopilotC-Nvim/CopilotChat.nvim";
+  };
+
   LuaSnip = vimUtils.buildVimPlugin {
     pname = "LuaSnip";
     version = "2024-03-01";

@@ -717,6 +717,7 @@ return {
 
             wk.register({
                 ["<Tab>"] = { name = "+tab" },
+                a = { name = "+ai" },
                 b = { name = "+buffer" },
                 c = {
                     name = "+code",

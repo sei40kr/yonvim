@@ -1,4 +1,5 @@
 return {
+    COPILOT_CHAT = 1,
     COMPLETION_MENU = 1001,
     COMPLETION_DOC = 1001,
     LSP_HOVER = 45,

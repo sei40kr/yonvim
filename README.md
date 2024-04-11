@@ -76,41 +76,6 @@ require("yvim").setup {
 
 ### Completion
 
-#### Copilot
-
-| Variable                       | Default value | Description                                   |
-| :----------------------------- | :------------ | :-------------------------------------------- |
-| `completion.copilot.enable`    | `true`        | Whether to enable GitHub Copilot suggestions. |
-| `completion.copilot.filetypes` | -             | The filetypes to enable Copilot for.          |
-
-You need to log in to GitHub to use Copilot by running `:Copilot setup`.
-
----
-
-Copilot is disabled for some filetypes by default.
-
-This is because those filetypes often contain sensitive data, but Copilot sends
-the contents of the buffer to GitHub for suggestions.
-
-You can manually enable Copilot for those filetypes by your own risk.
-
-```lua
-require("yvim").setup {
-    completion = {
-        copilot = {
-            filetypes = {
-              yaml = true,
-              -- You can also pass a function to determine whether to enable Copilot.
-              -- In this example, Copilot is enabled for sh filetype except for .env files.
-              sh = function()
-                return not vim.endswith(vim.api.nvim_buf_get_name(0), ".env")
-              end,
-            },
-        },
-    },
-}
-```
-
 ### Format
 
 | Variable                | Default value | Description                              |
@@ -212,6 +177,45 @@ yvim.setup {
 | `ui.font.name`            | `"monospace"`                                          | The default font family                                                                                                          |
 | `ui.font.size`            | `12.0`                                                 | The default font size                                                                                                            |
 | `ui.font.forcedly_assign` | `false`                                                | Whether to forcedly assign an invalid font. Set this to `true` when you use a font like [Nerd Fonts](https://www.nerdfonts.com). |
+
+### Copilot
+
+| Variable                       | Default value | Description                                                                    |
+| :----------------------------- | :------------ | :----------------------------------------------------------------------------- |
+| `copilot.completion.enable`    | `false`       | Whether to enable Copilot completion                                           |
+| `copilot.completion.filetypes` | (see below)   | Filetypes to enable Copilot completion                                         |
+| `copilot.chat.enable`          | `false`       | Whether to enable Copilot Chat                                                 |
+| `copilot.chat.model`           | `gpt-4.0`     | GPT model to use for Copilot Chat. Possible values: `gpt-3.5-turbo`, `gpt-4.0` |
+| `copilot.chat.temperature`     | `0.5`         | GPT temperature to use for Copilot Chat                                        |
+
+You need to log in to GitHub to use Copilot by running `:Copilot setup`.
+
+---
+
+`copilot.completion.filetypes` is a table that has filetypes as keys and boolean
+or a function that returns a boolean as values. The default value is:
+
+```lua
+{
+    gitcommit = false,
+    gitrebase = false,
+    hgcommit = false,
+    sh = function()
+        return not vim.endswith(vim.api.nvim_buf_get_name(0), ".env")
+    end,
+    svn = false,
+    cvs = false,
+    ["."] = false,
+}
+```
+
+As you can see, Copilot completion is disabled for some filetypes by default.
+This is because it is not recommended to enable Copilot for those filetypes
+since they often contain sensitive information and Copilot needs to send the
+content of the buffer to GitHub to get completions.
+
+You can override this behavior by setting `copilot.completion.filetypes` by
+your own risk.
 
 ### Keymaps
 
