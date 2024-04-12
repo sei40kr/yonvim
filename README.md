@@ -186,7 +186,7 @@ yvim.setup {
 | `copilot.completion.filetypes` | (see below)   | Filetypes to enable Copilot completion                                         |
 | `copilot.chat.enable`          | `false`       | Whether to enable Copilot Chat                                                 |
 | `copilot.chat.model`           | `gpt-4.0`     | GPT model to use for Copilot Chat. Possible values: `gpt-3.5-turbo`, `gpt-4.0` |
-| `copilot.chat.temperature`     | `0.5`         | GPT temperature to use for Copilot Chat                                        |
+| `copilot.chat.temperature`     | `0.1`         | GPT temperature to use for Copilot Chat                                        |
 
 You need to log in to GitHub to use Copilot by running `:Copilot setup`.
 
