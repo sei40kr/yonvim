@@ -136,7 +136,7 @@ return {
     copilot = {
         completion = {
             -- Whether to enable Copilot completion
-            enable = true,
+            enable = false,
             -- Filetypes to enable Copilot completion
             filetypes = {
                 help = true,
