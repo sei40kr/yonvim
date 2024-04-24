@@ -315,11 +315,11 @@
         "hash": "sha256-ta+0jw7P0ESThP8q2c+CD+nCzPMyHH2Cy3kjjysH0TE="
     },
     {
-        "version": "2024-03-24",
+        "version": "2024-04-23",
         "owner": "hrsh7th",
         "repo": "nvim-cmp",
-        "rev": "97dc716fc914c46577a4f254035ebef1aa72558a",
-        "hash": "sha256-VFtf1mI1ucClWzsWn+rf+TlC3ZgkYPiHrPTQZci9zrQ="
+        "rev": "8f3c541407e691af6163e2447f3af1bd6e17f9a3",
+        "hash": "sha256-rz+JMd/hsUEDNVan2sCuEGtbsOVi6oRmPtps+7qSXQE="
     },
     {
         "version": "2023-11-02",
