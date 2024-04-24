@@ -294,11 +294,11 @@
         "hash": "sha256-y6gHNkWVsIuwBf7MblCTKTZSqjGDxqeFeQZWexzwk94="
     },
     {
-        "version": "2024-03-21",
+        "version": "2024-04-20",
         "owner": "nvimtools",
         "repo": "none-ls.nvim",
-        "rev": "18910d09d21d7df339805343bfe4a2b2e41c057b",
-        "hash": "sha256-FjDb53SNILxP9N9l5cJVBocj1ro/9eE8VKgR0Mv5+gs="
+        "rev": "88821b67e6007041f43b802f58e3d9fa9bfce684",
+        "hash": "sha256-tJEyILFUEdGASYkkaoUEsKcyTWU4XLHtkNF2MJstuyY="
     },
     {
         "version": "2024-03-18",
