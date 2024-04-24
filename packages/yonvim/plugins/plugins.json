@@ -462,11 +462,11 @@
         "hash": "sha256-yOjlsbTTB7CxEO+kWhVb4JQD8LPEkJHUDSkYN52h4Is="
     },
     {
-        "version": "2023-10-29",
+        "version": "2024-03-31",
         "owner": "tiagovla",
         "repo": "scope.nvim",
-        "rev": "cd27af77ad61a7199af5c28d27013fb956eb0e3e",
-        "hash": "sha256-z1ytdhxKrLnZG8qMPEe2h+wC9tF4K/x6zplwnIojZuE="
+        "rev": "86a0f5b594b08b2ad65f470ffdee81654942b6ac",
+        "hash": "sha256-8Bd1DI6nuUxkTCx0wCfWKHdi6UXQNuDygj5UuSGypLs="
     },
     {
         "version": "2023-01-08",
