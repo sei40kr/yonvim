@@ -852,13 +852,13 @@ _self: {
 
   nvim-treesitter-textobjects = vimUtils.buildVimPlugin {
     pname = "nvim-treesitter-textobjects";
-    version = "2024-03-12";
+    version = "2024-04-15";
 
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter-textobjects";
-      rev = "d2a4ffc22d9d38d44edb73da007b3cf43451e9b4";
-      hash = "sha256-p0Kvlq31V1k35ZJsnOH97ZrW7j49O+4pmvktN09nLpU=";
+      rev = "23b820146956b3b681c19e10d3a8bc0cbd9a1d4c";
+      hash = "sha256-mndgAlmvzKZOjd3Z6wZb0ectvcOlYkatTADq8pdNfcs=";
     };
 
     dontBuild = true;
