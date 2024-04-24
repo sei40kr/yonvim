@@ -1044,13 +1044,13 @@ _self: {
 
   rustaceanvim = vimUtils.buildVimPlugin {
     pname = "rustaceanvim";
-    version = "2024-03-27";
+    version = "2024-04-22";
 
     src = fetchFromGitHub {
       owner = "mrcjkb";
       repo = "rustaceanvim";
-      rev = "c2cdbeca8674e1b1b66ba870ff502bdad55a6d8a";
-      hash = "sha256-yOjlsbTTB7CxEO+kWhVb4JQD8LPEkJHUDSkYN52h4Is=";
+      rev = "f7dbec708ad07a85abf0543e58fa2ec99cea7f95";
+      hash = "sha256-ctECmikTGj7BO+eyQvw7kyx/MtAwMRhmN4W+rJKo1A0=";
     };
 
     dontBuild = true;
