@@ -1,10 +1,10 @@
 [
     {
-        "version": "2024-04-11",
+        "version": "2024-04-17",
         "owner": "CopilotC-Nvim",
         "repo": "CopilotChat.nvim",
-        "rev": "261bb6268761cedf70342e4a869d6b437e0ccc6c",
-        "hash": "sha256-6Kup+c/i7JxYrbu843uE5eNCeZ1f1w++/uDht2pYES4="
+        "rev": "c53e41fd2f4769e3fe60c7233fbd5d5a78324f4b",
+        "hash": "sha256-SzFRI5MfByFQZw80dv4nbmJmPUIo5o5NhNarlMueHYY="
     },
     {
         "version": "2024-04-21",
