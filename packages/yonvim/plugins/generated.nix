@@ -580,13 +580,13 @@ _self: {
 
   molten-nvim = vimUtils.buildVimPlugin {
     pname = "molten-nvim";
-    version = "2024-03-25";
+    version = "2024-04-22";
 
     src = fetchFromGitHub {
       owner = "benlubas";
       repo = "molten-nvim";
-      rev = "2fffc76616b645f8e0fff65a3acb89e5f38bd2a9";
-      hash = "sha256-/GESWkXrhlHav5IiYUq+Tj2VUnLU3luS2cxIE78qJjE=";
+      rev = "2739a9d58c295b49086eac2f7489ab1b5ba1efd4";
+      hash = "sha256-Ht7vAfmHHFBoxWNFB5aG4dgw3ZthIQm4OhSj1woEFMA=";
     };
 
     dontBuild = true;
