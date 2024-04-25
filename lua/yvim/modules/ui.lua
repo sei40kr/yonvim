@@ -5,11 +5,12 @@ local yonvim_config = require("yvim.config").get()
 return {
     {
         "alpha-nvim",
-        init = function()
-            buffer_util.add_special_filetypes({ "alpha" })
-        end,
         dependencies = { "nvim-web-devicons" },
         event = "VimEnter",
+        init = function()
+            buffer_util.add_special_filetypes({ "alpha" })
+            window_util.add_special_filetypes({ "alpha" })
+        end,
         opts = function()
             return require("yvim.plugins.alpha-nvim").opts()
         end,
