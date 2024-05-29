@@ -9,6 +9,10 @@ return {
         import = "yvim.modules.lang.extras.jupyter",
     },
     {
+        import = "yvim.modules.lang.extras.nushell",
+        cond = yonvim_config.lang.nushell.enable,
+    },
+    {
         import = "yvim.modules.lang.extras.rust",
         cond = yonvim_config.lang.rust.enable,
     },

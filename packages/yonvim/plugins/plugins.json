@@ -350,6 +350,13 @@
         "hash": "sha256-xJYPOX4YLcWojMCdP1RO22/7FMrbcBQxqxrcVCE2TrU="
     },
     {
+        "version": "2024-04-21",
+        "owner": "LhKipp",
+        "repo": "nvim-nu",
+        "rev": "64e1677db3319ec5900afa666a2c85c31adc0705",
+        "hash": "sha256-nZ+NsBVrmvMhCF3FSliiGERDBnZfC6agdvVE9YWf7TE="
+    },
+    {
         "version": "2024-02-15",
         "owner": "RRethy",
         "repo": "nvim-treesitter-endwise",

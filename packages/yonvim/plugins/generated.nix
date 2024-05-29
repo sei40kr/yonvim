@@ -802,6 +802,22 @@ _self: {
     meta.homepage = "https://github.com/rcarriga/nvim-notify";
   };
 
+  nvim-nu = vimUtils.buildVimPlugin {
+    pname = "nvim-nu";
+    version = "2024-04-21";
+
+    src = fetchFromGitHub {
+      owner = "LhKipp";
+      repo = "nvim-nu";
+      rev = "64e1677db3319ec5900afa666a2c85c31adc0705";
+      hash = "sha256-nZ+NsBVrmvMhCF3FSliiGERDBnZfC6agdvVE9YWf7TE=";
+    };
+
+    dontBuild = true;
+
+    meta.homepage = "https://github.com/LhKipp/nvim-nu";
+  };
+
   nvim-treesitter-endwise = vimUtils.buildVimPlugin {
     pname = "nvim-treesitter-endwise";
     version = "2024-02-15";

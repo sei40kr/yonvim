@@ -1,4 +1,11 @@
-{ lib, vimPlugins, writeTextFile, yonvimPlugins }:
+{ lib
+, fetchFromGitHub
+, tree-sitter
+, tree-sitter-nu
+, vimPlugins
+, writeTextFile
+, yonvimPlugins
+}:
 
 let
   inherit (lib) concatStringsSep filterAttrs isDerivation mapAttrsToList;
@@ -69,7 +76,8 @@ let
       yaml
       xml
       zig
-    ]);
+    ] ++ [ tree-sitter-nu ]
+  );
 in
 (writeTextFile {
   name = "all-plugin-specs.lua";

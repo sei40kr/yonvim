@@ -84,11 +84,12 @@ require("yvim").setup {
 
 ### Language Supports
 
-| Variable                 | Default value | Description                           |
-| :----------------------- | :------------ | :------------------------------------ |
-| `lang.haskell.enable`    | `false`       | Whether to enable Haskell supports    |
-| `lang.rust.enable`       | `false`       | Whether to enable Rust supports       |
-| `lang.typescript.enable` | `false`       | Whether to enable TypeScript supports |
+| Variable                 | Default value | Description                                 |
+| :----------------------- | :------------ | :------------------------------------------ |
+| `lang.haskell.enable`    | `false`       | Whether to enable Haskell supports          |
+| `lang.nushell.enable`    | `false`       | Whether to enable Nushell language supports |
+| `lang.rust.enable`       | `false`       | Whether to enable Rust supports             |
+| `lang.typescript.enable` | `false`       | Whether to enable TypeScript supports       |
 
 ### LSP
 

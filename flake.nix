@@ -14,9 +14,10 @@
       packages = genAttrs systems (system:
         let
           pkgs' = pkgs.${system};
+          tree-sitter-nu = pkgs'.callPackage ./packages/tree-sitter-nu { };
           yonvimPlugins = pkgs'.callPackage ./packages/yonvim/plugins { };
           yonvim-all-plugin-specs = pkgs'.callPackage ./packages/yonvim-all-plugin-specs {
-            inherit yonvimPlugins;
+            inherit tree-sitter-nu yonvimPlugins;
           };
           yonvim-lua = pkgs'.callPackage ./packages/yonvim-lua { inherit yonvim-all-plugin-specs; };
           yonvim = pkgs'.callPackage ./packages/yonvim/yonvim.nix {

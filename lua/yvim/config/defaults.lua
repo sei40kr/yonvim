@@ -72,6 +72,10 @@ return {
             -- Whether to enable Haskell supports
             enable = false,
         },
+        nushell = {
+            -- Whether to enable Nushell language supports
+            enable = false,
+        },
         rust = {
             -- Whether to enable Rust supports
             enable = false,
