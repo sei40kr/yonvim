@@ -84,13 +84,13 @@ _self: {
 
   aerial-nvim = vimUtils.buildVimPlugin {
     pname = "aerial.nvim";
-    version = "2023-06-25";
+    version = "2024-07-24";
 
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "aerial.nvim";
-      rev = "7c2a432238b9c8e8c526619fa003e658691ea127";
-      hash = "sha256-Msp8VZYwd6OVy8nlmBp7j0PpLMAtIKlkga4tJatHL2w=";
+      rev = "e75a3df2c20b3a98c786f5e61587d74a7a6b61d6";
+      hash = "sha256-fURk05BFspjLADYon/UVOQV4pEwFRAXPDNhvT8EPTxo=";
     };
 
     dontBuild = true;
