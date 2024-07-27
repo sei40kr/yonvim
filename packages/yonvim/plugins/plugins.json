@@ -252,11 +252,11 @@
         "hash": "sha256-zIijmUzHUwpRfmLYeC0eVQRo0mr6SezpmaVMh1tM3Wg="
     },
     {
-        "version": "2024-04-22",
+        "version": "2024-07-12",
         "owner": "benlubas",
         "repo": "molten-nvim",
-        "rev": "2739a9d58c295b49086eac2f7489ab1b5ba1efd4",
-        "hash": "sha256-Ht7vAfmHHFBoxWNFB5aG4dgw3ZthIQm4OhSj1woEFMA="
+        "rev": "eb6d0fe33e14989b0f1fbe25d9732889ee57bd1a",
+        "hash": "sha256-TkHiUItTSjjSeGU92dzKEKgCrE426TTbc4sW6kg8NV8="
     },
     {
         "version": "2024-06-11",
