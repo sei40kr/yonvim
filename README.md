@@ -2,11 +2,12 @@
 
 My personal Neovim distribution.
 
+## Requirements
+
+- Nix (Yonvim currently supports Nix Flakes only)
+- Neovim 0.10.x
+
 ## Installation
-
-**Yonvim currently supports Nix Flakes only.**
-
-### Nix
 
 Add the following to your `flake.nix`:
 

@@ -16,7 +16,7 @@ return {
                 enable = true,
                 disable = function(_lang, buf)
                     local max_filesize = 100 * 1024
-                    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                    local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(buf))
                     if ok and stats and stats.size > max_filesize then
                         return true
                     end
@@ -51,7 +51,6 @@ return {
                 enable = true,
                 goto_next_start = {
                     ["]]"] = "@class.outer",
-                    ["]c"] = "@comment.outer",
                     ["]m"] = "@function.outer",
                 },
                 goto_next_end = {
@@ -60,7 +59,6 @@ return {
                 },
                 goto_previous_start = {
                     ["[["] = "@class.outer",
-                    ["[c"] = "@comment.outer",
                     ["[m"] = "@function.outer",
                 },
                 goto_previous_end = {
@@ -75,8 +73,6 @@ return {
             require("yvim.util").on_very_lazy(function()
                 require("which-key").add({
                     { "<Leader>v", desc = "Expand region" },
-                    { "[c",        desc = "Previous comment" },
-                    { "]c",        desc = "Next comment" },
                 })
             end)
         end,

@@ -32,7 +32,7 @@ local hl_names_by_severity = {
 
 return {
     function()
-        if vim.diagnostic.is_disabled() then
+        if not vim.diagnostic.is_enabled() then
             return " "
         end
 
@@ -58,9 +58,7 @@ return {
     color = function()
         local hl_name
 
-        if vim.diagnostic.is_disabled() then
-            hl_name = "Comment"
-        else
+        if vim.diagnostic.is_enabled() then
             local diagnostics = vim.diagnostic.get(0)
             local highest_severity = get_highest_severity(diagnostics)
 
@@ -69,6 +67,8 @@ return {
             else
                 hl_name = hl_names_by_severity[highest_severity]
             end
+        else
+            hl_name = "Comment"
         end
 
         return {

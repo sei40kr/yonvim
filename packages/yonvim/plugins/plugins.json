@@ -203,13 +203,6 @@
         "hash": "sha256-jKF6pF+ro3AhhHj5X6fUHM9vqHEGvBS8dv6oaoKdP94="
     },
     {
-        "version": "2023-06-08",
-        "owner": "lvimuser",
-        "repo": "lsp-inlayhints.nvim",
-        "rev": "d981f65c9ae0b6062176f0accb9c151daeda6f16",
-        "hash": "sha256-06CiJ+xeMO4+OJkckcslqwloJyt2gwg514JuxV6KOfQ="
-    },
-    {
         "version": "2024-07-25",
         "owner": "onsails",
         "repo": "lspkind.nvim",
@@ -229,13 +222,6 @@
         "repo": "mini.bufremove",
         "rev": "1ee294a97e091d3cf967974df622c0d887890dc2",
         "hash": "sha256-tYE7ib/F3emDxHaeEW/k/P31/gKknLsw63H9T5yAEEo="
-    },
-    {
-        "version": "2024-04-11",
-        "owner": "echasnovski",
-        "repo": "mini.comment",
-        "rev": "f9f1a646fd3d9df7397aa1b9550a875fe8189eb0",
-        "hash": "sha256-cQgdKP4WybO6YAT7G+owO0G/7AfQHxFdFIAdzfoVwYo="
     },
     {
         "version": "2024-07-13",

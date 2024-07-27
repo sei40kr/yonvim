@@ -27,11 +27,11 @@ function M.opts()
         [[Y  O  N  V  I  M]],
     }
     dashboard.section.header.opts.hl = {
-        { { "YonvimDashboardLogo1", 6, 11 }, { "YonvimDashboardLogo2", 14, 19 } },
-        { { "YonvimDashboardLogo1", 6, 14 }, { "YonvimDashboardLogo2", 15, 23 } },
-        { { "YonvimDashboardLogo1", 7, 9 },  { "YonvimDashboardLogo3", 10, 12 }, { "YonvimDashboardLogo2", 13, 18 } },
-        { { "YonvimDashboardLogo2", 8, 13 } },
-        { { "YonvimDashboardLogo2", 8, 13 } },
+        { { "YonvimDashboardLogo1", 5, 10 }, { "YonvimDashboardLogo2", 13, 18 } },
+        { { "YonvimDashboardLogo1", 5, 13 }, { "YonvimDashboardLogo2", 14, 22 } },
+        { { "YonvimDashboardLogo1", 6, 8 },  { "YonvimDashboardLogo3", 9, 11 }, { "YonvimDashboardLogo2", 12, 17 } },
+        { { "YonvimDashboardLogo2", 7, 12 } },
+        { { "YonvimDashboardLogo2", 7, 12 } },
         {},
         {},
     }

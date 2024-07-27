@@ -133,8 +133,8 @@ return {
                     vim.keymap.set(mode, lhs, rhs, opts)
                 end
 
-                map("n", "[d", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Jump to previous hunk" })
-                map("n", "]d", "<Cmd>Gitsigns next_hunk<CR>", { desc = "Jump to next hunk" })
+                map("n", "[c", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Jump to previous hunk" })
+                map("n", "]c", "<Cmd>Gitsigns next_hunk<CR>", { desc = "Jump to next hunk" })
                 map("n", "<Leader>g[", "[d", { remap = true, desc = "Jump to previous hunk" })
                 map("n", "<Leader>g]", "]d", { remap = true, desc = "Jump to next hunk" })
                 map({ "n", "x" }, "<Leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Revert hunk" })

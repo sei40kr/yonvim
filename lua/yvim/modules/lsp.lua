@@ -15,37 +15,6 @@ return {
     },
 
     {
-        "lsp-inlayhints.nvim",
-        init = function()
-            vim.api.nvim_create_augroup("yvim_inlayhints", {})
-            vim.api.nvim_create_autocmd("LspAttach", {
-                group = "yvim_inlayhints",
-                callback = function(args)
-                    if not (args.data and args.data.client_id) then
-                        return
-                    end
-
-                    local bufnr = args.buf
-                    local client = vim.lsp.get_client_by_id(args.data.client_id)
-                    require("lsp-inlayhints").on_attach(client, bufnr)
-                end,
-            })
-        end,
-        opts = {},
-        main = "lsp-inlayhints",
-        keys = {
-            {
-                "<Leader>th",
-                function()
-                    require("lsp-inlayhints").toggle()
-                end,
-                desc = "LSP Inlay Hints",
-            },
-        },
-        module = "lsp-inlayhints",
-    },
-
-    {
         "neoconf.nvim",
         opts = {},
         main = "neoconf",

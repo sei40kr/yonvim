@@ -466,22 +466,6 @@ _self: {
     meta.homepage = "https://github.com/lukas-reineke/lsp-format.nvim";
   };
 
-  lsp-inlayhints-nvim = vimUtils.buildVimPlugin {
-    pname = "lsp-inlayhints.nvim";
-    version = "2023-06-08";
-
-    src = fetchFromGitHub {
-      owner = "lvimuser";
-      repo = "lsp-inlayhints.nvim";
-      rev = "d981f65c9ae0b6062176f0accb9c151daeda6f16";
-      hash = "sha256-06CiJ+xeMO4+OJkckcslqwloJyt2gwg514JuxV6KOfQ=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/lvimuser/lsp-inlayhints.nvim";
-  };
-
   lspkind-nvim = vimUtils.buildVimPlugin {
     pname = "lspkind.nvim";
     version = "2024-07-25";
@@ -528,22 +512,6 @@ _self: {
     dontBuild = true;
 
     meta.homepage = "https://github.com/echasnovski/mini.bufremove";
-  };
-
-  mini-comment = vimUtils.buildVimPlugin {
-    pname = "mini.comment";
-    version = "2024-04-11";
-
-    src = fetchFromGitHub {
-      owner = "echasnovski";
-      repo = "mini.comment";
-      rev = "f9f1a646fd3d9df7397aa1b9550a875fe8189eb0";
-      hash = "sha256-cQgdKP4WybO6YAT7G+owO0G/7AfQHxFdFIAdzfoVwYo=";
-    };
-
-    dontBuild = true;
-
-    meta.homepage = "https://github.com/echasnovski/mini.comment";
   };
 
   mini-surround = vimUtils.buildVimPlugin {

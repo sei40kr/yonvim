@@ -67,9 +67,6 @@ function M.load()
 
     -- +code
 
-    map("n", "[e", vim.diagnostic.goto_prev, { desc = "Jump to previous error" })
-    map("n", "]e", vim.diagnostic.goto_next, { desc = "Jump to next error" })
-
     map("n", "gd", "<Leader>cd", { remap = true })
     map("n", "gi", "<Leader>ci", { remap = true })
     map("n", "gr", "<Leader>cD", { remap = true })
@@ -176,18 +173,21 @@ function M.load()
         "n",
         "<Leader>td",
         function()
-            local message
-            if vim.diagnostic.is_disabled() then
-                vim.diagnostic.enable()
-                message = "Diagnostics enabled"
+            local enabled = vim.diagnostic.is_enabled()
+
+            vim.diagnostic.enable(not enabled)
+
+            if enabled then
+                vim.notify("Diagnostics disabled", vim.log.levels.INFO)
             else
-                vim.diagnostic.disable()
-                message = "Diagnostics disabled"
+                vim.notify("Diagnostics enabled", vim.log.levels.INFO)
             end
-            vim.notify(message, vim.log.levels.INFO)
         end,
         { desc = "Diagnostics" }
     )
+    map("n", "<Leader>th", function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    end, { desc = "LSP Inlay Hints" })
     map("n", "<Leader>tl", toggle_options({ "number", "relativenumber" }, "Line numbers"), { desc = "Line numbers" })
     map("n", "<Leader>tL", toggle_options({ "list" }, "List mode"), { desc = "List mode" })
     map(

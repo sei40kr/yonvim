@@ -57,12 +57,6 @@ return {
     },
 
     {
-        "mini.comment",
-        opts = {},
-        main = "mini.comment",
-    },
-
-    {
         "mini.surround",
         opts = {
             mappings = {
