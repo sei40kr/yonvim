@@ -644,13 +644,13 @@ _self: {
 
   neogit = vimUtils.buildVimPlugin {
     pname = "neogit";
-    version = "2024-04-16";
+    version = "2024-07-23";
 
     src = fetchFromGitHub {
       owner = "NeogitOrg";
       repo = "neogit";
-      rev = "0cae7abc30cb91d661f28257c331fcb5b5198e31";
-      hash = "sha256-6TFUuJbgF7bUeYChR5Y/hWl8oMh4NL3MBQNCXBrTnio=";
+      rev = "2b74a777b963dfdeeabfabf84d5ba611666adab4";
+      hash = "sha256-K9KbLRrEPfKGSbLl/dMoUcILsMmpv3kyCALmgX7if80=";
     };
 
     dontBuild = true;
