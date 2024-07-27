@@ -123,6 +123,7 @@ return {
                 changedelete = { text = "▍" },
                 untracked = { text = "▍" },
             },
+            signs_staged_enable = false,
             attach_to_untracked = true,
             current_line_blame = true,
             on_attach = function(bufnr)
