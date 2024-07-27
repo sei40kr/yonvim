@@ -292,13 +292,13 @@ _self: {
 
   diffview-nvim = vimUtils.buildVimPlugin {
     pname = "diffview.nvim";
-    version = "2023-11-20";
+    version = "2024-06-13";
 
     src = fetchFromGitHub {
       owner = "sindrets";
       repo = "diffview.nvim";
-      rev = "3dc498c9777fe79156f3d32dddd483b8b3dbd95f";
-      hash = "sha256-3EdnBUka9Rh5Brl6TWpN6GlD9z32mmY3Ip+wyiKob/8=";
+      rev = "4516612fe98ff56ae0415a259ff6361a89419b0a";
+      hash = "sha256-SX+ybIzL/w6uyCy4iZKnWnzTFwqB1oXSgyYVAdpdKi8=";
     };
 
     dontBuild = true;
