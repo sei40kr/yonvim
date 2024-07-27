@@ -164,13 +164,13 @@ _self: {
 
   cmp-nvim-lsp-signature-help = vimUtils.buildVimPlugin {
     pname = "cmp-nvim-lsp-signature-help";
-    version = "2023-02-03";
+    version = "2024-05-17";
 
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp-signature-help";
-      rev = "3d8912ebeb56e5ae08ef0906e3a54de1c66b92f1";
-      hash = "sha256-yDxYvjTIeXIKYR3tg+bf+okXKr5JYc/I9obP+6uKey4=";
+      rev = "031e6ba70b0ad5eee49fd2120ff7a2e325b17fa7";
+      hash = "sha256-tLMhkmdehH3IDlIdqJq6GHpudY0G05Asjir6p4aONyI=";
     };
 
     dontBuild = true;
