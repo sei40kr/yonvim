@@ -1044,13 +1044,13 @@ _self: {
 
   rainbow-delimiters-nvim = vimUtils.buildVimPlugin {
     pname = "rainbow-delimiters.nvim";
-    version = "2024-04-18";
+    version = "2024-07-24";
 
     src = fetchFromGitHub {
       owner = "HiPhish";
       repo = "rainbow-delimiters.nvim";
-      rev = "7ef0766b5cd2f5cdf4fcb08886f0a2ebf65981fa";
-      hash = "sha256-7ZAZm/BqvpkIJLQ24MbiFvgImv7t8UrdYXxRlDCa2mA=";
+      rev = "960cce4eba798748baff3892a62f2c2b210fb76b";
+      hash = "sha256-0GcL4uU5p9DpS5X90UXHRG/5gWTWjy9ZMWOOKwvuBow=";
     };
 
     dontBuild = true;
