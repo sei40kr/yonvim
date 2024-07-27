@@ -1012,13 +1012,13 @@ _self: {
 
   plenary-nvim = vimUtils.buildVimPlugin {
     pname = "plenary.nvim";
-    version = "2024-04-22";
+    version = "2024-05-20";
 
     src = fetchFromGitHub {
       owner = "nvim-lua";
       repo = "plenary.nvim";
-      rev = "5129a3693c482fcbc5ab99a7706ffc4360b995a0";
-      hash = "sha256-orGs1npIGIk7MUYadatYrcEXygK7JTj6OqQwy2TLDn0=";
+      rev = "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683";
+      hash = "sha256-5Jf2mWFVDofXBcXLbMa417mqlEPWLA+cQIZH/vNEV1g=";
     };
 
     dontBuild = true;
