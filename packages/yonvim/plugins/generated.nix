@@ -1300,13 +1300,13 @@ _self: {
 
   typescript-tools-nvim = vimUtils.buildVimPlugin {
     pname = "typescript-tools.nvim";
-    version = "2024-01-16";
+    version = "2024-07-18";
 
     src = fetchFromGitHub {
       owner = "pmizio";
       repo = "typescript-tools.nvim";
-      rev = "c43d9580c3ff5999a1eabca849f807ab33787ea7";
-      hash = "sha256-kpdDYVd6uSuJImS9LU5p/vJgtj9tToNBvRTJHpsHyak=";
+      rev = "f8c2e0b36b651c85f52ad5c5373ff8b07adc15a7";
+      hash = "sha256-8WH/eCff1liDVaezZFvu6RqCtXU4Uwq80BlWiH+tQME=";
     };
 
     dontBuild = true;
