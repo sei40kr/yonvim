@@ -133,11 +133,11 @@
         "hash": "sha256-SX+ybIzL/w6uyCy4iZKnWnzTFwqB1oXSgyYVAdpdKi8="
     },
     {
-        "version": "2024-04-24",
+        "version": "2024-06-19",
         "owner": "stevearc",
         "repo": "dressing.nvim",
-        "rev": "5162edb1442a729a885c45455a07e9a89058be2f",
-        "hash": "sha256-46r7X8CNuMgSB9X1jFLTQAiiBVqszkBP6DPlo6nBAxI="
+        "rev": "6741f1062d3dc6e4755367a7e9b347b553623f04",
+        "hash": "sha256-LlcE/1/IT6QW/o5gks80BFnrIdBd4GjW4M9o+84/j1c="
     },
     {
         "version": "2024-07-22",
