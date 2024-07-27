@@ -602,11 +602,11 @@
         "hash": "sha256-uvghPj/teWrRMm09Gh8iQ/LV2nYJw0lmoiZK6L4+1cY="
     },
     {
-        "version": "2024-02-02",
+        "version": "2024-06-10",
         "owner": "gbprod",
         "repo": "yanky.nvim",
-        "rev": "7c5cbf0122ff2dfbb6a92f14885894f65949cc8b",
-        "hash": "sha256-6OQegaggOD70B7OZnYwzMvusO2K+/kphQiiOCd+W/Zw="
+        "rev": "73215b77d22ebb179cef98e7e1235825431d10e4",
+        "hash": "sha256-QB5VWIt80ANC1vAyDd3smbR0Sh+x7upEqDxqbcXJDQ8="
     },
     {
         "version": "2023-10-20",
