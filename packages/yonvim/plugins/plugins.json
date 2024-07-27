@@ -560,11 +560,11 @@
         "hash": "sha256-Fxakkz4+BTbvDLjRggZUVVhVEbg1b/MuuIC1rGrCwVA="
     },
     {
-        "version": "2023-10-18",
+        "version": "2024-07-22",
         "owner": "folke",
         "repo": "trouble.nvim",
-        "rev": "f1168feada93c0154ede4d1fe9183bf69bac54ea",
-        "hash": "sha256-8nLghiueYOtWY7OGVxow9A2G/5lgt+Kt5D8q1xeJvVg="
+        "rev": "6efc446226679fda0547c0fd6a7892fd5f5b15d8",
+        "hash": "sha256-db/riM3Kq+QgGUqRxJHA4HYXJE31276hrUrDj4UhC2g="
     },
     {
         "version": "2024-01-16",
