@@ -596,13 +596,13 @@ _self: {
 
   neo-tree-nvim = vimUtils.buildVimPlugin {
     pname = "neo-tree.nvim";
-    version = "2024-03-21";
+    version = "2024-06-11";
 
     src = fetchFromGitHub {
       owner = "nvim-neo-tree";
       repo = "neo-tree.nvim";
-      rev = "16d1b194376bf1fc2acd89ccb3c29ba8315bfcea";
-      hash = "sha256-dRCInB1LtnEDE5F1ribNxdEYBXJM438O+Aqlmdxfr0Y=";
+      rev = "206241e451c12f78969ff5ae53af45616ffc9b72";
+      hash = "sha256-eNGuQEjAKsPuRDGaw95kCVOmP64ZDnUuFBppqtcrhZ4=";
     };
 
     dontBuild = true;
