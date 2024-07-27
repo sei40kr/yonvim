@@ -609,10 +609,10 @@
         "hash": "sha256-QB5VWIt80ANC1vAyDd3smbR0Sh+x7upEqDxqbcXJDQ8="
     },
     {
-        "version": "2023-10-20",
+        "version": "2024-07-22",
         "owner": "folke",
         "repo": "zen-mode.nvim",
-        "rev": "50e2e2a36cc97847d9ab3b1a3555ba2ef6839b50",
-        "hash": "sha256-+tRLfktRFecEozRa5iBc+LNrB1GuztGATM9HWdkJrPY="
+        "rev": "29b292bdc58b76a6c8f294c961a8bf92c5a6ebd6",
+        "hash": "sha256-iHGsnFG1PBup3/+JbSwXf/TerQ7PNXkp9gKVznmRbTE="
     }
 ]
