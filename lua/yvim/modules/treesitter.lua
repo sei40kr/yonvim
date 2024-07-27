@@ -73,10 +73,10 @@ return {
             require("nvim-treesitter.configs").setup(opts)
 
             require("yvim.util").on_very_lazy(function()
-                require("which-key").register({
-                    ["<Leader>v"] = "Expand region",
-                    ["[c"] = "Previous comment",
-                    ["]c"] = "Next comment",
+                require("which-key").add({
+                    { "<Leader>v", desc = "Expand region" },
+                    { "[c",        desc = "Previous comment" },
+                    { "]c",        desc = "Next comment" },
                 })
             end)
         end,

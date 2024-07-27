@@ -701,60 +701,46 @@ return {
     {
         "which-key.nvim",
         opts = {
-            key_labels = {
-                ["<space>"] = "SPC",
-                ["<cr>"] = "RET",
-                ["<tab>"] = "TAB",
+            replace = {
+                key = {
+                    { "<Space>", "SPC" },
+                    { "<CR>",    "RET" },
+                    { "<Tab>",   "TAB" },
+                },
             },
             icons = {
                 breadcrumb = " ",
                 separator = " ",
+                mappings = false,
             },
         },
         config = function(_, opts)
             local wk = require("which-key")
             wk.setup(opts)
 
-            wk.register({
-                ["<Tab>"] = { name = "+tab" },
-                a = { name = "+ai" },
-                b = { name = "+buffer" },
-                c = {
-                    name = "+code",
-                    l = {
-                        name = "+lsp",
-                        F = { name = "+folders" },
-                    }
-                },
-                f = { name = "+file" },
-                g = {
-                    name = "+git",
-                    c = { name = "+create" },
-                    f = { name = "+find" },
-                    l = { name = "+list" },
-                    o = { name = "+open in browser" },
-                },
-                h = { name = "+help" },
-                i = { name = "+insert" },
-                o = { name = "+open" },
-                p = { name = "+project" },
-                q = { name = "+quit" },
-                s = { name = "+search" },
-                t = { name = "+toggle" },
-                w = { name = "+window" },
-            }, { prefix = "<Leader>" })
-            -- Somehow these doesn't work
-            wk.register({
-                i = { name = "+insert" },
-            }, { mode = "i", prefix = "<M-Space>" })
-            wk.register({
-                c = { name = "+code" },
-                g = {
-                    name = "+git",
-                    o = { name = "+open in browser" },
-                },
-                i = { name = "+insert" },
-            }, { mode = "x", prefix = "<Leader>" })
+            wk.add({
+                { "<Leader><Tab>", group = "tab" },
+                { "<Leader>a",     group = "ai" },
+                { "<Leader>b",     group = "buffer" },
+                { "<Leader>c",     group = "code",            mode = { "n", "v" } },
+                { "<Leader>cl",    group = "lsp" },
+                { "<Leader>clF",   group = "folders" },
+                { "<Leader>f",     group = "file" },
+                { "<Leader>g",     group = "git",             mode = { "n", "v" } },
+                { "<Leader>gc",    group = "create" },
+                { "<Leader>gf",    group = "find" },
+                { "<Leader>gl",    group = "list" },
+                { "<Leader>go",    group = "open in browser", mode = { "n", "v" } },
+                { "<Leader>h",     group = "help" },
+                { "<Leader>i",     group = "insert",          mode = { "n", "v" } },
+                { "<M-Space>i",    group = "insert",          mode = "i" },
+                { "<Leader>o",     group = "open" },
+                { "<Leader>p",     group = "project" },
+                { "<Leader>q",     group = "quit" },
+                { "<Leader>s",     group = "search" },
+                { "<Leader>t",     group = "toggle" },
+                { "<Leader>w",     group = "window" },
+            })
         end,
     },
 }

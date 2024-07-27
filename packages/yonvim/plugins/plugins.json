@@ -595,11 +595,11 @@
         "hash": "sha256-7ljjJ7UwN2U1xPCtsYbrKdnz6SGQGbM/HrxPTxNKlwo="
     },
     {
-        "version": "2023-10-20",
+        "version": "2024-07-24",
         "owner": "folke",
         "repo": "which-key.nvim",
-        "rev": "4433e5ec9a507e5097571ed55c02ea9658fb268a",
-        "hash": "sha256-uvghPj/teWrRMm09Gh8iQ/LV2nYJw0lmoiZK6L4+1cY="
+        "rev": "6c1584eb76b55629702716995cca4ae2798a9cca",
+        "hash": "sha256-nv9s4/ax2BoL9IQdk42uN7mxIVFYiTK+1FVvWDKRnGM="
     },
     {
         "version": "2024-06-10",
