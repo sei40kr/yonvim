@@ -13,8 +13,6 @@ let
   nvim-treesitter = vimPlugins.nvim-treesitter.withPlugins (grammars:
     with grammars; [
       awk
-      bash
-      c
       c-sharp
       clojure
       cmake
@@ -39,10 +37,7 @@ let
       json5
       julia
       kotlin
-      lua
       make
-      markdown
-      markdown-inline
       nix
       norg
       ocaml
@@ -53,7 +48,6 @@ let
       prisma
       pymanifest
       purescript
-      python
       r
       regex
       requirements
@@ -71,7 +65,6 @@ let
       tsx
       typescript
       verilog
-      vim
       vue
       yaml
       xml
