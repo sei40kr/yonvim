@@ -68,13 +68,13 @@ _self: {
 
   actions-preview-nvim = vimUtils.buildVimPlugin {
     pname = "actions-preview.nvim";
-    version = "2024-03-09";
+    version = "2024-06-16";
 
     src = fetchFromGitHub {
       owner = "aznhe21";
       repo = "actions-preview.nvim";
-      rev = "5072b1b1065a6b22bdd46b5c21780a91d6a08071";
-      hash = "sha256-PIzXWOqmTeesPZg82iLkvLpJtOoDDljvwJq8wdvRtqQ=";
+      rev = "9f52a01c374318e91337697ebed51c6fae57f8a4";
+      hash = "sha256-lYjsv8y1fMuTGpBF/iG7cm/a7tLdh748vJhVsSp/Iz8=";
     };
 
     dontBuild = true;
