@@ -372,13 +372,13 @@ _self: {
 
   gitsigns-nvim = vimUtils.buildVimPlugin {
     pname = "gitsigns.nvim";
-    version = "2024-04-20";
+    version = "2024-07-25";
 
     src = fetchFromGitHub {
       owner = "lewis6991";
       repo = "gitsigns.nvim";
-      rev = "035da036e68e509ed158414416c827d022d914bd";
-      hash = "sha256-UK3DyvrQ0kLm9wrMQ6tLDoDunoThbY/Yfjn+eCZpuMw=";
+      rev = "f074844b60f9e151970fbcdbeb8a2cd52b6ef25a";
+      hash = "sha256-nHUQoYo/4J2rh494UxYz3hqrrgPSxX4IgManKxCsBR8=";
     };
 
     dontBuild = true;
