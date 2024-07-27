@@ -884,13 +884,13 @@ _self: {
 
   nvim-ts-autotag = vimUtils.buildVimPlugin {
     pname = "nvim-ts-autotag";
-    version = "2024-02-07";
+    version = "2024-07-23";
 
     src = fetchFromGitHub {
       owner = "windwp";
       repo = "nvim-ts-autotag";
-      rev = "531f48334c422222aebc888fd36e7d109cb354cd";
-      hash = "sha256-cPIEIjcYxX3ZkOyou2mYlHMdhBxCoVTpJVXZtiWe9Ks=";
+      rev = "dc5e1687ab76ee02e0f11c5ce137f530b36e98b3";
+      hash = "sha256-V6uJG/tUL1lFc+yOKzL+AmdG3QqLllk/uYogxwxiaXQ=";
     };
 
     dontBuild = true;
