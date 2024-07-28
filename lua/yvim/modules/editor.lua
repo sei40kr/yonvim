@@ -691,6 +691,7 @@ return {
                 "lsp_references",
                 "lsp_type_definitions",
             },
+            focus = true,
             use_diagnostic_signs = true,
         },
         main = "trouble",
