@@ -25,12 +25,9 @@ function M.config()
     }
 
     if require("yvim.utils.plugin").has("trouble.nvim") then
-        trouble_mappings.n["<C-t>"] = function(...)
-            require("trouble.providers.telescope").open_with_trouble(...)
-        end
-        trouble_mappings.i["<C-t>"] = function(...)
-            require("trouble.providers.telescope").open_with_trouble(...)
-        end
+        local open_with_trouble = require("trouble.sources.telescope").open
+        trouble_mappings.n["<C-t>"] = open_with_trouble
+        trouble_mappings.i["<C-t>"] = open_with_trouble
     end
 
     telescope.setup({
