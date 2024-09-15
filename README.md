@@ -2,6 +2,10 @@
 
 My personal Neovim distribution.
 
+## Notice
+
+I'm now using [LazyVim](https://github.com/LazyVim/LazyVim) and Yonvim is no longer maintained.
+
 ## Requirements
 
 - Nix (Yonvim currently supports Nix Flakes only)
